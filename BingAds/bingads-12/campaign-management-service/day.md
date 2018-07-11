@@ -26,6 +26,7 @@ Defines the day values that you can specify for day and time criterion.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="friday"></a>Friday|The day is Friday.|

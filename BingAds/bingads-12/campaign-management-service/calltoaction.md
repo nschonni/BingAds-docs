@@ -42,6 +42,7 @@ Each of the values correspond to a friendly and readable call to action in a res
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="addtocart"></a>AddToCart|The corresponding call to action in the ad.|

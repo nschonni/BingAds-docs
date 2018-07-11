@@ -23,6 +23,7 @@ Defines a collection of ads or keywords that failed editorial review, and the re
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupid"></a>AdGroupId|Identifies the ad group which is the parent of the ad or keyword that failed editorial review.|**long**|

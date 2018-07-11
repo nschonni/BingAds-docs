@@ -25,6 +25,7 @@ Defines the possible status values of a campaign.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The campaign is active, which indicates that the campaign's ads can be served.|

@@ -19,6 +19,7 @@ The *GetUserRequest* object defines the [body](#request-body) and [header](#requ
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="includelinkedaccountids"></a>IncludeLinkedAccountIds|Determines a) whether or not the [CustomerRole](customerrole.md) objects that represent the user's permissions on agency-linked accounts should be returned, and b) whether or not the [LinkedAccountIds](customerrole.md#linkedaccountids) element should be included in all returned [CustomerRole](customerrole.md) objects.<br /><br />If this flag is set to *True*, a) the [CustomerRole](customerrole.md) objects that represent the user's permissions for agency-linked accounts will be returned, and b) the [LinkedAccountIds](customerrole.md#linkedaccountids) element will be included in all returned [CustomerRole](customerrole.md) objects.<br/><br/>Otherwise if the flag is *False*, null, or not provided, a) the [CustomerRole](customerrole.md) objects that represent the user's permissions for agency-linked accounts will not be returned, and b) the [LinkedAccountIds](customerrole.md#linkedaccountids) element will not be included in any returned [CustomerRole](customerrole.md) objects.|**boolean**|
@@ -32,10 +33,10 @@ The *GetUserResponse* object defines the [body](#response-body) and [header](#re
 
 ### <a name="response-body"></a>Response Body Elements
 
-|Element|Description|Data Type|
-|-----------|---------------|-------------|
-|<a name="customerroles"></a>CustomerRoles|The list of roles that a user has for each customer or list of accounts.<br/><br/>At minimum one list item will be returned. If a user's credentials can access multiple customers, then one [CustomerRole](customerrole.md) object per customer will be returned.<br/><br/>You can view all of your own roles across all customers; however, you will only see the roles of other users as it pertains to customers that you can access. For example let's say you@contoso.com and another-user@contoso.com can access Customer A. The other user might also have access to Customer B and C; however when you call this operation with their user identifier, you will only see their role under Customer A. When another-user@contoso.com calls this operation with their own credentials, the operation would return three [CustomerRole](customerrole.md) objects.|[CustomerRole](customerrole.md) array|
-|<a name="user"></a>User|A user object that contains information about the user.|[User](user.md)|
+|                  Element                  |                                                                                                                                                                                                                                                                                                                                                                                                                               Description                                                                                                                                                                                                                                                                                                                                                                                                                               |               Data Type               |
+|-------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
+| <a name="customerroles"></a>CustomerRoles | The list of roles that a user has for each customer or list of accounts.<br/><br/>At minimum one list item will be returned. If a user's credentials can access multiple customers, then one [CustomerRole](customerrole.md) object per customer will be returned.<br/><br/>You can view all of your own roles across all customers; however, you will only see the roles of other users as it pertains to customers that you can access. For example let's say you@contoso.com and another-user@contoso.com can access Customer A. The other user might also have access to Customer B and C; however when you call this operation with their user identifier, you will only see their role under Customer A. When another-user@contoso.com calls this operation with their own credentials, the operation would return three [CustomerRole](customerrole.md) objects. | [CustomerRole](customerrole.md) array |
+|          <a name="user"></a>User          |                                                                                                                                                                                                                                                                                                                                                                                                         A user object that contains information about the user.                                                                                                                                                                                                                                                                                                                                                                                                         |            [User](user.md)            |
 
 ### <a name="response-header"></a>Response Header Elements
 [!INCLUDE[response-header](./includes/response-header.md)]
@@ -140,51 +141,51 @@ This template was generated by a tool to show the order of the [body](#response-
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetUserResponse> GetUserAsync(
-	long? userId,
-	bool? includeLinkedAccountIds)
+    long? userId,
+    bool? includeLinkedAccountIds)
 {
-	var request = new GetUserRequest
-	{
-		UserId = userId,
-		IncludeLinkedAccountIds = includeLinkedAccountIds
-	};
+    var request = new GetUserRequest
+    {
+        UserId = userId,
+        IncludeLinkedAccountIds = includeLinkedAccountIds
+    };
 
-	return (await CustomerManagementService.CallAsync((s, r) => s.GetUserAsync(r), request));
+    return (await CustomerManagementService.CallAsync((s, r) => s.GetUserAsync(r), request));
 }
 ```
 ```java
 static GetUserResponse getUser(
-	java.lang.Long userId,
-	boolean includeLinkedAccountIds) throws RemoteException, Exception
+    java.lang.Long userId,
+    boolean includeLinkedAccountIds) throws RemoteException, Exception
 {
-	GetUserRequest request = new GetUserRequest();
+    GetUserRequest request = new GetUserRequest();
 
-	request.setUserId(userId);
-	request.setIncludeLinkedAccountIds(includeLinkedAccountIds);
+    request.setUserId(userId);
+    request.setIncludeLinkedAccountIds(includeLinkedAccountIds);
 
-	return CustomerManagementService.getService().getUser(request);
+    return CustomerManagementService.getService().getUser(request);
 }
 ```
 ```php
 static function GetUser(
-	$userId,
-	$includeLinkedAccountIds)
+    $userId,
+    $includeLinkedAccountIds)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
 
-	$request = new GetUserRequest();
+    $request = new GetUserRequest();
 
-	$request->UserId = $userId;
-	$request->IncludeLinkedAccountIds = $includeLinkedAccountIds;
+    $request->UserId = $userId;
+    $request->IncludeLinkedAccountIds = $includeLinkedAccountIds;
 
-	return $GLOBALS['CustomerManagementProxy']->GetService()->GetUser($request);
+    return $GLOBALS['CustomerManagementProxy']->GetService()->GetUser($request);
 }
 ```
 ```python
 response=customermanagement_service.GetUser(
-	UserId=UserId,
-	IncludeLinkedAccountIds=IncludeLinkedAccountIds)
+    UserId=UserId,
+    IncludeLinkedAccountIds=IncludeLinkedAccountIds)
 ```
 
 ## Requirements

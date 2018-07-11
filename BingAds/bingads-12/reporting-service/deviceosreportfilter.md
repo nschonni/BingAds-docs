@@ -28,6 +28,7 @@ Defines the device operating system values that you can use to filter the report
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="android"></a>Android|The report will include ads displayed on Android device operating systems.|

@@ -12,7 +12,7 @@ ms.author: "scottwhi"
 
 > [!NOTE]
 > This beta release of Hotel Ads is available to select participants only. For information about participating in the beta release program, please contact your account manager.
->
+> 
 > The API and documentation are subject to change.
 
 The Hotel API lets you manage your hotel ad campaigns and bidding. A subaccount provides the top-level logical organization of your hotel ads. You can think of it as a hotel campaign. Currently, you can have only one subaccount, and all hotels from the feed belong to it.

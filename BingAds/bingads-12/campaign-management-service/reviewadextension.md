@@ -29,6 +29,7 @@ You can associate a review ad extension with the account or with campaigns and a
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="isexact"></a>IsExact|Determines whether the review text is an exact quote or paraphrased. <br/><br/>If not specified, the default value of false indicates that the review text is paraphrased from the source. If set to *True*, the review text will be surrounded automatically with quotation marks when displayed with the ad.<br/><br/>**Add:** Optional<br/>**Update:** Optional|**boolean**|
@@ -42,6 +43,7 @@ The [ReviewAdExtension](reviewadextension.md) object has [Inherited Elements](#i
 
 ### <a name="inheritedelementsadextension"></a>Inherited Elements from AdExtension
 The [ReviewAdExtension](reviewadextension.md) object derives from the [AdExtension](adextension.md) object, and inherits the following elements. The descriptions below are specific to [ReviewAdExtension](reviewadextension.md), and might not apply to other objects that inherit the same elements from the [AdExtension](adextension.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

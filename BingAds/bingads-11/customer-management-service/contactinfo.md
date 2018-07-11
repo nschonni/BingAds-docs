@@ -30,6 +30,7 @@ Defines the contact information for a user.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="address"></a>Address|The address of the user.<br/><br/>**Add:** Required<br/>**Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.|[Address](address.md)|

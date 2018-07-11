@@ -30,6 +30,7 @@ The *GetKeywordIdeaCategoriesResponse* object defines the [body](#response-body)
 
 ### <a name="response-body"></a>Response Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="keywordideacategories"></a>KeywordIdeaCategories|The list of keyword idea categories.|[KeywordIdeaCategory](keywordideacategory.md) array|
@@ -81,32 +82,32 @@ The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.m
 ```csharp
 public async Task<GetKeywordIdeaCategoriesResponse> GetKeywordIdeaCategoriesAsync()
 {
-	var request = new GetKeywordIdeaCategoriesRequest
-	{
-	};
+    var request = new GetKeywordIdeaCategoriesRequest
+    {
+    };
 
-	return (await AdInsightService.CallAsync((s, r) => s.GetKeywordIdeaCategoriesAsync(r), request));
+    return (await AdInsightService.CallAsync((s, r) => s.GetKeywordIdeaCategoriesAsync(r), request));
 }
 ```
 ```java
 static GetKeywordIdeaCategoriesResponse getKeywordIdeaCategories() throws RemoteException, Exception
 {
-	GetKeywordIdeaCategoriesRequest request = new GetKeywordIdeaCategoriesRequest();
+    GetKeywordIdeaCategoriesRequest request = new GetKeywordIdeaCategoriesRequest();
 
 
-	return AdInsightService.getService().getKeywordIdeaCategories(request);
+    return AdInsightService.getService().getKeywordIdeaCategories(request);
 }
 ```
 ```php
 static function GetKeywordIdeaCategories()
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
 
-	$request = new GetKeywordIdeaCategoriesRequest();
+    $request = new GetKeywordIdeaCategoriesRequest();
 
 
-	return $GLOBALS['AdInsightProxy']->GetService()->GetKeywordIdeaCategories($request);
+    return $GLOBALS['AdInsightProxy']->GetService()->GetKeywordIdeaCategories($request);
 }
 ```
 ```python

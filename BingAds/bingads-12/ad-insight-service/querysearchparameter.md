@@ -24,6 +24,7 @@ The query search parameter that you can use as a seed for new keyword ideas.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="queries"></a>Queries|Up to 200 words or phrases that describe what you're advertising.|**string** array|

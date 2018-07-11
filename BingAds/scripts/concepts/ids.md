@@ -15,5 +15,5 @@ Most entities in Bing Ads expose a `getId()` method that returns the entity's id
 
 ## Next steps
 
-> [!div class="nextstepaction"]
+> [!div  class="nextstepaction"]
 > [Review the reference guide](../reference/BingAdsApp.md)

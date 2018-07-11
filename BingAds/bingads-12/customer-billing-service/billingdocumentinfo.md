@@ -27,6 +27,7 @@ Defines a billing document identification object that contains information about
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountid"></a>AccountId|The identifier of the account for which the billing document was generated.|**long**|

@@ -22,6 +22,7 @@ The *SubmitGenerateReportRequest* object defines the [body](#request-body) and [
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="reportrequest"></a>ReportRequest|The report request. The request must be an object that derives from [ReportRequest](reportrequest.md). For a list of report request types, see [Report Types](../guides/report-types.md).|[ReportRequest](reportrequest.md)|
@@ -33,6 +34,7 @@ The *SubmitGenerateReportRequest* object defines the [body](#request-body) and [
 The *SubmitGenerateReportResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -1567,44 +1569,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<SubmitGenerateReportResponse> SubmitGenerateReportAsync(
-	ReportRequest reportRequest)
+    ReportRequest reportRequest)
 {
-	var request = new SubmitGenerateReportRequest
-	{
-		ReportRequest = reportRequest
-	};
+    var request = new SubmitGenerateReportRequest
+    {
+        ReportRequest = reportRequest
+    };
 
-	return (await ReportingService.CallAsync((s, r) => s.SubmitGenerateReportAsync(r), request));
+    return (await ReportingService.CallAsync((s, r) => s.SubmitGenerateReportAsync(r), request));
 }
 ```
 ```java
 static SubmitGenerateReportResponse submitGenerateReport(
-	ReportRequest reportRequest) throws RemoteException, Exception
+    ReportRequest reportRequest) throws RemoteException, Exception
 {
-	SubmitGenerateReportRequest request = new SubmitGenerateReportRequest();
+    SubmitGenerateReportRequest request = new SubmitGenerateReportRequest();
 
-	request.setReportRequest(reportRequest);
+    request.setReportRequest(reportRequest);
 
-	return ReportingService.getService().submitGenerateReport(request);
+    return ReportingService.getService().submitGenerateReport(request);
 }
 ```
 ```php
 static function SubmitGenerateReport(
-	$reportRequest)
+    $reportRequest)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['ReportingProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['ReportingProxy'];
 
-	$request = new SubmitGenerateReportRequest();
+    $request = new SubmitGenerateReportRequest();
 
-	$request->ReportRequest = $reportRequest;
+    $request->ReportRequest = $reportRequest;
 
-	return $GLOBALS['ReportingProxy']->GetService()->SubmitGenerateReport($request);
+    return $GLOBALS['ReportingProxy']->GetService()->SubmitGenerateReport($request);
 }
 ```
 ```python
 response=reporting_service.SubmitGenerateReport(
-	ReportRequest=ReportRequest)
+    ReportRequest=ReportRequest)
 ```
 
 ## Requirements

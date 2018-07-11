@@ -26,6 +26,7 @@ If you do not include the network search parameter when calling [GetKeywordIdeas
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="network"></a>Network|The network criterion for the returned keyword ideas.|[NetworkCriterion](networkcriterion.md)|

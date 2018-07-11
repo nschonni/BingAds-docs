@@ -23,10 +23,10 @@ Once a day Bing sends a request to an endpoint that you specify asking for updat
 
 > [!NOTE]
 > Before sending messages to Bing:
->
->- Validate the message to ensure that it's compliant with the message's XSD. This will save you round trips and time having to fix errors.
->  
->- Ensure that the message contains less than 100 MB of uncompressed data or 10 MB of compressed data (using GZip compression). To reduce network traffic, you should always send compressed data.
+> 
+> - Validate the message to ensure that it's compliant with the message's XSD. This will save you round trips and time having to fix errors.
+> 
+> - Ensure that the message contains less than 100 MB of uncompressed data or 10 MB of compressed data (using GZip compression). To reduce network traffic, you should always send compressed data.
 
 
 ## Pull mode

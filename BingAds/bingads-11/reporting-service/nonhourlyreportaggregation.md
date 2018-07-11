@@ -24,6 +24,7 @@ Defines the aggregation values for reports that cannot specify hourly aggregatio
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="daily"></a>Daily|Each row of the report identifies the month, day, and year when the transaction occurred. The report data will be aggregated by each day. Each row of the report identifies the month, day, and year when the transaction occurred. The report will include a column named *GregorianDate* that contains the day formatted as *mm/dd/yyyy*.|

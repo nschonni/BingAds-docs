@@ -23,6 +23,7 @@ You can use the category identifier in the [CategorySearchParameter](categorysea
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="categoryid"></a>CategoryId|The Bing Ads identifier of the keyword idea category.|**long**|

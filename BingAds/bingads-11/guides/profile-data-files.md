@@ -25,6 +25,7 @@ Each comma separated value (CSV) file contains data organized in the following n
 ### <a name="companyname"></a>Company Name Profile
 If you set the [ProfileType](../campaign-management-service/getprofiledatafileurl.md#profiletype) to *CompanyName* when calling the [GetProfileDataFileUrl](../campaign-management-service/getprofiledatafileurl.md) operation, the following company name data is available in the downloaded *companies.csv* file. 
 
+
 |Column Name|Description|
 |---------------|---------------|
 |Profile Id|The unique Bing Ads system identifier for the profile.<br/><br/>In *companies.csv* this is the unique identifier of the company.|
@@ -38,6 +39,7 @@ If you set the [ProfileType](../campaign-management-service/getprofiledatafileur
 ### <a name="industry"></a>Industry Profile
 If you set the [ProfileType](../campaign-management-service/getprofiledatafileurl.md#profiletype) to *Industry* when calling the [GetProfileDataFileUrl](../campaign-management-service/getprofiledatafileurl.md) operation, the following industry data is available in the downloaded *industries.csv* file. 
 
+
 |Column Name|Description|
 |---------------|---------------|
 |Profile Id|The unique Bing Ads system identifier for the profile.<br/><br/>In *industries.csv* this is the unique identifier of the industry.|
@@ -48,6 +50,7 @@ If you set the [ProfileType](../campaign-management-service/getprofiledatafileur
 
 ### <a name="jobfunction"></a>Job Function Profile
 If you set the [ProfileType](../campaign-management-service/getprofiledatafileurl.md#profiletype) to *JobFunction* when calling the [GetProfileDataFileUrl](../campaign-management-service/getprofiledatafileurl.md) operation, the following job function data is available in the downloaded *companies.csv* file. 
+
 
 |Column Name|Description|
 |---------------|---------------|

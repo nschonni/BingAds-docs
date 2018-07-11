@@ -27,6 +27,7 @@ Defines an object with *multiple* sitelinks per ad extension. You can use the si
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="sitelinks"></a>SiteLinks|A list of site links. Each object contains a link to a webpage on your website. You can specify a maximum of 10 site links, and the search engine determines a subset of links to include in the ad. If you specify the *Description1* and *Description2* elements of each site link, then up to four site links will be displayed.<br/><br/>**Add:** Required<br/>**Update:** Required|[SiteLink](sitelink.md) array|
@@ -37,6 +38,7 @@ The [SiteLinksAdExtension](sitelinksadextension.md) object has [Inherited Elemen
 
 ### <a name="inheritedelementsadextension"></a>Inherited Elements from AdExtension
 The [SiteLinksAdExtension](sitelinksadextension.md) object derives from the [AdExtension](adextension.md) object, and inherits the following elements. The descriptions below are specific to [SiteLinksAdExtension](sitelinksadextension.md), and might not apply to other objects that inherit the same elements from the [AdExtension](adextension.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

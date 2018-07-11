@@ -22,6 +22,7 @@ To authenticate with a Microsoft Account in sandbox you will follow the same wor
 
 For the sandbox environment, the following are the endpoints you must use to get Microsoft accounts and your application's client ID. Wherever you see endpoints mentioned in [Authentication with OAuth](authentication-oauth.md), substitute them with the sandbox endpoints. 
 
+
 |Description|Production|Sandbox|
 |---|---|---|
 |Domain for email used when getting a Microsoft account|Any email address|outlook-int.com|
@@ -34,47 +35,47 @@ Also as mentioned above, supported services in sandbox vary from production. To 
 ### <a name="initial-sign-up"></a>Initial Customer Sign Up
 Follow these steps to get a new sandbox customer. If you already have a sandbox customer and want to add a new user e.g., with Microsoft account credentials, you can skip to the [user invitation](#invite-user) steps.
 
-1.	Open a browser and navigate to [sandbox.bingads.microsoft.com](https://secure.sandbox.bingads.microsoft.com/)
-2.	Click **Sign up for Bing Ads** or **Sign up now**
-3.	Select **Create a new email address** to create an MSA. Do not use an existing email address. 
-4.	Click **Next**
-5.	Enter an MSA email address. The email server must be outlook**-int**.com (for example, someone@outlook-int.com). 
+1. Open a browser and navigate to [sandbox.bingads.microsoft.com](https://secure.sandbox.bingads.microsoft.com/)
+2. Click **Sign up for Bing Ads** or **Sign up now**
+3. Select **Create a new email address** to create an MSA. Do not use an existing email address. 
+4. Click **Next**
+5. Enter an MSA email address. The email server must be outlook**-int**.com (for example, someone@outlook-int.com). 
 
-    > [!IMPORTANT]
-    > Sandbox supports MSAs created using an @outlook**-int**.com email account only. You may not use an @outlook.com email account. Also, you may not use an email account from another email service (for example, @contoso.com) even if the account is linked to an @outlook.com or @outlook**-int**.com email account.  
+   > [!IMPORTANT]
+   > Sandbox supports MSAs created using an @outlook**-int**.com email account only. You may not use an @outlook.com email account. Also, you may not use an email account from another email service (for example, @contoso.com) even if the account is linked to an @outlook.com or @outlook**-int**.com email account.  
 
-6.	Finish the MSA work flow by specifying the rest of your user and security information. You will then be redirected to Bing Ads to continue the sandbox customer and account sign up. 
-7.	Fill out the **Create Account** form
-8.	For **Import/Create Campaign**, click **Skip campaign creation**
-9.	For **Go Live**, click **Skip payment information**
+6. Finish the MSA work flow by specifying the rest of your user and security information. You will then be redirected to Bing Ads to continue the sandbox customer and account sign up. 
+7. Fill out the **Create Account** form
+8. For **Import/Create Campaign**, click **Skip campaign creation**
+9. For **Go Live**, click **Skip payment information**
 
 ### <a name="invite-user"></a>Invite More Users
 To use OAuth in sandbox, you need a sandbox Microsoft account (MSA). If your sandbox customer does not yet have user credentials via a Microsoft account, you need to invite a user to work on your [sandbox](https://secure.sandbox.bingads.microsoft.com/) account via the following steps.
 
-1.	In Bing Ads [sandbox](https://secure.sandbox.bingads.microsoft.com/), click your user name (upper right corner)
-2.	Click **Accounts & Billing**
-3.	Click **Users**
-4.	Click **Invite user**
-5.	Enter the email address of the user to invite. The email server must be outlook.com (for example, someone@outlook.com). 
+1. In Bing Ads [sandbox](https://secure.sandbox.bingads.microsoft.com/), click your user name (upper right corner)
+2. Click **Accounts & Billing**
+3. Click **Users**
+4. Click **Invite user**
+5. Enter the email address of the user to invite. The email server must be outlook.com (for example, someone@outlook.com). 
 
-    > [!IMPORTANT]
-    > You may send invites to @outlook.com email accounts only. You may not send invites to any other domain, even if the account is linked to an @outlook.com email account. If you try to send an invite to another domain (for example, someone@contoso.com), the BingAds UI will show the invite as pending indefinitely (the invite is never sent).
+   > [!IMPORTANT]
+   > You may send invites to @outlook.com email accounts only. You may not send invites to any other domain, even if the account is linked to an @outlook.com email account. If you try to send an invite to another domain (for example, someone@contoso.com), the BingAds UI will show the invite as pending indefinitely (the invite is never sent).
 
-6.	Click **Send**
+6. Click **Send**
 
 Bing Ads sends an email invite to the user. If the invite doesn’t show up in the inbox, check the Junk Email folder. It may take a couple of minutes to receive the invite. The following steps show how to accept the invitation.
 
-1.	Open the email from Bing Ads with subject line, Invitation to Bing Ads
-2.	Click the embedded link
-3.	Select **Create a new email address** to create an MSA. Do not use an existing email address. 
-4.	Click **Next**
-5.	Enter an MSA email address. The email server must be outlook**-int**.com (for example, someone@outlook-int.com). 
+1. Open the email from Bing Ads with subject line, Invitation to Bing Ads
+2. Click the embedded link
+3. Select **Create a new email address** to create an MSA. Do not use an existing email address. 
+4. Click **Next**
+5. Enter an MSA email address. The email server must be outlook**-int**.com (for example, someone@outlook-int.com). 
 
-    > [!IMPORTANT]
-    > Sandbox supports MSAs created using an @outlook**-int**.com email account only. You may not use an @outlook.com email account. Also, you may not use an email account from another email service (for example, @contoso.com) even if the account is linked to an @outlook.com or @outlook**-int**.com email account.  
+   > [!IMPORTANT]
+   > Sandbox supports MSAs created using an @outlook**-int**.com email account only. You may not use an @outlook.com email account. Also, you may not use an email account from another email service (for example, @contoso.com) even if the account is linked to an @outlook.com or @outlook**-int**.com email account.  
 
-6.	Finish the work flow by specifying the rest of your user information
-7.  Exit Bing Ads after completing the MSA process.
+6. Finish the work flow by specifying the rest of your user information
+7. Exit Bing Ads after completing the MSA process.
 
 After Bing creates the account, you may use the @outlook**-int**.com credentials in sandbox and during [app registration](https://apps.dev.microsoft-int.com/#/appList).
 
@@ -84,10 +85,10 @@ After Bing creates the account, you may use the @outlook**-int**.com credentials
 ## <a name="bestpractices"></a>Sandbox Best Practices
 Sandbox should not be used in the same capacity as production.
 
--   Make sure that when you deploy your application to the production environment, you use the production WSDLs and your production credentials.  
--   Sandbox contains the current production release, and will be updated with feature previews with or without prior notification.  
--   Capacity of the sandbox is less than that of production, and you should not use it to perform stress or capacity testing.  
--   Please do not use more than one thread.    
+- Make sure that when you deploy your application to the production environment, you use the production WSDLs and your production credentials.  
+- Sandbox contains the current production release, and will be updated with feature previews with or without prior notification.  
+- Capacity of the sandbox is less than that of production, and you should not use it to perform stress or capacity testing.  
+- Please do not use more than one thread.    
 
 ## <a name="adinsight"></a>Ad Insight Service
 Opportunities are updated daily in sandbox for existing campaigns, ad groups, and keywords to test the end to end coding workflow. You may get test opportunities for up to 1,000 keywords across all accounts per Bing Ads customer. You should not use the test data to infer or expect similar performance for your campaigns, ad groups, or keywords in production.
@@ -97,6 +98,7 @@ Opportunities are updated daily in sandbox for existing campaigns, ad groups, an
 
 ### <a name="supportedkeywords"></a>Supported Keywords
 Sandbox supports a limited set of keywords for testing Ad Insight service operations. You should not use the test data to infer or expect similar estimates for your keywords in production. You may use the following set of keywords to test your application.
+
 
 |Supported Keywords for Ad Insight Sandbox|
 |---------------------------------------------|
@@ -118,6 +120,7 @@ Sandbox supports a limited set of keywords for testing Ad Insight service operat
 
 ### <a name="ad-insight-serviceops"></a>Service Operations
 Ad Insight service operations differ from production, and limitations are described in the following table.
+
 
 |Service Operation|Sandbox Limitations|
 |---------------------|-----------------------|
@@ -149,6 +152,7 @@ If you know of editorial terms that will fail editorial review, you can use them
 
 You must specify a value for each component of the term.
 
+
 |Component|Description|
 |-------------|---------------|
 |*MatchType*|Determines whether the magic term is the only word in the keyword. The following are the possible match-type values (not case sensitive) that you can specify.<br /><br />e - Exact. The keyword must contain only the magic term.<br /><br />p - Phrase. The keyword can contain other words in addition to the magic term.|
@@ -161,38 +165,38 @@ You must specify a value for each component of the term.
 ##### Where to use the magic term
 You can use magic terms in the following locations.
 
--   A text ad's *Title* element.  
--   A text ad's *Description* element.  
--   A keyword's *Text* element.  
+- A text ad's *Title* element.  
+- A text ad's *Description* element.  
+- A keyword's *Text* element.  
 
 ##### Example magic term
 If you specified a term using the following components, the resulting term would be pen3m569m1.
 
--   Match type: Phrase 
--   Language: English   
--   Flag area: Alcohol  
--   Editorial status per country: 569 (001000111001), which is broken out as follows.
-    -   Rejected in US  
-    -   Pending inactive in GB  
-    -   Pending active in CA  
-    -   Approved in IN  
-    -   Pending inactive in SG  
-    -   Approved in IE
+- Match type: Phrase 
+- Language: English   
+- Flag area: Alcohol  
+- Editorial status per country: 569 (001000111001), which is broken out as follows.
+  - Rejected in US  
+  - Pending inactive in GB  
+  - Pending active in CA  
+  - Approved in IN  
+  - Pending inactive in SG  
+  - Approved in IE
 
 ### <a name="productads"></a>Product Ads
 Product ads are supported in sandbox in the United States. To be auto-approved you must create a catalog and a Bing Merchant Center store that ends with "sandbox" as follows.
 
-1.  In the Bing Ads web application click on **Tools**.
+1. In the Bing Ads web application click on **Tools**.
 
-2.  Under **Management Tools**, click on **Bing Merchant Center**.
+2. Under **Management Tools**, click on **Bing Merchant Center**.
 
-3.  Click **Create store**, and enter a store name that ends with "**sandbox**" (case-insensitive).
+3. Click **Create store**, and enter a store name that ends with "**sandbox**" (case-insensitive).
 
-4.  Add your store info, select **Product Ads** under **Catalog settings**, and click **Finish**.
+4. Add your store info, select **Product Ads** under **Catalog settings**, and click **Finish**.
 
-5.  In your new store, click **Catalog management**, and then click **Create catalog**.
+5. In your new store, click **Catalog management**, and then click **Create catalog**.
 
-6.  Add your catalog name, select **Manually upload file later** under **Catalog feed file**, and click **Save**.
+6. Add your catalog name, select **Manually upload file later** under **Catalog feed file**, and click **Save**.
 
 ## <a name="billing"></a>Customer Billing Service
 The Customer Billing service is not supported in sandbox.
@@ -207,13 +211,13 @@ Test data is generated only for the same day when the entity was added or update
 
 The following reports can return performance data in sandbox. All other report types can be submitted successfully, although the sandbox service will not return any example data i.e., the report download URL will be not be set when you poll for results.
 
--   [AccountPerformanceReportRequest](../reporting-service/accountperformancereportrequest.md)  
--   [AdDynamicTextPerformanceReportRequest](../reporting-service/addynamictextperformancereportrequest.md)  
--   [AdGroupPerformanceReportRequest](../reporting-service/adgroupperformancereportrequest.md)  
--   [AdPerformanceReportRequest](../reporting-service/adperformancereportrequest.md)  
--   [CallDetailReportRequest](../reporting-service/calldetailreportrequest.md)  
--   [CampaignPerformanceReportRequest](../reporting-service/campaignperformancereportrequest.md)  
--   [DestinationUrlPerformanceReportRequest](../reporting-service/destinationurlperformancereportrequest.md)  
--   [KeywordPerformanceReportRequest](../reporting-service/keywordperformancereportrequest.md)  
--   [UserLocationPerformanceReportRequest](../reporting-service/userlocationperformancereportrequest.md)  
+- [AccountPerformanceReportRequest](../reporting-service/accountperformancereportrequest.md)  
+- [AdDynamicTextPerformanceReportRequest](../reporting-service/addynamictextperformancereportrequest.md)  
+- [AdGroupPerformanceReportRequest](../reporting-service/adgroupperformancereportrequest.md)  
+- [AdPerformanceReportRequest](../reporting-service/adperformancereportrequest.md)  
+- [CallDetailReportRequest](../reporting-service/calldetailreportrequest.md)  
+- [CampaignPerformanceReportRequest](../reporting-service/campaignperformancereportrequest.md)  
+- [DestinationUrlPerformanceReportRequest](../reporting-service/destinationurlperformancereportrequest.md)  
+- [KeywordPerformanceReportRequest](../reporting-service/keywordperformancereportrequest.md)  
+- [UserLocationPerformanceReportRequest](../reporting-service/userlocationperformancereportrequest.md)  
 

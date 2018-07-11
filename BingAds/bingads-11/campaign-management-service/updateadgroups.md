@@ -19,6 +19,7 @@ The *UpdateAdGroupsRequest* object defines the [body](#request-body) and [header
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroups"></a>AdGroups|An array that can contain a maximum of 1,000 [AdGroup](adgroup.md) objects to update.|[AdGroup](adgroup.md) array|
@@ -32,6 +33,7 @@ The *UpdateAdGroupsRequest* object defines the [body](#request-body) and [header
 The *UpdateAdGroupsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -200,58 +202,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<UpdateAdGroupsResponse> UpdateAdGroupsAsync(
-	long campaignId,
-	IList<AdGroup> adGroups,
-	bool updateNativeBidAdjustment)
+    long campaignId,
+    IList<AdGroup> adGroups,
+    bool updateNativeBidAdjustment)
 {
-	var request = new UpdateAdGroupsRequest
-	{
-		CampaignId = campaignId,
-		AdGroups = adGroups,
-		UpdateNativeBidAdjustment = updateNativeBidAdjustment
-	};
+    var request = new UpdateAdGroupsRequest
+    {
+        CampaignId = campaignId,
+        AdGroups = adGroups,
+        UpdateNativeBidAdjustment = updateNativeBidAdjustment
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.UpdateAdGroupsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.UpdateAdGroupsAsync(r), request));
 }
 ```
 ```java
 static UpdateAdGroupsResponse updateAdGroups(
-	java.lang.Long campaignId,
-	ArrayOfAdGroup adGroups,
-	boolean updateNativeBidAdjustment) throws RemoteException, Exception
+    java.lang.Long campaignId,
+    ArrayOfAdGroup adGroups,
+    boolean updateNativeBidAdjustment) throws RemoteException, Exception
 {
-	UpdateAdGroupsRequest request = new UpdateAdGroupsRequest();
+    UpdateAdGroupsRequest request = new UpdateAdGroupsRequest();
 
-	request.setCampaignId(campaignId);
-	request.setAdGroups(adGroups);
-	request.setUpdateNativeBidAdjustment(updateNativeBidAdjustment);
+    request.setCampaignId(campaignId);
+    request.setAdGroups(adGroups);
+    request.setUpdateNativeBidAdjustment(updateNativeBidAdjustment);
 
-	return CampaignManagementService.getService().updateAdGroups(request);
+    return CampaignManagementService.getService().updateAdGroups(request);
 }
 ```
 ```php
 static function UpdateAdGroups(
-	$campaignId,
-	$adGroups,
-	$updateNativeBidAdjustment)
+    $campaignId,
+    $adGroups,
+    $updateNativeBidAdjustment)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new UpdateAdGroupsRequest();
+    $request = new UpdateAdGroupsRequest();
 
-	$request->CampaignId = $campaignId;
-	$request->AdGroups = $adGroups;
-	$request->UpdateNativeBidAdjustment = $updateNativeBidAdjustment;
+    $request->CampaignId = $campaignId;
+    $request->AdGroups = $adGroups;
+    $request->UpdateNativeBidAdjustment = $updateNativeBidAdjustment;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateAdGroups($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateAdGroups($request);
 }
 ```
 ```python
 response=campaignmanagement_service.UpdateAdGroups(
-	CampaignId=CampaignId,
-	AdGroups=AdGroups,
-	UpdateNativeBidAdjustment=UpdateNativeBidAdjustment)
+    CampaignId=CampaignId,
+    AdGroups=AdGroups,
+    UpdateNativeBidAdjustment=UpdateNativeBidAdjustment)
 ```
 
 ## Requirements

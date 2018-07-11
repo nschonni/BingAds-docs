@@ -22,9 +22,9 @@ With the Bing Ads web application's Keyword Planner tool you search for new keyw
 ![GetKeywordIdeas to Keyword Planner UI](media/getkeywordideas-keyword-planner-ui.png "GetKeywordIdeas to Keyword Planner UI")
 
 Likewise with the [GetKeywordIdeas](../ad-insight-service/getkeywordideas.md) operation you must specify one or more of the corresponding search parameters.
--  The [QuerySearchParameter](../ad-insight-service/querysearchparameter.md) corresponds to filling in *Product or service*.
--  The [UrlSearchParameter](../ad-insight-service/urlsearchparameter.md) corresponds to filling in *Your landing page*.
--  The [CategorySearchParameter](../ad-insight-service/categorysearchparameter.md) corresponds to filling in *Your product category*. To get a list of keyword category identifiers, use the [GetKeywordIdeaCategories](../ad-insight-service/getkeywordideacategories.md) service operation.
+- The [QuerySearchParameter](../ad-insight-service/querysearchparameter.md) corresponds to filling in *Product or service*.
+- The [UrlSearchParameter](../ad-insight-service/urlsearchparameter.md) corresponds to filling in *Your landing page*.
+- The [CategorySearchParameter](../ad-insight-service/categorysearchparameter.md) corresponds to filling in *Your product category*. To get a list of keyword category identifiers, use the [GetKeywordIdeaCategories](../ad-insight-service/getkeywordideacategories.md) service operation.
 
 With the Bing Ads web application's Keyword Planner tool you can refine the search for example, by location, language, network, and negative keywords. Likewise with the [GetKeywordIdeas](../ad-insight-service/getkeywordideas.md) operation you must specify all of these search parameters: [LanguageSearchParameter](../ad-insight-service/languagesearchparameter.md), [LocationSearchParameter](../ad-insight-service/locationsearchparameter.md), and [NetworkSearchParameter](../ad-insight-service/networksearchparameter.md). 
 
@@ -40,7 +40,7 @@ With the Bing Ads web application's Keyword Planner tool under *Get performance 
 ![GetKeywordTrafficEstimates to Keyword Planner UI](media/getkeywordtrafficestimates-keyword-planner-ui.png "GetKeywordTrafficEstimates to Keyword Planner UI")
 
 The following inputs are required for the [GetKeywordTrafficEstimates](../ad-insight-service/getkeywordtrafficestimates.md) operation.
--  In the *Criteria* element of the [CampaignEstimator](../ad-insight-service/campaignestimator.md) object you must specify all of these criteria: [LanguageCriterion](../ad-insight-service/languagecriterion.md), [LocationCriterion](../ad-insight-service/locationcriterion.md), and [NetworkCriterion](../ad-insight-service/networkcriterion.md).
+- In the *Criteria* element of the [CampaignEstimator](../ad-insight-service/campaignestimator.md) object you must specify all of these criteria: [LanguageCriterion](../ad-insight-service/languagecriterion.md), [LocationCriterion](../ad-insight-service/locationcriterion.md), and [NetworkCriterion](../ad-insight-service/networkcriterion.md).
 - In the *AdGroupEstimators* element of the [CampaignEstimator](../ad-insight-service/campaignestimator.md) object you must include one or more [AdGroupEstimator](../ad-insight-service/adgroupestimator.md) objects. Each [AdGroupEstimator](../ad-insight-service/adgroupestimator.md) must include one or more [KeywordEstimator](../ad-insight-service/keywordestimator.md) objects. Each [KeywordEstimator](../ad-insight-service/keywordestimator.md) object must contain the keyword text and match type.
 
 The following inputs are optional for the [GetKeywordTrafficEstimates](../ad-insight-service/getkeywordtrafficestimates.md) operation.

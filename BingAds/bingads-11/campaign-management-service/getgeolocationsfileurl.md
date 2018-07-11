@@ -24,6 +24,7 @@ The *GetGeoLocationsFileUrlRequest* object defines the [body](#request-body) and
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="languagelocale"></a>LanguageLocale|The language and locale of the geographical location code descriptions. The supported language locale values are *zh-Hant* (Traditional Chinese), *en* (English), *fr* (French), *de* (German), *it* (Italian), *pt-BR* (Brazilian Portuguese), and *es* (Spanish).<br/><br/>This request element is required.|**string**|
@@ -36,6 +37,7 @@ The *GetGeoLocationsFileUrlRequest* object defines the [body](#request-body) and
 The *GetGeoLocationsFileUrlResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -92,51 +94,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetGeoLocationsFileUrlResponse> GetGeoLocationsFileUrlAsync(
-	string version,
-	string languageLocale)
+    string version,
+    string languageLocale)
 {
-	var request = new GetGeoLocationsFileUrlRequest
-	{
-		Version = version,
-		LanguageLocale = languageLocale
-	};
+    var request = new GetGeoLocationsFileUrlRequest
+    {
+        Version = version,
+        LanguageLocale = languageLocale
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetGeoLocationsFileUrlAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetGeoLocationsFileUrlAsync(r), request));
 }
 ```
 ```java
 static GetGeoLocationsFileUrlResponse getGeoLocationsFileUrl(
-	java.lang.String version,
-	java.lang.String languageLocale) throws RemoteException, Exception
+    java.lang.String version,
+    java.lang.String languageLocale) throws RemoteException, Exception
 {
-	GetGeoLocationsFileUrlRequest request = new GetGeoLocationsFileUrlRequest();
+    GetGeoLocationsFileUrlRequest request = new GetGeoLocationsFileUrlRequest();
 
-	request.setVersion(version);
-	request.setLanguageLocale(languageLocale);
+    request.setVersion(version);
+    request.setLanguageLocale(languageLocale);
 
-	return CampaignManagementService.getService().getGeoLocationsFileUrl(request);
+    return CampaignManagementService.getService().getGeoLocationsFileUrl(request);
 }
 ```
 ```php
 static function GetGeoLocationsFileUrl(
-	$version,
-	$languageLocale)
+    $version,
+    $languageLocale)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetGeoLocationsFileUrlRequest();
+    $request = new GetGeoLocationsFileUrlRequest();
 
-	$request->Version = $version;
-	$request->LanguageLocale = $languageLocale;
+    $request->Version = $version;
+    $request->LanguageLocale = $languageLocale;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetGeoLocationsFileUrl($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetGeoLocationsFileUrl($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetGeoLocationsFileUrl(
-	Version=Version,
-	LanguageLocale=LanguageLocale)
+    Version=Version,
+    LanguageLocale=LanguageLocale)
 ```
 
 ## Requirements

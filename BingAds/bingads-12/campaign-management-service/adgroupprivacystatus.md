@@ -23,6 +23,7 @@ Defines possible values for ad group privacy status in Audience campaigns.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The ad group is eligible to serve.|

@@ -12,10 +12,11 @@ ms.author: "scottwhi"
 
 > [!NOTE]
 > This beta release of Hotel Ads is available to select participants only. For information about participating in the beta release program, please contact your account manager.
->
+> 
 > The QueryControl Message and documentation are subject to change.
 
 If you signed up to have Bing pull your itinerary data, use query control messages to specify default values for maximum advanced bookings and night stays for all properties, override default values for a subset of properties, and identify properties that you don't want Bing to collect data for. For information about working with query control messages, see the following sections: 
+
 
 |Topic|Description
 |-|-

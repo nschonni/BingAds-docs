@@ -22,6 +22,7 @@ The *GetBidLandscapeByKeywordIdsRequest* object defines the [body](#request-body
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="includecurrentbid"></a>IncludeCurrentBid|When set to **false**, the suggested bid values might not include the keyword's current bid. The default value is **false**.<br /><br />When set to **true**, one of the suggested bid values will be equal to the keyword's current bid.|**boolean**|
@@ -34,6 +35,7 @@ The *GetBidLandscapeByKeywordIdsRequest* object defines the [body](#request-body
 The *GetBidLandscapeByKeywordIdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -113,51 +115,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetBidLandscapeByKeywordIdsResponse> GetBidLandscapeByKeywordIdsAsync(
-	IList<long> keywordIds,
-	bool? includeCurrentBid)
+    IList<long> keywordIds,
+    bool? includeCurrentBid)
 {
-	var request = new GetBidLandscapeByKeywordIdsRequest
-	{
-		KeywordIds = keywordIds,
-		IncludeCurrentBid = includeCurrentBid
-	};
+    var request = new GetBidLandscapeByKeywordIdsRequest
+    {
+        KeywordIds = keywordIds,
+        IncludeCurrentBid = includeCurrentBid
+    };
 
-	return (await AdInsightService.CallAsync((s, r) => s.GetBidLandscapeByKeywordIdsAsync(r), request));
+    return (await AdInsightService.CallAsync((s, r) => s.GetBidLandscapeByKeywordIdsAsync(r), request));
 }
 ```
 ```java
 static GetBidLandscapeByKeywordIdsResponse getBidLandscapeByKeywordIds(
-	ArrayOflong keywordIds,
-	boolean includeCurrentBid) throws RemoteException, Exception
+    ArrayOflong keywordIds,
+    boolean includeCurrentBid) throws RemoteException, Exception
 {
-	GetBidLandscapeByKeywordIdsRequest request = new GetBidLandscapeByKeywordIdsRequest();
+    GetBidLandscapeByKeywordIdsRequest request = new GetBidLandscapeByKeywordIdsRequest();
 
-	request.setKeywordIds(keywordIds);
-	request.setIncludeCurrentBid(includeCurrentBid);
+    request.setKeywordIds(keywordIds);
+    request.setIncludeCurrentBid(includeCurrentBid);
 
-	return AdInsightService.getService().getBidLandscapeByKeywordIds(request);
+    return AdInsightService.getService().getBidLandscapeByKeywordIds(request);
 }
 ```
 ```php
 static function GetBidLandscapeByKeywordIds(
-	$keywordIds,
-	$includeCurrentBid)
+    $keywordIds,
+    $includeCurrentBid)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
 
-	$request = new GetBidLandscapeByKeywordIdsRequest();
+    $request = new GetBidLandscapeByKeywordIdsRequest();
 
-	$request->KeywordIds = $keywordIds;
-	$request->IncludeCurrentBid = $includeCurrentBid;
+    $request->KeywordIds = $keywordIds;
+    $request->IncludeCurrentBid = $includeCurrentBid;
 
-	return $GLOBALS['AdInsightProxy']->GetService()->GetBidLandscapeByKeywordIds($request);
+    return $GLOBALS['AdInsightProxy']->GetService()->GetBidLandscapeByKeywordIds($request);
 }
 ```
 ```python
 response=adinsight_service.GetBidLandscapeByKeywordIds(
-	KeywordIds=KeywordIds,
-	IncludeCurrentBid=IncludeCurrentBid)
+    KeywordIds=KeywordIds,
+    IncludeCurrentBid=IncludeCurrentBid)
 ```
 
 ## Requirements

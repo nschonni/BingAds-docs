@@ -19,6 +19,7 @@ The *GetLabelsByIdsRequest* object defines the [body](#request-body) and [header
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="labelids"></a>LabelIds|The identifiers of the labels to get.<br /><br />The maximum size of the list is 1,000 items per service request. If this element is not specified, the operation will return all active labels in the account (1,000 results per page).|**long** array|
@@ -31,6 +32,7 @@ The *GetLabelsByIdsRequest* object defines the [body](#request-body) and [header
 The *GetLabelsByIdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -119,51 +121,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetLabelsByIdsResponse> GetLabelsByIdsAsync(
-	IList<long> labelIds,
-	Paging pageInfo)
+    IList<long> labelIds,
+    Paging pageInfo)
 {
-	var request = new GetLabelsByIdsRequest
-	{
-		LabelIds = labelIds,
-		PageInfo = pageInfo
-	};
+    var request = new GetLabelsByIdsRequest
+    {
+        LabelIds = labelIds,
+        PageInfo = pageInfo
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetLabelsByIdsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetLabelsByIdsAsync(r), request));
 }
 ```
 ```java
 static GetLabelsByIdsResponse getLabelsByIds(
-	ArrayOflong labelIds,
-	Paging pageInfo) throws RemoteException, Exception
+    ArrayOflong labelIds,
+    Paging pageInfo) throws RemoteException, Exception
 {
-	GetLabelsByIdsRequest request = new GetLabelsByIdsRequest();
+    GetLabelsByIdsRequest request = new GetLabelsByIdsRequest();
 
-	request.setLabelIds(labelIds);
-	request.setPageInfo(pageInfo);
+    request.setLabelIds(labelIds);
+    request.setPageInfo(pageInfo);
 
-	return CampaignManagementService.getService().getLabelsByIds(request);
+    return CampaignManagementService.getService().getLabelsByIds(request);
 }
 ```
 ```php
 static function GetLabelsByIds(
-	$labelIds,
-	$pageInfo)
+    $labelIds,
+    $pageInfo)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetLabelsByIdsRequest();
+    $request = new GetLabelsByIdsRequest();
 
-	$request->LabelIds = $labelIds;
-	$request->PageInfo = $pageInfo;
+    $request->LabelIds = $labelIds;
+    $request->PageInfo = $pageInfo;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetLabelsByIds($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetLabelsByIds($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetLabelsByIds(
-	LabelIds=LabelIds,
-	PageInfo=PageInfo)
+    LabelIds=LabelIds,
+    PageInfo=PageInfo)
 ```
 
 ## Requirements

@@ -11,13 +11,13 @@ The bulk schema defines the contents of the file for download or upload with the
 
 For more information about using the Bulk service to manage your campaigns, see [Bulk Download and Upload](../guides/bulk-download-upload.md). For more information about understanding the data file contents, see the sections below.
 
--   [File Schema](#fileschema)  
--   [Format Versions](#formatversions)  
--   [Record Types](#recordtypes)  
--   [Type Hierarchy](#typehierarchy)  
--   [Reference Keys](#referencekeys)  
--   [Client Identifiers](#clientid)  
--   [Errors](#errors)
+- [File Schema](#fileschema)  
+- [Format Versions](#formatversions)  
+- [Record Types](#recordtypes)  
+- [Type Hierarchy](#typehierarchy)  
+- [Reference Keys](#referencekeys)  
+- [Client Identifiers](#clientid)  
+- [Errors](#errors)
 
 ## <a name="fileschema"></a>File Schema
 You can choose to download either a tab or comma delimited set of records (rows) and fields (columns). The first column header is named *Type*.  The rest of the column names map to properties within or associated with the corresponding record type.
@@ -37,6 +37,7 @@ Records available for upload and download using [Format Version](#formatversions
 
 > [!IMPORTANT]
 > New record types (rows) and fields (columns) may be added anytime, and you should not depend on record or field order in the bulk download or bulk upload results file.
+
 
 Record Type  |Supported Campaign Types  
 ---------|---------
@@ -152,38 +153,38 @@ Record Type  |Supported Campaign Types
 ## <a name="typehierarchy"></a>Type Hierarchy
 The download file will always include a record for the [Format Version](format-version.md) and [Account](account.md) record types. For upload, the [Format Version](format-version.md) is required and must precede all other record types in the bulk file.  
 
--  If a parent entity is created in the same file, it should precede any dependent child records in the bulk file. For example as shown in the diagram below, when associating a site link ad extension with a campaign, the [Campaign Sitelink Ad Extension](campaign-sitelink-ad-extension.md) record must be included in the file after both the [Campaign](campaign.md) and [Sitelink Ad Extension](sitelink-ad-extension.md) records. The *Id* and *Parent Id* fields of the [Campaign Sitelink Ad Extension](campaign-sitelink-ad-extension.md) record should be set to the identifier of the [Sitelink Ad Extension](sitelink-ad-extension.md) and [Campaign](campaign.md) records respectively. If the [Sitelink Ad Extension](sitelink-ad-extension.md) and [Campaign](campaign.md) records are also new and do not yet have assigned Bing Ads identifiers, then you should use [Reference Keys](#referencekeys).  
+- If a parent entity is created in the same file, it should precede any dependent child records in the bulk file. For example as shown in the diagram below, when associating a site link ad extension with a campaign, the [Campaign Sitelink Ad Extension](campaign-sitelink-ad-extension.md) record must be included in the file after both the [Campaign](campaign.md) and [Sitelink Ad Extension](sitelink-ad-extension.md) records. The *Id* and *Parent Id* fields of the [Campaign Sitelink Ad Extension](campaign-sitelink-ad-extension.md) record should be set to the identifier of the [Sitelink Ad Extension](sitelink-ad-extension.md) and [Campaign](campaign.md) records respectively. If the [Sitelink Ad Extension](sitelink-ad-extension.md) and [Campaign](campaign.md) records are also new and do not yet have assigned Bing Ads identifiers, then you should use [Reference Keys](#referencekeys).  
 
   ![Record Type Hierarchy](media/bulkrecordhierarchy.gif)
 
--  It is not required to include the record for a parent entity that already has been assigned a valid Bing Ads identifier.
+- It is not required to include the record for a parent entity that already has been assigned a valid Bing Ads identifier.
 
--  Partial success is supported when adding, updating, and deleting bulk file records. For example if you try to add three campaigns and only two are correctly specified in the file, then two will be added. The results file will include details for both successful [Campaign](campaign.md) records, one attempted [Campaign](campaign.md) record, and one *Campaign Error* record.
+- Partial success is supported when adding, updating, and deleting bulk file records. For example if you try to add three campaigns and only two are correctly specified in the file, then two will be added. The results file will include details for both successful [Campaign](campaign.md) records, one attempted [Campaign](campaign.md) record, and one *Campaign Error* record.
 
--  If the new campaign identifier is not yet known, for example when adding a campaign, ad group, text ad, and keyword in the same file, specify the *Campaign* name as the [Logical Reference Key](#logicalkey) for any child records. It is not necessary to specify an existing parent in the upload.
+- If the new campaign identifier is not yet known, for example when adding a campaign, ad group, text ad, and keyword in the same file, specify the *Campaign* name as the [Logical Reference Key](#logicalkey) for any child records. It is not necessary to specify an existing parent in the upload.
 
--  Partial updates are supported for bulk records including negative keywords, negative sites, and target criterions. For example you can update the bid of a single location criterion, and you do not need to download and upload the entire set of target criterions for the campaign or ad group. 
--  When updating a record, the *Id* field for the updated record is required. The *Parent Id* or [Reference Keys](#referencekeys) to the parent record is also required.
+- Partial updates are supported for bulk records including negative keywords, negative sites, and target criterions. For example you can update the bid of a single location criterion, and you do not need to download and upload the entire set of target criterions for the campaign or ad group. 
+- When updating a record, the *Id* field for the updated record is required. The *Parent Id* or [Reference Keys](#referencekeys) to the parent record is also required.
 
--  When updating the campaign or ad group name, it is optional to specify the new name for the child records if the correct *Parent Id* is provided.
+- When updating the campaign or ad group name, it is optional to specify the new name for the child records if the correct *Parent Id* is provided.
 
--  Use the reserved *delete_value* string to delete or empty the existing value of an optional field. If you use *delete_value* in required fields, please note the following.
+- Use the reserved *delete_value* string to delete or empty the existing value of an optional field. If you use *delete_value* in required fields, please note the following.
 
--  If you use the reserved *delete_value* string in place of a required string value, *delete_value* will be ignored and the results file will show *delete_value* in that field. For example if you set the *Budget* field of the [Campaign](campaign.md) record to *delete_value*, then the *Budget* field would be set to *delete_value* in the results file. In this example the campaign's budget would not be updated.
+- If you use the reserved *delete_value* string in place of a required string value, *delete_value* will be ignored and the results file will show *delete_value* in that field. For example if you set the *Budget* field of the [Campaign](campaign.md) record to *delete_value*, then the *Budget* field would be set to *delete_value* in the results file. In this example the campaign's budget would not be updated.
 
--  If you use the reserved *delete_value* string in place of a required value set, the results file will return the default value. For example if you set the *Network Distribution* field of the [Ad Group](ad-group.md) record to *delete_value*, then the *Network Distribution* field would be set to *OwnedAndOperatedAndSyndicatedSearch* in the results file.  In this example the ad group's network distribution would be set to *OwnedAndOperatedAndSyndicatedSearch*.
+- If you use the reserved *delete_value* string in place of a required value set, the results file will return the default value. For example if you set the *Network Distribution* field of the [Ad Group](ad-group.md) record to *delete_value*, then the *Network Distribution* field would be set to *OwnedAndOperatedAndSyndicatedSearch* in the results file.  In this example the ad group's network distribution would be set to *OwnedAndOperatedAndSyndicatedSearch*.
 
--  If you are replacing one set of records with another set then you must specify the deleted records prior to the new set. For example to replace all existing [Campaign Negative Keyword](campaign-negative-keyword.md) for a given campaign, first include a [Campaign Negative Keyword](campaign-negative-keyword.md) with *Status* set to Deleted and *Parent Id* set to the campaign ID. If you do not specify any *Id* i.e., do not attempt to delete a specific camapaign negative keyword, this will effectively delete all [Campaign Negative Keyword](campaign-negative-keyword.md) for that campaign. Below the "delete all" record, you can include one or more new [Campaign Negative Keyword](campaign-negative-keyword.md) records with all of the required properties for the upload add operation. 
+- If you are replacing one set of records with another set then you must specify the deleted records prior to the new set. For example to replace all existing [Campaign Negative Keyword](campaign-negative-keyword.md) for a given campaign, first include a [Campaign Negative Keyword](campaign-negative-keyword.md) with *Status* set to Deleted and *Parent Id* set to the campaign ID. If you do not specify any *Id* i.e., do not attempt to delete a specific camapaign negative keyword, this will effectively delete all [Campaign Negative Keyword](campaign-negative-keyword.md) for that campaign. Below the "delete all" record, you can include one or more new [Campaign Negative Keyword](campaign-negative-keyword.md) records with all of the required properties for the upload add operation. 
   > [!NOTE]
   > Target criterion records do not support "delete all" for bulk upload; however, you might observe a null *Id* field because Bing Ads API version 10 supported "delete all" for targets.
 
--  If you are replacing an existing record with a new record that has the same unique properties, then you must specify the deleted record prior to the new record. For example to replace an existing [Ad Group Dynamic Search Ad Target](ad-group-dynamic-search-ad-target.md) for a given ad group, first include an [Ad Group Dynamic Search Ad Target](ad-group-dynamic-search-ad-target.md) with *Status* set to Deleted, *Id* set to the existing dynamic ad target (webpage criterion) ID, and *Parent Id* set to the ad group ID. Below the deleted record, you can include a new [Ad Group Dynamic Search Ad Target](ad-group-dynamic-search-ad-target.md) record (presumably with new webpage conditions). 
+- If you are replacing an existing record with a new record that has the same unique properties, then you must specify the deleted record prior to the new record. For example to replace an existing [Ad Group Dynamic Search Ad Target](ad-group-dynamic-search-ad-target.md) for a given ad group, first include an [Ad Group Dynamic Search Ad Target](ad-group-dynamic-search-ad-target.md) with *Status* set to Deleted, *Id* set to the existing dynamic ad target (webpage criterion) ID, and *Parent Id* set to the ad group ID. Below the deleted record, you can include a new [Ad Group Dynamic Search Ad Target](ad-group-dynamic-search-ad-target.md) record (presumably with new webpage conditions). 
   > [!NOTE]
   > In most cases you can update the existing record instead of submitting separate delete and add records, for example you can update the *Bid Adjustment* field of an existing [Campaign Gender Criterion](campaign-gender-criterion.md). 
 
--  When deleting a record the *Id* field is required. A reference to the parent entity, whether the value is a Bing Ads assigned system identifier or a [Reference Keys](#referencekeys) for the parent record, is also required. For example when deleting an ad group, either the *Parent Id* field of the  [Ad Group](ad-group.md) record should match the *Id* field in the [Campaign](campaign.md) record or the *Campaign* field of the  [Ad Group](ad-group.md) record should match the *Campaign* field in the [Campaign](campaign.md) record. If both are provided then the *Parent Id* field of the  [Ad Group](ad-group.md) record ([Reference Keys](#referencekeys)) is ignored.
+- When deleting a record the *Id* field is required. A reference to the parent entity, whether the value is a Bing Ads assigned system identifier or a [Reference Keys](#referencekeys) for the parent record, is also required. For example when deleting an ad group, either the *Parent Id* field of the  [Ad Group](ad-group.md) record should match the *Id* field in the [Campaign](campaign.md) record or the *Campaign* field of the  [Ad Group](ad-group.md) record should match the *Campaign* field in the [Campaign](campaign.md) record. If both are provided then the *Parent Id* field of the  [Ad Group](ad-group.md) record ([Reference Keys](#referencekeys)) is ignored.
 
--  With a few exceptions the result file will only include the columns that you uploaded. For example if you upload a new [Ad Group Negative Keyword](ad-group-negative-keyword.md) without the *Id* column header, then the result file will not include the assigned identifier for the new negative keyword. The bulk file should contain the *Id* column; however, you should leave the *Id* empty for each new [Ad Group Negative Keyword](ad-group-negative-keyword.md). The exceptions to this rule are campaigns, ad groups, ads, and keywords in which case the result file will contain all columns regardless of the uploaded columns.  
+- With a few exceptions the result file will only include the columns that you uploaded. For example if you upload a new [Ad Group Negative Keyword](ad-group-negative-keyword.md) without the *Id* column header, then the result file will not include the assigned identifier for the new negative keyword. The bulk file should contain the *Id* column; however, you should leave the *Id* empty for each new [Ad Group Negative Keyword](ad-group-negative-keyword.md). The exceptions to this rule are campaigns, ad groups, ads, and keywords in which case the result file will contain all columns regardless of the uploaded columns.  
 
 ## <a name="referencekeys"></a>Reference Keys
 When referring to a preceding record in the bulk file that does not yet have an assigned Bing Ads identifier, you may use either a logical reference key or negative reference key depending on the record type.
@@ -196,14 +197,16 @@ When referring to a preceding record in the bulk file that does not yet have an 
 
 The first example shows how to create an [Ad Group](ad-group.md) for a new [Campaign](campaign.md). Set the *Parent Id* field in the [Ad Group](ad-group.md) record to the negative reference key of the [Campaign](campaign.md) (-111). If you will add additional records in the same file that should have the [Ad Group](ad-group.md) as their parent (e.g. [Keyword](keyword.md) or [Ad Group Callout Ad Extension](ad-group-callout-ad-extension.md)), then you should also set the *Id* field in the [Ad Group](ad-group.md) to a negative value e.g. *-1111* which can be referenced from the child records.
 
+
 |Type|Id|Parent Id|
 |--------|------|-------------|
 |Campaign|-111||
 |Ad Group|-1111|-111|
 
 The second example shows how to create a [Campaign Callout Ad Extension](campaign-callout-ad-extension.md) for a new [Campaign](campaign.md) and a new [Callout Ad Extension](callout-ad-extension.md). The example also shows how to create an [Ad Group Callout Ad Extension](ad-group-callout-ad-extension.md) for a new [Ad Group](ad-group.md) and another new [Callout Ad Extension](callout-ad-extension.md). 
--  Set the *Parent Id* field in the [Campaign Callout Ad Extension](campaign-callout-ad-extension.md) record to the negative reference key of the [Campaign](campaign.md) (-111), and set the *Id* field in the [Campaign Callout Ad Extension](campaign-callout-ad-extension.md) record to the negative reference key of the [Callout Ad Extension](callout-ad-extension.md) (-11).
--  Set the *Parent Id* field in the [Ad Group Callout Ad Extension](ad-group-callout-ad-extension.md) record to the negative reference key of the [Ad Group](ad-group.md) (-1111), and set the *Id* field in the [Ad Group Callout Ad Extension](ad-group-callout-ad-extension.md) record to the negative reference key of the [Callout Ad Extension](callout-ad-extension.md) (-12).
+- Set the *Parent Id* field in the [Campaign Callout Ad Extension](campaign-callout-ad-extension.md) record to the negative reference key of the [Campaign](campaign.md) (-111), and set the *Id* field in the [Campaign Callout Ad Extension](campaign-callout-ad-extension.md) record to the negative reference key of the [Callout Ad Extension](callout-ad-extension.md) (-11).
+- Set the *Parent Id* field in the [Ad Group Callout Ad Extension](ad-group-callout-ad-extension.md) record to the negative reference key of the [Ad Group](ad-group.md) (-1111), and set the *Id* field in the [Ad Group Callout Ad Extension](ad-group-callout-ad-extension.md) record to the negative reference key of the [Callout Ad Extension](callout-ad-extension.md) (-12).
+
 
 |Type|Id|Parent Id|
 |--------|------|-------------|
@@ -216,6 +219,7 @@ The second example shows how to create a [Campaign Callout Ad Extension](campaig
 
 ### <a name="logicalkey"></a>Logical Reference Key
 When referring to a new [Campaign](campaign.md) or [Ad Group](ad-group.md) record you can use the campaign and ad group name instead of setting the *Parent Id* field to a [Negative Reference Key](#negativekey) within the child record. For example to add a new ad group to a new campaign, and add a new keyword to the new ad group, set the *Campaign* and *Ad Group* fields in the child records as shown in the following example.
+
 
 |Type|Campaign|Ad Group|
 |--------|------------|------------|
@@ -233,10 +237,12 @@ The bulk download file or the bulk upload results file may contain records where
 
 Errors related to new features such as Final URLs will include additional details about where the error occurred in the *Field Path* column. Each field path name corresponds to an element of one of the [Campaign Management Service](../campaign-management-service/campaign-management-service-reference.md) data objects. For example if the *Tracking Template* field of a [Campaign](campaign.md) record does not begin with http:// or https://, {lpurl}, or {unescapedlpurl}, the value of this *Field Path* value is TrackingTemplate. The *TrackingUrlTemplate* is an element of the [Campaign](../campaign-management-service/campaign.md) data object available with the [Campaign Management Service](../campaign-management-service/campaign-management-service-reference.md).
 
-|Type|Tracking Template|Error|Error Number|Field Path|
-|--------|---------------------|---------|----------------|--------------|
-|Campaign Error|tracker.example.com/?season={_season}&amp;promocode={_promocode}&amp;u={lpurl}|InvalidUrlScheme|4600|TrackingTemplate|
-|Campaign Error|tracker.example.com/?season={_season}&amp;promocode={_promocode}&amp;u={lpurl}|CampaignServiceInvalidUrl|2611|TrackingTemplate|
+
+|      Type      |                               Tracking Template                                |           Error           | Error Number |    Field Path    |
+|----------------|--------------------------------------------------------------------------------|---------------------------|--------------|------------------|
+| Campaign Error | tracker.example.com/?season={_season}&amp;promocode={_promocode}&amp;u={lpurl} |     InvalidUrlScheme      |     4600     | TrackingTemplate |
+| Campaign Error | tracker.example.com/?season={_season}&amp;promocode={_promocode}&amp;u={lpurl} | CampaignServiceInvalidUrl |     2611     | TrackingTemplate |
+
 > [!IMPORTANT]
 > The *Field Path* value is subject to change, so you should not take a dependency on the current string format.
 > The *Field Path* is not supported for all errors. It is supported for *Mobile Final Url*, *Final Url*, *Tracking Template*, and *Custom Parameter* fields of the respective [Campaign](campaign.md), [Ad Group](ad-group.md), [Expanded Text Ad](expanded-text-ad.md), [Product Ad](product-ad.md), [Ad Group Product Partition](ad-group-product-partition.md), [Keyword](keyword.md), and [Sitelink Ad Extension](sitelink-ad-extension.md) records. It is also supported for errors related to all fields of the [Callout Ad Extension](callout-ad-extension.md) and [Review Ad Extension](review-ad-extension.md) records.
@@ -245,8 +251,10 @@ If the issue is related to an editorial error, then the *Editorial Location*, *E
 
 For example if you attempt to set the *Promotion* for *Product Ad* to www.bing.com, the file returned will include the following columns with corresponding values for the record.
 
-|Type|Promotion|Editorial Location|Editorial Term|Editorial Reason Code|Error|Error Number|
-|--------|-------------|----------------------|------------------|-------------------------|---------|----------------|
-|Product Ad Error|www.bing.com|AdDescription|bing|17|CampaignServiceEditorialValidationError|1042|
+
+|       Type       |  Promotion   | Editorial Location | Editorial Term | Editorial Reason Code |                  Error                  | Error Number |
+|------------------|--------------|--------------------|----------------|-----------------------|-----------------------------------------|--------------|
+| Product Ad Error | www.bing.com |   AdDescription    |      bing      |          17           | CampaignServiceEditorialValidationError |     1042     |
+
 For more information, see [Bing Ads Operation Error Codes](../guides/operation-error-codes.md) and [Bing Ads Editorial Failure Reason Codes](../guides/editorial-failure-reason-codes.md).
 

@@ -26,6 +26,7 @@ If you do not include the exclude account keywords search parameter when calling
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="excludeaccountkeywords"></a>ExcludeAccountKeywords|Determines whether or not to exclude existing account keywords from the returned keyword ideas.<br/><br/>By default your existing account keywords will be included with the keyword idea data e.g., suggested bid. If you set the element *True* then the keyword ideas will not include any keywords for the same match type that already exist in your account.|**boolean**|

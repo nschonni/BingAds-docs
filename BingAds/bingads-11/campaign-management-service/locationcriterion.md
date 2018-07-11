@@ -10,8 +10,8 @@ description: Defines a criterion that can be used to show ads to users in a spec
 Defines a criterion that can be used to show ads to users in a specific location.
 
 With location criterions, you can choose to show ads to potential customers in, searching for, or viewing pages about:
-*  All available countries/regions
-*  Selected cities, postal codes, metro areas (Nielsen DMA® in the United States), counties, states/provinces, and countries/regions
+* All available countries/regions
+* Selected cities, postal codes, metro areas (Nielsen DMAï¿½ in the United States), counties, states/provinces, and countries/regions
 
 Each location criterion defines a location code for the accompanying criterion bid adjustment. 
 
@@ -42,6 +42,7 @@ Also note that you must consider the location, negative location, and radius cri
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="displayname"></a>DisplayName|The location display name.<br/><br/>**Add:** Read-only<br/>**Update:** Read-only|**string**|
@@ -55,6 +56,7 @@ The [LocationCriterion](locationcriterion.md) object has [Inherited Elements](#i
 
 ### <a name="inheritedelementscriterion"></a>Inherited Elements from Criterion
 The [LocationCriterion](locationcriterion.md) object derives from the [Criterion](criterion.md) object, and inherits the following elements. The descriptions below are specific to [LocationCriterion](locationcriterion.md), and might not apply to other objects that inherit the same elements from the [Criterion](criterion.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

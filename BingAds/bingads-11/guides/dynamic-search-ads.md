@@ -14,14 +14,14 @@ Dynamic search ads provide a streamlined, low-touch way to make sure customers s
 
 Dynamic search ads automatically target relevant search queries based on the content of your website, and are dynamically created to respond to these search queries. Using them will:
 
--  Create targeted and relevant ads automatically: New, dynamically-created ads for every search query based on your website content, or specific pages or categories of your website.
--  Reduce your workload: No need to maintain keyword lists, manage bids, or update and customize ad titles.
--  Find missed opportunities: Automatically adapt to new queries to drive additional conversions.
+- Create targeted and relevant ads automatically: New, dynamically-created ads for every search query based on your website content, or specific pages or categories of your website.
+- Reduce your workload: No need to maintain keyword lists, manage bids, or update and customize ad titles.
+- Find missed opportunities: Automatically adapt to new queries to drive additional conversions.
 
 Dynamic search ads are most appropriate for two types of advertisers:
 
--  Advertisers who have a large catalog of webpages and a changing mix of products, making it difficult to manage search ads for each product.
--  Advertisers who are not familiar with search advertising, but who want to quickly and easily try it out.
+- Advertisers who have a large catalog of webpages and a changing mix of products, making it difficult to manage search ads for each product.
+- Advertisers who are not familiar with search advertising, but who want to quickly and easily try it out.
 
 For more information see the [Target searches automatically with dynamic search ads](https://help.bingads.microsoft.com/#apex/3/en/56794/0) help documentation. 
 

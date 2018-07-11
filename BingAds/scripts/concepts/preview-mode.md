@@ -40,5 +40,5 @@ Logger.log("Does the ad group have keywords? " + keywords.hasNext());
 
 ## Next steps
 
-> [!div class="nextstepaction"]
+> [!div  class="nextstepaction"]
 > [Learn how authorization works](./authorization.md)

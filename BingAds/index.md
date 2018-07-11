@@ -270,8 +270,7 @@ description: Bing Ads API documentation home.
                                 </div>
                             </div>
                             </a>
-                        </li>                
-                        <li>
+                        </li><br/>                        <li>
                             <a href="/bingads/shopping-content/code-examples">
                             <div class="cardSize">
                                 <div class="cardPadding">
@@ -482,8 +481,8 @@ description: Bing Ads API documentation home.
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>What's Bing Ads Scripts?</h3>
-                                            <p>Bing Ads Scripts lets you use JavaScript to access and manage your campaigns in Bing Ads' script editor.</p>
+                                            <h3>What&#39;s Bing Ads Scripts?</h3>
+                                            <p>Bing Ads Scripts lets you use JavaScript to access and manage your campaigns in Bing Ads&#39; script editor.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -588,8 +587,7 @@ description: Bing Ads API documentation home.
                             </a>
                         </li>
                     </ul>
-                </li>                
-            </ul>
+                </li><br/>            </ul>
         </li>
     </ul>
 </div>

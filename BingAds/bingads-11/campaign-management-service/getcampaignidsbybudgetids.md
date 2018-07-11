@@ -19,6 +19,7 @@ The *GetCampaignIdsByBudgetIdsRequest* object defines the [body](#request-body) 
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="budgetids"></a>BudgetIds|A list of unique budget identifiers that identify the campaign identifiers to get. You can specify a maximum of 1,000 IDs budget IDs, and each budget could be shared by up to 10,000 campaign identifiers. For each budget ID that you specify in the request, an [IdCollection](idcollection.md) that contains between 1 and 10,000 campaign identifers will be returned. <br/><br/>The budget IDs must be in the same account that you specified in the required *CustomerAccountId* header element.|**long** array|
@@ -30,6 +31,7 @@ The *GetCampaignIdsByBudgetIdsRequest* object defines the [body](#request-body) 
 The *GetCampaignIdsByBudgetIdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -113,44 +115,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetCampaignIdsByBudgetIdsResponse> GetCampaignIdsByBudgetIdsAsync(
-	IList<long> budgetIds)
+    IList<long> budgetIds)
 {
-	var request = new GetCampaignIdsByBudgetIdsRequest
-	{
-		BudgetIds = budgetIds
-	};
+    var request = new GetCampaignIdsByBudgetIdsRequest
+    {
+        BudgetIds = budgetIds
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetCampaignIdsByBudgetIdsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetCampaignIdsByBudgetIdsAsync(r), request));
 }
 ```
 ```java
 static GetCampaignIdsByBudgetIdsResponse getCampaignIdsByBudgetIds(
-	ArrayOflong budgetIds) throws RemoteException, Exception
+    ArrayOflong budgetIds) throws RemoteException, Exception
 {
-	GetCampaignIdsByBudgetIdsRequest request = new GetCampaignIdsByBudgetIdsRequest();
+    GetCampaignIdsByBudgetIdsRequest request = new GetCampaignIdsByBudgetIdsRequest();
 
-	request.setBudgetIds(budgetIds);
+    request.setBudgetIds(budgetIds);
 
-	return CampaignManagementService.getService().getCampaignIdsByBudgetIds(request);
+    return CampaignManagementService.getService().getCampaignIdsByBudgetIds(request);
 }
 ```
 ```php
 static function GetCampaignIdsByBudgetIds(
-	$budgetIds)
+    $budgetIds)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetCampaignIdsByBudgetIdsRequest();
+    $request = new GetCampaignIdsByBudgetIdsRequest();
 
-	$request->BudgetIds = $budgetIds;
+    $request->BudgetIds = $budgetIds;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetCampaignIdsByBudgetIds($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetCampaignIdsByBudgetIds($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetCampaignIdsByBudgetIds(
-	BudgetIds=BudgetIds)
+    BudgetIds=BudgetIds)
 ```
 
 ## Requirements

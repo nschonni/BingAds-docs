@@ -16,26 +16,26 @@ The example web application sends authentication requests to the Microsoft accou
 
 ## <a name="webapp"></a>Web Application Authentication Example Walk-Through
 
-1.  Open the Eclipse development environment.
+1. Open the Eclipse development environment.
 
-2.  Create a new project through **File** -&gt; **New** -&gt; **Project** -&gt; **Maven** -&gt; **Maven Project**, and click **Next**.
+2. Create a new project through **File** -&gt; **New** -&gt; **Project** -&gt; **Maven** -&gt; **Maven Project**, and click **Next**.
 
-3.  In the **New Maven Project** dialog, make sure the option to **Create a simple project (skip archetype selection)** is not selected and click **Next**. You will select a Maven archetype in the next step.
+3. In the **New Maven Project** dialog, make sure the option to **Create a simple project (skip archetype selection)** is not selected and click **Next**. You will select a Maven archetype in the next step.
 
-4.  In the **New Maven Project** dialog, select the Maven web app archetype and click **Next**. The **Group Id** is org.apache.maven.archetypes and the **Artifact Id** is maven-archetype-webapp.
+4. In the **New Maven Project** dialog, select the Maven web app archetype and click **Next**. The **Group Id** is org.apache.maven.archetypes and the **Artifact Id** is maven-archetype-webapp.
 
-5.  In the **New Maven Project** dialog, specify your project's artifact parameters and then click **Finish**. For example, you can set the **Group Id** to com.microsoft.bingads.examples and **Artifact Id** to BingAdsWebApp.
+5. In the **New Maven Project** dialog, specify your project's artifact parameters and then click **Finish**. For example, you can set the **Group Id** to com.microsoft.bingads.examples and **Artifact Id** to BingAdsWebApp.
 
-6.  Add the required javax servlet JARs to your project library if they are not already in your Java build path. In **Project Explorer**, right-click the BingAdsWebApp project and click **Properties**. In the **Properties** dialog go to the **Java Build Path** -&gt; **Libraries** tab, click **Add External JARs**, and then navigate to *{EclipseInstallationPath}/plugins/* and select for example both *javax.servlet.jsp_2.2.0.v201112011158* and *javax.servlet_3.0.0.v201112011016*.
+6. Add the required javax servlet JARs to your project library if they are not already in your Java build path. In **Project Explorer**, right-click the BingAdsWebApp project and click **Properties**. In the **Properties** dialog go to the **Java Build Path** -&gt; **Libraries** tab, click **Add External JARs**, and then navigate to *{EclipseInstallationPath}/plugins/* and select for example both *javax.servlet.jsp_2.2.0.v201112011158* and *javax.servlet_3.0.0.v201112011016*.
 
-7.  Include the servlet JARs to the project's order and exported entries. In the **Java Build Path** -&gt; **Order and Export** tab, click **Select All** (at least select the servlet JARs), and then click **Finish**.
+7. Include the servlet JARs to the project's order and exported entries. In the **Java Build Path** -&gt; **Order and Export** tab, click **Select All** (at least select the servlet JARs), and then click **Finish**.
 
-8.  Include the servlet JARs in the project's *Web Deployment Assembly*. In **Project Explorer**, right-click the BingAdsWebApp project and select **Properties**. In the **Properties** dialog go to **Deployment Assembly** -&gt; **Add**, select *Java Build Path Entries*, and click **Next**. Select all of the JARs that you added in the previous steps, click **Finish** in the **New Assembly Directive** dialog, and then click **Apply** in the **Properties** dialog.
+8. Include the servlet JARs in the project's *Web Deployment Assembly*. In **Project Explorer**, right-click the BingAdsWebApp project and select **Properties**. In the **Properties** dialog go to **Deployment Assembly** -&gt; **Add**, select *Java Build Path Entries*, and click **Next**. Select all of the JARs that you added in the previous steps, click **Finish** in the **New Assembly Directive** dialog, and then click **Apply** in the **Properties** dialog.
 
 9. In **Project Explorer**, right-click the pom.xml file and select **Open With** -&gt; **Text Editor**. Add the *com.microsoft.bingads* dependency as shown in the following example and save pom.xml.
 
-    > [!NOTE]
-    > For details about the latest SDK dependency version, please see the [Bing Ads Java SDK GitHub README.md](https://github.com/BingAds/BingAds-Java-SDK).
+   > [!NOTE]
+   > For details about the latest SDK dependency version, please see the [Bing Ads Java SDK GitHub README.md](https://github.com/BingAds/BingAds-Java-SDK).
 
     ```xml
     <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -273,11 +273,11 @@ OAuthWebAuthCodeGrant oAuthWebAuthCodeGrant = new OAuthWebAuthCodeGrant(
 ## <a name="deploy"></a>Deploying a Web Application
 If you are using Microsoft Azure to deploy your web application, the following are required.
 
--   A distribution of a Java-based web server or application server, such as Apache Tomcat, GlassFish, JBoss Application Server, Jetty, or IBM® WebSphere® Application Server Liberty Core.
+- A distribution of a Java-based web server or application server, such as Apache Tomcat, GlassFish, JBoss Application Server, Jetty, or IBM® WebSphere® Application Server Liberty Core.
 
--   An Azure subscription, which can be acquired from [http://azure.microsoft.com/pricing/purchase-options/](http://azure.microsoft.com/pricing/purchase-options/).
+- An Azure subscription, which can be acquired from [http://azure.microsoft.com/pricing/purchase-options/](http://azure.microsoft.com/pricing/purchase-options/).
 
--   Optionally you can install the Azure Toolkit for Eclipse (by Microsoft Open Technologies) and deploy your web application using Azure cloud services. For more information, see [Installing the Azure Toolkit for Eclipse (by Microsoft Open Technologies)](https://docs.microsoft.com/en-us/azure/azure-toolkit-for-eclipse-installation).
+- Optionally you can install the Azure Toolkit for Eclipse (by Microsoft Open Technologies) and deploy your web application using Azure cloud services. For more information, see [Installing the Azure Toolkit for Eclipse (by Microsoft Open Technologies)](https://docs.microsoft.com/en-us/azure/azure-toolkit-for-eclipse-installation).
 
 ## See Also
 [Sandbox](sandbox.md)  

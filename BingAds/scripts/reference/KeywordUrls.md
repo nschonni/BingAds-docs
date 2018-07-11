@@ -13,6 +13,7 @@ ms.topic: "article"
 Contains the methods for managing the keyword's URLs, tracking template, and custom parameters. For information, see [URL Tracking with Upgraded URLs](/bingads/guides/url-tracking-upgraded-urls).
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [clearFinalUrl](#clearfinalurl)|void|Removes the keyword's final URL.
@@ -31,6 +32,7 @@ Contains the methods for managing the keyword's URLs, tracking template, and cus
 Removes the keyword's final URL.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -40,6 +42,7 @@ void|Returns nothing.
 Removes the keyword's final URL for mobile devices.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -49,6 +52,7 @@ void|Returns nothing.
 Removes the keyword's tracking template. 
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -60,6 +64,7 @@ Returns the keyword's custom parameters.
 [!INCLUDE[custom-parameters](../includes/custom-parameters.md)]
 
 ### Returns
+
 |Type|Description|
 |-|-
 Object|A map of the keyword's custom parameters.<br /><br />For example, `{key1: 'value1', key2: 'value2', key3: 'value3'}`, where key is the name of the custom parameter and value is the parameter's value.
@@ -71,6 +76,7 @@ Returns the keyword's final URL. The final URL represents the actual landing pag
 Final URLs follow the same override rules as destination URLs. For example, a final URL at the keyword level overrides the final URL at the ad level.
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|The keyword's final URL.
@@ -82,6 +88,7 @@ Returns the keyword's final URL for mobile devices. The final URL represents the
 Final URLs follow the same override rules as destination URLs. For example, a final URL at the keyword level overrides the final URL at the ad level.
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|The keyword's final URL for mobile devices.
@@ -93,6 +100,7 @@ Returns the keyword's tracking template.
 [!INCLUDE[tracking-templates](../includes/tracking-templates.md)]
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|The keyword's tracking template.
@@ -110,11 +118,13 @@ To clear the custom parameters from the keyword, pass an empty object (for examp
 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 customParameters|Object|A map of custom parameters to use in the keyword.<br /><br />For example, `{key1: 'value1', key2: 'value2', key3: 'value3'}`, where key is the name of the custom parameter and value is the parameter's value. The parameter's name may contain only alphanumeric characters and the parameter's value may not contain white space. The name and value may not exceed 60 and 200 bytes, respectively.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -128,11 +138,13 @@ Sets the keyword's final URL.
 If you specify a property value that's not valid, the call silently fails. To confirm whether the property was actually updated, you must get the object again and test whether the property's value equals the new value. For information, see [Handling errors and warnings](../concepts/errors-and-warnings.md).
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 finalUrl|string|The keyword's final URL.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -150,11 +162,13 @@ To specify a final URL for mobil devices, you must first specify a final URL for
 If you specify a property value that's not valid, the call silently fails. To confirm whether the property was actually updated, you must get the object again and test whether the property's value equals the new value. For information, see [Handling errors and warnings](../concepts/errors-and-warnings.md).
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 finalUrl|string|The keyword's final URL mobile devices.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -168,11 +182,13 @@ Sets the keyword's tracking template.
 If you specify a property value that's not valid, the call silently fails. To confirm whether the property was actually updated, you must get the object again and test whether the property's value equals the new value. For information, see [Handling errors and warnings](../concepts/errors-and-warnings.md).
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 trackingTemplate|string|The keyword's tracking template.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.

@@ -55,7 +55,6 @@ The following Bulk CSV example would add a new Price Ad Extension to the account
 Type,Status,Id,Parent Id,Campaign,Ad Group,Client Id,Modified Time,Start Date,End Date,Device Preference,Name,Ad Schedule,Use Searcher Time Zone,Tracking Template,Custom Parameter,Price Extension Type,Currency Code 1,Currency Code 2,Currency Code 3,Currency Code 4,Currency Code 5,Currency Code 6,Currency Code 7,Currency Code 8,Price Description 1,Price Description 2,Price Description 3,Price Description 4,Price Description 5,Price Description 6,Price Description 7,Price Description 8,Header 1,Header 2,Header 3,Header 4,Header 5,Header 6,Header 7,Header 8,Final Mobile Url 1,Final Mobile Url 2,Final Mobile Url 3,Final Mobile Url 4,Final Mobile Url 5,Final Mobile Url 6,Final Mobile Url 7,Final Mobile Url 8,Final Url 1,Final Url 2,Final Url 3,Final Url 4,Final Url 5,Final Url 6,Final Url 7,Final Url 8,Price 1,Price 2,Price 3,Price 4,Price 5,Price 6,Price 7,Price 8,Price Qualifier 1,Price Qualifier 2,Price Qualifier 3,Price Qualifier 4,Price Qualifier 5,Price Qualifier 6,Price Qualifier 7,Price Qualifier 8,Price Unit 1,Price Unit 2,Price Unit 3,Price Unit 4,Price Unit 5,Price Unit 6,Price Unit 7,Price Unit 8
 Format Version,,,,,,,,,,,5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Price Ad Extension,,-24,,,,ClientIdGoesHere,,,,,,(Monday[09:00-21:00]),FALSE,,{_promoCode}=PROMO1; {_season}=summer,Events,USD,USD,USD,,,,,,Come to the event,Come to the next event,Come to the final event,,,,,,New Event,Next Event,Final Event,,,,,,,,,,,,,,https://contoso.com,https://contoso.com,https://contoso.com,,,,,,9.99,9.99,9.99,,,,,,From,From,From,,,,,,PerDay,PerDay,PerDay,,,,,
-
 ```
 
 If you are using the [Bing Ads SDKs](../guides/client-libraries.md) for .NET, Java, or Python, you can save time using the *BulkServiceManager* to upload and download the *BulkPriceAdExtension* class, instead of calling the service operations directly and writing custom code to parse each field in the bulk file. 
@@ -268,16 +267,16 @@ Your custom collection of key and value parameters for URL tracking.
 
 In a bulk file, the list of custom parameters are formatted as follows.
 
--   Format each custom parameter pair as Key=Value, for example {_promoCode}=PROMO1.
+- Format each custom parameter pair as Key=Value, for example {_promoCode}=PROMO1.
 
--   You may include up to 3 custom parameter key and value pairs. Each key and value pair are delimited by a semicolon and space ("; "), for example {_promoCode}=PROMO1; {_season}=summer.
+- You may include up to 3 custom parameter key and value pairs. Each key and value pair are delimited by a semicolon and space ("; "), for example {_promoCode}=PROMO1; {_season}=summer.
 
--   A Key cannot contain a semicolon. If a Value contains a semicolon it must be escaped as '\;'. Additionally if the Value contains a backslash it must also be escaped as '\\'.
+- A Key cannot contain a semicolon. If a Value contains a semicolon it must be escaped as '\;'. Additionally if the Value contains a backslash it must also be escaped as '\\'.
 
--   The Key cannot exceed 16 UTF-8 bytes, and the Value cannot exceed 200 UTF-8 bytes. The maximum size of the Key does not include the braces and underscore i.e., '{', '_', and '}'. 
+- The Key cannot exceed 16 UTF-8 bytes, and the Value cannot exceed 200 UTF-8 bytes. The maximum size of the Key does not include the braces and underscore i.e., '{', '_', and '}'. 
 
-    > [!NOTE] 
-    > With the Bulk service the Key must be formatted with surrounding braces and a leading underscore, for example if the Key is promoCode, it must be formatted as {_promoCode}. With the Campaign Management service you cannot specify the surrounding braces and underscore.
+  > [!NOTE]
+  > With the Bulk service the Key must be formatted with surrounding braces and a leading underscore, for example if the Key is promoCode, it must be formatted as {_promoCode}. With the Campaign Management service you cannot specify the surrounding braces and underscore.
 
 **Add:** Optional  
 **Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed. To remove all custom parameters, set this field to *delete_value*. The *delete_value* keyword removes the previous setting. To remove a subset of custom parameters, specify the custom parameters that you want to keep and omit any that you do not want to keep. The new set of custom parameters will replace any previous custom parameter set.    
@@ -434,7 +433,7 @@ You must have between 3 and 8 price table items per price ad extension. The orde
 **Add:** Required  
 **Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.    
 **Delete:** Read-only  
-  
+
 ### <a name="pricedescription"></a>Price Description (1-8)
 The description must provide further information about the header that is also defined in this object. Each description can contain a maximum of 25 characters.
 
@@ -519,7 +518,7 @@ The following validation rules apply to tracking templates. For more details abo
 
 - The tracking template must be a well-formed URL beginning with one of the following: *http://*, *https://*, *{lpurl}*, or *{unescapedlpurl}*. 
 
-- Bing Ads does not validate whether custom parameters exist. If you use custom parameters in your tracking template and they do not exist, then the landing page URL will include the key and value placeholders of your custom parameters without substitution. For example, if your tracking template is *http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}*, and neither *{_season}* or *{_promocode}* are defined at the campaign, ad group, criterion, keyword, or ad level, then the landing page URL will be the same.
+- Bing Ads does not validate whether custom parameters exist. If you use custom parameters in your tracking template and they do not exist, then the landing page URL will include the key and value placeholders of your custom parameters without substitution. For example, if your tracking template is <em>http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}</em>, and neither *{_season}* or *{_promocode}* are defined at the campaign, ad group, criterion, keyword, or ad level, then the landing page URL will be the same.
 
 **Add:** Optional  
 **Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.    

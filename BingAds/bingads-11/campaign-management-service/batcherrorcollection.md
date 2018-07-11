@@ -28,6 +28,7 @@ Defines an error object that contains batch error details for the top level list
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="batcherrors"></a>BatchErrors|A list of batch errors corresponding to the nested list index.|[BatchError](batcherror.md) array|

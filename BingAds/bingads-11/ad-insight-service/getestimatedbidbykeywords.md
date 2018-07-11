@@ -22,6 +22,7 @@ The *GetEstimatedBidByKeywordsRequest* object defines the [body](#request-body) 
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupid"></a>AdGroupId|The identifier of the ad group whose performance data is used to help determine how well the keyword might perform in the context of the ad group. Specifying an ad group helps improve the accuracy of the suggested bid.<br /><br />If you specify an ad group, you must specify the campaign that it belongs to.|**long**|
@@ -40,6 +41,7 @@ The *GetEstimatedBidByKeywordsRequest* object defines the [body](#request-body) 
 The *GetEstimatedBidByKeywordsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -140,111 +142,111 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetEstimatedBidByKeywordsResponse> GetEstimatedBidByKeywordsAsync(
-	IList<KeywordAndMatchType> keywords,
-	TargetAdPosition targetPositionForAds,
-	string language,
-	IList<string> publisherCountries,
-	Currency? currency,
-	long? campaignId,
-	long? adGroupId,
-	string entityLevelBid)
+    IList<KeywordAndMatchType> keywords,
+    TargetAdPosition targetPositionForAds,
+    string language,
+    IList<string> publisherCountries,
+    Currency? currency,
+    long? campaignId,
+    long? adGroupId,
+    string entityLevelBid)
 {
-	var request = new GetEstimatedBidByKeywordsRequest
-	{
-		Keywords = keywords,
-		TargetPositionForAds = targetPositionForAds,
-		Language = language,
-		PublisherCountries = publisherCountries,
-		Currency = currency,
-		CampaignId = campaignId,
-		AdGroupId = adGroupId,
-		EntityLevelBid = entityLevelBid
-	};
+    var request = new GetEstimatedBidByKeywordsRequest
+    {
+        Keywords = keywords,
+        TargetPositionForAds = targetPositionForAds,
+        Language = language,
+        PublisherCountries = publisherCountries,
+        Currency = currency,
+        CampaignId = campaignId,
+        AdGroupId = adGroupId,
+        EntityLevelBid = entityLevelBid
+    };
 
-	return (await AdInsightService.CallAsync((s, r) => s.GetEstimatedBidByKeywordsAsync(r), request));
+    return (await AdInsightService.CallAsync((s, r) => s.GetEstimatedBidByKeywordsAsync(r), request));
 }
 ```
 ```java
 static GetEstimatedBidByKeywordsResponse getEstimatedBidByKeywords(
-	ArrayOfKeywordAndMatchType keywords,
-	TargetAdPosition targetPositionForAds,
-	java.lang.String language,
-	ArrayOfstring publisherCountries,
-	Currency currency,
-	java.lang.Long campaignId,
-	java.lang.Long adGroupId,
-	java.lang.String entityLevelBid) throws RemoteException, Exception
+    ArrayOfKeywordAndMatchType keywords,
+    TargetAdPosition targetPositionForAds,
+    java.lang.String language,
+    ArrayOfstring publisherCountries,
+    Currency currency,
+    java.lang.Long campaignId,
+    java.lang.Long adGroupId,
+    java.lang.String entityLevelBid) throws RemoteException, Exception
 {
-	GetEstimatedBidByKeywordsRequest request = new GetEstimatedBidByKeywordsRequest();
+    GetEstimatedBidByKeywordsRequest request = new GetEstimatedBidByKeywordsRequest();
 
-	request.setKeywords(keywords);
-	request.setTargetPositionForAds(targetPositionForAds);
-	request.setLanguage(language);
-	request.setPublisherCountries(publisherCountries);
-	request.setCurrency(currency);
-	request.setCampaignId(campaignId);
-	request.setAdGroupId(adGroupId);
-	request.setEntityLevelBid(entityLevelBid);
+    request.setKeywords(keywords);
+    request.setTargetPositionForAds(targetPositionForAds);
+    request.setLanguage(language);
+    request.setPublisherCountries(publisherCountries);
+    request.setCurrency(currency);
+    request.setCampaignId(campaignId);
+    request.setAdGroupId(adGroupId);
+    request.setEntityLevelBid(entityLevelBid);
 
-	return AdInsightService.getService().getEstimatedBidByKeywords(request);
+    return AdInsightService.getService().getEstimatedBidByKeywords(request);
 }
 ```
 ```php
 static function GetEstimatedBidByKeywords(
-	$keywords,
-	$targetPositionForAds,
-	$language,
-	$publisherCountries,
-	$currency,
-	$campaignId,
-	$adGroupId,
-	$entityLevelBid)
+    $keywords,
+    $targetPositionForAds,
+    $language,
+    $publisherCountries,
+    $currency,
+    $campaignId,
+    $adGroupId,
+    $entityLevelBid)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
 
-	$request = new GetEstimatedBidByKeywordsRequest();
+    $request = new GetEstimatedBidByKeywordsRequest();
 
-	$request->Keywords = $keywords;
-	$request->TargetPositionForAds = $targetPositionForAds;
-	$request->Language = $language;
-	$request->PublisherCountries = $publisherCountries;
-	$request->Currency = $currency;
-	$request->CampaignId = $campaignId;
-	$request->AdGroupId = $adGroupId;
-	$request->EntityLevelBid = $entityLevelBid;
+    $request->Keywords = $keywords;
+    $request->TargetPositionForAds = $targetPositionForAds;
+    $request->Language = $language;
+    $request->PublisherCountries = $publisherCountries;
+    $request->Currency = $currency;
+    $request->CampaignId = $campaignId;
+    $request->AdGroupId = $adGroupId;
+    $request->EntityLevelBid = $entityLevelBid;
 
-	return $GLOBALS['AdInsightProxy']->GetService()->GetEstimatedBidByKeywords($request);
+    return $GLOBALS['AdInsightProxy']->GetService()->GetEstimatedBidByKeywords($request);
 }
 ```
 ```python
 response=adinsight_service.GetEstimatedBidByKeywords(
-	Keywords=Keywords,
-	TargetPositionForAds=TargetPositionForAds,
-	Language=Language,
-	PublisherCountries=PublisherCountries,
-	Currency=Currency,
-	CampaignId=CampaignId,
-	AdGroupId=AdGroupId,
-	EntityLevelBid=EntityLevelBid)
+    Keywords=Keywords,
+    TargetPositionForAds=TargetPositionForAds,
+    Language=Language,
+    PublisherCountries=PublisherCountries,
+    Currency=Currency,
+    CampaignId=CampaignId,
+    AdGroupId=AdGroupId,
+    EntityLevelBid=EntityLevelBid)
 ```
 
 ## <a name="remarks"></a>Remarks
 As a best practice for the most accurate bid estimates per country, you should specify only one country per service call. If no countries are specified or if multiple *PublisherCountries* are specified, then the service will use the first available set of the following properties to determine  the country to use as the source of data for estimating the bids.
 
--   Multiple countries corresponding to this operation's specified *PublisherCountries* element.
+- Multiple countries corresponding to this operation's specified *PublisherCountries* element.
 
--   The service will use the set of all supported countries for the specified *Language*, and join with common supported countries in the location target associated with the specified *AdGroupId*.
+- The service will use the set of all supported countries for the specified *Language*, and join with common supported countries in the location target associated with the specified *AdGroupId*.
 
-    > [!NOTE]
-    > If the target countries conflict with the specified *Language*, then the service will disregard the target countries and only use the set of all supported countries for the specified *Language*.
+  > [!NOTE]
+  > If the target countries conflict with the specified *Language*, then the service will disregard the target countries and only use the set of all supported countries for the specified *Language*.
 
--   The service will use the set of all supported countries for the specified *Language*, and join with common supported countries in the location target associated with the specified *CampaignId*.
+- The service will use the set of all supported countries for the specified *Language*, and join with common supported countries in the location target associated with the specified *CampaignId*.
 
-    > [!NOTE]
-    > If the target countries conflict with the specified *Language*, then the service will disregard the target countries and only use the set of all supported countries for the specified *Language*.
+  > [!NOTE]
+  > If the target countries conflict with the specified *Language*, then the service will disregard the target countries and only use the set of all supported countries for the specified *Language*.
 
--   *Language* element of the ad group corresponding to this operation's specified *AdGroupId* element. The service will use the set of all supported countries for this language.
+- *Language* element of the ad group corresponding to this operation's specified *AdGroupId* element. The service will use the set of all supported countries for this language.
 
 Given multiple countries from one of the property sets above, the service will then determine one country with the highest impression count to use as the source of data for estimating the bids. The response will not include details on the final filtered country.
 

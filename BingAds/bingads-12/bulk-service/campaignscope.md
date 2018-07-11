@@ -21,10 +21,11 @@ Defines an object that identifies a campaign to download.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="campaignid"></a>CampaignId|The identifier of the campaign to download.|**long**|
-|<a name="parentaccountid"></a>ParentAccountId|	The identifier of the account that owns the campaign to download.|**long**|
+|<a name="parentaccountid"></a>ParentAccountId| The identifier of the account that owns the campaign to download.|**long**|
 
 ## Requirements
 Service: [BulkService.svc v12](https://bulk.api.bingads.microsoft.com/Api/Advertiser/CampaignManagement/v12/BulkService.svc)  

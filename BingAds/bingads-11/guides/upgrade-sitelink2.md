@@ -22,6 +22,7 @@ During migration the existing campaigns, ads, and extensions will continue to ru
 ## <a name="getmigrationstatus"></a> Checking for Migration Status
 You should use the [GetAccountMigrationStatuses](../campaign-management-service/getaccountmigrationstatuses.md) operation to determine which sitelink data model is in effect for each account. The operation will return one of the [MigrationStatus](../campaign-management-service/migrationstatus.md) values listed in the table below. The sitelink data types that you can manage depend upon the migration status. Please see [Before Migration](#beforemigration), [During Migration](#migrationinprogress), and [After Migration](#migrationcompleted) for details.  
 
+
 Migration Status|Bulk Records|Campaign Management Objects  
 ---------|---------|---------
 NotInPilot, NotStarted|[Sitelink Ad Extension](../bulk-service/sitelink-ad-extension.md)<br/>[AdGroup Sitelink Ad Extension](../bulk-service/adgroup-sitelink-ad-extension.md)<br/>[Campaign Sitelink Ad Extension](../bulk-service/campaign-sitelink-ad-extension.md) |[SiteLinksAdExtension](../campaign-management-service/sitelinksadextension.md)<br/>[SiteLink](../campaign-management-service/sitelink.md)         

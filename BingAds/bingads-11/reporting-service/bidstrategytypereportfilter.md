@@ -31,6 +31,7 @@ Defines the possible values that you can use to use to filter the report data by
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="enhancedcpc"></a>EnhancedCpc|The report will contain data related to keywords, ad groups, or campaigns that use the enhanced CPC bid strategy.|

@@ -20,7 +20,7 @@ The document must use UTF-8 encoding and must conform to the [PointsOfSale XSD](
 
 > [!NOTE]
 > Bing does not support all XSD elements. Bing ignores any element or attribute in the document that it does not support. The [Points of Sale Reference](../pos-feed/reference.md) includes only those elements and attributes that Bing supports. 
-
+> 
 > [!NOTE]
 > The document must specify the elements in the order defined in the PointsOfSale XSD (or as shown in the reference).
 
@@ -31,10 +31,10 @@ The points of sale feed contains a single, top-level [PointsOfSale](../pos-feed/
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <PointsOfSale xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance>
-  <PointOfSale>
-    . . .
-  </PointOfSale>
-  ...
+  <PointOfSale>
+    . . .
+  </PointOfSale>
+  ...
 </PointsOfSale>
 ```
 
@@ -49,15 +49,15 @@ The following shows `PointOfSale` elements that define points of sale for Englis
 
 ```xml
   <PointOfSale id="English">
-    <DisplayNames display_text="ContosoTravel.com" display_language="en" />
-    <Match status="yes" language="en" />
-    <URL>http://contoso.com/landing?hid=(PARTNER-HOTEL-ID)&amp;checkin=(CHECKINYEAR)-(CHECKINMONTH)-(CHECKINDAY)&amp;checkout=(CHECKOUTYEAR)-(CHECKOUTMONTH)-(CHECKOUTDAY)&amp;language=(USER-LANGUAGE)</URL>
-  </PointOfSale>
+    <DisplayNames display_text="ContosoTravel.com" display_language="en" />
+    <Match status="yes" language="en" />
+    <URL>http://contoso.com/landing?hid=(PARTNER-HOTEL-ID)&amp;checkin=(CHECKINYEAR)-(CHECKINMONTH)-(CHECKINDAY)&amp;checkout=(CHECKOUTYEAR)-(CHECKOUTMONTH)-(CHECKOUTDAY)&amp;language=(USER-LANGUAGE)</URL>
+  </PointOfSale>
   <PointOfSale id="English-Mobile">
-    <DisplayNames display_text="ContosoTravel.com" display_language="en" />
-    <Match status="yes" language="en" device="mobile" />
-    <URL>http://mobile.contoso.com/landing?hid=(PARTNER-HOTEL-ID)&amp;checkin=(CHECKINYEAR)-(CHECKINMONTH)-(CHECKINDAY)&amp;checkout=(CHECKOUTYEAR)-(CHECKOUTMONTH)-(CHECKOUTDAY)&amp;language=(USER-LANGUAGE)</URL>
-  </PointOfSale>
+    <DisplayNames display_text="ContosoTravel.com" display_language="en" />
+    <Match status="yes" language="en" device="mobile" />
+    <URL>http://mobile.contoso.com/landing?hid=(PARTNER-HOTEL-ID)&amp;checkin=(CHECKINYEAR)-(CHECKINMONTH)-(CHECKINDAY)&amp;checkout=(CHECKOUTYEAR)-(CHECKOUTMONTH)-(CHECKOUTDAY)&amp;language=(USER-LANGUAGE)</URL>
+  </PointOfSale>
 ```
 
 Include the `DisplayNames` element only for online travel agencies. Don't include `DisplayNames` for central reservations system (CRS) suppliers (also known as integration partners) and direct suppliers (such as hotel owners or chains). For CRS suppliers and direct suppliers, Bing uses the hotel's name from the hotel feed.
@@ -78,17 +78,17 @@ The following shows a complete points of sale XML document.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <PointsOfSale xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="http://www.gstatic.com/localfeed/local_feed.xsd">
+    xsi:noNamespaceSchemaLocation="http://www.gstatic.com/localfeed/local_feed.xsd">
   <PointOfSale id="English">
-    <DisplayNames display_text="ContosoTravel.com" display_language="en" />
-    <Match status="yes" language="en" />
-    <URL>http://contoso.com/landing?hid=(PARTNER-HOTEL-ID)&amp;checkin=(CHECKINYEAR)-(CHECKINMONTH)-(CHECKINDAY)&amp;checkout=(CHECKOUTYEAR)-(CHECKOUTMONTH)-(CHECKOUTDAY)&amp;language=(USER-LANGUAGE)</URL>
-  </PointOfSale>
+    <DisplayNames display_text="ContosoTravel.com" display_language="en" />
+    <Match status="yes" language="en" />
+    <URL>http://contoso.com/landing?hid=(PARTNER-HOTEL-ID)&amp;checkin=(CHECKINYEAR)-(CHECKINMONTH)-(CHECKINDAY)&amp;checkout=(CHECKOUTYEAR)-(CHECKOUTMONTH)-(CHECKOUTDAY)&amp;language=(USER-LANGUAGE)</URL>
+  </PointOfSale>
   <PointOfSale id="English-Mobile">
-    <DisplayNames display_text="ContosoTravel.com" display_language="en" />
-    <Match status="yes" language="en" device="mobile" />
-    <URL>http://mobile.contoso.com/landing?hid=(PARTNER-HOTEL-ID)&amp;checkin=(CHECKINYEAR)-(CHECKINMONTH)-(CHECKINDAY)&amp;checkout=(CHECKOUTYEAR)-(CHECKOUTMONTH)-(CHECKOUTDAY)&amp;language=(USER-LANGUAGE)</URL>
-  </PointOfSale>
+    <DisplayNames display_text="ContosoTravel.com" display_language="en" />
+    <Match status="yes" language="en" device="mobile" />
+    <URL>http://mobile.contoso.com/landing?hid=(PARTNER-HOTEL-ID)&amp;checkin=(CHECKINYEAR)-(CHECKINMONTH)-(CHECKINDAY)&amp;checkout=(CHECKOUTYEAR)-(CHECKOUTMONTH)-(CHECKOUTDAY)&amp;language=(USER-LANGUAGE)</URL>
+  </PointOfSale>
 </PointsOfSale>
 ```
 
@@ -104,13 +104,13 @@ Points of sale include a `Match` element that contains the criteria that Bing us
 
 Bing uses the following rules to find the best POS match.
 
-  
+
 - Bing gives the highest preference to country matches and the least preference to device matches. 
 
 - If `Match` does not specify one of the criterion, Bing implicitly matches all values for the criterion. For example, if `Match` specifies language and currency, Bing implicitly matches any country and device. 
-  
+
 - If `Match` specifies one or more criterion, Bing uses the POS with the most explicit matches.  
-   
+
 - If the user matches multiple points of sale, Bing uses the POS with the best match quality. If multiple points of sale have the same match quality, Bing uses the first POS that it found with that match quality. Match quality is based on:  
   - Matches with the highest preference. For example, if one POS matches only on the user's currency and another matches only on the user's device, Bing uses the POS that matches the user's currency because it's higher in the preferred order.  
   - Explicit matches are preferred over implicit matches. For example, if one POS matches explicitly to the user's country and another matches implicitly to the user's country, Bing uses the POS that explicitly matches.
@@ -121,8 +121,8 @@ The `Match` element's status attribute determines whether to include or exclude 
 ```
 <PointOfSale id='exclude-example'>
   . . .
-  <Match status='never' country='US' />
-  <Match status='never' country='FR' />
+  <Match status='never' country='US' />
+  <Match status='never' country='FR' />
   . . .
 </PointOfSale>
 ``` 
@@ -133,7 +133,7 @@ If status is *yes*, Bing will not eliminate any points of sale from consideratio
 ```
 <PointOfSale id='exclude-example'>
   . . .
-  <Match status='yes' country='FR' />
+  <Match status='yes' country='FR' />
   . . .
 </PointOfSale>
 ``` 
@@ -152,6 +152,7 @@ http://domain.com/path?param-name=(dynamic-variable-name)
 ```
 
 The following are the possible dynamic variable names that you may specify in the URL.
+
 
 |Name|Description
 |-|-
@@ -189,8 +190,8 @@ The following shows an example URL that contains dynamic query parameters and en
 
 ```xml
 <URL>http://www.partnerdomain.com?hotelID=(PARTNER-HOTEL-ID)
-  &amp;checkinDay=(CHECKINDAY)&amp;checkinMonth=(CHECKINMONTH)
-  &amp;checkinYear=(CHECKINYEAR)&amp;nights=(LENGTH)</URL>
+  &amp;checkinDay=(CHECKINDAY)&amp;checkinMonth=(CHECKINMONTH)
+  &amp;checkinYear=(CHECKINYEAR)&amp;nights=(LENGTH)</URL>
 ```
 
 Before Bing uses the URL in the ad, it substitutes values for the dynamic variable names. For example, if the user books a room for 6 nights starting on 6/7/2017 for hotel #42, Bing renders the URL as:
@@ -209,28 +210,28 @@ Some variables are subsets of Transaction Message elements. For example, the CHE
 The following are general rules to follow when using dynamic variables.
 
 - All dynamic parameters are optional. You are not required to insert any dynamic parameters in your POS URL. However, using variables to pass itinerary- and user-specific information generally creates a better experience for the end-user.
-  
+
 - Surround dynamic variable names with open and close parentheses.
 
 - Use encoded entities for special characters. For example, replace ampersands (&amp;) with \&amp;, space with %20, and forward slash (/) with %2F.
 
 - Values for a single parameter may be constructed from multiple variables. For example, you may construct the value of a checkinDate query parameter from the CHECKINDAY, CHECKINMONTH, and CHECKINYEAR variables.  
-  
+
   ```xml  
   <URL>http://www.partnerdomain.com?checkinDate=(CHECKINDAY)%2F;(CHECKINMONTH)%2F;(CHECKINYEAR)</URL>  
   ```
-  
+
 - For dynamic variables that Bing recognized but does not support, Bing replaces the variable string with an empty string.
-  
-  
+
+
 ### Using conditional directives
 
 In addition to the variables listed above, you can also use the following directives to create conditional logic.
 
 - IF-DEFAULT-DATE&mdash;Resolves to **true** if the user clicked on a hotel ad that used default dates (the user did not pick the dates). If **true**, Bing inserts the values that follow this directive into the URL. Otherwise, Bing inserts the values following the ELSE directive.  
-  
+
 - ELSE&mdash;If the previous condition is not met, Bing inserts the values that follow this directive.  
-  
+
 - ENDIF&mdash;Ends the conditional block.
 
 For example, the following URL sets the popup_datepicker query parameter to **true** if the user used default dates instead of specifying dates.
@@ -257,21 +258,21 @@ http://partner.com?hotelID=123&checkinDay=23&checkinMonth=07&checkinYear=2017&ni
 ## General rules
 
 - Use the PointsOfSale XSD to validate your Points of Sale feed file before sending it to Bing.
-  
+
 - The points of sale feed document must use UTF-8 encoding.
-  
+
 - The feed must include points of sale for all sites that users use to book rooms&mdash; the feed process does not support partial updates.
-  
+
 - Bing ignores any element or attribute that it does not support.
-  
+
 - Elements must be in the order specified in the PointsOfSale XSD.
-  
+
 - If your data includes special characters such as apostrophes or quotes, escape them or use CDATA sections. If you escape them, you may use entity codes or character codes. For example, you can escape Paul's as Paul\&apos;s or Paul\&#39;s.
-  
+
 - Do not include elements that do not contain data. For example, if you do not provide a display name for a hotel, do not include an empty \<DisplayNames/\> element.
-    
+
 - Do not use HTML in your XML elements.
-  
+
 
 
 ## Next steps

@@ -31,6 +31,7 @@ This value set is not supported in Bing Ads API Version 12, and will be removed 
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="lastfourweeks"></a>LastFourWeeks|Performance data for the four calendar weeks prior to today.<br /><br /> A calendar week runs from Sunday to Saturday.|

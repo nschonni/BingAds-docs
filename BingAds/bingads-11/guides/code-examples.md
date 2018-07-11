@@ -9,6 +9,7 @@ description: Discover code examples in C#, Java, PHP, and Python.
 # Bing Ads Code Examples
 Get started developing Bing Ads applications in any programming language which supports web services. Samples are provided in the docs listed below.
 
+
 |Title|Description|
 |-----|-----|
 |[Ad Extensions](./code-example-ad-extensions.md)|This example shows how to add, get, and delete extensions for an account's ad extension library, set, get, and delete the extension associations with a campaign, and determine why an extension failed editorial reviews.|

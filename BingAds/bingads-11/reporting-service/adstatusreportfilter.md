@@ -28,6 +28,7 @@ Defines the ad status values that you can use to filter the report data. These v
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The report will contain ads that are active.|

@@ -21,6 +21,7 @@ Defines a customer identification object that contains information that identifi
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="id"></a>Id|The system generated identifier of the customer.|**long**|

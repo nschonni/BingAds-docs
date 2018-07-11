@@ -26,6 +26,7 @@ Suggestions are customized for the language you select.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="language"></a>Language|The language that you require.<br/><br/>Possible case-sensitive values are *English*, *French*, and *German*.|**string**|

@@ -24,6 +24,7 @@ Determines whether you want to use the "target and bid" option or the "bid only"
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="criteriontypegroup"></a>CriterionTypeGroup|The criterion type group that you want to set either the "target and bid" option or the "bid only" target option.<br/><br/>If the [Campaign Type](campaign.md#campaigntype) is set to Audience, the supported values are Age, Audience, CompanyName, Gender, Industry, and JobFunction. Otherwise the only value currently supported for other campaign types e.g., Search is Audience. For more details see the [Remarks](#remarks) below.<br/><br/>**Add:** Required<br/>**Update:** Required|[CriterionTypeGroup](criteriontypegroup.md)|
@@ -34,6 +35,7 @@ If the [Campaign Type](campaign.md#campaigntype) is set to Audience, the support
 
 > [!NOTE]
 > Do not confuse the Audience campaign type with the Audience criterion type group name. 
+
 
 |Criterion Type Group|Supported Campaigns|Description|
 |-----------------|---------------|---------------|

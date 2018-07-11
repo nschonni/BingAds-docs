@@ -28,6 +28,7 @@ Defines a key performance index object for a keyword. The object contains the hi
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adposition"></a>AdPosition|The position in the search results in which the ad appeared.|[AdPosition](adposition.md)|

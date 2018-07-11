@@ -22,6 +22,7 @@ The *GetBidOpportunitiesRequest* object defines the [body](#request-body) and [h
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupid"></a>AdGroupId|The identifier of the ad group for which you want to determine keyword bid opportunities.<br /><br />If this element is nil or empty, the operation will return all bid opportunities for the specified campaign.|**long**|
@@ -35,6 +36,7 @@ The *GetBidOpportunitiesRequest* object defines the [body](#request-body) and [h
 The *GetBidOpportunitiesResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -100,58 +102,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetBidOpportunitiesResponse> GetBidOpportunitiesAsync(
-	long? adGroupId,
-	long? campaignId,
-	BidOpportunityType opportunityType)
+    long? adGroupId,
+    long? campaignId,
+    BidOpportunityType opportunityType)
 {
-	var request = new GetBidOpportunitiesRequest
-	{
-		AdGroupId = adGroupId,
-		CampaignId = campaignId,
-		OpportunityType = opportunityType
-	};
+    var request = new GetBidOpportunitiesRequest
+    {
+        AdGroupId = adGroupId,
+        CampaignId = campaignId,
+        OpportunityType = opportunityType
+    };
 
-	return (await AdInsightService.CallAsync((s, r) => s.GetBidOpportunitiesAsync(r), request));
+    return (await AdInsightService.CallAsync((s, r) => s.GetBidOpportunitiesAsync(r), request));
 }
 ```
 ```java
 static GetBidOpportunitiesResponse getBidOpportunities(
-	java.lang.Long adGroupId,
-	java.lang.Long campaignId,
-	ArrayList<BidOpportunityType> opportunityType) throws RemoteException, Exception
+    java.lang.Long adGroupId,
+    java.lang.Long campaignId,
+    ArrayList<BidOpportunityType> opportunityType) throws RemoteException, Exception
 {
-	GetBidOpportunitiesRequest request = new GetBidOpportunitiesRequest();
+    GetBidOpportunitiesRequest request = new GetBidOpportunitiesRequest();
 
-	request.setAdGroupId(adGroupId);
-	request.setCampaignId(campaignId);
-	request.setOpportunityType(opportunityType);
+    request.setAdGroupId(adGroupId);
+    request.setCampaignId(campaignId);
+    request.setOpportunityType(opportunityType);
 
-	return AdInsightService.getService().getBidOpportunities(request);
+    return AdInsightService.getService().getBidOpportunities(request);
 }
 ```
 ```php
 static function GetBidOpportunities(
-	$adGroupId,
-	$campaignId,
-	$opportunityType)
+    $adGroupId,
+    $campaignId,
+    $opportunityType)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
 
-	$request = new GetBidOpportunitiesRequest();
+    $request = new GetBidOpportunitiesRequest();
 
-	$request->AdGroupId = $adGroupId;
-	$request->CampaignId = $campaignId;
-	$request->OpportunityType = $opportunityType;
+    $request->AdGroupId = $adGroupId;
+    $request->CampaignId = $campaignId;
+    $request->OpportunityType = $opportunityType;
 
-	return $GLOBALS['AdInsightProxy']->GetService()->GetBidOpportunities($request);
+    return $GLOBALS['AdInsightProxy']->GetService()->GetBidOpportunities($request);
 }
 ```
 ```python
 response=adinsight_service.GetBidOpportunities(
-	AdGroupId=AdGroupId,
-	CampaignId=CampaignId,
-	OpportunityType=OpportunityType)
+    AdGroupId=AdGroupId,
+    CampaignId=CampaignId,
+    OpportunityType=OpportunityType)
 ```
 
 ## Requirements

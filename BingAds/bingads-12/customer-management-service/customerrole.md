@@ -34,6 +34,7 @@ If a user has access to multiple customers, then multiple [CustomerRole](custome
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountids"></a>AccountIds|The list of accounts that the user can access in the customer.<br/><br/>If this element is nil, the user has access to all of the accounts (current and future) in the customer.|**long** array|

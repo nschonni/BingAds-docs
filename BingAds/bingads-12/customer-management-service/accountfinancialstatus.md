@@ -28,6 +28,7 @@ Defines the possible financial status values of an account.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="clearfinancialstatus"></a>ClearFinancialStatus|The account is in good standing.|

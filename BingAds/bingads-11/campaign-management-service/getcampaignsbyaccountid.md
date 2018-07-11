@@ -19,6 +19,7 @@ The *GetCampaignsByAccountIdRequest* object defines the [body](#request-body) an
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountid"></a>AccountId|The identifier of the account that contains the campaigns to get.|**long**|
@@ -32,6 +33,7 @@ The *GetCampaignsByAccountIdRequest* object defines the [body](#request-body) an
 The *GetCampaignsByAccountIdResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -161,58 +163,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetCampaignsByAccountIdResponse> GetCampaignsByAccountIdAsync(
-	long accountId,
-	CampaignType campaignType,
-	bool? returnCoOpCampaigns)
+    long accountId,
+    CampaignType campaignType,
+    bool? returnCoOpCampaigns)
 {
-	var request = new GetCampaignsByAccountIdRequest
-	{
-		AccountId = accountId,
-		CampaignType = campaignType,
-		ReturnCoOpCampaigns = returnCoOpCampaigns
-	};
+    var request = new GetCampaignsByAccountIdRequest
+    {
+        AccountId = accountId,
+        CampaignType = campaignType,
+        ReturnCoOpCampaigns = returnCoOpCampaigns
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetCampaignsByAccountIdAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetCampaignsByAccountIdAsync(r), request));
 }
 ```
 ```java
 static GetCampaignsByAccountIdResponse getCampaignsByAccountId(
-	java.lang.Long accountId,
-	ArrayList<CampaignType> campaignType,
-	boolean returnCoOpCampaigns) throws RemoteException, Exception
+    java.lang.Long accountId,
+    ArrayList<CampaignType> campaignType,
+    boolean returnCoOpCampaigns) throws RemoteException, Exception
 {
-	GetCampaignsByAccountIdRequest request = new GetCampaignsByAccountIdRequest();
+    GetCampaignsByAccountIdRequest request = new GetCampaignsByAccountIdRequest();
 
-	request.setAccountId(accountId);
-	request.setCampaignType(campaignType);
-	request.setReturnCoOpCampaigns(returnCoOpCampaigns);
+    request.setAccountId(accountId);
+    request.setCampaignType(campaignType);
+    request.setReturnCoOpCampaigns(returnCoOpCampaigns);
 
-	return CampaignManagementService.getService().getCampaignsByAccountId(request);
+    return CampaignManagementService.getService().getCampaignsByAccountId(request);
 }
 ```
 ```php
 static function GetCampaignsByAccountId(
-	$accountId,
-	$campaignType,
-	$returnCoOpCampaigns)
+    $accountId,
+    $campaignType,
+    $returnCoOpCampaigns)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetCampaignsByAccountIdRequest();
+    $request = new GetCampaignsByAccountIdRequest();
 
-	$request->AccountId = $accountId;
-	$request->CampaignType = $campaignType;
-	$request->ReturnCoOpCampaigns = $returnCoOpCampaigns;
+    $request->AccountId = $accountId;
+    $request->CampaignType = $campaignType;
+    $request->ReturnCoOpCampaigns = $returnCoOpCampaigns;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetCampaignsByAccountId($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetCampaignsByAccountId($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetCampaignsByAccountId(
-	AccountId=AccountId,
-	CampaignType=CampaignType,
-	ReturnCoOpCampaigns=ReturnCoOpCampaigns)
+    AccountId=AccountId,
+    CampaignType=CampaignType,
+    ReturnCoOpCampaigns=ReturnCoOpCampaigns)
 ```
 
 ## Requirements

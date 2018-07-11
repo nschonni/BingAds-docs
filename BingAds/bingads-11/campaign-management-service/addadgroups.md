@@ -19,6 +19,7 @@ The *AddAdGroupsRequest* object defines the [body](#request-body) and [header](#
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroups"></a>AdGroups|An array of [AdGroup](adgroup.md) objects to add to the specified campaign.<br /><br />You can add a maximum of 1,000 ad groups in a single call. Each campaign can have up to 20,000 ad groups.|[AdGroup](adgroup.md) array|
@@ -31,6 +32,7 @@ The *AddAdGroupsRequest* object defines the [body](#request-body) and [header](#
 The *AddAdGroupsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -202,51 +204,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<AddAdGroupsResponse> AddAdGroupsAsync(
-	long campaignId,
-	IList<AdGroup> adGroups)
+    long campaignId,
+    IList<AdGroup> adGroups)
 {
-	var request = new AddAdGroupsRequest
-	{
-		CampaignId = campaignId,
-		AdGroups = adGroups
-	};
+    var request = new AddAdGroupsRequest
+    {
+        CampaignId = campaignId,
+        AdGroups = adGroups
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.AddAdGroupsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.AddAdGroupsAsync(r), request));
 }
 ```
 ```java
 static AddAdGroupsResponse addAdGroups(
-	java.lang.Long campaignId,
-	ArrayOfAdGroup adGroups) throws RemoteException, Exception
+    java.lang.Long campaignId,
+    ArrayOfAdGroup adGroups) throws RemoteException, Exception
 {
-	AddAdGroupsRequest request = new AddAdGroupsRequest();
+    AddAdGroupsRequest request = new AddAdGroupsRequest();
 
-	request.setCampaignId(campaignId);
-	request.setAdGroups(adGroups);
+    request.setCampaignId(campaignId);
+    request.setAdGroups(adGroups);
 
-	return CampaignManagementService.getService().addAdGroups(request);
+    return CampaignManagementService.getService().addAdGroups(request);
 }
 ```
 ```php
 static function AddAdGroups(
-	$campaignId,
-	$adGroups)
+    $campaignId,
+    $adGroups)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new AddAdGroupsRequest();
+    $request = new AddAdGroupsRequest();
 
-	$request->CampaignId = $campaignId;
-	$request->AdGroups = $adGroups;
+    $request->CampaignId = $campaignId;
+    $request->AdGroups = $adGroups;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->AddAdGroups($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->AddAdGroups($request);
 }
 ```
 ```python
 response=campaignmanagement_service.AddAdGroups(
-	CampaignId=CampaignId,
-	AdGroups=AdGroups)
+    CampaignId=CampaignId,
+    AdGroups=AdGroups)
 ```
 
 ## Requirements

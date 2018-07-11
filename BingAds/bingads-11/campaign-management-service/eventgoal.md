@@ -13,7 +13,7 @@ By default, the UET tag logs user visits to pages on your website that allows Bi
 
 > [!TIP]
 > For an implementation overview, see the [Universal Event Tracking](../guides/universal-event-tracking.md) technical guide.
-
+> 
 > [!IMPORTANT]
 > Every time you add or update a new [DurationGoal](durationgoal.md), [EventGoal](eventgoal.md), [OfflineConversionGoal](offlineconversiongoal.md), [PagesViewedPerVisitGoal](pagesviewedpervisitgoal.md) or [UrlGoal](urlgoal.md) via either the Bing Ads web application or Campaign Management API, the *MSCLKIDAutoTaggingEnabled* value of the corresponding [AccountProperty](accountproperty.md) is set to *True* automatically. If the Scope of the goal is set to *Customer* level, then the [AccountProperty](accountproperty.md) for all accounts under the Customer will be set. 
 
@@ -39,6 +39,7 @@ By default, the UET tag logs user visits to pages on your website that allows Bi
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="actionexpression"></a>ActionExpression|The type of user interaction you want to track. For example 'play' or 'pause'.<br/><br/>If this element is specified during an add or update operation, then the *ActionOperator* element is also required.<br/><br/>The string cannot exceed the maximum length of 100.<br/><br/>**Add:** Optional if you include one or more of the other events; You must include one or more of the following event operator pairs: (*ActionOperator* and *ActionExpression*), (*CategoryOperator* and *CategoryExpression*), (*LabelOperator* and *LabelExpression*), (*ValueOperator* and *Value*).<br/>**Update:** Optional if you include one or more of the other events; If you do not include *ActionOperator* and *ActionExpression* during update, any existing *ActionOperator* and *ActionExpression* settings will be deleted.|**string**|
@@ -56,6 +57,7 @@ The [EventGoal](eventgoal.md) object has [Inherited Elements](#inheritedelements
 
 ### <a name="inheritedelementsconversiongoal"></a>Inherited Elements from ConversionGoal
 The [EventGoal](eventgoal.md) object derives from the [ConversionGoal](conversiongoal.md) object, and inherits the following elements. The descriptions below are specific to [EventGoal](eventgoal.md), and might not apply to other objects that inherit the same elements from the [ConversionGoal](conversiongoal.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

@@ -20,6 +20,7 @@ Defines the possible application types.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="advertiser"></a>Advertiser|An advertiser application.|

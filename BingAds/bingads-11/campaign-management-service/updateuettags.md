@@ -22,6 +22,7 @@ The *UpdateUetTagsRequest* object defines the [body](#request-body) and [header]
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="uettags"></a>UetTags|An array of [UetTag](uettag.md) objects to update within the customer's shared UET tag library.<br /><br />You can update a maximum of 100 UET tags in a single call.|[UetTag](uettag.md) array|
@@ -33,6 +34,7 @@ The *UpdateUetTagsRequest* object defines the [body](#request-body) and [header]
 The *UpdateUetTagsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -115,44 +117,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<UpdateUetTagsResponse> UpdateUetTagsAsync(
-	IList<UetTag> uetTags)
+    IList<UetTag> uetTags)
 {
-	var request = new UpdateUetTagsRequest
-	{
-		UetTags = uetTags
-	};
+    var request = new UpdateUetTagsRequest
+    {
+        UetTags = uetTags
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.UpdateUetTagsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.UpdateUetTagsAsync(r), request));
 }
 ```
 ```java
 static UpdateUetTagsResponse updateUetTags(
-	ArrayOfUetTag uetTags) throws RemoteException, Exception
+    ArrayOfUetTag uetTags) throws RemoteException, Exception
 {
-	UpdateUetTagsRequest request = new UpdateUetTagsRequest();
+    UpdateUetTagsRequest request = new UpdateUetTagsRequest();
 
-	request.setUetTags(uetTags);
+    request.setUetTags(uetTags);
 
-	return CampaignManagementService.getService().updateUetTags(request);
+    return CampaignManagementService.getService().updateUetTags(request);
 }
 ```
 ```php
 static function UpdateUetTags(
-	$uetTags)
+    $uetTags)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new UpdateUetTagsRequest();
+    $request = new UpdateUetTagsRequest();
 
-	$request->UetTags = $uetTags;
+    $request->UetTags = $uetTags;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateUetTags($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateUetTags($request);
 }
 ```
 ```python
 response=campaignmanagement_service.UpdateUetTags(
-	UetTags=UetTags)
+    UetTags=UetTags)
 ```
 
 ## Requirements

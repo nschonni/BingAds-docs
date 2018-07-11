@@ -29,6 +29,7 @@ The [NegativeKeywordList](negativekeywordlist.md) object has [Inherited Elements
 ### <a name="inheritedelementssharedlist"></a>Inherited Elements from SharedList
 The [NegativeKeywordList](negativekeywordlist.md) object derives from the [SharedList](sharedlist.md) object, and inherits the following elements. The descriptions below are specific to [NegativeKeywordList](negativekeywordlist.md), and might not apply to other objects that inherit the same elements from the [SharedList](sharedlist.md) object.  
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="itemcount"></a>ItemCount|The number of [SharedListItem](sharedlistitem.md) objects that are added to this shared list.<br /><br />**Add:** Read-only<br />**Update:** Read-only|**int**|
@@ -37,6 +38,7 @@ The [NegativeKeywordList](negativekeywordlist.md) object derives from the [Share
 
 ### <a name="inheritedelementssharedentity"></a>Inherited Elements from SharedEntity
 The [NegativeKeywordList](negativekeywordlist.md) object derives from the [SharedEntity](sharedentity.md) object, and inherits the following elements. The descriptions below are specific to [NegativeKeywordList](negativekeywordlist.md), and might not apply to other objects that inherit the same elements from the [SharedEntity](sharedentity.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

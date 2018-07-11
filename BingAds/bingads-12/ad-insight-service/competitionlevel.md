@@ -42,6 +42,7 @@ You can specify competition levels when calling the [GetKeywordIdeas](getkeyword
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="high"></a>High|The competition level is high.|

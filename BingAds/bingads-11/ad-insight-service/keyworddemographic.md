@@ -29,6 +29,7 @@ Defines an object that contains the device, age and gender of the user who enter
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="age18_24"></a>Age18_24|The percentage of time that users 18 through 24 years of age searched for the keyword. The value is specified in the range 0.0 through 1.0.|**double**|

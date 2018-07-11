@@ -19,6 +19,7 @@ The *GetSharedEntitiesByAccountIdRequest* object defines the [body](#request-bod
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="sharedentitytype"></a>SharedEntityType|The type of shared entity to get from the account's library.<br /><br />Currently the only supported value is NegativeKeywordList.|**string**|
@@ -30,6 +31,7 @@ The *GetSharedEntitiesByAccountIdRequest* object defines the [body](#request-bod
 The *GetSharedEntitiesByAccountIdResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -96,44 +98,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetSharedEntitiesByAccountIdResponse> GetSharedEntitiesByAccountIdAsync(
-	string sharedEntityType)
+    string sharedEntityType)
 {
-	var request = new GetSharedEntitiesByAccountIdRequest
-	{
-		SharedEntityType = sharedEntityType
-	};
+    var request = new GetSharedEntitiesByAccountIdRequest
+    {
+        SharedEntityType = sharedEntityType
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetSharedEntitiesByAccountIdAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetSharedEntitiesByAccountIdAsync(r), request));
 }
 ```
 ```java
 static GetSharedEntitiesByAccountIdResponse getSharedEntitiesByAccountId(
-	java.lang.String sharedEntityType) throws RemoteException, Exception
+    java.lang.String sharedEntityType) throws RemoteException, Exception
 {
-	GetSharedEntitiesByAccountIdRequest request = new GetSharedEntitiesByAccountIdRequest();
+    GetSharedEntitiesByAccountIdRequest request = new GetSharedEntitiesByAccountIdRequest();
 
-	request.setSharedEntityType(sharedEntityType);
+    request.setSharedEntityType(sharedEntityType);
 
-	return CampaignManagementService.getService().getSharedEntitiesByAccountId(request);
+    return CampaignManagementService.getService().getSharedEntitiesByAccountId(request);
 }
 ```
 ```php
 static function GetSharedEntitiesByAccountId(
-	$sharedEntityType)
+    $sharedEntityType)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetSharedEntitiesByAccountIdRequest();
+    $request = new GetSharedEntitiesByAccountIdRequest();
 
-	$request->SharedEntityType = $sharedEntityType;
+    $request->SharedEntityType = $sharedEntityType;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetSharedEntitiesByAccountId($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetSharedEntitiesByAccountId($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetSharedEntitiesByAccountId(
-	SharedEntityType=SharedEntityType)
+    SharedEntityType=SharedEntityType)
 ```
 
 ## Requirements

@@ -21,6 +21,7 @@ Defines the possible status values of a customer.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The customer is active.|

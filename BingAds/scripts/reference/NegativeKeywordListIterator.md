@@ -23,6 +23,7 @@ while (negativeKeywordListIterator.hasNext()) {
 ```
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [hasNext](#hasnext)|Boolean|Returns a Boolean value that indicates whether this iterator has more elements.
@@ -33,6 +34,7 @@ while (negativeKeywordListIterator.hasNext()) {
 Returns a Boolean value that indicates whether this iterator has more elements.
 
 ### Returns
+
 |Type|Description|
 |-|-
 Boolean|Returns **true** if this iterator has more elements; otherwise, **false**.
@@ -41,6 +43,7 @@ Boolean|Returns **true** if this iterator has more elements; otherwise, **false*
 Advances the iterator and returns the next negative keyword list.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [NegativeKeywordList](NegativeKeywordList.md)|The next negative keywords list in the iterator.
@@ -51,6 +54,7 @@ Returns the number of negative keywords lists that matched the selector's select
 [!INCLUDE[reads-limit](../includes/reads-limit.md)]
 
 ### Returns
+
 |Type|Description|
 |-|-
 int|The number of negative keywords lists that matched the selector's selection criteria.

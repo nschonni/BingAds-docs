@@ -203,7 +203,7 @@ namespace ListHotels
 
 
         // Gets the requested resource.
-        
+
         private static object GetResource(string uri, WebHeaderCollection headers, Type resourceType)
         {
             object resource = null;
@@ -298,8 +298,8 @@ namespace ListHotels
             {
                 Console.WriteLine("Bid:");
             }
-            
-            
+
+
             Console.WriteLine("Bid multiplier source: " + ((hotel.BidMultiplierSource != null) ? hotel.BidMultiplierSource : string.Empty));
 
 
@@ -631,7 +631,6 @@ class AdsApiError
     public string Message { get; set; }
     public string Property { get; set; }
 }
-
 ```
 
 ```java
@@ -1410,7 +1409,6 @@ public class AdsApiError extends Exception {
         return String.format("Code: %s, Message: %s, Property: %s", getCode(), getApiMessage(), getProperty());
     }
 }
-
 ```
 
 ```python
@@ -1666,7 +1664,7 @@ delete_hotel_group($addedHotelGroupId);
 
 function list_ungrouped_hotels(){
     global $customerId, $accountId, $subaccountId, $ungroupedUri;
-    
+
     $url = sprintf($ungroupedUri, $customerId, $accountId, $subaccountId);
     $result = request('GET', $url);
     if ($result === FALSE) {
@@ -1740,7 +1738,7 @@ function add_hotel_group($hotelGroup){
 
 function delete_hotel_group($hotelGroupId){
     global $customerId, $accountId, $subaccountId, $hotelGroupUri;
-    
+
     $url = sprintf($hotelGroupUri, $customerId, $accountId, $subaccountId, $hotelGroupId);
     $result = request('DELETE', $url);
     if ($result === FALSE) {
@@ -1809,5 +1807,4 @@ function printObject($object, $tabCount = 0){
         }
     } 
 }
-
 ```

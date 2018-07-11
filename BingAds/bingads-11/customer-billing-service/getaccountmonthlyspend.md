@@ -19,6 +19,7 @@ The *GetAccountMonthlySpendRequest* object defines the [body](#request-body) and
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountid"></a>AccountId|The identifier of the account that contains the spend information to get.<br /><br />The account must use the invoice payment method; credit card accounts are not supported.<br /><br />If the account identifier belongs to a reseller, the operation sums the account balances for all the accounts of all the customers that the reseller manages. If the reseller has ten customers and each customer has ten accounts, the operation returns the sum of the monthly spend of all 100 accounts. To get the monthly spend of a single account of a customer that the reseller manages, set the *AccountId* element to the specified account identifier. To get the monthly spend of all the accounts of a customer that the reseller manages, call this operation for each account, and then sum the monthly spend amounts.|**long**|
@@ -31,6 +32,7 @@ The *GetAccountMonthlySpendRequest* object defines the [body](#request-body) and
 The *GetAccountMonthlySpendResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -81,51 +83,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetAccountMonthlySpendResponse> GetAccountMonthlySpendAsync(
-	long accountId,
-	DateTime monthYear)
+    long accountId,
+    DateTime monthYear)
 {
-	var request = new GetAccountMonthlySpendRequest
-	{
-		AccountId = accountId,
-		MonthYear = monthYear
-	};
+    var request = new GetAccountMonthlySpendRequest
+    {
+        AccountId = accountId,
+        MonthYear = monthYear
+    };
 
-	return (await CustomerBillingService.CallAsync((s, r) => s.GetAccountMonthlySpendAsync(r), request));
+    return (await CustomerBillingService.CallAsync((s, r) => s.GetAccountMonthlySpendAsync(r), request));
 }
 ```
 ```java
 static GetAccountMonthlySpendResponse getAccountMonthlySpend(
-	java.lang.Long accountId,
-	Calendar monthYear) throws RemoteException, Exception
+    java.lang.Long accountId,
+    Calendar monthYear) throws RemoteException, Exception
 {
-	GetAccountMonthlySpendRequest request = new GetAccountMonthlySpendRequest();
+    GetAccountMonthlySpendRequest request = new GetAccountMonthlySpendRequest();
 
-	request.setAccountId(accountId);
-	request.setMonthYear(monthYear);
+    request.setAccountId(accountId);
+    request.setMonthYear(monthYear);
 
-	return CustomerBillingService.getService().getAccountMonthlySpend(request);
+    return CustomerBillingService.getService().getAccountMonthlySpend(request);
 }
 ```
 ```php
 static function GetAccountMonthlySpend(
-	$accountId,
-	$monthYear)
+    $accountId,
+    $monthYear)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerBillingProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerBillingProxy'];
 
-	$request = new GetAccountMonthlySpendRequest();
+    $request = new GetAccountMonthlySpendRequest();
 
-	$request->AccountId = $accountId;
-	$request->MonthYear = $monthYear;
+    $request->AccountId = $accountId;
+    $request->MonthYear = $monthYear;
 
-	return $GLOBALS['CustomerBillingProxy']->GetService()->GetAccountMonthlySpend($request);
+    return $GLOBALS['CustomerBillingProxy']->GetService()->GetAccountMonthlySpend($request);
 }
 ```
 ```python
 response=customerbilling_service.GetAccountMonthlySpend(
-	AccountId=AccountId,
-	MonthYear=MonthYear)
+    AccountId=AccountId,
+    MonthYear=MonthYear)
 ```
 
 ## Requirements

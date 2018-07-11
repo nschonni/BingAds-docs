@@ -12,7 +12,7 @@ ms.author: "scottwhi"
 
 > [!NOTE]
 > This beta release of Hotel Ads is available to select participants only. For information about participating in the beta release program, please contact your account manager.
->
+> 
 > The API and documentation are subject to change.
 
 The Hotel API lets you manage your hotel ad campaigns and bidding.
@@ -36,6 +36,7 @@ Next, append a template from the following table to add, get, and update hotel r
 
 > [!NOTE]
 > The IDs for SubAccounts, HotelGroups, Hotels, and ReportJobs are strings and must be enclosed in single quotes. For example, SubAccounts('12345')/HotelGroups. This applies to SubAccounts, HotelGroups, Hotels, and ReportJobs only; do not use single quotes for Customers and Accounts.
+
 
 |Template|Verb|Description|
 |-|-|-
@@ -65,6 +66,7 @@ Next, append a template from the following table to add, get, and update hotel r
 
 The following are the query parameters that the request may specify.
 
+
 |Parameter|Description
 |-|-
 |<a name="count-param"/>$count|An OData parameter that determines whether the response includes an `@odata.count` field. Typically, you include this parameter when you request a list of entities, such as a list of hotel groups. The `@odata.count` field contains the total number of resource entities available, not those returned in the request. For example, if you set $top to 40, but 1,000 entities exist, `@odata.count` is set to 1,000, not 40. To include the count, set $count to **true**.
@@ -78,7 +80,8 @@ The following are the query parameters that the request may specify.
 ## Headers
 
 The following are the request and response headers.
- 
+
+
 |Header|Description|
 |---------|---------------|
 |<a name="authorization-hdr"/>Authorization|Request header.<br/><br/>Set this header to a bearer OAuth access token. For example, "Authorization: Bearer QTkxRUFBRjEzOTUyNEIx...". For information about getting a token, see [Getting Started](../hotel-service/get-started.md).
@@ -87,15 +90,16 @@ The following are the request and response headers.
 
 > [!NOTE]
 > This API supports using OAuth access tokens only for authentication (see the Authorization header). You may not use the UserName and Password headers to specify legacy credentials.
->
->This API does not require a developer token. If you include the DeveloperToken header, the API ignores it. 
+> 
+> This API does not require a developer token. If you include the DeveloperToken header, the API ignores it. 
 
 
 
 ## Resource Objects
 
 The following are the resource objects used by the API.
- 
+
+
 
 |Object|Description
 |------|-----------
@@ -128,6 +132,7 @@ The following are the resource objects used by the API.
 
 Defines a response object for requests that add a resource.
 
+
 |Name|Value|Type
 |-|-|-
 |value|The ID of the resource that you added.|object
@@ -136,6 +141,7 @@ Defines a response object for requests that add a resource.
 ### AdsApiError
 
 Defines an error that occurred.
+
 
 |Name|Value|Type
 |-|-|-
@@ -149,6 +155,7 @@ Defines an error that occurred.
 
 Defines the amount to adjust the base bid by if the user books the specified number of days in advance.
 
+
 |Name|Value|Type|Add|Update
 |-|-|-|-|-
 |Factor|The percentage amount to adjust the base bid by. The valid range is 0.0 through 10.0, with a precision of two decimal places. For example, if the fixed bid is $5 and the multiplier is 5, the final bid is $25. Using the same multiplier, if the percentage bid is 5% and the room rate is $100, the final bid is $25.|Double|Required|Optional
@@ -159,6 +166,7 @@ Defines the amount to adjust the base bid by if the user books the specified num
 ### AssociationCollection
 
 Defines a collection of hotel associations.
+
 
 |Name|Value|Type|Add|Update
 |-|-|-|-|-
@@ -171,6 +179,7 @@ Defines the base class for a bid.
 
 Do not specify this class, instead specify the [FixedBid](#fixedbid) or [PercentageBid](#percentagebid) class.
 
+
 |Name|Value|Type|Add|Update
 |-|-|-|-|-
 |Amount|The dollar bid amount. For details about the valid bid range for your market, see the Currency Value table in the [Currencies](https://msdn.microsoft.com/library/bing-ads-currencies.aspx) topic. The customer's account specifies the currency used.|Double|Required|Optional
@@ -180,6 +189,7 @@ Do not specify this class, instead specify the [FixedBid](#fixedbid) or [Percent
 
 Defines the daily budget for hotel ads in a subaccount.
 
+
 |Name|Value|Type|Add|Update
 |-|-|-|-|-
 |Amount|The daily budget amount. For details about valid budgets for your market, see the Currency Value table in the [Currencies](https://msdn.microsoft.com/library/bing-ads-currencies.aspx) topic. The customer's account specifies the currency used for the budget.|Double|Required|Optional
@@ -188,6 +198,7 @@ Defines the daily budget for hotel ads in a subaccount.
 ### CheckinDayOfWeekMultiplier
 
 Defines the amount to adjust the base bid by if the user checks in on one of the specified weekdays.
+
 
 
 |Name|Value|Type|Add|Update
@@ -201,6 +212,7 @@ Defines the amount to adjust the base bid by if the user checks in on one of the
 
 Defines a response object for requests that get a list of resources.
 
+
 |Name|Value|Type
 |-|-|-
 |value|The list of requested resources. Depending on the request, the list contains one of the following types of objects:<ul><li>[Hotel](#hotel)</li><li>[HotelGroup](#hotelgroup)</li><li>[SubAccount](#subaccount)</li><li>[HotelAssociation](#hotelassociation)</li></ul>For example, if you request a list of hotel groups, `value` contains a list of `HotelGroup` objects.|object[]
@@ -210,6 +222,7 @@ Defines a response object for requests that get a list of resources.
 ### DateTypeMultiplier
 
 Defines the amount to adjust the base bid by if the user searched for hotels using specific dates.
+
 
 |Name|Value|Type|Add|Update
 |-|-|-|-|-
@@ -222,6 +235,7 @@ Defines the amount to adjust the base bid by if the user searched for hotels usi
 
 Defines the amount to adjust the base bid by if the user is using one of the specified devices to search for hotels.
 
+
 |Name|Value|Type|Add|Update
 |-|-|-|-|-
 |DeviceTypes|A list of device types. Apply the multiplier if the user is using one of the device types to search for hotels. The following are the possible case-sensitive values.<br /><br /><ul><li>Desktop</li><li>Mobile</li><li>Tablet</li></ul>|String[]|Required|Optional
@@ -233,6 +247,7 @@ Defines the amount to adjust the base bid by if the user is using one of the spe
 
 Defines a fixed bid amount.
 
+
 |Name|Value|Type|Add|Update
 |-|-|-|-|-
 |Amount|The fixed dollar bid amount. For details about the valid bid range for your market, see the Currency Value table in the [Currencies](https://msdn.microsoft.com/library/bing-ads-currencies.aspx) topic. The customer's account specifies the currency used.<br /><br />The bid amount is the per-night bid. For example, if the bid is $3.50 and the itinerary is for a 3-night stay, the final bid is $10.50.|Double|Required|Optional
@@ -242,6 +257,7 @@ Defines a fixed bid amount.
 ### Hotel
 
 Defines a hotel ad.
+
 
 |Name|Value|Type|Add|Update
 |-|-|-|-|-
@@ -260,6 +276,7 @@ Defines a hotel ad.
 
 Defines the association between a hotel and a hotel group.
 
+
 |Name|Value|Type|Add|Update
 |-|-|-|-|-
 |Errors|The list of reasons why the association failed validation.<br /><br />The response includes this field only if the association failed validation when you tried to add it.|[AdsApiError](#adsapierror)|Read-only|N/A
@@ -273,6 +290,7 @@ Defines the association between a hotel and a hotel group.
 ### HotelGroup
 
 Defines a logical grouping of hotels.
+
 
 |Name|Value|Type|Add|Update
 |-|-|-|-|-
@@ -290,6 +308,7 @@ Defines a logical grouping of hotels.
 
 Defines the amount to adjust the base bid by if the user stays the specified number of nights or longer.
 
+
 |Name|Value|Type|Add|Update
 |-|-|-|-|-
 |Factor|The percentage amount to adjust the base bid by. The valid range is 0.0 through 10.0, with a precision of two decimal places. For example, if the fixed bid is $5 and the multiplier is 5, the final bid is $25. Using the same multiplier, if the percentage bid is 5% and the room rate is $100, the final bid is $25.|Double|Required|Optional
@@ -303,6 +322,7 @@ Defines the base class for a multiplier.
 
 Do not specify this class, instead specify one of the multiplier classes such as [UserCountryMultiplier](#usercountrymultiplier).
 
+
 |Name|Value|Type|Add|Update
 |-|-|-|-|-
 |Factor|The percentage amount to adjust the base bid by. The valid range is 0.0 through 10.0, with a precision of two decimal places. For example, if the fixed bid is $5 and the multiplier is 5, the final bid is $25. Using the same multiplier, if the percentage bid is 5% and the room rate is $100, the final bid is $25.|Double|Required|Optional
@@ -311,6 +331,7 @@ Do not specify this class, instead specify one of the multiplier classes such as
 ### PercentageBid
 
 Defines a bid based on the percentage of the hotel room's rate.
+
 
 |Name|Value|Type|Add|Update
 |-|-|-|-|-
@@ -321,6 +342,7 @@ Defines a bid based on the percentage of the hotel room's rate.
 ### ReportJob
 
 Defines a report job.
+
 
 |Name|Value|Type|Add
 |-|-|-|-
@@ -343,6 +365,7 @@ Defines a report job.
 
 Defines the amount to adjust the base bid by if the user is searching for hotels on one of the specified Bing sites.
 
+
 |Name|Value|Type|Add|Update
 |-|-|-|-|-
 |Factor|The percentage amount to adjust the base bid by. The valid range is 0.0 through 10.0, with a precision of two decimal places. For example, if the fixed bid is $5 and the multiplier is 5, the final bid is $25. Using the same multiplier, if the percentage bid is 5% and the room rate is $100, the final bid is $25.|Double|Required|Optional
@@ -353,6 +376,7 @@ Defines the amount to adjust the base bid by if the user is searching for hotels
 ### SubAccount
 
 Defines the top-level hotel ads grouping. You can think of this logically as a hotel campaign.
+
 
 |Name|Value|Type|Add|Update
 |-|-|-|-|-
@@ -370,6 +394,7 @@ Defines the top-level hotel ads grouping. You can think of this logically as a h
 
 Defines the amount to adjust the base bid by if the user accesses one of the Bing domains.
 
+
 |Name|Value|Type|Add|Update
 |-|-|-|-|-
 |Countries|A list of two-letter ISO 3116 county codes. For a list of possible country codes, see [Bing Ads country codes](https://help.bingads.microsoft.com/apex/index/3/en-us/50873#!).<br /><br />Apply the multiplier if the user accesses the Bing domain with the specified country code. For example, if the list includes US and DE, Bing uses the multiplier if the user uses Bing.com with the *us* or *de* country code (for example, bing.com?cc=de).|String[]|Required|Optional
@@ -384,6 +409,7 @@ Defines the amount to adjust the base bid by if the user accesses one of the Bin
 ## HTTP status codes
 
 The requests may return the following HTTP status codes.
+
 
 |Status code|Description
 |-----------|-----------
@@ -402,6 +428,7 @@ The requests may return the following HTTP status codes.
 ## Error codes
 
 ### Reporting error codes
+
 
 |Error code|Description
 |-|-

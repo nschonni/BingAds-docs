@@ -23,6 +23,7 @@ Defines the possible status values of a keyword.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The keyword can be used to match user search queries.|

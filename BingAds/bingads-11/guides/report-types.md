@@ -14,6 +14,7 @@ Each report type aggregates the data at a different level or with a different fo
 ## <a name="adextensions"></a>Ad Extensions
 Ad extension reports give you a closer look at how each ad extension is performing based on click type for ads and keywords and ad extension properties for ad groups.
 
+
 |Report|Description|
 |----------|---------------|
 |[AdExtensionByAdReportRequest](../reporting-service/adextensionbyadreportrequest.md)|Use this report to compare how well different versions of your ad extensions are performing with each ad.<br /><br />You can request impressions, clicks, spend, and average cost per click by ad. Once downloaded, this data can be sorted by ad ID, ad title, ad extension type, and ad extension version.|
@@ -23,6 +24,7 @@ Ad extension reports give you a closer look at how each ad extension is performi
 
 ## <a name="audiencenetwork"></a>Audience Network
 
+
 |Report|Description|
 |----------|---------------|
 |[AgeGenderAudienceReportRequest](../reporting-service/agegenderaudiencereportrequest.md)|To discover how your campaigns and ad groups are resonating with different age groups and genders.<br /><br />You can request impressions, clicks, spend, and average cost-per-click for each ad group, organized by gender and age group. Please note that this report only reflects your Audience Campaign data.|
@@ -30,11 +32,13 @@ Ad extension reports give you a closer look at how each ad extension is performi
 
 ## <a name="budget"></a>Billing and Budget
 
+
 |Report|Description|
 |----------|---------------|
 |[BudgetSummaryReportRequest](../reporting-service/budgetsummaryreportrequest.md)|Use this report to discover how your campaign's budget is performing for the month. For example, the report shows your monthly budget, how much you have spent to date, and whether you are on target to spend your monthly budget.<br /><br />You can request your monthly budget, how much you have spent to date, and whether you are on target to spend your monthly budget.|
 
 ## <a name="changehistory"></a>Change History
+
 
 |Report|Description|
 |----------|---------------|
@@ -42,6 +46,7 @@ Ad extension reports give you a closer look at how each ad extension is performi
 
 ## <a name="dynamicsearchads"></a>Dynamic Search Ads
 Dynamic search ad reports give you a closer look at how your Dynamic Search Ads are performing based on dynamic ad target data.
+
 
 |Report|Description|
 |----------|---------------|
@@ -53,6 +58,7 @@ Dynamic search ad reports give you a closer look at how your Dynamic Search Ads 
 Delivery performance reports show the overall effectiveness and cost of ads and keywords for a specified time period. Most of the reports include a similar set of performance statistics, for example impressions, clicks, and click-through rate. The optional attributes are a strong factor in distinguishing which report to use. For example the ad performance, ad dynamic text performance, and destination URL performance reports all provide similar ad performance data, each with a different set of attributes. 
 
 You would use the account and campaign performance reports to monitor click and spend data to ensure that you are optimizing your budget, and you would use the ad and keyword performance reports to identify ads and keywords that are performing well in terms of click-through rate and conversions.
+
 
 |Report|Description|
 |----------|---------------|
@@ -73,6 +79,7 @@ You would use the account and campaign performance reports to monitor click and 
 ## <a name="productads"></a>Product Ads
 Product ad reports give you a closer look at how your Bing Shopping Campaigns are performing based on product partition and product offer data.
 
+
 |Report|Description|
 |----------|---------------|
 |[ProductDimensionPerformanceReportRequest](../reporting-service/productdimensionperformancereportrequest.md)|Use this report to find out which product dimensions are performing well and those that are not.<br /><br />You can request impressions, clicks, spend, and average cost per click for your landing pages. Once downloaded, this data can be sorted by product category, custom label, title, and type.|
@@ -83,6 +90,7 @@ Product ad reports give you a closer look at how your Bing Shopping Campaigns ar
 
 ## <a name="targeting"></a>Targeting
 You can use the targeting reports to determine whether your ads are reaching their intended audiences.
+
 
 |Report|Description|
 |----------|---------------|

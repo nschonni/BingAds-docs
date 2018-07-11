@@ -22,6 +22,7 @@ Contains a list of keyword estimators with your keyword level filter criteria fo
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupid"></a>AdGroupId|The ad group identifier.<br/><br/>This element is reserved for future use. The returned estimates are not based on any specific ad group.|**long**|

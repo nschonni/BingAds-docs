@@ -30,6 +30,7 @@ The *SendUserInvitationRequest* object defines the [body](#request-body) and [he
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="userinvitation"></a>UserInvitation|The user invitation to send.|[UserInvitation](userinvitation.md)|
@@ -41,6 +42,7 @@ The *SendUserInvitationRequest* object defines the [body](#request-body) and [he
 The *SendUserInvitationResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -102,44 +104,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<SendUserInvitationResponse> SendUserInvitationAsync(
-	UserInvitation userInvitation)
+    UserInvitation userInvitation)
 {
-	var request = new SendUserInvitationRequest
-	{
-		UserInvitation = userInvitation
-	};
+    var request = new SendUserInvitationRequest
+    {
+        UserInvitation = userInvitation
+    };
 
-	return (await CustomerManagementService.CallAsync((s, r) => s.SendUserInvitationAsync(r), request));
+    return (await CustomerManagementService.CallAsync((s, r) => s.SendUserInvitationAsync(r), request));
 }
 ```
 ```java
 static SendUserInvitationResponse sendUserInvitation(
-	UserInvitation userInvitation) throws RemoteException, Exception
+    UserInvitation userInvitation) throws RemoteException, Exception
 {
-	SendUserInvitationRequest request = new SendUserInvitationRequest();
+    SendUserInvitationRequest request = new SendUserInvitationRequest();
 
-	request.setUserInvitation(userInvitation);
+    request.setUserInvitation(userInvitation);
 
-	return CustomerManagementService.getService().sendUserInvitation(request);
+    return CustomerManagementService.getService().sendUserInvitation(request);
 }
 ```
 ```php
 static function SendUserInvitation(
-	$userInvitation)
+    $userInvitation)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
 
-	$request = new SendUserInvitationRequest();
+    $request = new SendUserInvitationRequest();
 
-	$request->UserInvitation = $userInvitation;
+    $request->UserInvitation = $userInvitation;
 
-	return $GLOBALS['CustomerManagementProxy']->GetService()->SendUserInvitation($request);
+    return $GLOBALS['CustomerManagementProxy']->GetService()->SendUserInvitation($request);
 }
 ```
 ```python
 response=customermanagement_service.SendUserInvitation(
-	UserInvitation=UserInvitation)
+    UserInvitation=UserInvitation)
 ```
 
 ## Requirements

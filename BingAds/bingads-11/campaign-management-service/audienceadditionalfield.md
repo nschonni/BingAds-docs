@@ -25,6 +25,7 @@ Defines a list of optional [Audience](audience.md) properties that you can reque
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="audiencenetworksize"></a>AudienceNetworkSize|Request that the *AudienceNetworkSize* element be included within each returned [Audience](audience.md) object.|

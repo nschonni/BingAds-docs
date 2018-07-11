@@ -22,6 +22,7 @@ The *DeleteAccountRequest* object defines the [body](#request-body) and [header]
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountid"></a>AccountId|The identifier of the account to delete.|**long**|
@@ -79,51 +80,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<DeleteAccountResponse> DeleteAccountAsync(
-	long accountId,
-	base64Binary timeStamp)
+    long accountId,
+    base64Binary timeStamp)
 {
-	var request = new DeleteAccountRequest
-	{
-		AccountId = accountId,
-		TimeStamp = timeStamp
-	};
+    var request = new DeleteAccountRequest
+    {
+        AccountId = accountId,
+        TimeStamp = timeStamp
+    };
 
-	return (await CustomerManagementService.CallAsync((s, r) => s.DeleteAccountAsync(r), request));
+    return (await CustomerManagementService.CallAsync((s, r) => s.DeleteAccountAsync(r), request));
 }
 ```
 ```java
 static DeleteAccountResponse deleteAccount(
-	java.lang.Long accountId,
-	byte[] timeStamp) throws RemoteException, Exception
+    java.lang.Long accountId,
+    byte[] timeStamp) throws RemoteException, Exception
 {
-	DeleteAccountRequest request = new DeleteAccountRequest();
+    DeleteAccountRequest request = new DeleteAccountRequest();
 
-	request.setAccountId(accountId);
-	request.setTimeStamp(timeStamp);
+    request.setAccountId(accountId);
+    request.setTimeStamp(timeStamp);
 
-	return CustomerManagementService.getService().deleteAccount(request);
+    return CustomerManagementService.getService().deleteAccount(request);
 }
 ```
 ```php
 static function DeleteAccount(
-	$accountId,
-	$timeStamp)
+    $accountId,
+    $timeStamp)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
 
-	$request = new DeleteAccountRequest();
+    $request = new DeleteAccountRequest();
 
-	$request->AccountId = $accountId;
-	$request->TimeStamp = $timeStamp;
+    $request->AccountId = $accountId;
+    $request->TimeStamp = $timeStamp;
 
-	return $GLOBALS['CustomerManagementProxy']->GetService()->DeleteAccount($request);
+    return $GLOBALS['CustomerManagementProxy']->GetService()->DeleteAccount($request);
 }
 ```
 ```python
 response=customermanagement_service.DeleteAccount(
-	AccountId=AccountId,
-	TimeStamp=TimeStamp)
+    AccountId=AccountId,
+    TimeStamp=TimeStamp)
 ```
 
 ## Requirements

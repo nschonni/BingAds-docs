@@ -27,6 +27,7 @@ Defines the possible intent options for location criterion, for example to targe
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="peoplein"></a>PeopleIn|Show ads to people in your targeted location.|

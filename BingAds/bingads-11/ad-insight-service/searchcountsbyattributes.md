@@ -21,6 +21,7 @@ Defines an object that contains a list of keyword historical search counts for t
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="device"></a>Device|The device of the user who entered the search query.|**string**|

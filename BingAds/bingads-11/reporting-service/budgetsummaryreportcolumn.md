@@ -35,6 +35,7 @@ To see how far back hourly, daily, weekly, monthly, yearly and summary aggregate
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="accountid"></a>AccountId|The Bing Ads assigned identifier of an account.|
@@ -51,6 +52,7 @@ To see how far back hourly, daily, weekly, monthly, yearly and summary aggregate
 ## <a name="remarks"></a>Remarks
 ### <a name="requiredcolumns"></a>Required Columns
 The report must include the following columns, and one or more of the performance statistics columns. For more information, see [Report Attributes and Performance Statistics](../guides/report-attributes-performance-statistics.md).
+
 
 |Column|
 |----------|

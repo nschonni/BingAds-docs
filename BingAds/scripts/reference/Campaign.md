@@ -14,6 +14,7 @@ ms.topic: "article"
 Contains the methods used to manage a [campaign](/bingads/guides/entity-hierarchy-limits#campaign).
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [addNegativeKeywordList(NegativeKeywordList negativeKeywordList)](#addnegativekeywordlist~negativekeywordlist-negativekeywordlist~)|void|Adds a negative keyword list to this campaign.
@@ -37,11 +38,13 @@ Contains the methods used to manage a [campaign](/bingads/guides/entity-hierarch
 Adds a negative keyword list to this campaign. 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 negativeKeywordList|[NegativeKeywordList](NegativeKeywordList.md)|The negative keyword list to add to the campaign. You can add a maximum of 20 lists.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -50,6 +53,7 @@ void|Returns nothing.
 Enables this campaign.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -58,6 +62,7 @@ void|Returns nothing.
 Returns the campaign's bidding strategy. 
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|The campaign's bidding strategy. Possible values are:<br /><ul><li>MANUAL_CPC</li><li>TARGET_SPEND</li><li>MAXIMIZE_CONVERSIONS</li><li>ENHANCED_CPC</li><li>TARGET_CPA</li></ul>For more information, see [Bid Strategies](../concepts/bid-strategies.md).
@@ -66,6 +71,7 @@ string|The campaign's bidding strategy. Possible values are:<br /><ul><li>MANUAL
 Returns the budget for this campaign.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [Budget](Budget.md)|The budget for this campaign.
@@ -74,6 +80,7 @@ Returns the budget for this campaign.
 Returns this entity's type.
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|This entity's type (is set to Campaign).
@@ -82,6 +89,7 @@ string|This entity's type (is set to Campaign).
 Returns the ID that uniquely identifies this campaign.
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|The ID that uniquely identifies this campaign.
@@ -90,6 +98,7 @@ string|The ID that uniquely identifies this campaign.
 Returns the name of this campaign.
 
 ### Returns:
+
 |Type|Description|
 |-|-
 string|The name of this campaign.
@@ -98,6 +107,7 @@ string|The name of this campaign.
 Returns the performance data for the campaign. 
 
 ### Returns
+
 |Type|Description|
 |-|-
 [Stats](Stats.md)|The campaign's performance data.
@@ -106,6 +116,7 @@ Returns the performance data for the campaign.
 Returns a Boolean value that indicates whether this campaign is enabled.
 
 ### Returns
+
 |Type|Description|
 |-|-
 boolean|Returns **true** if this campaign is enabled; otherwise, **false**.
@@ -114,6 +125,7 @@ boolean|Returns **true** if this campaign is enabled; otherwise, **false**.
 Returns a Boolean value that indicates whether this campaign is paused.
 
 ### Returns
+
 |Type|Description|
 |-|-
 Boolean|Returns **true** if this campaign is paused; otherwise, **false**.
@@ -122,6 +134,7 @@ Boolean|Returns **true** if this campaign is paused; otherwise, **false**.
 Returns a Boolean value that indicates whether this campaign is removed (deleted).
 
 ### Returns
+
 |Type|Description|
 |-|-
 Boolean|Returns **true** if this campaign is removed; otherwise, **false**.
@@ -130,6 +143,7 @@ Boolean|Returns **true** if this campaign is removed; otherwise, **false**.
 Returns a [builder](../concepts/builders.md) that you use to add an ad group to this campaign.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupBuilder](AdGroupBuilder.md)|The builder that you use to add an ad group to this campaign.
@@ -138,6 +152,7 @@ Returns a [builder](../concepts/builders.md) that you use to add an ad group to 
 Pauses this campaign.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -146,6 +161,7 @@ void|Returns nothing.
 Removes this campaign.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -154,11 +170,13 @@ void|Returns nothing.
 Sets the name of this campaign.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 name|string|The name of the campaign. The name may contain a maximum of 128 characters and must be unique within the account.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -167,6 +185,7 @@ void|Returns nothing.
 Returns this campaign's final URLs, tracking template, and custom parameters.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [CampaignUrls](CampaignUrls.md)|The object used to manage the campaign's final URLs, tracking template, and custom parameters.

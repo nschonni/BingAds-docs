@@ -102,11 +102,13 @@ For reports that include impression share performance statistics columns you can
 
 The following attribute and impression share performance statistics columns are mutually exclusive when submitting the [AccountPerformanceReportRequest](../reporting-service/accountperformancereportrequest.md) and [AdGroupPerformanceReportRequest](../reporting-service/adgroupperformancereportrequest.md).
 
+
 |Attributes|Impression Share Performance Statistics|
 |--------------|-------------------------------------------|
 |BidMatchType<br /><br />DeviceOS<br /><br />TopVsOther|ExactMatchImpressionSharePercent<br /><br />ImpressionLostToAdRelevancePercent<br /><br />ImpressionLostToBidPercent<br /><br />ImpressionLostToBudgetPercent<br /><br />ImpressionLostToExpectedCtrPercent<br /><br />ImpressionLostToRankPercent<br /><br />ImpressionSharePercent|
 
 The following attribute and impression share performance statistics columns are mutually exclusive when submitting the [CampaignPerformanceReportRequest](../reporting-service/campaignperformancereportrequest.md).
+
 
 |Attributes|Impression Share Performance Statistics|
 |--------------|-------------------------------------------|
@@ -114,11 +116,13 @@ The following attribute and impression share performance statistics columns are 
 
 The following attribute and impression share performance statistics columns are mutually exclusive when submitting the [ProductDimensionPerformanceReportRequest](../reporting-service/productdimensionperformancereportrequest.md).
 
+
 |Attributes|Impression Share Performance Statistics|
 |--------------|-------------------------------------------|
 |AdDistribution<br /><br />AdId<br /><br />AdStatus<br /><br />ClickType<br /><br />Language<br /><br />LocalStoreCode<br /><br />Network<br /><br />TopVsOther|BenchmarkBid<br /><br />BenchmarkCtr<br /><br />ImpressionLostToBudgetPercent<br /><br />ImpressionLostToRankPercent<br /><br />ImpressionSharePercent|
-	
+
 The following attribute and impression share performance statistics columns are mutually exclusive when submitting the [ProductPartitionPerformanceReportRequest](../reporting-service/productpartitionperformancereportrequest.md).
+
 
 |Attributes|Impression Share Performance Statistics|
 |--------------|-------------------------------------------|
@@ -126,6 +130,7 @@ The following attribute and impression share performance statistics columns are 
 
 ## <a name="timeperiod"></a>TimePeriod Column
 If you include the *TimePeriod* column, then the format of the values in the downloaded report will vary depending on the aggregation level that you specify in the report request. For example, if the aggregation level is Daily, each field in TimePeriod column will contain the day formatted as *yyyy-mm-dd*.
+
 
 |Aggregation|Description|
 |---------------|---------------|
@@ -139,6 +144,7 @@ If you include the *TimePeriod* column, then the format of the values in the dow
 
 ## <a name="aggregation-time"></a>Aggregation and Time
 For most report requests you must set the *Aggregation* and *Time* elements. The following are the time periods that you can specify for each aggregation value.
+
 
 |Aggregation Value|Time Periods|
 |---------------------|----------------|

@@ -23,6 +23,7 @@ Defines the editorial review status values of a keyword.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The keyword passed editorial review.|

@@ -45,6 +45,7 @@ Defines an advertiser account.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountfinancialstatus"></a>AccountFinancialStatus|The financial status of the account. For example, the status can indicate whether the account is in good standing or is past due.<br/><br/>**Add:** Read-only<br/>**Update:** Read-only|[AccountFinancialStatus](accountfinancialstatus.md)|
@@ -78,10 +79,11 @@ Defines an advertiser account.
 ### <a name="taxinformation"></a>AdvertiserAccount TaxInformation
 The following is the list of keys that are available for the *TaxInformation* element of an *AdvertiserAccount*.  
 
+
 |TaxInformation Key|Description|Countries|
 |---------|---------|---------|
 |TaxId|The account's tax identifier The tax identifier must be valid in the country that you specified in the BusinessAddress element. Without a tax identifier, taxes might apply based on your business location.<br/><br/>**Add:** Required<br/>**Update:** Read-only|Brazil, Australia, Taiwan|
-|GstInNumber|GSTINNumber	This number starts with two numbers representing the state code in which the business is registered followed by a maximum of 13 number and letters.<br/><br/>**Add:** Optional<br/>**Update:** Read-only|India|
+|GstInNumber|GSTINNumber    This number starts with two numbers representing the state code in which the business is registered followed by a maximum of 13 number and letters.<br/><br/>**Add:** Optional<br/>**Update:** Read-only|India|
 |NZGSTNumber|The NZGSTN Number is an 8 or 9 Digit long TaxID. Without a NZGSTN Number taxes might apply based on your business location.<br/><br/>**Add:** Optional<br/>**Update:** Read-only|New Zealand|
 |PanNumber|The PAN number.<br/><br/>**Add:** Required<br/>**Update:** Read-only|India|
 |TaxType|You can indicate the type of tax. Possible values are Business and Personal.<br/><br/>**Add:** Optional<br/>**Update:** Optional|All|

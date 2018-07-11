@@ -33,6 +33,7 @@ Defines a customer.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="customeraddress"></a>CustomerAddress|The customer's business address.<br/><br/>**Add:** Required<br/>**Update:** Required|[Address](address.md)|

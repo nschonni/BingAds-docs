@@ -19,6 +19,7 @@ The *AppealEditorialRejectionsRequest* object defines the [body](#request-body) 
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="entityidtoparentidassociations"></a>EntityIdToParentIdAssociations|A list of unique identifiers of the ads or keywords that failed editorial review. The list can contain a maximum of 1,000 [EntityIdToParentIdAssociation](entityidtoparentidassociation.md) objects.<br /><br />You submit each ad or keyword identifier with their respective ad group parent identifier in a [EntityIdToParentIdAssociation](entityidtoparentidassociation.md) object. The list of [EntityIdToParentIdAssociation](entityidtoparentidassociation.md) must include either ad identifiers or keyword identifiers. The list cannot include a mix ad and keyword entity identifiers.<br /><br />If an entity in the list has already been approved, the entity is ignored. If an entity in the list is not appealable, the call fails. If an entity in the list has an appeal pending, this request supersedes the pending request.|[EntityIdToParentIdAssociation](entityidtoparentidassociation.md) array|
@@ -32,6 +33,7 @@ The *AppealEditorialRejectionsRequest* object defines the [body](#request-body) 
 The *AppealEditorialRejectionsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -112,58 +114,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<AppealEditorialRejectionsResponse> AppealEditorialRejectionsAsync(
-	IList<EntityIdToParentIdAssociation> entityIdToParentIdAssociations,
-	EntityType entityType,
-	string justificationText)
+    IList<EntityIdToParentIdAssociation> entityIdToParentIdAssociations,
+    EntityType entityType,
+    string justificationText)
 {
-	var request = new AppealEditorialRejectionsRequest
-	{
-		EntityIdToParentIdAssociations = entityIdToParentIdAssociations,
-		EntityType = entityType,
-		JustificationText = justificationText
-	};
+    var request = new AppealEditorialRejectionsRequest
+    {
+        EntityIdToParentIdAssociations = entityIdToParentIdAssociations,
+        EntityType = entityType,
+        JustificationText = justificationText
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.AppealEditorialRejectionsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.AppealEditorialRejectionsAsync(r), request));
 }
 ```
 ```java
 static AppealEditorialRejectionsResponse appealEditorialRejections(
-	ArrayOfEntityIdToParentIdAssociation entityIdToParentIdAssociations,
-	EntityType entityType,
-	java.lang.String justificationText) throws RemoteException, Exception
+    ArrayOfEntityIdToParentIdAssociation entityIdToParentIdAssociations,
+    EntityType entityType,
+    java.lang.String justificationText) throws RemoteException, Exception
 {
-	AppealEditorialRejectionsRequest request = new AppealEditorialRejectionsRequest();
+    AppealEditorialRejectionsRequest request = new AppealEditorialRejectionsRequest();
 
-	request.setEntityIdToParentIdAssociations(entityIdToParentIdAssociations);
-	request.setEntityType(entityType);
-	request.setJustificationText(justificationText);
+    request.setEntityIdToParentIdAssociations(entityIdToParentIdAssociations);
+    request.setEntityType(entityType);
+    request.setJustificationText(justificationText);
 
-	return CampaignManagementService.getService().appealEditorialRejections(request);
+    return CampaignManagementService.getService().appealEditorialRejections(request);
 }
 ```
 ```php
 static function AppealEditorialRejections(
-	$entityIdToParentIdAssociations,
-	$entityType,
-	$justificationText)
+    $entityIdToParentIdAssociations,
+    $entityType,
+    $justificationText)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new AppealEditorialRejectionsRequest();
+    $request = new AppealEditorialRejectionsRequest();
 
-	$request->EntityIdToParentIdAssociations = $entityIdToParentIdAssociations;
-	$request->EntityType = $entityType;
-	$request->JustificationText = $justificationText;
+    $request->EntityIdToParentIdAssociations = $entityIdToParentIdAssociations;
+    $request->EntityType = $entityType;
+    $request->JustificationText = $justificationText;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->AppealEditorialRejections($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->AppealEditorialRejections($request);
 }
 ```
 ```python
 response=campaignmanagement_service.AppealEditorialRejections(
-	EntityIdToParentIdAssociations=EntityIdToParentIdAssociations,
-	EntityType=EntityType,
-	JustificationText=JustificationText)
+    EntityIdToParentIdAssociations=EntityIdToParentIdAssociations,
+    EntityType=EntityType,
+    JustificationText=JustificationText)
 ```
 
 ## Requirements

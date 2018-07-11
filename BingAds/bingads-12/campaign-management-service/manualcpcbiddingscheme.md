@@ -34,6 +34,7 @@ The [ManualCpcBiddingScheme](manualcpcbiddingscheme.md) object has [Inherited El
 ### <a name="inheritedelementsbiddingscheme"></a>Inherited Elements from BiddingScheme
 The [ManualCpcBiddingScheme](manualcpcbiddingscheme.md) object derives from the [BiddingScheme](biddingscheme.md) object, and inherits the following elements. The descriptions below are specific to [ManualCpcBiddingScheme](manualcpcbiddingscheme.md), and might not apply to other objects that inherit the same elements from the [BiddingScheme](biddingscheme.md) object.  
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="type"></a>Type|The type of the bidding scheme. This value is *ManualCpcBiddingScheme* when you retrieve a manual CPC bidding scheme. For more information about bidding scheme types, see the [BiddingScheme Data Object Remarks](biddingscheme.md#remarks).<br/><br/>**Add:** Read-only<br/>**Update:** Read-only|**string**|

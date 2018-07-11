@@ -28,6 +28,7 @@ var adGroupSelector = BingAdsApp.adGroups()
 
 ## Methods
 
+
 |Method Name|Return Type|Description|
 |-|-|-
 [forDateRange(Object dateFrom, Object dateTo)](#fordaterange~object-datefrom_-object-dateto~)|[AdGroupSelector](./AdGroupSelector.md)|Returns a selector with the start and end dates applied.
@@ -44,12 +45,14 @@ Returns a selector with the start and end dates applied. The date range specifie
 [!INCLUDE[date-range-objects](../includes/date-range-objects.md)]
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 dateFrom|Object|Start date of the date range that specifies the performance data to include in the selector.
 dateTo|Object|End date of the date range that specifies the performance data to include in the selector.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupSelector](./AdGroupSelector.md)|Selector with date range applied.
@@ -62,11 +65,13 @@ Returns a selector with the predefined date range applied. The date range specif
 [!INCLUDE[date-range-constants](../includes/date-range-constants.md)] 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 dateRange|String|The predefined date range string that specifies the performance data to include in the selector. The predefined date range string is case sensitive.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupSelector](./AdGroupSelector.md)|Selector with date range applied.
@@ -75,6 +80,7 @@ dateRange|String|The predefined date range string that specifies the performance
 Returns an [iterator](../concepts/iterators.md) based on the selector's selection criteria.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupIterator](./AdGroupIterator.md)|An iterator that you use to iterate through the selected ad groups.
@@ -96,11 +102,13 @@ For example, the following call returns ad groups in ascending order by AverageC
 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 orderBy|string|The ordering to apply.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupSelector](./AdGroupSelector.md)|Selector with ordering applied.
@@ -119,6 +127,7 @@ Specify the condition parameter in the form, "columnName operator value" where:
 ### Supported Columns
 
 Supported columns for ad group filtering. The names are case sensitive.
+
 
 |Column|Type|Example|
 |-|-|-
@@ -141,11 +150,13 @@ KeywordMaxCpc|double|`withCondition("KeywordMaxCpc > 10.0")`<br /><br />The valu
 CampaignStatus|enumeration|`withCondition("CampaignStatus = ENABLED")`<br /><br />This example returns ad groups from only ENABLED campaigns. Possible case-sensitive values are: <ul><li>ENABLED</li><li>PAUSED</li><li>REMOVED</li></ul>
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 condition|string|The condition to add to the selector.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupSelector](./AdGroupSelector.md)|Selector with the condition applied.
@@ -163,11 +174,13 @@ BingAdsApp.adGroups()
 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 ids|string[]|An array of ad group IDs. The maximum number of IDs that you may specify is 1,000. If you specify more than 1,000 IDs, calling the `get()` method fails with a runtime error.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupSelector](./AdGroupSelector.md)|Selector restricted to the given IDs.
@@ -176,11 +189,13 @@ ids|string[]|An array of ad group IDs. The maximum number of IDs that you may sp
 Returns a selector with the top *n* ad groups that match the selection criteria.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 limit|int|The number of ad groups to return. The actual number may be less.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupSelector](./AdGroupSelector.md)|Selector with limit applied.

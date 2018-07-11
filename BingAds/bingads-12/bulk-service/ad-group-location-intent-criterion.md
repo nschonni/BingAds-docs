@@ -158,9 +158,9 @@ Represents the association status between the ad group and the criterion. If the
 Determines whether a person must be physically located in the targeted location in order for the ad to display.
 
 The following values are supported. The default value is *PeopleInOrSearchingForOrViewingPages*.
-  - Use *PeopleInOrSearchingForOrViewingPages* if you want to show ads to people in, searching for, or viewing pages about your targeted location.  
-  - Use *PeopleSearchingForOrViewingPages* if you want to show ads to people searching for or viewing pages about your targeted location.  
-  - Use *PeopleIn* if you want to show ads to people in your targeted location.  
+- Use *PeopleInOrSearchingForOrViewingPages* if you want to show ads to people in, searching for, or viewing pages about your targeted location.  
+- Use *PeopleSearchingForOrViewingPages* if you want to show ads to people searching for or viewing pages about your targeted location.  
+- Use *PeopleIn* if you want to show ads to people in your targeted location.  
 
 **Add:** Optional  
 **Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.  

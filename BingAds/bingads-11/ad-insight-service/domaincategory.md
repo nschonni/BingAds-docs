@@ -22,6 +22,7 @@ Defines an object that contains a domain category with website coverage.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="bid"></a>Bid|Reserved for future use.|**double**|

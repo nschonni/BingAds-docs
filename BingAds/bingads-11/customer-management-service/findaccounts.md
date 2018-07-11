@@ -19,6 +19,7 @@ The *FindAccountsRequest* object defines the [body](#request-body) and [header](
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountfilter"></a>AccountFilter|The criteria to use to filter the list of accounts. You can specify either an account name or an account number. If your filter value is of the form, X*nnnnn*, where *nnnnn* is a series of digits, the operation filters by account number.<br /><br />The filter value can contain a partial or full account name or number of the accounts that you want to get. The operation includes the account in the result if the name or number of the account begins with the specified filter value.<br /><br />The operation performs a case-insensitive comparison when it compares your filter value to the account name or number. For example, if you specify "t" as the filter value, the list will include accounts whose names begin with "t" or "T".<br /><br />Setting this element to an empty string is the same as calling the [GetAccountsInfo](getaccountsinfo.md).|**string**|
@@ -33,6 +34,7 @@ The *FindAccountsRequest* object defines the [body](#request-body) and [header](
 The *FindAccountsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -93,65 +95,65 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<FindAccountsResponse> FindAccountsAsync(
-	long? customerId,
-	string accountFilter,
-	int topN,
-	ApplicationType? applicationScope)
+    long? customerId,
+    string accountFilter,
+    int topN,
+    ApplicationType? applicationScope)
 {
-	var request = new FindAccountsRequest
-	{
-		CustomerId = customerId,
-		AccountFilter = accountFilter,
-		TopN = topN,
-		ApplicationScope = applicationScope
-	};
+    var request = new FindAccountsRequest
+    {
+        CustomerId = customerId,
+        AccountFilter = accountFilter,
+        TopN = topN,
+        ApplicationScope = applicationScope
+    };
 
-	return (await CustomerManagementService.CallAsync((s, r) => s.FindAccountsAsync(r), request));
+    return (await CustomerManagementService.CallAsync((s, r) => s.FindAccountsAsync(r), request));
 }
 ```
 ```java
 static FindAccountsResponse findAccounts(
-	java.lang.Long customerId,
-	java.lang.String accountFilter,
-	int topN,
-	ApplicationType applicationScope) throws RemoteException, Exception
+    java.lang.Long customerId,
+    java.lang.String accountFilter,
+    int topN,
+    ApplicationType applicationScope) throws RemoteException, Exception
 {
-	FindAccountsRequest request = new FindAccountsRequest();
+    FindAccountsRequest request = new FindAccountsRequest();
 
-	request.setCustomerId(customerId);
-	request.setAccountFilter(accountFilter);
-	request.setTopN(topN);
-	request.setApplicationScope(applicationScope);
+    request.setCustomerId(customerId);
+    request.setAccountFilter(accountFilter);
+    request.setTopN(topN);
+    request.setApplicationScope(applicationScope);
 
-	return CustomerManagementService.getService().findAccounts(request);
+    return CustomerManagementService.getService().findAccounts(request);
 }
 ```
 ```php
 static function FindAccounts(
-	$customerId,
-	$accountFilter,
-	$topN,
-	$applicationScope)
+    $customerId,
+    $accountFilter,
+    $topN,
+    $applicationScope)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
 
-	$request = new FindAccountsRequest();
+    $request = new FindAccountsRequest();
 
-	$request->CustomerId = $customerId;
-	$request->AccountFilter = $accountFilter;
-	$request->TopN = $topN;
-	$request->ApplicationScope = $applicationScope;
+    $request->CustomerId = $customerId;
+    $request->AccountFilter = $accountFilter;
+    $request->TopN = $topN;
+    $request->ApplicationScope = $applicationScope;
 
-	return $GLOBALS['CustomerManagementProxy']->GetService()->FindAccounts($request);
+    return $GLOBALS['CustomerManagementProxy']->GetService()->FindAccounts($request);
 }
 ```
 ```python
 response=customermanagement_service.FindAccounts(
-	CustomerId=CustomerId,
-	AccountFilter=AccountFilter,
-	TopN=TopN,
-	ApplicationScope=ApplicationScope)
+    CustomerId=CustomerId,
+    AccountFilter=AccountFilter,
+    TopN=TopN,
+    ApplicationScope=ApplicationScope)
 ```
 
 ## Requirements

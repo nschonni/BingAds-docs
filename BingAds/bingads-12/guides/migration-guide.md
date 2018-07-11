@@ -69,6 +69,7 @@ To specify Traditional Chinese in version 12 you must use *TraditionalChinese* (
 #### <a name="adinsight-keyworddemographic"></a>Keyword Demographic
 The age range element names are updated within the [KeywordDemographic](../ad-insight-service/keyworddemographic.md) object.
 
+
 Version 11|Version 12  
 ---------|---------
 Age18_24|EighteenToTwentyFour
@@ -139,10 +140,10 @@ The CPM pricing model is no longer supported in Bing Ads, and the *Pricing Model
 
 #### <a name="bulk-timezone"></a>Time Zone Updates
 The following time zone values are updated for the *Time Zone* field of the [Campaign](../bulk-service/campaign.md) record. 
--  The value for the UTC+12 time zone is updated from *MagadanSolomonIslandNewCaledonia* to *SolomonIslandNewCaledonia*.
--  The value is updated from *Almaty_Novosibirsk* to *AlmatyNovosibirsk*.
--  The value is updated from *MidwayIslandand_Samoa* to *MidwayIslandAndSamoa*.
--  The value is updated from *MountainTime_US_Canada* to *MountainTimeUSCanada*.
+- The value for the UTC+12 time zone is updated from *MagadanSolomonIslandNewCaledonia* to *SolomonIslandNewCaledonia*.
+- The value is updated from *Almaty_Novosibirsk* to *AlmatyNovosibirsk*.
+- The value is updated from *MidwayIslandand_Samoa* to *MidwayIslandAndSamoa*.
+- The value is updated from *MountainTime_US_Canada* to *MountainTimeUSCanada*.
 
 #### <a name="bulk-inmarketaudience-supportedcampaigntypes"></a>In-Market Audiences Supported for Audience Campaigns
 In version 12 the AudienceNetworkInMarketAudiences and AudienceNetworkAudiences values are removed from the [DownloadEntity](../bulk-service/downloadentity.md) value set. In version 12 when you request in-market audiences via the InMarketAudiences or Audiences [DownloadEntity](../bulk-service/downloadentity.md) values, all of them will be returned. In version 11 the in-market audiences that are supported for Audience campaigns were not returned unless you included AudienceNetworkInMarketAudiences or AudienceNetworkAudiences in the download request. 
@@ -223,10 +224,10 @@ The CPM pricing model is no longer supported in Bing Ads, and the *PricingModel*
 
 #### <a name="campaign-timezone"></a>Time Zone Updates
 The following time zone values are updated for the *TimeZone* element of the [Campaign](../campaign-management-service/campaign.md) object. 
--  The value for the UTC+12 time zone is updated from *MagadanSolomonIslandNewCaledonia* to *SolomonIslandNewCaledonia*.
--  The value is updated from *Almaty_Novosibirsk* to *AlmatyNovosibirsk*.
--  The value is updated from *MidwayIslandand_Samoa* to *MidwayIslandAndSamoa*.
--  The value is updated from *MountainTime_US_Canada* to *MountainTimeUSCanada*.
+- The value for the UTC+12 time zone is updated from *MagadanSolomonIslandNewCaledonia* to *SolomonIslandNewCaledonia*.
+- The value is updated from *Almaty_Novosibirsk* to *AlmatyNovosibirsk*.
+- The value is updated from *MidwayIslandand_Samoa* to *MidwayIslandAndSamoa*.
+- The value is updated from *MountainTime_US_Canada* to *MountainTimeUSCanada*.
 
 #### <a name="campaign-batcherrorcollectioneditorial"></a>Batch Error Collection Editorial Errors
 The Appealable, DisapprovedText, Location, PublisherCountry, and ReasonCode elements are removed from the the *ForwardCompatibilityMap* of the [BatchErrorCollection](../campaign-management-service/batcherrorcollection.md) object, and added to the new [EditorialErrorCollection](../campaign-management-service/editorialerrorcollection.md) object. 
@@ -337,27 +338,29 @@ In the response message for [GetUser](../customer-management-service/getuser.md)
 
 Let's consider the following user roles and permissions before multi-user consolidation. Each user must log in separately and has different permissions during each logged in session. Likewise via the API each user's access token (see [Authentication with OAuth](authentication-oauth.md)) represents permissions limited to the corresponding user and role. 
 
-|User|Role|Permissions|
-|-------------|----------------------|----------------|
-|one@contoso.com|Viewer|Customer A - All Accounts|
-|two@contoso.com|Super Admin|Customer B - All Accounts|
-|three@contoso.com|Viewer|Customer C - Account A|
-|four@contoso.com|Standard User|Customer B - All Accounts|
+
+|       User        |     Role      |        Permissions        |
+|-------------------|---------------|---------------------------|
+|  one@contoso.com  |    Viewer     | Customer A - All Accounts |
+|  two@contoso.com  |  Super Admin  | Customer B - All Accounts |
+| three@contoso.com |    Viewer     |  Customer C - Account A   |
+| four@contoso.com  | Standard User | Customer B - All Accounts |
 
 First please note that only one email address per customer can be consolidated, so in this example two@contoso.com and four@contoso.com cannot be consolidated together. Now let's see what happens after the top three users are consolidated under one@contoso.com. 
-  * No changes for user four@contoso.com whether via the Bing Ads web application, Bing Ads Editor, or API. 
-  * The user one@contoso.com can log in via the Bing Ads web application and Bing Ads Editor. The consolidated users i.e., two@contoso.com and three@contoso.com no longer have permissions to sign in via the Bing Ads web application or Bing Ads Editor. While signed in as one@contoso.com, you can switch context to the customer accounts with corresponding user roles that had previously been assigned to two@contoso.com and three@contoso.com. Although you can access multiple customers signed in with one user's credentials (one@contoso.com), you will need to switch from customer to customer to manage the accounts that are linked with unique user roles. Customers and their related accounts remain distinct. For more details see the Bing Ads help topic [Managing your user name to access multiple accounts](https://help.bingads.microsoft.com/#apex/3/en/app54567/1/en-US/#ext:Customers_Management).
-  * With Bing Ads API version 11 there is no change to access before versus after multi-user consolidation. Each of the user's access token (see [Authentication with OAuth](authentication-oauth.md)) represents permissions limited to the corresponding user and role. 
-  * Starting with Bing Ads API version 12, the access token for user one@contoso.com will represent permissions to the consolidated list (superset) of accounts. The user role in effect will depend on the customer and account identifiers specified in the service request. Access tokens for two@contoso.com and three@contoso.com will no longer be accepted. 
-  * The *UserName* returned via [GetUser](../customer-management-service/getuser.md) and [GetUsersInfo](../customer-management-service/getusersinfo.md) will differ between version 11 and 12 for two@contoso.com and three@contoso.com. In version 11 the *UserName* will be two@contoso.com and three@contoso.com, whereas in version 12 the *UserName* for each of the corresponding user identifiers will be one@contoso.com. In other words the operations will always return whatever user name can authenticate using the respective API version.
-    > [!NOTE]
-    > If the multi-user credentials were provisioned through the user invitation work flow i.e., there was never an "old user name" for access to a customer, a system generated GUID will be returned in the *UserName* element in version 11. In version 12 the multi-user email address will be returned. 
-  
+* No changes for user four@contoso.com whether via the Bing Ads web application, Bing Ads Editor, or API. 
+* The user one@contoso.com can log in via the Bing Ads web application and Bing Ads Editor. The consolidated users i.e., two@contoso.com and three@contoso.com no longer have permissions to sign in via the Bing Ads web application or Bing Ads Editor. While signed in as one@contoso.com, you can switch context to the customer accounts with corresponding user roles that had previously been assigned to two@contoso.com and three@contoso.com. Although you can access multiple customers signed in with one user's credentials (one@contoso.com), you will need to switch from customer to customer to manage the accounts that are linked with unique user roles. Customers and their related accounts remain distinct. For more details see the Bing Ads help topic [Managing your user name to access multiple accounts](https://help.bingads.microsoft.com/#apex/3/en/app54567/1/en-US/#ext:Customers_Management).
+* With Bing Ads API version 11 there is no change to access before versus after multi-user consolidation. Each of the user's access token (see [Authentication with OAuth](authentication-oauth.md)) represents permissions limited to the corresponding user and role. 
+* Starting with Bing Ads API version 12, the access token for user one@contoso.com will represent permissions to the consolidated list (superset) of accounts. The user role in effect will depend on the customer and account identifiers specified in the service request. Access tokens for two@contoso.com and three@contoso.com will no longer be accepted. 
+* The *UserName* returned via [GetUser](../customer-management-service/getuser.md) and [GetUsersInfo](../customer-management-service/getusersinfo.md) will differ between version 11 and 12 for two@contoso.com and three@contoso.com. In version 11 the *UserName* will be two@contoso.com and three@contoso.com, whereas in version 12 the *UserName* for each of the corresponding user identifiers will be one@contoso.com. In other words the operations will always return whatever user name can authenticate using the respective API version.
+  > [!NOTE]
+  > If the multi-user credentials were provisioned through the user invitation work flow i.e., there was never an "old user name" for access to a customer, a system generated GUID will be returned in the *UserName* element in version 11. In version 12 the multi-user email address will be returned. 
+
 Also of note is that the Name, Lcid, JobTitle, and ContactInfo user settings for the same person will be automatically synchronized with any updates that occur after user consolidation. The LastModifiedByUserId and LastModifiedTime are also in sync across each returned [User](../customer-management-service/user.md) object, unless you had an old username merged and have not updated any user settings since the consolidation. 
 > [!NOTE]
 > The TimeStamp differs from the LastModifiedTime. All TimeStamp values are unique per User and when you call [UpdateUser](../customer-management-service/updateuser.md) you must include the corresponding user's timestamps (including the address timestamp).
 
 For example let's say you haven't updated user information for one@contoso.com since prior to consolidation with two@contoso.com and three@contoso.com. After consolidation and until the user settings are updated post-consolidation, you will continue to observe a distinct LastModifiedByUserId and LastModifiedTime within each returned [User](../customer-management-service/user.md) object.
+
 
 |User Id|Contact Info Id|Permissions|LastModifiedByUserId|
 |-------------|----------------------|----------------|----------------|
@@ -366,6 +369,7 @@ For example let's say you haven't updated user information for one@contoso.com s
 |789|890|Customer C - Account A|789|
 
 Now let's say that one@contoso.com is acting in the context of Customer B and updates their contact information. The updated contact information as well as the same LastModifiedByUserId and LastModifiedTime are now syncrhonized across all returned [User](../customer-management-service/user.md) objects.
+
 
 |User Id|Contact Info Id|Permissions|LastModifiedByUserId|
 |-------------|----------------------|----------------|----------------|
@@ -392,6 +396,7 @@ The *BusinessName* element is added to the [Address](../customer-management-serv
 #### <a name="customer-advertiseraccount"></a>AutoTag Type
 The *AutoTag* key and value pair is removed from the *ForwardCompatibilityMap* element of the [AdvertiserAccount](../customer-management-service/advertiseraccount.md) object. Instead the *AutoTagType* element is added to the [AdvertiserAccount](../customer-management-service/advertiseraccount.md). The new [AutoTagType](../customer-management-service/autotagtype.md) values are *Inactive*, *Preserve*, and *Replace*. If you used values 0, 1, or 2 in the version 11 *AutoTag*, then you can replace them with the version 12 auto tag type as follows.
 
+
 Version 11|Version 12  
 ---------|---------
 0|Inactive
@@ -406,16 +411,16 @@ The *CurrencyType* value set is renamed as [CurrencyCode](../customer-management
 
 #### <a name="customer-timezone"></a>Time Zone Updates
 The following values are updated in the [TimeZoneType](../customer-management-service/timezonetype.md) value set. 
--  The value for the UTC+12 time zone is updated from *MagadanSolomonIslandNewCaledonia* to *SolomonIslandNewCaledonia*.
--  The value of *InternationalDatelineWest* (lowercase 'l' in Dateline) is updated to *InternationalDateLineWest* (uppercase 'L' in DateLine). 
+- The value for the UTC+12 time zone is updated from *MagadanSolomonIslandNewCaledonia* to *SolomonIslandNewCaledonia*.
+- The value of *InternationalDatelineWest* (lowercase 'l' in Dateline) is updated to *InternationalDateLineWest* (uppercase 'L' in DateLine). 
 
 #### <a name="customer-searchcustomers-predicates"></a>Search Customers Predicates
 The following [Predicate](../customer-management-service/predicate.md#searchcustomers) field and operator sets are no longer available in version 12. 
--  PersonName Equals
--  PersonName Contains
--  Email Equals
--  Email Contains
--  UserName Contains (UserName Equals is still available in version 12)
+- PersonName Equals
+- PersonName Contains
+- Email Equals
+- Email Contains
+- UserName Contains (UserName Equals is still available in version 12)
 
 ## <a name="reporting"></a>Reporting
 
@@ -434,6 +439,7 @@ The sandbox endpoint is [https://reporting.api.sandbox.bingads.microsoft.com/Api
 Previously there were some discrepancies between the report column value set names and the names of the columns in the downloaded reports. In Reporting API Version 12 all of the downloaded column names match the requested value. For example now when you submit a [KeywordPerformanceReportRequest](../reporting-service/keywordperformancereportrequest.md) with the *BidStrategyType* value from the [KeywordPerformanceReportColumn](../reporting-service/keywordperformancereportcolumn.md) value set, the column name in the downloaded report is also *BidStrategyType* in Reporting API Version 12. Previously in version 11, the column name in the downloaded report was *Bid strategy type*.
 
 The following column names have changed in the downloaded reports from version 11 to 12.
+
 
 Version 11|Version 12  
 ---------|---------
@@ -472,6 +478,7 @@ TopLevelCategory|Category0
 
 Likewise when you include the TimePeriod column in version 12 the name of the column in the downloaded report will be TimePeriod. In version 11 the column name varied by aggregation as follows.
 
+
 |Aggregation|Version 11 Column Name|Version 12 Column Name|
 |---------------|---------------|---------------|
 |Daily|GregorianDate|TimePeriod|
@@ -496,6 +503,7 @@ For parity with aggregation options (unit of time) in the Bing Ads web applicati
 
 When submitting the following report requests, you must use the [ReportAggregation](../reporting-service/reportaggregation.md) data type instead of *NonHourlyReportAggregation* within the *ReportAggregation* element. Although the [ReportAggregation](../reporting-service/reportaggregation.md) value set includes additional aggregation periods, unless otherwise noted below these reports are still limited to Summary, Daily, Weekly, Monthly, and Yearly aggregation. If you submit a report with an invalid aggregation period, the API will return error code 2007, ReportingServiceInvalidReportAggregation. 
 
+
 Report Request|Aggregation Periods Added in Version 12  
 ---------|---------
 [AdDynamicTextPerformanceReportRequest](../reporting-service/addynamictextperformancereportrequest.md)|Hourly
@@ -512,8 +520,8 @@ Report Request|Aggregation Periods Added in Version 12
 [UserLocationPerformanceReportRequest](../reporting-service/userlocationperformancereportrequest.md)|DayOfWeek, Hourly, HourOfDay
 
 When submitting the following report requests, you must use the [ReportAggregation](../reporting-service/reportaggregation.md) data type instead of *SearchQueryReportAggregation* within the *ReportAggregation* element.
--  [DSASearchQueryPerformanceReportRequest](../reporting-service/dsasearchqueryperformancereportrequest.md)
--  [SearchQueryPerformanceReportRequest](../reporting-service/searchqueryperformancereportrequest.md)
+- [DSASearchQueryPerformanceReportRequest](../reporting-service/dsasearchqueryperformancereportrequest.md)
+- [SearchQueryPerformanceReportRequest](../reporting-service/searchqueryperformancereportrequest.md)
 
 #### <a name="reporting-budgetsummaryreporttime"></a>Budget Summary Report Time
 For parity with the predefined time options (e.g., 'Yesterday') for the budget summary report in the Bing Ads web application, Bing Ads API Version 12 enables comparable predefined time options that previously were not supported via Bing Ads API Version 11. In version 11 only Today, Yesterday, LastSevenDays, ThisMonth, and LastMonth were supported for the budget summary report. Version 12 now supports Last14Days, Last30Days, LastFourWeeks, LastMonth, LastSevenDays, LastSixMonths, LastThreeMonths, LastWeek, LastYear, ThisMonth, ThisWeek, ThisYear, Today, and Yesterday. 
@@ -531,6 +539,7 @@ The Native value is renamed Audience in the [AdDistributionReportFilter](../repo
 
 #### <a name="reporting-historical-columns"></a>Historical Columns
 The [AdGroupPerformanceReportColumn ](../reporting-service/adgroupperformancereportcolumn.md), [CampaignPerformanceReportColumn ](../reporting-service/campaignperformancereportcolumn.md), and [KeywordPerformanceReportColumn](../reporting-service/keywordperformancereportcolumn.md) values are renamed from Historic to Historical.
+
 
 Version 11|Version 12  
 ---------|---------

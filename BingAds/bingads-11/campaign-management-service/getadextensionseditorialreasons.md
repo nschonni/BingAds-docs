@@ -19,6 +19,7 @@ The *GetAdExtensionsEditorialReasonsRequest* object defines the [body](#request-
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountid"></a>AccountId|The identifier of the account that owns the extensions.|**long**|
@@ -32,6 +33,7 @@ The *GetAdExtensionsEditorialReasonsRequest* object defines the [body](#request-
 The *GetAdExtensionsEditorialReasonsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -128,58 +130,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetAdExtensionsEditorialReasonsResponse> GetAdExtensionsEditorialReasonsAsync(
-	long accountId,
-	IList<AdExtensionIdToEntityIdAssociation> adExtensionIdToEntityIdAssociations,
-	AssociationType associationType)
+    long accountId,
+    IList<AdExtensionIdToEntityIdAssociation> adExtensionIdToEntityIdAssociations,
+    AssociationType associationType)
 {
-	var request = new GetAdExtensionsEditorialReasonsRequest
-	{
-		AccountId = accountId,
-		AdExtensionIdToEntityIdAssociations = adExtensionIdToEntityIdAssociations,
-		AssociationType = associationType
-	};
+    var request = new GetAdExtensionsEditorialReasonsRequest
+    {
+        AccountId = accountId,
+        AdExtensionIdToEntityIdAssociations = adExtensionIdToEntityIdAssociations,
+        AssociationType = associationType
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetAdExtensionsEditorialReasonsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetAdExtensionsEditorialReasonsAsync(r), request));
 }
 ```
 ```java
 static GetAdExtensionsEditorialReasonsResponse getAdExtensionsEditorialReasons(
-	java.lang.Long accountId,
-	ArrayOfAdExtensionIdToEntityIdAssociation adExtensionIdToEntityIdAssociations,
-	AssociationType associationType) throws RemoteException, Exception
+    java.lang.Long accountId,
+    ArrayOfAdExtensionIdToEntityIdAssociation adExtensionIdToEntityIdAssociations,
+    AssociationType associationType) throws RemoteException, Exception
 {
-	GetAdExtensionsEditorialReasonsRequest request = new GetAdExtensionsEditorialReasonsRequest();
+    GetAdExtensionsEditorialReasonsRequest request = new GetAdExtensionsEditorialReasonsRequest();
 
-	request.setAccountId(accountId);
-	request.setAdExtensionIdToEntityIdAssociations(adExtensionIdToEntityIdAssociations);
-	request.setAssociationType(associationType);
+    request.setAccountId(accountId);
+    request.setAdExtensionIdToEntityIdAssociations(adExtensionIdToEntityIdAssociations);
+    request.setAssociationType(associationType);
 
-	return CampaignManagementService.getService().getAdExtensionsEditorialReasons(request);
+    return CampaignManagementService.getService().getAdExtensionsEditorialReasons(request);
 }
 ```
 ```php
 static function GetAdExtensionsEditorialReasons(
-	$accountId,
-	$adExtensionIdToEntityIdAssociations,
-	$associationType)
+    $accountId,
+    $adExtensionIdToEntityIdAssociations,
+    $associationType)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetAdExtensionsEditorialReasonsRequest();
+    $request = new GetAdExtensionsEditorialReasonsRequest();
 
-	$request->AccountId = $accountId;
-	$request->AdExtensionIdToEntityIdAssociations = $adExtensionIdToEntityIdAssociations;
-	$request->AssociationType = $associationType;
+    $request->AccountId = $accountId;
+    $request->AdExtensionIdToEntityIdAssociations = $adExtensionIdToEntityIdAssociations;
+    $request->AssociationType = $associationType;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdExtensionsEditorialReasons($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdExtensionsEditorialReasons($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetAdExtensionsEditorialReasons(
-	AccountId=AccountId,
-	AdExtensionIdToEntityIdAssociations=AdExtensionIdToEntityIdAssociations,
-	AssociationType=AssociationType)
+    AccountId=AccountId,
+    AdExtensionIdToEntityIdAssociations=AdExtensionIdToEntityIdAssociations,
+    AssociationType=AssociationType)
 ```
 
 ## Requirements

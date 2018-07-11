@@ -24,6 +24,7 @@ Defines a biddable criterion that you want applied to the specified campaign.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="criterionbid"></a>CriterionBid|The bid to use in the auction.<br/><br/>**Add:** Requirements vary depending on the type of *Criterion* that is [inherited](#inheritedelements) from the [CampaignCriterion](campaigncriterion.md) object. The bid is optional and will be set to the default of *0* if not included for [AgeCriterion](agecriterion.md), [DayTimeCriterion](daytimecriterion.md), [DeviceCriterion](devicecriterion.md), [GenderCriterion](gendercriterion.md), [LocationCriterion](locationcriterion.md), and [RadiusCriterion](radiuscriterion.md). The bid is not applicable for [LocationIntentCriterion](locationintentcriterion.md) and [ProductScope](productscope.md) (The service will not return any error and the bid will be ignored even if you include it).<br/>**Update:** Requirements vary depending on the type of *Criterion* that is [inherited](#inheritedelements) from the [CampaignCriterion](campaigncriterion.md) object. The bid is required for [AgeCriterion](agecriterion.md), [DayTimeCriterion](daytimecriterion.md), [DeviceCriterion](devicecriterion.md), [GenderCriterion](gendercriterion.md), [LocationCriterion](locationcriterion.md), and [RadiusCriterion](radiuscriterion.md). The bid is not applicable for [LocationIntentCriterion](locationintentcriterion.md) and [ProductScope](productscope.md) (The service will not return any error and the bid will be ignored even if you include it).|[CriterionBid](criterionbid.md)|
@@ -34,6 +35,7 @@ The [BiddableCampaignCriterion](biddablecampaigncriterion.md) object has [Inheri
 
 ### <a name="inheritedelementscampaigncriterion"></a>Inherited Elements from CampaignCriterion
 The [BiddableCampaignCriterion](biddablecampaigncriterion.md) object derives from the [CampaignCriterion](campaigncriterion.md) object, and inherits the following elements. The descriptions below are specific to [BiddableCampaignCriterion](biddablecampaigncriterion.md), and might not apply to other objects that inherit the same elements from the [CampaignCriterion](campaigncriterion.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

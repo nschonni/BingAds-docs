@@ -19,6 +19,7 @@ The *UpdateAdExtensionsRequest* object defines the [body](#request-body) and [he
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountid"></a>AccountId|The identifier of the account which contains the extensions.|**long**|
@@ -31,6 +32,7 @@ The *UpdateAdExtensionsRequest* object defines the [body](#request-body) and [he
 The *UpdateAdExtensionsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -358,51 +360,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<UpdateAdExtensionsResponse> UpdateAdExtensionsAsync(
-	long accountId,
-	IList<AdExtension> adExtensions)
+    long accountId,
+    IList<AdExtension> adExtensions)
 {
-	var request = new UpdateAdExtensionsRequest
-	{
-		AccountId = accountId,
-		AdExtensions = adExtensions
-	};
+    var request = new UpdateAdExtensionsRequest
+    {
+        AccountId = accountId,
+        AdExtensions = adExtensions
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.UpdateAdExtensionsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.UpdateAdExtensionsAsync(r), request));
 }
 ```
 ```java
 static UpdateAdExtensionsResponse updateAdExtensions(
-	java.lang.Long accountId,
-	ArrayOfAdExtension adExtensions) throws RemoteException, Exception
+    java.lang.Long accountId,
+    ArrayOfAdExtension adExtensions) throws RemoteException, Exception
 {
-	UpdateAdExtensionsRequest request = new UpdateAdExtensionsRequest();
+    UpdateAdExtensionsRequest request = new UpdateAdExtensionsRequest();
 
-	request.setAccountId(accountId);
-	request.setAdExtensions(adExtensions);
+    request.setAccountId(accountId);
+    request.setAdExtensions(adExtensions);
 
-	return CampaignManagementService.getService().updateAdExtensions(request);
+    return CampaignManagementService.getService().updateAdExtensions(request);
 }
 ```
 ```php
 static function UpdateAdExtensions(
-	$accountId,
-	$adExtensions)
+    $accountId,
+    $adExtensions)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new UpdateAdExtensionsRequest();
+    $request = new UpdateAdExtensionsRequest();
 
-	$request->AccountId = $accountId;
-	$request->AdExtensions = $adExtensions;
+    $request->AccountId = $accountId;
+    $request->AdExtensions = $adExtensions;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateAdExtensions($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateAdExtensions($request);
 }
 ```
 ```python
 response=campaignmanagement_service.UpdateAdExtensions(
-	AccountId=AccountId,
-	AdExtensions=AdExtensions)
+    AccountId=AccountId,
+    AdExtensions=AdExtensions)
 ```
 
 ## Requirements

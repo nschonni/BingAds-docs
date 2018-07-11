@@ -28,6 +28,7 @@ For status values that a user can decide to set, for example setting the status 
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="norecentconversions"></a>NoRecentConversions|The [UetTagTrackingStatus](uettagtrackingstatus.md) is *Active*, but we haven't recorded any conversions in the last 7 days. This is most likely because you either have created the goal incorrectly, have not tagged your entire website i.e. the pages that have the conversion action, or you don't have any users converting on your site. |

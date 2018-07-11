@@ -23,6 +23,7 @@ Defines the possible values of a campaign budget point.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="current"></a>Current|The budget point includes the current budget.|

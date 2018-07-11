@@ -19,6 +19,7 @@ The *SearchInsertionOrdersRequest* object defines the [body](#request-body) and 
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="ordering"></a>Ordering|Determines the order of results by the specified property of an account.<br /><br /> You should only specify one *OrderBy* element in the array. Additional elements are not supported and will be ignored by the service.<br /><br />For this service operation, the following values are supported in the *Field* element of a *OrderBy* object.<br /><br />*Id* - The order is determined by the *InsertionOrderId*element of the returned [InsertionOrder](insertionorder.md).<br /><br />*Name* - The order is determined by the *Name* element of the returned [InsertionOrder](insertionorder.md).|[OrderBy](orderby.md) array|
@@ -32,6 +33,7 @@ The *SearchInsertionOrdersRequest* object defines the [body](#request-body) and 
 The *SearchInsertionOrdersResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -116,58 +118,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<SearchInsertionOrdersResponse> SearchInsertionOrdersAsync(
-	IList<Predicate> predicates,
-	IList<OrderBy> ordering,
-	Paging pageInfo)
+    IList<Predicate> predicates,
+    IList<OrderBy> ordering,
+    Paging pageInfo)
 {
-	var request = new SearchInsertionOrdersRequest
-	{
-		Predicates = predicates,
-		Ordering = ordering,
-		PageInfo = pageInfo
-	};
+    var request = new SearchInsertionOrdersRequest
+    {
+        Predicates = predicates,
+        Ordering = ordering,
+        PageInfo = pageInfo
+    };
 
-	return (await CustomerBillingService.CallAsync((s, r) => s.SearchInsertionOrdersAsync(r), request));
+    return (await CustomerBillingService.CallAsync((s, r) => s.SearchInsertionOrdersAsync(r), request));
 }
 ```
 ```java
 static SearchInsertionOrdersResponse searchInsertionOrders(
-	ArrayOfPredicate predicates,
-	ArrayOfOrderBy ordering,
-	Paging pageInfo) throws RemoteException, Exception
+    ArrayOfPredicate predicates,
+    ArrayOfOrderBy ordering,
+    Paging pageInfo) throws RemoteException, Exception
 {
-	SearchInsertionOrdersRequest request = new SearchInsertionOrdersRequest();
+    SearchInsertionOrdersRequest request = new SearchInsertionOrdersRequest();
 
-	request.setPredicates(predicates);
-	request.setOrdering(ordering);
-	request.setPageInfo(pageInfo);
+    request.setPredicates(predicates);
+    request.setOrdering(ordering);
+    request.setPageInfo(pageInfo);
 
-	return CustomerBillingService.getService().searchInsertionOrders(request);
+    return CustomerBillingService.getService().searchInsertionOrders(request);
 }
 ```
 ```php
 static function SearchInsertionOrders(
-	$predicates,
-	$ordering,
-	$pageInfo)
+    $predicates,
+    $ordering,
+    $pageInfo)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerBillingProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerBillingProxy'];
 
-	$request = new SearchInsertionOrdersRequest();
+    $request = new SearchInsertionOrdersRequest();
 
-	$request->Predicates = $predicates;
-	$request->Ordering = $ordering;
-	$request->PageInfo = $pageInfo;
+    $request->Predicates = $predicates;
+    $request->Ordering = $ordering;
+    $request->PageInfo = $pageInfo;
 
-	return $GLOBALS['CustomerBillingProxy']->GetService()->SearchInsertionOrders($request);
+    return $GLOBALS['CustomerBillingProxy']->GetService()->SearchInsertionOrders($request);
 }
 ```
 ```python
 response=customerbilling_service.SearchInsertionOrders(
-	Predicates=Predicates,
-	Ordering=Ordering,
-	PageInfo=PageInfo)
+    Predicates=Predicates,
+    Ordering=Ordering,
+    PageInfo=PageInfo)
 ```
 
 ## Requirements

@@ -28,6 +28,7 @@ Example usage:
 
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [forDateRange(Object dateFrom, Object dateTo)](#fordaterange~object-datefrom_-object-dateto~)|[CampaignSelector](CampaignSelector.md)|Returns a selector with the start and end dates applied.
@@ -44,12 +45,14 @@ Returns a selector with the start and end dates applied. The date range specifie
 [!INCLUDE[date-range-objects](../includes/date-range-objects.md)]
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 dateFrom|Object|The start date of the date range that specifies the performance data to include in the selector.
 dateTo|Object|The end date of the date range that specifies the performance data to include in the selector.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [CampaignSelector](CampaignSelector.md)|Selector with date range applied.
@@ -62,11 +65,13 @@ Returns a selector with the predefined date range applied. The date range specif
 [!INCLUDE[date-range-conditions-message](../includes/date-range-conditions-message.md)]
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 dateRange|String|The predefined date range string that specifies the performance data to include in the selector. The predefined date range string is case sensitive.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [CampaignSelector](./CampaignSelector.md)|Selector with date range applied.
@@ -75,6 +80,7 @@ dateRange|String|The predefined date range string that specifies the performance
 Returns an  [iterator](../concepts/iterators.md) based on the selector's selection criteria.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [CampaignIterator](./CampaignIterator.md)|An iterator that you use to iterate through the selected campaigns.
@@ -96,11 +102,13 @@ For example, the following call returns campaigns in ascending order by AverageC
 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 orderBy|string|The ordering to apply.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [CampaignSelector](./CampaignSelector.md)|Selector with ordering applied.
@@ -117,6 +125,7 @@ Specify the condition parameter in the form, "columnName operator value" where:
 
 <a name="supported-campaign-columns"></a>
 Supported columns for campaign filtering. The column names are case sensitive.
+
 
 |Column|Type|Example|
 |-|-|-
@@ -142,11 +151,13 @@ DeliveryStatus|enumeration|`withCondition("DeliveryStatus NOT IN ['LIMITED_BY_BU
 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 condition|string|The condition to apply to the selector.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [CampaignSelector](./CampaignSelector.md)|Selector with the condition applied.
@@ -163,11 +174,13 @@ BingAdsApp.campaigns()
 ```
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 ids|string[]|An array of campaign IDs. The maximum number of IDs that you may specify is 1,000. If you specify more than 1,000 IDs, calling the `get()` method fails with a runtime error.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [CampaignSelector](./CampaignSelector.md)|Selector restricted to the given IDs.
@@ -176,11 +189,13 @@ ids|string[]|An array of campaign IDs. The maximum number of IDs that you may sp
 Returns a selector with the top *n* campaigns that match the selection criteria.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 limit|int|The number of campaigns to return. The actual number may be less.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [CampaignSelector](./CampaignSelector.md)|Selector with limit applied.

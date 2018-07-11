@@ -98,5 +98,5 @@ The following is the list of builders.
 
 ## Next steps
 
-> [!div class="nextstepaction"]
+> [!div  class="nextstepaction"]
 > [Learn about preview mode](../concepts/preview-mode.md)

@@ -19,6 +19,7 @@ The *UpdateCustomerRequest* object defines the [body](#request-body) and [header
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="customer"></a>Customer|A customer object that contains the updated customer information.<br /><br />This operation overwrites the existing customer data with the contents of the customer object that you pass. This operation performs a full update, and not a partial update. The *Customer* object must contain the time stamp value from the last time that the *Customer* object was written to. To ensure that the time stamp contains the correct value, call the [GetCustomer](getcustomer.md) operation. You can then update the customer data as appropriate, and call *UpdateCustomer*.|[Customer](customer.md)|
@@ -30,6 +31,7 @@ The *UpdateCustomerRequest* object defines the [body](#request-body) and [header
 The *UpdateCustomerResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -110,44 +112,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<UpdateCustomerResponse> UpdateCustomerAsync(
-	Customer customer)
+    Customer customer)
 {
-	var request = new UpdateCustomerRequest
-	{
-		Customer = customer
-	};
+    var request = new UpdateCustomerRequest
+    {
+        Customer = customer
+    };
 
-	return (await CustomerManagementService.CallAsync((s, r) => s.UpdateCustomerAsync(r), request));
+    return (await CustomerManagementService.CallAsync((s, r) => s.UpdateCustomerAsync(r), request));
 }
 ```
 ```java
 static UpdateCustomerResponse updateCustomer(
-	Customer customer) throws RemoteException, Exception
+    Customer customer) throws RemoteException, Exception
 {
-	UpdateCustomerRequest request = new UpdateCustomerRequest();
+    UpdateCustomerRequest request = new UpdateCustomerRequest();
 
-	request.setCustomer(customer);
+    request.setCustomer(customer);
 
-	return CustomerManagementService.getService().updateCustomer(request);
+    return CustomerManagementService.getService().updateCustomer(request);
 }
 ```
 ```php
 static function UpdateCustomer(
-	$customer)
+    $customer)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
 
-	$request = new UpdateCustomerRequest();
+    $request = new UpdateCustomerRequest();
 
-	$request->Customer = $customer;
+    $request->Customer = $customer;
 
-	return $GLOBALS['CustomerManagementProxy']->GetService()->UpdateCustomer($request);
+    return $GLOBALS['CustomerManagementProxy']->GetService()->UpdateCustomer($request);
 }
 ```
 ```python
 response=customermanagement_service.UpdateCustomer(
-	Customer=Customer)
+    Customer=Customer)
 ```
 
 ## Requirements

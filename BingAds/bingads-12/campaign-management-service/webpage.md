@@ -29,6 +29,7 @@ The *Webpage* criterion can be included within [BiddableAdGroupCriterion](biddab
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="parameter"></a>Parameter|The webpage parameter that contains a list of webpage conditions or criteria.<br/><br/>**Add:** Required<br/>**Update:** Optional. You can update the criterion name, but cannot update the webpage conditions. To update the conditions you must delete the criterion and add a new criterion.|[WebpageParameter](webpageparameter.md)|
@@ -39,6 +40,7 @@ The [Webpage](webpage.md) object has [Inherited Elements](#inheritedelements).
 
 ### <a name="inheritedelementscriterion"></a>Inherited Elements from Criterion
 The [Webpage](webpage.md) object derives from the [Criterion](criterion.md) object, and inherits the following elements. The descriptions below are specific to [Webpage](webpage.md), and might not apply to other objects that inherit the same elements from the [Criterion](criterion.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

@@ -22,6 +22,7 @@ The *AddCampaignsRequest* object defines the [body](#request-body) and [header](
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountid"></a>AccountId|The identifier of the account to add the campaigns to.|**long**|
@@ -34,6 +35,7 @@ The *AddCampaignsRequest* object defines the [body](#request-body) and [header](
 The *AddCampaignsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -188,51 +190,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<AddCampaignsResponse> AddCampaignsAsync(
-	long accountId,
-	IList<Campaign> campaigns)
+    long accountId,
+    IList<Campaign> campaigns)
 {
-	var request = new AddCampaignsRequest
-	{
-		AccountId = accountId,
-		Campaigns = campaigns
-	};
+    var request = new AddCampaignsRequest
+    {
+        AccountId = accountId,
+        Campaigns = campaigns
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.AddCampaignsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.AddCampaignsAsync(r), request));
 }
 ```
 ```java
 static AddCampaignsResponse addCampaigns(
-	java.lang.Long accountId,
-	ArrayOfCampaign campaigns) throws RemoteException, Exception
+    java.lang.Long accountId,
+    ArrayOfCampaign campaigns) throws RemoteException, Exception
 {
-	AddCampaignsRequest request = new AddCampaignsRequest();
+    AddCampaignsRequest request = new AddCampaignsRequest();
 
-	request.setAccountId(accountId);
-	request.setCampaigns(campaigns);
+    request.setAccountId(accountId);
+    request.setCampaigns(campaigns);
 
-	return CampaignManagementService.getService().addCampaigns(request);
+    return CampaignManagementService.getService().addCampaigns(request);
 }
 ```
 ```php
 static function AddCampaigns(
-	$accountId,
-	$campaigns)
+    $accountId,
+    $campaigns)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new AddCampaignsRequest();
+    $request = new AddCampaignsRequest();
 
-	$request->AccountId = $accountId;
-	$request->Campaigns = $campaigns;
+    $request->AccountId = $accountId;
+    $request->Campaigns = $campaigns;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->AddCampaigns($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->AddCampaigns($request);
 }
 ```
 ```python
 response=campaignmanagement_service.AddCampaigns(
-	AccountId=AccountId,
-	Campaigns=Campaigns)
+    AccountId=AccountId,
+    Campaigns=Campaigns)
 ```
 
 ## Requirements

@@ -26,6 +26,7 @@ Defines the delivered match type values that you can use to filter the report da
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="broad"></a>Broad|The report will contain ads that were delivered using a broad match comparison.|

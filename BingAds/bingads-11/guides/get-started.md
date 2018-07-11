@@ -16,8 +16,8 @@ Any Bing Ads user with a developer token can begin using the Bing Ads API. For a
 
 ## <a name="get-developer-token"></a>Get a Developer Token
 To use Bing Ads APIs, you must have a developer token and valid user credentials. A developer token enables programmatic access to the accounts permitted for a user. Each provisioned user is assigned a role, for example Super Admin, and granted permissions to one or more accounts. The same accounts available in the Bing Ads web application are available to the corresponding user programmatically through the API. For more information see [Account Permissions and the Developer Token](customer-accounts.md#accountpermissions). 
--  If you do not yet have a Bing Ads account, you can sign up via the [Bing Ads web application](https://secure.bingads.microsoft.com/). 
--  To get a developer token for production, you must login at the [Bing Ads Developer Portal](https://developers.bingads.microsoft.com/Account) as a Microsoft Account user with the Super Admin role. Then click on the **Request Token** button. The Super Admin may request API access for any user within their customer scope. For more information, see [User Roles and Available Service Operations](customer-accounts.md#userroles).
+- If you do not yet have a Bing Ads account, you can sign up via the [Bing Ads web application](https://secure.bingads.microsoft.com/). 
+- To get a developer token for production, you must login at the [Bing Ads Developer Portal](https://developers.bingads.microsoft.com/Account) as a Microsoft Account user with the Super Admin role. Then click on the **Request Token** button. The Super Admin may request API access for any user within their customer scope. For more information, see [User Roles and Available Service Operations](customer-accounts.md#userroles).
 
 The sandbox and production environments use separate credentials. You can sign up for a [Sandbox](sandbox.md) account [here](https://secure.sandbox.bingads.microsoft.com/). Everyone can use the universal sandbox developer token i.e., **BBD37VB98**.
 
@@ -80,7 +80,7 @@ authorization_data = AuthorizationData(
 ```
 
 ## <a name="get-ids"></a> Get Your Account and Customer Ids
-To get a user's customer ID and account ID, you can sign in to the Bing Ads web application and click on the **Campaigns** tab. The URL will contain a *cid* key/value pair in the query string that identifies your customer ID, and an *aid* key/value pair that identifies your account ID. For example, *https://ui.bingads.microsoft.com/campaign/Campaigns.m?cid=FindCustomerIdHere&aid=FindAccountIdHere#/customer/FindCustomerIdHere/account/FindAccountIdHere/campaign*.
+To get a user's customer ID and account ID, you can sign in to the Bing Ads web application and click on the **Campaigns** tab. The URL will contain a *cid* key/value pair in the query string that identifies your customer ID, and an *aid* key/value pair that identifies your account ID. For example, *<https://ui.bingads.microsoft.com/campaign/Campaigns.m?cid=FindCustomerIdHere&aid=FindAccountIdHere#/customer/FindCustomerIdHere/account/FindAccountIdHere/campaign>*.
 
 With the Customer Management API you can get the customer and account identifiers for each authenticated user. 
 
@@ -143,6 +143,7 @@ Bing Ads services use Simple Object Access Protocol (SOAP) to exchange the reque
 
 Each SOAP request must include the following SOAP headers, which contain the user's credentials.
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |ApplicationToken|This header element is not used and should be ignored.|**string**|
@@ -155,10 +156,10 @@ Each SOAP request must include the following SOAP headers, which contain the use
 
 > [!IMPORTANT]
 > The UserName and Password header elements are deprecated in favor of the AuthenticationToken header i.e., [Authentication with OAuth](authentication-oauth.md). As of August 1st, 2018, all Bing Ads API Version 11 service calls with managed UserName and Password credentials will return an error. Bing Ads API Version 12 already does not accept the managed user credentials. In a future version of the API, the UserName and Password header elements will be removed from the service definitions.
-
+> 
 > [!TIP]
 > Do not mistake the account number for the account identifier. The account number is the system generated account number that is used to identify the account in the Bing Ads web application. The account number has the form xxxxxxxx, where xxxxxxxx is a series of any eight alphanumeric characters. The API service requests only use the account identifier, and never use the account number.
-
+> 
 > [!NOTE]
 > With the exception of the Customer Billing and Customer Management services, the CustomerAccountId and CustomerId are required for most service operations. As a best practice you should always specify them in the request.  
 

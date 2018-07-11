@@ -4,14 +4,14 @@ ms.service: "bing-ads"
 ms.topic: "article"
 author: "eric-urban"
 ms.author: "eur"
-description: Find out about currencies supported with the Bing Ads API. 
+description: Find out about currencies supported with the Bing Ads API.
 ---
 # Bing Ads Currencies
 The following currency values are supported for Bing Ads advertising accounts.
 
 * [Bid and Budget Currencies](#bidandbudget)
 * [Conversion Goal Revenue Currencies](#conversiongoalrevenue)
- 
+
 ## <a name="bidandbudget"></a>Bid and Budget Currencies
 
 You must first set up an [AdvertiserAccount](../customer-management-service/advertiseraccount.md) with one of the supported currency values listed below.
@@ -38,6 +38,7 @@ With the exception of the Indonesian Rupiah (IDR), bid estimates are supported b
 - The *Currency* element of the [BidLandscapePoint](../ad-insight-service/bidlandscapepoint.md) object is available in the response from the [GetBidLandscapeByAdGroupIds](../ad-insight-service/getbidlandscapebyadgroupids.md) and [GetBidLandscapeByKeywordIds](../ad-insight-service/getbidlandscapebykeywordids.md) operations.
 - The *Currency* element of the [EstimatedBidAndTraffic](../ad-insight-service/estimatedbidandtraffic.md) object is available in the response from the [GetEstimatedBidByKeywordIds](../ad-insight-service/getestimatedbidbykeywordids.md) and [GetEstimatedBidByKeywords](../ad-insight-service/getestimatedbidbykeywords.md) operations.
 - The *Currency* element of the [EstimatedPositionAndTraffic](../ad-insight-service/estimatedpositionandtraffic.md) object is available in the response from the [GetEstimatedPositionByKeywordIds](../ad-insight-service/getestimatedpositionbykeywordids.md) and [GetEstimatedPositionByKeywords](../ad-insight-service/getestimatedpositionbykeywords.md) operations.
+
 
 
 |Currency Value|Description|Minimum Bid|Maximum Bid|Minimum Daily Budget|Minimum Monthly Budget|Maximum Monthly Budget|
@@ -73,105 +74,107 @@ With the exception of the Indonesian Rupiah (IDR), bid estimates are supported b
 
 The following currency codes are supported for conversion goals by setting the *CurrencyCode* element of the [ConversionGoalRevenue](../campaign-management-service/conversiongoalrevenue.md) object.
 
-|Currency Code|Currency Name|
-|-----|-----|
-|AED|United Arab Emirates Dirham|
-|ALL|Albanian Lek|
-|AMD|Armenian Dram|
-|ARS|Argentine Peso|
-|AUD|Australian Dollar|
-|AZN|Azerbaijani Manat|
-|BDT|Bangladeshi Taka|
-|BGN|Bulgarian Lev|
-|BHD|Bahraini Dinar|
-|BND|Brunei Dollar|
-|BOB|Bolivian Boliviano|
-|BRL|Brazilian Real|
-|BWP|Botswanan Pula|
-|BZD|Belize Dollar|
-|CAD|Canadian Dollar|
-|CHF|Swiss Franc|
-|CLP|Chilean Peso|
-|CNY|Chinese Yuan|
-|COP|Colombian Peso|
-|CRC|Costa Rican Col?n|
-|CZK|Czech Republic Koruna|
-|DKK|Danish Krone|
-|DOP|Dominican Peso|
-|DZD|Algerian Dinar|
-|EGP|Egyptian Pound|
-|ETB|Ethiopian Birr|
-|EUR|Euro|
-|FJD|Fijian Dollar|
-|GBP|British Pound|
-|GEL|Georgian Lari|
-|GHS|Ghanaian Cedi|
-|GTQ|Guatemalan Quetzal|
-|HKD|Hong Kong Dollar|
-|HNL|Honduran Lempira|
-|HRK|Croatian Kuna|
-|HUF|Hungarian Forint|
-|IDR|Indonesian Rupiah|
-|ILS|Israeli New Shekel|
-|INR|Indian Rupee|
-|IQD|Iraqi Dinar|
-|ISK|Icelandic Kr?na|
-|JMD|Jamaican Dollar|
-|JOD|Jordanian Dinar|
-|JPY|Japanese Yen|
-|KES|Kenyan Shilling|
-|KGS|Kyrgystani Som|
-|KRW|South Korean Won|
-|KWD|Kuwaiti Dinar|
-|KZT|Kazakhstani Tenge|
-|LBP|Lebanese Pound|
-|LKR|Sri Lankan Rupee|
-|LYD|Libyan Dinar|
-|MAD|Moroccan Dirham|
-|MKD|Macedonian Denar|
-|MNT|Mongolian Tugrik|
-|MOP|Macanese Pataca|
-|MUR|Mauritian Rupee|
-|MVR|Maldivian Rufiyaa|
-|MWK|Malawian Kwacha|
-|MXN|Mexican Peso|
-|MYR|Malaysian Ringgit|
-|NGN|Nigerian Naira|
-|NIO|Nicaraguan C?rdoba|
-|NOK|Norwegian Krone|
-|NZD|New Zealand Dollar|
-|OMR|Omani Rial|
-|PAB|Panamanian Balboa|
-|PEN|Peruvian Nuevo Sol|
-|PHP|Philippine Peso|
-|PKR|Pakistani Rupee|
-|PLN|Polish Zloty|
-|PYG|Paraguayan Guarani|
-|QAR|Qatari Rial|
-|RON|Romanian Leu|
-|RSD|Serbian Dinar|
-|RUB|Russian Ruble|
-|RWF|Rwandan Franc|
-|SAR|Saudi Riyal|
-|SEK|Swedish Krona|
-|SGD|Singapore Dollar|
-|THB|Thai Baht|
-|TND|Tunisian Dinar|
-|TOP|Tongan Pa'anga|
-|TRY|Turkish Lira|
-|TTD|Trinidad and Tobago Dollar|
-|TWD|New Taiwan Dollar|
-|TZS|Tanzanian Shilling|
-|UAH|Ukrainian Hryvnia|
-|UGX|Ugandan Shilling|
-|USD|US Dollar|
-|UYU|Uruguayan Peso|
-|UZS|Uzbekistani Som|
-|VEF|Venezuelan Bol'var|
-|VND|Vietnamese Dong|
-|XAF|Central African CFA Franc|
-|XCD|Eastern Caribbean Dollar|
-|XOF|West African CFA Franc|
-|YER|Yemeni Rial|
-|ZAR|South African Rand|
-|ZMW|Zambian Kwacha|
+
+| Currency Code |        Currency Name        |
+|---------------|-----------------------------|
+|      AED      | United Arab Emirates Dirham |
+|      ALL      |        Albanian Lek         |
+|      AMD      |        Armenian Dram        |
+|      ARS      |       Argentine Peso        |
+|      AUD      |      Australian Dollar      |
+|      AZN      |      Azerbaijani Manat      |
+|      BDT      |      Bangladeshi Taka       |
+|      BGN      |        Bulgarian Lev        |
+|      BHD      |       Bahraini Dinar        |
+|      BND      |        Brunei Dollar        |
+|      BOB      |     Bolivian Boliviano      |
+|      BRL      |       Brazilian Real        |
+|      BWP      |       Botswanan Pula        |
+|      BZD      |        Belize Dollar        |
+|      CAD      |       Canadian Dollar       |
+|      CHF      |         Swiss Franc         |
+|      CLP      |        Chilean Peso         |
+|      CNY      |        Chinese Yuan         |
+|      COP      |       Colombian Peso        |
+|      CRC      |      Costa Rican Col?n      |
+|      CZK      |    Czech Republic Koruna    |
+|      DKK      |        Danish Krone         |
+|      DOP      |       Dominican Peso        |
+|      DZD      |       Algerian Dinar        |
+|      EGP      |       Egyptian Pound        |
+|      ETB      |       Ethiopian Birr        |
+|      EUR      |            Euro             |
+|      FJD      |        Fijian Dollar        |
+|      GBP      |        British Pound        |
+|      GEL      |        Georgian Lari        |
+|      GHS      |        Ghanaian Cedi        |
+|      GTQ      |     Guatemalan Quetzal      |
+|      HKD      |      Hong Kong Dollar       |
+|      HNL      |      Honduran Lempira       |
+|      HRK      |        Croatian Kuna        |
+|      HUF      |      Hungarian Forint       |
+|      IDR      |      Indonesian Rupiah      |
+|      ILS      |     Israeli New Shekel      |
+|      INR      |        Indian Rupee         |
+|      IQD      |         Iraqi Dinar         |
+|      ISK      |       Icelandic Kr?na       |
+|      JMD      |       Jamaican Dollar       |
+|      JOD      |       Jordanian Dinar       |
+|      JPY      |        Japanese Yen         |
+|      KES      |       Kenyan Shilling       |
+|      KGS      |       Kyrgystani Som        |
+|      KRW      |      South Korean Won       |
+|      KWD      |        Kuwaiti Dinar        |
+|      KZT      |      Kazakhstani Tenge      |
+|      LBP      |       Lebanese Pound        |
+|      LKR      |      Sri Lankan Rupee       |
+|      LYD      |        Libyan Dinar         |
+|      MAD      |       Moroccan Dirham       |
+|      MKD      |      Macedonian Denar       |
+|      MNT      |      Mongolian Tugrik       |
+|      MOP      |       Macanese Pataca       |
+|      MUR      |       Mauritian Rupee       |
+|      MVR      |      Maldivian Rufiyaa      |
+|      MWK      |       Malawian Kwacha       |
+|      MXN      |        Mexican Peso         |
+|      MYR      |      Malaysian Ringgit      |
+|      NGN      |       Nigerian Naira        |
+|      NIO      |     Nicaraguan C?rdoba      |
+|      NOK      |       Norwegian Krone       |
+|      NZD      |     New Zealand Dollar      |
+|      OMR      |         Omani Rial          |
+|      PAB      |      Panamanian Balboa      |
+|      PEN      |     Peruvian Nuevo Sol      |
+|      PHP      |       Philippine Peso       |
+|      PKR      |       Pakistani Rupee       |
+|      PLN      |        Polish Zloty         |
+|      PYG      |     Paraguayan Guarani      |
+|      QAR      |         Qatari Rial         |
+|      RON      |        Romanian Leu         |
+|      RSD      |        Serbian Dinar        |
+|      RUB      |        Russian Ruble        |
+|      RWF      |        Rwandan Franc        |
+|      SAR      |         Saudi Riyal         |
+|      SEK      |        Swedish Krona        |
+|      SGD      |      Singapore Dollar       |
+|      THB      |          Thai Baht          |
+|      TND      |       Tunisian Dinar        |
+|      TOP      |       Tongan Pa'anga        |
+|      TRY      |        Turkish Lira         |
+|      TTD      | Trinidad and Tobago Dollar  |
+|      TWD      |      New Taiwan Dollar      |
+|      TZS      |     Tanzanian Shilling      |
+|      UAH      |      Ukrainian Hryvnia      |
+|      UGX      |      Ugandan Shilling       |
+|      USD      |          US Dollar          |
+|      UYU      |       Uruguayan Peso        |
+|      UZS      |       Uzbekistani Som       |
+|      VEF      |     Venezuelan Bol'var      |
+|      VND      |       Vietnamese Dong       |
+|      XAF      |  Central African CFA Franc  |
+|      XCD      |  Eastern Caribbean Dollar   |
+|      XOF      |   West African CFA Franc    |
+|      YER      |         Yemeni Rial         |
+|      ZAR      |     South African Rand      |
+|      ZMW      |       Zambian Kwacha        |
+

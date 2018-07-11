@@ -28,6 +28,7 @@ The *GetBSCCountriesResponse* object defines the [body](#response-body) and [hea
 
 ### <a name="response-body"></a>Response Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="countrycodes"></a>CountryCodes|The list of supported sales country codes for Bing Shopping campaigns. You can pass any one of the returned values in the *SalesCountryCode* element of a [ShoppingSetting](shoppingsetting.md) object.|**string** array|
@@ -76,32 +77,32 @@ The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.m
 ```csharp
 public async Task<GetBSCCountriesResponse> GetBSCCountriesAsync()
 {
-	var request = new GetBSCCountriesRequest
-	{
-	};
+    var request = new GetBSCCountriesRequest
+    {
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetBSCCountriesAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetBSCCountriesAsync(r), request));
 }
 ```
 ```java
 static GetBSCCountriesResponse getBSCCountries() throws RemoteException, Exception
 {
-	GetBSCCountriesRequest request = new GetBSCCountriesRequest();
+    GetBSCCountriesRequest request = new GetBSCCountriesRequest();
 
 
-	return CampaignManagementService.getService().getBSCCountries(request);
+    return CampaignManagementService.getService().getBSCCountries(request);
 }
 ```
 ```php
 static function GetBSCCountries()
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetBSCCountriesRequest();
+    $request = new GetBSCCountriesRequest();
 
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetBSCCountries($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetBSCCountries($request);
 }
 ```
 ```python

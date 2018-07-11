@@ -114,6 +114,7 @@ Defines a selection of currency values.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="aed"></a>AED|The corresponding currency type.|

@@ -26,6 +26,7 @@ Do not try to instantiate an *Opportunity*. You can create one or more following
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="opportunitykey"></a>OpportunityKey|An identifier that uniquely identifies the opportunity.|**string**|

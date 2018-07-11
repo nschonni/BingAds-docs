@@ -19,6 +19,7 @@ The *GetSharedEntityAssociationsBySharedEntityIdsRequest* object defines the [bo
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="entitytype"></a>EntityType|The type of entity corresponding to the specified *EntityIds* element.<br /><br />Currently the only supported value is *Campaign*.|**string**|
@@ -32,6 +33,7 @@ The *GetSharedEntityAssociationsBySharedEntityIdsRequest* object defines the [bo
 The *GetSharedEntityAssociationsBySharedEntityIdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -118,58 +120,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetSharedEntityAssociationsBySharedEntityIdsResponse> GetSharedEntityAssociationsBySharedEntityIdsAsync(
-	string entityType,
-	IList<long> sharedEntityIds,
-	string sharedEntityType)
+    string entityType,
+    IList<long> sharedEntityIds,
+    string sharedEntityType)
 {
-	var request = new GetSharedEntityAssociationsBySharedEntityIdsRequest
-	{
-		EntityType = entityType,
-		SharedEntityIds = sharedEntityIds,
-		SharedEntityType = sharedEntityType
-	};
+    var request = new GetSharedEntityAssociationsBySharedEntityIdsRequest
+    {
+        EntityType = entityType,
+        SharedEntityIds = sharedEntityIds,
+        SharedEntityType = sharedEntityType
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetSharedEntityAssociationsBySharedEntityIdsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetSharedEntityAssociationsBySharedEntityIdsAsync(r), request));
 }
 ```
 ```java
 static GetSharedEntityAssociationsBySharedEntityIdsResponse getSharedEntityAssociationsBySharedEntityIds(
-	java.lang.String entityType,
-	ArrayOflong sharedEntityIds,
-	java.lang.String sharedEntityType) throws RemoteException, Exception
+    java.lang.String entityType,
+    ArrayOflong sharedEntityIds,
+    java.lang.String sharedEntityType) throws RemoteException, Exception
 {
-	GetSharedEntityAssociationsBySharedEntityIdsRequest request = new GetSharedEntityAssociationsBySharedEntityIdsRequest();
+    GetSharedEntityAssociationsBySharedEntityIdsRequest request = new GetSharedEntityAssociationsBySharedEntityIdsRequest();
 
-	request.setEntityType(entityType);
-	request.setSharedEntityIds(sharedEntityIds);
-	request.setSharedEntityType(sharedEntityType);
+    request.setEntityType(entityType);
+    request.setSharedEntityIds(sharedEntityIds);
+    request.setSharedEntityType(sharedEntityType);
 
-	return CampaignManagementService.getService().getSharedEntityAssociationsBySharedEntityIds(request);
+    return CampaignManagementService.getService().getSharedEntityAssociationsBySharedEntityIds(request);
 }
 ```
 ```php
 static function GetSharedEntityAssociationsBySharedEntityIds(
-	$entityType,
-	$sharedEntityIds,
-	$sharedEntityType)
+    $entityType,
+    $sharedEntityIds,
+    $sharedEntityType)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetSharedEntityAssociationsBySharedEntityIdsRequest();
+    $request = new GetSharedEntityAssociationsBySharedEntityIdsRequest();
 
-	$request->EntityType = $entityType;
-	$request->SharedEntityIds = $sharedEntityIds;
-	$request->SharedEntityType = $sharedEntityType;
+    $request->EntityType = $entityType;
+    $request->SharedEntityIds = $sharedEntityIds;
+    $request->SharedEntityType = $sharedEntityType;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetSharedEntityAssociationsBySharedEntityIds($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetSharedEntityAssociationsBySharedEntityIds($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetSharedEntityAssociationsBySharedEntityIds(
-	EntityType=EntityType,
-	SharedEntityIds=SharedEntityIds,
-	SharedEntityType=SharedEntityType)
+    EntityType=EntityType,
+    SharedEntityIds=SharedEntityIds,
+    SharedEntityType=SharedEntityType)
 ```
 
 ## Requirements

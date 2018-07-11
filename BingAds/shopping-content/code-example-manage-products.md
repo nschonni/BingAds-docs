@@ -41,7 +41,7 @@ namespace Products
         private const string BaseUri = "https://content.api.bingads.microsoft.com/shopping/v9.1";
         private const string BmcUri = BaseUri + "/bmc/{0}";
         private const string ClientState = "ClientStateGoesHere";
-        
+
         private static string ClientId = "<CLIENTIDGOESHERE>";
         private static string DeveloperToken = "<DEVELOPERTOKENGOESHERE>";
         private static string RefreshToken = "<REFRESHTOKENGOESHERE>";
@@ -804,7 +804,6 @@ namespace Products
     }
 // -/ end Data transfer objects
 }
-
 ```
 
 ```java
@@ -1595,7 +1594,6 @@ public class UnitPricing
     public Double getValue() { return this.value; }
     public void setValue(Double value) { this.value = value; }
 }
-
 ```
 
 ```python
@@ -1632,7 +1630,7 @@ def main():
         print_json(added_product)
         print("*** / End of added product (catalog.Id=" + str(default_catalog['id']) + ", product.Id=" + str(added_product['id']) + ")***")
         print()
-        
+
         # Retrieve a product by id
         retrieved_product = get_product(added_product['id'])
         print("*** Retrieved product (product.Id=" + str(retrieved_product['id']) + ")***")
@@ -1754,7 +1752,6 @@ def random_string(length=6):
 # Main execution
 if __name__ == '__main__':
     main()
-
 ```
 
 ```php
@@ -1838,7 +1835,7 @@ function list_products($nextPageToken = null){
             throw new Exception(var_dump($result));
         }
         $productsResponse = json_decode($result, TRUE);
-        
+
         foreach ($productsResponse['resources'] as $key => $value) {
             array_push($results, $value);
         }
@@ -1853,7 +1850,7 @@ function list_products($nextPageToken = null){
 
 function add_product($catalogId, $product){
     global $merchantId, $productsUri;
-    
+
     $url = sprintf($productsUri . '?bmc-catalog-id=%s&alt=json', $merchantId, $catalogId);
     $result = request('POST', $url, $product);
     if ($result === FALSE) {  
@@ -1930,5 +1927,4 @@ function printObject($object){
         echo("$prop: $value\r\n");
     }
 }
-
 ```

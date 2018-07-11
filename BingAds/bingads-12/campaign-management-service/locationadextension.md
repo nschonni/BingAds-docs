@@ -30,6 +30,7 @@ You can associate a location ad extension with the account or with campaigns in 
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="address"></a>Address|The business address.<br/><br/>**Add:** Required<br/>**Update:** Optional|[Address](address.md)|
@@ -44,6 +45,7 @@ The [LocationAdExtension](locationadextension.md) object has [Inherited Elements
 
 ### <a name="inheritedelementsadextension"></a>Inherited Elements from AdExtension
 The [LocationAdExtension](locationadextension.md) object derives from the [AdExtension](adextension.md) object, and inherits the following elements. The descriptions below are specific to [LocationAdExtension](locationadextension.md), and might not apply to other objects that inherit the same elements from the [AdExtension](adextension.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

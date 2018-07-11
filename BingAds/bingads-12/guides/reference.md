@@ -12,6 +12,7 @@ For Bing Ads reference content, see the following sections.
 > [!IMPORTANT]
 > With the availability of Bing Ads API version 12, version 11 is deprecated and will sunset by October 31, 2018. 
 
+
 |Topic|Description|
 |---------|---------------|
 |[Ad Languages](ad-languages.md)|Lists the available languages that you may use to write your ads and keywords for each country.|

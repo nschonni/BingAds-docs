@@ -25,6 +25,7 @@ Defines the possible status values of an account.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The account is active, which means that the account and its campaigns can be managed and its ads served.|

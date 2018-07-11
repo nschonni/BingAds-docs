@@ -38,7 +38,7 @@ However, if you try to update an entity’s properties with an invalid value, Bi
 function main() {
     var campaign = BingAdsApp.campaigns().get().next();
     campaign.getBudget().setAmount(-5);
-    
+
     if (campaign.getBudget() != -5) {
         // The budget amount doesn't match what we 
         // attempted to set it to, so the change must 
@@ -62,10 +62,12 @@ You should carefully review all messages logged to the change log and text log.
 
 If you receive a runtime error and the text log lists Internal Error, the following are the reasons why you might be getting it.
 
-|Reason|Remedy
-|-|-
-|An enumeration value you specified is not valid.|Enumeration values are case sensitive, so make sure that all enumeration values are valid and use the correct casing.
-|An operator you specified in the `.withCondition()` method is not valid.|Operators are case sensitive, so make sure that all operators are valid and use the correct casing.
-|A column you specified in the `.withCondition()` or `.orderBy()` method is not valid.|Column names are case sensitive, so make sure that all column names are valid and use the correct casing.
-|You specified too may IDs in the `.withIds()` method.|Reduce the number of IDs to the allowed maximum (see documentation for the method).
-|The date range specified in the `.forDateRange()` method is not valid.|Make sure that the start and end dates are valid and that the end date is not earlier than the start date.
+
+|                                        Reason                                         |                                                        Remedy                                                         |
+|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
+|                   An enumeration value you specified is not valid.                    | Enumeration values are case sensitive, so make sure that all enumeration values are valid and use the correct casing. |
+|       An operator you specified in the `.withCondition()` method is not valid.        |          Operators are case sensitive, so make sure that all operators are valid and use the correct casing.          |
+| A column you specified in the `.withCondition()` or `.orderBy()` method is not valid. |       Column names are case sensitive, so make sure that all column names are valid and use the correct casing.       |
+|                 You specified too may IDs in the `.withIds()` method.                 |                  Reduce the number of IDs to the allowed maximum (see documentation for the method).                  |
+|        The date range specified in the `.forDateRange()` method is not valid.         |      Make sure that the start and end dates are valid and that the end date is not earlier than the start date.       |
+

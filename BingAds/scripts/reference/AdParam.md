@@ -14,6 +14,7 @@ ms.topic: "article"
 Contains the methods used to manage the substitution parameters used in the keyword.
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [getEntityType](#getentitytype)|string|Returns this entity's type.
@@ -28,6 +29,7 @@ Contains the methods used to manage the substitution parameters used in the keyw
 Returns this entity's type.
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|This entity's type (is set to AdParam).
@@ -37,6 +39,7 @@ string|This entity's type (is set to AdParam).
 Returns the index that identifies this substitution parameter.
 
 ### Returns
+
 |Type|Description|
 |-|-
 int|The index that identifies this substitution parameter.
@@ -46,6 +49,7 @@ int|The index that identifies this substitution parameter.
 Returns the substitution parameter's text.
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|The substitution parameter's text.
@@ -55,6 +59,7 @@ string|The substitution parameter's text.
 Returns the keyword that the substitution parameter applies to.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [Keyword](Keyword.md)|The keyword that the substitution parameter applies to.
@@ -64,6 +69,7 @@ Returns the keyword that the substitution parameter applies to.
 Removes the substitution parameter from the keyword.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -72,11 +78,13 @@ void|Returns nothing.
 Sets the substitution parameter's text.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 insertionText|string|The text to set the substitution parameter to.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.

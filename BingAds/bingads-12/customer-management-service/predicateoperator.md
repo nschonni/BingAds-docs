@@ -27,6 +27,7 @@ Defines the condition of results for one of the search operations, for example [
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="contains"></a>Contains|The field must contain the specified value.|

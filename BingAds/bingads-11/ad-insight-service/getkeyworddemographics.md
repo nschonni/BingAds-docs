@@ -19,6 +19,7 @@ The *GetKeywordDemographicsRequest* object defines the [body](#request-body) and
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="device"></a>Device|A list of one or more of the following device types: Computers, NonSmartphones, Smartphones, Tablets. The default is Computers.<br /><br />The response includes keyword demographics data for the device types that you specify only, if available.|**string** array|
@@ -33,6 +34,7 @@ The *GetKeywordDemographicsRequest* object defines the [body](#request-body) and
 The *GetKeywordDemographicsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -109,65 +111,65 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetKeywordDemographicsResponse> GetKeywordDemographicsAsync(
-	IList<string> keywords,
-	string language,
-	string publisherCountry,
-	IList<string> device)
+    IList<string> keywords,
+    string language,
+    string publisherCountry,
+    IList<string> device)
 {
-	var request = new GetKeywordDemographicsRequest
-	{
-		Keywords = keywords,
-		Language = language,
-		PublisherCountry = publisherCountry,
-		Device = device
-	};
+    var request = new GetKeywordDemographicsRequest
+    {
+        Keywords = keywords,
+        Language = language,
+        PublisherCountry = publisherCountry,
+        Device = device
+    };
 
-	return (await AdInsightService.CallAsync((s, r) => s.GetKeywordDemographicsAsync(r), request));
+    return (await AdInsightService.CallAsync((s, r) => s.GetKeywordDemographicsAsync(r), request));
 }
 ```
 ```java
 static GetKeywordDemographicsResponse getKeywordDemographics(
-	ArrayOfstring keywords,
-	java.lang.String language,
-	java.lang.String publisherCountry,
-	ArrayOfstring device) throws RemoteException, Exception
+    ArrayOfstring keywords,
+    java.lang.String language,
+    java.lang.String publisherCountry,
+    ArrayOfstring device) throws RemoteException, Exception
 {
-	GetKeywordDemographicsRequest request = new GetKeywordDemographicsRequest();
+    GetKeywordDemographicsRequest request = new GetKeywordDemographicsRequest();
 
-	request.setKeywords(keywords);
-	request.setLanguage(language);
-	request.setPublisherCountry(publisherCountry);
-	request.setDevice(device);
+    request.setKeywords(keywords);
+    request.setLanguage(language);
+    request.setPublisherCountry(publisherCountry);
+    request.setDevice(device);
 
-	return AdInsightService.getService().getKeywordDemographics(request);
+    return AdInsightService.getService().getKeywordDemographics(request);
 }
 ```
 ```php
 static function GetKeywordDemographics(
-	$keywords,
-	$language,
-	$publisherCountry,
-	$device)
+    $keywords,
+    $language,
+    $publisherCountry,
+    $device)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
 
-	$request = new GetKeywordDemographicsRequest();
+    $request = new GetKeywordDemographicsRequest();
 
-	$request->Keywords = $keywords;
-	$request->Language = $language;
-	$request->PublisherCountry = $publisherCountry;
-	$request->Device = $device;
+    $request->Keywords = $keywords;
+    $request->Language = $language;
+    $request->PublisherCountry = $publisherCountry;
+    $request->Device = $device;
 
-	return $GLOBALS['AdInsightProxy']->GetService()->GetKeywordDemographics($request);
+    return $GLOBALS['AdInsightProxy']->GetService()->GetKeywordDemographics($request);
 }
 ```
 ```python
 response=adinsight_service.GetKeywordDemographics(
-	Keywords=Keywords,
-	Language=Language,
-	PublisherCountry=PublisherCountry,
-	Device=Device)
+    Keywords=Keywords,
+    Language=Language,
+    PublisherCountry=PublisherCountry,
+    Device=Device)
 ```
 
 ## Requirements

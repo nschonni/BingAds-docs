@@ -613,7 +613,6 @@ class BatchItem
 
     public object Content { get; set; }
 }
-
 ```
 
 

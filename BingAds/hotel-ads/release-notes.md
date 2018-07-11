@@ -18,14 +18,14 @@ For information about changes that were included with each release, see the foll
 ### Nonbreaking change
 
 - Added the following columns to the Performance report. For more information, see [Performance report columns](../hotel-service/reporting.md#performance-report-columns).  
-<!--  
+  <!--  
   - [Dimension columns](../hotel-service/reporting.md#dimensioncolumns)  
     
     - AdvancedBookingWindow  
     - CheckinDay
     - DateType  
     - SiteType  
--->
+  -->
   - [Measure columns](../hotel-service/reporting.md#measurecolumns)  
     
     - ClickShare
@@ -196,9 +196,9 @@ Released the Beta version of Hotel Ads.
 
 - Added the following ways to send Bing your transaction messages.  
   - Pull requests  
-  If you sign up for pull requests, Bing sends the endpoint that you specify a [Query](../query-message/query-message.md) message that specifies the itinerary data that you should send back in a [Transaction](../transaction-message/transaction-message.md) message. With this option, you provide Bing all of your itinerary data.  
+    If you sign up for pull requests, Bing sends the endpoint that you specify a [Query](../query-message/query-message.md) message that specifies the itinerary data that you should send back in a [Transaction](../transaction-message/transaction-message.md) message. With this option, you provide Bing all of your itinerary data.  
   - Pull with hints requests  
-  If you sign up for pull with hints requests, Bing sends the endpoint that you specify a Query message that specifies the itinerary data that you should send back in a Transaction message. However, the query message specifies only the itinerary data that you said changed in your [Hint](../hint-message/hint-message.md) message. 
+    If you sign up for pull with hints requests, Bing sends the endpoint that you specify a Query message that specifies the itinerary data that you should send back in a Transaction message. However, the query message specifies only the itinerary data that you said changed in your [Hint](../hint-message/hint-message.md) message. 
   
 - Added the following messages to support the two types of pull requests.  
   - [QueryControl](../query-control-message/query-control-message.md) message  

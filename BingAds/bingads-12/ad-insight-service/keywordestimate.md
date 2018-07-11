@@ -25,6 +25,7 @@ A suggested keyword with minimum and maximum traffic estimates. Traffic estimate
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="keyword"></a>Keyword|The suggested keyword.|[Keyword](keyword.md)|

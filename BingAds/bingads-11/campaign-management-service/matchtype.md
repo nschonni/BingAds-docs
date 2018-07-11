@@ -28,6 +28,7 @@ Defines the possible match types for a keyword or negative keyword.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="broad"></a>Broad|The match type is Broad.|

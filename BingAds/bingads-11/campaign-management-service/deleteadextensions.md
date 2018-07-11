@@ -19,6 +19,7 @@ The *DeleteAdExtensionsRequest* object defines the [body](#request-body) and [he
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountid"></a>AccountId|The identifier of the account that owns the extensions.|**long**|
@@ -31,6 +32,7 @@ The *DeleteAdExtensionsRequest* object defines the [body](#request-body) and [he
 The *DeleteAdExtensionsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -107,51 +109,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<DeleteAdExtensionsResponse> DeleteAdExtensionsAsync(
-	long accountId,
-	IList<long> adExtensionIds)
+    long accountId,
+    IList<long> adExtensionIds)
 {
-	var request = new DeleteAdExtensionsRequest
-	{
-		AccountId = accountId,
-		AdExtensionIds = adExtensionIds
-	};
+    var request = new DeleteAdExtensionsRequest
+    {
+        AccountId = accountId,
+        AdExtensionIds = adExtensionIds
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.DeleteAdExtensionsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.DeleteAdExtensionsAsync(r), request));
 }
 ```
 ```java
 static DeleteAdExtensionsResponse deleteAdExtensions(
-	java.lang.Long accountId,
-	ArrayOflong adExtensionIds) throws RemoteException, Exception
+    java.lang.Long accountId,
+    ArrayOflong adExtensionIds) throws RemoteException, Exception
 {
-	DeleteAdExtensionsRequest request = new DeleteAdExtensionsRequest();
+    DeleteAdExtensionsRequest request = new DeleteAdExtensionsRequest();
 
-	request.setAccountId(accountId);
-	request.setAdExtensionIds(adExtensionIds);
+    request.setAccountId(accountId);
+    request.setAdExtensionIds(adExtensionIds);
 
-	return CampaignManagementService.getService().deleteAdExtensions(request);
+    return CampaignManagementService.getService().deleteAdExtensions(request);
 }
 ```
 ```php
 static function DeleteAdExtensions(
-	$accountId,
-	$adExtensionIds)
+    $accountId,
+    $adExtensionIds)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new DeleteAdExtensionsRequest();
+    $request = new DeleteAdExtensionsRequest();
 
-	$request->AccountId = $accountId;
-	$request->AdExtensionIds = $adExtensionIds;
+    $request->AccountId = $accountId;
+    $request->AdExtensionIds = $adExtensionIds;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteAdExtensions($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteAdExtensions($request);
 }
 ```
 ```python
 response=campaignmanagement_service.DeleteAdExtensions(
-	AccountId=AccountId,
-	AdExtensionIds=AdExtensionIds)
+    AccountId=AccountId,
+    AdExtensionIds=AdExtensionIds)
 ```
 
 ## Requirements

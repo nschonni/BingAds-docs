@@ -32,6 +32,7 @@ Defines a customer object that contains one or more Bing Ads accounts.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="customerfinancialstatus"></a>CustomerFinancialStatus|The financial status of the customer. For example, the status indicates whether the customer is in good standing or one or more of the accounts are past due.<br/><br/>**Add:** Read-only<br/>**Update:** Read-only|[CustomerFinancialStatus](customerfinancialstatus.md)|

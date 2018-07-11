@@ -24,6 +24,7 @@ Defines an error object that identifies the item within the batch of items in th
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="code"></a>Code|A numeric error code that identifies the error.|**int**|

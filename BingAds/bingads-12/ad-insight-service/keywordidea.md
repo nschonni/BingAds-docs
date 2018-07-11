@@ -28,6 +28,7 @@ Defines an object that contains a suggested keyword with historical statistics, 
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupid"></a>AdGroupId|The negative ad group identifier that groups keyword ideas into suggested new ad groups. Keyword ideas for existing ad group identifiers is not supported.<br/><br/>If the ad group ID is null then the keyword idea *Source* element is set to *Seed*, and there is not any specific recommended ad group.|**long**|

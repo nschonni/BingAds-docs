@@ -22,6 +22,7 @@ Defines an ad group to include in the report.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountid"></a>AccountId|The identifier of the account that the ad group belongs to.|**long**|

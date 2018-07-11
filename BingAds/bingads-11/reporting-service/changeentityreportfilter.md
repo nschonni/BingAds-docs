@@ -28,6 +28,7 @@ Defines the types of entities by which you can filter the report data.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="account"></a>Account|The report will include data for accounts that have been added or deleted, or that have had account elements updated.<br /><br /> The report will include all entity types not represented by other filter values, for example ad extensions.|

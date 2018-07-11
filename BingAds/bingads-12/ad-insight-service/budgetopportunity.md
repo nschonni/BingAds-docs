@@ -35,6 +35,7 @@ Defines an object that contains the suggested budget with estimated clicks and i
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="budgetpoints"></a>BudgetPoints|The list of budget points with weekly impressions, clicks and cost estimates for the given budget amount.|[BudgetPoint](budgetpoint.md) array|
@@ -53,6 +54,7 @@ The [BudgetOpportunity](budgetopportunity.md) object has [Inherited Elements](#i
 
 ### <a name="inheritedelementsopportunity"></a>Inherited Elements from Opportunity
 The [BudgetOpportunity](budgetopportunity.md) object derives from the [Opportunity](opportunity.md) object, and inherits the following elements. The descriptions below are specific to [BudgetOpportunity](budgetopportunity.md), and might not apply to other objects that inherit the same elements from the [Opportunity](opportunity.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

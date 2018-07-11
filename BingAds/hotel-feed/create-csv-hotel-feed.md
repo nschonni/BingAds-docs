@@ -13,7 +13,7 @@ ms.author: "scottwhi"
 
 > [!NOTE]
 > This beta release of Hotel Ads is available to select participants only. For information about participating in the beta release program, please contact your account manager.
->
+> 
 > The Hotel feed and documentation are subject to change. 
 
 To provide Bing your hotel listings, create a CSV file that contains a listing of each hotel you want to advertise. A listing describes the hotel's name, address, telephone number, and geographical coordinates.
@@ -38,6 +38,7 @@ The first line of the feed file is the header row, which contains the column nam
 
 The following is the list of columns that you may include in the feed. The feed file may contain the columns in any order and the column names are case insensitive.
 
+
 |Column name|Description|Data type|Required
 |-|-|-|-
 |id|An opaque, user-defined ID that uniquely identifies the hotel within the feed.<br /><br />When you create your transaction message, use this ID in the `Property` element of your transaction message to identify the hotel.|String|Yes
@@ -56,7 +57,7 @@ The following is the list of columns that you may include in the feed. The feed 
 
 > [!NOTE]
 > The `address` column and the `addr`, `addr2`, `addr3`, `city`, `province`, and `postal_code` columns are mutually exclusive. Specify either the `address` column or the address component columns. Specifying the address component columns is preferred.
->  
+> 
 > Although you may specify either geographical coordinates or a telephone number, you should specify both to ensure a better chance of matching properties in Bing Maps.
 
 The following shows an example header in CSV format. Separate all columns with a comma. Include only columns that contain values for at least one hotel.

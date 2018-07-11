@@ -10,6 +10,7 @@ description: Reference documentation for Bing Ads web services.
 > [!IMPORTANT]
 > With the availability of Bing Ads API version 12, version 11 is deprecated and will sunset by October 31, 2018. 
 
+
 |Topic|Description|
 |---------|---------------|
 |[Ad Insight Service Reference](../ad-insight-service/ad-insight-service-reference.md)|The Ad Insight service defines API elements that you can use to determine the historical performance of keywords, get the estimated bid and position for a keyword, and to get suggested keywords from an existing keyword or from the content at a specified URL. The service can also help you discover bid, budget, and keyword opportunities.|

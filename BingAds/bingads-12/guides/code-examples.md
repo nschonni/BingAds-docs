@@ -11,8 +11,9 @@ Get started developing Bing Ads applications in any programming language which s
 
 > [!TIP]
 > Begin with the Get Started guide and walkthroughs for your preferred language e.g., [C#](get-started-csharp.md), [Java](get-started-java.md), [Php](get-started-php.md), and [Python](get-started-python.md). 
->
+> 
 > Supporting files for [C#](https://github.com/BingAds/BingAds-dotNet-SDK/tree/master/examples/BingAdsExamples), [Java](https://github.com/BingAds/BingAds-Java-SDK/tree/master/examples/BingAdsDesktopApp), [Php](https://github.com/BingAds/BingAds-PHP-SDK/tree/master/samples), and [Python](https://github.com/BingAds/BingAds-Python-SDK/tree/master/examples/BingAdsPythonConsoleExamples) examples are available at GitHub. You can clone each repository or repurpose snippets as needed.
+
 
 |Title|Description|Available Languages|
 |-----|-----|-----|

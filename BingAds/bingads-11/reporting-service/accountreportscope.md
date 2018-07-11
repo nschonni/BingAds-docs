@@ -20,6 +20,7 @@ Defines the set of accounts to include in the report.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountids"></a>AccountIds|An array of a maximum of 1,000 account identifiers that identifies the account data to include in the report.<br /><br />To include every account to which the user has access, including accounts that the user manages, set this element to NULL.|**long** array|

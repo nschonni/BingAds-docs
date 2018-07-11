@@ -16,13 +16,14 @@ Gets the list of keyword ideas.
 
 Suggests new ad groups and keywords based on your existing keywords, website, and product category. You can also request historical statistics for keywords e.g., monthly searches, competition, average CPC, and ad impression share. You can use the returned suggested keyword bids as input to the [GetKeywordTrafficEstimates](getkeywordtrafficestimates.md) operation.
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > If you do not request AdImpressionShare, Relevance, Source, and SuggestedBid via the IdeaAttributes element, the operation will return default values (AdImpressionShare=0; Relevance=0; Source=Unknown; SuggestedBid=0) which should not be used. To get meaningful values for each [KeywordIdea](keywordidea.md) please request these attributes. 
 
 ## <a name="request"></a>Request Elements
 The *GetKeywordIdeasRequest* object defines the [body](#request-body) and [header](#request-header) elements of the service operation request. The elements must be in the same order as shown in the [Request SOAP](#request-soap). 
 
 ### <a name="request-body"></a>Request Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -37,6 +38,7 @@ The *GetKeywordIdeasRequest* object defines the [body](#request-body) and [heade
 The *GetKeywordIdeasResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -178,58 +180,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetKeywordIdeasResponse> GetKeywordIdeasAsync(
-	bool? expandIdeas,
-	IList<KeywordIdeaAttribute> ideaAttributes,
-	IList<SearchParameter> searchParameters)
+    bool? expandIdeas,
+    IList<KeywordIdeaAttribute> ideaAttributes,
+    IList<SearchParameter> searchParameters)
 {
-	var request = new GetKeywordIdeasRequest
-	{
-		ExpandIdeas = expandIdeas,
-		IdeaAttributes = ideaAttributes,
-		SearchParameters = searchParameters
-	};
+    var request = new GetKeywordIdeasRequest
+    {
+        ExpandIdeas = expandIdeas,
+        IdeaAttributes = ideaAttributes,
+        SearchParameters = searchParameters
+    };
 
-	return (await AdInsightService.CallAsync((s, r) => s.GetKeywordIdeasAsync(r), request));
+    return (await AdInsightService.CallAsync((s, r) => s.GetKeywordIdeasAsync(r), request));
 }
 ```
 ```java
 static GetKeywordIdeasResponse getKeywordIdeas(
-	boolean expandIdeas,
-	ArrayOfKeywordIdeaAttribute ideaAttributes,
-	ArrayOfSearchParameter searchParameters) throws RemoteException, Exception
+    boolean expandIdeas,
+    ArrayOfKeywordIdeaAttribute ideaAttributes,
+    ArrayOfSearchParameter searchParameters) throws RemoteException, Exception
 {
-	GetKeywordIdeasRequest request = new GetKeywordIdeasRequest();
+    GetKeywordIdeasRequest request = new GetKeywordIdeasRequest();
 
-	request.setExpandIdeas(expandIdeas);
-	request.setIdeaAttributes(ideaAttributes);
-	request.setSearchParameters(searchParameters);
+    request.setExpandIdeas(expandIdeas);
+    request.setIdeaAttributes(ideaAttributes);
+    request.setSearchParameters(searchParameters);
 
-	return AdInsightService.getService().getKeywordIdeas(request);
+    return AdInsightService.getService().getKeywordIdeas(request);
 }
 ```
 ```php
 static function GetKeywordIdeas(
-	$expandIdeas,
-	$ideaAttributes,
-	$searchParameters)
+    $expandIdeas,
+    $ideaAttributes,
+    $searchParameters)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
 
-	$request = new GetKeywordIdeasRequest();
+    $request = new GetKeywordIdeasRequest();
 
-	$request->ExpandIdeas = $expandIdeas;
-	$request->IdeaAttributes = $ideaAttributes;
-	$request->SearchParameters = $searchParameters;
+    $request->ExpandIdeas = $expandIdeas;
+    $request->IdeaAttributes = $ideaAttributes;
+    $request->SearchParameters = $searchParameters;
 
-	return $GLOBALS['AdInsightProxy']->GetService()->GetKeywordIdeas($request);
+    return $GLOBALS['AdInsightProxy']->GetService()->GetKeywordIdeas($request);
 }
 ```
 ```python
 response=adinsight_service.GetKeywordIdeas(
-	ExpandIdeas=ExpandIdeas,
-	IdeaAttributes=IdeaAttributes,
-	SearchParameters=SearchParameters)
+    ExpandIdeas=ExpandIdeas,
+    IdeaAttributes=IdeaAttributes,
+    SearchParameters=SearchParameters)
 ```
 
 ## Requirements

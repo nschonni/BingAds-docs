@@ -19,6 +19,7 @@ The *GetAdGroupsByIdsRequest* object defines the [body](#request-body) and [head
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupids"></a>AdGroupIds|A maximum of 1,000 identifiers of the ad groups to get.|**long** array|
@@ -33,6 +34,7 @@ The *GetAdGroupsByIdsRequest* object defines the [body](#request-body) and [head
 The *GetAdGroupsByIdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -206,65 +208,65 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetAdGroupsByIdsResponse> GetAdGroupsByIdsAsync(
-	long campaignId,
-	IList<long> adGroupIds,
-	AdGroupAdditionalField? returnAdditionalFields,
-	bool? returnCoOpAdGroups)
+    long campaignId,
+    IList<long> adGroupIds,
+    AdGroupAdditionalField? returnAdditionalFields,
+    bool? returnCoOpAdGroups)
 {
-	var request = new GetAdGroupsByIdsRequest
-	{
-		CampaignId = campaignId,
-		AdGroupIds = adGroupIds,
-		ReturnAdditionalFields = returnAdditionalFields,
-		ReturnCoOpAdGroups = returnCoOpAdGroups
-	};
+    var request = new GetAdGroupsByIdsRequest
+    {
+        CampaignId = campaignId,
+        AdGroupIds = adGroupIds,
+        ReturnAdditionalFields = returnAdditionalFields,
+        ReturnCoOpAdGroups = returnCoOpAdGroups
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetAdGroupsByIdsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetAdGroupsByIdsAsync(r), request));
 }
 ```
 ```java
 static GetAdGroupsByIdsResponse getAdGroupsByIds(
-	java.lang.Long campaignId,
-	ArrayOflong adGroupIds,
-	ArrayList<AdGroupAdditionalField> returnAdditionalFields,
-	boolean returnCoOpAdGroups) throws RemoteException, Exception
+    java.lang.Long campaignId,
+    ArrayOflong adGroupIds,
+    ArrayList<AdGroupAdditionalField> returnAdditionalFields,
+    boolean returnCoOpAdGroups) throws RemoteException, Exception
 {
-	GetAdGroupsByIdsRequest request = new GetAdGroupsByIdsRequest();
+    GetAdGroupsByIdsRequest request = new GetAdGroupsByIdsRequest();
 
-	request.setCampaignId(campaignId);
-	request.setAdGroupIds(adGroupIds);
-	request.setReturnAdditionalFields(returnAdditionalFields);
-	request.setReturnCoOpAdGroups(returnCoOpAdGroups);
+    request.setCampaignId(campaignId);
+    request.setAdGroupIds(adGroupIds);
+    request.setReturnAdditionalFields(returnAdditionalFields);
+    request.setReturnCoOpAdGroups(returnCoOpAdGroups);
 
-	return CampaignManagementService.getService().getAdGroupsByIds(request);
+    return CampaignManagementService.getService().getAdGroupsByIds(request);
 }
 ```
 ```php
 static function GetAdGroupsByIds(
-	$campaignId,
-	$adGroupIds,
-	$returnAdditionalFields,
-	$returnCoOpAdGroups)
+    $campaignId,
+    $adGroupIds,
+    $returnAdditionalFields,
+    $returnCoOpAdGroups)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetAdGroupsByIdsRequest();
+    $request = new GetAdGroupsByIdsRequest();
 
-	$request->CampaignId = $campaignId;
-	$request->AdGroupIds = $adGroupIds;
-	$request->ReturnAdditionalFields = $returnAdditionalFields;
-	$request->ReturnCoOpAdGroups = $returnCoOpAdGroups;
+    $request->CampaignId = $campaignId;
+    $request->AdGroupIds = $adGroupIds;
+    $request->ReturnAdditionalFields = $returnAdditionalFields;
+    $request->ReturnCoOpAdGroups = $returnCoOpAdGroups;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdGroupsByIds($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdGroupsByIds($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetAdGroupsByIds(
-	CampaignId=CampaignId,
-	AdGroupIds=AdGroupIds,
-	ReturnAdditionalFields=ReturnAdditionalFields,
-	ReturnCoOpAdGroups=ReturnCoOpAdGroups)
+    CampaignId=CampaignId,
+    AdGroupIds=AdGroupIds,
+    ReturnAdditionalFields=ReturnAdditionalFields,
+    ReturnCoOpAdGroups=ReturnCoOpAdGroups)
 ```
 
 ## Requirements

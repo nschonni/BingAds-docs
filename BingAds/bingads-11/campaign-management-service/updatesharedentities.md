@@ -19,6 +19,7 @@ The *UpdateSharedEntitiesRequest* object defines the [body](#request-body) and [
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="sharedentities"></a>SharedEntities|The negative keyword lists to update within the account's shared library.<br /><br />This array can contain a maximum of 20 elements.|[SharedEntity](sharedentity.md) array|
@@ -30,6 +31,7 @@ The *UpdateSharedEntitiesRequest* object defines the [body](#request-body) and [
 The *UpdateSharedEntitiesResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -118,44 +120,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<UpdateSharedEntitiesResponse> UpdateSharedEntitiesAsync(
-	IList<SharedEntity> sharedEntities)
+    IList<SharedEntity> sharedEntities)
 {
-	var request = new UpdateSharedEntitiesRequest
-	{
-		SharedEntities = sharedEntities
-	};
+    var request = new UpdateSharedEntitiesRequest
+    {
+        SharedEntities = sharedEntities
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.UpdateSharedEntitiesAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.UpdateSharedEntitiesAsync(r), request));
 }
 ```
 ```java
 static UpdateSharedEntitiesResponse updateSharedEntities(
-	ArrayOfSharedEntity sharedEntities) throws RemoteException, Exception
+    ArrayOfSharedEntity sharedEntities) throws RemoteException, Exception
 {
-	UpdateSharedEntitiesRequest request = new UpdateSharedEntitiesRequest();
+    UpdateSharedEntitiesRequest request = new UpdateSharedEntitiesRequest();
 
-	request.setSharedEntities(sharedEntities);
+    request.setSharedEntities(sharedEntities);
 
-	return CampaignManagementService.getService().updateSharedEntities(request);
+    return CampaignManagementService.getService().updateSharedEntities(request);
 }
 ```
 ```php
 static function UpdateSharedEntities(
-	$sharedEntities)
+    $sharedEntities)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new UpdateSharedEntitiesRequest();
+    $request = new UpdateSharedEntitiesRequest();
 
-	$request->SharedEntities = $sharedEntities;
+    $request->SharedEntities = $sharedEntities;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateSharedEntities($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateSharedEntities($request);
 }
 ```
 ```python
 response=campaignmanagement_service.UpdateSharedEntities(
-	SharedEntities=SharedEntities)
+    SharedEntities=SharedEntities)
 ```
 
 ## Requirements

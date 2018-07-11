@@ -23,6 +23,7 @@ Defines an object that you can use to determine the component of an ad extension
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="location"></a>Location|The component of the ad extension that failed editorial review.|**string**|

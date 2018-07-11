@@ -12,7 +12,7 @@ ms.author: "scottwhi"
 
 > [!NOTE]
 > This beta release of Hotel Ads is available to select participants only. For information about participating in the beta release program, please contact your account manager.
->
+> 
 > The Hotel feed and documentation are subject to change. 
 
 To provide Bing your hotel listings, create an XML document that contains a listing of each hotel you want to advertise. A listing describes the hotel's name, address, telephone number, and geographical coordinates.
@@ -23,7 +23,7 @@ For information about creating a feed file using CSV or TSV file format, see [Cr
 
 > [!NOTE]
 > Bing does not support all XSD elements. Bing ignores any element or attribute in the document that it does not support. The [Hotel Feed Reference](../hotel-feed/reference.md) includes only those elements and attributes that Bing supports. 
-
+> 
 > [!NOTE]
 > The document must specify the elements in the order defined in the Hotel XSD (or as shown in the reference).
 

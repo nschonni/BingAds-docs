@@ -18,6 +18,7 @@ If the data aggregation is not available for a given report, it will be noted as
 
 ## <a name="adextensions"></a>Ad Extensions
 
+
 |API Report Name|Bing Ads Web Application Report Name|Hourly|Daily|Weekly|Monthly|Yearly|Summary|
 |-------------------|----------------------------------------|----------|---------|----------|-----------|----------|-----------|
 |[Ad Extension By Ad Report](../reporting-service/adextensionbyadreportrequest.md)|Ad Extension by Ad|6|36|36|36|36|36|
@@ -27,6 +28,7 @@ If the data aggregation is not available for a given report, it will be noted as
 
 ## <a name="audiencenetwork"></a>Audience Network
 
+
 |API Report Name|Bing Ads Web Application Report Name|Hourly|Daily|Weekly|Monthly|Yearly|Summary|
 |-------------------|----------------------------------------|----------|---------|----------|-----------|----------|-----------|
 |[Age Gender Audience Report](../reporting-service/agegenderaudiencereportrequest.md)|Age and gender|6|36|36|36|36|36|
@@ -34,12 +36,14 @@ If the data aggregation is not available for a given report, it will be noted as
 
 ## <a name="budget"></a>Billing and Budget
 
+
 |API Report Name|Bing Ads Web Application Report Name|Hourly|Daily|Weekly|Monthly|Yearly|Summary|
 |-------------------|----------------------------------------|----------|---------|----------|-----------|----------|-----------|
 |[Budget Summary Report](../reporting-service/budgetsummaryreportrequest.md)|Budget|Not Applicable|24|Not Applicable|Not Applicable|Not Applicable|Not Applicable|
 |Not applicable|Billing Statement|Not Applicable|Not Applicable|Not Applicable|36|Not Applicable|Not Applicable|
 
 ## <a name="analytics"></a>Campaign Analytics
+
 
 |API Report Name|Bing Ads Web Application Report Name|Hourly|Daily|Weekly|Monthly|Yearly|Summary|
 |-------------------|----------------------------------------|----------|---------|----------|-----------|----------|-----------|
@@ -49,11 +53,13 @@ If the data aggregation is not available for a given report, it will be noted as
 
 ## <a name="changehistory"></a>Change History
 
+
 |API Report Name|Bing Ads Web Application Report Name|Hourly|Daily|Weekly|Monthly|Yearly|Summary|
 |-------------------|----------------------------------------|----------|---------|----------|-----------|----------|-----------|
 |[Search Campaign Change History Report](../reporting-service/searchcampaignchangehistoryreportrequest.md)|Campaign Change History|6|6|6|6|6|6|
 
 ## <a name="dynamicsearchads"></a>Dynamic Search Ads
+
 
 |API Report Name|Bing Ads Web Application Report Name|Hourly|Daily|Weekly|Monthly|Yearly|Summary|
 |-------------------|----------------------------------------|----------|---------|----------|-----------|----------|-----------|
@@ -62,6 +68,7 @@ If the data aggregation is not available for a given report, it will be noted as
 |[DSA Search Query Performance Report](../reporting-service/dsasearchqueryperformancereportrequest.md)|Dynamic search ad search term|1|36|36|36|36|36|
 
 ## <a name="performance"></a>Performance
+
 
 |API Report Name|Bing Ads Web Application Report Name|Hourly|Daily|Weekly|Monthly|Yearly|Summary|
 |-------------------|----------------------------------------|----------|---------|----------|-----------|----------|-----------|
@@ -79,6 +86,7 @@ If the data aggregation is not available for a given report, it will be noted as
 
 ## <a name="productads"></a>Product Ads
 
+
 |API Report Name|Bing Ads Web Application Report Name|Hourly|Daily|Weekly|Monthly|Yearly|Summary|
 |-------------------|----------------------------------------|----------|---------|----------|-----------|----------|-----------|
 |[Product Dimension Performance Report](../reporting-service/productdimensionperformancereportrequest.md)|Product Dimension|6|36|36|36|36|36|
@@ -88,8 +96,9 @@ If the data aggregation is not available for a given report, it will be noted as
 
 ## <a name="targeting"></a>Targeting
 
-|API Report Name|Bing Ads Web Application Report Name|Hourly|Daily|Weekly|Monthly|Yearly|Summary|
-|-------------------|----------------------------------------|----------|---------|----------|-----------|----------|-----------|
-|[Age Gender Demographic Report](../reporting-service/agegenderdemographicreportrequest.md)|Age and Gender|6|36|36|36|36|36|
-|[Geographic Performance Report](../reporting-service/geographicperformancereportrequest.md)|Geographic|14 **days**|36|36|36|36|36|
-|[User Location Report](../reporting-service/userlocationperformancereportrequest.md)|User Location|14 **days**|36|36|36|36|36|
+|                                       API Report Name                                       | Bing Ads Web Application Report Name |   Hourly    | Daily | Weekly | Monthly | Yearly | Summary |
+|---------------------------------------------------------------------------------------------|--------------------------------------|-------------|-------|--------|---------|--------|---------|
+| [Age Gender Demographic Report](../reporting-service/agegenderdemographicreportrequest.md)  |            Age and Gender            |      6      |  36   |   36   |   36    |   36   |   36    |
+| [Geographic Performance Report](../reporting-service/geographicperformancereportrequest.md) |              Geographic              | 14 **days** |  36   |   36   |   36    |   36   |   36    |
+|    [User Location Report](../reporting-service/userlocationperformancereportrequest.md)     |            User Location             | 14 **days** |  36   |   36   |   36    |   36   |   36    |
+

@@ -23,6 +23,7 @@ Defines the possible status values of an ad group.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The ad group is active, which indicates that the ad group's ads can be served.|

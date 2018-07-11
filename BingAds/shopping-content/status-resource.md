@@ -27,6 +27,7 @@ You may use the above Base URI or the Tenant URL shown under **Store settings** 
 
 To create the endpoints that you use to get the status of product offerings in a catalog, append the appropriate template to the base URI.
 
+
 |Template|HTTP Verb|Description|Resource
 |--------|---------|-----------|--------
 |`{bmcMerchantId}/catalogs/{catalogId}/status`|GET|Use to get the number of uploaded offers that passed or failed validation and editorial review.<br/><br/>Set `{bmcMerchantId}` to the BMC store ID.<br/><br/>Set `{catalogId}` to the catalog's ID.|Request: N/A<br>Response: [Status](#status) 
@@ -35,6 +36,7 @@ To create the endpoints that you use to get the status of product offerings in a
 ## <a name="queryparameters"/> Query parameters
 
 The endpoints may include the following query parameters.
+
 
 |Parameter|Description|
 |---------|-----------|
@@ -48,7 +50,8 @@ The endpoints may include the following query parameters.
 
 
 The following are the request and response headers.
- 
+
+
 |Header|Description|
 |---------|---------------|
 |Accept|Request header.\<p>Include this header when you download the report. You must set this header to `application/x-zip-compressed`. 
@@ -67,8 +70,9 @@ For user authentication, specify either the AuthenticationToken header or the Us
 ## <a name="objects"/> Request and response objects
 
 The following are the request and response objects used by the API.
- 
+
 Each object defines the JSON key name and XML element name that you use depending on the content type that you specify for the request. 
+
 
 
 |Object|Description
@@ -79,6 +83,7 @@ Each object defines the JSON key name and XML element name that you use dependin
 
 Defines the status of the product offerings that were uploaded to the catalog.
 XML object name: \<catalogStatus\>
+
 
 |Name|Value|Type|XML element name
 |----|-----|----|--------
@@ -91,6 +96,7 @@ XML object name: \<catalogStatus\>
 ## HTTP status codes
 
 The requests may return the following HTTP status codes.
+
 
 |Status code|Description
 |-----------|-----------
@@ -107,6 +113,7 @@ The report file that you download is contained in a Zip compressed folder (*.zip
 
 The report is broken out into a header section and report body section. The first row contains the following column names for the header section.
 
+
 |Column Name|Description
 |-----------|-----------
 |Catalog Name|The name of the catalog.
@@ -118,6 +125,7 @@ The second row contains the header data.
 The third row is blank.
 
 The fourth row contains the following column names for the report body, which starts on the fifth row. 
+
 
 |Column Name|Description|
 |---------------|---------------|

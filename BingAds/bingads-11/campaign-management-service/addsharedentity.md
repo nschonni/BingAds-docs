@@ -19,6 +19,7 @@ The *AddSharedEntityRequest* object defines the [body](#request-body) and [heade
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="listitems"></a>ListItems|The negative keywords to add to the negative keyword list.<br /><br />The list can contain a maximum of 5,000 items.<br /><br /> You cannot add existing negative keywords with assigned identifiers. You can add the same negative keyword and match type to a negative keyword list, and it will be assigned a new identifier.|[SharedListItem](sharedlistitem.md) array|
@@ -31,6 +32,7 @@ The *AddSharedEntityRequest* object defines the [body](#request-body) and [heade
 The *AddSharedEntityResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -138,51 +140,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<AddSharedEntityResponse> AddSharedEntityAsync(
-	SharedEntity sharedEntity,
-	IList<SharedListItem> listItems)
+    SharedEntity sharedEntity,
+    IList<SharedListItem> listItems)
 {
-	var request = new AddSharedEntityRequest
-	{
-		SharedEntity = sharedEntity,
-		ListItems = listItems
-	};
+    var request = new AddSharedEntityRequest
+    {
+        SharedEntity = sharedEntity,
+        ListItems = listItems
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.AddSharedEntityAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.AddSharedEntityAsync(r), request));
 }
 ```
 ```java
 static AddSharedEntityResponse addSharedEntity(
-	SharedEntity sharedEntity,
-	ArrayOfSharedListItem listItems) throws RemoteException, Exception
+    SharedEntity sharedEntity,
+    ArrayOfSharedListItem listItems) throws RemoteException, Exception
 {
-	AddSharedEntityRequest request = new AddSharedEntityRequest();
+    AddSharedEntityRequest request = new AddSharedEntityRequest();
 
-	request.setSharedEntity(sharedEntity);
-	request.setListItems(listItems);
+    request.setSharedEntity(sharedEntity);
+    request.setListItems(listItems);
 
-	return CampaignManagementService.getService().addSharedEntity(request);
+    return CampaignManagementService.getService().addSharedEntity(request);
 }
 ```
 ```php
 static function AddSharedEntity(
-	$sharedEntity,
-	$listItems)
+    $sharedEntity,
+    $listItems)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new AddSharedEntityRequest();
+    $request = new AddSharedEntityRequest();
 
-	$request->SharedEntity = $sharedEntity;
-	$request->ListItems = $listItems;
+    $request->SharedEntity = $sharedEntity;
+    $request->ListItems = $listItems;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->AddSharedEntity($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->AddSharedEntity($request);
 }
 ```
 ```python
 response=campaignmanagement_service.AddSharedEntity(
-	SharedEntity=SharedEntity,
-	ListItems=ListItems)
+    SharedEntity=SharedEntity,
+    ListItems=ListItems)
 ```
 
 ## Requirements

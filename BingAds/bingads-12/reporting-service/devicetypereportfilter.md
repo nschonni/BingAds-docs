@@ -27,6 +27,7 @@ Defines the device type values that you can use to filter the report data. These
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="computer"></a>Computer|The report will include text ads displayed on computers.|

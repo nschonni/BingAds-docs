@@ -47,6 +47,7 @@ Defines the possible types of profile criterions.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="companyname"></a>CompanyName|Target people at a specific company according to LinkedIn.|

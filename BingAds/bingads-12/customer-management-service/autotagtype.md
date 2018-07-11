@@ -24,6 +24,7 @@ Bing Ads can automatically add UTM tags to your destination URL so you can use y
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="inactive"></a>Inactive|Bing Ads will not append any UTM tracking codes to your ad or keyword final URL.|

@@ -40,6 +40,7 @@ Defines the possible industry segments in which a customer operates.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="agencysaleshouse"></a>AgencySalesHouse|The advertising agency sales house industry.|

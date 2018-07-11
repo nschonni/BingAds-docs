@@ -14,6 +14,7 @@ ms.topic: "article"
 Contains the methods used to manage the [ad group](/bingads/guides/entity-hierarchy-limits#adgroup).
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [bidding](#bidding)|[AdGroupBidding](AdGroupBidding.md)|Returns an object that contains the methods used to manage the ad group's bid values.
@@ -45,6 +46,7 @@ Contains the methods used to manage the [ad group](/bingads/guides/entity-hierar
 Returns an object that contains the methods used to manage the ad group's bid values. 
 
 ### Returns:
+
 |Type|Description|
 |-|-
 [AdGroupBidding](AdGroupBidding.md)|Contains the methods used to manage the ad group's bid values.
@@ -54,6 +56,7 @@ Returns an object that contains the methods used to manage the ad group's bid va
 Enables this ad group.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -62,6 +65,7 @@ void|Returns nothing.
 Returns the date when ads in the ad group stop serving.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [BingAdsDate](BingAdsDate.md)|The date when ads in the ad group stop serving.
@@ -70,6 +74,7 @@ Returns the date when ads in the ad group stop serving.
 Returns this entity's type.
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|This entity's type (its type is AdGroup).
@@ -78,6 +83,7 @@ string|This entity's type (its type is AdGroup).
 Returns the ID that uniquely identifies this ad group.
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|The ID that uniquely identifies this ad group.
@@ -86,6 +92,7 @@ string|The ID that uniquely identifies this ad group.
 Returns the name of this ad group.
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|The name of the ad group.
@@ -95,6 +102,7 @@ string|The name of the ad group.
 Returns the date when ads in the ad group start serving.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [BingAdsDate](BingAdsDate.md)|The date when ads in the ad group start serving.
@@ -104,6 +112,7 @@ Returns the date when ads in the ad group start serving.
 Returns the performance data for the ad group. 
 
 ### Returns:
+
 |Type|Description|
 |-|-
 [Stats](Stats.md)|The performance data for the ad group.
@@ -113,6 +122,7 @@ Returns the performance data for the ad group.
 Returns a Boolean value that indicates whether this ad group is enabled.
 
 ### Returns:
+
 |Type|Description|
 |-|-
 Boolean|Returns **true** if this ad group is enabled; otherwise, **false**.
@@ -121,6 +131,7 @@ Boolean|Returns **true** if this ad group is enabled; otherwise, **false**.
 Returns a Boolean value that indicates whether this ad group is paused.
 
 ### Returns:
+
 |Type|Description|
 |-|-
 Boolean|Returns **true** if this ad group is paused; otherwise, **false**.
@@ -129,6 +140,7 @@ Boolean|Returns **true** if this ad group is paused; otherwise, **false**.
 Returns a Boolean value that indicates whether this ad group is removed (deleted).
 
 ### Returns
+
 |Type|Description|
 |-|-
 Boolean|Returns **true** if this ad group is removed; otherwise, **false**.
@@ -147,6 +159,7 @@ Returns a new ad builder space associated with this ad group, which is used to c
 Returns a [builder](../concepts/builders.md) that you use to add keywords to this ad group.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [KeywordBuilder](KeywordBuilder.md)|The builder that you use to add keywords to this ad group.
@@ -155,6 +168,7 @@ Returns a [builder](../concepts/builders.md) that you use to add keywords to thi
 Pauses this ad group.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -165,11 +179,13 @@ void|Returns nothing.
 Sets the date when you want ads in the ad group to stop serving. Set an end date only if you want ads in the group to stop serving on a specific date.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 endDate|string|The date when you want ads in the ad group to stop serving. Specify the date in the form, YYYYMMDD.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -178,11 +194,13 @@ void|Returns nothing.
 Sets the date when you want ads in the ad group to stop serving. Set an end date only if you want ads in the group to stop serving on a specific date.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 endDate|Object|The date when you want ads in the ad group to stop serving. Specify the date using an object with the following fields:<br /><ul><li>year</li><li>month</li><li>day</li></ul>For example: `var date = {year: 2018, month: 5, day: 13};`<br /><br />The month is one-based where 1 is January and 12 is December.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -194,11 +212,13 @@ void|Returns nothing.
 Sets the name of this ad group.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 name|string|The name of the ad group. The name may contain a maximum of 256 characters and must be unique amongst all active ad groups within the campaign.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -209,11 +229,13 @@ void|Returns nothing.
 Sets the date when you want ads in the ad group to start serving. Set a start date only if you want ads in the group to start serving on a specific date; otherwise, they start serving immediately.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 endDate|string|The date when you want ads in the ad group to start serving. Specify the date in the form, YYYYMMDD.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -222,11 +244,13 @@ void|Returns nothing.
 Sets the date when you want ads in the ad group to start serving. Set a start date only if you want ads in the group to start serving on a specific date; otherwise, they start serving immediately.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 endDate|Object|The date when you want ads in the ad group to start serving. Specify the date using an object with the following fields:<br /><ul><li>year</li><li>month</li><li>day</li></ul>For example: `var date = {year: 2018, month: 5, day: 13};`<br /><br />The month is one-based where 1 is January and 12 is December.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -236,6 +260,7 @@ void|Returns nothing.
 Returns this ad group's final URLs, tracking template, and custom parameters.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupUrls](AdGroupUrls.md)|The object used to manage the ad group's final URLs, tracking template, and custom parameters.

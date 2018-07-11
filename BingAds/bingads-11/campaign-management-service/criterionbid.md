@@ -10,8 +10,8 @@ description: Defines a base class for criterion bids.
 Defines a base class for criterion bids.
 
 Do not try to instantiate a *CriterionBid*. You can create the following object that derives from it.
--   [BidMultiplier](bidmultiplier.md)  
--   [FixedBid](fixedbid.md)  
+- [BidMultiplier](bidmultiplier.md)  
+- [FixedBid](fixedbid.md)  
 
 For a list of criterion bids that you can use with [BiddableCampaignCriterion](biddablecampaigncriterion.md), see the [CampaignCriterionType](campaigncriteriontype.md) value set.
 
@@ -27,6 +27,7 @@ For a list of criterion bids that you can use with [BiddableAdGroupCriterion](bi
 ```
 
 ## <a name="elements"></a>Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

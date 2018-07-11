@@ -27,6 +27,7 @@ Defines the bid match type values that you can use to filter the report data. Th
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="broad"></a>Broad|The report will contain keywords that set a bid value for the broad match type.|

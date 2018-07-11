@@ -26,6 +26,7 @@ Defines the types of changes to entities by which you can filter the report data
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="added"></a>Added|The report will include data for entities that have been added.|

@@ -24,6 +24,7 @@ Defines the possible keyword match type values.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="aggregate"></a>Aggregate|Aggregates the data across all match types.|

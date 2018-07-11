@@ -73,6 +73,7 @@ To see how far back hourly, daily, weekly, monthly, yearly and summary aggregate
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="accountid"></a>AccountId|The Bing Ads assigned identifier of an account.|
@@ -127,9 +128,10 @@ The report must include the following columns, and one or more of the performanc
 
 > [!IMPORTANT]
 > If KeywordId is not specified the report will not fail, but impression share data will be inaccurate unless KeywordId is specified.  
-
+> 
 > [!NOTE]
 > The TimePeriod column is required for all aggregation types except Summary.  
+
 
 |Column|
 |----------|

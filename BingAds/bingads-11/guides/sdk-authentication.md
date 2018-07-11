@@ -91,181 +91,181 @@ Bing Ads SDKs support the standard OAuth 2.0 flow as defined in detail in the [T
 
 For repeat or long term authentication, you should follow the authorization code grant flow for obtaining an access token. The steps below follow the authorization code grant flow. For more information both about authorization code and implicit grant flows, see the [Authentication with OAuth](authentication-oauth.md) guide.
 
-1.  Create an instance of *OAuthWebAuthCodeGrant*, that will be used to manage Microsoft Account user authorization. Replace client ID, client secret, and redirection URI with the values configured in [Registering Your Application](authentication-oauth.md#registerapplication).
+1. Create an instance of *OAuthWebAuthCodeGrant*, that will be used to manage Microsoft Account user authorization. Replace client ID, client secret, and redirection URI with the values configured in [Registering Your Application](authentication-oauth.md#registerapplication).
 
-    ```csharp
-    var oAuthWebAuthCodeGrant = new OAuthWebAuthCodeGrant(ClientId, ClientSecret, new Uri(RedirectionUri), ApiEnvironment);
+   ```csharp
+   var oAuthWebAuthCodeGrant = new OAuthWebAuthCodeGrant(ClientId, ClientSecret, new Uri(RedirectionUri), ApiEnvironment);
     
-    // It is recommended that you specify a non guessable 'state' request parameter to help prevent
-    // cross site request forgery (CSRF). 
-    oAuthWebAuthCodeGrant.State = "ClientStateGoesHere";
-    ```
-    ```java
-    OAuthWebAuthCodeGrant oAuthWebAuthCodeGrant = new OAuthWebAuthCodeGrant(ClientId, ClientSecret, new URL(RedirectionUri), ApiEnvironment);
+   // It is recommended that you specify a non guessable 'state' request parameter to help prevent
+   // cross site request forgery (CSRF). 
+   oAuthWebAuthCodeGrant.State = "ClientStateGoesHere";
+   ```
+   ```java
+   OAuthWebAuthCodeGrant oAuthWebAuthCodeGrant = new OAuthWebAuthCodeGrant(ClientId, ClientSecret, new URL(RedirectionUri), ApiEnvironment);
     
-    // It is recommended that you specify a non guessable 'state' request parameter to help prevent
-    // cross site request forgery (CSRF). 
-    oAuthWebAuthCodeGrant.setState("ClientStateGoesHere");
-    ```
-    ```php
-    // Prepare the OAuth object for use with the authorization code grant flow. 
-    // It is recommended that you specify a non guessable 'state' request parameter to help prevent
-    // cross site request forgery (CSRF). 
-    $authentication = (new OAuthWebAuthCodeGrant())
-        ->withClientId(ClientId)
-        ->withClientSecret(ClientSecret)
-        ->withEnvironment(ApiEnvironment)
-        ->withRedirectUri('https://' . $_SERVER['HTTP_HOST'] . RedirectUri)
-        ->withState(rand(0,999999999)); 
+   // It is recommended that you specify a non guessable 'state' request parameter to help prevent
+   // cross site request forgery (CSRF). 
+   oAuthWebAuthCodeGrant.setState("ClientStateGoesHere");
+   ```
+   ```php
+   // Prepare the OAuth object for use with the authorization code grant flow. 
+   // It is recommended that you specify a non guessable 'state' request parameter to help prevent
+   // cross site request forgery (CSRF). 
+   $authentication = (new OAuthWebAuthCodeGrant())
+       ->withClientId(ClientId)
+       ->withClientSecret(ClientSecret)
+       ->withEnvironment(ApiEnvironment)
+       ->withRedirectUri('https://' . $_SERVER['HTTP_HOST'] . RedirectUri)
+       ->withState(rand(0,999999999)); 
     
-    // Assign this authentication instance to the global authorization_data. 
+   // Assign this authentication instance to the global authorization_data. 
 
-    $_SESSION['AuthorizationData'] = (new AuthorizationData())
-        ->withAuthentication($authentication)
-        ->withDeveloperToken(AuthHelper::DeveloperToken);
+   $_SESSION['AuthorizationData'] = (new AuthorizationData())
+       ->withAuthentication($authentication)
+       ->withDeveloperToken(AuthHelper::DeveloperToken);
     
-    $_SESSION['state'] = $_SESSION['AuthorizationData']->Authentication->State;
-    ```
-    ```python
-    oauth_web_auth_code_grant = OAuthWebAuthCodeGrant(
-        client_id=CLIENT_ID,
-        client_secret=CLIENT_SECRET,
-        env=ENVIRONMENT,
-        redirection_uri=REDIRECTION_URI
-    )
+   $_SESSION['state'] = $_SESSION['AuthorizationData']->Authentication->State;
+   ```
+   ```python
+   oauth_web_auth_code_grant = OAuthWebAuthCodeGrant(
+       client_id=CLIENT_ID,
+       client_secret=CLIENT_SECRET,
+       env=ENVIRONMENT,
+       redirection_uri=REDIRECTION_URI
+   )
     
-    # It is recommended that you specify a non guessable 'state' request parameter to help prevent
-    # cross site request forgery (CSRF). 
-    oauth_web_auth_code_grant.state="ClientStateGoesHere"
-    ```
+   # It is recommended that you specify a non guessable 'state' request parameter to help prevent
+   # cross site request forgery (CSRF). 
+   oauth_web_auth_code_grant.state="ClientStateGoesHere"
+   ```
 
-2.  Request user consent by connecting to the Microsoft Account authorization endpoint through a web browser control. Call the *GetAuthorizationEndpoint* method of the *OAuthWebAuthCodeGrant* instance that you created in the earlier step.
+2. Request user consent by connecting to the Microsoft Account authorization endpoint through a web browser control. Call the *GetAuthorizationEndpoint* method of the *OAuthWebAuthCodeGrant* instance that you created in the earlier step.
 
-    ```csharp
-    return Redirect(oAuthWebAuthCodeGrant.GetAuthorizationEndpoint().ToString());
-    ```
-    ```java
-    URL authorizationEndpoint = oAuthWebAuthCodeGrant.getAuthorizationEndpoint();
-    response.sendRedirect(authorizationEndpoint.toString());
-    ```
-    ```php
-    // The user needs to provide consent for the application to access their Bing Ads accounts.
-    header('Location: '. $_SESSION['AuthorizationData']->Authentication->GetAuthorizationEndpoint());
-    ```
-    ```python
-    oauth_web_auth_code_grant.get_authorization_endpoint()
-    ```
+   ```csharp
+   return Redirect(oAuthWebAuthCodeGrant.GetAuthorizationEndpoint().ToString());
+   ```
+   ```java
+   URL authorizationEndpoint = oAuthWebAuthCodeGrant.getAuthorizationEndpoint();
+   response.sendRedirect(authorizationEndpoint.toString());
+   ```
+   ```php
+   // The user needs to provide consent for the application to access their Bing Ads accounts.
+   header('Location: '. $_SESSION['AuthorizationData']->Authentication->GetAuthorizationEndpoint());
+   ```
+   ```python
+   oauth_web_auth_code_grant.get_authorization_endpoint()
+   ```
     
-    The user will be prompted through the Microsoft Account authorization web browser control to grant permissions for your application to manage their Bing Ads accounts.
+   The user will be prompted through the Microsoft Account authorization web browser control to grant permissions for your application to manage their Bing Ads accounts.
     
-    The authorization service calls back to your application with the redirection URI, which includes an authorization code if the user authorized your application to manage their Bing Ads accounts. For example the callback Url includes an authorization code as follows if the user granted permissions for your application to manage their Bing Ads accounts: *https://contoso.com/redirect/?code=CODE&state=ClientStateGoesHere*. If the user granted your application permissions to manage their Bing Ads accounts, you should use the code right away in the next step. The short duration of the authorization code, approximately 5 minutes, is subject to change.
+   The authorization service calls back to your application with the redirection URI, which includes an authorization code if the user authorized your application to manage their Bing Ads accounts. For example the callback Url includes an authorization code as follows if the user granted permissions for your application to manage their Bing Ads accounts: *<https://contoso.com/redirect/?code=CODE&state=ClientStateGoesHere>*. If the user granted your application permissions to manage their Bing Ads accounts, you should use the code right away in the next step. The short duration of the authorization code, approximately 5 minutes, is subject to change.
     
-    If the user denied your application permissions to manage their Bing Ads accounts, the callback URI includes an error and error description field as follows: *REDIRECTURI?error=access_denied&error_description=ERROR_DESCRIPTION&state=ClientStateGoesHere*.
+   If the user denied your application permissions to manage their Bing Ads accounts, the callback URI includes an error and error description field as follows: *REDIRECTURI?error=access_denied&error_description=ERROR_DESCRIPTION&state=ClientStateGoesHere*.
 
-3.  Use the authorization code to request the access token and refresh token. Pass the full callback URI when using the *OAuthWebAuthCodeGrant* instance to request the access token and refresh token.
+3. Use the authorization code to request the access token and refresh token. Pass the full callback URI when using the *OAuthWebAuthCodeGrant* instance to request the access token and refresh token.
 
-    ```csharp
-    if (Request["code"] != null)
-    {
-        // If you set the client state in step #1 above, verify that the authorization
-        // server returns the same value before proceeding.
-        if (oAuthWebAuthCodeGrant.State != "ClientStateGoesHere")
-            throw new HttpRequestException("The OAuth response state does not match the client request state.");
+   ```csharp
+   if (Request["code"] != null)
+   {
+       // If you set the client state in step #1 above, verify that the authorization
+       // server returns the same value before proceeding.
+       if (oAuthWebAuthCodeGrant.State != "ClientStateGoesHere")
+           throw new HttpRequestException("The OAuth response state does not match the client request state.");
        
-        await oAuthWebAuthCodeGrant.RequestAccessAndRefreshTokensAsync(Request.Url);
-    }
-    ```
-    ```java
-    if (request.getParameter("code") != null)
-    {
-        // If you set the client state in step #1 above, verify that the authorization
-        // server returns the same value before proceeding.
-        if (oAuthWebAuthCodeGrant.getState() != ClientState)
-            throw new Exception("The OAuth response state does not match the client request state.");
+       await oAuthWebAuthCodeGrant.RequestAccessAndRefreshTokensAsync(Request.Url);
+   }
+   ```
+   ```java
+   if (request.getParameter("code") != null)
+   {
+       // If you set the client state in step #1 above, verify that the authorization
+       // server returns the same value before proceeding.
+       if (oAuthWebAuthCodeGrant.getState() != ClientState)
+           throw new Exception("The OAuth response state does not match the client request state.");
                            
-        oAuthWebAuthCodeGrant.requestAccessAndRefreshTokens(new URL(request.getRequestURL() + "?" + request.getQueryString()));
-    }
-    ```
-    ```php
-    if($_GET['code'] != null)
-    {   
-        // Verify whether the 'state' value is the same random value we created
-        // when the authorization request was initiated.
-        if ($_GET['state'] != $_SESSION['state'])
-        {
-            throw new Exception(sprintf(
-                "The OAuth response state (%s) does not match the client request state (%s)", 
-                $_GET['state'], 
-                $_SESSION['state']));
-        }   
+       oAuthWebAuthCodeGrant.requestAccessAndRefreshTokens(new URL(request.getRequestURL() + "?" + request.getQueryString()));
+   }
+   ```
+   ```php
+   if($_GET['code'] != null)
+   {   
+       // Verify whether the 'state' value is the same random value we created
+       // when the authorization request was initiated.
+       if ($_GET['state'] != $_SESSION['state'])
+       {
+           throw new Exception(sprintf(
+               "The OAuth response state (%s) does not match the client request state (%s)", 
+               $_GET['state'], 
+               $_SESSION['state']));
+       }   
         
-        $_SESSION['AuthorizationData']->Authentication->RequestOAuthTokensByResponseUri($_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+       $_SESSION['AuthorizationData']->Authentication->RequestOAuthTokensByResponseUri($_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
                 
-        header('Location: '. '/CallBingAdsServices.php');
-    }
-    ```
-    ```python
-    if oauth_web_auth_code_grant.state != "ClientStateGoesHere":
-       raise Exception("The OAuth response state does not match the client request state.")
+       header('Location: '. '/CallBingAdsServices.php');
+   }
+   ```
+   ```python
+   if oauth_web_auth_code_grant.state != "ClientStateGoesHere":
+      raise Exception("The OAuth response state does not match the client request state.")
 
-    oauth_web_auth_code_grant.request_oauth_tokens_by_response_uri(RESPONSE_URI)
-    oauth_tokens = oauth_web_auth_code_grant.oauth_tokens
-    access_token = oauth_tokens.access_token
-    ```
+   oauth_web_auth_code_grant.request_oauth_tokens_by_response_uri(RESPONSE_URI)
+   oauth_tokens = oauth_web_auth_code_grant.oauth_tokens
+   access_token = oauth_tokens.access_token
+   ```
 
-    If this step succeeded, your application has permissions to manage the user's Bing Ads accounts. To call Bing Ads services, you should initialize either [Service Client](#serviceclient), [Bulk Service Manager](sdk-bulk-service-manager.md), or [Reporting Service Manager](sdk-reporting-service-manager.md) with [AuthorizationData](#authorization-data) that contains your *OAuthWebAuthCodeGrant* instance.
+   If this step succeeded, your application has permissions to manage the user's Bing Ads accounts. To call Bing Ads services, you should initialize either [Service Client](#serviceclient), [Bulk Service Manager](sdk-bulk-service-manager.md), or [Reporting Service Manager](sdk-reporting-service-manager.md) with [AuthorizationData](#authorization-data) that contains your *OAuthWebAuthCodeGrant* instance.
     
-    For more information, see [Using AuthorizationData](#authorization-data), [Using Service Client](#serviceclient), [Using BulkServiceManager](sdk-bulk-service-manager.md), and [Using ReportingServiceManager](sdk-reporting-service-manager.md).
+   For more information, see [Using AuthorizationData](#authorization-data), [Using Service Client](#serviceclient), [Using BulkServiceManager](sdk-bulk-service-manager.md), and [Using ReportingServiceManager](sdk-reporting-service-manager.md).
 
-4.  When calling Bing Ads services with [Service Client](#serviceclient), [Bulk Service Manager](sdk-bulk-service-manager.md), or [Reporting Service Manager](sdk-reporting-service-manager.md), it is important to save the most recent refresh token whenever new OAuth tokens are received.  
+4. When calling Bing Ads services with [Service Client](#serviceclient), [Bulk Service Manager](sdk-bulk-service-manager.md), or [Reporting Service Manager](sdk-reporting-service-manager.md), it is important to save the most recent refresh token whenever new OAuth tokens are received.  
 
-    ```csharp
-    // If you already have a refresh token, use it to request new access and refresh tokens.
+   ```csharp
+   // If you already have a refresh token, use it to request new access and refresh tokens.
 
-    if (GetRefreshToken(out refreshToken))
-    {
-        oAuthWebAuthCodeGrant.RequestAccessAndRefreshTokensAsync(refreshToken);
-    }
+   if (GetRefreshToken(out refreshToken))
+   {
+       oAuthWebAuthCodeGrant.RequestAccessAndRefreshTokensAsync(refreshToken);
+   }
 
-    // When calling Bing Ads services with Service Client, Bulk Service Manager, or Reporting Service Manager, each instance will refresh your access token automatically if they detect the AuthenticationTokenExpired (109) error code. It is important to save the most recent refresh token whenever new OAuth tokens are received. You will want to subscribe to the NewOAuthTokensReceived event handler.
+   // When calling Bing Ads services with Service Client, Bulk Service Manager, or Reporting Service Manager, each instance will refresh your access token automatically if they detect the AuthenticationTokenExpired (109) error code. It is important to save the most recent refresh token whenever new OAuth tokens are received. You will want to subscribe to the NewOAuthTokensReceived event handler.
 
-    oAuthWebAuthCodeGrant.NewOAuthTokensReceived += 
-        (sender, args) => SaveRefreshToken(args.NewRefreshToken);
-    ```
-    ```java
-    // If you already have a refresh token, use it to request new access and refresh tokens.
+   oAuthWebAuthCodeGrant.NewOAuthTokensReceived += 
+       (sender, args) => SaveRefreshToken(args.NewRefreshToken);
+   ```
+   ```java
+   // If you already have a refresh token, use it to request new access and refresh tokens.
 
-    if (refreshToken != null)
-    {
-        oAuthWebAuthCodeGrant.requestAccessAndRefreshTokens(refreshToken);
-    }
+   if (refreshToken != null)
+   {
+       oAuthWebAuthCodeGrant.requestAccessAndRefreshTokens(refreshToken);
+   }
 
-    // When calling Bing Ads services with Service Client, Bulk Service Manager, or Reporting Service Manager, each instance will refresh your access token automatically if they detect the AuthenticationTokenExpired (109) error code. It is important to save the most recent refresh token whenever new OAuth tokens are received. You will want to implement event handling using the NewOAuthTokensReceivedListener.
+   // When calling Bing Ads services with Service Client, Bulk Service Manager, or Reporting Service Manager, each instance will refresh your access token automatically if they detect the AuthenticationTokenExpired (109) error code. It is important to save the most recent refresh token whenever new OAuth tokens are received. You will want to implement event handling using the NewOAuthTokensReceivedListener.
 
-    oAuthWebAuthCodeGrant.setNewTokensListener(new NewOAuthTokensReceivedListener() {
-        @Override
-        public void onNewOAuthTokensReceived(OAuthTokens newTokens) {
-               saveRefreshToken(newTokens.getRefreshToken());
-        }
-    });
-    ```
-    ```php
-    // If you already have a refresh token, use it to request new access and refresh tokens.
-    $_SESSION['AuthorizationData']->Authentication->RequestOAuthTokensByRefreshToken($refreshToken);
-    ```
-    ```python
-    # When calling Bing Ads services with Service Client, Bulk Service Manager, or Reporting Service Manager, each instance will refresh your access token automatically if they detect the AuthenticationTokenExpired (109) error code. It is important to save the most recent refresh token whenever new OAuth tokens are received. You will want to register a callback function to automatically save the refresh token anytime it is refreshed. For example if you defined have a save_refresh_token() method that securely stores your refresh token, set the authentication token_refreshed_callback property of each OAuthWebAuthCodeGrant instance.
+   oAuthWebAuthCodeGrant.setNewTokensListener(new NewOAuthTokensReceivedListener() {
+       @Override
+       public void onNewOAuthTokensReceived(OAuthTokens newTokens) {
+              saveRefreshToken(newTokens.getRefreshToken());
+       }
+   });
+   ```
+   ```php
+   // If you already have a refresh token, use it to request new access and refresh tokens.
+   $_SESSION['AuthorizationData']->Authentication->RequestOAuthTokensByRefreshToken($refreshToken);
+   ```
+   ```python
+   # When calling Bing Ads services with Service Client, Bulk Service Manager, or Reporting Service Manager, each instance will refresh your access token automatically if they detect the AuthenticationTokenExpired (109) error code. It is important to save the most recent refresh token whenever new OAuth tokens are received. You will want to register a callback function to automatically save the refresh token anytime it is refreshed. For example if you defined have a save_refresh_token() method that securely stores your refresh token, set the authentication token_refreshed_callback property of each OAuthWebAuthCodeGrant instance.
     
-    oauth_web_auth_code_grant.token_refreshed_callback=save_refresh_token
+   oauth_web_auth_code_grant.token_refreshed_callback=save_refresh_token
 
-    # If you already have a refresh token, use it to request new access and refresh tokens.
+   # If you already have a refresh token, use it to request new access and refresh tokens.
 
-    if refresh_token is not None:
-        oauth_web_auth_code_grant.request_oauth_tokens_by_refresh_token(refresh_token)
-    ```
+   if refresh_token is not None:
+       oauth_web_auth_code_grant.request_oauth_tokens_by_refresh_token(refresh_token)
+   ```
   
-    > [!IMPORTANT]
-    > A refresh token can last up to 90 days. Regardless, you should expect to start again from Step 1 and request user consent if, for example the Microsoft Account user changed their password, removed a device from their list of trusted devices, or removed permissions for your application to authenticate on their behalf.
+   > [!IMPORTANT]
+   > A refresh token can last up to 90 days. Regardless, you should expect to start again from Step 1 and request user consent if, for example the Microsoft Account user changed their password, removed a device from their list of trusted devices, or removed permissions for your application to authenticate on their behalf.
 
 ## <a name="authorization-data"></a>Using AuthorizationData
 The [AuthorizationData](#authorization-data) class contains properties that Bing Ads uses to authorize a user. The [Service Client](#serviceclient), [Bulk Service Manager](sdk-bulk-service-manager.md) and [Reporting Service Manager](sdk-reporting-service-manager.md) classes handle common request header fields for you, allowing you to specify the *Authentication*, *CustomerId*, *AccountId*, and *DeveloperToken* properties in the [AuthorizationData](#authorization-data) object once for each service. 

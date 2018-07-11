@@ -11,6 +11,7 @@ The technical guides below describe core advertising scenarios using Bing Ads se
 
 ## Guides
 
+
 |Topic|Description|
 |---------|---------------|
 |[Authentication with OAuth](authentication-oauth.md)|Manage Bing Ads accounts linked to a Microsoft Account using OAuth access tokens.|

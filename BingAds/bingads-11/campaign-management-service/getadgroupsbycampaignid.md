@@ -19,6 +19,7 @@ The *GetAdGroupsByCampaignIdRequest* object defines the [body](#request-body) an
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="campaignid"></a>CampaignId|The identifier of the campaign that contains the ad groups to get.|**long**|
@@ -32,6 +33,7 @@ The *GetAdGroupsByCampaignIdRequest* object defines the [body](#request-body) an
 The *GetAdGroupsByCampaignIdResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -178,58 +180,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetAdGroupsByCampaignIdResponse> GetAdGroupsByCampaignIdAsync(
-	long campaignId,
-	AdGroupAdditionalField? returnAdditionalFields,
-	bool? returnCoOpAdGroups)
+    long campaignId,
+    AdGroupAdditionalField? returnAdditionalFields,
+    bool? returnCoOpAdGroups)
 {
-	var request = new GetAdGroupsByCampaignIdRequest
-	{
-		CampaignId = campaignId,
-		ReturnAdditionalFields = returnAdditionalFields,
-		ReturnCoOpAdGroups = returnCoOpAdGroups
-	};
+    var request = new GetAdGroupsByCampaignIdRequest
+    {
+        CampaignId = campaignId,
+        ReturnAdditionalFields = returnAdditionalFields,
+        ReturnCoOpAdGroups = returnCoOpAdGroups
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetAdGroupsByCampaignIdAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetAdGroupsByCampaignIdAsync(r), request));
 }
 ```
 ```java
 static GetAdGroupsByCampaignIdResponse getAdGroupsByCampaignId(
-	java.lang.Long campaignId,
-	ArrayList<AdGroupAdditionalField> returnAdditionalFields,
-	boolean returnCoOpAdGroups) throws RemoteException, Exception
+    java.lang.Long campaignId,
+    ArrayList<AdGroupAdditionalField> returnAdditionalFields,
+    boolean returnCoOpAdGroups) throws RemoteException, Exception
 {
-	GetAdGroupsByCampaignIdRequest request = new GetAdGroupsByCampaignIdRequest();
+    GetAdGroupsByCampaignIdRequest request = new GetAdGroupsByCampaignIdRequest();
 
-	request.setCampaignId(campaignId);
-	request.setReturnAdditionalFields(returnAdditionalFields);
-	request.setReturnCoOpAdGroups(returnCoOpAdGroups);
+    request.setCampaignId(campaignId);
+    request.setReturnAdditionalFields(returnAdditionalFields);
+    request.setReturnCoOpAdGroups(returnCoOpAdGroups);
 
-	return CampaignManagementService.getService().getAdGroupsByCampaignId(request);
+    return CampaignManagementService.getService().getAdGroupsByCampaignId(request);
 }
 ```
 ```php
 static function GetAdGroupsByCampaignId(
-	$campaignId,
-	$returnAdditionalFields,
-	$returnCoOpAdGroups)
+    $campaignId,
+    $returnAdditionalFields,
+    $returnCoOpAdGroups)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetAdGroupsByCampaignIdRequest();
+    $request = new GetAdGroupsByCampaignIdRequest();
 
-	$request->CampaignId = $campaignId;
-	$request->ReturnAdditionalFields = $returnAdditionalFields;
-	$request->ReturnCoOpAdGroups = $returnCoOpAdGroups;
+    $request->CampaignId = $campaignId;
+    $request->ReturnAdditionalFields = $returnAdditionalFields;
+    $request->ReturnCoOpAdGroups = $returnCoOpAdGroups;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdGroupsByCampaignId($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdGroupsByCampaignId($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetAdGroupsByCampaignId(
-	CampaignId=CampaignId,
-	ReturnAdditionalFields=ReturnAdditionalFields,
-	ReturnCoOpAdGroups=ReturnCoOpAdGroups)
+    CampaignId=CampaignId,
+    ReturnAdditionalFields=ReturnAdditionalFields,
+    ReturnCoOpAdGroups=ReturnCoOpAdGroups)
 ```
 
 ## Requirements

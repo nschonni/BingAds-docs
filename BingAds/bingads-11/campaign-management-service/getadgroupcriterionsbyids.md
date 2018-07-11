@@ -19,6 +19,7 @@ The *GetAdGroupCriterionsByIdsRequest* object defines the [body](#request-body) 
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupcriterionids"></a>AdGroupCriterionIds|A list of unique identifiers that identify the criterions to get.<br/><br/>You can include up to 1,000 ad group criterion identifiers per request. <br /><br />If this element is null, all criterions for the specified *AdGroupId* will be retrieved.|**long** array|
@@ -33,6 +34,7 @@ The *GetAdGroupCriterionsByIdsRequest* object defines the [body](#request-body) 
 The *GetAdGroupCriterionsByIdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -189,65 +191,65 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetAdGroupCriterionsByIdsResponse> GetAdGroupCriterionsByIdsAsync(
-	IList<long> adGroupCriterionIds,
-	bool? returnAgeGenderUnknownValue,
-	long adGroupId,
-	AdGroupCriterionType criterionType)
+    IList<long> adGroupCriterionIds,
+    bool? returnAgeGenderUnknownValue,
+    long adGroupId,
+    AdGroupCriterionType criterionType)
 {
-	var request = new GetAdGroupCriterionsByIdsRequest
-	{
-		AdGroupCriterionIds = adGroupCriterionIds,
-		ReturnAgeGenderUnknownValue = returnAgeGenderUnknownValue,
-		AdGroupId = adGroupId,
-		CriterionType = criterionType
-	};
+    var request = new GetAdGroupCriterionsByIdsRequest
+    {
+        AdGroupCriterionIds = adGroupCriterionIds,
+        ReturnAgeGenderUnknownValue = returnAgeGenderUnknownValue,
+        AdGroupId = adGroupId,
+        CriterionType = criterionType
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetAdGroupCriterionsByIdsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetAdGroupCriterionsByIdsAsync(r), request));
 }
 ```
 ```java
 static GetAdGroupCriterionsByIdsResponse getAdGroupCriterionsByIds(
-	ArrayOflong adGroupCriterionIds,
-	boolean returnAgeGenderUnknownValue,
-	java.lang.Long adGroupId,
-	ArrayList<AdGroupCriterionType> criterionType) throws RemoteException, Exception
+    ArrayOflong adGroupCriterionIds,
+    boolean returnAgeGenderUnknownValue,
+    java.lang.Long adGroupId,
+    ArrayList<AdGroupCriterionType> criterionType) throws RemoteException, Exception
 {
-	GetAdGroupCriterionsByIdsRequest request = new GetAdGroupCriterionsByIdsRequest();
+    GetAdGroupCriterionsByIdsRequest request = new GetAdGroupCriterionsByIdsRequest();
 
-	request.setAdGroupCriterionIds(adGroupCriterionIds);
-	request.setReturnAgeGenderUnknownValue(returnAgeGenderUnknownValue);
-	request.setAdGroupId(adGroupId);
-	request.setCriterionType(criterionType);
+    request.setAdGroupCriterionIds(adGroupCriterionIds);
+    request.setReturnAgeGenderUnknownValue(returnAgeGenderUnknownValue);
+    request.setAdGroupId(adGroupId);
+    request.setCriterionType(criterionType);
 
-	return CampaignManagementService.getService().getAdGroupCriterionsByIds(request);
+    return CampaignManagementService.getService().getAdGroupCriterionsByIds(request);
 }
 ```
 ```php
 static function GetAdGroupCriterionsByIds(
-	$adGroupCriterionIds,
-	$returnAgeGenderUnknownValue,
-	$adGroupId,
-	$criterionType)
+    $adGroupCriterionIds,
+    $returnAgeGenderUnknownValue,
+    $adGroupId,
+    $criterionType)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetAdGroupCriterionsByIdsRequest();
+    $request = new GetAdGroupCriterionsByIdsRequest();
 
-	$request->AdGroupCriterionIds = $adGroupCriterionIds;
-	$request->ReturnAgeGenderUnknownValue = $returnAgeGenderUnknownValue;
-	$request->AdGroupId = $adGroupId;
-	$request->CriterionType = $criterionType;
+    $request->AdGroupCriterionIds = $adGroupCriterionIds;
+    $request->ReturnAgeGenderUnknownValue = $returnAgeGenderUnknownValue;
+    $request->AdGroupId = $adGroupId;
+    $request->CriterionType = $criterionType;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdGroupCriterionsByIds($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdGroupCriterionsByIds($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetAdGroupCriterionsByIds(
-	AdGroupCriterionIds=AdGroupCriterionIds,
-	ReturnAgeGenderUnknownValue=ReturnAgeGenderUnknownValue,
-	AdGroupId=AdGroupId,
-	CriterionType=CriterionType)
+    AdGroupCriterionIds=AdGroupCriterionIds,
+    ReturnAgeGenderUnknownValue=ReturnAgeGenderUnknownValue,
+    AdGroupId=AdGroupId,
+    CriterionType=CriterionType)
 ```
 
 ## Requirements

@@ -35,6 +35,7 @@ For a detailed example, see the [Remarks](#Remarks) section below.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="excluderuleitemgroups"></a>ExcludeRuleItemGroups|The list of rule item groups that you want applied as exclusions to the remarketing list.<br/><br/>The maximum number of rule item groups in this element is 100. The maximum number of rule items per rule item group is 100.<br/><br/> Exclusions take precedence over inclusions. In other words if the user visited any excluded page within the [RemarketingList](remarketinglist.md) membership duration e.g. previous 30 days, then they cannot be added to the list even if other page views satisfy conditions in the included rule item groups. If the excluded page views occurred prior to the membership duration lookback, and if the user's page views satisfy conditions in the included rule item groups within the membership duration, then they can be added to the remarketing list.<br/><br/>**Add:** Required<br/>**Update:** Required. If you want to keep any of the previous rule item groups, then you must explicitly set them again during update.|[RuleItemGroup](ruleitemgroup.md) array|
@@ -46,6 +47,7 @@ The [PageVisitorsWhoDidNotVisitAnotherPageRule](pagevisitorswhodidnotvisitanothe
 
 ### <a name="inheritedelementsremarketingrule"></a>Inherited Elements from RemarketingRule
 The [PageVisitorsWhoDidNotVisitAnotherPageRule](pagevisitorswhodidnotvisitanotherpagerule.md) object derives from the [RemarketingRule](remarketingrule.md) object, and inherits the following elements. The descriptions below are specific to [PageVisitorsWhoDidNotVisitAnotherPageRule](pagevisitorswhodidnotvisitanotherpagerule.md), and might not apply to other objects that inherit the same elements from the [RemarketingRule](remarketingrule.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -139,6 +141,7 @@ The above definition is translated to the following logical expression:
 *(((Url Contains X) and (ReferrerUrl DoesNotContain Z)) or ((Url DoesNotBeginWith Y)) or ((ReferrerUrl Equals Z))) and not (((Url BeginsWith A) and (ReferrerUrl BeginsWith B)) or ((Url Contains C)))*
 
 Evaluation of the logical expression determines which of the following example users will be added to the remarketing list.
+
 
 |User|Url Visited|Referrer Url|Added to List|
 |-----------|---------------|-------------|-------------|

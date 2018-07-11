@@ -21,6 +21,7 @@ Defines the possible status values of an ad extension.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The ad extension is active. You can associate an active ad extension with a campaign or ad group.|

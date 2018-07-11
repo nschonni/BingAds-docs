@@ -22,6 +22,7 @@ The *GetEstimatedPositionByKeywordIdsRequest* object defines the [body](#request
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="keywordids"></a>KeywordIds|An array of identifiers of the keywords for which you want to get the estimated position in the search results, based on the specified bid value. You may specify a maximum of 1,000 keyword identifiers.|**long** array|
@@ -34,6 +35,7 @@ The *GetEstimatedPositionByKeywordIdsRequest* object defines the [body](#request
 The *GetEstimatedPositionByKeywordIdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -110,51 +112,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetEstimatedPositionByKeywordIdsResponse> GetEstimatedPositionByKeywordIdsAsync(
-	IList<long> keywordIds,
-	double maxBid)
+    IList<long> keywordIds,
+    double maxBid)
 {
-	var request = new GetEstimatedPositionByKeywordIdsRequest
-	{
-		KeywordIds = keywordIds,
-		MaxBid = maxBid
-	};
+    var request = new GetEstimatedPositionByKeywordIdsRequest
+    {
+        KeywordIds = keywordIds,
+        MaxBid = maxBid
+    };
 
-	return (await AdInsightService.CallAsync((s, r) => s.GetEstimatedPositionByKeywordIdsAsync(r), request));
+    return (await AdInsightService.CallAsync((s, r) => s.GetEstimatedPositionByKeywordIdsAsync(r), request));
 }
 ```
 ```java
 static GetEstimatedPositionByKeywordIdsResponse getEstimatedPositionByKeywordIds(
-	ArrayOflong keywordIds,
-	double maxBid) throws RemoteException, Exception
+    ArrayOflong keywordIds,
+    double maxBid) throws RemoteException, Exception
 {
-	GetEstimatedPositionByKeywordIdsRequest request = new GetEstimatedPositionByKeywordIdsRequest();
+    GetEstimatedPositionByKeywordIdsRequest request = new GetEstimatedPositionByKeywordIdsRequest();
 
-	request.setKeywordIds(keywordIds);
-	request.setMaxBid(maxBid);
+    request.setKeywordIds(keywordIds);
+    request.setMaxBid(maxBid);
 
-	return AdInsightService.getService().getEstimatedPositionByKeywordIds(request);
+    return AdInsightService.getService().getEstimatedPositionByKeywordIds(request);
 }
 ```
 ```php
 static function GetEstimatedPositionByKeywordIds(
-	$keywordIds,
-	$maxBid)
+    $keywordIds,
+    $maxBid)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
 
-	$request = new GetEstimatedPositionByKeywordIdsRequest();
+    $request = new GetEstimatedPositionByKeywordIdsRequest();
 
-	$request->KeywordIds = $keywordIds;
-	$request->MaxBid = $maxBid;
+    $request->KeywordIds = $keywordIds;
+    $request->MaxBid = $maxBid;
 
-	return $GLOBALS['AdInsightProxy']->GetService()->GetEstimatedPositionByKeywordIds($request);
+    return $GLOBALS['AdInsightProxy']->GetService()->GetEstimatedPositionByKeywordIds($request);
 }
 ```
 ```python
 response=adinsight_service.GetEstimatedPositionByKeywordIds(
-	KeywordIds=KeywordIds,
-	MaxBid=MaxBid)
+    KeywordIds=KeywordIds,
+    MaxBid=MaxBid)
 ```
 
 ## Requirements

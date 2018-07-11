@@ -22,6 +22,7 @@ Defines the possible ad group criterion status values.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The criterion is active.|

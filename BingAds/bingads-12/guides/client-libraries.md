@@ -14,6 +14,7 @@ You can develop Bing Ads applications with any programming language that support
 
 ## <a name="repositories"></a>SDK Repositories
 
+
 |SDK|Documentation|Source|Distribution|Code Examples|License|
 |-------|-----------------|----------|----------------|-----------------|-----------|
 |Bing Ads .NET SDK|[Get Started](get-started-csharp.md)|[GitHub](https://github.com/BingAds/BingAds-dotNet-SDK)|[NuGet](https://www.nuget.org/packages/Microsoft.BingAds.SDK/)|[GitHub](https://github.com/BingAds/BingAds-dotNet-SDK/tree/master/examples/BingAdsExamples) &#124; [Docs](code-examples.md)|[Bing Ads .NET SDK License](https://github.com/BingAds/BingAds-dotNet-SDK/blob/master/LICENSE.md)|
@@ -27,6 +28,7 @@ You can develop Bing Ads applications with any programming language that support
 The SDKs support all active [Bing Ads Web Service Addresses](web-service-addresses.md) in sandbox and production. 
 
 You should use the following namespaces corresponding to the latest version of each service. These are the supported high level public namespaces. Internal and lower level namespaces are not documented here. You can find out more information about internal namespaces within the GitHub [SDK Repositories](#repositories) for each SDK.
+
 
 |Namespace|Description|
 |-------------|---------------|

@@ -22,6 +22,7 @@ The *DeleteNegativeKeywordsFromEntitiesRequest* object defines the [body](#reque
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="entitynegativekeywords"></a>EntityNegativeKeywords|An array of negative keyword with associated entity such as a campaign or ad group.<br /><br /> The *EntityType* specified within each *EntityNegativeKeyword* must be set to the same value.<br /><br />This array can contain a maximum of 1 *EntityNegativeKeyword* element, which contains up to 20,000 negative keywords.|[EntityNegativeKeyword](entitynegativekeyword.md) array|
@@ -33,6 +34,7 @@ The *DeleteNegativeKeywordsFromEntitiesRequest* object defines the [body](#reque
 The *DeleteNegativeKeywordsFromEntitiesResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -135,44 +137,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<DeleteNegativeKeywordsFromEntitiesResponse> DeleteNegativeKeywordsFromEntitiesAsync(
-	IList<EntityNegativeKeyword> entityNegativeKeywords)
+    IList<EntityNegativeKeyword> entityNegativeKeywords)
 {
-	var request = new DeleteNegativeKeywordsFromEntitiesRequest
-	{
-		EntityNegativeKeywords = entityNegativeKeywords
-	};
+    var request = new DeleteNegativeKeywordsFromEntitiesRequest
+    {
+        EntityNegativeKeywords = entityNegativeKeywords
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.DeleteNegativeKeywordsFromEntitiesAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.DeleteNegativeKeywordsFromEntitiesAsync(r), request));
 }
 ```
 ```java
 static DeleteNegativeKeywordsFromEntitiesResponse deleteNegativeKeywordsFromEntities(
-	ArrayOfEntityNegativeKeyword entityNegativeKeywords) throws RemoteException, Exception
+    ArrayOfEntityNegativeKeyword entityNegativeKeywords) throws RemoteException, Exception
 {
-	DeleteNegativeKeywordsFromEntitiesRequest request = new DeleteNegativeKeywordsFromEntitiesRequest();
+    DeleteNegativeKeywordsFromEntitiesRequest request = new DeleteNegativeKeywordsFromEntitiesRequest();
 
-	request.setEntityNegativeKeywords(entityNegativeKeywords);
+    request.setEntityNegativeKeywords(entityNegativeKeywords);
 
-	return CampaignManagementService.getService().deleteNegativeKeywordsFromEntities(request);
+    return CampaignManagementService.getService().deleteNegativeKeywordsFromEntities(request);
 }
 ```
 ```php
 static function DeleteNegativeKeywordsFromEntities(
-	$entityNegativeKeywords)
+    $entityNegativeKeywords)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new DeleteNegativeKeywordsFromEntitiesRequest();
+    $request = new DeleteNegativeKeywordsFromEntitiesRequest();
 
-	$request->EntityNegativeKeywords = $entityNegativeKeywords;
+    $request->EntityNegativeKeywords = $entityNegativeKeywords;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteNegativeKeywordsFromEntities($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteNegativeKeywordsFromEntities($request);
 }
 ```
 ```python
 response=campaignmanagement_service.DeleteNegativeKeywordsFromEntities(
-	EntityNegativeKeywords=EntityNegativeKeywords)
+    EntityNegativeKeywords=EntityNegativeKeywords)
 ```
 
 ## Requirements

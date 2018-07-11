@@ -25,6 +25,7 @@ Example usage:
 
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [build](#build)|[NegativeKeywordListOperation](./NegativeKeywordListOperation.md)|Returns an operation object that you use to add the negative keyword list to the account.
@@ -34,6 +35,7 @@ Example usage:
 Returns an operation object that you use to add the negative keyword list to the account.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [NegativeKeywordListOperation](./NegativeKeywordListOperation.md)|An operation object that you use to add the negative keyword list to the account.
@@ -42,11 +44,13 @@ Returns an operation object that you use to add the negative keyword list to the
 Sets the name of the negative keyword list.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 name|string|The name of the negative keyword list. The name may contain a maximum of 255 characters.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [NegativeKeywordListBuilder](./NegativeKeywordListBuilder.md)|The negative keyword list builder with the name applied.

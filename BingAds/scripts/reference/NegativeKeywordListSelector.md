@@ -26,6 +26,7 @@ var negativeKeywordListSelector = BingAdsApp.negativeKeywordLists()
 ```
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [get](#get)|[NegativeKeywordListIterator](./NegativeKeywordListIterator.md)|Returns an iterator that you use to iterate through the list of negative keyword lists.
@@ -38,6 +39,7 @@ var negativeKeywordListSelector = BingAdsApp.negativeKeywordLists()
 Returns an [iterator](../concepts/iterators.md) that you use to iterate through the list of negative keyword lists.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [NegativeKeywordListIterator](./NegativeKeywordListIterator.md)|An iterator that you use to iterate through the negative keywords lists that were selected based on the selector's selection criteria.
@@ -57,11 +59,13 @@ For example, the following call returns negative keyword lists in ascending orde
 [!INCLUDE[order-by-limit](../includes/order-by-limit.md)]
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 orderBy|string|The ordering to apply.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [NegativeKeywordListSelector](./NegativeKeywordListSelector.md)|Selector with ordering applied.
@@ -79,6 +83,7 @@ Specify the condition parameter in the form, "columnName operator value" where:
 <a name="supported-negative-keyword-list-columns"></a>
 Supported Columns. The column names are case sensitive.
 
+
 |Column|Type|Example|
 |-|-|-|-
 <strong>Shared Set Attributes</strong>|
@@ -90,11 +95,13 @@ Status|enumeration|`withCondition("Status = ACTIVE")`<br /><br />Possible case-s
 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 condition|string|The condition to add to the selector.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [NegativeKeywordListSelector](./NegativeKeywordListSelector.md)|Selector with the condition applied.
@@ -114,11 +121,13 @@ BingAdsApp.negativeKeywordLists()
 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 ids|string[]|An array of negative keyword lists IDs. The maximum number of IDs that you may specify is 1,000. If you specify more than 1,000 IDs, calling the `get()` method fails with a runtime error.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [NegativeKeywordListSelector](./NegativeKeywordListSelector.md)|Selector restricted to the given IDs.
@@ -127,11 +136,13 @@ ids|string[]|An array of negative keyword lists IDs. The maximum number of IDs t
 Returns a selector with the top *n* negative keyword lists that match the selection criteria.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 limit|int|The number of negative keyword lists to return. The actual number may be less.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [NegativeKeywordListSelector](./NegativeKeywordListSelector.md)|Selector with limit applied.

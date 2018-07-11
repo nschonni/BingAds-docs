@@ -19,6 +19,7 @@ The *GetCustomerPilotFeaturesRequest* object defines the [body](#request-body) a
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="customerid"></a>CustomerId|The identifier of the customer whose list of pilot programs you want to get.|**long**|
@@ -30,6 +31,7 @@ The *GetCustomerPilotFeaturesRequest* object defines the [body](#request-body) a
 The *GetCustomerPilotFeaturesResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -81,44 +83,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetCustomerPilotFeaturesResponse> GetCustomerPilotFeaturesAsync(
-	long customerId)
+    long customerId)
 {
-	var request = new GetCustomerPilotFeaturesRequest
-	{
-		CustomerId = customerId
-	};
+    var request = new GetCustomerPilotFeaturesRequest
+    {
+        CustomerId = customerId
+    };
 
-	return (await CustomerManagementService.CallAsync((s, r) => s.GetCustomerPilotFeaturesAsync(r), request));
+    return (await CustomerManagementService.CallAsync((s, r) => s.GetCustomerPilotFeaturesAsync(r), request));
 }
 ```
 ```java
 static GetCustomerPilotFeaturesResponse getCustomerPilotFeatures(
-	java.lang.Long customerId) throws RemoteException, Exception
+    java.lang.Long customerId) throws RemoteException, Exception
 {
-	GetCustomerPilotFeaturesRequest request = new GetCustomerPilotFeaturesRequest();
+    GetCustomerPilotFeaturesRequest request = new GetCustomerPilotFeaturesRequest();
 
-	request.setCustomerId(customerId);
+    request.setCustomerId(customerId);
 
-	return CustomerManagementService.getService().getCustomerPilotFeatures(request);
+    return CustomerManagementService.getService().getCustomerPilotFeatures(request);
 }
 ```
 ```php
 static function GetCustomerPilotFeatures(
-	$customerId)
+    $customerId)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
 
-	$request = new GetCustomerPilotFeaturesRequest();
+    $request = new GetCustomerPilotFeaturesRequest();
 
-	$request->CustomerId = $customerId;
+    $request->CustomerId = $customerId;
 
-	return $GLOBALS['CustomerManagementProxy']->GetService()->GetCustomerPilotFeatures($request);
+    return $GLOBALS['CustomerManagementProxy']->GetService()->GetCustomerPilotFeatures($request);
 }
 ```
 ```python
 response=customermanagement_service.GetCustomerPilotFeatures(
-	CustomerId=CustomerId)
+    CustomerId=CustomerId)
 ```
 
 ## Requirements

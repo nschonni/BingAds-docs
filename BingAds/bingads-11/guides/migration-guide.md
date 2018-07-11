@@ -55,13 +55,13 @@ Support for Bulk file format version 4.0 is removed. Bing Ads API Version 11 onl
 
 #### <a name="bulk-targetcriterions"></a>Upgrade from Targets to Criterions
 Instead of using targets to show your ads based on age, day and time, device, gender, and location, starting with Bing Ads API version 11 you must use criterions. Partial update of target criterions is supported in Bing Ads API version 11. The following changes are required to upgrade from targets to criterions. 
-  * Replaced all target records with criterion records. For example the *Ad Group Age Target* record is replaced with the [Ad Group Age Criterion](../bulk-service/ad-group-age-criterion.md) record. You can download the new criterion records using the *AdGroupTargetCriterions* and *CampaignTargetCriterions* values of the [DownloadEntity](../bulk-service/downloadentity.md) value set. 
-  * The [Ad Group Age Criterion](../bulk-service/ad-group-age-criterion.md) and [Campaign Age Criterion](../bulk-service/campaign-age-criterion.md) records support new values in the *Target* field: *EighteenToTwentyFour*, *TwentyFiveToThirtyFour*, *ThirtyFiveToFortyNine*, *FiftyToSixtyFour*, and *SixtyFiveAndAbove*. The upper bound of each range previously supported in format version 4.0 were not inclusive, for example *EighteenToTwentyFive* would only target ages eighteen through twenty-four. The values in format version 5.0 match the effective target range that remains unchanged. 
-  * If an ad group or campaign has any device criterion, then it must have bids for all three device types. Please note this change when adding and updating [Ad Group DeviceOS Criterion](../bulk-service/ad-group-deviceos-criterion.md) and [Campaign DeviceOS Criterion](../bulk-service/campaign-deviceos-criterion.md) records. For example you cannot have a campaign that only has one [Campaign DeviceOS Criterion](../bulk-service/campaign-deviceos-criterion.md) record. If the campaign has any device criterion then it must have three [Campaign DeviceOS Criterion](../bulk-service/campaign-deviceos-criterion.md) records, each with corresponding supported bids for *Computers*, *Smartphones*, and *Tablets*. Previously in format version 4.0 the missing records were added automatically with bids set to '0' (zero).  
-  * The [Ad Group Location Criterion](../bulk-service/ad-group-location-criterion.md) and [Campaign Location Criterion](../bulk-service/campaign-location-criterion.md) records support location identifiers in the *Target* field, instead of the location codes that were accepted by the corresponding format version 4.0 target records. The location identifier corresponds to the *ID* field of the geographical locations file. For more information, see [Geographical Location Codes](geographical-location-codes.md) and [GetGeoLocationsFileUrl](../campaign-management-service/getgeolocationsfileurl.md).
-  * The *Sub Type* field for [Ad Group Location Criterion](../bulk-service/ad-group-location-criterion.md) and [Campaign Location Criterion](../bulk-service/campaign-location-criterion.md) records can include these values: *City*, *Country*, *MetroArea*, *PostalCode*, and *State*. The *Sub Type* field in the Bulk file format version 4.0 target records included these values (with spaces between words): *City*, *Country*, *Metro Area*, *Postal Code*, and *State*. 
-  * The *Physical Intent* field is not available in the [Ad Group Location Criterion](../bulk-service/ad-group-location-criterion.md), [Campaign Location Criterion](../bulk-service/campaign-location-criterion.md), [Ad Group Radius Criterion](../bulk-service/ad-group-radius-criterion.md), and [Campaign Radius Criterion](../bulk-service/campaign-radius-criterion.md) records, as it had been in the corresponding format version 4.0 target records. To determine the intent option for all location and radius criterions of a given ad group or campaign, you can use the new [Ad Group Location Intent Criterion](../bulk-service/ad-group-location-intent-criterion.md) and [Campaign Location Intent Criterion](../bulk-service/campaign-location-intent-criterion.md) records. 
-  * You cannot delete all criterions by sending one bulk record having *Status* set to *Deleted*. Previously using version 10 targets, you could have sent one row to delete all city targets for example. With criterions, each record must be updated and deleted individually with its unique identifier.
+* Replaced all target records with criterion records. For example the *Ad Group Age Target* record is replaced with the [Ad Group Age Criterion](../bulk-service/ad-group-age-criterion.md) record. You can download the new criterion records using the *AdGroupTargetCriterions* and *CampaignTargetCriterions* values of the [DownloadEntity](../bulk-service/downloadentity.md) value set. 
+* The [Ad Group Age Criterion](../bulk-service/ad-group-age-criterion.md) and [Campaign Age Criterion](../bulk-service/campaign-age-criterion.md) records support new values in the *Target* field: *EighteenToTwentyFour*, *TwentyFiveToThirtyFour*, *ThirtyFiveToFortyNine*, *FiftyToSixtyFour*, and *SixtyFiveAndAbove*. The upper bound of each range previously supported in format version 4.0 were not inclusive, for example *EighteenToTwentyFive* would only target ages eighteen through twenty-four. The values in format version 5.0 match the effective target range that remains unchanged. 
+* If an ad group or campaign has any device criterion, then it must have bids for all three device types. Please note this change when adding and updating [Ad Group DeviceOS Criterion](../bulk-service/ad-group-deviceos-criterion.md) and [Campaign DeviceOS Criterion](../bulk-service/campaign-deviceos-criterion.md) records. For example you cannot have a campaign that only has one [Campaign DeviceOS Criterion](../bulk-service/campaign-deviceos-criterion.md) record. If the campaign has any device criterion then it must have three [Campaign DeviceOS Criterion](../bulk-service/campaign-deviceos-criterion.md) records, each with corresponding supported bids for *Computers*, *Smartphones*, and *Tablets*. Previously in format version 4.0 the missing records were added automatically with bids set to '0' (zero).  
+* The [Ad Group Location Criterion](../bulk-service/ad-group-location-criterion.md) and [Campaign Location Criterion](../bulk-service/campaign-location-criterion.md) records support location identifiers in the *Target* field, instead of the location codes that were accepted by the corresponding format version 4.0 target records. The location identifier corresponds to the *ID* field of the geographical locations file. For more information, see [Geographical Location Codes](geographical-location-codes.md) and [GetGeoLocationsFileUrl](../campaign-management-service/getgeolocationsfileurl.md).
+* The *Sub Type* field for [Ad Group Location Criterion](../bulk-service/ad-group-location-criterion.md) and [Campaign Location Criterion](../bulk-service/campaign-location-criterion.md) records can include these values: *City*, *Country*, *MetroArea*, *PostalCode*, and *State*. The *Sub Type* field in the Bulk file format version 4.0 target records included these values (with spaces between words): *City*, *Country*, *Metro Area*, *Postal Code*, and *State*. 
+* The *Physical Intent* field is not available in the [Ad Group Location Criterion](../bulk-service/ad-group-location-criterion.md), [Campaign Location Criterion](../bulk-service/campaign-location-criterion.md), [Ad Group Radius Criterion](../bulk-service/ad-group-radius-criterion.md), and [Campaign Radius Criterion](../bulk-service/campaign-radius-criterion.md) records, as it had been in the corresponding format version 4.0 target records. To determine the intent option for all location and radius criterions of a given ad group or campaign, you can use the new [Ad Group Location Intent Criterion](../bulk-service/ad-group-location-intent-criterion.md) and [Campaign Location Intent Criterion](../bulk-service/campaign-location-intent-criterion.md) records. 
+* You cannot delete all criterions by sending one bulk record having *Status* set to *Deleted*. Previously using version 10 targets, you could have sent one row to delete all city targets for example. With criterions, each record must be updated and deleted individually with its unique identifier.
 
 #### <a name="bulk-remarketinglist"></a>Remarketing Lists
 For the remarketing list name in the [Remarketing List](../bulk-service/remarketing-list.md) and [Ad Group Remarketing List Association](../bulk-service/ad-group-remarketing-list-association.md) records, use the *Audience* field instead of the *Remarketing List* field. For the remarketing list identifier in the same records, use the *Audience Id* field instead of the *Remarketing List Id* field.
@@ -79,15 +79,15 @@ The CPM pricing model is not supported in Bing Ads, and the *Pricing Model* fiel
 #### <a name="bulk-audience"></a>Audience Associations and Exclusions
 Bing Ads API version 11 now supports custom audiences and in-market audiences, in addition to [remarketing lists](#bulk-remarketinglist). The following audience, association, and exclusion records are supported.
 
-*  [Remarketing List](../bulk-service/remarketing-list.md)  
-*  [Ad Group Remarketing List Association](../bulk-service/ad-group-remarketing-list-association.md)  
-*  [Ad Group Negative Remarketing List Association](../bulk-service/ad-group-negative-remarketing-list-association.md)  
-*  [Custom Audience](../bulk-service/custom-audience.md)  
-*  [Ad Group Custom Audience Association](../bulk-service/ad-group-custom-audience-association.md)  
-*  [Ad Group Negative Custom Audience Association](../bulk-service/ad-group-negative-custom-audience-association.md)  
-*  [In Market Audience](../bulk-service/in-market-audience.md)  
-*  [Ad Group In Market Audience Association](../bulk-service/ad-group-in-market-audience-association.md)  
-*  [Ad Group Negative In Market Audience Association](../bulk-service/ad-group-negative-in-market-audience-association.md)  
+* [Remarketing List](../bulk-service/remarketing-list.md)  
+* [Ad Group Remarketing List Association](../bulk-service/ad-group-remarketing-list-association.md)  
+* [Ad Group Negative Remarketing List Association](../bulk-service/ad-group-negative-remarketing-list-association.md)  
+* [Custom Audience](../bulk-service/custom-audience.md)  
+* [Ad Group Custom Audience Association](../bulk-service/ad-group-custom-audience-association.md)  
+* [Ad Group Negative Custom Audience Association](../bulk-service/ad-group-negative-custom-audience-association.md)  
+* [In Market Audience](../bulk-service/in-market-audience.md)  
+* [Ad Group In Market Audience Association](../bulk-service/ad-group-in-market-audience-association.md)  
+* [Ad Group Negative In Market Audience Association](../bulk-service/ad-group-negative-in-market-audience-association.md)  
 
 To download these record types individually you can include the following values from the [DownloadEntity](../bulk-service/downloadentity.md) value set: *RemarketingLists*, *AdGroupRemarketingListAssociations*, *AdGroupNegativeRemarketingListAssociations*, *CustomAudiences*, *AdGroupCustomAudienceAssociations*, *AdGroupNegativeCustomAudienceAssociations*, *InMarketAudiences*, *AdGroupInMarketAudienceAssociations*, *AdGroupNegativeInMarketAudienceAssociations*. You can get all three types of audiences, associations, or exclusions by including the *Audiences*, *AdGroupAudienceAssociations*, and *AdGroupNegativeAudienceAssociations* values.
 
@@ -98,23 +98,23 @@ Support is added for associating ad extensions at the account level. In Bing Ads
 > Call ad extensions cannot be associated with an account.
 
 To get and set account level associations, use the following account level association records. 
-*   [Account App Ad Extension](../bulk-service/account-app-ad-extension.md)   
-*   [Account Callout Ad Extension](../bulk-service/account-callout-ad-extension.md)  
-*   [Account Image Ad Extension](../bulk-service/account-image-ad-extension.md)  
-*   [Account Location Ad Extension](../bulk-service/account-location-ad-extension.md)  
-*   [Account Price Ad Extension](../bulk-service/account-price-ad-extension.md)  
-*   [Account Review Ad Extension](../bulk-service/account-review-ad-extension.md)  
-*   [Account Sitelink2 Ad Extension](../bulk-service/account-sitelink2-ad-extension.md)  
-*   [Account Structured Snippet Ad Extension](../bulk-service/account-structured-snippet-ad-extension.md)  
+* [Account App Ad Extension](../bulk-service/account-app-ad-extension.md)   
+* [Account Callout Ad Extension](../bulk-service/account-callout-ad-extension.md)  
+* [Account Image Ad Extension](../bulk-service/account-image-ad-extension.md)  
+* [Account Location Ad Extension](../bulk-service/account-location-ad-extension.md)  
+* [Account Price Ad Extension](../bulk-service/account-price-ad-extension.md)  
+* [Account Review Ad Extension](../bulk-service/account-review-ad-extension.md)  
+* [Account Sitelink2 Ad Extension](../bulk-service/account-sitelink2-ad-extension.md)  
+* [Account Structured Snippet Ad Extension](../bulk-service/account-structured-snippet-ad-extension.md)  
 
 To download these record types individually you can include the following values from the [DownloadEntity](../bulk-service/downloadentity.md) value set: *AccountAppAdExtensions*, *AccountCalloutAdExtensions*, *AccountImageAdExtensions*, *AccountLocationAdExtensions*, *AccountPriceAdExtensions*, *AccountReviewAdExtensions*, *AccountSitelink2AdExtensions*, *AccountStructuredSnippetAdExtensions*. 
 
 #### <a name="bulk-priceextensions"></a>Price Ad Extensions
 Support for price ad extensions is added. You can upload and download these price ad extension records.
-*  [Price Ad Extension](../bulk-service/price-ad-extension.md)  
-*  [Account Price Ad Extension](../bulk-service/account-price-ad-extension.md)  
-*  [Ad Group Price Ad Extension](../bulk-service/ad-group-price-ad-extension.md)  
-*  [Campaign Price Ad Extension](../bulk-service/campaign-price-ad-extension.md) 
+* [Price Ad Extension](../bulk-service/price-ad-extension.md)  
+* [Account Price Ad Extension](../bulk-service/account-price-ad-extension.md)  
+* [Ad Group Price Ad Extension](../bulk-service/ad-group-price-ad-extension.md)  
+* [Campaign Price Ad Extension](../bulk-service/campaign-price-ad-extension.md) 
 
 To download these record types individually you can include the following values from the [DownloadEntity](../bulk-service/downloadentity.md) value set: *PriceAdExtensions*, *AdGroupPriceAdExtensions*, *CampaignPriceAdExtensions*, *AccountPriceAdExtensions*. 
 
@@ -133,16 +133,16 @@ The sandbox endpoint is [https://campaign.api.sandbox.bingads.microsoft.com/Api/
 
 #### <a name="campaign-targetcriterions"></a>Upgrade from Targets to Criterions
 Instead of using targets to show your ads based on age, day and time, device, gender, and location, starting with Bing Ads API version 11 you must use criterions. Partial update of target criterions is supported in Bing Ads API version 11. The following changes are required to upgrade from targets to criterions. 
-  * Removed all *Target* objects and service operations. For example the *AgeTarget* and *AgeTargetBid* are replaced with the [AgeCriterion](../campaign-management-service/agecriterion.md) object. To add an age criterion you embed the [AgeCriterion](../campaign-management-service/agecriterion.md) in either the [BiddableCampaignCriterion](../campaign-management-service/biddablecampaigncriterion.md) or [BiddableAdGroupCriterion](../campaign-management-service/biddableadgroupcriterion.md) and then call the respective [AddCampaignCriterions](../campaign-management-service/addcampaigncriterions.md) or [AddAdGroupCriterions](../campaign-management-service/addadgroupcriterions.md) service operation. 
-  * The [AgeRange](../campaign-management-service/agerange.md) values are updated: *EighteenToTwentyFour*, *TwentyFiveToThirtyFour*, *ThirtyFiveToFortyNine*, *FiftyToSixtyFour*, and *SixtyFiveAndAbove*. The upper bound of each range previously supported in Bing Ads API Version 10 were not inclusive, for example *EighteenToTwentyFive* would only target ages eighteen through twenty-four. The values in Bing Ads API Version 11 match the effective target range that remains unchanged. 
-  * If an ad group or campaign has any device criterion, then it must have bids for all three device types. Please note this change when adding and updating [DeviceCriterion](../campaign-management-service/devicecriterion.md). For example you cannot have a campaign that only has one [DeviceCriterion](../campaign-management-service/devicecriterion.md). If the campaign has any device criterion then it must have three [DeviceCriterion](../campaign-management-service/devicecriterion.md), each with corresponding supported bids for *Computers*, *Smartphones*, and *Tablets*. Previously in Bing Ads API Version 10 the missing bids were added automatically with bids set to '0' (zero).  
-  * The [LocationCriterion](../campaign-management-service/locationcriterion.md) supports location identifiers in its *LocationId* element, instead of the location codes that were accepted for sub location targets e.g. *CityTargetBid* in Bing Ads API Version 10. The location identifier corresponds to the *ID* field of the geographical locations file. For more information, see [Geographical Location Codes](geographical-location-codes.md) and [GetGeoLocationsFileUrl](../campaign-management-service/getgeolocationsfileurl.md).
-  * The [LocationIntentCriterion](../campaign-management-service/locationintentcriterion.md) is added in Bing Ads API Version 11. Previously in Bing Ads API Version 10 you would have set the intent option in the *LocationTarget*, which has been removed. One location intent criterion determines the intent option for all location and radius criterions of a given ad group or campaign. 
-  * Use the [BidMultiplier](../campaign-management-service/bidmultiplier.md) object to adjust the bid for the target criterion. 
-  
+* Removed all *Target* objects and service operations. For example the *AgeTarget* and *AgeTargetBid* are replaced with the [AgeCriterion](../campaign-management-service/agecriterion.md) object. To add an age criterion you embed the [AgeCriterion](../campaign-management-service/agecriterion.md) in either the [BiddableCampaignCriterion](../campaign-management-service/biddablecampaigncriterion.md) or [BiddableAdGroupCriterion](../campaign-management-service/biddableadgroupcriterion.md) and then call the respective [AddCampaignCriterions](../campaign-management-service/addcampaigncriterions.md) or [AddAdGroupCriterions](../campaign-management-service/addadgroupcriterions.md) service operation. 
+* The [AgeRange](../campaign-management-service/agerange.md) values are updated: *EighteenToTwentyFour*, *TwentyFiveToThirtyFour*, *ThirtyFiveToFortyNine*, *FiftyToSixtyFour*, and *SixtyFiveAndAbove*. The upper bound of each range previously supported in Bing Ads API Version 10 were not inclusive, for example *EighteenToTwentyFive* would only target ages eighteen through twenty-four. The values in Bing Ads API Version 11 match the effective target range that remains unchanged. 
+* If an ad group or campaign has any device criterion, then it must have bids for all three device types. Please note this change when adding and updating [DeviceCriterion](../campaign-management-service/devicecriterion.md). For example you cannot have a campaign that only has one [DeviceCriterion](../campaign-management-service/devicecriterion.md). If the campaign has any device criterion then it must have three [DeviceCriterion](../campaign-management-service/devicecriterion.md), each with corresponding supported bids for *Computers*, *Smartphones*, and *Tablets*. Previously in Bing Ads API Version 10 the missing bids were added automatically with bids set to '0' (zero).  
+* The [LocationCriterion](../campaign-management-service/locationcriterion.md) supports location identifiers in its *LocationId* element, instead of the location codes that were accepted for sub location targets e.g. *CityTargetBid* in Bing Ads API Version 10. The location identifier corresponds to the *ID* field of the geographical locations file. For more information, see [Geographical Location Codes](geographical-location-codes.md) and [GetGeoLocationsFileUrl](../campaign-management-service/getgeolocationsfileurl.md).
+* The [LocationIntentCriterion](../campaign-management-service/locationintentcriterion.md) is added in Bing Ads API Version 11. Previously in Bing Ads API Version 10 you would have set the intent option in the *LocationTarget*, which has been removed. One location intent criterion determines the intent option for all location and radius criterions of a given ad group or campaign. 
+* Use the [BidMultiplier](../campaign-management-service/bidmultiplier.md) object to adjust the bid for the target criterion. 
+
 #### <a name="campaign-biddablecampaigncriterion"></a>Biddable Campaign Criterion
 The [BiddableCampaignCriterion](../campaign-management-service/biddablecampaigncriterion.md) is added, and derives properties from the [CampaignCriterion](../campaign-management-service/campaigncriterion.md), which is now an abstract base class. You must use [BiddableCampaignCriterion](../campaign-management-service/biddablecampaigncriterion.md) instead of [CampaignCriterion](../campaign-management-service/campaigncriterion.md) in add, get, and update campaign criterion operations.
-  
+
 #### <a name="campaign-fixedbid"></a>Fixed Bid
 Within the [FixedBid](../campaign-management-service/fixedbid.md) object, the *Bid* element of type [Bid](../campaign-management-service/bid.md) is replaced by the *Amount* element of type *double*. 
 
@@ -215,7 +215,7 @@ The CPM pricing model is not supported in Bing Ads, and the *PricingModel* eleme
 Bing Ads API version 11 now supports custom audiences and in-market audiences, in addition to [remarketing lists](#campaign-remarketinglist). 
 
 The [CustomAudience](../campaign-management-service/customaudience.md), [InMarketAudience](../campaign-management-service/inmarketaudience.md), and [RemarketingList](../campaign-management-service/remarketinglist.md) derive from the [Audience](../campaign-management-service/audience.md) base class. You can manage audiences with the [AddAudiences](../campaign-management-service/addaudiences.md), [DeleteAudiences](../campaign-management-service/deleteaudiences.md), [GetAudiencesByIds](../campaign-management-service/getaudiencesbyids.md), and [UpdateAudiences](../campaign-management-service/updateaudiences.md) operations.
- 
+
 #### <a name="campaign-accountextensions"></a>Associate Ad Extensions with an Account
 Support is added for associating ad extensions at the account level. In Bing Ads API version 10 you could only associate ad extensions with campaigns and ad groups.
 
@@ -261,7 +261,7 @@ The sandbox endpoint is [https://clientcenter.api.sandbox.bingads.microsoft.com/
 
 #### <a name="customer-taxdetails"></a>Tax Details
 The *TaxId* is moved as a key and value pair to the *TaxInformation* element of the [AdvertiserAccount](../customer-management-service/advertiseraccount.md) object. Additional keys include the *TaxType* and *VatNumber*.
- 
+
 The *BusinessAddress* element of an [AdvertiserAccount](../customer-management-service/advertiseraccount.md) is now required when adding accounts. 
 
 The *IncludeTaxDetails* element is removed from the [GetAccount](../customer-management-service/getaccount.md) and [SearchAccounts](../customer-management-service/searchaccounts.md) request messages, so the *BusinessAddress* element is now returned by default when retrieving accounts. With this update the *TaxId* and *TaxIdStatus* elements and corresponding value set is also removed.
@@ -296,6 +296,7 @@ Previously there were some discrepancies between the report column value set nam
 > Some download column names in version 11 do not match the version 11 contract. These will be updated in version 12. For more details see each column description in [Report Attributes and Performance Statistics](report-attributes-performance-statistics.md).
 
 The following column names have changed in the downloaded reports from version 9 to 11.
+
 
 Version 9|Version 11  
 ---------|---------
@@ -339,6 +340,7 @@ Previously some of the Reporting API quality score and share of voice report col
 
 The following report column values have changed from version 9 to 11.
 
+
 Version 9|Version 11  
 ---------|---------
 HistoricKeywordRelevance|HistoricExpectedCtr
@@ -356,6 +358,7 @@ The following geographic and user location reports have been renamed to clarify 
 In version 11, the [GeographicPerformanceReportRequest](../reporting-service/geographicperformancereportrequest.md) with corresponding columns and filter replaces the *GeoLocationPerformanceReportRequest*.The geographic performance report shows impressions, clicks, spend, and average cost-per-click for each ad group, organized into columns that show the location used to serve ads. You can see where your traffic is coming from: the physical location of the people searching for your ad or the locations people are searching for. You can then validate whether your location targeting strategy is successful and identify opportunities to improve.
 
 In version 11, the [UserLocationPerformanceReportRequest](../reporting-service/userlocationperformancereportrequest.md) with corresponding columns and filter replaces the *GeographicalLocationReportRequest*. The user location performance report shows impressions, clicks, spend, and average cost-per-click for each ad group, organized by city, country, metro area (Nielsen DMA® in the United States), radius, state, and account. You can see where your traffic is coming from broken out by the physical location and the location people are searching for. You can then validate whether your location targeting strategy is successful, and identify opportunities to improve.
+
 
 |Report Request|Report Filter|Report Column|
 |-------------|-----------------|-----------------|
@@ -415,4 +418,4 @@ The keyword by match type migration was completed October 2013. Since Bing Ads d
 
 #### <a name="reporting-excludemetadata"></a>Exclude Report Columns and Metadata
 Bing Ads API version 11 now lets you choose whether or not the downloaded report should contain header, column, and footer metadata. You can optionally set any of the *ExcludeColumnHeaders*, *ExcludeReportFooter*, or *ExcludeReportHeader* properties of the [ReportRequest](../reporting-service/reportrequest.md) to *true* if you want the corresponding metadata excluded from the downloaded report.
- 
+

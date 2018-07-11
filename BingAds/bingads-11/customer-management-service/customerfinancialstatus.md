@@ -25,6 +25,7 @@ Defines the possible financial status values of a customer.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="clearfinancialstatus"></a>ClearFinancialStatus|The customer is in good standing.|

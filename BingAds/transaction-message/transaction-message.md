@@ -12,10 +12,11 @@ ms.author: "scottwhi"
 
 > [!NOTE]
 > This beta release of Hotel Ads is available to select participants only. For information about participating in the beta release program, please contact your account manager.
->
+> 
 > The Transaction Message feed and documentation are subject to change.
 
 If you create hotel ad campaigns in Bing Ads, use transaction messages to update your hotel data. For information about working with transaction messages, see the following sections: 
+
 
 |Topic|Description
 |-|-

@@ -33,6 +33,7 @@ Defines the ad group status values that you can use to filter the report data. T
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The report will contain ad groups that are active.|

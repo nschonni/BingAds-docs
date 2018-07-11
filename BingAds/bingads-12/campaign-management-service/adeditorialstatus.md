@@ -23,6 +23,7 @@ Defines the editorial review status values of an ad.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The ad passed editorial review.|

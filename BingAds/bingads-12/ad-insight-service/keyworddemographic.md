@@ -29,6 +29,7 @@ Defines an object that contains the device, age and gender of the user who enter
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="ageunknown"></a>AgeUnknown|Not used.|**double**|

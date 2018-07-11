@@ -22,6 +22,7 @@ Defines a billing document.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="data"></a>Data|The billing document.|**base64Binary**|

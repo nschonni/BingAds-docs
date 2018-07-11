@@ -19,6 +19,7 @@ The *GetAudiencesByIdsRequest* object defines the [body](#request-body) and [hea
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="audienceids"></a>AudienceIds|A maximum of 100 identifiers of the requested audiences.<br/><br/>If this element is null or empty, then you are effectively requesting all customer and account scoped audiences for the specified account.<br/><br/> If the audience identifiers do not match the requested audience types, then the operation will return a batch error for each requested audience ID.|**long** array|
@@ -33,6 +34,7 @@ The *GetAudiencesByIdsRequest* object defines the [body](#request-body) and [hea
 The *GetAudiencesByIdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -221,65 +223,65 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetAudiencesByIdsResponse> GetAudiencesByIdsAsync(
-	IList<long> audienceIds,
-	AudienceType type,
-	AudienceAdditionalField? returnAdditionalFields,
-	bool? returnSupportedCampaignTypes)
+    IList<long> audienceIds,
+    AudienceType type,
+    AudienceAdditionalField? returnAdditionalFields,
+    bool? returnSupportedCampaignTypes)
 {
-	var request = new GetAudiencesByIdsRequest
-	{
-		AudienceIds = audienceIds,
-		Type = type,
-		ReturnAdditionalFields = returnAdditionalFields,
-		ReturnSupportedCampaignTypes = returnSupportedCampaignTypes
-	};
+    var request = new GetAudiencesByIdsRequest
+    {
+        AudienceIds = audienceIds,
+        Type = type,
+        ReturnAdditionalFields = returnAdditionalFields,
+        ReturnSupportedCampaignTypes = returnSupportedCampaignTypes
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetAudiencesByIdsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetAudiencesByIdsAsync(r), request));
 }
 ```
 ```java
 static GetAudiencesByIdsResponse getAudiencesByIds(
-	ArrayOflong audienceIds,
-	ArrayList<AudienceType> type,
-	ArrayList<AudienceAdditionalField> returnAdditionalFields,
-	boolean returnSupportedCampaignTypes) throws RemoteException, Exception
+    ArrayOflong audienceIds,
+    ArrayList<AudienceType> type,
+    ArrayList<AudienceAdditionalField> returnAdditionalFields,
+    boolean returnSupportedCampaignTypes) throws RemoteException, Exception
 {
-	GetAudiencesByIdsRequest request = new GetAudiencesByIdsRequest();
+    GetAudiencesByIdsRequest request = new GetAudiencesByIdsRequest();
 
-	request.setAudienceIds(audienceIds);
-	request.setType(type);
-	request.setReturnAdditionalFields(returnAdditionalFields);
-	request.setReturnSupportedCampaignTypes(returnSupportedCampaignTypes);
+    request.setAudienceIds(audienceIds);
+    request.setType(type);
+    request.setReturnAdditionalFields(returnAdditionalFields);
+    request.setReturnSupportedCampaignTypes(returnSupportedCampaignTypes);
 
-	return CampaignManagementService.getService().getAudiencesByIds(request);
+    return CampaignManagementService.getService().getAudiencesByIds(request);
 }
 ```
 ```php
 static function GetAudiencesByIds(
-	$audienceIds,
-	$type,
-	$returnAdditionalFields,
-	$returnSupportedCampaignTypes)
+    $audienceIds,
+    $type,
+    $returnAdditionalFields,
+    $returnSupportedCampaignTypes)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetAudiencesByIdsRequest();
+    $request = new GetAudiencesByIdsRequest();
 
-	$request->AudienceIds = $audienceIds;
-	$request->Type = $type;
-	$request->ReturnAdditionalFields = $returnAdditionalFields;
-	$request->ReturnSupportedCampaignTypes = $returnSupportedCampaignTypes;
+    $request->AudienceIds = $audienceIds;
+    $request->Type = $type;
+    $request->ReturnAdditionalFields = $returnAdditionalFields;
+    $request->ReturnSupportedCampaignTypes = $returnSupportedCampaignTypes;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetAudiencesByIds($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetAudiencesByIds($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetAudiencesByIds(
-	AudienceIds=AudienceIds,
-	Type=Type,
-	ReturnAdditionalFields=ReturnAdditionalFields,
-	ReturnSupportedCampaignTypes=ReturnSupportedCampaignTypes)
+    AudienceIds=AudienceIds,
+    Type=Type,
+    ReturnAdditionalFields=ReturnAdditionalFields,
+    ReturnSupportedCampaignTypes=ReturnSupportedCampaignTypes)
 ```
 
 ## Requirements

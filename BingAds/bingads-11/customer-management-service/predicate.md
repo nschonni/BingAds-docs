@@ -22,6 +22,7 @@ Defines a predicate for the list of entities requested using one of the search o
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="field"></a>Field|The name of the element for  the object you are searching.<br /><br />For possible values, see the Predicates element of one of the search operations, for example [SearchAccounts](searchaccounts.md), [SearchClientLinks](searchclientlinks.md), or [SearchCustomers](searchcustomers.md).|**string**|
@@ -33,6 +34,7 @@ The supported Field element and Operator elements of a Predicate object for each
 
 ### <a name="searchaccounts"></a>SearchAccounts Predicates
 For the [SearchAccounts](searchaccounts.md) service operation, the following are supported Field element and Operator elements of a Predicate object.
+
 
 |Field|Operator|Description|
 |---------|------------|---------------|
@@ -46,6 +48,7 @@ For the [SearchAccounts](searchaccounts.md) service operation, the following are
 ### <a name="searchclientlinks"></a>SearchClientLinks Predicates
 For the [SearchClientLinks](searchclientlinks.md) service operation, the following are supported Field element and Operator elements of a Predicate object.
 
+
 |Field|Operator|Description|
 |---------|------------|---------------|
 |ClientAccountId|Equals<br /><br />In|Use this field to search the ClientAccountId element of the [ClientLink](clientlink.md).|
@@ -53,6 +56,7 @@ For the [SearchClientLinks](searchclientlinks.md) service operation, the followi
 
 ### <a name="searchcustomers"></a>SearchCustomers Predicates
 For the [SearchCustomers](searchcustomers.md) service operation, the following are supported Field element and Operator elements of a Predicate object.
+
 
 |Field|Operator|Description|
 |---------|------------|---------------|
@@ -72,6 +76,7 @@ For the [SearchCustomers](searchcustomers.md) service operation, the following a
 
 ### <a name="searchuserinvitations"></a>SearchUserInvitations Predicates
 For the [SearchUserInvitations](searchuserinvitations.md) service operation, the following are supported Field element and Operator elements of a Predicate object.
+
 
 |Field|Operator|Description|
 |---------|------------|---------------|

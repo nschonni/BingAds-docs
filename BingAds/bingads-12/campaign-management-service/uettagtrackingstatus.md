@@ -25,6 +25,7 @@ Defines the possible system-determined status values of a UET tag. These are the
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active| Your UET tag is working and sending user activity data to Bing Ads.|

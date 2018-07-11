@@ -25,6 +25,7 @@ Defines the operands that can be applied to arguments of a webpage condition or 
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="category"></a>Category|Set a condition that the argument must match one of the categories that Bing thinks is applicable for your site.|

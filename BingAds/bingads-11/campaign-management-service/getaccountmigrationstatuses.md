@@ -19,6 +19,7 @@ The *GetAccountMigrationStatusesRequest* object defines the [body](#request-body
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountids"></a>AccountIds|The identifiers of each account to request migration status.<br/><br/>**Required**: Yes|**long** array|
@@ -31,6 +32,7 @@ The *GetAccountMigrationStatusesRequest* object defines the [body](#request-body
 The *GetAccountMigrationStatusesResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -96,51 +98,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetAccountMigrationStatusesResponse> GetAccountMigrationStatusesAsync(
-	IList<long> accountIds,
-	string migrationType)
+    IList<long> accountIds,
+    string migrationType)
 {
-	var request = new GetAccountMigrationStatusesRequest
-	{
-		AccountIds = accountIds,
-		MigrationType = migrationType
-	};
+    var request = new GetAccountMigrationStatusesRequest
+    {
+        AccountIds = accountIds,
+        MigrationType = migrationType
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetAccountMigrationStatusesAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetAccountMigrationStatusesAsync(r), request));
 }
 ```
 ```java
 static GetAccountMigrationStatusesResponse getAccountMigrationStatuses(
-	ArrayOflong accountIds,
-	java.lang.String migrationType) throws RemoteException, Exception
+    ArrayOflong accountIds,
+    java.lang.String migrationType) throws RemoteException, Exception
 {
-	GetAccountMigrationStatusesRequest request = new GetAccountMigrationStatusesRequest();
+    GetAccountMigrationStatusesRequest request = new GetAccountMigrationStatusesRequest();
 
-	request.setAccountIds(accountIds);
-	request.setMigrationType(migrationType);
+    request.setAccountIds(accountIds);
+    request.setMigrationType(migrationType);
 
-	return CampaignManagementService.getService().getAccountMigrationStatuses(request);
+    return CampaignManagementService.getService().getAccountMigrationStatuses(request);
 }
 ```
 ```php
 static function GetAccountMigrationStatuses(
-	$accountIds,
-	$migrationType)
+    $accountIds,
+    $migrationType)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetAccountMigrationStatusesRequest();
+    $request = new GetAccountMigrationStatusesRequest();
 
-	$request->AccountIds = $accountIds;
-	$request->MigrationType = $migrationType;
+    $request->AccountIds = $accountIds;
+    $request->MigrationType = $migrationType;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetAccountMigrationStatuses($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetAccountMigrationStatuses($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetAccountMigrationStatuses(
-	AccountIds=AccountIds,
-	MigrationType=MigrationType)
+    AccountIds=AccountIds,
+    MigrationType=MigrationType)
 ```
 
 ## Requirements

@@ -19,6 +19,7 @@ The *GetAdsByAdGroupIdRequest* object defines the [body](#request-body) and [hea
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupid"></a>AdGroupId|The identifier of the ad group to retrieve the ads from.|**long**|
@@ -31,6 +32,7 @@ The *GetAdsByAdGroupIdRequest* object defines the [body](#request-body) and [hea
 The *GetAdsByAdGroupIdResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -154,51 +156,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetAdsByAdGroupIdResponse> GetAdsByAdGroupIdAsync(
-	long adGroupId,
-	IList<AdType> adTypes)
+    long adGroupId,
+    IList<AdType> adTypes)
 {
-	var request = new GetAdsByAdGroupIdRequest
-	{
-		AdGroupId = adGroupId,
-		AdTypes = adTypes
-	};
+    var request = new GetAdsByAdGroupIdRequest
+    {
+        AdGroupId = adGroupId,
+        AdTypes = adTypes
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetAdsByAdGroupIdAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetAdsByAdGroupIdAsync(r), request));
 }
 ```
 ```java
 static GetAdsByAdGroupIdResponse getAdsByAdGroupId(
-	java.lang.Long adGroupId,
-	ArrayOfAdType adTypes) throws RemoteException, Exception
+    java.lang.Long adGroupId,
+    ArrayOfAdType adTypes) throws RemoteException, Exception
 {
-	GetAdsByAdGroupIdRequest request = new GetAdsByAdGroupIdRequest();
+    GetAdsByAdGroupIdRequest request = new GetAdsByAdGroupIdRequest();
 
-	request.setAdGroupId(adGroupId);
-	request.setAdTypes(adTypes);
+    request.setAdGroupId(adGroupId);
+    request.setAdTypes(adTypes);
 
-	return CampaignManagementService.getService().getAdsByAdGroupId(request);
+    return CampaignManagementService.getService().getAdsByAdGroupId(request);
 }
 ```
 ```php
 static function GetAdsByAdGroupId(
-	$adGroupId,
-	$adTypes)
+    $adGroupId,
+    $adTypes)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetAdsByAdGroupIdRequest();
+    $request = new GetAdsByAdGroupIdRequest();
 
-	$request->AdGroupId = $adGroupId;
-	$request->AdTypes = $adTypes;
+    $request->AdGroupId = $adGroupId;
+    $request->AdTypes = $adTypes;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdsByAdGroupId($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdsByAdGroupId($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetAdsByAdGroupId(
-	AdGroupId=AdGroupId,
-	AdTypes=AdTypes)
+    AdGroupId=AdGroupId,
+    AdTypes=AdTypes)
 ```
 
 ## Requirements

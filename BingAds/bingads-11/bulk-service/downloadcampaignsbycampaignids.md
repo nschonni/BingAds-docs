@@ -24,6 +24,7 @@ The *DownloadCampaignsByCampaignIdsRequest* object defines the [body](#request-b
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="campaigns"></a>Campaigns|The campaigns to download. You can specify a maximum of 1,000 campaigns. The campaigns that you specify must belong to the same account.|[CampaignScope](campaignscope.md) array|
@@ -42,6 +43,7 @@ The *DownloadCampaignsByCampaignIdsRequest* object defines the [body](#request-b
 The *DownloadCampaignsByCampaignIdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -119,93 +121,93 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<DownloadCampaignsByCampaignIdsResponse> DownloadCampaignsByCampaignIdsAsync(
-	IList<CampaignScope> campaigns,
-	CompressionType? compressionType,
-	DataScope dataScope,
-	IList<DownloadEntity> downloadEntities,
-	DownloadFileType? downloadFileType,
-	string formatVersion,
-	DateTime? lastSyncTimeInUTC,
-	PerformanceStatsDateRange performanceStatsDateRange)
+    IList<CampaignScope> campaigns,
+    CompressionType? compressionType,
+    DataScope dataScope,
+    IList<DownloadEntity> downloadEntities,
+    DownloadFileType? downloadFileType,
+    string formatVersion,
+    DateTime? lastSyncTimeInUTC,
+    PerformanceStatsDateRange performanceStatsDateRange)
 {
-	var request = new DownloadCampaignsByCampaignIdsRequest
-	{
-		Campaigns = campaigns,
-		CompressionType = compressionType,
-		DataScope = dataScope,
-		DownloadEntities = downloadEntities,
-		DownloadFileType = downloadFileType,
-		FormatVersion = formatVersion,
-		LastSyncTimeInUTC = lastSyncTimeInUTC,
-		PerformanceStatsDateRange = performanceStatsDateRange
-	};
+    var request = new DownloadCampaignsByCampaignIdsRequest
+    {
+        Campaigns = campaigns,
+        CompressionType = compressionType,
+        DataScope = dataScope,
+        DownloadEntities = downloadEntities,
+        DownloadFileType = downloadFileType,
+        FormatVersion = formatVersion,
+        LastSyncTimeInUTC = lastSyncTimeInUTC,
+        PerformanceStatsDateRange = performanceStatsDateRange
+    };
 
-	return (await BulkService.CallAsync((s, r) => s.DownloadCampaignsByCampaignIdsAsync(r), request));
+    return (await BulkService.CallAsync((s, r) => s.DownloadCampaignsByCampaignIdsAsync(r), request));
 }
 ```
 ```java
 static DownloadCampaignsByCampaignIdsResponse downloadCampaignsByCampaignIds(
-	ArrayOfCampaignScope campaigns,
-	CompressionType compressionType,
-	ArrayList<DataScope> dataScope,
-	ArrayOfDownloadEntity downloadEntities,
-	DownloadFileType downloadFileType,
-	java.lang.String formatVersion,
-	Calendar lastSyncTimeInUTC,
-	PerformanceStatsDateRange performanceStatsDateRange) throws RemoteException, Exception
+    ArrayOfCampaignScope campaigns,
+    CompressionType compressionType,
+    ArrayList<DataScope> dataScope,
+    ArrayOfDownloadEntity downloadEntities,
+    DownloadFileType downloadFileType,
+    java.lang.String formatVersion,
+    Calendar lastSyncTimeInUTC,
+    PerformanceStatsDateRange performanceStatsDateRange) throws RemoteException, Exception
 {
-	DownloadCampaignsByCampaignIdsRequest request = new DownloadCampaignsByCampaignIdsRequest();
+    DownloadCampaignsByCampaignIdsRequest request = new DownloadCampaignsByCampaignIdsRequest();
 
-	request.setCampaigns(campaigns);
-	request.setCompressionType(compressionType);
-	request.setDataScope(dataScope);
-	request.setDownloadEntities(downloadEntities);
-	request.setDownloadFileType(downloadFileType);
-	request.setFormatVersion(formatVersion);
-	request.setLastSyncTimeInUTC(lastSyncTimeInUTC);
-	request.setPerformanceStatsDateRange(performanceStatsDateRange);
+    request.setCampaigns(campaigns);
+    request.setCompressionType(compressionType);
+    request.setDataScope(dataScope);
+    request.setDownloadEntities(downloadEntities);
+    request.setDownloadFileType(downloadFileType);
+    request.setFormatVersion(formatVersion);
+    request.setLastSyncTimeInUTC(lastSyncTimeInUTC);
+    request.setPerformanceStatsDateRange(performanceStatsDateRange);
 
-	return BulkService.getService().downloadCampaignsByCampaignIds(request);
+    return BulkService.getService().downloadCampaignsByCampaignIds(request);
 }
 ```
 ```php
 static function DownloadCampaignsByCampaignIds(
-	$campaigns,
-	$compressionType,
-	$dataScope,
-	$downloadEntities,
-	$downloadFileType,
-	$formatVersion,
-	$lastSyncTimeInUTC,
-	$performanceStatsDateRange)
+    $campaigns,
+    $compressionType,
+    $dataScope,
+    $downloadEntities,
+    $downloadFileType,
+    $formatVersion,
+    $lastSyncTimeInUTC,
+    $performanceStatsDateRange)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['BulkProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['BulkProxy'];
 
-	$request = new DownloadCampaignsByCampaignIdsRequest();
+    $request = new DownloadCampaignsByCampaignIdsRequest();
 
-	$request->Campaigns = $campaigns;
-	$request->CompressionType = $compressionType;
-	$request->DataScope = $dataScope;
-	$request->DownloadEntities = $downloadEntities;
-	$request->DownloadFileType = $downloadFileType;
-	$request->FormatVersion = $formatVersion;
-	$request->LastSyncTimeInUTC = $lastSyncTimeInUTC;
-	$request->PerformanceStatsDateRange = $performanceStatsDateRange;
+    $request->Campaigns = $campaigns;
+    $request->CompressionType = $compressionType;
+    $request->DataScope = $dataScope;
+    $request->DownloadEntities = $downloadEntities;
+    $request->DownloadFileType = $downloadFileType;
+    $request->FormatVersion = $formatVersion;
+    $request->LastSyncTimeInUTC = $lastSyncTimeInUTC;
+    $request->PerformanceStatsDateRange = $performanceStatsDateRange;
 
-	return $GLOBALS['BulkProxy']->GetService()->DownloadCampaignsByCampaignIds($request);
+    return $GLOBALS['BulkProxy']->GetService()->DownloadCampaignsByCampaignIds($request);
 }
 ```
 ```python
 response=bulk_service.DownloadCampaignsByCampaignIds(
-	Campaigns=Campaigns,
-	CompressionType=CompressionType,
-	DataScope=DataScope,
-	DownloadEntities=DownloadEntities,
-	DownloadFileType=DownloadFileType,
-	FormatVersion=FormatVersion,
-	LastSyncTimeInUTC=LastSyncTimeInUTC,
-	PerformanceStatsDateRange=PerformanceStatsDateRange)
+    Campaigns=Campaigns,
+    CompressionType=CompressionType,
+    DataScope=DataScope,
+    DownloadEntities=DownloadEntities,
+    DownloadFileType=DownloadFileType,
+    FormatVersion=FormatVersion,
+    LastSyncTimeInUTC=LastSyncTimeInUTC,
+    PerformanceStatsDateRange=PerformanceStatsDateRange)
 ```
 
 ## Requirements

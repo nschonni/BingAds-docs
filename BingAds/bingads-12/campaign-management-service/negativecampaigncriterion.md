@@ -29,6 +29,7 @@ The [NegativeCampaignCriterion](negativecampaigncriterion.md) object has [Inheri
 ### <a name="inheritedelementscampaigncriterion"></a>Inherited Elements from CampaignCriterion
 The [NegativeCampaignCriterion](negativecampaigncriterion.md) object derives from the [CampaignCriterion](campaigncriterion.md) object, and inherits the following elements. The descriptions below are specific to [NegativeCampaignCriterion](negativecampaigncriterion.md), and might not apply to other objects that inherit the same elements from the [CampaignCriterion](campaigncriterion.md) object.  
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="campaignid"></a>CampaignId|The identifier of the campaign to apply the criterion to.<br/><br/>**Add:** Required<br/>**Update:** Required|**long**|

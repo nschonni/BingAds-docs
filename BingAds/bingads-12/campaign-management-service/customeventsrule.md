@@ -35,6 +35,7 @@ For a detailed example, see the [Remarks](#Remarks) section below.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="action"></a>Action|The type of user interaction you want to track. For example 'play' or 'pause'.<br/><br/>If this element is specified during an add or update operation, then the *ActionOperator* element is also required.<br/><br/>**Add:** Optional if you include one or more of the other events; You must include one or more of the following event operator pairs: (*ActionOperator* and *Action*), (*CategoryOperator* and *Category*), (*LabelOperator* and *Label*), (*ValueOperator* and *Value*).<br/>**Update:** Optional if you include one or more of the other events; If you do not include *ActionOperator* and *Action* during update, any existing *ActionOperator* and *Action* settings will be deleted.|**string**|
@@ -52,6 +53,7 @@ The [CustomEventsRule](customeventsrule.md) object has [Inherited Elements](#inh
 
 ### <a name="inheritedelementsremarketingrule"></a>Inherited Elements from RemarketingRule
 The [CustomEventsRule](customeventsrule.md) object derives from the [RemarketingRule](remarketingrule.md) object, and inherits the following elements. The descriptions below are specific to [CustomEventsRule](customeventsrule.md), and might not apply to other objects that inherit the same elements from the [RemarketingRule](remarketingrule.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

@@ -41,6 +41,7 @@ Do not try to instantiate an *Account*. You can create the [AdvertiserAccount](a
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountfinancialstatus"></a>AccountFinancialStatus|The financial status of the account. For example, the status can indicate whether the account is in good standing or is past due.|[AccountFinancialStatus](accountfinancialstatus.md)|

@@ -19,6 +19,7 @@ The *UpdateUserRequest* object defines the [body](#request-body) and [header](#r
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="user"></a>User|The user object that contains the updated user information.<br /><br />This operation overwrites the existing user data with the contents of the user object that you pass. This operation performs a full update, not a partial update. The *User* object must contain the time stamp value from the last time that the *User* object was written to. To ensure that the time stamp contains the correct value, call the [GetUser](getuser.md) operation. You can then update the user data as appropriate, and call *UpdateUser*.|[User](user.md)|
@@ -30,6 +31,7 @@ The *UpdateUserRequest* object defines the [body](#request-body) and [header](#r
 The *UpdateUserResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -123,44 +125,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<UpdateUserResponse> UpdateUserAsync(
-	User user)
+    User user)
 {
-	var request = new UpdateUserRequest
-	{
-		User = user
-	};
+    var request = new UpdateUserRequest
+    {
+        User = user
+    };
 
-	return (await CustomerManagementService.CallAsync((s, r) => s.UpdateUserAsync(r), request));
+    return (await CustomerManagementService.CallAsync((s, r) => s.UpdateUserAsync(r), request));
 }
 ```
 ```java
 static UpdateUserResponse updateUser(
-	User user) throws RemoteException, Exception
+    User user) throws RemoteException, Exception
 {
-	UpdateUserRequest request = new UpdateUserRequest();
+    UpdateUserRequest request = new UpdateUserRequest();
 
-	request.setUser(user);
+    request.setUser(user);
 
-	return CustomerManagementService.getService().updateUser(request);
+    return CustomerManagementService.getService().updateUser(request);
 }
 ```
 ```php
 static function UpdateUser(
-	$user)
+    $user)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
 
-	$request = new UpdateUserRequest();
+    $request = new UpdateUserRequest();
 
-	$request->User = $user;
+    $request->User = $user;
 
-	return $GLOBALS['CustomerManagementProxy']->GetService()->UpdateUser($request);
+    return $GLOBALS['CustomerManagementProxy']->GetService()->UpdateUser($request);
 }
 ```
 ```python
 response=customermanagement_service.UpdateUser(
-	User=User)
+    User=User)
 ```
 
 ## Requirements

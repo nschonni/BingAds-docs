@@ -12,8 +12,8 @@ dev_langs:
 Defines a campaign location criterion that can be uploaded and downloaded in a bulk file.
 
 With location criterions, you can choose to show ads to potential customers in, searching for, or viewing pages about:
-*  All available countries/regions
-*  Selected cities, zip codes, metro areas (Nielsen DMA® in the United States), counties, states/provinces, and countries/regions
+* All available countries/regions
+* Selected cities, zip codes, metro areas (Nielsen DMA® in the United States), counties, states/provinces, and countries/regions
 
 Each location criterion defines a location code for the accompanying criterion bid adjustment. 
 

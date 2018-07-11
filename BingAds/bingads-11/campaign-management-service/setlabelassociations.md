@@ -19,6 +19,7 @@ The *SetLabelAssociationsRequest* object defines the [body](#request-body) and [
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="entitytype"></a>EntityType|Indicates the entity type associated with the label.<br/><br/>The supported entity type values are *Campaign*, *AdGroup*, *Ad*, and *Keyword*.|[EntityType](entitytype.md)|
@@ -31,6 +32,7 @@ The *SetLabelAssociationsRequest* object defines the [body](#request-body) and [
 The *SetLabelAssociationsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -110,51 +112,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<SetLabelAssociationsResponse> SetLabelAssociationsAsync(
-	EntityType entityType,
-	IList<LabelAssociation> labelAssociations)
+    EntityType entityType,
+    IList<LabelAssociation> labelAssociations)
 {
-	var request = new SetLabelAssociationsRequest
-	{
-		EntityType = entityType,
-		LabelAssociations = labelAssociations
-	};
+    var request = new SetLabelAssociationsRequest
+    {
+        EntityType = entityType,
+        LabelAssociations = labelAssociations
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.SetLabelAssociationsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.SetLabelAssociationsAsync(r), request));
 }
 ```
 ```java
 static SetLabelAssociationsResponse setLabelAssociations(
-	EntityType entityType,
-	ArrayOfLabelAssociation labelAssociations) throws RemoteException, Exception
+    EntityType entityType,
+    ArrayOfLabelAssociation labelAssociations) throws RemoteException, Exception
 {
-	SetLabelAssociationsRequest request = new SetLabelAssociationsRequest();
+    SetLabelAssociationsRequest request = new SetLabelAssociationsRequest();
 
-	request.setEntityType(entityType);
-	request.setLabelAssociations(labelAssociations);
+    request.setEntityType(entityType);
+    request.setLabelAssociations(labelAssociations);
 
-	return CampaignManagementService.getService().setLabelAssociations(request);
+    return CampaignManagementService.getService().setLabelAssociations(request);
 }
 ```
 ```php
 static function SetLabelAssociations(
-	$entityType,
-	$labelAssociations)
+    $entityType,
+    $labelAssociations)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new SetLabelAssociationsRequest();
+    $request = new SetLabelAssociationsRequest();
 
-	$request->EntityType = $entityType;
-	$request->LabelAssociations = $labelAssociations;
+    $request->EntityType = $entityType;
+    $request->LabelAssociations = $labelAssociations;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->SetLabelAssociations($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->SetLabelAssociations($request);
 }
 ```
 ```python
 response=campaignmanagement_service.SetLabelAssociations(
-	EntityType=EntityType,
-	LabelAssociations=LabelAssociations)
+    EntityType=EntityType,
+    LabelAssociations=LabelAssociations)
 ```
 
 ## Requirements

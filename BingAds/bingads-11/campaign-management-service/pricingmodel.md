@@ -21,6 +21,7 @@ Defines the pricing model for an ad group.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="cpc"></a>Cpc|The pricing model is cost-per-click (CPC).|

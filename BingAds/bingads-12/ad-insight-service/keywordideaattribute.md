@@ -28,6 +28,7 @@ Determines which properties of the [KeywordIdea](keywordidea.md) object you want
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="adgroupid"></a>AdGroupId|Include the ad group identifier.|

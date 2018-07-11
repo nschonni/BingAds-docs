@@ -31,6 +31,7 @@ Defines an object that contains the marketplace impact statistics of including b
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="averagecpc"></a>AverageCPC|Broad match average CPC  in the marketplace.|**double**|
@@ -48,6 +49,7 @@ The [BroadMatchKeywordOpportunity](broadmatchkeywordopportunity.md) object has [
 
 ### <a name="inheritedelementskeywordopportunity"></a>Inherited Elements from KeywordOpportunity
 The [BroadMatchKeywordOpportunity](broadmatchkeywordopportunity.md) object derives from the [KeywordOpportunity](keywordopportunity.md) object, and inherits the following elements. The descriptions below are specific to [BroadMatchKeywordOpportunity](broadmatchkeywordopportunity.md), and might not apply to other objects that inherit the same elements from the [KeywordOpportunity](keywordopportunity.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -68,6 +70,7 @@ The [BroadMatchKeywordOpportunity](broadmatchkeywordopportunity.md) object deriv
 
 ### <a name="inheritedelementsopportunity"></a>Inherited Elements from Opportunity
 The [BroadMatchKeywordOpportunity](broadmatchkeywordopportunity.md) object derives from the [Opportunity](opportunity.md) object, and inherits the following elements. The descriptions below are specific to [BroadMatchKeywordOpportunity](broadmatchkeywordopportunity.md), and might not apply to other objects that inherit the same elements from the [Opportunity](opportunity.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

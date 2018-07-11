@@ -22,6 +22,7 @@ The *GetEstimatedPositionByKeywordsRequest* object defines the [body](#request-b
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupid"></a>AdGroupId|The identifier of the ad group whose performance data is used to help determine how well the keyword might perform in the context of the ad group. Specifying an ad group helps improve the accuracy of the suggested position.<br /><br />If you specify an ad group, you must specify the campaign that it belongs to.|**long**|
@@ -40,6 +41,7 @@ The *GetEstimatedPositionByKeywordsRequest* object defines the [body](#request-b
 The *GetEstimatedPositionByKeywordsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -123,111 +125,111 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetEstimatedPositionByKeywordsResponse> GetEstimatedPositionByKeywordsAsync(
-	IList<string> keywords,
-	double maxBid,
-	string language,
-	IList<string> publisherCountries,
-	Currency? currency,
-	IList<MatchType> matchTypes,
-	long? campaignId,
-	long? adGroupId)
+    IList<string> keywords,
+    double maxBid,
+    string language,
+    IList<string> publisherCountries,
+    Currency? currency,
+    IList<MatchType> matchTypes,
+    long? campaignId,
+    long? adGroupId)
 {
-	var request = new GetEstimatedPositionByKeywordsRequest
-	{
-		Keywords = keywords,
-		MaxBid = maxBid,
-		Language = language,
-		PublisherCountries = publisherCountries,
-		Currency = currency,
-		MatchTypes = matchTypes,
-		CampaignId = campaignId,
-		AdGroupId = adGroupId
-	};
+    var request = new GetEstimatedPositionByKeywordsRequest
+    {
+        Keywords = keywords,
+        MaxBid = maxBid,
+        Language = language,
+        PublisherCountries = publisherCountries,
+        Currency = currency,
+        MatchTypes = matchTypes,
+        CampaignId = campaignId,
+        AdGroupId = adGroupId
+    };
 
-	return (await AdInsightService.CallAsync((s, r) => s.GetEstimatedPositionByKeywordsAsync(r), request));
+    return (await AdInsightService.CallAsync((s, r) => s.GetEstimatedPositionByKeywordsAsync(r), request));
 }
 ```
 ```java
 static GetEstimatedPositionByKeywordsResponse getEstimatedPositionByKeywords(
-	ArrayOfstring keywords,
-	double maxBid,
-	java.lang.String language,
-	ArrayOfstring publisherCountries,
-	Currency currency,
-	ArrayOfMatchType matchTypes,
-	java.lang.Long campaignId,
-	java.lang.Long adGroupId) throws RemoteException, Exception
+    ArrayOfstring keywords,
+    double maxBid,
+    java.lang.String language,
+    ArrayOfstring publisherCountries,
+    Currency currency,
+    ArrayOfMatchType matchTypes,
+    java.lang.Long campaignId,
+    java.lang.Long adGroupId) throws RemoteException, Exception
 {
-	GetEstimatedPositionByKeywordsRequest request = new GetEstimatedPositionByKeywordsRequest();
+    GetEstimatedPositionByKeywordsRequest request = new GetEstimatedPositionByKeywordsRequest();
 
-	request.setKeywords(keywords);
-	request.setMaxBid(maxBid);
-	request.setLanguage(language);
-	request.setPublisherCountries(publisherCountries);
-	request.setCurrency(currency);
-	request.setMatchTypes(matchTypes);
-	request.setCampaignId(campaignId);
-	request.setAdGroupId(adGroupId);
+    request.setKeywords(keywords);
+    request.setMaxBid(maxBid);
+    request.setLanguage(language);
+    request.setPublisherCountries(publisherCountries);
+    request.setCurrency(currency);
+    request.setMatchTypes(matchTypes);
+    request.setCampaignId(campaignId);
+    request.setAdGroupId(adGroupId);
 
-	return AdInsightService.getService().getEstimatedPositionByKeywords(request);
+    return AdInsightService.getService().getEstimatedPositionByKeywords(request);
 }
 ```
 ```php
 static function GetEstimatedPositionByKeywords(
-	$keywords,
-	$maxBid,
-	$language,
-	$publisherCountries,
-	$currency,
-	$matchTypes,
-	$campaignId,
-	$adGroupId)
+    $keywords,
+    $maxBid,
+    $language,
+    $publisherCountries,
+    $currency,
+    $matchTypes,
+    $campaignId,
+    $adGroupId)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
 
-	$request = new GetEstimatedPositionByKeywordsRequest();
+    $request = new GetEstimatedPositionByKeywordsRequest();
 
-	$request->Keywords = $keywords;
-	$request->MaxBid = $maxBid;
-	$request->Language = $language;
-	$request->PublisherCountries = $publisherCountries;
-	$request->Currency = $currency;
-	$request->MatchTypes = $matchTypes;
-	$request->CampaignId = $campaignId;
-	$request->AdGroupId = $adGroupId;
+    $request->Keywords = $keywords;
+    $request->MaxBid = $maxBid;
+    $request->Language = $language;
+    $request->PublisherCountries = $publisherCountries;
+    $request->Currency = $currency;
+    $request->MatchTypes = $matchTypes;
+    $request->CampaignId = $campaignId;
+    $request->AdGroupId = $adGroupId;
 
-	return $GLOBALS['AdInsightProxy']->GetService()->GetEstimatedPositionByKeywords($request);
+    return $GLOBALS['AdInsightProxy']->GetService()->GetEstimatedPositionByKeywords($request);
 }
 ```
 ```python
 response=adinsight_service.GetEstimatedPositionByKeywords(
-	Keywords=Keywords,
-	MaxBid=MaxBid,
-	Language=Language,
-	PublisherCountries=PublisherCountries,
-	Currency=Currency,
-	MatchTypes=MatchTypes,
-	CampaignId=CampaignId,
-	AdGroupId=AdGroupId)
+    Keywords=Keywords,
+    MaxBid=MaxBid,
+    Language=Language,
+    PublisherCountries=PublisherCountries,
+    Currency=Currency,
+    MatchTypes=MatchTypes,
+    CampaignId=CampaignId,
+    AdGroupId=AdGroupId)
 ```
 
 ## <a name="remarks"></a>Remarks
 As a best practice for the most accurate bid estimates per country, you should specify only one country per service call. If no countries are specified or if multiple *PublisherCountries* are specified, then the service will use the first available set of the following properties to determine  the country to use as the source of data for estimating the bids.
 
--   Multiple countries corresponding to this operation's specified *PublisherCountries* element.
+- Multiple countries corresponding to this operation's specified *PublisherCountries* element.
 
--   The service will use the set of all supported countries for the specified *Language*, and join with common supported countries in the location target associated with the specified *AdGroupId*.
+- The service will use the set of all supported countries for the specified *Language*, and join with common supported countries in the location target associated with the specified *AdGroupId*.
 
-    > [!NOTE]
-    > If the target countries conflict with the specified *Language*, then the service will disregard the target countries and only use the set of all supported countries for the specified *Language*.
+  > [!NOTE]
+  > If the target countries conflict with the specified *Language*, then the service will disregard the target countries and only use the set of all supported countries for the specified *Language*.
 
--   The service will use the set of all supported countries for the specified *Language*, and join with common supported countries in the location target associated with the specified *CampaignId*.
+- The service will use the set of all supported countries for the specified *Language*, and join with common supported countries in the location target associated with the specified *CampaignId*.
 
-    > [!NOTE]
-    > If the target countries conflict with the specified *Language*, then the service will disregard the target countries and only use the set of all supported countries for the specified *Language*.
+  > [!NOTE]
+  > If the target countries conflict with the specified *Language*, then the service will disregard the target countries and only use the set of all supported countries for the specified *Language*.
 
--   *Language* element of the ad group corresponding to this operation's specified *AdGroupId* element. The service will use the set of all supported countries for this language.
+- *Language* element of the ad group corresponding to this operation's specified *AdGroupId* element. The service will use the set of all supported countries for this language.
 
 Given multiple countries from one of the property sets above, the service will then determine one country with the highest impression count to use as the source of data for estimating the bids. The response will not include details on the final filtered country.
 

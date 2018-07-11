@@ -26,6 +26,7 @@ Defines the possible distance units of a geographical location.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="kilometers"></a>Kilometers|The distance of the specified geographical location is specified in kilometers.|

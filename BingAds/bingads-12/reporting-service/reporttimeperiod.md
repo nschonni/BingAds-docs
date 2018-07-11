@@ -33,6 +33,7 @@ Defines the predefined time and date range values for a report request.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="last14days"></a>Last14Days|A cumulative report for the previous 14 days.|

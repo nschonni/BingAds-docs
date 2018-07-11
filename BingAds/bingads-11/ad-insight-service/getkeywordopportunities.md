@@ -19,6 +19,7 @@ The *GetKeywordOpportunitiesRequest* object defines the [body](#request-body) an
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupid"></a>AdGroupId|The identifier of the ad group to get keyword suggestions for.<br /><br />The following restrictions apply to the specified ad group:<br /><br />- Its language must be set to English.<br /><br />- Its distribution medium must include Search.<br /><br />- It should contain keywords and ads. The operation will suggest keywords only if the ad group contains one or more ads and keywords; the more keywords and ads that the ad group contains, the richer the set of suggested keywords will be.<br /><br />If *AdGroupId* is nil or empty, the operation will return all keyword opportunities for the specified campaign.|**long**|
@@ -32,6 +33,7 @@ The *GetKeywordOpportunitiesRequest* object defines the [body](#request-body) an
 The *GetKeywordOpportunitiesResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -117,58 +119,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetKeywordOpportunitiesResponse> GetKeywordOpportunitiesAsync(
-	long? adGroupId,
-	long? campaignId,
-	KeywordOpportunityType opportunityType)
+    long? adGroupId,
+    long? campaignId,
+    KeywordOpportunityType opportunityType)
 {
-	var request = new GetKeywordOpportunitiesRequest
-	{
-		AdGroupId = adGroupId,
-		CampaignId = campaignId,
-		OpportunityType = opportunityType
-	};
+    var request = new GetKeywordOpportunitiesRequest
+    {
+        AdGroupId = adGroupId,
+        CampaignId = campaignId,
+        OpportunityType = opportunityType
+    };
 
-	return (await AdInsightService.CallAsync((s, r) => s.GetKeywordOpportunitiesAsync(r), request));
+    return (await AdInsightService.CallAsync((s, r) => s.GetKeywordOpportunitiesAsync(r), request));
 }
 ```
 ```java
 static GetKeywordOpportunitiesResponse getKeywordOpportunities(
-	java.lang.Long adGroupId,
-	java.lang.Long campaignId,
-	ArrayList<KeywordOpportunityType> opportunityType) throws RemoteException, Exception
+    java.lang.Long adGroupId,
+    java.lang.Long campaignId,
+    ArrayList<KeywordOpportunityType> opportunityType) throws RemoteException, Exception
 {
-	GetKeywordOpportunitiesRequest request = new GetKeywordOpportunitiesRequest();
+    GetKeywordOpportunitiesRequest request = new GetKeywordOpportunitiesRequest();
 
-	request.setAdGroupId(adGroupId);
-	request.setCampaignId(campaignId);
-	request.setOpportunityType(opportunityType);
+    request.setAdGroupId(adGroupId);
+    request.setCampaignId(campaignId);
+    request.setOpportunityType(opportunityType);
 
-	return AdInsightService.getService().getKeywordOpportunities(request);
+    return AdInsightService.getService().getKeywordOpportunities(request);
 }
 ```
 ```php
 static function GetKeywordOpportunities(
-	$adGroupId,
-	$campaignId,
-	$opportunityType)
+    $adGroupId,
+    $campaignId,
+    $opportunityType)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
 
-	$request = new GetKeywordOpportunitiesRequest();
+    $request = new GetKeywordOpportunitiesRequest();
 
-	$request->AdGroupId = $adGroupId;
-	$request->CampaignId = $campaignId;
-	$request->OpportunityType = $opportunityType;
+    $request->AdGroupId = $adGroupId;
+    $request->CampaignId = $campaignId;
+    $request->OpportunityType = $opportunityType;
 
-	return $GLOBALS['AdInsightProxy']->GetService()->GetKeywordOpportunities($request);
+    return $GLOBALS['AdInsightProxy']->GetService()->GetKeywordOpportunities($request);
 }
 ```
 ```python
 response=adinsight_service.GetKeywordOpportunities(
-	AdGroupId=AdGroupId,
-	CampaignId=CampaignId,
-	OpportunityType=OpportunityType)
+    AdGroupId=AdGroupId,
+    CampaignId=CampaignId,
+    OpportunityType=OpportunityType)
 ```
 
 ## Requirements

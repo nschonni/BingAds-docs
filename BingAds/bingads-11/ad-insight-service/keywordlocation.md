@@ -22,6 +22,7 @@ Defines an object that contains the location, network, device, and the percentag
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="device"></a>Device|The device of the user who entered the search query.|**string**|

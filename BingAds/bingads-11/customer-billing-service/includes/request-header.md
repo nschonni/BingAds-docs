@@ -1,3 +1,4 @@
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |AuthenticationToken|The OAuth access token that represents a Microsoft Account user who has permissions to Bing Ads accounts.|**string**|

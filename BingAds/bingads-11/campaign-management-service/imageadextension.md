@@ -34,6 +34,7 @@ You can associate an image ad extension with the account or with campaigns and a
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="alternativetext"></a>AlternativeText|Alternative description of the image media for usability. If the image could not be displayed, the alternative text is used instead.<br /><br />The maximum length for this element is 35 characters.<br/><br/>**Add:** Optional<br/>**Update:** Optional|**string**|
@@ -52,6 +53,7 @@ The [ImageAdExtension](imageadextension.md) object has [Inherited Elements](#inh
 
 ### <a name="inheritedelementsadextension"></a>Inherited Elements from AdExtension
 The [ImageAdExtension](imageadextension.md) object derives from the [AdExtension](adextension.md) object, and inherits the following elements. The descriptions below are specific to [ImageAdExtension](imageadextension.md), and might not apply to other objects that inherit the same elements from the [AdExtension](adextension.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

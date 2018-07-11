@@ -30,6 +30,7 @@ Defines the possible campaign types.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="audience"></a>Audience|The campaign is an Audience campaign.|

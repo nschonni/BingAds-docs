@@ -21,6 +21,7 @@ Defines an object that contains the keyword and percentage of users by age and g
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="keyword"></a>Keyword|The keyword.|**string**|

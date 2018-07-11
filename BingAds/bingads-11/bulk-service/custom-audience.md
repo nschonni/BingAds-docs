@@ -13,10 +13,10 @@ Defines a custom audience that can be downloaded and uploaded in a bulk file.
 
 > [!NOTE]
 > Only update of the *Audience* (audience name) and *Description* fields are supported for upload. You can delete but cannot add a custom audience using the Bing Ads API. Having said that, you can add and delete ad group custom audience associations and exclusions.
-
+> 
 > [!NOTE]
 > Not everyone has this feature yet. If you don’t, don’t worry. It’s coming soon.
-
+> 
 > [!TIP]
 > For an overview of custom audiences see the [What are custom audiences and how do I set it up?](https://help.bingads.microsoft.com/#apex/3/en/56849/-1) help topic.
 

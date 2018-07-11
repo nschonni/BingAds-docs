@@ -14,6 +14,7 @@ ms.topic: "article"
 Contains the methods used to manage the ad group's bid values.
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [clearCpc](#clearcpc)|void|Clears the ad group's CPC bid.
@@ -24,6 +25,7 @@ Contains the methods used to manage the ad group's bid values.
 Clears the ad group's CPC bid. 
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -32,6 +34,7 @@ void|Returns nothing.
 Returns the ad group's CPC bid. 
 
 ### Returns
+
 |Type|Description|
 |-|-
 double|The ad group's maximum CPC bid.
@@ -44,11 +47,13 @@ Specifies the bid amount to use when the keyword matches the user's search term 
 If you specify a property value that's not valid, the call silently fails. To confirm whether the property was actually updated, you must get the object again and test whether the property's value equals the new value. For information, see [Handling errors and warnings](../concepts/errors-and-warnings.md).
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 cpc|double|The CPC bid for the ad group. The account's currency determines the minimum and maximum bid values. For more information, see [Bid and budget currencies](/bingads/guides/currencies#bidandbudget).
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.

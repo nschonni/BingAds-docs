@@ -28,6 +28,7 @@ Say you have a budget of $20 to be used uniformly between two campaigns every da
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="amount"></a>Amount|The amount to spend daily across all campaigns that share the budget.<br/><br/>**Add:** Required<br/>**Update:** Optional|**decimal**|

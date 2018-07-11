@@ -61,6 +61,7 @@ Defines the possible auction segment values.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="day"></a>Day|The auction insight data is segmented by day.|

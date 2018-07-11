@@ -23,20 +23,19 @@ The following shows a JSON error response when trying to insert a single offer.
         "domain": "global"
       }
     ],
-    "warnings": [ 
-      { 
-        "reason": "validation", 
-        "message": "The GTIN is required.", 
-        "domain": "content.ContentErrorDomain" 
-      } 
-    ], 
-    "code": "400", 
-    "message": "Invalid..." 
-  } 
+    "warnings": [ 
+      { 
+        "reason": "validation", 
+        "message": "The GTIN is required.", 
+        "domain": "content.ContentErrorDomain" 
+      } 
+    ], 
+    "code": "400", 
+    "message": "Invalid..." 
+  } 
 }```
 
 The following shows a JSON error response when trying to get a single offer.
-
 ```json
 {
   "error": {
@@ -88,12 +87,12 @@ The following shows an XML error response when trying to insert a single offer.
     <internalReason>Internal error occurred. Please retry...</internalReason>
     <domain>sc</domain>
   </error>
-  <warning> 
-    <reason>validation</reason> 
-    <internalReason>The GTIN is required.</internalReason> 
-    <domain>content.ContentErrorDomain</domain> 
-  </warning> 
-  <code>400</code> 
+  <warning> 
+    <reason>validation</reason> 
+    <internalReason>The GTIN is required.</internalReason> 
+    <domain>content.ContentErrorDomain</domain> 
+  </warning> 
+  <code>400</code> 
 </errors>
 ```
 

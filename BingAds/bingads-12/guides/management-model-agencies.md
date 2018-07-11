@@ -20,7 +20,7 @@ The following figure shows two clients managed by an agency.
 Only an agency Super Admin can [Link to Client Accounts](#clientlink). Linking enables any agency Super Admin to access the specified client account. If the client has multiple accounts, then a client link invitation must be sent for each client account. The super admin may also determine which individual accounts the advertiser campaign manager and viewer users can access. In the figure above **User A** has access to account A1, and **User B** has access to accounts A2, B1, and B2. For more information about user roles, see [User Roles and Available Service Operations](customer-accounts.md#userroles).
 
 ## <a name="clientlink"></a>Link to Client Accounts
-> [!NOTE] 
+> [!NOTE]
 > Linking to client accounts as an agency is not supported in the [sandbox](sandbox.md) environment. 
 
 To manage client accounts, a Super Admin user of the agency must send an invitation to the client, which must then be accepted by a Super Admin user of the client. To determine whether a link already exists, call the [SearchClientLinks](../customer-management-service/searchclientlinks.md) operation and check the Status element of any returned [ClientLink](../customer-management-service/clientlink.md). For a list of possible status values, see [ClientLinkStatus value set](../customer-management-service/clientlinkstatus.md). To search by individual account, set the predicate field to ClientAccountId and set the predicate value to the account identifier that you want to find. There is no set limit to the amount of client accounts that can be linked to an agency.

@@ -18,6 +18,7 @@ Do not use this object to specify a date when calling one of the `forDateRange()
 
 ## Properties
 
+
 |Property Name|Description|
 |-|-
 |day|The day of the month. For example, 30.

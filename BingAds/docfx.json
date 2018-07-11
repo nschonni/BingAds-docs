@@ -48,7 +48,7 @@
           "LICENSE-CODE",
           "ThirdPartyNotices"
         ]
-      }       
+      }
     ],
     "resource": [
       {
@@ -87,7 +87,7 @@
           "**/obj/**",
           "**/includes/**"
         ]
-      }   
+      }
     ],
     "overwrite": [],
     "externalReference": [],
@@ -95,17 +95,22 @@
       "feedback_system": "GitHub",
       "feedback_github_repo": "MicrosoftDocs/BingAds-docs",
       "feedback_product_url": "https://bingads.uservoice.com/forums/82363-adcenter-feature-suggestion?category_id=16945",
-      "contributors_to_exclude": ["openpublishingbuild", "Pacort", "saldana"],      
+      "contributors_to_exclude": [
+        "openpublishingbuild",
+        "Pacort",
+        "saldana"
+      ],
       "defaultDevLang": "csharp",
       "uhfHeaderId": "MSDocsHeader-BingAds",
-      "searchScope": ["Bing Ads"],
+      "searchScope": [
+        "Bing Ads"
+      ],
       "breadcrumb_path": "/BingAds/breadcrumb/TOC.json",
       "extendBreadcrumb": "true",
       "titleSuffix": "Bing Ads"
     },
     "fileMetadata": {
-      "ms.service": 
-      { 
+      "ms.service": {
         "guides/**.yml": "bing-ads",
         "ad-insight-service/**.yml": "bing-ads-ad-insight-service",
         "customer-billing-service/**.yml": "bing-ads-customer-billing-service",
@@ -121,7 +126,7 @@
         "transaction-message/**.yml": "hotel-ads-transaction-message",
         "hint-message/**.yml": "hotel-ads-hint-message",
         "query-message/**.yml": "hotel-ads-query-message",
-        "query-control-message/**.yml": "hotel-ads-query-control-message"    
+        "query-control-message/**.yml": "hotel-ads-query-control-message"
       }
     },
     "template": [],
@@ -135,6 +140,7 @@
         "dest": "bingads12",
         "moniker_range": "=bingads-12"
       }
-    }
+    },
+    "markdownEngineName": "markdig"
   }
 }

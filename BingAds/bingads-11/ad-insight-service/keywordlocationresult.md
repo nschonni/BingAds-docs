@@ -21,6 +21,7 @@ Defines an object that contains the locations where users were located when they
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="keyword"></a>Keyword|The keyword.|**string**|

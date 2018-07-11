@@ -26,6 +26,7 @@ The *Image* object derives from the *Media* object. For a list of the inherited 
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="data"></a>Data|A base64 string that represents the image or icon to add to the library. The base64 string can contain a maximum of 102,400 characters.<br /><br />For information about restrictions and supported data types, see [Remarks](#remarks) below.|**string**|
@@ -37,6 +38,7 @@ The [Image](image.md) object has [Inherited Elements](#inheritedelements).
 ### <a name="inheritedelementsmedia"></a>Inherited Elements from Media
 The [Image](image.md) object derives from the [Media](media.md) object, and inherits the following elements. The descriptions below are specific to [Image](image.md), and might not apply to other objects that inherit the same elements from the [Media](media.md) object.  
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="id"></a>Id|The unique Bing Ads identifier of the media.<br/><br/>**Add:** Read-only|**long**|
@@ -45,14 +47,15 @@ The [Image](image.md) object derives from the [Media](media.md) object, and inhe
 
 ## <a name="remarks"></a>Remarks
 The following MIME types are supported for the *Data* element of the *Image* data object.
--   GIF  
--   JPEG  
--   PNG  
+- GIF  
+- JPEG  
+- PNG  
 
 Images with animation are not supported.
 
 ### <a name="imageadextension"></a>Image Ad Extension Image Media
 The following restrictions apply to [Media](media.md) types (aspect ratios) that will be used with an [ImageAdExtension](imageadextension.md).
+
 
 |MediaType|Aspect Ratio|Minimum Dimension|Maximum Dimension|
 |--------|----------------|---------------------|---------------------|
@@ -69,6 +72,7 @@ The following restrictions apply to [Media](media.md) types (aspect ratios) that
 
 > [!NOTE]
 > Not everyone is enabled for Audience campaigns in the Microsoft Audience Network yet. If you don't, don't worry. It's coming soon. 
+
 
 |Responsive Ad Property|Media Type|Dimensions in pixels|
 |--------|--------|--------|--------|

@@ -28,6 +28,7 @@ The *GetBMCStoresByCustomerIdResponse* object defines the [body](#response-body)
 
 ### <a name="response-body"></a>Response Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="bmcstores"></a>BMCStores|The list of Bing Merchant Center stores for the specified customer.|[BMCStore](bmcstore.md) array|
@@ -83,32 +84,32 @@ The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.m
 ```csharp
 public async Task<GetBMCStoresByCustomerIdResponse> GetBMCStoresByCustomerIdAsync()
 {
-	var request = new GetBMCStoresByCustomerIdRequest
-	{
-	};
+    var request = new GetBMCStoresByCustomerIdRequest
+    {
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetBMCStoresByCustomerIdAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetBMCStoresByCustomerIdAsync(r), request));
 }
 ```
 ```java
 static GetBMCStoresByCustomerIdResponse getBMCStoresByCustomerId() throws RemoteException, Exception
 {
-	GetBMCStoresByCustomerIdRequest request = new GetBMCStoresByCustomerIdRequest();
+    GetBMCStoresByCustomerIdRequest request = new GetBMCStoresByCustomerIdRequest();
 
 
-	return CampaignManagementService.getService().getBMCStoresByCustomerId(request);
+    return CampaignManagementService.getService().getBMCStoresByCustomerId(request);
 }
 ```
 ```php
 static function GetBMCStoresByCustomerId()
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetBMCStoresByCustomerIdRequest();
+    $request = new GetBMCStoresByCustomerIdRequest();
 
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetBMCStoresByCustomerId($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetBMCStoresByCustomerId($request);
 }
 ```
 ```python

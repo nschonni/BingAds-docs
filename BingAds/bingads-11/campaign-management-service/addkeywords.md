@@ -19,6 +19,7 @@ The *AddKeywordsRequest* object defines the [body](#request-body) and [header](#
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupid"></a>AdGroupId|The identifier of the ad group to add the keywords to.|**long**|
@@ -31,6 +32,7 @@ The *AddKeywordsRequest* object defines the [body](#request-body) and [header](#
 The *AddKeywordsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -171,51 +173,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<AddKeywordsResponse> AddKeywordsAsync(
-	long adGroupId,
-	IList<Keyword> keywords)
+    long adGroupId,
+    IList<Keyword> keywords)
 {
-	var request = new AddKeywordsRequest
-	{
-		AdGroupId = adGroupId,
-		Keywords = keywords
-	};
+    var request = new AddKeywordsRequest
+    {
+        AdGroupId = adGroupId,
+        Keywords = keywords
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.AddKeywordsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.AddKeywordsAsync(r), request));
 }
 ```
 ```java
 static AddKeywordsResponse addKeywords(
-	java.lang.Long adGroupId,
-	ArrayOfKeyword keywords) throws RemoteException, Exception
+    java.lang.Long adGroupId,
+    ArrayOfKeyword keywords) throws RemoteException, Exception
 {
-	AddKeywordsRequest request = new AddKeywordsRequest();
+    AddKeywordsRequest request = new AddKeywordsRequest();
 
-	request.setAdGroupId(adGroupId);
-	request.setKeywords(keywords);
+    request.setAdGroupId(adGroupId);
+    request.setKeywords(keywords);
 
-	return CampaignManagementService.getService().addKeywords(request);
+    return CampaignManagementService.getService().addKeywords(request);
 }
 ```
 ```php
 static function AddKeywords(
-	$adGroupId,
-	$keywords)
+    $adGroupId,
+    $keywords)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new AddKeywordsRequest();
+    $request = new AddKeywordsRequest();
 
-	$request->AdGroupId = $adGroupId;
-	$request->Keywords = $keywords;
+    $request->AdGroupId = $adGroupId;
+    $request->Keywords = $keywords;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->AddKeywords($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->AddKeywords($request);
 }
 ```
 ```python
 response=campaignmanagement_service.AddKeywords(
-	AdGroupId=AdGroupId,
-	Keywords=Keywords)
+    AdGroupId=AdGroupId,
+    Keywords=Keywords)
 ```
 
 ## Requirements

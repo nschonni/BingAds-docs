@@ -59,6 +59,7 @@ Defines the ad type values that you can use to filter the report data. These val
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="appinstall"></a>AppInstall|The report will include app install ads.|

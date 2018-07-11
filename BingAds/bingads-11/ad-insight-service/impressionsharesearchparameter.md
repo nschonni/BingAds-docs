@@ -27,6 +27,7 @@ If you do not include the impression share search parameter when calling [GetKey
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="maximum"></a>Maximum|The maximum impression share that you want for keyword ideas.|**double**|

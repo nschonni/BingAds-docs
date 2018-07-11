@@ -17,16 +17,16 @@ The example web application sends authentication requests to the Microsoft accou
 ## <a name="code"></a>Code Walkthrough
 1. Open the [Visual Studio Community 2017](https://www.visualstudio.com/vs/community/) development environment. If you've installed Visual Studio already, add the **ASP.NET and web development** and **Azure development** workloads in Visual Studio by clicking **Tools** > **Get Tools and Features**.
 
-2.  Create a new project by selecting **File > New > Project**. In the **New Project** window choose **.NET Framework 4.7.1** in the drop down, and then select **Visual C# > Web > ASP.NET Web Application (.NET Framework)**. Name the project *BingAdsWebApp* and click **OK**.
+2. Create a new project by selecting **File > New > Project**. In the **New Project** window choose **.NET Framework 4.7.1** in the drop down, and then select **Visual C# > Web > ASP.NET Web Application (.NET Framework)**. Name the project *BingAdsWebApp* and click **OK**.
 
-3.  You can deploy any type of ASP.NET web app to Azure. For this quickstart, select the **MVC** template, make sure authentication is set to **No Authentication**, and click **OK**. 
+3. You can deploy any type of ASP.NET web app to Azure. For this quickstart, select the **MVC** template, make sure authentication is set to **No Authentication**, and click **OK**. 
 
 4. Install the SDK through NuGet for the BingAdsWebApp. For more information about dependencies, see [Installing the SDK](get-started-csharp.md#installation). Click on **Tools** -&gt; **NuGet Package Manager** -&gt; **Package Manager Console**. At the prompt, type these commands to install the packages one at a time: `Install-Package Microsoft.BingAds.SDK`, `Install-Package System.ServiceModel.Primitives -Version 4.4.1`, `Install-Package System.ServiceModel.Http -Version 4.4.1`, and `Install-Package System.Configuration.ConfigurationManager -Version 4.4.1`. 
 
 5. Open the Web.config file and replace its contents with the following code block. Edit the *BingAdsEnvironment* to move from sandbox to production and set the production [developer token](get-started.md#get-developer-token) as needed. You must edit the *ClientId*, *ClientSecret*, and *RedirectionUri* with the corresponding *Application Id*, *Application Secret*, and *Redirect URL* values that were provisioned when you [registered your application](authentication-oauth.md#registerapplication). 
   
-  > [!NOTE]
-  > If you intend to deploy on localhost prior to going live, then be sure to also register the the local SSL URL and port e.g., https://localhost:44383/. In that case you must also set **SSL Enabled** to *True* in the BingAdsWebApp project properties window, and then you can copy the localhost port from the same properties window.
+   > [!NOTE]
+   > If you intend to deploy on localhost prior to going live, then be sure to also register the the local SSL URL and port e.g., https://localhost:44383/. In that case you must also set **SSL Enabled** to *True* in the BingAdsWebApp project properties window, and then you can copy the localhost port from the same properties window.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>

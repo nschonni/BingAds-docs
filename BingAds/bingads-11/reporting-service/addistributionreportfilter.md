@@ -32,6 +32,7 @@ Defines the ad distribution medium values that you can use to filter the report 
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="content"></a>Content|The report will contain data for content ads.<br/><br/>This value is deprecated and will be removed in Bing Ads API Version 12.|

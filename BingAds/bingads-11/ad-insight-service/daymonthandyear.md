@@ -22,6 +22,7 @@ Defines an object that you use to specify the start and end dates of a date rang
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="day"></a>Day|The day of the month.|**int**|

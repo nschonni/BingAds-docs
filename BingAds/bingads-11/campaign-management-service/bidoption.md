@@ -21,6 +21,7 @@ Determines whether or not to amplify your partner's bid.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="bidboost"></a>BidBoost|A bid boost allows you to amplify your partner's bid.|

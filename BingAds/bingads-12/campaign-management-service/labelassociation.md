@@ -21,6 +21,7 @@ Defines the relationship between a label and campaign, ad group, ad, or keyword 
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="entityid"></a>EntityId|The identifier of an entity associated with the label.<br/><br/>Supported entity types for labels are campaign, ad group, ad, and keyword. The entity type is specified in the request message of each [DeleteLabelAssociations](deletelabelassociations.md), [GetLabelAssociationsByEntityIds](getlabelassociationsbyentityids.md), [GetLabelAssociationsByLabelIds](getlabelassociationsbylabelids.md), and [SetLabelAssociations](setlabelassociations.md) operation.<br/><br/>Each entity can be associated with a maximum of 50 labels. For example *Campaign A* can be associated with up to 50 labels.<br/><br/>**Set:** Required<br/>**Delete:** Required|**long**|

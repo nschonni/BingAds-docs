@@ -10,7 +10,7 @@ description: Defines the base class of a shared list.
 Defines the base class of a shared list.
 
 Do not try to instantiate a *SharedList*. You can create the following object that derives from it.
--   [NegativeKeywordList](negativekeywordlist.md)
+- [NegativeKeywordList](negativekeywordlist.md)
 
 ## Syntax
 ```xml
@@ -27,6 +27,7 @@ Do not try to instantiate a *SharedList*. You can create the following object th
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="itemcount"></a>ItemCount|The number of [SharedListItem](sharedlistitem.md) objects that are added to this shared list.<br /><br />**Add:** Read-only<br />**Update:** Read-only|**int**|
@@ -37,6 +38,7 @@ The [SharedList](sharedlist.md) object has [Inherited Elements](#inheritedelemen
 
 ### <a name="inheritedelementssharedentity"></a>Inherited Elements from SharedEntity
 The [SharedList](sharedlist.md) object derives from the [SharedEntity](sharedentity.md) object, and inherits the following elements. The descriptions below are specific to [SharedList](sharedlist.md), and might not apply to other objects that inherit the same elements from the [SharedEntity](sharedentity.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

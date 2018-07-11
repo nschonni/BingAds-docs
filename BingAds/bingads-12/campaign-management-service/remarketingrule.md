@@ -26,6 +26,7 @@ Do not try to instantiate a *RemarketingRule*. You can create one or more follow
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="type"></a>Type|The type of the remarketing rule. For more information about remarketing rule types, see the [Remarks](#remarks).<br/><br/>**Add:** Read-only<br/>**Update:** Read-only|**string**|

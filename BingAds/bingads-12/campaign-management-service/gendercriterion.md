@@ -26,6 +26,7 @@ The *GenderCriterion* criterion can be included within [AdGroupCriterion](adgrou
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="gendertype"></a>GenderType|The gender of the people you want to see your ads.<br/><br/>**Add:** Required<br/>**Update:** Not allowed. If you specify this element it must match the existing setting. |[GenderType](gendertype.md)|
@@ -36,6 +37,7 @@ The [GenderCriterion](gendercriterion.md) object has [Inherited Elements](#inher
 
 ### <a name="inheritedelementscriterion"></a>Inherited Elements from Criterion
 The [GenderCriterion](gendercriterion.md) object derives from the [Criterion](criterion.md) object, and inherits the following elements. The descriptions below are specific to [GenderCriterion](gendercriterion.md), and might not apply to other objects that inherit the same elements from the [Criterion](criterion.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

@@ -23,5 +23,5 @@ This document assumes you're familiar with Bing Ads and JavaScript. For a Bing A
 
 ## Next steps
 
-> [!div class="nextstepaction"]
+> [!div  class="nextstepaction"]
 > [Get Started](./get-started.md)

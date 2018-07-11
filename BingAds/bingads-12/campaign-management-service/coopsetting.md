@@ -29,6 +29,7 @@ Defines the ad group level settings for feed-based cooperative bidding campaigns
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="bidboostvalue"></a>BidBoostValue|The percentage (greater than zero) that allows your cooperative bid to flex.<br/><br/>For example, let's say your partner bids $5 USD on a keyword. If your bid boost set to 20 percent and your maximum value is 50 cents, your share would be 50 cents and not $1 USD.<br/><br/>**Add:** Required if the bid option is set to BidBoost, and otherwise you may not set this element.<br/>**Update:** Required if the bid option is set to BidBoost, and otherwise you may not set this element.|**double**|
@@ -41,6 +42,7 @@ The [CoOpSetting](coopsetting.md) object has [Inherited Elements](#inheritedelem
 
 ### <a name="inheritedelementssetting"></a>Inherited Elements from Setting
 The [CoOpSetting](coopsetting.md) object derives from the [Setting](setting.md) object, and inherits the following elements. The descriptions below are specific to [CoOpSetting](coopsetting.md), and might not apply to other objects that inherit the same elements from the [Setting](setting.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

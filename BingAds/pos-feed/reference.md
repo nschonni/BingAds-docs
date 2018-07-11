@@ -19,35 +19,38 @@ For information about creating a points of sale feed, see [Creating a Points of 
 
 > [!NOTE]
 > The elements must be specified in the order defined by the [PointsOfSale XSD](https://bhacstatic.blob.core.windows.net/schemas/point_of_sale.xsd) (and as listed in this topic).
-
+> 
 > [!NOTE]
 > Bing ignores any element or attribute not included below.
 
 ----
 
- 
+
 <a name="pointsofsale" /> 
 ## PointsOfSale
 Defines the top-level element of a points of sale feed.
+
 
 |Element|Description|Children
 |-|-|-
 |PointsOfSale|The top-level element in a points of sale feed.|[PointsOfSale Type](#pointsofsaletype)
 
- 
+
 <a name="pointsofsaletype" /> 
 ## PointsOfSale Type
 Defines a list of points of sale.
+
 
 |Element|Description|Children
 |-|-|-
 |PointOfSale|Defines a point of sale (POS) where users book rooms. Include a `PointOfSale` element for each POS you offer. You must define at least one POS, and all points of sale must be for a single partner.<br /><br />Attributes:<ul><li>id&mdash;Required. An opaque, user-defined ID that uniquely identifies the POS in the feed. <br /><br />If you want to limit booking to a specific POS for specific itineraries in your transaction message, use this ID in the `PointOfSale` element of your transaction message.</li></ul>|[PointOfSale Type](#pointofsaletype)
 
 
- 
+
 <a name="pointofsaletype" /> 
 ## PointOfSale Type
 Defines a point of sale.
+
 
 |Element|Description|Children
 |-|-|-
@@ -55,4 +58,4 @@ Defines a point of sale.
 |<a name="match" />Match|Required.<br /><br />The criteria used to determine if the POS is used in the ad.<br /><br />Attributes:<ul><li>country&mdash;Optional. The publishing country of the Bing site used by the user. To use the POS in the ad, the user must use the site with the specified publishing country. Specify the country using a two-letter ISO 3166 country code. For example, use **US** for United States.</li><li>language&mdash;Optional. The language that the user must use for Bing to use the POS in the ad. Specify the language using a two-letter ISO 639 language code. For example, use **en** for English.</li><li>currency&mdash;Optional. The currency that the user or hotel must use for Bing to use the POS in the ad. Specify the currency using a three-character ISO 4217 currency code. For example, USD for US Dollar.</li><li>device&mdash;Optional. The type of device the user must use for Bing to use the POS in the ad. The following are the possible case-insensitive values.<ul><li>Desktop</li><li>Mobile</li><li>Tablet</li></ul></li><li>sitetype&mdash;Optional. The type of site where the ad request originated. The following are the possible case-insensitive values.<ul><li>LocalUniversal&mdash;The ad request originated from a web search results page. </li><li>MapResults&mdash;The ad request originated from a map site. </li></ul></li><li>status&mdash;Optional. The condition used to match the criterion. The following are the possible case-insensitive values.<ul><li>Yes&mdash;Use the POS if the criteria matches.</li><li>Never&mdash;Don't use the POS if the criteria matches.</li></ul></li></ul>Notes:<ul><li>The language attribute must be set to **en**.</li><li>The country attribute must be set to **US**. </li><li>The currency attribute must be set to **USD**.</li><li>You cannot set status to never if device is set to tablet.</li></ul>For more information, see [POS Matching Rules](../pos-feed/create-pos-feed.md#matching-points-of-sale).|None
 |<a name="postype_url" />URL|Optional.<br />Data type is string.<br /><br/>The URL of the site where the user books the room.<br /><br /> Notes:<ul><li>The POS may specify only one URL.</li><li>The URL may include one or more dynamic query parameter. For information about dynamic query parameters, see [Using Dynamic Query Parameters](../pos-feed/create-pos-feed.md#using-dynamic-query-parameters).</li><li>If the URL includes special characters, you must replace the special characters with encoded entities. For example, if the URL includes query parameters, you must encode ampersands (&amp;) as \&amp;. </li></ul>|None
 
- 
+

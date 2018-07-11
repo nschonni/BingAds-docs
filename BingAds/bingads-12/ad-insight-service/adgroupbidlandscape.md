@@ -27,6 +27,7 @@ Defines an object that contains a list of estimated clicks, cost, and impression
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupbidlandscapetype"></a>AdGroupBidLandscapeType|Indicates whether all or a subset of an ad group's existing keywords were used to determine the bid landscape.|[AdGroupBidLandscapeType](adgroupbidlandscapetype.md)|

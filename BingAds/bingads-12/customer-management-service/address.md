@@ -30,6 +30,7 @@ Defines a postal address.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="businessname"></a>BusinessName|The legal business name, which can contain a maximum of 100 characters.<br/><br/>**Add:** Required<br/>**Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.|**string**|

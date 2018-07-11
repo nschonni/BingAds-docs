@@ -13,7 +13,7 @@ To set up offine conversion tracking, create an [OfflineConversionGoal](offlinec
 
 > [!TIP]
 > For more information, see [Tracking offline conversions](https://help.bingads.microsoft.com/#apex/3/en/help:app54554/1/en-US/#ext:ConversionTracking_Load).
-
+> 
 > [!IMPORTANT]
 > Every time you add or update a new [DurationGoal](durationgoal.md), [EventGoal](eventgoal.md), [OfflineConversionGoal](offlineconversiongoal.md), [PagesViewedPerVisitGoal](pagesviewedpervisitgoal.md) or [UrlGoal](urlgoal.md) via either the Bing Ads web application or Campaign Management API, the *MSCLKIDAutoTaggingEnabled* value of the corresponding [AccountProperty](accountproperty.md) is set to *True* automatically. If the Scope of the goal is set to *Customer* level, then the [AccountProperty](accountproperty.md) for all accounts under the Customer will be set. 
 
@@ -36,6 +36,7 @@ The [OfflineConversionGoal](offlineconversiongoal.md) object has [Inherited Elem
 
 ### <a name="inheritedelementsconversiongoal"></a>Inherited Elements from ConversionGoal
 The [OfflineConversionGoal](offlineconversiongoal.md) object derives from the [ConversionGoal](conversiongoal.md) object, and inherits the following elements. The descriptions below are specific to [OfflineConversionGoal](offlineconversiongoal.md), and might not apply to other objects that inherit the same elements from the [ConversionGoal](conversiongoal.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

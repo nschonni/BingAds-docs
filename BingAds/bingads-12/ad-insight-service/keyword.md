@@ -22,6 +22,7 @@ Defines a keyword with match type.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="id"></a>Id|The Bing Ads identifier of the keyword.|**long**|

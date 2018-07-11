@@ -21,6 +21,7 @@ The *GetCustomersInfoRequest* object defines the [body](#request-body) and [head
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="applicationscope"></a>ApplicationScope|A value that determines whether to return results for advertising customers or publishing customers. If you do not specify the scope, the list may include both types of customers.|[ApplicationType](applicationtype.md)|
@@ -34,6 +35,7 @@ The *GetCustomersInfoRequest* object defines the [body](#request-body) and [head
 The *GetCustomersInfoResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -90,58 +92,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetCustomersInfoResponse> GetCustomersInfoAsync(
-	string customerNameFilter,
-	int topN,
-	ApplicationType applicationScope)
+    string customerNameFilter,
+    int topN,
+    ApplicationType applicationScope)
 {
-	var request = new GetCustomersInfoRequest
-	{
-		CustomerNameFilter = customerNameFilter,
-		TopN = topN,
-		ApplicationScope = applicationScope
-	};
+    var request = new GetCustomersInfoRequest
+    {
+        CustomerNameFilter = customerNameFilter,
+        TopN = topN,
+        ApplicationScope = applicationScope
+    };
 
-	return (await CustomerManagementService.CallAsync((s, r) => s.GetCustomersInfoAsync(r), request));
+    return (await CustomerManagementService.CallAsync((s, r) => s.GetCustomersInfoAsync(r), request));
 }
 ```
 ```java
 static GetCustomersInfoResponse getCustomersInfo(
-	java.lang.String customerNameFilter,
-	int topN,
-	ApplicationType applicationScope) throws RemoteException, Exception
+    java.lang.String customerNameFilter,
+    int topN,
+    ApplicationType applicationScope) throws RemoteException, Exception
 {
-	GetCustomersInfoRequest request = new GetCustomersInfoRequest();
+    GetCustomersInfoRequest request = new GetCustomersInfoRequest();
 
-	request.setCustomerNameFilter(customerNameFilter);
-	request.setTopN(topN);
-	request.setApplicationScope(applicationScope);
+    request.setCustomerNameFilter(customerNameFilter);
+    request.setTopN(topN);
+    request.setApplicationScope(applicationScope);
 
-	return CustomerManagementService.getService().getCustomersInfo(request);
+    return CustomerManagementService.getService().getCustomersInfo(request);
 }
 ```
 ```php
 static function GetCustomersInfo(
-	$customerNameFilter,
-	$topN,
-	$applicationScope)
+    $customerNameFilter,
+    $topN,
+    $applicationScope)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
 
-	$request = new GetCustomersInfoRequest();
+    $request = new GetCustomersInfoRequest();
 
-	$request->CustomerNameFilter = $customerNameFilter;
-	$request->TopN = $topN;
-	$request->ApplicationScope = $applicationScope;
+    $request->CustomerNameFilter = $customerNameFilter;
+    $request->TopN = $topN;
+    $request->ApplicationScope = $applicationScope;
 
-	return $GLOBALS['CustomerManagementProxy']->GetService()->GetCustomersInfo($request);
+    return $GLOBALS['CustomerManagementProxy']->GetService()->GetCustomersInfo($request);
 }
 ```
 ```python
 response=customermanagement_service.GetCustomersInfo(
-	CustomerNameFilter=CustomerNameFilter,
-	TopN=TopN,
-	ApplicationScope=ApplicationScope)
+    CustomerNameFilter=CustomerNameFilter,
+    TopN=TopN,
+    ApplicationScope=ApplicationScope)
 ```
 
 ## Requirements

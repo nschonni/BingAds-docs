@@ -26,6 +26,7 @@ If you do not include the device search parameter when calling [GetKeywordIdeas]
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="device"></a>Device|The device criterion for the returned keyword ideas.|[DeviceCriterion](devicecriterion.md)|

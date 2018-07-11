@@ -23,6 +23,7 @@ Defines an object that contains association information for a campaign and share
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="entityid"></a>EntityId|The system-generated identifier of the campaign that is associated with the shared entity.|**long**|

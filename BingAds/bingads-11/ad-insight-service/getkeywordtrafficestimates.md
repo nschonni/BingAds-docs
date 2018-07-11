@@ -19,6 +19,7 @@ The *GetKeywordTrafficEstimatesRequest* object defines the [body](#request-body)
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="campaignestimators"></a>CampaignEstimators|Defines your campaign, ad group, and keyword level criteria and filters for the requested keyword traffic estimates.|[CampaignEstimator](campaignestimator.md) array|
@@ -30,6 +31,7 @@ The *GetKeywordTrafficEstimatesRequest* object defines the [body](#request-body)
 The *GetKeywordTrafficEstimatesResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -155,44 +157,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetKeywordTrafficEstimatesResponse> GetKeywordTrafficEstimatesAsync(
-	IList<CampaignEstimator> campaignEstimators)
+    IList<CampaignEstimator> campaignEstimators)
 {
-	var request = new GetKeywordTrafficEstimatesRequest
-	{
-		CampaignEstimators = campaignEstimators
-	};
+    var request = new GetKeywordTrafficEstimatesRequest
+    {
+        CampaignEstimators = campaignEstimators
+    };
 
-	return (await AdInsightService.CallAsync((s, r) => s.GetKeywordTrafficEstimatesAsync(r), request));
+    return (await AdInsightService.CallAsync((s, r) => s.GetKeywordTrafficEstimatesAsync(r), request));
 }
 ```
 ```java
 static GetKeywordTrafficEstimatesResponse getKeywordTrafficEstimates(
-	ArrayOfCampaignEstimator campaignEstimators) throws RemoteException, Exception
+    ArrayOfCampaignEstimator campaignEstimators) throws RemoteException, Exception
 {
-	GetKeywordTrafficEstimatesRequest request = new GetKeywordTrafficEstimatesRequest();
+    GetKeywordTrafficEstimatesRequest request = new GetKeywordTrafficEstimatesRequest();
 
-	request.setCampaignEstimators(campaignEstimators);
+    request.setCampaignEstimators(campaignEstimators);
 
-	return AdInsightService.getService().getKeywordTrafficEstimates(request);
+    return AdInsightService.getService().getKeywordTrafficEstimates(request);
 }
 ```
 ```php
 static function GetKeywordTrafficEstimates(
-	$campaignEstimators)
+    $campaignEstimators)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
 
-	$request = new GetKeywordTrafficEstimatesRequest();
+    $request = new GetKeywordTrafficEstimatesRequest();
 
-	$request->CampaignEstimators = $campaignEstimators;
+    $request->CampaignEstimators = $campaignEstimators;
 
-	return $GLOBALS['AdInsightProxy']->GetService()->GetKeywordTrafficEstimates($request);
+    return $GLOBALS['AdInsightProxy']->GetService()->GetKeywordTrafficEstimates($request);
 }
 ```
 ```python
 response=adinsight_service.GetKeywordTrafficEstimates(
-	CampaignEstimators=CampaignEstimators)
+    CampaignEstimators=CampaignEstimators)
 ```
 
 ## Requirements

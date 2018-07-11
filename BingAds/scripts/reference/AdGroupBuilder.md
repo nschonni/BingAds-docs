@@ -25,12 +25,13 @@ while(campaignIterator.hasNext()) {
         .withName("<AD_GROUP_NAME_GOES_HERE>")
         .withStatus("PAUSED")
         .build();
-    
+
     var adGroup = adGroupOperation.getResult();
 }
 ```
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [build](#build)|[AdGroupOperation](./AdGroupOperation.md)|Returns an operation object that you use to add the ad group to the campaign.
@@ -50,6 +51,7 @@ while(campaignIterator.hasNext()) {
 Returns an operation object that you use to add the ad group to the campaign.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupOperation](./AdGroupOperation.md)|An operation object that you use to add the ad group to the campaign.
@@ -58,11 +60,13 @@ Returns an operation object that you use to add the ad group to the campaign.
 Sets the ad group's bidding strategy. 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 biddingStrategy|string|The bidding strategy to apply to the ad group. The following are the possible case-sensitive values.<ul><li>MANUAL_CPC</li></ul>For information about these strategies, see [Bid Strategy Types](/bingads/guides/budget-bid-strategies#bidstrategytypes).
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupBuilder](./AdGroupBuilder.md)|Ad group builder with the bidding strategy applied.
@@ -74,11 +78,13 @@ Specifies the bid amount to use when the keyword matches the user's search term 
 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 cpc|double|The CPC bid to apply to the ad group. The account's currency determines the minimum and maximum bid values. For more information, see [Bid and budget currencies](/bingads/guides/currencies#bidandbudget).
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupBuilder](./AdGroupBuilder.md)|Ad group builder with the CPC bid applied.
@@ -89,11 +95,13 @@ Sets the ad group's custom parameters to use in final URLs or tracking templates
 [!INCLUDE[custom-parameters](../includes/custom-parameters.md)]
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 customParameters|Object|The custom parameters to apply to the ad group. Specify the parameters as a map of key-value pairs.<br /><br />For example, `{key1: 'value1', key2: 'value2', key3: 'value3'}`, where key is the custom parameter's name and value is the parameter's value.<br /><br />The key and value may not exceed 60 and 200 bytes, respectively.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupBuilder](./AdGroupBuilder.md)|Ad group builder with the custom parameters applied.
@@ -103,11 +111,13 @@ customParameters|Object|The custom parameters to apply to the ad group. Specify 
 Sets the date when you want ads in the ad group to stop serving. Call this method only if you want ads in the group to stop serving on a specific date.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 endDate|string|The date when you want ads in the ad group to stop serving. Specify the date in the form, YYYYMMDD.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupBuilder](./AdGroupBuilder.md)|Ad group builder with the end date applied.
@@ -116,11 +126,13 @@ endDate|string|The date when you want ads in the ad group to stop serving. Speci
 Sets the date when you want ads in the ad group to stop serving. Call this method only if you want ads in the group to stop serving on a specific date.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 endDate|Object|The date when you want ads in the ad group to stop serving. Specify the date using an object with the following fields:<br /><ul><li>year</li><li>month</li><li>day</li></ul><br />For example: `var date = {year: 2018, month: 5, day: 13};`<br /><br />The month is one-based where 1 is January and 12 is December.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupBuilder](./AdGroupBuilder.md)|Ad group builder with the end date applied.
@@ -133,11 +145,13 @@ By default, the ad group inherits the language from its parent campaign. Specify
 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 language|string|The language used by ads in the ad group. For example, English. The string is case insensitive. Do not use a two-character language code. For a list of supported languages, see [Ad Languages](/bingads/guides/ad-languages#adlanguage).
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupBuilder](./AdGroupBuilder.md)|Ad group builder with the language applied.
@@ -146,11 +160,13 @@ language|string|The language used by ads in the ad group. For example, English. 
 Sets the ad group's name.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 name|string|The Ad group's name. The name is required, may contain a maximum of 256 characters, and must be unique amongst all active ad groups within the campaign.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupBuilder](./AdGroupBuilder.md)|Ad group builder with the name applied.
@@ -161,11 +177,13 @@ name|string|The Ad group's name. The name is required, may contain a maximum of 
 Sets the date when you want ads in the ad group to start serving. Call this method only if you want ads in the group to start serving on a specific date; otherwise, ads start serving immediately.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 endDate|string|The date when you want ads in the ad group to start serving. Specify the date in the form, YYYYMMDD.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupBuilder](./AdGroupBuilder.md)|Ad group builder with the start date applied.
@@ -174,11 +192,13 @@ endDate|string|The date when you want ads in the ad group to start serving. Spec
 Sets the date when you want ads in the ad group to start serving. Call this method only if you want ads in the group to start serving on a specific date; otherwise, ads start serving immediately.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 endDate|Object|The date when you want ads in the ad group to start serving. Specify the date using an object with the following fields:<br /><ul><li>year</li><li>month</li><li>day</li></ul><br />For example: `var date = {year: 2018, month: 5, day: 13};`<br /><br />The month is one-based where 1 is January and 12 is December.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupBuilder](./AdGroupBuilder.md)|Ad group builder with the start date applied.
@@ -188,11 +208,13 @@ endDate|Object|The date when you want ads in the ad group to start serving. Spec
 Sets the ad group's status. 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 status|String|The ad group's status. The following are the possible case-sensitive values. <br/><ul><li>ENABLED</li><li>PAUSED</li><li>REMOVED</li></ul>The default is PAUSED. 
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupBuilder](./AdGroupBuilder.md)|Ad group builder with the status applied.
@@ -204,11 +226,13 @@ Sets the tracking template used by this ad group.
 [!INCLUDE[tracking-templates](../includes/tracking-templates.md)]
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 trackingTemplate|string|Tracking template to use with the ad group.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroupBuilder](./AdGroupBuilder.md)|Ad group builder with the tracking template applied.

@@ -23,6 +23,7 @@ Defines a media meta data object. The meta data includes download Urls for one o
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="id"></a>Id|The system identifier of the media meta data.|**long**|

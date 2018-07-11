@@ -27,6 +27,7 @@ Defines the possible age range values that you can use to target ads to People.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="eighteentotwentyfour"></a>EighteenToTwentyFour|People from the ages of 18 through 24 years.|

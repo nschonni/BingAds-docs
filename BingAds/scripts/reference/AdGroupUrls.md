@@ -26,6 +26,7 @@ var adGroupSelector = BingAdsApp.adGroups();
 ```
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [clearTrackingTemplate](#cleartrackingtemplate)|void|Removes the tracking template from this ad group.
@@ -38,6 +39,7 @@ var adGroupSelector = BingAdsApp.adGroups();
 Removes the tracking template from this ad group. For information about tracking templates, see [Tracking Templates](/bingads/guides/url-tracking-upgraded-urls#trackingtemplatevalidation).
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -48,6 +50,7 @@ Returns the ad group's custom parameters.
 [!INCLUDE[custom-parameters](../includes/custom-parameters.md)]
 
 ### Returns
+
 |Type|Description|
 |-|-
 Object|A map of the ad group's custom parameters.<br /><br />For example, `{key1: 'value1', key2: 'value2', key3: 'value3'}`, where key is the name of the custom parameter and value is the parameter's value.
@@ -58,6 +61,7 @@ Returns the ad group's tracking template.
 [!INCLUDE[tracking-templates](../includes/tracking-templates.md)]
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|The ad group's tracking template.
@@ -75,11 +79,13 @@ To clear the custom parameters from the ad group, pass an empty object (for exam
 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 customParameters|Object|A map of custom parameters to use in the ad group.<br /><br />For example, `{key1: 'value1', key2: 'value2', key3: 'value3'}`, where key is the name of the custom parameter and value is the parameter's value. The parameter's name may contain only alphanumeric characters and the parameter's value may not contain white space. The name and value may not exceed 60 and 200 bytes, respectively.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -90,11 +96,13 @@ Sets the tracking template to use with this ad group.
 [!INCLUDE[tracking-templates](../includes/tracking-templates.md)]
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 trackingTemplate|string|The tracking template to use with this ad group.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.

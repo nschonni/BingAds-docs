@@ -29,6 +29,7 @@ The *ApplyOfflineConversionsRequest* object defines the [body](#request-body) an
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="offlineconversions"></a>OfflineConversions|The list of offline conversions for the account.<br /><br />You can add a maximum of 1,000 offline conversions per service request.<br/><br/>Each offline conversion needs to be associated to a single click ID. A single click ID can, however, be associated with multiple conversion goals and also be associated with the same goal multiple times, as long as the conversion time is different. Also, the same conversion can't be applied more than once. If you send Bing Ads duplicates, the first instance will be used and the others will be ignored.|[OfflineConversion](offlineconversion.md) array|
@@ -40,6 +41,7 @@ The *ApplyOfflineConversionsRequest* object defines the [body](#request-body) an
 The *ApplyOfflineConversionsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -121,44 +123,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<ApplyOfflineConversionsResponse> ApplyOfflineConversionsAsync(
-	IList<OfflineConversion> offlineConversions)
+    IList<OfflineConversion> offlineConversions)
 {
-	var request = new ApplyOfflineConversionsRequest
-	{
-		OfflineConversions = offlineConversions
-	};
+    var request = new ApplyOfflineConversionsRequest
+    {
+        OfflineConversions = offlineConversions
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.ApplyOfflineConversionsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.ApplyOfflineConversionsAsync(r), request));
 }
 ```
 ```java
 static ApplyOfflineConversionsResponse applyOfflineConversions(
-	ArrayOfOfflineConversion offlineConversions) throws RemoteException, Exception
+    ArrayOfOfflineConversion offlineConversions) throws RemoteException, Exception
 {
-	ApplyOfflineConversionsRequest request = new ApplyOfflineConversionsRequest();
+    ApplyOfflineConversionsRequest request = new ApplyOfflineConversionsRequest();
 
-	request.setOfflineConversions(offlineConversions);
+    request.setOfflineConversions(offlineConversions);
 
-	return CampaignManagementService.getService().applyOfflineConversions(request);
+    return CampaignManagementService.getService().applyOfflineConversions(request);
 }
 ```
 ```php
 static function ApplyOfflineConversions(
-	$offlineConversions)
+    $offlineConversions)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new ApplyOfflineConversionsRequest();
+    $request = new ApplyOfflineConversionsRequest();
 
-	$request->OfflineConversions = $offlineConversions;
+    $request->OfflineConversions = $offlineConversions;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->ApplyOfflineConversions($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->ApplyOfflineConversions($request);
 }
 ```
 ```python
 response=campaignmanagement_service.ApplyOfflineConversions(
-	OfflineConversions=OfflineConversions)
+    OfflineConversions=OfflineConversions)
 ```
 
 ## Requirements

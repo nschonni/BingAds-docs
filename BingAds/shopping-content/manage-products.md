@@ -120,14 +120,14 @@ An offer must include the following fields:
 
 The `channel`, `contentLanguage`, `targetCountry`, and `offerId` are used to generate the product ID. Because these fields are used to generate the ID, you may not update them. The product ID is case sensitive; the ID will use the same casing that you used to specify `channel`, `contentLanguage`, `targetCountry`, and `offerId`. 
 
-> [!CAUTION] 
+> [!CAUTION]
 > Be sure to use the same casing for `channel`, `contentLanguage`, `targetCountry`, and `offerId` because you can effectively add the same product multiple times if the casing is different.  
 
 The following fields are also required if the manufacturer assigned values.
 
-  - [brand](~/shopping-content/products-resource.md) 
-  - [gtin](~/shopping-content/products-resource.md) 
-  - [mpn](~/shopping-content/products-resource.md)  
+- [brand](~/shopping-content/products-resource.md) 
+- [gtin](~/shopping-content/products-resource.md) 
+- [mpn](~/shopping-content/products-resource.md)  
 
 You must specify the values if known. If you do not specify any of them, you must set the [identifierExists](~/shopping-content/products-resource.md) field to **false**. The default is **true**.
 

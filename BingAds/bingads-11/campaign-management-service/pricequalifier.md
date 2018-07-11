@@ -24,6 +24,7 @@ Defines price qualifiers for price ad extensions.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="average"></a>Average|The price of the [PriceAdExtension](priceadextension.md) is prefixed with price qualifier text *Average*, for example *Average $9.99*.|

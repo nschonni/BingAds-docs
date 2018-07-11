@@ -19,17 +19,18 @@ For information about creating a QueryControl message, see [Creating a QueryCont
 
 > [!NOTE]
 > Bing does not support all QueryControl XSD elements. This topic includes only those elements and attributes that Bing supports. Bing ignores all other elements and attributes. 
-
-
+> 
+> 
 > [!NOTE]
 > The elements must be specified in the order defined by the QueryControl XSD (and as listed in this topic).
 
 ----
 
- 
+
 <a name="querycontrol" /> 
 ## QueryControl
 Defines the root element of a QueryControl message.
+
 
 |Element|Description|Children
 |-|-|-
@@ -40,6 +41,7 @@ Defines the root element of a QueryControl message.
 ## QueryControl Type
 Defines a QueryControl message. 
 
+
 |Element|Description|Children
 |-|-|-
 |ItineraryCapabilities|The parent object that contains the default settings and overrides for pull requests. |[ItineraryCapabilities Type](#itinerarycapabilitiestype)
@@ -48,6 +50,7 @@ Defines a QueryControl message.
 <a name="itinerarycapabilitiestype" /> 
 ## ItineraryCapabilities Type
 Defines the object that contains the default settings and overrides for pull requests. 
+
 
 |Element|Description|Children
 |-|-|-
@@ -59,6 +62,7 @@ Defines the object that contains the default settings and overrides for pull req
 <a name="defaultitinerarycapability" /> 
 ## defaultItineraryCapability Type
 Defines the default settings for pull requests. 
+
 
 |Element|Description|Children
 |-|-|-
@@ -75,6 +79,7 @@ Defines the default settings for pull requests.
 <a name="propertycapabilityoverride" /> 
 ## propertyCapabilityOverride Type
 Defines the pull request settings that override the default settings for one or more hotels. 
+
 
 |Element|Description|Children
 |-|-|-

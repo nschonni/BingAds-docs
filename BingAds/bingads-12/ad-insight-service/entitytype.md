@@ -47,6 +47,7 @@ Defines the entity types for retrieving auction insights.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="account"></a>Account|Request account level auction insight data.|

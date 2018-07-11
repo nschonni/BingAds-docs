@@ -22,6 +22,7 @@ The *AddListItemsToSharedListRequest* object defines the [body](#request-body) a
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="listitems"></a>ListItems|The negative keywords to add to the negative keyword list.<br /><br />The list can contain a maximum of 5,000 items.|[SharedListItem](sharedlistitem.md) array|
@@ -34,6 +35,7 @@ The *AddListItemsToSharedListRequest* object defines the [body](#request-body) a
 The *AddListItemsToSharedListResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -129,51 +131,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<AddListItemsToSharedListResponse> AddListItemsToSharedListAsync(
-	IList<SharedListItem> listItems,
-	SharedList sharedList)
+    IList<SharedListItem> listItems,
+    SharedList sharedList)
 {
-	var request = new AddListItemsToSharedListRequest
-	{
-		ListItems = listItems,
-		SharedList = sharedList
-	};
+    var request = new AddListItemsToSharedListRequest
+    {
+        ListItems = listItems,
+        SharedList = sharedList
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.AddListItemsToSharedListAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.AddListItemsToSharedListAsync(r), request));
 }
 ```
 ```java
 static AddListItemsToSharedListResponse addListItemsToSharedList(
-	ArrayOfSharedListItem listItems,
-	SharedList sharedList) throws RemoteException, Exception
+    ArrayOfSharedListItem listItems,
+    SharedList sharedList) throws RemoteException, Exception
 {
-	AddListItemsToSharedListRequest request = new AddListItemsToSharedListRequest();
+    AddListItemsToSharedListRequest request = new AddListItemsToSharedListRequest();
 
-	request.setListItems(listItems);
-	request.setSharedList(sharedList);
+    request.setListItems(listItems);
+    request.setSharedList(sharedList);
 
-	return CampaignManagementService.getService().addListItemsToSharedList(request);
+    return CampaignManagementService.getService().addListItemsToSharedList(request);
 }
 ```
 ```php
 static function AddListItemsToSharedList(
-	$listItems,
-	$sharedList)
+    $listItems,
+    $sharedList)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new AddListItemsToSharedListRequest();
+    $request = new AddListItemsToSharedListRequest();
 
-	$request->ListItems = $listItems;
-	$request->SharedList = $sharedList;
+    $request->ListItems = $listItems;
+    $request->SharedList = $sharedList;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->AddListItemsToSharedList($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->AddListItemsToSharedList($request);
 }
 ```
 ```python
 response=campaignmanagement_service.AddListItemsToSharedList(
-	ListItems=ListItems,
-	SharedList=SharedList)
+    ListItems=ListItems,
+    SharedList=SharedList)
 ```
 
 ## Requirements

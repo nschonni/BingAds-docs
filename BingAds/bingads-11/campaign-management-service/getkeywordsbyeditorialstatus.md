@@ -19,6 +19,7 @@ The *GetKeywordsByEditorialStatusRequest* object defines the [body](#request-bod
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupid"></a>AdGroupId|The identifier of the ad group that contains the keywords to retrieve.|**long**|
@@ -32,6 +33,7 @@ The *GetKeywordsByEditorialStatusRequest* object defines the [body](#request-bod
 The *GetKeywordsByEditorialStatusResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -147,58 +149,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetKeywordsByEditorialStatusResponse> GetKeywordsByEditorialStatusAsync(
-	long adGroupId,
-	KeywordEditorialStatus editorialStatus,
-	KeywordAdditionalField? returnAdditionalFields)
+    long adGroupId,
+    KeywordEditorialStatus editorialStatus,
+    KeywordAdditionalField? returnAdditionalFields)
 {
-	var request = new GetKeywordsByEditorialStatusRequest
-	{
-		AdGroupId = adGroupId,
-		EditorialStatus = editorialStatus,
-		ReturnAdditionalFields = returnAdditionalFields
-	};
+    var request = new GetKeywordsByEditorialStatusRequest
+    {
+        AdGroupId = adGroupId,
+        EditorialStatus = editorialStatus,
+        ReturnAdditionalFields = returnAdditionalFields
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetKeywordsByEditorialStatusAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetKeywordsByEditorialStatusAsync(r), request));
 }
 ```
 ```java
 static GetKeywordsByEditorialStatusResponse getKeywordsByEditorialStatus(
-	java.lang.Long adGroupId,
-	KeywordEditorialStatus editorialStatus,
-	ArrayList<KeywordAdditionalField> returnAdditionalFields) throws RemoteException, Exception
+    java.lang.Long adGroupId,
+    KeywordEditorialStatus editorialStatus,
+    ArrayList<KeywordAdditionalField> returnAdditionalFields) throws RemoteException, Exception
 {
-	GetKeywordsByEditorialStatusRequest request = new GetKeywordsByEditorialStatusRequest();
+    GetKeywordsByEditorialStatusRequest request = new GetKeywordsByEditorialStatusRequest();
 
-	request.setAdGroupId(adGroupId);
-	request.setEditorialStatus(editorialStatus);
-	request.setReturnAdditionalFields(returnAdditionalFields);
+    request.setAdGroupId(adGroupId);
+    request.setEditorialStatus(editorialStatus);
+    request.setReturnAdditionalFields(returnAdditionalFields);
 
-	return CampaignManagementService.getService().getKeywordsByEditorialStatus(request);
+    return CampaignManagementService.getService().getKeywordsByEditorialStatus(request);
 }
 ```
 ```php
 static function GetKeywordsByEditorialStatus(
-	$adGroupId,
-	$editorialStatus,
-	$returnAdditionalFields)
+    $adGroupId,
+    $editorialStatus,
+    $returnAdditionalFields)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetKeywordsByEditorialStatusRequest();
+    $request = new GetKeywordsByEditorialStatusRequest();
 
-	$request->AdGroupId = $adGroupId;
-	$request->EditorialStatus = $editorialStatus;
-	$request->ReturnAdditionalFields = $returnAdditionalFields;
+    $request->AdGroupId = $adGroupId;
+    $request->EditorialStatus = $editorialStatus;
+    $request->ReturnAdditionalFields = $returnAdditionalFields;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetKeywordsByEditorialStatus($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetKeywordsByEditorialStatus($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetKeywordsByEditorialStatus(
-	AdGroupId=AdGroupId,
-	EditorialStatus=EditorialStatus,
-	ReturnAdditionalFields=ReturnAdditionalFields)
+    AdGroupId=AdGroupId,
+    EditorialStatus=EditorialStatus,
+    ReturnAdditionalFields=ReturnAdditionalFields)
 ```
 
 ## Requirements

@@ -10,16 +10,16 @@ description: Defines the base object of an ad extension.
 Defines the base object of an ad extension.
 
 Do not try to instantiate an *AdExtension*. You can create one or more following objects that derive from it.
--   [AppAdExtension](appadextension.md)
--   [CallAdExtension](calladextension.md)
--   [CalloutAdExtension](calloutadextension.md)
--   [ImageAdExtension](imageadextension.md)
--   [LocationAdExtension](locationadextension.md)
--   [PriceAdExtension](priceadextension.md)
--   [ReviewAdExtension](reviewadextension.md)
--   [SiteLinksAdExtension](sitelinksadextension.md)
--   [Sitelink2AdExtension](sitelink2adextension.md)
--   [StructuredSnippetAdExtension](structuredsnippetadextension.md)
+- [AppAdExtension](appadextension.md)
+- [CallAdExtension](calladextension.md)
+- [CalloutAdExtension](calloutadextension.md)
+- [ImageAdExtension](imageadextension.md)
+- [LocationAdExtension](locationadextension.md)
+- [PriceAdExtension](priceadextension.md)
+- [ReviewAdExtension](reviewadextension.md)
+- [SiteLinksAdExtension](sitelinksadextension.md)
+- [Sitelink2AdExtension](sitelink2adextension.md)
+- [StructuredSnippetAdExtension](structuredsnippetadextension.md)
 
 ## Syntax
 ```xml
@@ -37,6 +37,7 @@ Do not try to instantiate an *AdExtension*. You can create one or more following
 ```
 
 ## <a name="elements"></a>Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

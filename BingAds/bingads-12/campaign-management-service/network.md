@@ -24,6 +24,7 @@ For more information about networks and ad distribution, see the [About Ad Distr
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="inhousepromotion"></a>InHousePromotion|Reserved for future use.|

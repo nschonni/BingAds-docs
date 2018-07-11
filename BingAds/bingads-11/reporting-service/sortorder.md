@@ -21,6 +21,7 @@ Defines the ascending or descending sort order of values within the specified re
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="ascending"></a>Ascending|The results will be sorted ascending.|

@@ -22,6 +22,7 @@ The *GetNegativeKeywordsByEntityIdsRequest* object defines the [body](#request-b
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="entityids"></a>EntityIds|An array of entity identifiers to return the associated negative keywords.<br /><br /> The specified entities must all exist within the same parent entity, for example the ad group identifiers must all exist within the same campaign.<br /><br />This array can contain a maximum of 1 element.|**long** array|
@@ -35,6 +36,7 @@ The *GetNegativeKeywordsByEntityIdsRequest* object defines the [body](#request-b
 The *GetNegativeKeywordsByEntityIdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -126,58 +128,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetNegativeKeywordsByEntityIdsResponse> GetNegativeKeywordsByEntityIdsAsync(
-	IList<long> entityIds,
-	string entityType,
-	long? parentEntityId)
+    IList<long> entityIds,
+    string entityType,
+    long? parentEntityId)
 {
-	var request = new GetNegativeKeywordsByEntityIdsRequest
-	{
-		EntityIds = entityIds,
-		EntityType = entityType,
-		ParentEntityId = parentEntityId
-	};
+    var request = new GetNegativeKeywordsByEntityIdsRequest
+    {
+        EntityIds = entityIds,
+        EntityType = entityType,
+        ParentEntityId = parentEntityId
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetNegativeKeywordsByEntityIdsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetNegativeKeywordsByEntityIdsAsync(r), request));
 }
 ```
 ```java
 static GetNegativeKeywordsByEntityIdsResponse getNegativeKeywordsByEntityIds(
-	ArrayOflong entityIds,
-	java.lang.String entityType,
-	java.lang.Long parentEntityId) throws RemoteException, Exception
+    ArrayOflong entityIds,
+    java.lang.String entityType,
+    java.lang.Long parentEntityId) throws RemoteException, Exception
 {
-	GetNegativeKeywordsByEntityIdsRequest request = new GetNegativeKeywordsByEntityIdsRequest();
+    GetNegativeKeywordsByEntityIdsRequest request = new GetNegativeKeywordsByEntityIdsRequest();
 
-	request.setEntityIds(entityIds);
-	request.setEntityType(entityType);
-	request.setParentEntityId(parentEntityId);
+    request.setEntityIds(entityIds);
+    request.setEntityType(entityType);
+    request.setParentEntityId(parentEntityId);
 
-	return CampaignManagementService.getService().getNegativeKeywordsByEntityIds(request);
+    return CampaignManagementService.getService().getNegativeKeywordsByEntityIds(request);
 }
 ```
 ```php
 static function GetNegativeKeywordsByEntityIds(
-	$entityIds,
-	$entityType,
-	$parentEntityId)
+    $entityIds,
+    $entityType,
+    $parentEntityId)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetNegativeKeywordsByEntityIdsRequest();
+    $request = new GetNegativeKeywordsByEntityIdsRequest();
 
-	$request->EntityIds = $entityIds;
-	$request->EntityType = $entityType;
-	$request->ParentEntityId = $parentEntityId;
+    $request->EntityIds = $entityIds;
+    $request->EntityType = $entityType;
+    $request->ParentEntityId = $parentEntityId;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetNegativeKeywordsByEntityIds($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetNegativeKeywordsByEntityIds($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetNegativeKeywordsByEntityIds(
-	EntityIds=EntityIds,
-	EntityType=EntityType,
-	ParentEntityId=ParentEntityId)
+    EntityIds=EntityIds,
+    EntityType=EntityType,
+    ParentEntityId=ParentEntityId)
 ```
 
 ## Requirements

@@ -34,6 +34,7 @@ The [InStoreTransactionGoal](instoretransactiongoal.md) object has [Inherited El
 ### <a name="inheritedelementsconversiongoal"></a>Inherited Elements from ConversionGoal
 The [InStoreTransactionGoal](instoretransactiongoal.md) object derives from the [ConversionGoal](conversiongoal.md) object, and inherits the following elements. The descriptions below are specific to [InStoreTransactionGoal](instoretransactiongoal.md), and might not apply to other objects that inherit the same elements from the [ConversionGoal](conversiongoal.md) object.  
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="conversionwindowinminutes"></a>ConversionWindowInMinutes|The conversion window is the length of time in minutes after a click that you want to track conversions. If you set this value to 43200 minutes (30 days), then conversions that happen within 30 days after a click are tracked. Past conversions aren't affected. The minimum value supported is 1 minute, although keep in mind that a shorter conversion window will reduce the number of conversions your account records. The maximum value supported is 129600 minutes (90 days).<br/><br/>**Add:** Optional<br/>**Update:** Optional|**int**|

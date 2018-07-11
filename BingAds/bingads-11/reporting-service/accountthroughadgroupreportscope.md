@@ -24,6 +24,7 @@ The report scope includes a union of the included [AccountIds](#accountids), [Ad
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountids"></a>AccountIds|An array of account identifiers that identifies the account data to include in the report.<br/><br/>You can include a maximum of 1,000 account identifiers.|**long** array|

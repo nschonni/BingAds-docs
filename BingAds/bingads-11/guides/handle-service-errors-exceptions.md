@@ -24,9 +24,9 @@ Typically indicates that while the credentials are correct for the target enviro
 ### Code 117
 Should you exceed the service call limit, you will see the following error:
 
--   Numeric Error Code: *117*  
--   Symbolic Error Code: *CallRateExceeded*  
--   Message: *You have exceeded the number of calls that you are allowed to make in a minute. Please reduce the number of calls that you make per minute.*  
+- Numeric Error Code: *117*  
+- Symbolic Error Code: *CallRateExceeded*  
+- Message: *You have exceeded the number of calls that you are allowed to make in a minute. Please reduce the number of calls that you make per minute.*  
 
 When you observe this error, you can resubmit the request under the limit after waiting 60 seconds.
 
@@ -59,6 +59,7 @@ To get help with issues that you cannot resolve, consider posting in the [API De
 When a Bing Ads service operation fails, it will return a service fault e.g., the Customer Management service can return [ApiFault](../customer-management-service/apifault.md). The fault exceptions include one or more error objects. The error objects contain the details of why the service operation failed and a code that uniquely identifies the error. For a list of error codes, see [Bing Ads Operation Error Codes](operation-error-codes.md).
 
 Available fault and data objects vary per service. This table describes the fault model and links to error data objects for each service.
+
 
 |Service|Description|
 |-----------|---------------|
@@ -99,6 +100,7 @@ For the same reason, the use of the **using** statement is not recommended. For 
 ### <a name="net-sdk-exceptions"></a>.NET SDK Exceptions
 The Bing Ads .NET SDK exceptions abstract some of the service level exceptions. To work around most of the exceptions you can try again, and feel free to contact support if the issue persists after multiple retry attempts.
 
+
 Exception  |Namespaces  |Description  
 ---------|---------|---------     
 CouldNotDownloadResultFileException     |Microsoft.BingAds         |This exception is thrown by the internal SDK HttpService after a failed attempt to download a bulk or reporting result file. 
@@ -121,10 +123,10 @@ Unless there is a [known service issue](https://developers.bingads.microsoft.com
 
 #### <a name="net-troubleshooting-fiddler"></a>Fiddler Options
 You can follow these steps to capture the SOAP envelopes from a .NET application using a third-party tool such as [Fiddler](http://fiddler2.com/get-fiddler). 
- - After installing Fiddler, export the Fiddler certificate from the root certificate store. 
- - Click **Tools** &gt; **Fiddler Options**. 
- - Select the **HTTPS** tab, and click the **Decrypt HTTPS traffic** check box. 
- - Click **OK**, and then follow the prompts to export the Fiddler certificate. 
+- After installing Fiddler, export the Fiddler certificate from the root certificate store. 
+- Click **Tools** &gt; **Fiddler Options**. 
+- Select the **HTTPS** tab, and click the **Decrypt HTTPS traffic** check box. 
+- Click **OK**, and then follow the prompts to export the Fiddler certificate. 
 
 ## <a name="java-exceptions"><a/>Java Exceptions
 If you use the Bing Ads Java [SDK](client-libraries.md), your application should be prepared to handle Bing Ads API [service level exceptions](#faultoverview) and [Bing Ads Java SDK](#java-sdk-exceptions) exceptions described below. 
@@ -133,6 +135,7 @@ For troubleshooting Java applications, see [Java SDK Troubleshooting](#java-trou
 
 ### <a name="java-sdk-exceptions"></a>Java SDK Exceptions
 The Bing Ads Java SDK exceptions abstract some of the service level exceptions. To work around most of the exceptions you can try again, and feel free to contact support if the issue persists after multiple retry attempts.
+
 
 Exception  |Namespaces  |Description  
 ---------|---------|---------     
@@ -164,72 +167,72 @@ System.setProperty("com.sun.xml.ws.transport.http.client.HttpTransportPipe.dump"
 #### <a name="java-troubleshooting-fiddler"></a>Fiddler Options
 You can follow these steps to capture the SOAP envelopes from a Java application using a third-party tool such as [Fiddler](http://fiddler2.com/get-fiddler). 
 
-1.  After installing Fiddler, export the Fiddler certificate from the root certificate store. Click **Tools** &gt; **Fiddler Options**. Select the **HTTPS** tab, and click the **Decrypt HTTPS traffic** check box. Click **OK**, and then follow the prompts to export the Fiddler certificate.
+1. After installing Fiddler, export the Fiddler certificate from the root certificate store. Click **Tools** &gt; **Fiddler Options**. Select the **HTTPS** tab, and click the **Decrypt HTTPS traffic** check box. Click **OK**, and then follow the prompts to export the Fiddler certificate.
 
-2.  Use the following command to import the certificate into the cacert store used by Java, for example execute from PowerShell as Administrator.
+2. Use the following command to import the certificate into the cacert store used by Java, for example execute from PowerShell as Administrator.
 
-    ```powershell
-    c:\Program Files\Java\jre6\bin>keytool -importcert -v -alias "Fiddler cert" -trustcacerts -keystore "C:\Program Files\Java\jdk1.8.0_20\jre\lib\security\cacerts" -storepass changeit -file <DesktopPathGoesHere>\FiddlerRoot.cer
-    ```
+   ```powershell
+   c:\Program Files\Java\jre6\bin>keytool -importcert -v -alias "Fiddler cert" -trustcacerts -keystore "C:\Program Files\Java\jdk1.8.0_20\jre\lib\security\cacerts" -storepass changeit -file <DesktopPathGoesHere>\FiddlerRoot.cer
+   ```
 
-3.  Add the following lines to your Java application.
+3. Add the following lines to your Java application.
 
-    ```java
-    System.setProperty("https.proxyHost", "127.0.0.1");
-    System.setProperty("https.proxyPort", "8888");
-    ```
-    
+   ```java
+   System.setProperty("https.proxyHost", "127.0.0.1");
+   System.setProperty("https.proxyPort", "8888");
+   ```
+
 #### <a name="java-troubleshooting-spring-cxf"></a>Spring Framework and Apache CXF Options
 You can use the [Spring Framework](https://docs.spring.io/spring/docs/current/spring-framework-reference/html/overview.html) and [Apache CXF](http://cxf.apache.org/docs/index.html) to capture the SOAP envelopes, for example if you are running a Maven application in Eclipse.
 
-1.  Set up the development environment as described in [Get Started Using Java with Bing Ads Services](get-started-java.md). 
-   
-2.  Edit pom.xml to include the *org.springframework* dependency. The following is a complete pom.xml example.
-    ```xml
-    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-      <modelVersion>4.0.0</modelVersion>
-      <groupId>com.microsoft.bingads.examples</groupId>
-      <artifactId>BingAdsDesktopApp</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-      <dependencies>
-        <dependency>
-          <groupId>com.microsoft.bingads</groupId>
-          <artifactId>microsoft.bingads</artifactId>
-          <version>11.5.5</version>
-        </dependency>
-        <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-context</artifactId>
-          <version>4.2.6.RELEASE</version>
-        </dependency>
-      </dependencies>
-    </project>
-    ```
-    > [!NOTE]
-    > Version 11.5.5 of the Bing Ads Java SDK is included as an example. For details about the latest SDK dependency version, please see the [Bing Ads Java SDK GitHub README.md](https://github.com/BingAds/BingAds-Java-SDK).
-   
-2.  Add cxf.xml to your project, and add the following xml.
-    ```xml
-    <beans xmlns="http://www.springframework.org/schema/beans"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:cxf="http://cxf.apache.org/core"
-        xsi:schemaLocation="
-        http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
-      <cxf:bus>
-        <cxf:features>
-          <cxf:logging/>
-        </cxf:features>
-      </cxf:bus> 
-    </beans>
-    ```
-    
-3.  Add the following lines to your Java application.
+1. Set up the development environment as described in [Get Started Using Java with Bing Ads Services](get-started-java.md). 
 
-    ```java
-    System.setProperty("https.proxyHost", "127.0.0.1");
-    System.setProperty("https.proxyPort", "8888");
-    ```
+2. Edit pom.xml to include the *org.springframework* dependency. The following is a complete pom.xml example.
+   ```xml
+   <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+     <modelVersion>4.0.0</modelVersion>
+     <groupId>com.microsoft.bingads.examples</groupId>
+     <artifactId>BingAdsDesktopApp</artifactId>
+     <version>0.0.1-SNAPSHOT</version>
+     <dependencies>
+       <dependency>
+         <groupId>com.microsoft.bingads</groupId>
+         <artifactId>microsoft.bingads</artifactId>
+         <version>11.5.5</version>
+       </dependency>
+       <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-context</artifactId>
+         <version>4.2.6.RELEASE</version>
+       </dependency>
+     </dependencies>
+   </project>
+   ```
+   > [!NOTE]
+   > Version 11.5.5 of the Bing Ads Java SDK is included as an example. For details about the latest SDK dependency version, please see the [Bing Ads Java SDK GitHub README.md](https://github.com/BingAds/BingAds-Java-SDK).
+
+3. Add cxf.xml to your project, and add the following xml.
+   ```xml
+   <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cxf="http://cxf.apache.org/core"
+       xsi:schemaLocation="
+       http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+     <cxf:bus>
+       <cxf:features>
+         <cxf:logging/>
+       </cxf:features>
+     </cxf:bus> 
+   </beans>
+   ```
+
+4. Add the following lines to your Java application.
+
+   ```java
+   System.setProperty("https.proxyHost", "127.0.0.1");
+   System.setProperty("https.proxyPort", "8888");
+   ```
 
 ## <a name="php-exceptions"><a/>PHP Exceptions
 If you use the Bing Ads PHP [SDK](client-libraries.md), your application should be prepared to handle Bing Ads API [service level exceptions](#faultoverview) and [Bing Ads PHP SDK](#php-sdk-exceptions) exceptions described below. 
@@ -251,7 +254,7 @@ print $proxy->GetService()->__getLastResponse()."\n";
 The Bing Ads PHP SDK exceptions abstract some of the service level exceptions. To work around most of the exceptions you can try again, and feel free to contact support if the issue persists after multiple retry attempts.
 
 You should also handle the *OAuthTokenRequestException*, which is thrown if an error was returned from the Microsft Account authorization server. To resolve this exception you can first check the stack trace to see the error details, in case there is some action you can take to resolve the issue. For example you might have specified an invalid client ID. 
-    
+
 ## <a name="python-exceptions"><a/>Python Exceptions
 If you use the Bing Ads Python [SDK](client-libraries.md), your application should be prepared to handle Bing Ads API [service level exceptions](#faultoverview) and [Bing Ads Python SDK](#python-sdk-exceptions) exceptions described below. 
 
@@ -259,6 +262,7 @@ For troubleshooting Python applications, see [Python SDK Troubleshooting](#pytho
 
 ### <a name="python-sdk-exceptions"></a>Python SDK Exceptions
 The Bing Ads Python SDK exceptions abstract some of the service level exceptions. To work around most of the exceptions you can try again, and feel free to contact support if the issue persists after multiple retry attempts.
+
 
 Exception  |Namespaces  |Description  
 ---------|---------|---------     
@@ -274,7 +278,7 @@ ReportingException     |BingAds.V11.Reporting         |This exception is thrown 
 ReportingDownloadException     |BingAds.V11.Reporting         |This exception is thrown if timeout occurs while attempting to download a reporting results file.  
 SdkException      |BingAds         |The base exception class for the Bing Ads Python SDK. This exception is never raised.
 TimeoutException      |BingAds         |This exception is thrown if timeout occurs.
-     
+
 ### <a name="python-troubleshooting"></a>Python SDK Troubleshooting
 Unless there is a [known service issue](https://developers.bingads.microsoft.com/Support), typically when a call fails it is because the SOAP elements are invalid, out of order, or you specified the wrong credentials. To verify both cases, you should capture the request SOAP envelope. You can [contact support](http://go.microsoft.com/fwlink/?LinkId=517018) or compare your capture to the corresponding SOAP example documented for each service operation. 
 

@@ -26,6 +26,7 @@ Defines the possible values for Bing Merchant Center store sub types.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="coop"></a>CoOp|The Bing Merchant Center store supports Cooperative campaigns.|

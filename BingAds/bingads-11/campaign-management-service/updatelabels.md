@@ -19,6 +19,7 @@ The *UpdateLabelsRequest* object defines the [body](#request-body) and [header](
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="labels"></a>Labels|The list of labels that you want to update.<br /><br />The maximum size of the list is 100 items per service request.|[Label](label.md) array|
@@ -30,6 +31,7 @@ The *UpdateLabelsRequest* object defines the [body](#request-body) and [header](
 The *UpdateLabelsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -110,44 +112,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<UpdateLabelsResponse> UpdateLabelsAsync(
-	IList<Label> labels)
+    IList<Label> labels)
 {
-	var request = new UpdateLabelsRequest
-	{
-		Labels = labels
-	};
+    var request = new UpdateLabelsRequest
+    {
+        Labels = labels
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.UpdateLabelsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.UpdateLabelsAsync(r), request));
 }
 ```
 ```java
 static UpdateLabelsResponse updateLabels(
-	ArrayOfLabel labels) throws RemoteException, Exception
+    ArrayOfLabel labels) throws RemoteException, Exception
 {
-	UpdateLabelsRequest request = new UpdateLabelsRequest();
+    UpdateLabelsRequest request = new UpdateLabelsRequest();
 
-	request.setLabels(labels);
+    request.setLabels(labels);
 
-	return CampaignManagementService.getService().updateLabels(request);
+    return CampaignManagementService.getService().updateLabels(request);
 }
 ```
 ```php
 static function UpdateLabels(
-	$labels)
+    $labels)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new UpdateLabelsRequest();
+    $request = new UpdateLabelsRequest();
 
-	$request->Labels = $labels;
+    $request->Labels = $labels;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateLabels($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateLabels($request);
 }
 ```
 ```python
 response=campaignmanagement_service.UpdateLabels(
-	Labels=Labels)
+    Labels=Labels)
 ```
 
 ## Requirements

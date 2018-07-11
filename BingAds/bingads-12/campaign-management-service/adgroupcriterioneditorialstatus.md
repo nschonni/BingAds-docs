@@ -23,6 +23,7 @@ Defines the editorial review status values of an ad group criterion.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The criterion passed editorial review.|

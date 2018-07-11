@@ -28,6 +28,7 @@ Defines the possible values representing entities that are enabled for media suc
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="imageadextension"></a>ImageAdExtension|The media enabled entity is an [ImageAdExtension](imageadextension.md).<br /><br />When you call [GetMediaMetaDataByAccountId](getmediametadatabyaccountid.md) or [GetMediaMetaDataByIds](getmediametadatabyids.md), the service will return exactly three [ImageMediaRepresentation](imagemediarepresentation.md) objects with varying height and width properties.|

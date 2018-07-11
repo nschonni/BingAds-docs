@@ -22,6 +22,7 @@ Defines an object that contains the migration type and status for an account.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="migrationtype"></a>MigrationType|The migration type.|**string**|

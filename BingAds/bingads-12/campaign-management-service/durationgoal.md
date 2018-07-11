@@ -11,7 +11,7 @@ Defines a duration conversion goal. Use this type of goal to count every time so
 
 > [!TIP]
 > For an implementation overview, see the [Universal Event Tracking](../guides/universal-event-tracking.md) technical guide.
-
+> 
 > [!IMPORTANT]
 > Every time you add or update a new [DurationGoal](durationgoal.md), [EventGoal](eventgoal.md), [OfflineConversionGoal](offlineconversiongoal.md), [PagesViewedPerVisitGoal](pagesviewedpervisitgoal.md) or [UrlGoal](urlgoal.md) via either the Bing Ads web application or Campaign Management API, the *MSCLKIDAutoTaggingEnabled* value of the corresponding [AccountProperty](accountproperty.md) is set to *True* automatically. If the Scope of the goal is set to *Customer* level, then the [AccountProperty](accountproperty.md) for all accounts under the Customer will be set. 
 
@@ -30,6 +30,7 @@ Defines a duration conversion goal. Use this type of goal to count every time so
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="minimumdurationinseconds"></a>MinimumDurationInSeconds|The minimum amount of time in seconds that the user must spend on your website to track as a conversion. If you don't specify a value, the default value is 0, and the possible range is 0 through 86,399 (1 second less than a full 24 hour day).<br/><br/>**Add:** Optional<br/>**Update:** Optional|**int**|
@@ -40,6 +41,7 @@ The [DurationGoal](durationgoal.md) object has [Inherited Elements](#inheritedel
 
 ### <a name="inheritedelementsconversiongoal"></a>Inherited Elements from ConversionGoal
 The [DurationGoal](durationgoal.md) object derives from the [ConversionGoal](conversiongoal.md) object, and inherits the following elements. The descriptions below are specific to [DurationGoal](durationgoal.md), and might not apply to other objects that inherit the same elements from the [ConversionGoal](conversiongoal.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

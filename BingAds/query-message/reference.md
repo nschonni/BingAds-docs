@@ -24,10 +24,11 @@ For information about processing Query messages, see [Processing a Query Message
 
 ----
 
- 
+
 <a name="query" /> 
 ## Query
 Defines the root element of a Query message.
+
 
 |Element|Description|Children
 |-|-|-
@@ -38,6 +39,7 @@ Defines the root element of a Query message.
 <a name="querytype" /> 
 ## Query Type
 Defines a Query message. 
+
 
 |Element|Description|Children
 |-|-|-  
@@ -52,6 +54,7 @@ Defines a Query message.
 ## combinedQueryGroup
 Defines the list of properties that Bing wants data for, and the options for the way it specifies the dates in request. 
 
+
 |Element|Description|Children
 |-|-|-
 ||Bing this option if you signed up for pull requests, or you signed up for pull with hints requests and your [Hint](../hint-message/reference.md) message specifies exact itineraries (includes the \<Stay\> element).|[pointQueryGroup](#pointquerygroup)
@@ -64,6 +67,7 @@ Defines the list of properties that Bing wants data for, and the options for the
 ## pointQueryGroup
 Defines a check-in date query. 
 
+
 |Element|Description|Children
 |-|-|-
 |Checkin|The itinerary's check-in date in the form, YYYY-mm-dd. |Date
@@ -74,6 +78,7 @@ Defines a check-in date query.
 <a name="rangequerygroup" /> 
 ## rangeQueryGroup
 Defines a date range query. 
+
 
 |Element|Description|Children
 |-|-|-
@@ -88,6 +93,8 @@ Defines a date range query.
 ## PropertyListType
 Defines a list of hotels. 
 
-|Element|Description|Children
-|-|-|-
-|Propety|A hotel's ID. |String
+
+| Element |  Description  | Children |
+|---------|---------------|----------|
+| Propety | A hotel's ID. |  String  |
+

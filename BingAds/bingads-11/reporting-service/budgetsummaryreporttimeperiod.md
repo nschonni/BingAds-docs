@@ -24,6 +24,7 @@ Defines the predefined time and date range values for a budget summary report re
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="lastmonth"></a>LastMonth|A cumulative report for the previous calendar month.|

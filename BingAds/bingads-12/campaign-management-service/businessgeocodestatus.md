@@ -23,6 +23,7 @@ Defines the possible status values that indicate the progress of determining the
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="complete"></a>Complete|Successfully determined the latitude and longitude of the business.|

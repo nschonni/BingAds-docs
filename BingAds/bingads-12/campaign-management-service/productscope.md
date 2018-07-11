@@ -29,6 +29,7 @@ The *ProductScope* criterion can only be included within [BiddableCampaignCriter
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="conditions"></a>Conditions|A list of up to 7 product conditions that helps determine whether a product from the Bing Merchant Center store gets served as an ad.<br /><br /> Conditions may be returned by Bing Ads services in a different order from the order that you submitted.<br /><br />**Add:** Required<br/>**Update:** Required|[ProductCondition](productcondition.md) array|
@@ -39,6 +40,7 @@ The [ProductScope](productscope.md) object has [Inherited Elements](#inheritedel
 
 ### <a name="inheritedelementscriterion"></a>Inherited Elements from Criterion
 The [ProductScope](productscope.md) object derives from the [Criterion](criterion.md) object, and inherits the following elements. The descriptions below are specific to [ProductScope](productscope.md), and might not apply to other objects that inherit the same elements from the [Criterion](criterion.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

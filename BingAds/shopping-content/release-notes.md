@@ -52,7 +52,7 @@ This release includes the following changes:
 ## <a name="december2015"></a>December 2015
 For information about the changes to the Content API  services included in this release, see the following section.
 
--   [Catalogs Management Resource](#catalogsmanagement)
+- [Catalogs Management Resource](#catalogsmanagement)
 
 ### <a name="catalogsmanagement"></a>Catalogs Management Resource
 This release introduces the `catalogs` resource.
@@ -62,9 +62,9 @@ For an overview and reference information about the `catalogs` resource see the 
 ## <a name="october2015"></a>October 2015
 For information about the changes to the Content API  services included in this release, see the following sections.
 
--   [Status Resource](#staturesource-october2015)
+- [Status Resource](#staturesource-october2015)
 
--   [Documentation Reorganization](#docreorg-october2015)
+- [Documentation Reorganization](#docreorg-october2015)
 
 ### <a name="staturesource-october2015"></a>Status Resource
 This release introduces the `status` resource.
@@ -79,7 +79,7 @@ The Content API was previously documented as "Version 1" and "Version 2". To mak
 ## <a name="april2015"></a>April 2015
 For information about the changes to the Content API  services included in this release, see the following sections.
 
--   [Products Resource](#productresource-april2015)
+- [Products Resource](#productresource-april2015)
 
 ### <a name="productresource-april2015"></a>Products Resource
 The April 2015 release updated the `products` resource to version 9.1.

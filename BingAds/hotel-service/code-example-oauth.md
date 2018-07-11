@@ -16,7 +16,9 @@ The following examples show a simple desktop implementation used to get an acces
 
 If you use the Bing Ads .NET SDK, you should use it to get your OAuth access and refresh tokens. For information, see [Getting Started](../hotel-service/get-started.md).
 
-|Example|Description
-|-|-
-|[CodeGrantFlow](../hotel-service/code-example-code-grant-flow.md)|A browser control that gets the user's credentials, requests permissions for your application to access their resources, and returns the access and refresh tokens.
-|[Call CodeGrantFlow](../hotel-service/code-example-call-code-grant-flow.md)|A test app that shows how to call the CodeGrantFlow DLL to get an access and refresh token.
+
+|                                   Example                                   |                                                                             Description                                                                             |
+|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|      [CodeGrantFlow](../hotel-service/code-example-code-grant-flow.md)      | A browser control that gets the user's credentials, requests permissions for your application to access their resources, and returns the access and refresh tokens. |
+| [Call CodeGrantFlow](../hotel-service/code-example-call-code-grant-flow.md) |                                     A test app that shows how to call the CodeGrantFlow DLL to get an access and refresh token.                                     |
+

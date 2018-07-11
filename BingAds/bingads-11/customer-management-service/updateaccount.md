@@ -19,6 +19,7 @@ The *UpdateAccountRequest* object defines the [body](#request-body) and [header]
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="account"></a>Account|An *AdvertiserAccount* object that contains the updated account information.<br /><br />This operation overwrites the existing account data with the contents of the account object that you pass. This operation performs a full update, and not a partial update. The *Account* object must contain the time stamp value from the last time that the *Account* object was written to. To ensure that the time stamp contains the correct value, call the [GetAccount](getaccount.md) operation. You can then update the account data as appropriate, and call *UpdateAccount*.|[Account](account.md)|
@@ -30,6 +31,7 @@ The *UpdateAccountRequest* object defines the [body](#request-body) and [header]
 The *UpdateAccountResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -133,44 +135,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<UpdateAccountResponse> UpdateAccountAsync(
-	Account account)
+    Account account)
 {
-	var request = new UpdateAccountRequest
-	{
-		Account = account
-	};
+    var request = new UpdateAccountRequest
+    {
+        Account = account
+    };
 
-	return (await CustomerManagementService.CallAsync((s, r) => s.UpdateAccountAsync(r), request));
+    return (await CustomerManagementService.CallAsync((s, r) => s.UpdateAccountAsync(r), request));
 }
 ```
 ```java
 static UpdateAccountResponse updateAccount(
-	Account account) throws RemoteException, Exception
+    Account account) throws RemoteException, Exception
 {
-	UpdateAccountRequest request = new UpdateAccountRequest();
+    UpdateAccountRequest request = new UpdateAccountRequest();
 
-	request.setAccount(account);
+    request.setAccount(account);
 
-	return CustomerManagementService.getService().updateAccount(request);
+    return CustomerManagementService.getService().updateAccount(request);
 }
 ```
 ```php
 static function UpdateAccount(
-	$account)
+    $account)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
 
-	$request = new UpdateAccountRequest();
+    $request = new UpdateAccountRequest();
 
-	$request->Account = $account;
+    $request->Account = $account;
 
-	return $GLOBALS['CustomerManagementProxy']->GetService()->UpdateAccount($request);
+    return $GLOBALS['CustomerManagementProxy']->GetService()->UpdateAccount($request);
 }
 ```
 ```python
 response=customermanagement_service.UpdateAccount(
-	Account=Account)
+    Account=Account)
 ```
 
 ## Requirements

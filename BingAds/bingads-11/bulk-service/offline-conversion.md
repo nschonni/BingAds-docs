@@ -110,13 +110,13 @@ The date and time must be within the last 90 days, otherwise the operation will 
 > The value must be in Coordinated Universal Time (UTC). This differs from the time zone options when you upload offline conversions in the Bing Ads web application. For information about the format of the date and time, see the dateTime entry in [Primitive XML Data Types](https://go.microsoft.com/fwlink/?linkid=859198).
 
 To be counted by Bing Ads as an offline conversion after successful upload, the following additional requirements must be met:
--  The date and time of the conversion must be set later than the date and time of the recorded click.  
--  The date and time must be within the conversion window. The *ConversionWindowInMinutes* property of the [OfflineConversionGoal](../campaign-management-service/offlineconversiongoal.md) determines the maximum length of time in minutes after a click that conversions will be tracked.
+- The date and time of the conversion must be set later than the date and time of the recorded click.  
+- The date and time must be within the conversion window. The *ConversionWindowInMinutes* property of the [OfflineConversionGoal](../campaign-management-service/offlineconversiongoal.md) determines the maximum length of time in minutes after a click that conversions will be tracked.
 
 For example if three clicks were recorded on April 30th, if the *ConversionWindowInMinutes* of the [OfflineConversionGoal](../campaign-management-service/offlineconversiongoal.md) is equal to 30 days (43200 minutes), and if you send Bing Ads the following offline conversions on July 31st, then Bing Ads will only count the one with MicrosoftClickId=*2* as an offline conversion.
--  MicrosoftClickId=*1*; ConversionTime=*2017-04-30T17:02:35.6853793Z*  
--  MicrosoftClickId=*2*; ConversionTime=*2017-05-15T17:02:35.6853793Z*  
--  MicrosoftClickId=*3*; ConversionTime=*2017-06-15T17:02:35.6853793Z*
+- MicrosoftClickId=*1*; ConversionTime=*2017-04-30T17:02:35.6853793Z*  
+- MicrosoftClickId=*2*; ConversionTime=*2017-05-15T17:02:35.6853793Z*  
+- MicrosoftClickId=*3*; ConversionTime=*2017-06-15T17:02:35.6853793Z*
 
 The offline conversion data with MicrosoftClickId=*1* will not be uploaded since the conversion date and time is more than 90 days ago, and the offline conversion data with MicrosoftClickId=*3* will not be counted because it does not fall within the conversion window (April 30 through May 29).
 

@@ -19,6 +19,7 @@ The *GetUserRequest* object defines the [body](#request-body) and [header](#requ
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="userid"></a>UserId|The identifier of the user to get.<br /><br /> If this element is null or not provided, the response will include details for the authenticated user specified in the request header.|**long**|
@@ -30,6 +31,7 @@ The *GetUserRequest* object defines the [body](#request-body) and [header](#requ
 The *GetUserResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -135,44 +137,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetUserResponse> GetUserAsync(
-	long? userId)
+    long? userId)
 {
-	var request = new GetUserRequest
-	{
-		UserId = userId
-	};
+    var request = new GetUserRequest
+    {
+        UserId = userId
+    };
 
-	return (await CustomerManagementService.CallAsync((s, r) => s.GetUserAsync(r), request));
+    return (await CustomerManagementService.CallAsync((s, r) => s.GetUserAsync(r), request));
 }
 ```
 ```java
 static GetUserResponse getUser(
-	java.lang.Long userId) throws RemoteException, Exception
+    java.lang.Long userId) throws RemoteException, Exception
 {
-	GetUserRequest request = new GetUserRequest();
+    GetUserRequest request = new GetUserRequest();
 
-	request.setUserId(userId);
+    request.setUserId(userId);
 
-	return CustomerManagementService.getService().getUser(request);
+    return CustomerManagementService.getService().getUser(request);
 }
 ```
 ```php
 static function GetUser(
-	$userId)
+    $userId)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
 
-	$request = new GetUserRequest();
+    $request = new GetUserRequest();
 
-	$request->UserId = $userId;
+    $request->UserId = $userId;
 
-	return $GLOBALS['CustomerManagementProxy']->GetService()->GetUser($request);
+    return $GLOBALS['CustomerManagementProxy']->GetService()->GetUser($request);
 }
 ```
 ```python
 response=customermanagement_service.GetUser(
-	UserId=UserId)
+    UserId=UserId)
 ```
 
 ## Requirements

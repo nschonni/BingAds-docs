@@ -22,6 +22,7 @@ The *GetInsertionOrdersByAccountRequest* object defines the [body](#request-body
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountid"></a>AccountId|The identifier of the account that contains the insertion orders to get.|**long**|
@@ -34,6 +35,7 @@ The *GetInsertionOrdersByAccountRequest* object defines the [body](#request-body
 The *GetInsertionOrdersByAccountResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -105,51 +107,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetInsertionOrdersByAccountResponse> GetInsertionOrdersByAccountAsync(
-	long accountId,
-	IList<long> insertionOrderIds)
+    long accountId,
+    IList<long> insertionOrderIds)
 {
-	var request = new GetInsertionOrdersByAccountRequest
-	{
-		AccountId = accountId,
-		InsertionOrderIds = insertionOrderIds
-	};
+    var request = new GetInsertionOrdersByAccountRequest
+    {
+        AccountId = accountId,
+        InsertionOrderIds = insertionOrderIds
+    };
 
-	return (await CustomerBillingService.CallAsync((s, r) => s.GetInsertionOrdersByAccountAsync(r), request));
+    return (await CustomerBillingService.CallAsync((s, r) => s.GetInsertionOrdersByAccountAsync(r), request));
 }
 ```
 ```java
 static GetInsertionOrdersByAccountResponse getInsertionOrdersByAccount(
-	java.lang.Long accountId,
-	ArrayOflong insertionOrderIds) throws RemoteException, Exception
+    java.lang.Long accountId,
+    ArrayOflong insertionOrderIds) throws RemoteException, Exception
 {
-	GetInsertionOrdersByAccountRequest request = new GetInsertionOrdersByAccountRequest();
+    GetInsertionOrdersByAccountRequest request = new GetInsertionOrdersByAccountRequest();
 
-	request.setAccountId(accountId);
-	request.setInsertionOrderIds(insertionOrderIds);
+    request.setAccountId(accountId);
+    request.setInsertionOrderIds(insertionOrderIds);
 
-	return CustomerBillingService.getService().getInsertionOrdersByAccount(request);
+    return CustomerBillingService.getService().getInsertionOrdersByAccount(request);
 }
 ```
 ```php
 static function GetInsertionOrdersByAccount(
-	$accountId,
-	$insertionOrderIds)
+    $accountId,
+    $insertionOrderIds)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerBillingProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerBillingProxy'];
 
-	$request = new GetInsertionOrdersByAccountRequest();
+    $request = new GetInsertionOrdersByAccountRequest();
 
-	$request->AccountId = $accountId;
-	$request->InsertionOrderIds = $insertionOrderIds;
+    $request->AccountId = $accountId;
+    $request->InsertionOrderIds = $insertionOrderIds;
 
-	return $GLOBALS['CustomerBillingProxy']->GetService()->GetInsertionOrdersByAccount($request);
+    return $GLOBALS['CustomerBillingProxy']->GetService()->GetInsertionOrdersByAccount($request);
 }
 ```
 ```python
 response=customerbilling_service.GetInsertionOrdersByAccount(
-	AccountId=AccountId,
-	InsertionOrderIds=InsertionOrderIds)
+    AccountId=AccountId,
+    InsertionOrderIds=InsertionOrderIds)
 ```
 
 ## Requirements

@@ -154,7 +154,7 @@ Possible values are *Active* or *Deleted*.
 
 **Add:** Optional. The default value is *Active*.  
 **Update:** Not applicable. A negative site can be added and deleted, but cannot be updated.    
-**Delete:**Required. The Status must be set to *Deleted*. To delete a specific negative site, you must upload the *Status*, *Parent Id*, and *Website*. To delete all negative sites for the campaign, you only need to upload the *Status* and *Parent Id* in a single record. Then optionally you can add new negative site records to replace the deleted set. 
+<strong>Delete:</strong>Required. The Status must be set to *Deleted*. To delete a specific negative site, you must upload the *Status*, *Parent Id*, and *Website*. To delete all negative sites for the campaign, you only need to upload the *Status* and *Parent Id* in a single record. Then optionally you can add new negative site records to replace the deleted set. 
 
 ### <a name="website"></a>Website
 

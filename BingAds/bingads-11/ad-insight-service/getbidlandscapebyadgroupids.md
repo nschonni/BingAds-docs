@@ -22,6 +22,7 @@ The *GetBidLandscapeByAdGroupIdsRequest* object defines the [body](#request-body
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupbidlandscapeinputs"></a>AdGroupBidLandscapeInputs|An array of ad group identifiers with corresponding bid landscape type input. A list of suggested bid values with estimated performance statistics will be returned for each input.<br /><br />You may specify a maximum of 1,000 input elements.|[AdGroupBidLandscapeInput](adgroupbidlandscapeinput.md) array|
@@ -33,6 +34,7 @@ The *GetBidLandscapeByAdGroupIdsRequest* object defines the [body](#request-body
 The *GetBidLandscapeByAdGroupIdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -115,44 +117,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetBidLandscapeByAdGroupIdsResponse> GetBidLandscapeByAdGroupIdsAsync(
-	IList<AdGroupBidLandscapeInput> adGroupBidLandscapeInputs)
+    IList<AdGroupBidLandscapeInput> adGroupBidLandscapeInputs)
 {
-	var request = new GetBidLandscapeByAdGroupIdsRequest
-	{
-		AdGroupBidLandscapeInputs = adGroupBidLandscapeInputs
-	};
+    var request = new GetBidLandscapeByAdGroupIdsRequest
+    {
+        AdGroupBidLandscapeInputs = adGroupBidLandscapeInputs
+    };
 
-	return (await AdInsightService.CallAsync((s, r) => s.GetBidLandscapeByAdGroupIdsAsync(r), request));
+    return (await AdInsightService.CallAsync((s, r) => s.GetBidLandscapeByAdGroupIdsAsync(r), request));
 }
 ```
 ```java
 static GetBidLandscapeByAdGroupIdsResponse getBidLandscapeByAdGroupIds(
-	ArrayOfAdGroupBidLandscapeInput adGroupBidLandscapeInputs) throws RemoteException, Exception
+    ArrayOfAdGroupBidLandscapeInput adGroupBidLandscapeInputs) throws RemoteException, Exception
 {
-	GetBidLandscapeByAdGroupIdsRequest request = new GetBidLandscapeByAdGroupIdsRequest();
+    GetBidLandscapeByAdGroupIdsRequest request = new GetBidLandscapeByAdGroupIdsRequest();
 
-	request.setAdGroupBidLandscapeInputs(adGroupBidLandscapeInputs);
+    request.setAdGroupBidLandscapeInputs(adGroupBidLandscapeInputs);
 
-	return AdInsightService.getService().getBidLandscapeByAdGroupIds(request);
+    return AdInsightService.getService().getBidLandscapeByAdGroupIds(request);
 }
 ```
 ```php
 static function GetBidLandscapeByAdGroupIds(
-	$adGroupBidLandscapeInputs)
+    $adGroupBidLandscapeInputs)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
 
-	$request = new GetBidLandscapeByAdGroupIdsRequest();
+    $request = new GetBidLandscapeByAdGroupIdsRequest();
 
-	$request->AdGroupBidLandscapeInputs = $adGroupBidLandscapeInputs;
+    $request->AdGroupBidLandscapeInputs = $adGroupBidLandscapeInputs;
 
-	return $GLOBALS['AdInsightProxy']->GetService()->GetBidLandscapeByAdGroupIds($request);
+    return $GLOBALS['AdInsightProxy']->GetService()->GetBidLandscapeByAdGroupIds($request);
 }
 ```
 ```python
 response=adinsight_service.GetBidLandscapeByAdGroupIds(
-	AdGroupBidLandscapeInputs=AdGroupBidLandscapeInputs)
+    AdGroupBidLandscapeInputs=AdGroupBidLandscapeInputs)
 ```
 
 ## Requirements

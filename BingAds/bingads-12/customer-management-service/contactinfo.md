@@ -30,6 +30,7 @@ Defines the contact information for a user.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="address"></a>Address|The address of the user.<br/><br/>Note that the address BusinessName element is ignored if you try to set it for a user's contact information. The business name is only required for an [AdvertiserAccount](advertiseraccount.md) object.<br/><br/>**Add:** Required<br/>**Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.|[Address](address.md)|

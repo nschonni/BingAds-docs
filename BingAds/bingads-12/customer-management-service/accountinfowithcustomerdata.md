@@ -26,6 +26,7 @@ Defines an object that contains information that identifies an account and the c
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountid"></a>AccountId|The system generated identifier of the account.|**long**|

@@ -25,6 +25,7 @@ You may use the above Base URI or the Tenant URL shown under **Store settings** 
 
 To create the endpoints that you use to manage your product offerings, append the appropriate template to the base URI.
 
+
 |Template|HTTP Verb|Description|Resource
 |--------|---------|-----------|--------
 |`{bmcMerchantId}/products/batch`|POST|Use to perform multiple inserts (updates), gets, and deletes in a single request. The batch must not include multiple actions for the same product (for example, the request must not try to insert and delete the same product).<br/><br/>Set `{bmcMerchantId}` to the BMC store ID.|Request: [Batch](#batch)<br>Response: [Batch](#batch) 
@@ -36,6 +37,7 @@ To create the endpoints that you use to manage your product offerings, append th
 ## <a name="queryparameters"/> Query parameters
 
 The endpoints may include the following query parameters.
+
 
 |Parameter|Description|
 |---------|-----------|
@@ -52,7 +54,8 @@ The endpoints may include the following query parameters.
 
 
 The following are the request and response headers.
- 
+
+
 |Header|Description|
 |---------|---------------|
 |<a name="authtoken"/>AuthenticationToken|Request header.<br/><br/>Set this header to an OAuth authentication token. For information about getting a token, see [Authenticating your credentials](../shopping-content/get-started.md#authentication).<br/><br/>This header and the UserName header are mutually exclusive.
@@ -71,8 +74,9 @@ For user authentication, specify either the AuthenticationToken header or the Us
 ## <a name="objects"/> Request and response objects
 
 The following are the request and response objects used by the API.
- 
+
 Each object defines the JSON key name and XML element name that you use depending on the content type that you specify for the request. 
+
 
 
 |Object|Description
@@ -100,6 +104,7 @@ Each object defines the JSON key name and XML element name that you use dependin
 Defines the list of items to process in a batch request.
 **Note** that this object is used in a batch request and response. 
 
+
 |Name|Value|Type|XML element name
 |----|-----|----|--------
 |entries|An array of items to process in a batch request.<br/><br/>The maximum number of items that you can specify is 12,000. However, the maximum request size is 4 MB, so the actual number of items depends upon the number of product attributes (for example, size, color, pattern) that you include and whether you compress the data. For example, if you compress the data you may be able to specify 12,000 items, but if you don't, you may be able to specify only 2,000 items.|[Item](#item)[]|\<batch\>
@@ -108,16 +113,18 @@ Defines the list of items to process in a batch request.
 
 Defines errors that occurred for an item during batch processing.
 
+
 |Name|Value|Type|XML element name
 |----|-----|----|--------
 |errors|A list of errors that occurred while processing the item.|[Error](#error)[]|\<errors\> 
 |code|The HTTP status code or the error.|String
 |message|A message associated with the error.|String
- 
+
 
 ### <a name="error"/>Error
 
 Defines an error.
+
 
 |Name|Value|Type|XML element name
 |----|-----|----|--------
@@ -132,6 +139,7 @@ Defines an error.
 
 Defines the top-level error object for a single product insert.
 
+
 |Name|Value|Type|XML element name
 |----|-----|----|--------
 |error|A list of errors that occurred while processing the item.|[Errors](#errors)[]|\<error\> 
@@ -139,6 +147,7 @@ Defines the top-level error object for a single product insert.
 ### <a name="errors"/>Errors
 
 Defines the list of errors and warnings for an offer.
+
 
 |Name|Value|Type|XML element name
 |----|-----|----|--------
@@ -153,6 +162,7 @@ Defines the list of errors and warnings for an offer.
 
 Defines an item in a batch request.
 
+
 |Name|Value|Type|XML element name
 |----|-----|----|--------
 |batchId|A user-defined ID that identifies this item in the batch request. For example, if the batch contains 10 items, you can assign them IDs 1 through 10.|Unsigned Integer|\<entry batch_id="unsigned integer" method="string"\>
@@ -166,6 +176,7 @@ Defines an item in a batch request.
 
 Defines a product.
 For more information about the fields in this object, see [How is the feed file organized?](http://help.bingads.microsoft.com/#apex/3/en/51084/1-500).
+
 
 |JSON and XML Name|Value|Type|Required for insert
 |----|-----|----|-------------------
@@ -212,7 +223,7 @@ For more information about the fields in this object, see [How is the feed file 
 |pattern<br/><br/>\<pattern\>|The pattern or graphic print of the product (for example, plaid). The pattern is limited to 100 characters.<br/><br/>If a dress is available in multiple patterns, you would create a product for each pattern and use [itemGroupId](#itemgroupid) to group the product's variants.<br/><br/>Recommended for apparel items.|String|No
 |<a name="price" />price<br/><br/>\<price\>|The product's price. Specify the price in the currency of the target country. For information about whether to include tax in the price, see [Bing Merchant Center catalog tax policy](http://help.bingads.microsoft.com/#apex/3/en/56731/1). The price must match the price shown on the product's webpage (see [link](#link)), and must be in the range 0.01 (1 cent) through 10000000.00 (10 million).<br/><br/>However, if the following conditions are met, you may set the price to 0.0 (zero).<br/><br/>1. The [googleProductCategory](#productcategory) field is set to one of the following categories:<br/>&nbsp;&nbsp;&nbsp;&nbsp;- Electronics > Communications > Telephony > Mobile Phones<br/>&nbsp;&nbsp;&nbsp;&nbsp;- Electronics > Computers > Tablet Computers<br/>2. The [title](#title) field contains one of the following keywords:<br/>&nbsp;&nbsp;&nbsp;&nbsp;- contract<br/>&nbsp;&nbsp;&nbsp;&nbsp;- installment<br/>&nbsp;&nbsp;&nbsp;&nbsp;- lease<br/>&nbsp;&nbsp;&nbsp;&nbsp;- payment<br/><br/>The above keywords are shown in English; however, the title and keyword must be in the language of the specified market.<br/><br/>Typically, the title will contain phrasing such as "... with installment plan" or "... with contract only". The *contract* keyword may be used in all markets; however, *installment*, *payment*, and *lease* may be used only in the US market.|[ProductPrice](#productprice)|Yes
 |<a name="producttype" />productType<br/><br/>\<product_type\>|The advertiser-defined product category, which may be different from `googleProductCategory`. For example, Animals & Pet Supplies > Pet supplies > Bird Supplies > Veterinary. The list of subcategories is delimited by the greater than symbol ('>'). The field is limited to 750 characters.<br/><br/>You may specify multiple category strings that are comma delimited. For example, Costumes & Accessories > Wig Accessories > Wig Caps, Costumes & Accessories > Wig Accessories > Wig Glue.|String|No
-|<a name="promotionid" />promotionId<br/><br/>\<promotion_id\>|A comma-delimited list of IDs that identify promotions in your Promotions feed. You may specify a maximum of 10 promotion IDs.<br/><br/>The ID must contain a minimum of 1 character and a maximum of 60 characters. The allowed characters are any alphanumeric characters, a dash (-), and an underscore (_).<br/><br/>All IDs for a market (see [contentLanguage](#contentlanguage) and [targetCountry](#targetcountry)) must be unique. For example, within a market, you may not use *PROMO1* and *promo1*, but you could use *PROMO1* in the en-US market and *promo1* in the en-GB market. You may specify the same unique promotion ID on one or more products.<br/><br/>Bing will promote the product if the ID that you specify matches a promotion ID in your Promotions feed (for the same target country). The IDs match only if the casing is the same. For example, the IDs match if the product's ID is *PROMO1* and the feed's ID is *PROMO1*, but they do not match if the feed's ID is *Promo1*. <br/><br/>To ensure that the product is not accidentally promoted in the future, you should remove the IDs of promotions that have ended. Although the ID cannot be used again in a Promotions feed for 6 months after the promotion ends, if the ID is reused in another promotion after that, the product will be promoted.|String|No	
+|<a name="promotionid" />promotionId<br/><br/>\<promotion_id\>|A comma-delimited list of IDs that identify promotions in your Promotions feed. You may specify a maximum of 10 promotion IDs.<br/><br/>The ID must contain a minimum of 1 character and a maximum of 60 characters. The allowed characters are any alphanumeric characters, a dash (-), and an underscore (_).<br/><br/>All IDs for a market (see [contentLanguage](#contentlanguage) and [targetCountry](#targetcountry)) must be unique. For example, within a market, you may not use *PROMO1* and *promo1*, but you could use *PROMO1* in the en-US market and *promo1* in the en-GB market. You may specify the same unique promotion ID on one or more products.<br/><br/>Bing will promote the product if the ID that you specify matches a promotion ID in your Promotions feed (for the same target country). The IDs match only if the casing is the same. For example, the IDs match if the product's ID is *PROMO1* and the feed's ID is *PROMO1*, but they do not match if the feed's ID is *Promo1*. <br/><br/>To ensure that the product is not accidentally promoted in the future, you should remove the IDs of promotions that have ended. Although the ID cannot be used again in a Promotions feed for 6 months after the promotion ends, if the ID is reused in another promotion after that, the product will be promoted.|String|No  
 |<a name="saleprice" />salePrice<br/><br/>\<sale_price\>|The item's sale price. The sale price must be in the range 0.01 (1 cent) through 10000000.00 (10 million).<br/><br/>For sale items, set both the sale price and sale effective date (see `salePriceEffectiveDate`). If you set the sale price but not the sale price effective date, the sale price will continue to be used until the product expires or you set an effective date.<br/><br/>If the following conditions are met, you may set the sale price to 0.0 (zero).<br/><br/>1. The [googleProductCategory](#productcategory) field is set to one of the following categories:<br/>&nbsp;&nbsp;&nbsp;&nbsp;- Electronics > Communications > Telephony > Mobile Phones<br/>&nbsp;&nbsp;&nbsp;&nbsp;- Electronics > Computers > Tablet Computers<br/>2. The [title](#title) field contains one of the following keywords:<br/>&nbsp;&nbsp;&nbsp;&nbsp;- contract<br/>&nbsp;&nbsp;&nbsp;&nbsp;- installment<br/>&nbsp;&nbsp;&nbsp;&nbsp;- lease<br/>&nbsp;&nbsp;&nbsp;&nbsp;- payment<br/><br/>The above keywords are shown in English; however, the title and keyword must be in the language of the specified market.<br/><br/>Typically, the title will contain phrasing such as "... with installment plan" or "... with contract only". The *contract* keyword may be used in all markets; however, *installment*, *payment*, and *lease* may be used only in the US market.|[ProductPrice](#productprice)|No
 |<a name="salepricedate" />salePriceEffectiveDate<br/><br/>\<sale_price_effective_date\>|The sale's UTC start and end date. Specify the dates in [ISO 8601](http://www.iso.org/iso/iso8601) format. For example, 2016-04-05T08:00-08:00/2016-04-10T19:30-08:00 (use a slash ('/') to separate the start and end dates). For more information, see `salePrice`.|String|No
 |sellerName<br/><br/>\<seller_name\>|The name of the merchant that's selling the product. Used only by aggregators to identify the merchant. Aggregators are third party sites that behave on behalf of individual merchants. The products that an aggregator submits on behalf of the merchant must comply with Bing Ads policies and [Terms of Service](http://help.bingads.microsoft.com/#apex/3/en/52023/1).<br/><br/>Aggregators must set this field to the sellers name. If the caller is not an aggregator and this field is not set, it will default to the store name.<br/><br/>The name is limited to 255 characters.|String|No
@@ -234,6 +245,7 @@ For more information about the fields in this object, see [How is the feed file 
 
 Defines a custom attribute.
 
+
 |Name|Value|Type|XML element name
 |----|-----|----|----------------
 |name|Gets or sets the attribute's name.|String|\<name\>
@@ -245,6 +257,7 @@ Defines a custom attribute.
 
 Defines a group of customer attributes.
 
+
 |Name|Value|Type|XML element name
 |----|-----|----|----------------
 |attributes|Gets or sets the attributes for the group.|[ProductCustomAttribute](#productcustomattribute)|\<attributes\>
@@ -254,15 +267,17 @@ Defines a group of customer attributes.
 
 Defines a destination.
 
+
 |Name|Value|Type|XML element name
 |----|-----|----|----------------
 |intention|The following are the possible values.<br/><br/><ul><li>default</li><li>excluded</li><li>optional</li><li>required</li></ul>|String|\<intention\>
 |destinationName|Gets or sets the name of the destination.|String|\<destination_name\>
 
-	
+
 ### <a name="productprice"></a>ProductPrice
 
 Defines a product's price or sale price.
+
 
 |Name|Value|Type|XML element name
 |----|-----|----|----------------
@@ -274,6 +289,7 @@ Defines a product's price or sale price.
 Defines a list of products.
 **Note** that this is the top-level object that the List request returns.
 
+
 |Name|Value|Type|XML element name
 |----|-----|----|----------------
 |kind|Gets the object's type. This field is set to content#productsListResponse.|String|\<kind\>
@@ -283,6 +299,7 @@ Defines a list of products.
 ### <a name="productshipping"></a>ProductShipping
 
 Defines the shipping cost.
+
 
 |Name|Value|Type|XML element name
 |----|-----|----|----------------
@@ -298,6 +315,7 @@ Defines the shipping cost.
 
 Defines the item's shipping weight.
 
+
 |Name|Value|Type|XML element name
 |----|-----|----|----------------
 |unit|Gets or sets the unit of measure.|String|`unit` attribute.<br/><br/>For example, \<shipping_weight unit="oz"\>.
@@ -306,6 +324,7 @@ Defines the item's shipping weight.
 ### <a name="producttax"></a>ProductTax
 
 Defines the geographical location that determines the applicable taxes.
+
 
 |Name|Value|Type|XML element name
 |----|-----|----|----------------
@@ -320,6 +339,7 @@ Defines the geographical location that determines the applicable taxes.
 
 Defines the item's per unit price.
 
+
 |Name|Value|Type|XML element name
 |----|-----|----|----------------
 |unit|Gets or sets the unit of measure. For example, *oz* if the price is per ounce.|String|`unit` attribute.<br/><br/>For example, \<unit_pricing_measure unit="oz"\>
@@ -329,6 +349,7 @@ Defines the item's per unit price.
 ### <a name="warning"/>Warning
 
 Defines a warning message.
+
 
 |Name|Value|Type|XML element name
 |----|-----|----|--------
@@ -340,6 +361,7 @@ Defines a warning message.
 ## HTTP status codes
 
 The requests may return the following HTTP status codes.
+
 
 |Status code|Description
 |-----------|-----------

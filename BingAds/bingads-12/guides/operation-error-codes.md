@@ -1030,7 +1030,7 @@ CampaignServiceEditorialValidationError
 **Description**
 The specified entity did not pass editorial validation. Please see the *ReasonCode* element of this error object for details.
 
-> [!NOTE] 
+> [!NOTE]
 > For a list of editorial reason codes, see [Bing Ads Editorial Failure Reason Codes](editorial-failure-reason-codes.md).
 
 ***
@@ -5004,7 +5004,7 @@ Not applicable
 **Description**
 Customer Threshold can only be set by users belonging to the bill to customer.
 
-> [!NOTE] 
+> [!NOTE]
 > This error might be returned by the *UpdateAccount* operation if you do not have permissions to update the payment method. You can remove the optional fields from the update request and try again.
  
 ***
@@ -5018,7 +5018,7 @@ Not applicable
 **Description**
 Billing of the balance amount in the account failed.
 
-> [!NOTE] 
+> [!NOTE]
 > This error could occur when attempting to delete an account. Before an account can be deleted the final billing must succeed.
 
 ***
@@ -5696,7 +5696,7 @@ CampaignServiceAccountTooBigToDownload
 **Description**
 The account has more keywords than allowed per request. Please call [DownloadCampaignsByCampaignIds](../bulk-service/downloadcampaignsbycampaignids.md) to download the account's campaigns in multiple requests. The Details field contains the campaign identifiers under the account.
 
-> [!NOTE] 
+> [!NOTE]
 > Calling the [DownloadCampaignsByAccountIds](../bulk-service/downloadcampaignsbyaccountids.md) operation with an account that contains more than four million keywords will fail.
 
 ***
@@ -5798,7 +5798,7 @@ BulkServiceCampaignsTooBigToDownload
 **Description**
 The campaigns included in the download have more keywords than allowed per request. Please call [DownloadCampaignsByCampaignIds](../bulk-service/downloadcampaignsbycampaignids.md) with fewer campaigns.
 
-> [!NOTE] 
+> [!NOTE]
 > Calling the [DownloadCampaignsByCampaignIds](../bulk-service/downloadcampaignsbycampaignids.md) operation with an account that contains more than eight million keywords will fail.
 
 ***
@@ -7736,7 +7736,7 @@ CampaignServiceMediaTypeInvalid
 **Description**
 The type of media is not valid.
 
-> [!NOTE] 
+> [!NOTE]
 > This error may be thrown during a call to the [AddMedia](../campaign-management-service/addmedia.md) operation if either the media *Type* or *MediaType* is invalid.
 
 ***

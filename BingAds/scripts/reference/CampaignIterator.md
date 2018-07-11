@@ -23,6 +23,7 @@ while (campaignIterator.hasNext()) {
 ```
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [hasNext](#hasnext)|Boolean|Returns a Boolean value that indicates whether the iterator has more elements.
@@ -33,6 +34,7 @@ while (campaignIterator.hasNext()) {
 Returns a Boolean value that indicates whether the iterator has more elements.
 
 ### Returns
+
 |Type|Description|
 |-|-
 Boolean|Returns **true** if the iterator has more elements; otherwise, **false**.
@@ -41,6 +43,7 @@ Boolean|Returns **true** if the iterator has more elements; otherwise, **false**
 Advances the iterator and returns the next campaign.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [Campaign](Campaign.md)|The next campaign in the iterator.
@@ -51,6 +54,7 @@ Returns the number of campaigns that matched the selector's selection criteria.
 [!INCLUDE[reads-limit](../includes/reads-limit.md)]
 
 ### Returns:
+
 |Type|Description|
 |-|-
 int|The number of campaigns that matched the selector's selection criteria.

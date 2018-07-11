@@ -4,7 +4,7 @@ ms.service: "bing-ads"
 ms.topic: "article"
 author: "eric-urban"
 ms.author: "eur"
-description: Find out if the Bing Ads API is right for you. 
+description: Find out if the Bing Ads API is right for you.
 ---
 # Bing Ads API Overview
 Bing Ads is a pay-per-click (PPC) advertising platform used to display ads based on the keywords used in a user's search query.  For advertisers placing a large number of ads or developers building advertising tools, the Bing Ads API provides a programmatic interface to Bing Ads. Using the Bing Ads API is the most efficient way to manage many large campaigns or to integrate your marketing with other in-house systems. The Bing Ads API also supports multiple customer accounts making it easy for ad agencies to manage campaigns for many clients. Some organizations may choose a hybrid approach; using the web UI for most tasks but automating reporting or campaign optimization with the API.
@@ -12,11 +12,11 @@ Bing Ads is a pay-per-click (PPC) advertising platform used to display ads based
 ## <a name="who"></a>Who should use the Bing Ads API?
 You should consider using the Bing Ads API if your business model resembles the following:
 
--   You are a direct advertiser managing your own ad spend and you want to integrate our PPC marketing with your internal inventory management or conversion tracking systems. For more information, see [Management Model for Direct Advertisers](management-model-direct-advertisers.md).  
--   You are a tools vendor developing advertising management solutions for advertisers or agencies. For more information, see [Management Model for Tool Providers](management-model-tool-providers.md).  
--   You are an advertising agency and manage ad campaigns for many clients. For more information, see [Management Model for Agencies](management-model-agencies.md).  
--   You are a reseller and want to build Bing Ads applications to manage the campaigns of your advertising clients. For more information, see [Management Model for Resellers](management-model-resellers.md).  
-For [Customer Accounts](customer-accounts.md), you should use the [Customer Management](../customer-management-service/customer-management-service-reference.md) service.  
+- You are a direct advertiser managing your own ad spend and you want to integrate our PPC marketing with your internal inventory management or conversion tracking systems. For more information, see [Management Model for Direct Advertisers](management-model-direct-advertisers.md).  
+- You are a tools vendor developing advertising management solutions for advertisers or agencies. For more information, see [Management Model for Tool Providers](management-model-tool-providers.md).  
+- You are an advertising agency and manage ad campaigns for many clients. For more information, see [Management Model for Agencies](management-model-agencies.md).  
+- You are a reseller and want to build Bing Ads applications to manage the campaigns of your advertising clients. For more information, see [Management Model for Resellers](management-model-resellers.md).  
+  For [Customer Accounts](customer-accounts.md), you should use the [Customer Management](../customer-management-service/customer-management-service-reference.md) service.  
 
 ## <a name="where"></a>Where your ads will appear
 When you advertise using Bing Ads, your search ads can appear on the search results page on websites throughout the world. These sites can include Bing, AOL, and Yahoo owned and operated sites as well as Bing, AOL, and Yahoo syndicated search partner sites. (Syndicated search partner sites are sites that use Bing and Yahoo search results.) For more information, see [About ad distribution](https://help.bingads.microsoft.com/#apex/3/en/50871/0). 
@@ -59,14 +59,15 @@ You can sign up for the monthly newsletter via the [News](https://developers.bin
 
 ## <a name="navigatecontent"></a>Next steps and navigating the content
 
-|Topic|Description|
-|---------|---------------|
-|[Entity Hierarchy and Limits](entity-hierarchy-limits.md)|Refer to this guide for a high level view of system limits for Bing Ads entities.|
-|[FAQ](faq.md)|This article contains answers to some frequently asked questions about the Bing Ads API.|
-|[Get Started With the Bing Ads API](get-started.md)|To use the API, you will first need a Bing Ads developer token and valid user credentials. Learn how to get developer credentials and how to write your first application for example, in C#, Java, PHP, or Python.|
-|[Sandbox](sandbox.md)|You may test your application in the Bing Ads sandbox environment before deploying it to the production environment.|
-|[Client Libraries](client-libraries.md)|You can develop Bing Ads applications with any programming language that supports web services. The Bing Ads Software Development Kits (SDK) enhance the experience of developing Bing Ads applications with .NET, Java, and Python languages.|
-|[Code Examples](code-examples.md)|Jump start your development by viewing or using the examples provided in C#, Java, PHP, and Python.|
-|[Technical Guides](technical-guides.md)|Learn about how to integrate core advertising solutions using Bing Ads services.|
-|[API Reference](reference.md)|Browse programming elements such as service operations, data objects, and value sets for each Bing Ads web service.|
-|[Release Notes](release-notes.md)|Stay informed about the changes to the Bing Ads services for each release.|
+|                           Topic                           |                                                                                                                  Description                                                                                                                   |
+|-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Entity Hierarchy and Limits](entity-hierarchy-limits.md) |                                                                               Refer to this guide for a high level view of system limits for Bing Ads entities.                                                                                |
+|                       [FAQ](faq.md)                       |                                                                            This article contains answers to some frequently asked questions about the Bing Ads API.                                                                            |
+|    [Get Started With the Bing Ads API](get-started.md)    |              To use the API, you will first need a Bing Ads developer token and valid user credentials. Learn how to get developer credentials and how to write your first application for example, in C#, Java, PHP, or Python.               |
+|                   [Sandbox](sandbox.md)                   |                                                              You may test your application in the Bing Ads sandbox environment before deploying it to the production environment.                                                              |
+|          [Client Libraries](client-libraries.md)          | You can develop Bing Ads applications with any programming language that supports web services. The Bing Ads Software Development Kits (SDK) enhance the experience of developing Bing Ads applications with .NET, Java, and Python languages. |
+|             [Code Examples](code-examples.md)             |                                                                      Jump start your development by viewing or using the examples provided in C#, Java, PHP, and Python.                                                                       |
+|          [Technical Guides](technical-guides.md)          |                                                                                Learn about how to integrate core advertising solutions using Bing Ads services.                                                                                |
+|               [API Reference](reference.md)               |                                                              Browse programming elements such as service operations, data objects, and value sets for each Bing Ads web service.                                                               |
+|             [Release Notes](release-notes.md)             |                                                                                   Stay informed about the changes to the Bing Ads services for each release.                                                                                   |
+

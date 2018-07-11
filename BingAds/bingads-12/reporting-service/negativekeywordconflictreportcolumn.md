@@ -41,6 +41,7 @@ For a list of columns that you must include, please see the [Required Columns](#
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="accountid"></a>AccountId|The Bing Ads assigned identifier of an account.|
@@ -70,6 +71,7 @@ The report must include the following columns, and one or more of the performanc
 
 > [!NOTE]
 > The TimePeriod column is required for all aggregation types except Summary.
+
 
 |Column|
 |----------|

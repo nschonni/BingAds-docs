@@ -10,7 +10,7 @@ description: Defines the base class of a shared list item.
 Defines the base class of a shared list item.
 
 Do not try to instantiate a *SharedListItem*. You can create the following object that derives from it.
--   [NegativeKeyword](negativekeyword.md)
+- [NegativeKeyword](negativekeyword.md)
 
 ## Syntax
 ```xml
@@ -23,6 +23,7 @@ Do not try to instantiate a *SharedListItem*. You can create the following objec
 ```
 
 ## <a name="elements"></a>Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

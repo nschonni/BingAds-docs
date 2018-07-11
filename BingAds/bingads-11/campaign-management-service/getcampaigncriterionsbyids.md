@@ -19,6 +19,7 @@ The *GetCampaignCriterionsByIdsRequest* object defines the [body](#request-body)
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="campaigncriterionids"></a>CampaignCriterionIds|A list of unique identifiers that identify the campaign criterions to get.<br/><br/>You can include up to 100 campaign criterion identifiers per request.<br /><br />If this element is null, all criterions for the specified *CampaignId* will be retrieved.|**long** array|
@@ -32,6 +33,7 @@ The *GetCampaignCriterionsByIdsRequest* object defines the [body](#request-body)
 The *GetCampaignCriterionsByIdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -194,58 +196,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetCampaignCriterionsByIdsResponse> GetCampaignCriterionsByIdsAsync(
-	IList<long> campaignCriterionIds,
-	long campaignId,
-	CampaignCriterionType criterionType)
+    IList<long> campaignCriterionIds,
+    long campaignId,
+    CampaignCriterionType criterionType)
 {
-	var request = new GetCampaignCriterionsByIdsRequest
-	{
-		CampaignCriterionIds = campaignCriterionIds,
-		CampaignId = campaignId,
-		CriterionType = criterionType
-	};
+    var request = new GetCampaignCriterionsByIdsRequest
+    {
+        CampaignCriterionIds = campaignCriterionIds,
+        CampaignId = campaignId,
+        CriterionType = criterionType
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetCampaignCriterionsByIdsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetCampaignCriterionsByIdsAsync(r), request));
 }
 ```
 ```java
 static GetCampaignCriterionsByIdsResponse getCampaignCriterionsByIds(
-	ArrayOflong campaignCriterionIds,
-	java.lang.Long campaignId,
-	ArrayList<CampaignCriterionType> criterionType) throws RemoteException, Exception
+    ArrayOflong campaignCriterionIds,
+    java.lang.Long campaignId,
+    ArrayList<CampaignCriterionType> criterionType) throws RemoteException, Exception
 {
-	GetCampaignCriterionsByIdsRequest request = new GetCampaignCriterionsByIdsRequest();
+    GetCampaignCriterionsByIdsRequest request = new GetCampaignCriterionsByIdsRequest();
 
-	request.setCampaignCriterionIds(campaignCriterionIds);
-	request.setCampaignId(campaignId);
-	request.setCriterionType(criterionType);
+    request.setCampaignCriterionIds(campaignCriterionIds);
+    request.setCampaignId(campaignId);
+    request.setCriterionType(criterionType);
 
-	return CampaignManagementService.getService().getCampaignCriterionsByIds(request);
+    return CampaignManagementService.getService().getCampaignCriterionsByIds(request);
 }
 ```
 ```php
 static function GetCampaignCriterionsByIds(
-	$campaignCriterionIds,
-	$campaignId,
-	$criterionType)
+    $campaignCriterionIds,
+    $campaignId,
+    $criterionType)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetCampaignCriterionsByIdsRequest();
+    $request = new GetCampaignCriterionsByIdsRequest();
 
-	$request->CampaignCriterionIds = $campaignCriterionIds;
-	$request->CampaignId = $campaignId;
-	$request->CriterionType = $criterionType;
+    $request->CampaignCriterionIds = $campaignCriterionIds;
+    $request->CampaignId = $campaignId;
+    $request->CriterionType = $criterionType;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetCampaignCriterionsByIds($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetCampaignCriterionsByIds($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetCampaignCriterionsByIds(
-	CampaignCriterionIds=CampaignCriterionIds,
-	CampaignId=CampaignId,
-	CriterionType=CriterionType)
+    CampaignCriterionIds=CampaignCriterionIds,
+    CampaignId=CampaignId,
+    CriterionType=CriterionType)
 ```
 
 ## Requirements

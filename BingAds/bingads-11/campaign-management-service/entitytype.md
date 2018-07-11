@@ -68,6 +68,7 @@ Defines the possible types of entities.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="ad"></a>Ad|Request editorial appeal or status for ads.|

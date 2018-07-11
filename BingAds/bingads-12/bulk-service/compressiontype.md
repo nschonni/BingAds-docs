@@ -21,6 +21,7 @@ Defines the possible compression types for the file to download.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="gzip"></a>GZip|The file should be GZIP compressed.|

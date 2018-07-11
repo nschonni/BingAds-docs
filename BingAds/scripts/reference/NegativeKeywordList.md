@@ -14,6 +14,7 @@ ms.topic: "article"
 Contains the methods for adding keywords to a negative keywords list. For information about negative keyword lists, see [Negative Keywords](/bingads/guides/entity-hierarchy-limits#negativekeywords).
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [addNegativeKeyword(string keywordText)](#addnegativekeyword~string-keywordtext~)|void|Adds a keyword to the negative keywords list.
@@ -29,21 +30,23 @@ Adds a keyword to the negative keyword list. For information about negative keyw
 To specify the match type for negative keywords:
 
 - Use quotes around the keyword for **phrase match**. For example:  
-  
+
   `negativeKeywordList.addNegativeKeyword("\"shoes\"")`  
-  
+
 - Use square brackets around the keyword for **exact match**. For example:  
-  
+
   `negativeKeywordList.addNegativeKeyword("[leather shoes]")`
 
 If the keyword does not include match-type syntax, phrase match type is assumed (broad match type is not supported).
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 keywordText|String|The negative keyword's text. Negative keywords may containa maximum of 100 characters. 
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -54,22 +57,24 @@ Adds a list of keywords to the negative keyword list. For information about nega
 To specify the match type for negative keywords:
 
 - Use quotes around the keyword for **phrase match**. For example:  
-  
+
   `negativeKeywordsList.addNegativeKeywords(["\"planes\"", "\"trains\""])`.  
-  
+
 - Use square brackets around the keyword for **exact match**. For example:  
-  
+
   `negativeKeywordsList.addNegativeKeywords(["[model planes]", "[toy trains]"])`.
 
 If the keyword does not include match-type syntax, phrase match type is assumed (broad match type is not supported).
 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 keywordTexts|string[]|An array of keyword strings. The array may contain a maximum of 5,000 keywords and each keyword may contain a maximum of 100 characters.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -78,6 +83,7 @@ void|Returns nothing.
 Returns this entity's type. 
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|This entity's type (is set to NegativeKeywordList).
@@ -86,6 +92,7 @@ string|This entity's type (is set to NegativeKeywordList).
 Returns the ID that uniquely identifies this negative keyword list.
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|The ID that uniquely identifies this negative keyword list.
@@ -94,6 +101,7 @@ string|The ID that uniquely identifies this negative keyword list.
 Returns the name of this negative keyword list.
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|The name of this negative keyword list.
@@ -102,11 +110,13 @@ string|The name of this negative keyword list.
 Sets the name of this negative keyword list.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 name|string|The name for this negative keyword list. The name may contain a maximum of 255 characters.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.

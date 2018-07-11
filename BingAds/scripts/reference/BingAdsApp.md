@@ -15,6 +15,7 @@ This is the root object of Bing Ads Scripts API for single-user account. You mus
 
 ## Methods
 
+
 |Method Name|Return Type|Description|
 |-|-|-
 [adGroups](#adgroups)|[AdGroupSelector](./AdGroupSelector.md)|Returns a [selector](../concepts/selectors.md) of all ad groups in this account.
@@ -34,6 +35,7 @@ This is the root object of Bing Ads Scripts API for single-user account. You mus
 Returns a [selector](../concepts/selectors.md) of all ad groups in this account. 
 
 ### Returns
+
 
 |Type|Description|
 |-|-
@@ -56,6 +58,7 @@ Returns a [selector](../concepts/selectors.md) of all campaigns in this account.
 
 ### Returns
 
+
 |Type|Description|
 |-|-
 [CampaignSelector](./CampaignSelector.md)|Selector of all campaigns in this account. By default, the selector returns all campaigns in this account. Use the selector's methods to filter the list of campaigns.
@@ -76,6 +79,7 @@ Returns a [selector](../concepts/selectors.md) of all keywords in this account.
 
 ### Returns
 
+
 |Type|Description|
 |-|-
 [KeywordSelector](./KeywordSelector.md)|Selector of all keywords in this account. By default, the selector returns all keywords in this account. Use the selector's methods to filter the list of keywords.
@@ -86,6 +90,7 @@ Returns a [selector](../concepts/selectors.md) of all negative keyword lists in 
 
 ### Returns
 
+
 |Type|Description|
 |-|-
 [NegativeKeywordListSelector](./NegativeKeywordListSelector.md)|Selector of all negative keyword lists in this account. By default, the selector returns all negative keyword lists in this account. Use the selector's methods to filter the list of negative keyword lists.
@@ -95,6 +100,7 @@ Returns a [selector](../concepts/selectors.md) of all negative keyword lists in 
 Returns a [builder](../concepts/builders.md) that you use to add a negative keyword list to this account. 
 
 ### Returns
+
 
 |Type|Description|
 |-|-

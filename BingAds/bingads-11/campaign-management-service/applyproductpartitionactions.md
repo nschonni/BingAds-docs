@@ -19,6 +19,7 @@ The *ApplyProductPartitionActionsRequest* object defines the [body](#request-bod
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="criterionactions"></a>CriterionActions|A list of up to 5,000 *AdGroupCriterionAction* objects that each contain an *Action* element and either a [BiddableAdGroupCriterion](biddableadgroupcriterion.md) or [NegativeAdGroupCriterion](negativeadgroupcriterion.md). <br/><br/>All of the ad group criterion actions must be for the same ad group. For more information including validation rules, please see [Create a Bing Shopping Campaign with the Campaign Management Service](../guides/product-ads.md#bingshopping-campaignservice).|[AdGroupCriterionAction](adgroupcriterionaction.md) array|
@@ -30,6 +31,7 @@ The *ApplyProductPartitionActionsRequest* object defines the [body](#request-bod
 The *ApplyProductPartitionActionsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -210,44 +212,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<ApplyProductPartitionActionsResponse> ApplyProductPartitionActionsAsync(
-	IList<AdGroupCriterionAction> criterionActions)
+    IList<AdGroupCriterionAction> criterionActions)
 {
-	var request = new ApplyProductPartitionActionsRequest
-	{
-		CriterionActions = criterionActions
-	};
+    var request = new ApplyProductPartitionActionsRequest
+    {
+        CriterionActions = criterionActions
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.ApplyProductPartitionActionsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.ApplyProductPartitionActionsAsync(r), request));
 }
 ```
 ```java
 static ApplyProductPartitionActionsResponse applyProductPartitionActions(
-	ArrayOfAdGroupCriterionAction criterionActions) throws RemoteException, Exception
+    ArrayOfAdGroupCriterionAction criterionActions) throws RemoteException, Exception
 {
-	ApplyProductPartitionActionsRequest request = new ApplyProductPartitionActionsRequest();
+    ApplyProductPartitionActionsRequest request = new ApplyProductPartitionActionsRequest();
 
-	request.setCriterionActions(criterionActions);
+    request.setCriterionActions(criterionActions);
 
-	return CampaignManagementService.getService().applyProductPartitionActions(request);
+    return CampaignManagementService.getService().applyProductPartitionActions(request);
 }
 ```
 ```php
 static function ApplyProductPartitionActions(
-	$criterionActions)
+    $criterionActions)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new ApplyProductPartitionActionsRequest();
+    $request = new ApplyProductPartitionActionsRequest();
 
-	$request->CriterionActions = $criterionActions;
+    $request->CriterionActions = $criterionActions;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->ApplyProductPartitionActions($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->ApplyProductPartitionActions($request);
 }
 ```
 ```python
 response=campaignmanagement_service.ApplyProductPartitionActions(
-	CriterionActions=CriterionActions)
+    CriterionActions=CriterionActions)
 ```
 
 ## Requirements

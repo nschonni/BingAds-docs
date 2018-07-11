@@ -9,6 +9,7 @@ description: Reference documentation for the Bing Ads Customer Billing API.
 # Customer Billing Service Reference
 The Customer Billing [service](../guides/web-service-addresses.md) defines an Application Programming Interface (API) that you can use to get billing documents, insertion orders, and monthly spend for an account.
 
+
 |Interface|Description|
 |---------|---------|
 |[Customer Billing Service Operations](customer-billing-service-operations.md)|Service operations include [GetAccountMonthlySpend](getaccountmonthlyspend.md) and [SearchInsertionOrders](searchinsertionorders.md).|

@@ -23,6 +23,7 @@ Do not try to instantiate a *RuleItem*. You can create one or more following obj
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="type"></a>Type|The type of rule item. For more information, see [Remarks](#remarks).|**string**|

@@ -22,6 +22,7 @@ Defines the possible user-determined status values of a conversion goal. These a
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The conversion goal is active.|

@@ -19,6 +19,7 @@ The *AddCampaignCriterionsRequest* object defines the [body](#request-body) and 
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="campaigncriterions"></a>CampaignCriterions|A list of criterions that help determine whether ads in each campaign get served.<br/><br/>You can include up to 100 campaign criterions per request.|[CampaignCriterion](campaigncriterion.md) array|
@@ -31,6 +32,7 @@ The *AddCampaignCriterionsRequest* object defines the [body](#request-body) and 
 The *AddCampaignCriterionsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -211,51 +213,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<AddCampaignCriterionsResponse> AddCampaignCriterionsAsync(
-	IList<CampaignCriterion> campaignCriterions,
-	CampaignCriterionType criterionType)
+    IList<CampaignCriterion> campaignCriterions,
+    CampaignCriterionType criterionType)
 {
-	var request = new AddCampaignCriterionsRequest
-	{
-		CampaignCriterions = campaignCriterions,
-		CriterionType = criterionType
-	};
+    var request = new AddCampaignCriterionsRequest
+    {
+        CampaignCriterions = campaignCriterions,
+        CriterionType = criterionType
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.AddCampaignCriterionsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.AddCampaignCriterionsAsync(r), request));
 }
 ```
 ```java
 static AddCampaignCriterionsResponse addCampaignCriterions(
-	ArrayOfCampaignCriterion campaignCriterions,
-	ArrayList<CampaignCriterionType> criterionType) throws RemoteException, Exception
+    ArrayOfCampaignCriterion campaignCriterions,
+    ArrayList<CampaignCriterionType> criterionType) throws RemoteException, Exception
 {
-	AddCampaignCriterionsRequest request = new AddCampaignCriterionsRequest();
+    AddCampaignCriterionsRequest request = new AddCampaignCriterionsRequest();
 
-	request.setCampaignCriterions(campaignCriterions);
-	request.setCriterionType(criterionType);
+    request.setCampaignCriterions(campaignCriterions);
+    request.setCriterionType(criterionType);
 
-	return CampaignManagementService.getService().addCampaignCriterions(request);
+    return CampaignManagementService.getService().addCampaignCriterions(request);
 }
 ```
 ```php
 static function AddCampaignCriterions(
-	$campaignCriterions,
-	$criterionType)
+    $campaignCriterions,
+    $criterionType)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new AddCampaignCriterionsRequest();
+    $request = new AddCampaignCriterionsRequest();
 
-	$request->CampaignCriterions = $campaignCriterions;
-	$request->CriterionType = $criterionType;
+    $request->CampaignCriterions = $campaignCriterions;
+    $request->CriterionType = $criterionType;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->AddCampaignCriterions($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->AddCampaignCriterions($request);
 }
 ```
 ```python
 response=campaignmanagement_service.AddCampaignCriterions(
-	CampaignCriterions=CampaignCriterions,
-	CriterionType=CriterionType)
+    CampaignCriterions=CampaignCriterions,
+    CriterionType=CriterionType)
 ```
 
 ## Requirements

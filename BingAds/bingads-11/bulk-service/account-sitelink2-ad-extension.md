@@ -10,7 +10,7 @@ dev_langs:
 ---
 # Account Sitelink2 Ad Extension Record - Bulk
 Defines an association record between an [Account](account.md) and a [Sitelink2 Ad Extension](sitelink2-ad-extension.md) that can be uploaded and downloaded in a bulk file. To upload or download the account or sitelink2 ad extension, use the [Account](account.md) or [Sitelink2 Ad Extension](sitelink2-ad-extension.md) record.
-	
+
 ## <a name="entitydata"></a>Attribute Fields in the Bulk File
 For a *Account Sitelink2 Ad Extension* record, the following attribute fields are available in the [Bulk File Schema](bulk-file-schema.md). 
 
@@ -52,7 +52,7 @@ var bulkAccountSitelink2AdExtension = new BulkAccountSitelink2AdExtension
         // 'Parent Id' column header in the Bulk file
         EntityId = accountIdKey,
     },
-                
+
     // 'Client Id' column header in the Bulk file
     ClientId = "ClientIdGoesHere",
     // 'Status' column header in the Bulk file
@@ -127,7 +127,7 @@ The date and time that the entity was last updated. The value is in Coordinated 
 
 ### <a name="parentid"></a>Parent Id
 The identifier of the account where this ad extension is associated or removed.
-	
+
 This bulk field maps to the *Id* field of the [Account](account.md) record. 
 
 **Add:** Read-only  
@@ -148,18 +148,20 @@ Possible values are *Active* and *Deleted*. If the ad extension is associated wi
 
 **Add:** Read-only  
 **Delete:** Required. The Status must be set to *Deleted*. 
-	
+
 ## <a name="entityperformancedata"></a>Performance Data Fields in the Bulk File
 If the [DataScope Value Set](datascope.md) element of the download request includes *EntityPerformanceData*, the download file will also include the following fields in this record.
 
-|Column Header|Description|
-|-----------------|---------------|
-|*Spend*|The cost per click (CPC) summed for each click.|
-|*Impressions*|The number of times an ad has been displayed on search results pages. Without impressions there are no clicks or conversions.|
-|*Clicks*|The number of times that the ads in the account were clicked.|
-|*CTR*|The click-through rate (CTR) is the number of times an ad was clicked, divided by the number of times the ad was shown (impressions). For example, if your ads got 50 clicks given 2,348 impressions, your CTR is 2.13 (%).<br/><br/>The formula for calculating CTR is *(Clicks / Impressions) * 100*.|
-|*Avg CPC*|The average cost per click (CPC). The total cost of all clicks on an ad divided by the number of clicks. This is the average amount you're actually charged each time your ad is clicked. For example, if you paid a total of 48.35 for 300 clicks, your average CPC is 0.16.<br/><br/>The formula for calculating the average CPC is *(Spend /Clicks)*.|
-|*Avg CPM*|The average of the cost-per-thousand impressions of the ads.<br/><br/>The value will be 0 (zero) if the corresponding ad groups do not specify the Content ad distribution medium.|
-|*Avg position*|The average position of the ad on a webpage.|
-|*Conversions*|The number of conversions. A conversion is the completion of an action by a customer after viewing your ad. The action could be purchasing your product, registering for your webinar, joining an organization, or whatever you consider your goal and best measure of the ad's success.|
-|*CPA*|The cost per conversion. The formula for calculating the cost per conversion is *(Spend / Conversions)*.<br/><br/>Only ads in campaigns that enable conversion tracking contribute to the conversion number, so unless all campaigns in the account enable conversion tracking, the number will not be accurate.|
+
+| Column Header  |                                                                                                                                                                       Description                                                                                                                                                                        |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    *Spend*     |                                                                                                                                                     The cost per click (CPC) summed for each click.                                                                                                                                                      |
+| *Impressions*  |                                                                                                              The number of times an ad has been displayed on search results pages. Without impressions there are no clicks or conversions.                                                                                                               |
+|    *Clicks*    |                                                                                                                                              The number of times that the ads in the account were clicked.                                                                                                                                               |
+|     *CTR*      |                         The click-through rate (CTR) is the number of times an ad was clicked, divided by the number of times the ad was shown (impressions). For example, if your ads got 50 clicks given 2,348 impressions, your CTR is 2.13 (%).<br/><br/>The formula for calculating CTR is *(Clicks / Impressions) \* 100*.                         |
+|   *Avg CPC*    | The average cost per click (CPC). The total cost of all clicks on an ad divided by the number of clicks. This is the average amount you're actually charged each time your ad is clicked. For example, if you paid a total of 48.35 for 300 clicks, your average CPC is 0.16.<br/><br/>The formula for calculating the average CPC is *(Spend /Clicks)*. |
+|   *Avg CPM*    |                                                                                    The average of the cost-per-thousand impressions of the ads.<br/><br/>The value will be 0 (zero) if the corresponding ad groups do not specify the Content ad distribution medium.                                                                                    |
+| *Avg position* |                                                                                                                                                       The average position of the ad on a webpage.                                                                                                                                                       |
+| *Conversions*  |                                 The number of conversions. A conversion is the completion of an action by a customer after viewing your ad. The action could be purchasing your product, registering for your webinar, joining an organization, or whatever you consider your goal and best measure of the ad's success.                                 |
+|     *CPA*      |                     The cost per conversion. The formula for calculating the cost per conversion is *(Spend / Conversions)*.<br/><br/>Only ads in campaigns that enable conversion tracking contribute to the conversion number, so unless all campaigns in the account enable conversion tracking, the number will not be accurate.                     |
+

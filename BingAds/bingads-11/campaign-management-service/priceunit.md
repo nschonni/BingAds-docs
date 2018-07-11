@@ -27,6 +27,7 @@ Defines price units for price ad extensions.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="none"></a>None|The price of the [PriceAdExtension](priceadextension.md) will not be appended with price unit text.|

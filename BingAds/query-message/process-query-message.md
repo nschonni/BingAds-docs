@@ -19,15 +19,15 @@ If you use pull requests, the query is based on the setting you specify in your 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Query>
-  <FirstDate>2017-10-20</FirstDate>
-  <LastDate>2017-10-30</LastDate>
-  <Nights>3</Nights>
+  <FirstDate>2017-10-20</FirstDate>
+  <LastDate>2017-10-30</LastDate>
+  <Nights>3</Nights>
 
-  <PropertyList>
-    <Property>223</Property>
-    <Property>256</Property>
-    <Property>289</Property>
-  </PropertyList>
+  <PropertyList>
+    <Property>223</Property>
+    <Property>256</Property>
+    <Property>289</Property>
+  </PropertyList>
 </Query>
 ``` 
 
@@ -54,9 +54,9 @@ When you get the Query message, your response should contain a [Transaction](../
     <Nights>3</Nights>
     <!-- Pricing and other elements that changed -->
   </Result>
-  
+
   . . .
-  
+
   <Result>
     <Property>223</Property>
     <Checkin>2017-10-30</Checkin>
@@ -75,9 +75,9 @@ When you get the Query message, your response should contain a [Transaction](../
     <Nights>3</Nights>
     <!-- Pricing and other elements that changed -->
   </Result>
-  
+
   . . .
-  
+
   <Result>
     <Property>256</Property>
     <Checkin>2017-10-20</Checkin>
@@ -98,7 +98,6 @@ When you get the Query message, your response should contain a [Transaction](../
   </Result>
 
   . . .
-    
 ```
 
 
@@ -106,4 +105,4 @@ When you get the Query message, your response should contain a [Transaction](../
 
 For examples that show the different types of Query messages that Bing sends if you use pull with hints request, see [Creating a Hint Message](../hint-message/create-hint-message.md).
 
- 
+

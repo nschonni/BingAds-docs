@@ -22,6 +22,7 @@ Defines the name of a user.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="firstname"></a>FirstName|The first name of the user. The first name is limited to 100 characters.<br/><br/>**Add:** Required<br/>**Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.|**string**|

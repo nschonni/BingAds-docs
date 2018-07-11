@@ -22,6 +22,7 @@ Defines conversion goal revenue models that you can use to track how much each c
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="fixedvalue"></a>FixedValue|Each time it happens, the conversion has the same value.|

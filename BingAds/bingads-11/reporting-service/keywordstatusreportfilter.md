@@ -26,6 +26,7 @@ Defines the keyword status values that you can use to filter the report data. Th
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The report will contain keywords that are active.|

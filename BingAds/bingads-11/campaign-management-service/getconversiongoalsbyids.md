@@ -22,6 +22,7 @@ The *GetConversionGoalsByIdsRequest* object defines the [body](#request-body) an
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="conversiongoalids"></a>ConversionGoalIds|A maximum of 100 identifiers of the conversion goals that you want to get. <br /><br />If *ConversionGoalIds* is null or empty, then you are effectively requesting all conversion goals of the specified types for the account. |**long** array|
@@ -34,6 +35,7 @@ The *GetConversionGoalsByIdsRequest* object defines the [body](#request-body) an
 The *GetConversionGoalsByIdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -150,51 +152,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetConversionGoalsByIdsResponse> GetConversionGoalsByIdsAsync(
-	IList<long> conversionGoalIds,
-	ConversionGoalType conversionGoalTypes)
+    IList<long> conversionGoalIds,
+    ConversionGoalType conversionGoalTypes)
 {
-	var request = new GetConversionGoalsByIdsRequest
-	{
-		ConversionGoalIds = conversionGoalIds,
-		ConversionGoalTypes = conversionGoalTypes
-	};
+    var request = new GetConversionGoalsByIdsRequest
+    {
+        ConversionGoalIds = conversionGoalIds,
+        ConversionGoalTypes = conversionGoalTypes
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetConversionGoalsByIdsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetConversionGoalsByIdsAsync(r), request));
 }
 ```
 ```java
 static GetConversionGoalsByIdsResponse getConversionGoalsByIds(
-	ArrayOflong conversionGoalIds,
-	ArrayList<ConversionGoalType> conversionGoalTypes) throws RemoteException, Exception
+    ArrayOflong conversionGoalIds,
+    ArrayList<ConversionGoalType> conversionGoalTypes) throws RemoteException, Exception
 {
-	GetConversionGoalsByIdsRequest request = new GetConversionGoalsByIdsRequest();
+    GetConversionGoalsByIdsRequest request = new GetConversionGoalsByIdsRequest();
 
-	request.setConversionGoalIds(conversionGoalIds);
-	request.setConversionGoalTypes(conversionGoalTypes);
+    request.setConversionGoalIds(conversionGoalIds);
+    request.setConversionGoalTypes(conversionGoalTypes);
 
-	return CampaignManagementService.getService().getConversionGoalsByIds(request);
+    return CampaignManagementService.getService().getConversionGoalsByIds(request);
 }
 ```
 ```php
 static function GetConversionGoalsByIds(
-	$conversionGoalIds,
-	$conversionGoalTypes)
+    $conversionGoalIds,
+    $conversionGoalTypes)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetConversionGoalsByIdsRequest();
+    $request = new GetConversionGoalsByIdsRequest();
 
-	$request->ConversionGoalIds = $conversionGoalIds;
-	$request->ConversionGoalTypes = $conversionGoalTypes;
+    $request->ConversionGoalIds = $conversionGoalIds;
+    $request->ConversionGoalTypes = $conversionGoalTypes;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetConversionGoalsByIds($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetConversionGoalsByIds($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetConversionGoalsByIds(
-	ConversionGoalIds=ConversionGoalIds,
-	ConversionGoalTypes=ConversionGoalTypes)
+    ConversionGoalIds=ConversionGoalIds,
+    ConversionGoalTypes=ConversionGoalTypes)
 ```
 
 ## Requirements

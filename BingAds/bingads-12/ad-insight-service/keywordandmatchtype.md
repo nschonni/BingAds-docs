@@ -21,6 +21,7 @@ Defines an object that contains a keyword and corresponding match types.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="keywordtext"></a>KeywordText|The keyword text.|**string**|

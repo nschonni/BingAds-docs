@@ -12,8 +12,8 @@ dev_langs:
 Defines an ad group location criterion that can be uploaded and downloaded in a bulk file.
 
 With location criterions, you can choose to show ads to potential customers in, searching for, or viewing pages about:
-*  All available countries/regions
-*  Selected cities, zip codes, metro areas (Nielsen DMA® in the United States), counties, states/provinces, and countries/regions
+* All available countries/regions
+* Selected cities, zip codes, metro areas (Nielsen DMA® in the United States), counties, states/provinces, and countries/regions
 
 Each location criterion defines a location code for the accompanying criterion bid adjustment. 
 
@@ -141,7 +141,7 @@ Used to associate records in the bulk upload file with records in the results fi
 ### <a name="id"></a>Id
 The Bing Ads unique identifier of the criterion.
 
-> [!NOTE] 
+> [!NOTE]
 > Previously with Campaign Management API version 10 it was possible to associate one target identifier with multiple campaigns and ad groups using the AddTargetsToLibrary, SetTargetToCampaign, and SetTargetToAdGroup operations. After a campaign or ad group had been disassociated from the shared target, the criterion identifier would be set to *0* (zero) in the Bulk download or Bulk upload result file. 
 
 **Add:** Read-only  

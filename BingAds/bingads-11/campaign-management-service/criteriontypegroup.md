@@ -63,6 +63,7 @@ You can use one of the criterion type group values in each [TargetSettingDetail]
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="age"></a>Age|The age criterion type group.|

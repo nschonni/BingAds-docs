@@ -19,6 +19,7 @@ The *GetBillingDocumentsRequest* object defines the [body](#request-body) and [h
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="documentids"></a>DocumentIds|A list of identifiers of the billing documents to get. To get a list of identifiers, call the [GetBillingDocumentsInfo](getbillingdocumentsinfo.md) operation.|**long** array|
@@ -31,6 +32,7 @@ The *GetBillingDocumentsRequest* object defines the [body](#request-body) and [h
 The *GetBillingDocumentsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -89,51 +91,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetBillingDocumentsResponse> GetBillingDocumentsAsync(
-	IList<long> documentIds,
-	DataType type)
+    IList<long> documentIds,
+    DataType type)
 {
-	var request = new GetBillingDocumentsRequest
-	{
-		DocumentIds = documentIds,
-		Type = type
-	};
+    var request = new GetBillingDocumentsRequest
+    {
+        DocumentIds = documentIds,
+        Type = type
+    };
 
-	return (await CustomerBillingService.CallAsync((s, r) => s.GetBillingDocumentsAsync(r), request));
+    return (await CustomerBillingService.CallAsync((s, r) => s.GetBillingDocumentsAsync(r), request));
 }
 ```
 ```java
 static GetBillingDocumentsResponse getBillingDocuments(
-	ArrayOflong documentIds,
-	DataType type) throws RemoteException, Exception
+    ArrayOflong documentIds,
+    DataType type) throws RemoteException, Exception
 {
-	GetBillingDocumentsRequest request = new GetBillingDocumentsRequest();
+    GetBillingDocumentsRequest request = new GetBillingDocumentsRequest();
 
-	request.setDocumentIds(documentIds);
-	request.setType(type);
+    request.setDocumentIds(documentIds);
+    request.setType(type);
 
-	return CustomerBillingService.getService().getBillingDocuments(request);
+    return CustomerBillingService.getService().getBillingDocuments(request);
 }
 ```
 ```php
 static function GetBillingDocuments(
-	$documentIds,
-	$type)
+    $documentIds,
+    $type)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerBillingProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerBillingProxy'];
 
-	$request = new GetBillingDocumentsRequest();
+    $request = new GetBillingDocumentsRequest();
 
-	$request->DocumentIds = $documentIds;
-	$request->Type = $type;
+    $request->DocumentIds = $documentIds;
+    $request->Type = $type;
 
-	return $GLOBALS['CustomerBillingProxy']->GetService()->GetBillingDocuments($request);
+    return $GLOBALS['CustomerBillingProxy']->GetService()->GetBillingDocuments($request);
 }
 ```
 ```python
 response=customerbilling_service.GetBillingDocuments(
-	DocumentIds=DocumentIds,
-	Type=Type)
+    DocumentIds=DocumentIds,
+    Type=Type)
 ```
 
 ## Requirements

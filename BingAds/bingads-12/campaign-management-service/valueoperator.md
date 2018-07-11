@@ -22,6 +22,7 @@ Defines the operators that can be applied to values within a conversion event go
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="equals"></a>Equals|The property should be equal to the corresponding value.|

@@ -9,6 +9,7 @@ description: Reference documentation for the Bing Ads Bulk API.
 # Bulk Service Reference
 The Bulk [service](../guides/web-service-addresses.md) defines an Application Programming Interface (API) that you can use to download and upload campaign entity data in the background.
 
+
 |Interface|Description|
 |---------|---------|
 |[Bulk Service Operations](bulk-service-operations.md)|Service operations such as [DownloadCampaignsByAccountIds](downloadcampaignsbyaccountids.md) and [GetBulkUploadUrl](getbulkuploadurl.md) can be used to download and upload campaign entity data in the background.|

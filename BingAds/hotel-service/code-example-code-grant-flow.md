@@ -286,5 +286,4 @@ namespace Content.OAuth
         public string RefreshToken { get; set; }
     }
 }
-
 ```

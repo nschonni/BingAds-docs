@@ -21,6 +21,7 @@ Defines an object that identifies an ad extension revision.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="id"></a>Id|The system-generated identifier of the ad extension.|**long**|

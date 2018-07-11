@@ -11,6 +11,7 @@ Defines the base class of a setting.
 
 Do not try to instantiate a *Setting*. You can create one or more following objects that derive from it.
 
+
 |Setting|Supported Entity|
 |-----|-----|
 |[CoOpSetting](coopsetting.md)|[AdGroup](adgroup.md)| 
@@ -28,6 +29,7 @@ Do not try to instantiate a *Setting*. You can create one or more following obje
 ```
 
 ## <a name="elements"></a>Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

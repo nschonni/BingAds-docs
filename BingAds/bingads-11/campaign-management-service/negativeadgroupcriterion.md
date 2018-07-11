@@ -29,6 +29,7 @@ The [NegativeAdGroupCriterion](negativeadgroupcriterion.md) object has [Inherite
 ### <a name="inheritedelementsadgroupcriterion"></a>Inherited Elements from AdGroupCriterion
 The [NegativeAdGroupCriterion](negativeadgroupcriterion.md) object derives from the [AdGroupCriterion](adgroupcriterion.md) object, and inherits the following elements. The descriptions below are specific to [NegativeAdGroupCriterion](negativeadgroupcriterion.md), and might not apply to other objects that inherit the same elements from the [AdGroupCriterion](adgroupcriterion.md) object.  
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupid"></a>AdGroupId|The identifier of the ad group to apply the criterion to.<br/><br/>**Add:** Required<br/>**Update:** Required|**long**|

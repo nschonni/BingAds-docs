@@ -23,6 +23,7 @@ Defines the auction insight results from calling the [GetAuctionInsightData](get
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="entries"></a>Entries|One or more auction insight entries i.e., one result per domain that you competed with in the auction.|[AuctionInsightEntry](auctioninsightentry.md) array|

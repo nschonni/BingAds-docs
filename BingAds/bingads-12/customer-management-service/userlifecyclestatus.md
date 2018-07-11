@@ -23,6 +23,7 @@ Defines the possible status values of a user.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The user is active.|

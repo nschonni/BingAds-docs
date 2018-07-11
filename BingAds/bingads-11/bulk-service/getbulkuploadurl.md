@@ -19,6 +19,7 @@ The *GetBulkUploadUrlRequest* object defines the [body](#request-body) and [head
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountid"></a>AccountId|The account identifier corresponding to the data that will be uploaded.|**long**|
@@ -31,6 +32,7 @@ The *GetBulkUploadUrlRequest* object defines the [body](#request-body) and [head
 The *GetBulkUploadUrlResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -85,51 +87,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetBulkUploadUrlResponse> GetBulkUploadUrlAsync(
-	ResponseMode responseMode,
-	long accountId)
+    ResponseMode responseMode,
+    long accountId)
 {
-	var request = new GetBulkUploadUrlRequest
-	{
-		ResponseMode = responseMode,
-		AccountId = accountId
-	};
+    var request = new GetBulkUploadUrlRequest
+    {
+        ResponseMode = responseMode,
+        AccountId = accountId
+    };
 
-	return (await BulkService.CallAsync((s, r) => s.GetBulkUploadUrlAsync(r), request));
+    return (await BulkService.CallAsync((s, r) => s.GetBulkUploadUrlAsync(r), request));
 }
 ```
 ```java
 static GetBulkUploadUrlResponse getBulkUploadUrl(
-	ResponseMode responseMode,
-	java.lang.Long accountId) throws RemoteException, Exception
+    ResponseMode responseMode,
+    java.lang.Long accountId) throws RemoteException, Exception
 {
-	GetBulkUploadUrlRequest request = new GetBulkUploadUrlRequest();
+    GetBulkUploadUrlRequest request = new GetBulkUploadUrlRequest();
 
-	request.setResponseMode(responseMode);
-	request.setAccountId(accountId);
+    request.setResponseMode(responseMode);
+    request.setAccountId(accountId);
 
-	return BulkService.getService().getBulkUploadUrl(request);
+    return BulkService.getService().getBulkUploadUrl(request);
 }
 ```
 ```php
 static function GetBulkUploadUrl(
-	$responseMode,
-	$accountId)
+    $responseMode,
+    $accountId)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['BulkProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['BulkProxy'];
 
-	$request = new GetBulkUploadUrlRequest();
+    $request = new GetBulkUploadUrlRequest();
 
-	$request->ResponseMode = $responseMode;
-	$request->AccountId = $accountId;
+    $request->ResponseMode = $responseMode;
+    $request->AccountId = $accountId;
 
-	return $GLOBALS['BulkProxy']->GetService()->GetBulkUploadUrl($request);
+    return $GLOBALS['BulkProxy']->GetService()->GetBulkUploadUrl($request);
 }
 ```
 ```python
 response=bulk_service.GetBulkUploadUrl(
-	ResponseMode=ResponseMode,
-	AccountId=AccountId)
+    ResponseMode=ResponseMode,
+    AccountId=AccountId)
 ```
 
 ## Requirements

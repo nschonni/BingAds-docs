@@ -24,6 +24,7 @@ Defines the operating system platform and URL of the app store download webpage.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="ostype"></a>OsType|Reserved for future use.|**string**|

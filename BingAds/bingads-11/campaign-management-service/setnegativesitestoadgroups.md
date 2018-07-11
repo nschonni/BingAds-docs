@@ -19,6 +19,7 @@ The *SetNegativeSitesToAdGroupsRequest* object defines the [body](#request-body)
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupnegativesites"></a>AdGroupNegativeSites|An array of [AdGroupNegativeSites](adgroupnegativesites.md) objects that identify the ad groups to update with the specified negative site URLs.<br /><br />The array can contain a maximum of 5,000 objects.<br /><br />The total number of URLs that you can specify per request for all ad groups combined is 30,000. For example, if you specify 2,500 URLs per ad group, the maximum number of [AdGroupNegativeSites](adgroupnegativesites.md) objects that you should pass is 12.|[AdGroupNegativeSites](adgroupnegativesites.md) array|
@@ -31,6 +32,7 @@ The *SetNegativeSitesToAdGroupsRequest* object defines the [body](#request-body)
 The *SetNegativeSitesToAdGroupsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -112,51 +114,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<SetNegativeSitesToAdGroupsResponse> SetNegativeSitesToAdGroupsAsync(
-	long campaignId,
-	IList<AdGroupNegativeSites> adGroupNegativeSites)
+    long campaignId,
+    IList<AdGroupNegativeSites> adGroupNegativeSites)
 {
-	var request = new SetNegativeSitesToAdGroupsRequest
-	{
-		CampaignId = campaignId,
-		AdGroupNegativeSites = adGroupNegativeSites
-	};
+    var request = new SetNegativeSitesToAdGroupsRequest
+    {
+        CampaignId = campaignId,
+        AdGroupNegativeSites = adGroupNegativeSites
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.SetNegativeSitesToAdGroupsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.SetNegativeSitesToAdGroupsAsync(r), request));
 }
 ```
 ```java
 static SetNegativeSitesToAdGroupsResponse setNegativeSitesToAdGroups(
-	java.lang.Long campaignId,
-	ArrayOfAdGroupNegativeSites adGroupNegativeSites) throws RemoteException, Exception
+    java.lang.Long campaignId,
+    ArrayOfAdGroupNegativeSites adGroupNegativeSites) throws RemoteException, Exception
 {
-	SetNegativeSitesToAdGroupsRequest request = new SetNegativeSitesToAdGroupsRequest();
+    SetNegativeSitesToAdGroupsRequest request = new SetNegativeSitesToAdGroupsRequest();
 
-	request.setCampaignId(campaignId);
-	request.setAdGroupNegativeSites(adGroupNegativeSites);
+    request.setCampaignId(campaignId);
+    request.setAdGroupNegativeSites(adGroupNegativeSites);
 
-	return CampaignManagementService.getService().setNegativeSitesToAdGroups(request);
+    return CampaignManagementService.getService().setNegativeSitesToAdGroups(request);
 }
 ```
 ```php
 static function SetNegativeSitesToAdGroups(
-	$campaignId,
-	$adGroupNegativeSites)
+    $campaignId,
+    $adGroupNegativeSites)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new SetNegativeSitesToAdGroupsRequest();
+    $request = new SetNegativeSitesToAdGroupsRequest();
 
-	$request->CampaignId = $campaignId;
-	$request->AdGroupNegativeSites = $adGroupNegativeSites;
+    $request->CampaignId = $campaignId;
+    $request->AdGroupNegativeSites = $adGroupNegativeSites;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->SetNegativeSitesToAdGroups($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->SetNegativeSitesToAdGroups($request);
 }
 ```
 ```python
 response=campaignmanagement_service.SetNegativeSitesToAdGroups(
-	CampaignId=CampaignId,
-	AdGroupNegativeSites=AdGroupNegativeSites)
+    CampaignId=CampaignId,
+    AdGroupNegativeSites=AdGroupNegativeSites)
 ```
 
 ## Requirements

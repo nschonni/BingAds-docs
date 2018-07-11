@@ -60,7 +60,7 @@ namespace Batch
         public static long catalogId = <CATALOGIDGOESHERE>;
 
         // Used in example to store operation ids.
-        
+
         public static List<string> ProductList = new List<string>();
         public static int batchOperationId = 0;
 
@@ -69,7 +69,7 @@ namespace Batch
         // compress the data. If you do not compress the data, 
         // you can specify about 2,000 objects; otherwise, you can specify 
         // about 12,000 objects.
- 
+
         // For this example, limit the list to 5 products.
 
         public const int MAX_ENTRIES = 5;
@@ -145,7 +145,7 @@ namespace Batch
 
         // Use the BatchCollection object and POST operation to create multiple Content API operations.
         // This example uses compression.
-        
+
         private static BatchCollection BatchRequest(string uri, WebHeaderCollection headers, BatchCollection batchCollection)
         {
             var request = (HttpWebRequest)WebRequest.Create(uri);
@@ -319,9 +319,9 @@ namespace Batch
                 // If the manufacturer provides identifiers for brand, gtin
                 // or mpn, you must set those fields, and set identifierExists
                 // to true.
-                
+
                 IdentifierExists = false;
-                
+
                 // The following properties are optional.
 
                 ExpirationDate = DateTime.UtcNow.AddDays(45).ToString("O")  // "2016-06-03T20:47:27.0437485Z"
@@ -336,7 +336,7 @@ namespace Batch
 
 
         // Print out some field of the product offer.
-        
+
         private static void PrintProduct(Product product)
         {
             Console.WriteLine("qualifiedProductId: " + product.Id);
@@ -355,7 +355,7 @@ namespace Batch
         }
 
         // Print errors.
-        
+
         private static void PrintErrors(List<Error> errors)
         {
             foreach (Error error in errors)
@@ -462,7 +462,7 @@ namespace Batch
 
 
     // Defines a product resource.
-    
+
     public class Product
     {
         public Product() { }
@@ -641,7 +641,7 @@ namespace Batch
     }
 
     // Defines a product's price.
-    
+
     public class Price
     {
         [JsonProperty("currency")]
@@ -652,7 +652,7 @@ namespace Batch
     }
 
     // Defines a product's tax.
-    
+
     public class ProductTax
     {
         [JsonProperty("country")]
@@ -675,7 +675,7 @@ namespace Batch
     }
 
     // Defines a product's shipping weight.
-    
+
     public class ProductShippingWeight
     {
         [JsonProperty("unit")]
@@ -686,7 +686,7 @@ namespace Batch
     }
 
     // Defines a product's shipping cost.
-    
+
     public class ProductShipping
     {
         [JsonProperty("country")]
@@ -712,7 +712,7 @@ namespace Batch
     }
 
     // Defines per unit pricing.
-    
+
     public class UnitPricing
     {
         [JsonProperty("unit")]
@@ -723,7 +723,7 @@ namespace Batch
     }
 
     // Defines a destination.
-    
+
     public class ProductDestination
     {
         [JsonProperty("destinationName")]
@@ -734,7 +734,7 @@ namespace Batch
     }
 
     // Defines a product's custom attribute.
-    
+
     public class ProductCustomAttribute
     {
         [JsonProperty("name")]
@@ -751,7 +751,7 @@ namespace Batch
     }
 
     // Defines a custom group of attributes.
-    
+
     public class ProductCustomGroup
     {
         [JsonProperty("customGroups")]
@@ -828,7 +828,7 @@ namespace Batch
     }
 
     // Classes used to handle errors.
-    
+
     public class Error
     {
         [JsonProperty("location")]
@@ -912,40 +912,40 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 class ProductsEx {
 
     // Maps the product's availability strings to enum values.
-    
-	public static Map<ProductAvailability, String> Availability = new HashMap<ProductAvailability, String>();
-	static {
-		Availability.put(ProductAvailability.InStock, "in stock");
-		Availability.put(ProductAvailability.OutOfStock, "out of stock");
-		Availability.put(ProductAvailability.PreOrder, "preorder");
-	}
-	
-	// Jackson object used to serialize and deserialize JSON.
 
-	private static ObjectMapper jsonMapper = new ObjectMapper();
+    public static Map<ProductAvailability, String> Availability = new HashMap<ProductAvailability, String>();
+    static {
+        Availability.put(ProductAvailability.InStock, "in stock");
+        Availability.put(ProductAvailability.OutOfStock, "out of stock");
+        Availability.put(ProductAvailability.PreOrder, "preorder");
+    }
 
-	private static String accessToken = "<accesstokengoeshere>";
-	
+    // Jackson object used to serialize and deserialize JSON.
+
+    private static ObjectMapper jsonMapper = new ObjectMapper();
+
+    private static String accessToken = "<accesstokengoeshere>";
+
     public static String devToken = "<devtokengoeshere>"; 
 
     // URI templates used to get resources.
-    
+
     public static final String BaseUri = "https://content.api.bingads.microsoft.com/shopping/v9.1";
     public static final String BmcUri = BaseUri + "/bmc/%d";
     public static final String BatchUri = BmcUri + "/products/batch";
 
     // Query strings. 
-    
+
     public static final String queryString = "?alt=json";
 
     // Replace with your IDs.
-    
+
     public static long merchantId = <merchantidgoeshere>; 
     public static long catalogId = <catalogidgoeshere>;
 
     // Will contain the list of IDs of products that we added, so we can 
     // remove them when we're done.
-    
+
     public static List<String> ProductList = new ArrayList<String>();
     public static int batchOperationId = 0;
 
@@ -959,17 +959,17 @@ class ProductsEx {
 
     public final static int MAX_ENTRIES = 5;
 
-	// This example shows how to use the batch feature to perform 
+    // This example shows how to use the batch feature to perform 
     // multiple operations (insert/update, get, and delete) in one
     // request.
-    
-	public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException {
 
-		try {
-			Map<String, String> headers = getCredentialHeaders();
+    public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException {
+
+        try {
+            Map<String, String> headers = getCredentialHeaders();
 
             String url = String.format(BatchUri + queryString, merchantId);
-            
+
             // A batch operation may include any operation (insert, get, delete);
             // however, the operations may not act on the same product. This
             // example performs the batch operations separately.
@@ -977,26 +977,26 @@ class ProductsEx {
             batchInsert(url, headers);
             batchGet(url, headers);
             batchDelete(url, headers);
-		}
-		catch (CapiException e) {
-			if (e.getErrors() != null){
-	    		printErrors(e.getErrors());
-			}
-			else
-			{
-				System.out.println(e.getMessage());
-			}
-		}
-    	catch (IOException e) {
-    		System.out.println(e.getMessage());
-    	}
-		catch (Exception e) {
-			System.out.println("\n" + e.getMessage());
-		}
+        }
+        catch (CapiException e) {
+            if (e.getErrors() != null){
+                printErrors(e.getErrors());
+            }
+            else
+            {
+                System.out.println(e.getMessage());
+            }
+        }
+        catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        catch (Exception e) {
+            System.out.println("\n" + e.getMessage());
+        }
 
-	}
+    }
 
-	// Get tokens for the authentication headers.
+    // Get tokens for the authentication headers.
 
     private static Map<String, String> getCredentialHeaders()
     {
@@ -1012,106 +1012,106 @@ class ProductsEx {
     // POSTs the collection of batch operations to the specified URL.
     // This example compresses the data sent in the request. You must
     // use GZIP compression.
-    
+
     private static BatchCollection batchRequest(String uri, Map<String, String> headers, BatchCollection batch) throws IOException, CapiException 
     {
-    	HttpURLConnection connection = null;
-    	URL url;
-    	InputStream istream = null;
-    	OutputStream ostream = null;
-    	GZIPOutputStream zipOStream = null;
-    	GZIPInputStream zipIStream = null;
-    	BufferedReader reader = null;
-    	BatchCollection batchOut = null;
+        HttpURLConnection connection = null;
+        URL url;
+        InputStream istream = null;
+        OutputStream ostream = null;
+        GZIPOutputStream zipOStream = null;
+        GZIPInputStream zipIStream = null;
+        BufferedReader reader = null;
+        BatchCollection batchOut = null;
 
-    	try {
-        	String json = jsonMapper.writeValueAsString(batch);
+        try {
+            String json = jsonMapper.writeValueAsString(batch);
 
-    		url = new URL(uri);
-    		connection = (HttpURLConnection) url.openConnection();
+            url = new URL(uri);
+            connection = (HttpURLConnection) url.openConnection();
 
-    		connection.setRequestMethod("POST");
-    		connection.setRequestProperty("Content-Type", "application/json");
-    		connection.setRequestProperty("Content-Encoding", "gzip");
-    		connection.setRequestProperty("Accept-Encoding", "gzip");
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Content-Type", "application/json");
+            connection.setRequestProperty("Content-Encoding", "gzip");
+            connection.setRequestProperty("Accept-Encoding", "gzip");
 
-    		for (Entry\<String, String> header : headers.entrySet())
-    		{
-    			connection.setRequestProperty(header.getKey(), header.getValue());
-    		}
+            for (Entry\<String, String> header : headers.entrySet())
+            {
+                connection.setRequestProperty(header.getKey(), header.getValue());
+            }
 
-    		connection.setDoInput(true);
-    		connection.setDoOutput(true);
-    		connection.setUseCaches(false);
+            connection.setDoInput(true);
+            connection.setDoOutput(true);
+            connection.setUseCaches(false);
 
-    		ostream = connection.getOutputStream();
-    		zipOStream = new GZIPOutputStream(ostream);
-    		zipOStream.write(json.getBytes(StandardCharsets.UTF_8));
-    		zipOStream.finish();
-    		
-    		int statusCode = connection.getResponseCode();
+            ostream = connection.getOutputStream();
+            zipOStream = new GZIPOutputStream(ostream);
+            zipOStream.write(json.getBytes(StandardCharsets.UTF_8));
+            zipOStream.finish();
 
-    		StringBuffer response = new StringBuffer();
+            int statusCode = connection.getResponseCode();
 
-    		if (statusCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
-    			istream = connection.getErrorStream();
-    			
-        		reader = new BufferedReader(new InputStreamReader(istream));
-        		char[] buffer = new char[2048];
-        		int len = 0;
-        		
-        		while ((len = reader.read(buffer)) != -1) {
-        			response.append(new String(buffer, 0, len));
-        		}
-        		
-    			if (statusCode == HttpURLConnection.HTTP_BAD_REQUEST) {
-    	    		ContentError errors = jsonMapper.readValue(response.toString(), ContentError.class);
-    				throw new CapiException("Batch request failed.\n", errors.getError().getErrors());
-    			}
-    			else {
-    				throw new CapiException(response.toString());
-    			}
-    		}
+            StringBuffer response = new StringBuffer();
 
-    		istream = connection.getInputStream();
-        		
-    		response = new StringBuffer();
-    		zipIStream = new GZIPInputStream(istream);
-    		byte[] buffer = new byte[2048];
-    		int len = 0;
-    		
-    		while ((len = zipIStream.read(buffer)) != -1) {
-    			response.append(new String(buffer, 0, len));
-    		}
+            if (statusCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
+                istream = connection.getErrorStream();
 
-    		zipIStream.close();
-    		
-    		System.out.println(response);
+                reader = new BufferedReader(new InputStreamReader(istream));
+                char[] buffer = new char[2048];
+                int len = 0;
 
-    		batchOut = jsonMapper.readValue(response.toString(), BatchCollection.class);
-    	}
-    	finally {
-    		if (connection != null) {
-    			connection.disconnect();
-    		}
+                while ((len = reader.read(buffer)) != -1) {
+                    response.append(new String(buffer, 0, len));
+                }
 
-    		if (reader != null) {
-    			reader.close();
-    		}
+                if (statusCode == HttpURLConnection.HTTP_BAD_REQUEST) {
+                    ContentError errors = jsonMapper.readValue(response.toString(), ContentError.class);
+                    throw new CapiException("Batch request failed.\n", errors.getError().getErrors());
+                }
+                else {
+                    throw new CapiException(response.toString());
+                }
+            }
 
-    		if (istream != null) {
-    			istream.close();
-    		}
-    		if (zipOStream != null) {
-    			zipOStream.close();
-    		}
-    		
-    		if (zipIStream != null) {
-    			zipIStream.close();
-    		}
-    	}
+            istream = connection.getInputStream();
 
-    	return batchOut;
+            response = new StringBuffer();
+            zipIStream = new GZIPInputStream(istream);
+            byte[] buffer = new byte[2048];
+            int len = 0;
+
+            while ((len = zipIStream.read(buffer)) != -1) {
+                response.append(new String(buffer, 0, len));
+            }
+
+            zipIStream.close();
+
+            System.out.println(response);
+
+            batchOut = jsonMapper.readValue(response.toString(), BatchCollection.class);
+        }
+        finally {
+            if (connection != null) {
+                connection.disconnect();
+            }
+
+            if (reader != null) {
+                reader.close();
+            }
+
+            if (istream != null) {
+                istream.close();
+            }
+            if (zipOStream != null) {
+                zipOStream.close();
+            }
+
+            if (zipIStream != null) {
+                zipIStream.close();
+            }
+        }
+
+        return batchOut;
     }
 
 
@@ -1120,8 +1120,8 @@ class ProductsEx {
 
     private static void batchInsert(String url, Map<String, String> headers) throws IOException, CapiException
     {
-    	BatchCollection batchCollection = new BatchCollection();
-    	batchCollection.setEntries(new ArrayList<BatchEntry>());
+        BatchCollection batchCollection = new BatchCollection();
+        batchCollection.setEntries(new ArrayList<BatchEntry>());
 
         for (int i = 1; i < MAX_ENTRIES; i++)
         {
@@ -1157,13 +1157,13 @@ class ProductsEx {
 
     private static void batchGet(String url, Map<String, String> headers) throws IOException, CapiException
     {
-    	BatchCollection batchCollection = new BatchCollection();
-    	batchCollection.setEntries(new ArrayList<BatchEntry>());
+        BatchCollection batchCollection = new BatchCollection();
+        batchCollection.setEntries(new ArrayList<BatchEntry>());
         batchOperationId = 1;
 
         for (String productId : ProductList)
         {
-        	BatchEntry batchEntry = new BatchEntry(batchOperationId++, merchantId, "get", productId, null);
+            BatchEntry batchEntry = new BatchEntry(batchOperationId++, merchantId, "get", productId, null);
             batchCollection.getEntries().add(batchEntry);
         }
 
@@ -1198,13 +1198,13 @@ class ProductsEx {
 
     private static void batchDelete(String url, Map<String, String> headers) throws IOException, CapiException
     {
-    	BatchCollection batchCollection = new BatchCollection();
-    	batchCollection.setEntries(new ArrayList<BatchEntry>());
+        BatchCollection batchCollection = new BatchCollection();
+        batchCollection.setEntries(new ArrayList<BatchEntry>());
         batchOperationId = 1;
 
         for (String productId : ProductList)
         {
-        	BatchEntry batchEntry = new BatchEntry(batchOperationId++, merchantId, "delete", productId, null);
+            BatchEntry batchEntry = new BatchEntry(batchOperationId++, merchantId, "delete", productId, null);
             batchCollection.getEntries().add(batchEntry);
         }
 
@@ -1252,7 +1252,7 @@ class ProductsEx {
         // If the manufacturer provides identifiers for brand, gtin
         // or mpn, you must set those fields, and set identifierExists
         // to true.
-                
+
         product.setIdentifierExists(false);
 
         // The following properties are optional.
@@ -1265,7 +1265,7 @@ class ProductsEx {
 
 
     // Print some of the product's fields.
-    
+
     private static void printProduct(Product product)
     {
         System.out.println("product ID: " + product.getId());
@@ -1279,13 +1279,13 @@ class ProductsEx {
 
         if (product.getPrice() != null)
         {
-        	System.out.printf("price: %4.2f %s\n", product.getPrice().getValue(), product.getPrice().getCurrency());
+            System.out.printf("price: %4.2f %s\n", product.getPrice().getValue(), product.getPrice().getCurrency());
         }
     }
 
-    
+
     // Print errors.
-    
+
     private static void printErrors(List<Error> errors)
     {
         for (Error error : errors)
@@ -1299,36 +1299,36 @@ class ProductsEx {
 // Converting True/False to Boolean because the serializer can't.
 
 class StringBooleanDeserializer extends JsonDeserializer<Boolean> {
-	
-	public Boolean deserialize(JsonParser parser, DeserializationContext context) throws IOException, JsonProcessingException {
-		return !"False".equals(parser.getText());
-	}
+
+    public Boolean deserialize(JsonParser parser, DeserializationContext context) throws IOException, JsonProcessingException {
+        return !"False".equals(parser.getText());
+    }
 }
 
 @SuppressWarnings("serial")
 class CapiException extends Exception {
 
-	private List<Error> errors = null;
-	
-	public CapiException(String message) {
-		super(message);
-	}
+    private List<Error> errors = null;
 
-	public CapiException(String message, List<Error> errors) {
-		super(message);
-		this.errors = errors;
-	}
+    public CapiException(String message) {
+        super(message);
+    }
 
-	public CapiException(Throwable cause) {
-		super(cause);
-	}
+    public CapiException(String message, List<Error> errors) {
+        super(message);
+        this.errors = errors;
+    }
 
-	public CapiException(String message, Throwable cause) {
-		super(message, cause);
-	}
-	
-	public List<Error> getErrors() { return this.errors; }
-	public void setErrors(List<Error> value) { this.errors = value; }
+    public CapiException(Throwable cause) {
+        super(cause);
+    }
+
+    public CapiException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public List<Error> getErrors() { return this.errors; }
+    public void setErrors(List<Error> value) { this.errors = value; }
 }
 
 // Defines the batch classes.
@@ -1336,12 +1336,12 @@ class CapiException extends Exception {
 @JsonInclude(Include.NON_DEFAULT)
 class BatchCollection
 {
-	private List<BatchEntry> entries;
-	private String kind;
+    private List<BatchEntry> entries;
+    private String kind;
 
-	public String getKind() { return this.kind; }  // content#productsCustomBatchResponse
-	public void setKind(String value) { this.kind = value; }  
-	
+    public String getKind() { return this.kind; }  // content#productsCustomBatchResponse
+    public void setKind(String value) { this.kind = value; }  
+
     public List<BatchEntry> getEntries() { return this.entries; }
     public void setEntries(List<BatchEntry> value) { this.entries = value; }
 }
@@ -1349,13 +1349,13 @@ class BatchCollection
 @JsonInclude(Include.NON_DEFAULT)
 class BatchEntry
 {
-	private long batchId;
-	private long merchantId;
-	private String method;
-	private String productId;
-	private Product product;
-	private BatchItemError errors;
-	
+    private long batchId;
+    private long merchantId;
+    private String method;
+    private String productId;
+    private Product product;
+    private BatchItemError errors;
+
     public BatchEntry() { }
 
     public BatchEntry(int batchId, long merchantId, String method, String productId, Product product)
@@ -1388,8 +1388,8 @@ class BatchEntry
 
 class BatchItemError
 {
-	private List<Error> errors;
-	
+    private List<Error> errors;
+
     public List<Error> getErrors() { return this.errors; }
 }
 
@@ -1399,11 +1399,11 @@ class BatchItemError
 @JsonInclude(Include.NON_DEFAULT)
 class Product
 {
-	private List<String> additionalImageLinks;
-	
+    private List<String> additionalImageLinks;
+
     @JsonProperty("adult")
     @JsonDeserialize(using=StringBooleanDeserializer.class)
-	private Boolean isAdult;
+    private Boolean isAdult;
     private String adwordsGrouping;
     private List<String> adwordsLabels;
     private String adwordsRedirect;
@@ -1441,7 +1441,7 @@ class Product
     private String kind;  //For example: "kind":"content#product"
     private String link;
     private String material;
-    
+
     @JsonProperty("multipack")
     private Long multipackQuantity;
     private String mobileLink;
@@ -1467,11 +1467,11 @@ class Product
     private UnitPricing unitPricingBaseMeasure;
     private UnitPricing unitPricingMeasure;
     private List<String> validatedDestinations;
-    
-    
 
-	public List<String> getAdditionalImageLinks() { return this.additionalImageLinks; }
-	public void setAdditionalImageLinks(List<String> value) { this.additionalImageLinks = value; }
+
+
+    public List<String> getAdditionalImageLinks() { return this.additionalImageLinks; }
+    public void setAdditionalImageLinks(List<String> value) { this.additionalImageLinks = value; }
 
     public Boolean getIsAdult() { return this.isAdult; }
     public void setIsAdult(Boolean value) { this.isAdult = value; }
@@ -1647,9 +1647,9 @@ class Product
 
 class Price
 {
-	private String currency;
-	private Double value;
-	
+    private String currency;
+    private Double value;
+
     public String getCurrency() { return this.currency; }
     public void setCurrency(String value) { this.currency = value; }
 
@@ -1663,14 +1663,14 @@ class Price
 @JsonInclude(Include.NON_DEFAULT)
 class ProductTax
 {
-	private String country;
-	private Long locationId;
-	private String postalCode;
-	private Double rate;
-	private String region;
+    private String country;
+    private Long locationId;
+    private String postalCode;
+    private Double rate;
+    private String region;
 
-	@JsonDeserialize(using=StringBooleanDeserializer.class)
-	private Boolean taxShip;
+    @JsonDeserialize(using=StringBooleanDeserializer.class)
+    private Boolean taxShip;
 
     public String getCountry() { return this.country; }
     public void setCountry(String value) { this.country = value; }
@@ -1697,9 +1697,9 @@ class ProductTax
 
 class ProductShippingWeight
 {
-	private String unit;
-	private Double value;
-	
+    private String unit;
+    private Double value;
+
     public String getUnit() { return this.unit; }
     public void setUnit(String value) { this.unit = value; }
 
@@ -1713,14 +1713,14 @@ class ProductShippingWeight
 @JsonInclude(Include.NON_DEFAULT)
 class ProductShipping
 {
-	private String country;
-	private String locationGroupName;
-	private Long locationId;
-	private String postalCode;
-	private Price price;
-	private String region;
-	private String service;
-	
+    private String country;
+    private String locationGroupName;
+    private Long locationId;
+    private String postalCode;
+    private Price price;
+    private String region;
+    private String service;
+
     public String getCountry() { return this.country; }
     public void setCountry(String value) { this.country = value; }
 
@@ -1748,9 +1748,9 @@ class ProductShipping
 
 class UnitPricing
 {
-	private String unit;
-	private Double value;
-	
+    private String unit;
+    private Double value;
+
     public String getUnit() { return this.unit; }
     public void setUnit(String value) { this.unit = value; }
 
@@ -1764,9 +1764,9 @@ class UnitPricing
 @JsonInclude(Include.NON_DEFAULT)
 class ProductDestination
 {
-	private String destinationName;
-	private String intention;
-	
+    private String destinationName;
+    private String intention;
+
     public String getDestinationName() { return this.destinationName; }
     public void setDestinationName(String value) { this.destinationName = value; }
 
@@ -1779,11 +1779,11 @@ class ProductDestination
 
 class ProductCustomAttribute
 {
-	private String name;
-	private String type;
-	private String unit;
-	private String value;
-	
+    private String name;
+    private String type;
+    private String unit;
+    private String value;
+
     public String getName() { return this.name; }
     public void setName(String value) { this.name = value; }
 
@@ -1803,9 +1803,9 @@ class ProductCustomAttribute
 class ProductCustomGroup
 {
     @JsonProperty("customGroups")
-	private List<ProductCustomAttribute> attributes;
+    private List<ProductCustomAttribute> attributes;
     private String name;
-	
+
     public List<ProductCustomAttribute> getAttributes() { return this.attributes; }
     public void setAttributes(List<ProductCustomAttribute> value) { this.attributes = value; }
 
@@ -1826,47 +1826,47 @@ enum ProductChannel
 
 enum ProductCondition
 {
-	New,
-	Refurbished,
-	Used
+    New,
+    Refurbished,
+    Used
 }
 
 //Defines the possible product availability.
 
 enum ProductAvailability
 {
-	InStock,
-	OutOfStock,
-	PreOrder
+    InStock,
+    OutOfStock,
+    PreOrder
 }
 
 //Defines the possible content languages.
 
 enum ContentLanguage
 {
-	EN,
-	DE,
-	FR
+    EN,
+    DE,
+    FR
 }
 
 //Defines the possible target countries.
 
 enum TargetCountry
 {
-	AU,
-	DE,
-	FR,
-	GB,
-	US
+    AU,
+    DE,
+    FR,
+    GB,
+    US
 }
 
 //Defines the possible genders.
 
 enum Gender
 {
-	Female,
-	Male,
-	Unisex
+    Female,
+    Male,
+    Unisex
 }
 
 
@@ -1874,12 +1874,12 @@ enum Gender
 
 class Error
 {
-	private String location;
-	private String locationType;
-	private String domain;
-	private String message;
-	private String reason;
-	
+    private String location;
+    private String locationType;
+    private String domain;
+    private String message;
+    private String reason;
+
     public String getLocation() { return this.location; }
 
     public String getLocationType() { return this.locationType; }
@@ -1893,17 +1893,16 @@ class Error
 
 class ErrorCollection
 {
-	private List<Error> errors;
-	
+    private List<Error> errors;
+
     public List<Error> getErrors() { return this.errors; }
 }
 
 
 class ContentError
 {
-	private ErrorCollection error;
-	
+    private ErrorCollection error;
+
     public ErrorCollection getError() { return this.error; }
 }
-
 ```

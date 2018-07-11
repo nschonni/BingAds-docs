@@ -569,7 +569,6 @@ class AdsApiError
     public string Message { get; set; }
     public string Property { get; set; }
 }
-
 ```
 
 ```java
@@ -1055,7 +1054,7 @@ def main():
         print("*** Retrieving hotel group after update ***")
         hotel_group = get_hotel_group(CUSTOMER_ID, ACCOUNT_ID, SUBACCOUNT_ID, hotel_group_id)
         print_json(hotel_group)
-        
+
         print("*** Deleting hotel group {0} ***".format(hotel_group_id))
         delete_hotel_group(CUSTOMER_ID, ACCOUNT_ID, SUBACCOUNT_ID, hotel_group_id)
     except Exception as ex:
@@ -1108,7 +1107,6 @@ def random_string(length=6):
 # Main execution
 if __name__ == '__main__':
     main()
-
 ```
 
 ```curl
@@ -1229,7 +1227,7 @@ function get_hotel_group($hotelGroupId){
 
 function delete_hotel_group($hotelGroupId){
     global $customerId, $accountId, $subaccountId, $hotelGroupUri;
-    
+
     $url = sprintf($hotelGroupUri, $customerId, $accountId, $subaccountId, $hotelGroupId);
     $result = request('DELETE', $url);
     if ($result === FALSE) {
@@ -1270,5 +1268,4 @@ function printObject($object, $tabCount = 0){
         }
     } 
 }
-
 ```

@@ -27,6 +27,7 @@ Defines the aggregation values that you can use in a search query performance re
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="daily"></a>Daily|The report data will be aggregated for each day.|

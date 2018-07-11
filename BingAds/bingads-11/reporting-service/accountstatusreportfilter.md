@@ -26,6 +26,7 @@ Defines the account status values that you can use to filter the report data. Th
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The report will contain accounts that are active.|

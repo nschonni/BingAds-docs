@@ -34,6 +34,7 @@ To request a report of this type, pass this object to the [SubmitGenerateReport]
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="columns"></a>Columns|The list of attributes and performance statistics to include in the report. The report will include the columns in the order that you specify them.|[SearchCampaignChangeHistoryReportColumn](searchcampaignchangehistoryreportcolumn.md) array|
@@ -47,6 +48,7 @@ The [SearchCampaignChangeHistoryReportRequest](searchcampaignchangehistoryreport
 
 ### <a name="inheritedelementsreportrequest"></a>Inherited Elements from ReportRequest
 The [SearchCampaignChangeHistoryReportRequest](searchcampaignchangehistoryreportrequest.md) object derives from the [ReportRequest](reportrequest.md) object, and inherits the following elements. The descriptions below are specific to [SearchCampaignChangeHistoryReportRequest](searchcampaignchangehistoryreportrequest.md), and might not apply to other objects that inherit the same elements from the [ReportRequest](reportrequest.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

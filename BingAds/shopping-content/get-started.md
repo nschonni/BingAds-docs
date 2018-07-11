@@ -47,7 +47,7 @@ For an overview of Bing Merchant Center, see [What is Bing Merchant Center?](htt
 You must complete the following steps if you haven't already done so.
 
 1. [Verify and claim your Website's URL](http://help.bingads.microsoft.com/#apex/3/en/50888/1)
-  To get the webmaster tools mentioned in Verify and claim your Website's URL, see [Bing Webmaster Tools](http://www.bing.com/toolbox/webmaster). Sign in with the same Microsoft account that you use for Bing Ads. For more information about using the tool, see [Verify Ownership of Your Website](http://www.bing.com/webmaster/help/how-to-verify-ownership-of-your-site-afcfefc6). 
+   To get the webmaster tools mentioned in Verify and claim your Website's URL, see [Bing Webmaster Tools](http://www.bing.com/toolbox/webmaster). Sign in with the same Microsoft account that you use for Bing Ads. For more information about using the tool, see [Verify Ownership of Your Website](http://www.bing.com/webmaster/help/how-to-verify-ownership-of-your-site-afcfefc6). 
 2. [Create a Bing Merchant Center store](http://help.bingads.microsoft.com/#apex/3/en/51085/1)
 3. [Add a catalog](http://help.bingads.microsoft.com/#apex/3/en/51105/1)
 
@@ -57,7 +57,7 @@ The **Store Setting** tab contains the Tenant URL, which you use as the base URI
 
 As an alternative to adding and enabling catalogs using the BMC web application, you may use the [Catalogs](../shopping-content/catalogs-resource.md) resource. For more information, see [Managing your Catalogs](../shopping-content/manage-catalogs.md).
 
-> [!NOTE] 
+> [!NOTE]
 > You may be able to use the API with FTP in certain circumstances to update a catalog feed. For information about using the API with FTP, see [Can I Use the API and FTP?](../shopping-content/can-use-api-ftp.md). 
 
 

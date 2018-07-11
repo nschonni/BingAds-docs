@@ -24,6 +24,7 @@ Defines a day of the week and time range for ad extension scheduling.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="day"></a>Day|The scheduled day of week.<br/><br/>**Add:** Required.<br/>**Update:** The *DayTime* object cannot be updated. |[Day](day.md)|

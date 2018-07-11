@@ -21,6 +21,8 @@ For information about Bing Ads entities and the limits that apply to each entity
 
 The following is the top-level object that you use to access your Bing Ads entities.
 
-|Object|Description|
-|-|-
-[BingAdsApp](./reference/BingAdsApp.md)|Provides the methods used to access and manage entities, such as campaigns and keywords, in a single Bing Ads account.
+
+|                 Object                  |                                                      Description                                                       |
+|-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|
+| [BingAdsApp](./reference/BingAdsApp.md) | Provides the methods used to access and manage entities, such as campaigns and keywords, in a single Bing Ads account. |
+

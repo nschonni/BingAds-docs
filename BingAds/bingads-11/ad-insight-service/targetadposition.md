@@ -22,6 +22,7 @@ Defines the possible positions where you can target an ad to appear in the searc
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="mainline"></a>MainLine|Target the second, third, and fourth positions at the top of the search results page.|

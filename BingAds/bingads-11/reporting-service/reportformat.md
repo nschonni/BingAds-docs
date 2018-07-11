@@ -22,6 +22,7 @@ Defines the file formats that you can use for a report.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="csv"></a>Csv|The report format will be comma-separated values (.csv).|

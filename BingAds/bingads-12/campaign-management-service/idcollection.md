@@ -20,6 +20,7 @@ Defines an object that contains a list of entity identifiers.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="ids"></a>Ids|A list of entity identifiers.|**long** array|

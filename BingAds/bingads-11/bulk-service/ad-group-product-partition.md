@@ -161,16 +161,16 @@ Your custom collection of key and value parameters for URL tracking.
 
 In a bulk file, the list of custom parameters are formatted as follows.
 
--   Format each custom parameter pair as Key=Value, for example {_promoCode}=PROMO1.
+- Format each custom parameter pair as Key=Value, for example {_promoCode}=PROMO1.
 
--   You may include up to 3 custom parameter key and value pairs. Each key and value pair are delimited by a semicolon and space ("; "), for example {_promoCode}=PROMO1; {_season}=summer.
+- You may include up to 3 custom parameter key and value pairs. Each key and value pair are delimited by a semicolon and space ("; "), for example {_promoCode}=PROMO1; {_season}=summer.
 
--   A Key cannot contain a semicolon. If a Value contains a semicolon it must be escaped as '\;'. Additionally if the Value contains a backslash it must also be escaped as '\\'.
+- A Key cannot contain a semicolon. If a Value contains a semicolon it must be escaped as '\;'. Additionally if the Value contains a backslash it must also be escaped as '\\'.
 
--   The Key cannot exceed 16 UTF-8 bytes, and the Value cannot exceed 200 UTF-8 bytes. The maximum size of the Key does not include the braces and underscore i.e., '{', '_', and '}'. 
+- The Key cannot exceed 16 UTF-8 bytes, and the Value cannot exceed 200 UTF-8 bytes. The maximum size of the Key does not include the braces and underscore i.e., '{', '_', and '}'. 
 
-    > [!NOTE] 
-    > With the Bulk service the Key must be formatted with surrounding braces and a leading underscore, for example if the Key is promoCode, it must be formatted as {_promoCode}. With the Campaign Management service you cannot specify the surrounding braces and underscore.
+  > [!NOTE]
+  > With the Bulk service the Key must be formatted with surrounding braces and a leading underscore, for example if the Key is promoCode, it must be formatted as {_promoCode}. With the Campaign Management service you cannot specify the surrounding braces and underscore.
 
 **Add:** Optional  
 **Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed. To remove all custom parameters, set this field to *delete_value*. The *delete_value* keyword removes the previous setting. To remove a subset of custom parameters, specify the custom parameters that you want to keep and omit any that you do not want to keep. The new set of custom parameters will replace any previous custom parameter set.    
@@ -277,7 +277,7 @@ Possible values are *Subdivision* and *Unit*.
 **Delete:** Read-only  
 
 ### <a name="trackingtemplate"></a>Tracking Template
-The tracking templates can be used in tandem with the URL specified in the 'Link' field for the product offer that you submitted via the [Content API](/bingads/shopping-content/index). By combining the feed URL with the tracking template, the landing page URL is assembled where a user is directed after clicking the ad. When you use the *Tracking Template* field to update the URL parameters instead of updating them in the feed URL, the feed URL doesn't need to go through editorial review and your ads will continue to serve uninterrupted. For example if your product offer URL in the catalog feed is *http://contoso.com/*, you could specify the following tracking template: *{lpurl}?matchtype={matchtype}&device={device}*.
+The tracking templates can be used in tandem with the URL specified in the 'Link' field for the product offer that you submitted via the [Content API](/bingads/shopping-content/index). By combining the feed URL with the tracking template, the landing page URL is assembled where a user is directed after clicking the ad. When you use the *Tracking Template* field to update the URL parameters instead of updating them in the feed URL, the feed URL doesn't need to go through editorial review and your ads will continue to serve uninterrupted. For example if your product offer URL in the catalog feed is *<http://contoso.com/>*, you could specify the following tracking template: *{lpurl}?matchtype={matchtype}&device={device}*.
 
 The following validation rules apply to tracking templates. For more details about supported templates and parameters, see the Bing Ads help article [What tracking or URL parameters can I use?](https://help.bingads.microsoft.com/#apex/3/en/56799/2)
 
@@ -287,7 +287,7 @@ The following validation rules apply to tracking templates. For more details abo
 
 - The tracking template must be a well-formed URL beginning with one of the following: *http://*, *https://*, *{lpurl}*, or *{unescapedlpurl}*. 
 
-- Bing Ads does not validate whether custom parameters exist. If you use custom parameters in your tracking template and they do not exist, then the landing page URL will include the key and value placeholders of your custom parameters without substitution. For example, if your tracking template is *http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}*, and neither *{_season}* or *{_promocode}* are defined at the campaign, ad group, criterion, keyword, or ad level, then the landing page URL will be the same.
+- Bing Ads does not validate whether custom parameters exist. If you use custom parameters in your tracking template and they do not exist, then the landing page URL will include the key and value placeholders of your custom parameters without substitution. For example, if your tracking template is <em>http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}</em>, and neither *{_season}* or *{_promocode}* are defined at the campaign, ad group, criterion, keyword, or ad level, then the landing page URL will be the same.
 
 **Add:** Optional  
 **Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.    
@@ -302,17 +302,18 @@ The tree root *Ad Group Product Partition* record contains performance statistic
 > [!NOTE]
 > Performance statistics returned by the Bulk and Reporting services lags behind the performance statistics that you see in the Bing Ads web application  by up to an hour. Please note the following differences between the [Bulk service](bulk-service-reference.md) and [Reporting service](../reporting-service/reporting-service-reference.md) with respect to the freshness of the tree structure and performance statistics.
 > 
-> -   If you have modified your product partition tree structure within the last hour, the tree structure of your product partitions will always be up to date in the [Bulk](bulk-service-reference.md) download. However, the [Bulk](bulk-service-reference.md) download performance statistics may lag behind the performance statistics that you see in the Bing Ads web application by up to an hour. **Note:** If you have modified your product partition tree structure within the last hour, only the *Ad Group Product Partition* record for the tree root node will contain performance statistics fields such as impressions and clicks. 
-> -   If you have modified your product partition tree structure within the last hour, both the performance statistics and the tree structure of your product partitions returned in a report through the [Reporting service](../reporting-service/reporting-service-reference.md) may lag behind the data that you see in the Bing Ads web application by up to an hour.
+> - If you have modified your product partition tree structure within the last hour, the tree structure of your product partitions will always be up to date in the [Bulk](bulk-service-reference.md) download. However, the [Bulk](bulk-service-reference.md) download performance statistics may lag behind the performance statistics that you see in the Bing Ads web application by up to an hour. **Note:** If you have modified your product partition tree structure within the last hour, only the *Ad Group Product Partition* record for the tree root node will contain performance statistics fields such as impressions and clicks. 
+> - If you have modified your product partition tree structure within the last hour, both the performance statistics and the tree structure of your product partitions returned in a report through the [Reporting service](../reporting-service/reporting-service-reference.md) may lag behind the data that you see in the Bing Ads web application by up to an hour.
 
-|Column Header|Description|
-|-----------------|---------------|
-|*Spend*|The cost per click (CPC) summed for each click.|
-|*Impressions*|The number of times an ad has been displayed on search results pages. Without impressions there are no clicks or conversions.|
-|*Clicks*|The number of times that the ads in the account were clicked.|
-|*CTR*|The click-through rate (CTR) is the number of times an ad was clicked, divided by the number of times the ad was shown (impressions). For example, if your ads got 50 clicks given 2,348 impressions, your CTR is 2.13 (%).<br/><br/>The formula for calculating CTR is *(Clicks / Impressions) * 100*.|
-|*Avg CPC*|The average cost per click (CPC). The total cost of all clicks on an ad divided by the number of clicks. This is the average amount you're actually charged each time your ad is clicked. For example, if you paid a total of 48.35 for 300 clicks, your average CPC is 0.16.<br/><br/>The formula for calculating the average CPC is *(Spend /Clicks)*.|
-|*Avg CPM*|The average of the cost-per-thousand impressions of the ads.<br/><br/>The value will be 0 (zero) if the corresponding ad groups do not specify the Content ad distribution medium.|
-|*Avg position*|The average position of the ad on a webpage.|
-|*Conversions*|The number of conversions. A conversion is the completion of an action by a customer after viewing your ad. The action could be purchasing your product, registering for your webinar, joining an organization, or whatever you consider your goal and best measure of the ad's success.|
-|*CPA*|The cost per conversion. The formula for calculating the cost per conversion is *(Spend / Conversions)*.<br/><br/>Only ads in campaigns that enable conversion tracking contribute to the conversion number, so unless all campaigns in the account enable conversion tracking, the number will not be accurate.|
+| Column Header  |                                                                                                                                                                       Description                                                                                                                                                                        |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    *Spend*     |                                                                                                                                                     The cost per click (CPC) summed for each click.                                                                                                                                                      |
+| *Impressions*  |                                                                                                              The number of times an ad has been displayed on search results pages. Without impressions there are no clicks or conversions.                                                                                                               |
+|    *Clicks*    |                                                                                                                                              The number of times that the ads in the account were clicked.                                                                                                                                               |
+|     *CTR*      |                         The click-through rate (CTR) is the number of times an ad was clicked, divided by the number of times the ad was shown (impressions). For example, if your ads got 50 clicks given 2,348 impressions, your CTR is 2.13 (%).<br/><br/>The formula for calculating CTR is *(Clicks / Impressions) \* 100*.                         |
+|   *Avg CPC*    | The average cost per click (CPC). The total cost of all clicks on an ad divided by the number of clicks. This is the average amount you're actually charged each time your ad is clicked. For example, if you paid a total of 48.35 for 300 clicks, your average CPC is 0.16.<br/><br/>The formula for calculating the average CPC is *(Spend /Clicks)*. |
+|   *Avg CPM*    |                                                                                    The average of the cost-per-thousand impressions of the ads.<br/><br/>The value will be 0 (zero) if the corresponding ad groups do not specify the Content ad distribution medium.                                                                                    |
+| *Avg position* |                                                                                                                                                       The average position of the ad on a webpage.                                                                                                                                                       |
+| *Conversions*  |                                 The number of conversions. A conversion is the completion of an action by a customer after viewing your ad. The action could be purchasing your product, registering for your webinar, joining an organization, or whatever you consider your goal and best measure of the ad's success.                                 |
+|     *CPA*      |                     The cost per conversion. The formula for calculating the cost per conversion is *(Spend / Conversions)*.<br/><br/>Only ads in campaigns that enable conversion tracking contribute to the conversion number, so unless all campaigns in the account enable conversion tracking, the number will not be accurate.                     |
+

@@ -26,6 +26,7 @@ Defines the date range values of a budget summary report request.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="customdaterangeend"></a>CustomDateRangeEnd|The end date of a date range.<br/><br/>The end date must be greater than or equal to the start date.<br/><br/>|[Date](date.md)|

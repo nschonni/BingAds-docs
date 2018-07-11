@@ -24,6 +24,7 @@ Defines a fault object that operations return when web service-specific errors o
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="batcherrors"></a>BatchErrors|An array of *BatchError* objects that identifies the items in the batch of items in the request message that caused the operation to fail. Each object contains the details that explain why the item caused the failure.|[BatchError](batcherror.md) array|
@@ -35,6 +36,7 @@ The [ApiBatchFault](apibatchfault.md) object has [Inherited Elements](#inherited
 ### <a name="inheritedelementsapifault"></a>Inherited Elements from ApiFault
 The [ApiBatchFault](apibatchfault.md) object derives from the [ApiFault](apifault.md) object, and inherits the following elements. The descriptions below are specific to [ApiBatchFault](apibatchfault.md), and might not apply to other objects that inherit the same elements from the [ApiFault](apifault.md) object.  
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="operationerrors"></a>OperationErrors|An array of OperationError objects that contains the reasons that explain why the service operation failed when the error is not related to a specific item in the batch of items.|[OperationError](operationerror.md) array|
@@ -43,6 +45,7 @@ The [ApiBatchFault](apibatchfault.md) object derives from the [ApiFault](apifaul
 
 ### <a name="inheritedelementsapplicationfault"></a>Inherited Elements from ApplicationFault
 The [ApiBatchFault](apibatchfault.md) object derives from the [ApplicationFault](applicationfault.md) object, and inherits the following elements. The descriptions below are specific to [ApiBatchFault](apibatchfault.md), and might not apply to other objects that inherit the same elements from the [ApplicationFault](applicationfault.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

@@ -19,6 +19,7 @@ The *GetBMCStoresByCustomerIdRequest* object defines the [body](#request-body) a
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="returncoopstores"></a>ReturnCoOpStores|The Bing Merchant Center stores with [SubType](campaign.md#subtype) set to *CoOp* are not returned at all unless you set ReturnCoOpStores true.<br/><br/>This element is deprecated and removed in Bing Ads API Version 12.|**boolean**|
@@ -30,6 +31,7 @@ The *GetBMCStoresByCustomerIdRequest* object defines the [body](#request-body) a
 The *GetBMCStoresByCustomerIdResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -90,44 +92,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetBMCStoresByCustomerIdResponse> GetBMCStoresByCustomerIdAsync(
-	bool? returnCoOpStores)
+    bool? returnCoOpStores)
 {
-	var request = new GetBMCStoresByCustomerIdRequest
-	{
-		ReturnCoOpStores = returnCoOpStores
-	};
+    var request = new GetBMCStoresByCustomerIdRequest
+    {
+        ReturnCoOpStores = returnCoOpStores
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetBMCStoresByCustomerIdAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetBMCStoresByCustomerIdAsync(r), request));
 }
 ```
 ```java
 static GetBMCStoresByCustomerIdResponse getBMCStoresByCustomerId(
-	boolean returnCoOpStores) throws RemoteException, Exception
+    boolean returnCoOpStores) throws RemoteException, Exception
 {
-	GetBMCStoresByCustomerIdRequest request = new GetBMCStoresByCustomerIdRequest();
+    GetBMCStoresByCustomerIdRequest request = new GetBMCStoresByCustomerIdRequest();
 
-	request.setReturnCoOpStores(returnCoOpStores);
+    request.setReturnCoOpStores(returnCoOpStores);
 
-	return CampaignManagementService.getService().getBMCStoresByCustomerId(request);
+    return CampaignManagementService.getService().getBMCStoresByCustomerId(request);
 }
 ```
 ```php
 static function GetBMCStoresByCustomerId(
-	$returnCoOpStores)
+    $returnCoOpStores)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetBMCStoresByCustomerIdRequest();
+    $request = new GetBMCStoresByCustomerIdRequest();
 
-	$request->ReturnCoOpStores = $returnCoOpStores;
+    $request->ReturnCoOpStores = $returnCoOpStores;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetBMCStoresByCustomerId($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetBMCStoresByCustomerId($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetBMCStoresByCustomerId(
-	ReturnCoOpStores=ReturnCoOpStores)
+    ReturnCoOpStores=ReturnCoOpStores)
 ```
 
 ## Requirements

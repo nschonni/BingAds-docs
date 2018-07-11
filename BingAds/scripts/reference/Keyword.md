@@ -14,6 +14,7 @@ Contains the methods for managing a keyword. For information about keywords, see
 
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [adParams](#adparams)|[AdParamSelector](AdParamSelector.md)|Returns a selector of all substitution parameters used in the ad for this keyword.
@@ -43,6 +44,7 @@ Returns a selector of all substitution parameters used in ads for this keyword.
 The substitution values are used in an ad if the ad's title, text, display URL, or destination URL contains the {Param1}, {Param2}, or {Param3} dynamic substitution string.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdParamSelector](AdParamSelector.md)|The selector that contains the list of substitution parameters for this keyword.
@@ -52,6 +54,7 @@ The substitution values are used in an ad if the ad's title, text, display URL, 
 Returns an object that contains the methods used to manage the keyword's bid values.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [KeywordBidding](./KeywordBidding.md)|An object that contains the methods used to manage the keyword's bid values.
@@ -60,6 +63,7 @@ Returns an object that contains the methods used to manage the keyword's bid val
 Clears the keyword's destination URL.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -68,6 +72,7 @@ void|Returns nothing.
 Enables this keyword.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -76,6 +81,7 @@ void|Returns nothing.
 Returns the ad group this keyword belongs to.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdGroup](AdGroup.md)|The ad group this keyword belongs to.
@@ -84,6 +90,7 @@ Returns the ad group this keyword belongs to.
 Returns the keyword's editorial approval status.
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|The keyword's editorial approval status. The status indicates whether the keyword is under review, is approved, or is not allowed. Possible values are:<br /><ul><li>APPROVED</li><li>APPROVED_LIMITED</li><li>DISAPPROVED</li><li>UNDER_REVIEW</li></ul>For information about how these status values map to Bing Ads API, see [Mapping editorial approval status values](../concepts/editorial-approval.md).
@@ -92,6 +99,7 @@ string|The keyword's editorial approval status. The status indicates whether the
 Returns the campaign this keyword belongs to.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [Campaign](./Campaign.md)|The campaign this keyword belongs to.
@@ -100,6 +108,7 @@ Returns the campaign this keyword belongs to.
 Returns this entity's type.
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|This entity's type (is set to Keyword).
@@ -108,6 +117,7 @@ string|This entity's type (is set to Keyword).
 Returns the ID that uniquely identifies this keyword.
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|The ID that uniquely identifies this keyword.
@@ -116,6 +126,7 @@ string|The ID that uniquely identifies this keyword.
 Returns the keyword's match type. 
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|The keyword's match type. Possible values are:<br /><ul><li>BROAD</li><li>PHRASE</li><li>EXACT</li></ul>For information about these types, see [What are keyword match types, and how do I use them?](https://help.bingads.microsoft.com/apex/index/3/en-us/50822#!)
@@ -125,6 +136,7 @@ string|The keyword's match type. Possible values are:<br /><ul><li>BROAD</li><li
 Returns performance data for this keyword. 
 
 ### Returns
+
 |Type|Description|
 |-|-
 [Stats](./Stats.md)|The keyword's performance data. For example, clicks and impressions.
@@ -139,6 +151,7 @@ Returns the keyword's text. The text includes the keyword's match type syntax, i
 For information about these types, see [What are keyword match types, and how do I use them?](https://help.bingads.microsoft.com/apex/index/3/en-us/50822#!)
 
 ### Returns
+
 |Type|Description|
 |-|-
 string|The keyword's text.
@@ -147,6 +160,7 @@ string|The keyword's text.
 Returns a Boolean value that indicates whether this keyword is enabled.
 
 ### Returns
+
 |Type|Description|
 |-|-
 Boolean|Returns **true** if this keyword is enabled; otherwise, **false**.
@@ -155,6 +169,7 @@ Boolean|Returns **true** if this keyword is enabled; otherwise, **false**.
 Returns a Boolean value that indicates whether this keyword is paused.
 
 ### Returns
+
 |Type|Description|
 |-|-
 Boolean|Returns **true** if this keyword is paused; otherwise, **false**.
@@ -168,12 +183,14 @@ The substitution values are used in an ad if the ad's title, text, display URL, 
 The substitution values are also used in the tracking template if the template specifies the {param1:default}, {param2:default}, or {param3:default} placeholders. 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 index|int|The index of the substitution parameter that you're setting the substitution value to. The valid index values are 1 through 3, inclusive. Use 1 for Param1, 2 for Param2, and 3 for Param3.
 insertionText|string|The text to set the substitution parameter to.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -183,6 +200,7 @@ void|Returns nothing.
 Pauses this keyword.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -191,6 +209,7 @@ void|Returns nothing.
 Removes this keyword.
 
 ### Returns
+
 |Type|Description|
 |-|-
 void|Returns nothing.
@@ -199,6 +218,7 @@ void|Returns nothing.
 Returns the keyword's URL fields.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [KeywordUrls](./KeywordUrls.md)|The object used to manage the keyword's final URLs, tracking template, and custom parameters.

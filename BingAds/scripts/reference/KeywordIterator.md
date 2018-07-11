@@ -23,6 +23,7 @@ Example usage:
 
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [hasNext](#hasnext)|Boolean|Returns a Boolean value that indicates whether this iterator has more elements.
@@ -33,6 +34,7 @@ Example usage:
 Returns a Boolean value that indicates whether this iterator has more elements.
 
 ### Returns
+
 |Type|Description|
 |-|-
 Boolean|Returns **true** if this iterator has more elements; otherwise, **false**.
@@ -41,6 +43,7 @@ Boolean|Returns **true** if this iterator has more elements; otherwise, **false*
 Advances the iterator and returns the next keyword.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [Keyword](./Keyword.md)|The next keyword in the iterator.
@@ -51,6 +54,7 @@ Returns the number of keywords that matched the selector's selection criteria.
 [!INCLUDE[reads-limit](../includes/reads-limit.md)]
 
 ### Returns
+
 |Type|Description|
 |-|-
 int|The number of keywords that matched the selector's selection criteria.

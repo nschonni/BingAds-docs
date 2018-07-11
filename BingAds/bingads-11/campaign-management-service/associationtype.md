@@ -40,6 +40,7 @@ Defines the entity types that can be associated with an ad extension.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="account"></a>Account|Refers to ad extension associations with accounts.<br /><br /> Call ad extensions cannot be associated with an account.|

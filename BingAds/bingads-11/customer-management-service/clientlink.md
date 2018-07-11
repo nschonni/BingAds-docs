@@ -39,6 +39,7 @@ Defines a client link object. Acceptance of a client link invitation enables an 
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="clientaccountid"></a>ClientAccountId|The identifier of the client account to manage.<br /><br />When adding a client link, either the *ClientAccountId* or *ClientAccountNumber* is required, but specifying both will cause the operation to fail.<br/><br/>**Add:** Optional<br/>**Update:** Read-only and Required|**long**|

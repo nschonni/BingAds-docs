@@ -24,6 +24,7 @@ Example usage:
 ```
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [getAverageCpc](#getaveragecpc)|double|Returns the average cost per click.
@@ -40,6 +41,7 @@ Example usage:
 Returns the average cost per click.
 
 ### Returns
+
 |Type|Description|
 |-|-
 double|The average cost per click.
@@ -48,6 +50,7 @@ double|The average cost per click.
 Returns the average cost per thousand impressions.
 
 ### Returns
+
 |Type|Description|
 |-|-
 double|The average cost per thousand impressions.
@@ -56,6 +59,7 @@ double|The average cost per thousand impressions.
 Returns the average position where ads were placed.
 
 ### Returns
+
 |Type|Description|
 |-|-
 double|The average position ads were placed.
@@ -64,6 +68,7 @@ double|The average position ads were placed.
 Returns the conversion rate for clicks in the range 0..1.
 
 ### Returns
+
 |Type|Description|
 |-|-
 double|The conversion rate for clicks in the range 0..1.
@@ -72,6 +77,7 @@ double|The conversion rate for clicks in the range 0..1.
 Returns the number of clicks.
 
 ### Returns
+
 |Type|Description|
 |-|-
 long|The number of clicks.
@@ -80,6 +86,7 @@ long|The number of clicks.
 Returns the number of clicks that converted.
 
 ### Returns
+
 |Type|Description|
 |-|-
 long|The number of clicks that converted.
@@ -88,6 +95,7 @@ long|The number of clicks that converted.
 Returns the cost (spend) in the currency of the current account.
 
 ### Returns
+
 |Type|Description|
 |-|-
 double|The cost in the currency of the account.
@@ -96,6 +104,7 @@ double|The cost in the currency of the account.
 Returns the click through rate in the range 0..1.
 
 ### Returns
+
 |Type|Description|
 |-|-
 double|The click through rate.
@@ -104,6 +113,7 @@ double|The click through rate.
 Returns the number of impressions.
 
 ### Returns
+
 |Type|Description|
 |-|-
 long|The number of impressions.

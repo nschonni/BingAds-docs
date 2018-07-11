@@ -30,6 +30,7 @@ You can associate a call ad extension with campaigns in the account. Each entity
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="countrycode"></a>CountryCode|The country code where the phone number is registered. The country code must contain a 2 character country code. The supported country code values include AU, GB, ID, IE, IN, MY, NZ, PH, SG, TH, US, and VN.<br/><br/>**Add:** Required<br/>**Update:** Optional|**string**|
@@ -44,6 +45,7 @@ The [CallAdExtension](calladextension.md) object has [Inherited Elements](#inher
 
 ### <a name="inheritedelementsadextension"></a>Inherited Elements from AdExtension
 The [CallAdExtension](calladextension.md) object derives from the [AdExtension](adextension.md) object, and inherits the following elements. The descriptions below are specific to [CallAdExtension](calladextension.md), and might not apply to other objects that inherit the same elements from the [AdExtension](adextension.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

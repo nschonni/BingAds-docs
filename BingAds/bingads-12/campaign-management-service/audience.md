@@ -35,6 +35,7 @@ Do not try to instantiate an *Audience*. You can create one or more following ob
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="audiencenetworksize"></a>AudienceNetworkSize|The total number of people who belong to this audience in the Audience network i.e., via Audience campaigns. This gives you an idea of how many Audience network users you can target.<br /><br />The audience needs to have at least 300 people before Bing Ads will use it for optimizations.|**long**|

@@ -10,7 +10,7 @@ description: Defines the base class of a shared entity.
 Defines the base class of a shared entity.
 
 Do not try to instantiate a *SharedEntity*. You can create the following object that derives from it.
--   [NegativeKeywordList](negativekeywordlist.md)  
+- [NegativeKeywordList](negativekeywordlist.md)  
 
 A [NegativeKeywordList](negativekeywordlist.md) is derived from the [SharedList](sharedlist.md), which derives from the [SharedEntity](sharedentity.md) object.
 
@@ -28,6 +28,7 @@ A [NegativeKeywordList](negativekeywordlist.md) is derived from the [SharedList]
 ```
 
 ## <a name="elements"></a>Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

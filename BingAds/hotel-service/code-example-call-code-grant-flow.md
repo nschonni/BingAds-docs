@@ -51,7 +51,7 @@ namespace Content
             {
                 // TODO: Add logic to get the logged on user's refresh token 
                 // from secured storage. 
-                
+
                 _tokens = GetOauthTokens(_storedRefreshToken);
 
 
@@ -100,5 +100,4 @@ namespace Content
         }
     }
 }
-
 ```

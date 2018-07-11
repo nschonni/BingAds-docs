@@ -19,6 +19,7 @@ The *SetSharedEntityAssociationsRequest* object defines the [body](#request-body
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="associations"></a>Associations|The list of campaign and negative keyword list associations.<br /><br />This array can contain a maximum of 10,000 elements.|[SharedEntityAssociation](sharedentityassociation.md) array|
@@ -30,6 +31,7 @@ The *SetSharedEntityAssociationsRequest* object defines the [body](#request-body
 The *SetSharedEntityAssociationsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -110,44 +112,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<SetSharedEntityAssociationsResponse> SetSharedEntityAssociationsAsync(
-	IList<SharedEntityAssociation> associations)
+    IList<SharedEntityAssociation> associations)
 {
-	var request = new SetSharedEntityAssociationsRequest
-	{
-		Associations = associations
-	};
+    var request = new SetSharedEntityAssociationsRequest
+    {
+        Associations = associations
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.SetSharedEntityAssociationsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.SetSharedEntityAssociationsAsync(r), request));
 }
 ```
 ```java
 static SetSharedEntityAssociationsResponse setSharedEntityAssociations(
-	ArrayOfSharedEntityAssociation associations) throws RemoteException, Exception
+    ArrayOfSharedEntityAssociation associations) throws RemoteException, Exception
 {
-	SetSharedEntityAssociationsRequest request = new SetSharedEntityAssociationsRequest();
+    SetSharedEntityAssociationsRequest request = new SetSharedEntityAssociationsRequest();
 
-	request.setAssociations(associations);
+    request.setAssociations(associations);
 
-	return CampaignManagementService.getService().setSharedEntityAssociations(request);
+    return CampaignManagementService.getService().setSharedEntityAssociations(request);
 }
 ```
 ```php
 static function SetSharedEntityAssociations(
-	$associations)
+    $associations)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new SetSharedEntityAssociationsRequest();
+    $request = new SetSharedEntityAssociationsRequest();
 
-	$request->Associations = $associations;
+    $request->Associations = $associations;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->SetSharedEntityAssociations($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->SetSharedEntityAssociations($request);
 }
 ```
 ```python
 response=campaignmanagement_service.SetSharedEntityAssociations(
-	Associations=Associations)
+    Associations=Associations)
 ```
 
 ## Requirements

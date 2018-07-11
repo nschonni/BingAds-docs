@@ -16,7 +16,7 @@ Adds new conversion goals to the account's shared conversion goal library.
 
 > [!IMPORTANT]
 > Every time you add or update a new [DurationGoal](durationgoal.md), [EventGoal](eventgoal.md), [OfflineConversionGoal](offlineconversiongoal.md), [PagesViewedPerVisitGoal](pagesviewedpervisitgoal.md) or [UrlGoal](urlgoal.md) via either the Bing Ads web application or Campaign Management API, the *MSCLKIDAutoTaggingEnabled* value of the corresponding [AccountProperty](accountproperty.md) is set to *True* automatically. If the Scope of the goal is set to *Customer* level, then the [AccountProperty](accountproperty.md) for all accounts under the Customer will be set. 
-
+> 
 > [!TIP]
 > For an implementation overview, see the [Universal Event Tracking](../guides/universal-event-tracking.md) technical guide.
 
@@ -24,6 +24,7 @@ Adds new conversion goals to the account's shared conversion goal library.
 The *AddConversionGoalsRequest* object defines the [body](#request-body) and [header](#request-header) elements of the service operation request. The elements must be in the same order as shown in the [Request SOAP](#request-soap). 
 
 ### <a name="request-body"></a>Request Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -36,6 +37,7 @@ The *AddConversionGoalsRequest* object defines the [body](#request-body) and [he
 The *AddConversionGoalsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -151,44 +153,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<AddConversionGoalsResponse> AddConversionGoalsAsync(
-	IList<ConversionGoal> conversionGoals)
+    IList<ConversionGoal> conversionGoals)
 {
-	var request = new AddConversionGoalsRequest
-	{
-		ConversionGoals = conversionGoals
-	};
+    var request = new AddConversionGoalsRequest
+    {
+        ConversionGoals = conversionGoals
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.AddConversionGoalsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.AddConversionGoalsAsync(r), request));
 }
 ```
 ```java
 static AddConversionGoalsResponse addConversionGoals(
-	ArrayOfConversionGoal conversionGoals) throws RemoteException, Exception
+    ArrayOfConversionGoal conversionGoals) throws RemoteException, Exception
 {
-	AddConversionGoalsRequest request = new AddConversionGoalsRequest();
+    AddConversionGoalsRequest request = new AddConversionGoalsRequest();
 
-	request.setConversionGoals(conversionGoals);
+    request.setConversionGoals(conversionGoals);
 
-	return CampaignManagementService.getService().addConversionGoals(request);
+    return CampaignManagementService.getService().addConversionGoals(request);
 }
 ```
 ```php
 static function AddConversionGoals(
-	$conversionGoals)
+    $conversionGoals)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new AddConversionGoalsRequest();
+    $request = new AddConversionGoalsRequest();
 
-	$request->ConversionGoals = $conversionGoals;
+    $request->ConversionGoals = $conversionGoals;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->AddConversionGoals($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->AddConversionGoals($request);
 }
 ```
 ```python
 response=campaignmanagement_service.AddConversionGoals(
-	ConversionGoals=ConversionGoals)
+    ConversionGoals=ConversionGoals)
 ```
 
 ## Requirements

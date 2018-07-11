@@ -11,7 +11,7 @@ Defines a pages viewed per visit conversion goal. Use this type of goal to count
 
 > [!TIP]
 > For an implementation overview, see the [Universal Event Tracking](../guides/universal-event-tracking.md) technical guide.
-
+> 
 > [!IMPORTANT]
 > Every time you add or update a new [DurationGoal](durationgoal.md), [EventGoal](eventgoal.md), [OfflineConversionGoal](offlineconversiongoal.md), [PagesViewedPerVisitGoal](pagesviewedpervisitgoal.md) or [UrlGoal](urlgoal.md) via either the Bing Ads web application or Campaign Management API, the *MSCLKIDAutoTaggingEnabled* value of the corresponding [AccountProperty](accountproperty.md) is set to *True* automatically. If the Scope of the goal is set to *Customer* level, then the [AccountProperty](accountproperty.md) for all accounts under the Customer will be set. 
 
@@ -30,6 +30,7 @@ Defines a pages viewed per visit conversion goal. Use this type of goal to count
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="minimumpagesviewed"></a>MinimumPagesViewed|The minimum number of pages the user must visit, in order to count as a conversion.<br/><br/>**Add:** Required<br/>**Update:** Optional|**int**|
@@ -40,6 +41,7 @@ The [PagesViewedPerVisitGoal](pagesviewedpervisitgoal.md) object has [Inherited 
 
 ### <a name="inheritedelementsconversiongoal"></a>Inherited Elements from ConversionGoal
 The [PagesViewedPerVisitGoal](pagesviewedpervisitgoal.md) object derives from the [ConversionGoal](conversiongoal.md) object, and inherits the following elements. The descriptions below are specific to [PagesViewedPerVisitGoal](pagesviewedpervisitgoal.md), and might not apply to other objects that inherit the same elements from the [ConversionGoal](conversiongoal.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

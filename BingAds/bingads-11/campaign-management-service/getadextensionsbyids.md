@@ -19,6 +19,7 @@ The *GetAdExtensionsByIdsRequest* object defines the [body](#request-body) and [
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountid"></a>AccountId|The identifier of the account that owns the ad extensions.|**long**|
@@ -32,6 +33,7 @@ The *GetAdExtensionsByIdsRequest* object defines the [body](#request-body) and [
 The *GetAdExtensionsByIdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -347,58 +349,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetAdExtensionsByIdsResponse> GetAdExtensionsByIdsAsync(
-	long accountId,
-	IList<long> adExtensionIds,
-	AdExtensionsTypeFilter adExtensionType)
+    long accountId,
+    IList<long> adExtensionIds,
+    AdExtensionsTypeFilter adExtensionType)
 {
-	var request = new GetAdExtensionsByIdsRequest
-	{
-		AccountId = accountId,
-		AdExtensionIds = adExtensionIds,
-		AdExtensionType = adExtensionType
-	};
+    var request = new GetAdExtensionsByIdsRequest
+    {
+        AccountId = accountId,
+        AdExtensionIds = adExtensionIds,
+        AdExtensionType = adExtensionType
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetAdExtensionsByIdsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetAdExtensionsByIdsAsync(r), request));
 }
 ```
 ```java
 static GetAdExtensionsByIdsResponse getAdExtensionsByIds(
-	java.lang.Long accountId,
-	ArrayOflong adExtensionIds,
-	ArrayList<AdExtensionsTypeFilter> adExtensionType) throws RemoteException, Exception
+    java.lang.Long accountId,
+    ArrayOflong adExtensionIds,
+    ArrayList<AdExtensionsTypeFilter> adExtensionType) throws RemoteException, Exception
 {
-	GetAdExtensionsByIdsRequest request = new GetAdExtensionsByIdsRequest();
+    GetAdExtensionsByIdsRequest request = new GetAdExtensionsByIdsRequest();
 
-	request.setAccountId(accountId);
-	request.setAdExtensionIds(adExtensionIds);
-	request.setAdExtensionType(adExtensionType);
+    request.setAccountId(accountId);
+    request.setAdExtensionIds(adExtensionIds);
+    request.setAdExtensionType(adExtensionType);
 
-	return CampaignManagementService.getService().getAdExtensionsByIds(request);
+    return CampaignManagementService.getService().getAdExtensionsByIds(request);
 }
 ```
 ```php
 static function GetAdExtensionsByIds(
-	$accountId,
-	$adExtensionIds,
-	$adExtensionType)
+    $accountId,
+    $adExtensionIds,
+    $adExtensionType)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetAdExtensionsByIdsRequest();
+    $request = new GetAdExtensionsByIdsRequest();
 
-	$request->AccountId = $accountId;
-	$request->AdExtensionIds = $adExtensionIds;
-	$request->AdExtensionType = $adExtensionType;
+    $request->AccountId = $accountId;
+    $request->AdExtensionIds = $adExtensionIds;
+    $request->AdExtensionType = $adExtensionType;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdExtensionsByIds($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdExtensionsByIds($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetAdExtensionsByIds(
-	AccountId=AccountId,
-	AdExtensionIds=AdExtensionIds,
-	AdExtensionType=AdExtensionType)
+    AccountId=AccountId,
+    AdExtensionIds=AdExtensionIds,
+    AdExtensionType=AdExtensionType)
 ```
 
 ## Requirements

@@ -20,17 +20,18 @@ For information about creating a Hint response message, see [Creating a Hint Mes
 
 > [!NOTE]
 > Bing does not support all Hint XSD elements. This topic includes only those elements and attributes that Bing supports. Bing ignores all other elements and attributes. 
-
-
+> 
+> 
 > [!NOTE]
 > The elements must be specified in the order defined by the Hint XSD (and as listed in this topic).
 
 ----
 
- 
+
 <a name="hint" /> 
 ## Hint
 Defines the root element of a Hint response message.
+
 
 |Element|Description|Children
 |-|-|-
@@ -41,6 +42,7 @@ Defines the root element of a Hint response message.
 ## Hint Type
 Defines a Hint response message. 
 
+
 |Element|Description|Children
 |-|-|-
 |Item|A list of one or more hints. |[Item Type](#itemtype)
@@ -50,6 +52,7 @@ Defines a Hint response message.
 <a name="itemtype" /> 
 ## Item Type
 Defines a hint. 
+
 
 |Element|Description|Children
 |-|-|-
@@ -63,6 +66,7 @@ Defines a hint.
 ## itemmodechoicegroup
 Defines the options for specifying the dates that Bing should request data for. 
 
+
 |Element|Description|Children
 |-|-|-
 | |The first and last date of a date range. Bing will request itinerary data for stays that fall within the dates, including the specified dates. |[checkindategroup](#checkindategroup)
@@ -75,6 +79,7 @@ Defines the options for specifying the dates that Bing should request data for.
 ## checkindategroup
 Defines the first and last date of a date range. 
 
+
 |Element|Description|Children
 |-|-|-
 |FirstDate|The first date of the date range. |Date
@@ -86,6 +91,7 @@ Defines the first and last date of a date range.
 ## staysincludingrangetype
 Defines the first and last date of an affected date range. 
 
+
 |Element|Description|Children
 |-|-|-
 |FirstDate|The first date of the date range. |Date
@@ -96,6 +102,7 @@ Defines the first and last date of an affected date range.
 <a name="staytype" /> 
 ## staytype
 Defines a stay. 
+
 
 |Element|Description|Children
 |-|-|-

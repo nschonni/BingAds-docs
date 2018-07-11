@@ -40,6 +40,7 @@ Defines the values that you use to determine whether an editorial rejection is a
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="appealable"></a>Appealable|The editorial rejection is appealable.|

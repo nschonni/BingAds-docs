@@ -40,6 +40,7 @@ Defines a selection of language values.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="arabic"></a>Arabic|The corresponding language type.|

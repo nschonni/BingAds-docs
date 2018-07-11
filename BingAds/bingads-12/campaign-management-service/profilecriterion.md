@@ -30,6 +30,7 @@ The *ProfileCriterion* criterion can be included within an [AdGroupCriterion](ad
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="profileid"></a>ProfileId|The identifier of the audience profile that you want to target.<br/><br/>To download profile identifiers by [ProfileType](#profiletype) call the [GetProfileDataFileUrl](getprofiledatafileurl.md) operation via the Campaign Management API.<br /><br />**Add:** Required<br/>**Update:** Required|**long**|
@@ -41,6 +42,7 @@ The [ProfileCriterion](profilecriterion.md) object has [Inherited Elements](#inh
 
 ### <a name="inheritedelementscriterion"></a>Inherited Elements from Criterion
 The [ProfileCriterion](profilecriterion.md) object derives from the [Criterion](criterion.md) object, and inherits the following elements. The descriptions below are specific to [ProfileCriterion](profilecriterion.md), and might not apply to other objects that inherit the same elements from the [Criterion](criterion.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

@@ -212,5 +212,5 @@ Scripts provides a log file for you to write tracing and debug information to. F
 
 ## Next steps
 
-> [!div class="nextstepaction"]
+> [!div  class="nextstepaction"]
 > [Get Started](../get-started.md)

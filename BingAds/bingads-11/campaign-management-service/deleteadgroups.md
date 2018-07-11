@@ -19,6 +19,7 @@ The *DeleteAdGroupsRequest* object defines the [body](#request-body) and [header
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupids"></a>AdGroupIds|A maximum of 1,000 identifiers of the ad groups to delete.|**long** array|
@@ -31,6 +32,7 @@ The *DeleteAdGroupsRequest* object defines the [body](#request-body) and [header
 The *DeleteAdGroupsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -107,51 +109,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<DeleteAdGroupsResponse> DeleteAdGroupsAsync(
-	long campaignId,
-	IList<long> adGroupIds)
+    long campaignId,
+    IList<long> adGroupIds)
 {
-	var request = new DeleteAdGroupsRequest
-	{
-		CampaignId = campaignId,
-		AdGroupIds = adGroupIds
-	};
+    var request = new DeleteAdGroupsRequest
+    {
+        CampaignId = campaignId,
+        AdGroupIds = adGroupIds
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.DeleteAdGroupsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.DeleteAdGroupsAsync(r), request));
 }
 ```
 ```java
 static DeleteAdGroupsResponse deleteAdGroups(
-	java.lang.Long campaignId,
-	ArrayOflong adGroupIds) throws RemoteException, Exception
+    java.lang.Long campaignId,
+    ArrayOflong adGroupIds) throws RemoteException, Exception
 {
-	DeleteAdGroupsRequest request = new DeleteAdGroupsRequest();
+    DeleteAdGroupsRequest request = new DeleteAdGroupsRequest();
 
-	request.setCampaignId(campaignId);
-	request.setAdGroupIds(adGroupIds);
+    request.setCampaignId(campaignId);
+    request.setAdGroupIds(adGroupIds);
 
-	return CampaignManagementService.getService().deleteAdGroups(request);
+    return CampaignManagementService.getService().deleteAdGroups(request);
 }
 ```
 ```php
 static function DeleteAdGroups(
-	$campaignId,
-	$adGroupIds)
+    $campaignId,
+    $adGroupIds)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new DeleteAdGroupsRequest();
+    $request = new DeleteAdGroupsRequest();
 
-	$request->CampaignId = $campaignId;
-	$request->AdGroupIds = $adGroupIds;
+    $request->CampaignId = $campaignId;
+    $request->AdGroupIds = $adGroupIds;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteAdGroups($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteAdGroups($request);
 }
 ```
 ```python
 response=campaignmanagement_service.DeleteAdGroups(
-	CampaignId=CampaignId,
-	AdGroupIds=AdGroupIds)
+    CampaignId=CampaignId,
+    AdGroupIds=AdGroupIds)
 ```
 
 ## Requirements

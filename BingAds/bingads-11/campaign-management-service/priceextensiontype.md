@@ -29,6 +29,7 @@ Defines the possible types of price ad extensions.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="brands"></a>Brands|The header and description of the [PriceAdExtension](priceadextension.md) are related to brands.|

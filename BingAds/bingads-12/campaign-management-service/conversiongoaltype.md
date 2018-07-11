@@ -30,6 +30,7 @@ Defines the current possible types of conversion goals.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="appinstall"></a>AppInstall|Refers to an [AppInstallGoal](appinstallgoal.md)|

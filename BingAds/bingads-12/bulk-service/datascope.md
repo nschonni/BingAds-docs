@@ -27,6 +27,7 @@ Defines the scope or types of data to download.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="bidsuggestionsdata"></a>BidSuggestionsData|Download the bid suggestions records.|

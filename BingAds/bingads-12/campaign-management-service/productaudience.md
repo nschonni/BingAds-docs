@@ -13,13 +13,13 @@ Using Product Audiences, you can remarket to customers based on the specific pro
 
 > [!NOTE]
 > Not everyone is enabled for Audience campaigns in the Microsoft Audience Network yet. If you don't, don't worry. It's coming soon. 
-
+> 
 > [!IMPORTANT]
 > Be sure to edit the script corresponding to the [TagId](#tagid) on your website to include the `prodid` and `pagetype` parameters.
-  ```javascript
-  window.uetq = window.uetq || [];
-  window.uetq.push({'prodid': 'PRODUCT_ID', 'pagetype': 'PAGE_TYPE'});
-  ```
+>   ```javascript
+>   window.uetq = window.uetq || [];
+>   window.uetq.push({'prodid': 'PRODUCT_ID', 'pagetype': 'PAGE_TYPE'});
+>   ```
 
 ## Syntax
 ```xml
@@ -37,6 +37,7 @@ Using Product Audiences, you can remarket to customers based on the specific pro
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="productaudiencetype"></a>ProductAudienceType|Determines whether to remarket your products to general visitors, product searchers, product viewers, shopping cart abandoners, or past buyers.<br/><br/>**Add:** Required<br/>**Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.|[ProductAudienceType](productaudiencetype.md)|
@@ -48,6 +49,7 @@ The [ProductAudience](productaudience.md) object has [Inherited Elements](#inher
 
 ### <a name="inheritedelementsaudience"></a>Inherited Elements from Audience
 The [ProductAudience](productaudience.md) object derives from the [Audience](audience.md) object, and inherits the following elements. The descriptions below are specific to [ProductAudience](productaudience.md), and might not apply to other objects that inherit the same elements from the [Audience](audience.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

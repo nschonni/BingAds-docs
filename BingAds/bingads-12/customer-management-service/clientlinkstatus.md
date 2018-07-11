@@ -40,6 +40,7 @@ For more information about the client link lifecycle, see [Link to Client Accoun
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="active"></a>Active|The link is established and the managing customer can access the client account.<br /><br />The previous status was LinkInProgress.|

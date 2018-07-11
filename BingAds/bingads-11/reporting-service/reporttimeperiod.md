@@ -31,6 +31,7 @@ Defines the predefined time and date range values for a report request.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="lastfourweeks"></a>LastFourWeeks|A cumulative report for the four calendar weeks prior to today.<br /><br /> A calendar week runs from Sunday to Saturday.|

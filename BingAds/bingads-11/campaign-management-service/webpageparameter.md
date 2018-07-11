@@ -21,6 +21,7 @@ Defines the conditions or criteria that determine whether you want to show dynam
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="conditions"></a>Conditions|The webpage conditions or criteria.<br /><br />You may include up to 3 individual [WebpageCondition](webpagecondition.md) objects in the list. Each [WebpageCondition](webpagecondition.md) contains an *Argument* and *Operand* element.<br/><br/>**Add:** Optional for biddable criterion; Required for negative criterion. If no conditions are specified, then you are effectively targeting all webpages.<br/>**Update:** Not allowed. You cannot update the webpage conditions. To update the conditions you must delete the criterion and add a new criterion.|[WebpageCondition](webpagecondition.md) array|

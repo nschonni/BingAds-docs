@@ -26,6 +26,7 @@ Defines the possible bid opportunity types you can request when calling [GetBidO
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="firstpage"></a>FirstPage|The bid opportunity may lead to ads shown in one of the first page positions of search results.|

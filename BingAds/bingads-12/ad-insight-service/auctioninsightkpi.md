@@ -26,6 +26,7 @@ Defines an auction insight key performance indicator.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="aboverate"></a>AboveRate|The percentage of time competitors' ads showed up higher than your ads on the search results page. If the rate is high then the other advertiser is getting more desirable ad positions than you. A high rate is likely due to a poor quality score or a low bid.|**double**|

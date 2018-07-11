@@ -21,6 +21,7 @@ Organizes campaigns and identifies the payment instrument used to settle the acc
 
 The following table defines limits for [AdvertiserAccount](../customer-management-service/advertiseraccount.md) properties.
 
+
 |Property|Limit|
 |------------|---------|
 |Name|The string can contain between 3 and 100 characters and must be unique among all account names within the customer.|
@@ -41,6 +42,7 @@ The entity (account, campaign, or ad group) to ad extension association limit va
 > 
 > For each account, only 1,000 campaigns and 1,000 ad groups can be associated with image ad extensions.  
 
+
 |Ad Extension Type|Association Limit Per Entity|
 |------------|---------|
 |[App Ad Extension](#appadextension)|Up to the total number of app ad extensions in your account|
@@ -58,6 +60,7 @@ You can manage app ad extensions using the Bulk service ([App Ad Extension Recor
 
 The following table defines limits for app ad extension properties.
 
+
 |Property|Limit|
 |------------|---------|
 |Destination Url|The string can contain a maximum of 1,024 characters.|
@@ -68,6 +71,7 @@ You can manage call ad extensions using the Bulk service ([Call Ad Extension Rec
 
 The following table defines limits for call ad extension properties.
 
+
 |Property|Limit|
 |------------|---------|
 |Phone Number|The string can contain a maximum of 35 characters.|
@@ -77,6 +81,7 @@ You can manage callout ad extensions using the Bulk service ([Callout Ad Extensi
 
 The following table defines limits for call ad extension properties.
 
+
 |Property|Limit|
 |------------|---------|
 |Text|The string can contain a maximum of 25 characters. Note that for Traditional Chinese characters, the text is limited to 12 characters.|
@@ -85,6 +90,7 @@ The following table defines limits for call ad extension properties.
 You can manage image ad extensions using the Bulk service ([Image Ad Extension Record](../bulk-service/image-ad-extension.md)) or Campaign Management service ([ImageAdExtension](../campaign-management-service/imageadextension.md)).
 
 The following table defines limits for image ad extension properties.
+
 
 |Property|Limit|
 |------------|---------|
@@ -96,6 +102,7 @@ You can manage location ad extensions using the Bulk service ([Location Ad Exten
 
 The following table defines limits for location ad extension properties.
 
+
 |Property|Limit|
 |------------|---------|
 |Company Name|The string can contain a maximum of 80 characters.|
@@ -106,6 +113,7 @@ You can manage price ad extensions using the Bulk service ([Price Ad Extension R
 
 The following table defines limits for price ad extension properties.
 
+
 |Property|Limit|
 |------------|---------|
 |Table Rows|You must have between 3 and 8 price table rows.|
@@ -114,6 +122,7 @@ The following table defines limits for price ad extension properties.
 You can manage review ad extensions using the Bulk service ([Review Ad Extension Record](../bulk-service/review-ad-extension.md)) or Campaign Management service ([ReviewAdExtension](../campaign-management-service/reviewadextension.md)).
 
 The following table defines limits for review ad extension properties.
+
 
 |Property|Limit|
 |------------|---------|
@@ -125,6 +134,7 @@ The following table defines limits for review ad extension properties.
 You can manage sitelink ad extensions using the Bulk service ([Sitelink Ad Extension Record](../bulk-service/sitelink-ad-extension.md)) or Campaign Management service ([SiteLinkAdExtension](../campaign-management-service/sitelinkadextension.md)).
 
 The following table defines limits for sitelink ad extension properties.
+
 
 |Property|Limit|
 |------------|---------|
@@ -141,6 +151,7 @@ You can manage structured snippet ad extensions using the Bulk service ([Structu
 
 The following table defines limits for structured snippet ad extension properties.
 
+
 |Property|Limit|
 |------------|---------|
 |Values|Each value can have a maximum length of 25 characters. Note that for Traditional Chinese characters, each value is limited to 12 characters.|
@@ -153,6 +164,7 @@ Each campaign can have up to 20,000 ad groups. Each ad group may have multiple a
 You can manage ad groups using the Bulk service ([Ad Group Record](../bulk-service/ad-group.md)) or Campaign Management service ([AdGroup](../campaign-management-service/adgroup.md)).
 
 The following table defines limits for ad group properties.
+
 
 |Property|Limit|
 |------------|---------|
@@ -176,6 +188,7 @@ You can manage dynamic search ads using the Bulk service ([App Install Ad Record
 
 The following table defines limits for app install ad properties.
 
+
 |Property|Limit|
 |------------|---------|
 |Text|The maximum input length of the copy is 71 characters. Note that for ad groups that use Traditional Chinese, the text is limited to 38 characters.|
@@ -190,6 +203,7 @@ With a dynamic search ads campaign, the ad title and display URL are generated a
 You can manage dynamic search ads using the Bulk service ([Dynamic Search Ad Record](../bulk-service/dynamic-search-ad.md)) or Campaign Management service ([DynamicSearchAd](../campaign-management-service/dynamicsearchad.md)). The combination of the Path 1, Path 2, and Text elements make the dynamic search ad unique.
 
 The following table defines limits for dynamic search ad properties.
+
 
 |Property|Limit|
 |------------|---------|
@@ -207,6 +221,7 @@ The following table defines limits for expanded text ad properties.
 
 > [!NOTE]
 > The double-width characters are determined by the characters you use instead of the character set of the campaign or ad group language settings. Double-width characters include Korean, Japanese and Chinese languages characters as well as Emojis. 
+
 
 |Property|Limit|
 |------------|---------|
@@ -227,6 +242,7 @@ You can manage product ads using the Bulk service ([Product Ad Record](../bulk-s
 
 The following table defines limits for product ad properties.
 
+
 |Property|Limit|
 |------------|---------|
 |Promotional Text|The string can contain a maximum of 45 characters.|
@@ -238,6 +254,7 @@ You can manage responsive ads using the Bulk service ([Responsive Ad Record](../
 
 The following table defines limits for responsive ad properties.
 
+
 |Property|Limit|
 |------------|---------|
 |Business Name|The string can contain a maximum of 25 characters.|
@@ -247,6 +264,7 @@ The following table defines limits for responsive ad properties.
 
 ## <a name="audiences"></a>Audiences
 The following table defines limits for audience properties.
+
 
 |Property|Limit|
 |------------|---------|
@@ -267,6 +285,7 @@ You can manage shared budgets using the Bulk service ([Budget Record](../bulk-se
 
 The following table defines limits for budget properties.
 
+
 |Property|Limit|
 |------------|---------|
 |Name|The name must be unique among all budgets within the account. The name can contain a maximum of 255 characters.|
@@ -278,6 +297,7 @@ You can manage campaigns using the Bulk service ([Campaign Record](../bulk-servi
 
 The following table defines limits for campaign properties.
 
+
 |Property|Limit|
 |------------|---------|
 |Description|The string can contain a maximum of 1,000 characters.|
@@ -288,6 +308,7 @@ The following table defines limits for campaign properties.
 Defines a customer. All advertising activity is organized by customer. Each customer can have between one and six accounts, and be managed by up to 15 users.
 
 The following table defines limits for [Customer](../customer-management-service/customer.md) properties.
+
 
 |Property|Limit|
 |------------|---------|
@@ -305,6 +326,7 @@ Each customer can contain 50,000,000 keywords.
 You can manage keywords using the Bulk service ([Keyword Record](../bulk-service/keyword.md)) or Campaign Management service ([Keyword](../campaign-management-service/keyword.md)).
 
 The following table defines limits for keyword properties.
+
 
 |Property|Limit|
 |------------|---------|
@@ -325,6 +347,7 @@ Each account can contain 100,000 labels.
 Although not pictured above, labels can be associated with campaigns, ad groups, ads, and keywords. You can apply one label to multiple entities. The association count is only limited by the number of campaigns, ad groups, ads, and keywords in your account.
 
 You can manage labels using the Bulk service ([Label Record](../bulk-service/label.md)) or Campaign Management service ([Label](../campaign-management-service/label.md)).
+
 
 
 |Property|Limit|
@@ -354,7 +377,7 @@ To prevent your ad from appearing on specific web sites within the search networ
 
 You can manage negative site placements using the Campaign Management service ([AdGroupNegativeSites](../campaign-management-service/adgroupnegativesites.md)) and ([CampaignNegativeSites](../campaign-management-service/campaignnegativesites.md)).
 
-Each ad group or campaign can contain up to 2,500 negative site placements. Each URL must specify the domain name e.g., *contoso.com* which can include up to three subdomains and two subdirectories. The subdomain count includes the *www* prefix. For example *one.two.three.contoso.com/1/2*, *www.two.three.contoso.com/1/2*, and *one.two.contoso.co.uk/1/2* are valid URLs, whereas *one.two.three.contoso.co.uk/1/2* (too many subdomains) and *one.two.three.contoso.com/1/2/3* (too many subdirectories) are not.
+Each ad group or campaign can contain up to 2,500 negative site placements. Each URL must specify the domain name e.g., *contoso.com* which can include up to three subdomains and two subdirectories. The subdomain count includes the *www* prefix. For example *one.two.three.contoso.com/1/2*, <em>www.two.three.contoso.com/1/2</em>, and *one.two.contoso.co.uk/1/2* are valid URLs, whereas *one.two.three.contoso.co.uk/1/2* (too many subdomains) and *one.two.three.contoso.com/1/2/3* (too many subdirectories) are not.
 
 ## <a name="productgroup"></a>Product Group
 Product groups are used to specify which products from your Bing Merchant Center catalog should be included in a particular ad group. In order to understand product groups, first make sure you are familiar with [Product Ads](product-ads.md).
@@ -385,7 +408,7 @@ The maximum number of location intent criterions that you can specify per campai
 
 The maximum number of radius criterions that you can specify per campaign or ad group is 2,000. 
 
-> [!NOTE] 
+> [!NOTE]
 > Each of these limits are independent of one another e.g., the radius criterions limit stands regardless of whether or not any location criterions exist for the campaign or ad group.
 
 

@@ -24,6 +24,7 @@ Defines an object that contains search query statistics of including broad match
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="averagectr"></a>AverageCTR|The average CTR for the search query.|**double**|

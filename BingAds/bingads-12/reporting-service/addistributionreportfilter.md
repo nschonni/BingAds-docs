@@ -31,6 +31,7 @@ Defines the ad distribution medium values that you can use to filter the report 
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="audience"></a>Audience|The report will contain intent ads.|

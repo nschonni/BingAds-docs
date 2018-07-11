@@ -19,6 +19,7 @@ The *GetAccountPropertiesRequest* object defines the [body](#request-body) and [
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountpropertynames"></a>AccountPropertyNames|The names of account properties that you want to get.<br/><br/>To determine whether or not Microsoft Click Id auto-tagging is enabled, include the *MSCLKIDAutoTaggingEnabled* value in your request.<br/><br/>**Required**: Yes|[AccountPropertyName](accountpropertyname.md) array|
@@ -30,6 +31,7 @@ The *GetAccountPropertiesRequest* object defines the [body](#request-body) and [
 The *GetAccountPropertiesResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -112,44 +114,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetAccountPropertiesResponse> GetAccountPropertiesAsync(
-	IList<AccountPropertyName> accountPropertyNames)
+    IList<AccountPropertyName> accountPropertyNames)
 {
-	var request = new GetAccountPropertiesRequest
-	{
-		AccountPropertyNames = accountPropertyNames
-	};
+    var request = new GetAccountPropertiesRequest
+    {
+        AccountPropertyNames = accountPropertyNames
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetAccountPropertiesAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetAccountPropertiesAsync(r), request));
 }
 ```
 ```java
 static GetAccountPropertiesResponse getAccountProperties(
-	ArrayOfAccountPropertyName accountPropertyNames) throws RemoteException, Exception
+    ArrayOfAccountPropertyName accountPropertyNames) throws RemoteException, Exception
 {
-	GetAccountPropertiesRequest request = new GetAccountPropertiesRequest();
+    GetAccountPropertiesRequest request = new GetAccountPropertiesRequest();
 
-	request.setAccountPropertyNames(accountPropertyNames);
+    request.setAccountPropertyNames(accountPropertyNames);
 
-	return CampaignManagementService.getService().getAccountProperties(request);
+    return CampaignManagementService.getService().getAccountProperties(request);
 }
 ```
 ```php
 static function GetAccountProperties(
-	$accountPropertyNames)
+    $accountPropertyNames)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetAccountPropertiesRequest();
+    $request = new GetAccountPropertiesRequest();
 
-	$request->AccountPropertyNames = $accountPropertyNames;
+    $request->AccountPropertyNames = $accountPropertyNames;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetAccountProperties($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetAccountProperties($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetAccountProperties(
-	AccountPropertyNames=AccountPropertyNames)
+    AccountPropertyNames=AccountPropertyNames)
 ```
 
 ## Requirements

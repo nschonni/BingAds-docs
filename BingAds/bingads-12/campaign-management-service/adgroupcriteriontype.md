@@ -149,6 +149,7 @@ Defines the possible types of ad group criterions.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="age"></a>Age|The ad group criterion is an age criterion.<br/><br/>The *Criterion* element of a [BiddableAdGroupCriterion](biddableadgroupcriterion.md) can be an instance of [AgeCriterion](agecriterion.md). The *CriterionBid* element of a [BiddableAdGroupCriterion](biddableadgroupcriterion.md) must be an instance of [BidMultiplier](bidmultiplier.md) when paired with this criterion type.<br/><br/>Age exclusions with [NegativeAdGroupCriterion](negativeadgroupcriterion.md) are only supported with Audience campaigns.|

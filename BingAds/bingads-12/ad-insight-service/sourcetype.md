@@ -26,6 +26,7 @@ You can request that the source be returned in the [KeywordIdea](keywordidea.md)
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="seed"></a>Seed|The keyword idea source is a seed that you provided such as the query search parameter.|

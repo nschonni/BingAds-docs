@@ -19,6 +19,7 @@ The *AddAdGroupCriterionsRequest* object defines the [body](#request-body) and [
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupcriterions"></a>AdGroupCriterions|A list of ad group criterions.<br/><br/>You can include up to 1,000 ad group criterions per request.|[AdGroupCriterion](adgroupcriterion.md) array|
@@ -31,6 +32,7 @@ The *AddAdGroupCriterionsRequest* object defines the [body](#request-body) and [
 The *AddAdGroupCriterionsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -228,51 +230,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<AddAdGroupCriterionsResponse> AddAdGroupCriterionsAsync(
-	IList<AdGroupCriterion> adGroupCriterions,
-	AdGroupCriterionType criterionType)
+    IList<AdGroupCriterion> adGroupCriterions,
+    AdGroupCriterionType criterionType)
 {
-	var request = new AddAdGroupCriterionsRequest
-	{
-		AdGroupCriterions = adGroupCriterions,
-		CriterionType = criterionType
-	};
+    var request = new AddAdGroupCriterionsRequest
+    {
+        AdGroupCriterions = adGroupCriterions,
+        CriterionType = criterionType
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.AddAdGroupCriterionsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.AddAdGroupCriterionsAsync(r), request));
 }
 ```
 ```java
 static AddAdGroupCriterionsResponse addAdGroupCriterions(
-	ArrayOfAdGroupCriterion adGroupCriterions,
-	ArrayList<AdGroupCriterionType> criterionType) throws RemoteException, Exception
+    ArrayOfAdGroupCriterion adGroupCriterions,
+    ArrayList<AdGroupCriterionType> criterionType) throws RemoteException, Exception
 {
-	AddAdGroupCriterionsRequest request = new AddAdGroupCriterionsRequest();
+    AddAdGroupCriterionsRequest request = new AddAdGroupCriterionsRequest();
 
-	request.setAdGroupCriterions(adGroupCriterions);
-	request.setCriterionType(criterionType);
+    request.setAdGroupCriterions(adGroupCriterions);
+    request.setCriterionType(criterionType);
 
-	return CampaignManagementService.getService().addAdGroupCriterions(request);
+    return CampaignManagementService.getService().addAdGroupCriterions(request);
 }
 ```
 ```php
 static function AddAdGroupCriterions(
-	$adGroupCriterions,
-	$criterionType)
+    $adGroupCriterions,
+    $criterionType)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new AddAdGroupCriterionsRequest();
+    $request = new AddAdGroupCriterionsRequest();
 
-	$request->AdGroupCriterions = $adGroupCriterions;
-	$request->CriterionType = $criterionType;
+    $request->AdGroupCriterions = $adGroupCriterions;
+    $request->CriterionType = $criterionType;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->AddAdGroupCriterions($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->AddAdGroupCriterions($request);
 }
 ```
 ```python
 response=campaignmanagement_service.AddAdGroupCriterions(
-	AdGroupCriterions=AdGroupCriterions,
-	CriterionType=CriterionType)
+    AdGroupCriterions=AdGroupCriterions,
+    CriterionType=CriterionType)
 ```
 
 ## Requirements

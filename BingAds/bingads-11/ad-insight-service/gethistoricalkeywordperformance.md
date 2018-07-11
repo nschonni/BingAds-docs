@@ -19,6 +19,7 @@ The *GetHistoricalKeywordPerformanceRequest* object defines the [body](#request-
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="devices"></a>Devices|A list of one or more of the following device types: Computers, NonSmartphones, Smartphones, Tablets. The default is Computers.<br /><br />The response includes keyword performance data for the device types that you specify only, if available.<br />Used to determine a keyword's performance on the specified device types.|**string** array|
@@ -36,6 +37,7 @@ The *GetHistoricalKeywordPerformanceRequest* object defines the [body](#request-
 The *GetHistoricalKeywordPerformanceResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -118,86 +120,86 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetHistoricalKeywordPerformanceResponse> GetHistoricalKeywordPerformanceAsync(
-	IList<string> keywords,
-	TimeInterval? timeInterval,
-	AdPosition? targetAdPosition,
-	IList<MatchType> matchTypes,
-	string language,
-	IList<string> publisherCountries,
-	IList<string> devices)
+    IList<string> keywords,
+    TimeInterval? timeInterval,
+    AdPosition? targetAdPosition,
+    IList<MatchType> matchTypes,
+    string language,
+    IList<string> publisherCountries,
+    IList<string> devices)
 {
-	var request = new GetHistoricalKeywordPerformanceRequest
-	{
-		Keywords = keywords,
-		TimeInterval = timeInterval,
-		TargetAdPosition = targetAdPosition,
-		MatchTypes = matchTypes,
-		Language = language,
-		PublisherCountries = publisherCountries,
-		Devices = devices
-	};
+    var request = new GetHistoricalKeywordPerformanceRequest
+    {
+        Keywords = keywords,
+        TimeInterval = timeInterval,
+        TargetAdPosition = targetAdPosition,
+        MatchTypes = matchTypes,
+        Language = language,
+        PublisherCountries = publisherCountries,
+        Devices = devices
+    };
 
-	return (await AdInsightService.CallAsync((s, r) => s.GetHistoricalKeywordPerformanceAsync(r), request));
+    return (await AdInsightService.CallAsync((s, r) => s.GetHistoricalKeywordPerformanceAsync(r), request));
 }
 ```
 ```java
 static GetHistoricalKeywordPerformanceResponse getHistoricalKeywordPerformance(
-	ArrayOfstring keywords,
-	TimeInterval timeInterval,
-	AdPosition targetAdPosition,
-	ArrayOfMatchType matchTypes,
-	java.lang.String language,
-	ArrayOfstring publisherCountries,
-	ArrayOfstring devices) throws RemoteException, Exception
+    ArrayOfstring keywords,
+    TimeInterval timeInterval,
+    AdPosition targetAdPosition,
+    ArrayOfMatchType matchTypes,
+    java.lang.String language,
+    ArrayOfstring publisherCountries,
+    ArrayOfstring devices) throws RemoteException, Exception
 {
-	GetHistoricalKeywordPerformanceRequest request = new GetHistoricalKeywordPerformanceRequest();
+    GetHistoricalKeywordPerformanceRequest request = new GetHistoricalKeywordPerformanceRequest();
 
-	request.setKeywords(keywords);
-	request.setTimeInterval(timeInterval);
-	request.setTargetAdPosition(targetAdPosition);
-	request.setMatchTypes(matchTypes);
-	request.setLanguage(language);
-	request.setPublisherCountries(publisherCountries);
-	request.setDevices(devices);
+    request.setKeywords(keywords);
+    request.setTimeInterval(timeInterval);
+    request.setTargetAdPosition(targetAdPosition);
+    request.setMatchTypes(matchTypes);
+    request.setLanguage(language);
+    request.setPublisherCountries(publisherCountries);
+    request.setDevices(devices);
 
-	return AdInsightService.getService().getHistoricalKeywordPerformance(request);
+    return AdInsightService.getService().getHistoricalKeywordPerformance(request);
 }
 ```
 ```php
 static function GetHistoricalKeywordPerformance(
-	$keywords,
-	$timeInterval,
-	$targetAdPosition,
-	$matchTypes,
-	$language,
-	$publisherCountries,
-	$devices)
+    $keywords,
+    $timeInterval,
+    $targetAdPosition,
+    $matchTypes,
+    $language,
+    $publisherCountries,
+    $devices)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
 
-	$request = new GetHistoricalKeywordPerformanceRequest();
+    $request = new GetHistoricalKeywordPerformanceRequest();
 
-	$request->Keywords = $keywords;
-	$request->TimeInterval = $timeInterval;
-	$request->TargetAdPosition = $targetAdPosition;
-	$request->MatchTypes = $matchTypes;
-	$request->Language = $language;
-	$request->PublisherCountries = $publisherCountries;
-	$request->Devices = $devices;
+    $request->Keywords = $keywords;
+    $request->TimeInterval = $timeInterval;
+    $request->TargetAdPosition = $targetAdPosition;
+    $request->MatchTypes = $matchTypes;
+    $request->Language = $language;
+    $request->PublisherCountries = $publisherCountries;
+    $request->Devices = $devices;
 
-	return $GLOBALS['AdInsightProxy']->GetService()->GetHistoricalKeywordPerformance($request);
+    return $GLOBALS['AdInsightProxy']->GetService()->GetHistoricalKeywordPerformance($request);
 }
 ```
 ```python
 response=adinsight_service.GetHistoricalKeywordPerformance(
-	Keywords=Keywords,
-	TimeInterval=TimeInterval,
-	TargetAdPosition=TargetAdPosition,
-	MatchTypes=MatchTypes,
-	Language=Language,
-	PublisherCountries=PublisherCountries,
-	Devices=Devices)
+    Keywords=Keywords,
+    TimeInterval=TimeInterval,
+    TargetAdPosition=TargetAdPosition,
+    MatchTypes=MatchTypes,
+    Language=Language,
+    PublisherCountries=PublisherCountries,
+    Devices=Devices)
 ```
 
 ## Requirements

@@ -9,6 +9,7 @@ description: Reference documentation for the Bing Ads Campaign Management API.
 # Campaign Management Service Reference
 The Campaign Management [service](../guides/web-service-addresses.md) defines an Application Programming Interface (API) that you can use to manage your advertising campaigns.
 
+
 |Interface|Description|
 |---------|---------|
 |[Campaign Management Service Operations](campaign-management-service-operations.md)|Service operations such as [AddCampaigns](addcampaigns.md), [AddAds](addads.md) and [AddAdExtensions](addadextensions.md) can be used to add, get, update, and delete campaign data.|

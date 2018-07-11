@@ -26,6 +26,7 @@ Defines the type of ad.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="appinstall"></a>AppInstall|Refers to an [AppInstallAd](appinstallad.md).|

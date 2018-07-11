@@ -40,6 +40,7 @@ For more information see [Multi-User Credentials](../guides/customer-accounts.md
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="contactinfo"></a>ContactInfo|The user's contact information.<br/><br/>**Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.|[ContactInfo](contactinfo.md)|

@@ -17,6 +17,7 @@ Contains the methods for filtering the list of substitution parameters. For info
 
 ## Methods
 
+
 |Method Name|Return Type|Description|
 |-|-|-
 [get](#get)|[AdParamIterator](AdParamIterator.md)|Returns an iterator based on the selector's selection criteria.
@@ -27,6 +28,7 @@ Contains the methods for filtering the list of substitution parameters. For info
 Returns an [iterator](../concepts/iterators.md) based on the selector's selection criteria.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdParamIterator](AdParamIterator.md)|An iterator that you use to iterate through the selected substitution parameters.

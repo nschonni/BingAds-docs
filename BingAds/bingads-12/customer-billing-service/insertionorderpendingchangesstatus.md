@@ -49,6 +49,7 @@ If the [Status](insertionorder.md#status) element of the [InsertionOrder](insert
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="approvechanges"></a>ApproveChanges|Approve the pending changes.|

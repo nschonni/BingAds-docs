@@ -24,12 +24,13 @@ There is no set limit to the amount of client accounts that can be linked to an 
 
 
 > [!NOTE]
->This feature is not supported in sandbox.
+> This feature is not supported in sandbox.
 
 ## <a name="request"></a>Request Elements
 The *UpdateClientLinksRequest* object defines the [body](#request-body) and [header](#request-header) elements of the service operation request. The elements must be in the same order as shown in the [Request SOAP](#request-soap). 
 
 ### <a name="request-body"></a>Request Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -42,6 +43,7 @@ The *UpdateClientLinksRequest* object defines the [body](#request-body) and [hea
 The *UpdateClientLinksResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -132,44 +134,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<UpdateClientLinksResponse> UpdateClientLinksAsync(
-	IList<ClientLink> clientLinks)
+    IList<ClientLink> clientLinks)
 {
-	var request = new UpdateClientLinksRequest
-	{
-		ClientLinks = clientLinks
-	};
+    var request = new UpdateClientLinksRequest
+    {
+        ClientLinks = clientLinks
+    };
 
-	return (await CustomerManagementService.CallAsync((s, r) => s.UpdateClientLinksAsync(r), request));
+    return (await CustomerManagementService.CallAsync((s, r) => s.UpdateClientLinksAsync(r), request));
 }
 ```
 ```java
 static UpdateClientLinksResponse updateClientLinks(
-	ArrayOfClientLink clientLinks) throws RemoteException, Exception
+    ArrayOfClientLink clientLinks) throws RemoteException, Exception
 {
-	UpdateClientLinksRequest request = new UpdateClientLinksRequest();
+    UpdateClientLinksRequest request = new UpdateClientLinksRequest();
 
-	request.setClientLinks(clientLinks);
+    request.setClientLinks(clientLinks);
 
-	return CustomerManagementService.getService().updateClientLinks(request);
+    return CustomerManagementService.getService().updateClientLinks(request);
 }
 ```
 ```php
 static function UpdateClientLinks(
-	$clientLinks)
+    $clientLinks)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
 
-	$request = new UpdateClientLinksRequest();
+    $request = new UpdateClientLinksRequest();
 
-	$request->ClientLinks = $clientLinks;
+    $request->ClientLinks = $clientLinks;
 
-	return $GLOBALS['CustomerManagementProxy']->GetService()->UpdateClientLinks($request);
+    return $GLOBALS['CustomerManagementProxy']->GetService()->UpdateClientLinks($request);
 }
 ```
 ```python
 response=customermanagement_service.UpdateClientLinks(
-	ClientLinks=ClientLinks)
+    ClientLinks=ClientLinks)
 ```
 
 ## Requirements

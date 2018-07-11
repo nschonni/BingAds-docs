@@ -24,6 +24,7 @@ The *UpdateAdsRequest* object defines the [body](#request-body) and [header](#re
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupid"></a>AdGroupId|The ID of the ad group that contains the ads to update.|**long**|
@@ -36,6 +37,7 @@ The *UpdateAdsRequest* object defines the [body](#request-body) and [header](#re
 The *UpdateAdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -179,51 +181,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<UpdateAdsResponse> UpdateAdsAsync(
-	long adGroupId,
-	IList<Ad> ads)
+    long adGroupId,
+    IList<Ad> ads)
 {
-	var request = new UpdateAdsRequest
-	{
-		AdGroupId = adGroupId,
-		Ads = ads
-	};
+    var request = new UpdateAdsRequest
+    {
+        AdGroupId = adGroupId,
+        Ads = ads
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.UpdateAdsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.UpdateAdsAsync(r), request));
 }
 ```
 ```java
 static UpdateAdsResponse updateAds(
-	java.lang.Long adGroupId,
-	ArrayOfAd ads) throws RemoteException, Exception
+    java.lang.Long adGroupId,
+    ArrayOfAd ads) throws RemoteException, Exception
 {
-	UpdateAdsRequest request = new UpdateAdsRequest();
+    UpdateAdsRequest request = new UpdateAdsRequest();
 
-	request.setAdGroupId(adGroupId);
-	request.setAds(ads);
+    request.setAdGroupId(adGroupId);
+    request.setAds(ads);
 
-	return CampaignManagementService.getService().updateAds(request);
+    return CampaignManagementService.getService().updateAds(request);
 }
 ```
 ```php
 static function UpdateAds(
-	$adGroupId,
-	$ads)
+    $adGroupId,
+    $ads)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new UpdateAdsRequest();
+    $request = new UpdateAdsRequest();
 
-	$request->AdGroupId = $adGroupId;
-	$request->Ads = $ads;
+    $request->AdGroupId = $adGroupId;
+    $request->Ads = $ads;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateAds($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateAds($request);
 }
 ```
 ```python
 response=campaignmanagement_service.UpdateAds(
-	AdGroupId=AdGroupId,
-	Ads=Ads)
+    AdGroupId=AdGroupId,
+    Ads=Ads)
 ```
 
 ## Requirements

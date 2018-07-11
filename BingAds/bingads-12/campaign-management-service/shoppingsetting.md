@@ -31,6 +31,7 @@ Supported shopping settings vary by campaign type.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="localinventoryadsenabled"></a>LocalInventoryAdsEnabled|Determines whether local inventory ads are enabled for the Bing Merchant Center store.<br/><br/> Not everyone has this feature yet. If you don't, don't worry. It's coming soon.<br/><br/>Set this property to *true* if you want to enable local inventory ads, and otherwise set it to *false*.<br/><br/>**Add:** Optional. If you do not specify this field or leave it empty, the default value of *false* will be set and local inventory ads will not be enabled.<br/>**Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.|**boolean**|
@@ -44,6 +45,7 @@ The [ShoppingSetting](shoppingsetting.md) object has [Inherited Elements](#inher
 
 ### <a name="inheritedelementssetting"></a>Inherited Elements from Setting
 The [ShoppingSetting](shoppingsetting.md) object derives from the [Setting](setting.md) object, and inherits the following elements. The descriptions below are specific to [ShoppingSetting](shoppingsetting.md), and might not apply to other objects that inherit the same elements from the [Setting](setting.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

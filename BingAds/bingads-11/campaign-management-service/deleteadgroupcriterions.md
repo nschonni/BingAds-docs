@@ -19,6 +19,7 @@ The *DeleteAdGroupCriterionsRequest* object defines the [body](#request-body) an
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupcriterionids"></a>AdGroupCriterionIds|A list of unique identifiers that identify the criterions to delete.<br/><br/>You can include up to 1,000 ad group criterion identifiers per request. |**long** array|
@@ -32,6 +33,7 @@ The *DeleteAdGroupCriterionsRequest* object defines the [body](#request-body) an
 The *DeleteAdGroupCriterionsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -111,58 +113,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<DeleteAdGroupCriterionsResponse> DeleteAdGroupCriterionsAsync(
-	IList<long> adGroupCriterionIds,
-	long adGroupId,
-	AdGroupCriterionType criterionType)
+    IList<long> adGroupCriterionIds,
+    long adGroupId,
+    AdGroupCriterionType criterionType)
 {
-	var request = new DeleteAdGroupCriterionsRequest
-	{
-		AdGroupCriterionIds = adGroupCriterionIds,
-		AdGroupId = adGroupId,
-		CriterionType = criterionType
-	};
+    var request = new DeleteAdGroupCriterionsRequest
+    {
+        AdGroupCriterionIds = adGroupCriterionIds,
+        AdGroupId = adGroupId,
+        CriterionType = criterionType
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.DeleteAdGroupCriterionsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.DeleteAdGroupCriterionsAsync(r), request));
 }
 ```
 ```java
 static DeleteAdGroupCriterionsResponse deleteAdGroupCriterions(
-	ArrayOflong adGroupCriterionIds,
-	java.lang.Long adGroupId,
-	ArrayList<AdGroupCriterionType> criterionType) throws RemoteException, Exception
+    ArrayOflong adGroupCriterionIds,
+    java.lang.Long adGroupId,
+    ArrayList<AdGroupCriterionType> criterionType) throws RemoteException, Exception
 {
-	DeleteAdGroupCriterionsRequest request = new DeleteAdGroupCriterionsRequest();
+    DeleteAdGroupCriterionsRequest request = new DeleteAdGroupCriterionsRequest();
 
-	request.setAdGroupCriterionIds(adGroupCriterionIds);
-	request.setAdGroupId(adGroupId);
-	request.setCriterionType(criterionType);
+    request.setAdGroupCriterionIds(adGroupCriterionIds);
+    request.setAdGroupId(adGroupId);
+    request.setCriterionType(criterionType);
 
-	return CampaignManagementService.getService().deleteAdGroupCriterions(request);
+    return CampaignManagementService.getService().deleteAdGroupCriterions(request);
 }
 ```
 ```php
 static function DeleteAdGroupCriterions(
-	$adGroupCriterionIds,
-	$adGroupId,
-	$criterionType)
+    $adGroupCriterionIds,
+    $adGroupId,
+    $criterionType)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new DeleteAdGroupCriterionsRequest();
+    $request = new DeleteAdGroupCriterionsRequest();
 
-	$request->AdGroupCriterionIds = $adGroupCriterionIds;
-	$request->AdGroupId = $adGroupId;
-	$request->CriterionType = $criterionType;
+    $request->AdGroupCriterionIds = $adGroupCriterionIds;
+    $request->AdGroupId = $adGroupId;
+    $request->CriterionType = $criterionType;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteAdGroupCriterions($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteAdGroupCriterions($request);
 }
 ```
 ```python
 response=campaignmanagement_service.DeleteAdGroupCriterions(
-	AdGroupCriterionIds=AdGroupCriterionIds,
-	AdGroupId=AdGroupId,
-	CriterionType=CriterionType)
+    AdGroupCriterionIds=AdGroupCriterionIds,
+    AdGroupId=AdGroupId,
+    CriterionType=CriterionType)
 ```
 
 ## Requirements

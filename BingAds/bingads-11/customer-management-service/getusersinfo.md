@@ -19,6 +19,7 @@ The *GetUsersInfoRequest* object defines the [body](#request-body) and [header](
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="customerid"></a>CustomerId|The identifier of the customer to which the users belong.|**long**|
@@ -31,6 +32,7 @@ The *GetUsersInfoRequest* object defines the [body](#request-body) and [header](
 The *GetUsersInfoResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -86,51 +88,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetUsersInfoResponse> GetUsersInfoAsync(
-	long customerId,
-	UserLifeCycleStatus? statusFilter)
+    long customerId,
+    UserLifeCycleStatus? statusFilter)
 {
-	var request = new GetUsersInfoRequest
-	{
-		CustomerId = customerId,
-		StatusFilter = statusFilter
-	};
+    var request = new GetUsersInfoRequest
+    {
+        CustomerId = customerId,
+        StatusFilter = statusFilter
+    };
 
-	return (await CustomerManagementService.CallAsync((s, r) => s.GetUsersInfoAsync(r), request));
+    return (await CustomerManagementService.CallAsync((s, r) => s.GetUsersInfoAsync(r), request));
 }
 ```
 ```java
 static GetUsersInfoResponse getUsersInfo(
-	java.lang.Long customerId,
-	UserLifeCycleStatus statusFilter) throws RemoteException, Exception
+    java.lang.Long customerId,
+    UserLifeCycleStatus statusFilter) throws RemoteException, Exception
 {
-	GetUsersInfoRequest request = new GetUsersInfoRequest();
+    GetUsersInfoRequest request = new GetUsersInfoRequest();
 
-	request.setCustomerId(customerId);
-	request.setStatusFilter(statusFilter);
+    request.setCustomerId(customerId);
+    request.setStatusFilter(statusFilter);
 
-	return CustomerManagementService.getService().getUsersInfo(request);
+    return CustomerManagementService.getService().getUsersInfo(request);
 }
 ```
 ```php
 static function GetUsersInfo(
-	$customerId,
-	$statusFilter)
+    $customerId,
+    $statusFilter)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
 
-	$request = new GetUsersInfoRequest();
+    $request = new GetUsersInfoRequest();
 
-	$request->CustomerId = $customerId;
-	$request->StatusFilter = $statusFilter;
+    $request->CustomerId = $customerId;
+    $request->StatusFilter = $statusFilter;
 
-	return $GLOBALS['CustomerManagementProxy']->GetService()->GetUsersInfo($request);
+    return $GLOBALS['CustomerManagementProxy']->GetService()->GetUsersInfo($request);
 }
 ```
 ```python
 response=customermanagement_service.GetUsersInfo(
-	CustomerId=CustomerId,
-	StatusFilter=StatusFilter)
+    CustomerId=CustomerId,
+    StatusFilter=StatusFilter)
 ```
 
 ## Requirements

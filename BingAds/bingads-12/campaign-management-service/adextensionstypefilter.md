@@ -32,6 +32,7 @@ Defines the possible ad extension types.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="appadextension"></a>AppAdExtension|An ad extension that contains a link to install an application from a supported app store. For more information, see [AppAdExtension](appadextension.md).|

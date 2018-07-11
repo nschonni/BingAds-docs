@@ -12,8 +12,8 @@ For information about the changes to the Bing Ads Version 12 services for each m
 ## <a name="june2018"></a>June 2018
 For information about this month's changes to Bing Ads services, see the following sections.
 
--   [Bing Ads Software Development Kit (SDK) Updates](#sdk-june2018)   
--   [Linked Account Ids per Customer Role](#linkedaccountids-june2018)
+- [Bing Ads Software Development Kit (SDK) Updates](#sdk-june2018)   
+- [Linked Account Ids per Customer Role](#linkedaccountids-june2018)
 
 ### <a name="sdk-june2018"></a>Bing Ads Software Development Kit (SDK) Updates
 The Bing Ads .NET, Java, and Python SDKs are updated to extend support for [Cooperative Bidding](product-ads.md#setup-cooperative) i.e., the BulkAdGroup now supports the coop setting. 
@@ -27,8 +27,8 @@ The [LinkedAccountIds](../customer-management-service/customerrole.md#linkedacco
 ## <a name="may2018"></a>May 2018
 For information about this month's changes to Bing Ads services, see the following sections.
 
--   [Bing Ads Software Development Kit (SDK) Updates](#sdk-may2018)   
--   [Microsoft Audience Network Preview](#audiencenetwork-may2018)  
+- [Bing Ads Software Development Kit (SDK) Updates](#sdk-may2018)   
+- [Microsoft Audience Network Preview](#audiencenetwork-may2018)  
 
 ### <a name="sdk-may2018"></a>Bing Ads Software Development Kit (SDK) Updates
 The Bing Ads .NET, Java, PHP, and Python SDKs are updated to extend support for [Audience Ads](audience-ads.md). New bulk objects are added to the SDK for reading and writing Bulk file records e.g., BulkResponsiveAd and BulkResponsiveAdLabel. 
@@ -41,9 +41,9 @@ Support is added for the Microsoft Audience Network in preview. For details see 
 ## <a name="april2018"></a>April 2018
 For information about this month's changes to Bing Ads services, see the following sections.
 
--   [Version 12 General Availability](#v12-april2018)  
--   [Bing Ads Software Development Kit (SDK) Updates](#sdk-april2018)   
--   [Product Match Count Report](#reporting-productmatchcount-april2018)   
+- [Version 12 General Availability](#v12-april2018)  
+- [Bing Ads Software Development Kit (SDK) Updates](#sdk-april2018)   
+- [Product Match Count Report](#reporting-productmatchcount-april2018)   
 
 ### <a name="v12-april2018"></a>Version 12 General Availability
 Bing Ads API version 12 is now generally available. With the availability of Bing Ads API version 12, version 11 is deprecated and will sunset by October 31, 2018. For more details, see [Migrate to Version 12](migration-guide.md).
@@ -65,7 +65,7 @@ The [ProductMatchCountReportRequest](../reporting-service/productmatchcountrepor
 ## <a name="march2018"></a>March 2018
 For information about this month's changes to Bing Ads services, see the following sections.
 
--   [Version 12 Sandbox Beta](#v12-march2018)  
+- [Version 12 Sandbox Beta](#v12-march2018)  
 
 ### <a name="v12-march2018"></a>Version 12 Sandbox Beta
 The sandbox endpoints for Bing Ads API version 12 are available in beta. The interfaces are subject to change prior to general availability. For more details, see [Migrate to Version 12](migration-guide.md).

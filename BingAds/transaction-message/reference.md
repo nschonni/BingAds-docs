@@ -21,35 +21,38 @@ For information about sending a transaction message, see [Pusing a Transaction M
 
 > [!NOTE]
 > Bing does not support all Transaction XSD elements. This topic includes only those elements and attributes that Bing supports. Bing ignores all other elements and attributes. 
-
+> 
 > [!NOTE]
 > The elements must be specified in the order defined by the Transaction XSD (and as listed in this topic).
 
 ----
 
- 
+
 <a name="transaction" /> 
 ## Transaction
 Defines the top-level element of a transaction message.
+
 
 |Element|Description|Children
 |-|-|-
 |Transaction|The top-level element in a transaction message.<br /><br />Attributes:<ul><li>timestamp&mdash;Required. The UTC date and time that you sent the message. The time stamp format is: YYYY-MM-DDThh:mm:ss[+/-hh:mm]. The UTC offset is optional. For example, 2017-06-14T08:00:34 or 2017-06-14T01:00:34+07:00.<br /><br />The time stamp applies to each itinerary in the message. Bing processes an itinerary only if the time stamp is later than the time stamp of the same itinerary stored in Bing. For example, if Bing processes a message with time stamp 14:10 and then processes a message with time stamp 14:09, only those itineraries not included in the 14:10 message are processed.<br /><br />Messages with a time stamp older than 24 hours are not processed.</li><li>id&mdash;Required. An opaque, user-defined ID that advertisers use to uniquely identify the message. The transaction status report includes this ID.</li></ul> |[Transaction Type](#transactiontype)
 
- 
+
 <a name="transactiontype" /> 
 ## Transaction Type
 Defines the transaction message.
+
 
 |Element|Description|Children
 |-|-|-
 |Result|Required.<br /><br />The `Transaction` element must contain one or more `Result` elements. Specify one `Result` element for each itinerary (`Checkin` and `Nights` combination) that you specify for a property. The amount of data that you specify for each `Result` object determines the number of itineraries that you may specify. However, the size of the list plus the `Transaction` element must be less than 100 MB (or 10 MB compressed). |[Result Type](#resulttype)
 
 
- 
+
 <a name="resulttype" /> 
 ## Result Type
 Defines the itinerary.
+
 
 |Element|Description|Children
 |-|-|-
@@ -69,10 +72,11 @@ Defines the itinerary.
 |AllowablePointsOfSale|Optional.<br /><br />A list of points of sale (POS) that identify websites where users can book the room. By default, the user can use any POS defined in your points of sale feed file. Specify this element only if you want to limit the points of sale for this specific itinerary. |Array of [allowablePointsOfSaleType](#allowablepointsofsaletype)
 
 
- 
+
 <a name="allowablepointsofsaletype" /> 
 ## allowablePointsOfSaleType
 Defines a point of sale (POS) where a user may book the room.
+
 
 |Element|Description|Children
 |-|-|-

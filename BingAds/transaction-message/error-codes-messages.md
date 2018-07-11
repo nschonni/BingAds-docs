@@ -12,6 +12,7 @@ ms.author: "scottwhi"
 
 When you send Bing your transaction message to process, Bing may return one of the following HTTP status codes:
 
+
 |Status Code|Description
 |-|-
 |200|Success. Bing successfully queued the message to be processed.
@@ -21,7 +22,7 @@ When you send Bing your transaction message to process, Bing may return one of t
 |500|Internal server error. This is typically a transient error. Retry the request at 1, 5, and 20 minute intervals. If the request fails after the third attempt, contact your TAM with the following information:<br /><br /><ul><li>CustomerID</li><li>Date and time that the errors occurred.</li><li>The ID in the WebRequestActivityId response header.</li></ul>
 
 ## Response body
-  
+
 If an HTTP error occurs, the body of the response contains an XML document that contains a description of the error.
 
 ```xml
@@ -39,6 +40,7 @@ The following tables describe the elements found in the error response.
 ### Error Response
 Defines the top-level element of an error response.
 
+
 |Element|Description|Children
 |-|-|-
 |ArrayOfApiError|The top-level element of an error response. This element contains a list of errors that occurred.|Array of [ApiError](#apierror)
@@ -46,6 +48,7 @@ Defines the top-level element of an error response.
 <a name="apierror" />
 ### ApiError
 Defines an error that occurred.
+
 
 |Element|Description|Children
 |-|-|-
@@ -57,11 +60,13 @@ Defines an error that occurred.
 
 The following lists the error codes and messages that the API returns.
 
-|Code|Message
-|-|-
-|AuthenticationFailure|Authentication failed for unknown reasons.
-|InternalError|Internal server error.<br /><br />This is typically a transient error. Retry the request at 1, 5, and 20 minute intervals. If the request fails after the third attempt, contact your TAM with the following information:<br /><br /><ul><li>CustomerID</li><li>Date and time that the errors occurred.</li><li>The ID in the WebRequestActivityId response header.</li></ul>
-|IPAddressNotAllowed|Customer {custId} is not authorized to use IP address {clientIp}.<br /><br />The customer is not authorized to send transaction messages from the IP address. You must send the request from an authorized server IP address. Contact your TAM to update your list of authorized server IP addresses.
-|NotAuthorized|The OAuth token that you set the Authorization header to is not valid.
-|RequestThrottled|Customer {customerId} exceeded the number of requests allowed.<br /><br />Customers may have a maximum of five requests queued or being processed. Sending a sixth request in this case will fail. 
-|RequestTooLarge|The request size ({requestSizeBytes} bytes) exceeds the maximum allowed ({maxAllowed} bytes).<br /><br /> The transaction message cannot exceed 100 MB or 10 MB compressed. Reduce the size of your transaction message to fit within the limits.
+
+|         Code          |                                                                                                                                                                                    Message                                                                                                                                                                                    |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AuthenticationFailure |                                                                                                                                                                  Authentication failed for unknown reasons.                                                                                                                                                                   |
+|     InternalError     | Internal server error.<br /><br />This is typically a transient error. Retry the request at 1, 5, and 20 minute intervals. If the request fails after the third attempt, contact your TAM with the following information:<br /><br /><ul><li>CustomerID</li><li>Date and time that the errors occurred.</li><li>The ID in the WebRequestActivityId response header.</li></ul> |
+|  IPAddressNotAllowed  |                                     Customer {custId} is not authorized to use IP address {clientIp}.<br /><br />The customer is not authorized to send transaction messages from the IP address. You must send the request from an authorized server IP address. Contact your TAM to update your list of authorized server IP addresses.                                     |
+|     NotAuthorized     |                                                                                                                                                    The OAuth token that you set the Authorization header to is not valid.                                                                                                                                                     |
+|   RequestThrottled    |                                                                                      Customer {customerId} exceeded the number of requests allowed.<br /><br />Customers may have a maximum of five requests queued or being processed. Sending a sixth request in this case will fail.                                                                                       |
+|    RequestTooLarge    |                                                               The request size ({requestSizeBytes} bytes) exceeds the maximum allowed ({maxAllowed} bytes).<br /><br /> The transaction message cannot exceed 100 MB or 10 MB compressed. Reduce the size of your transaction message to fit within the limits.                                                               |
+

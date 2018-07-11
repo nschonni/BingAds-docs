@@ -16,7 +16,7 @@ Bing Ads Scripts’ JavaScript engine supports most of [ECMAScript® 2015 Langua
 
 > [!NOTE]
 > The iterators don't support the **for-of** loop construct. For example:
->  
+> 
 > ```javascript
 >     for (var campaign of BingAdsApp.campaigns().get())
 > ```

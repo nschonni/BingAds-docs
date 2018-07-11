@@ -28,6 +28,7 @@ Defines an error object that identifies the entity with the batch of entities th
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="appealable"></a>Appealable|Reserved for future use.|**boolean**|
@@ -43,6 +44,7 @@ The [EditorialError](editorialerror.md) object has [Inherited Elements](#inherit
 ### <a name="inheritedelementsbatcherror"></a>Inherited Elements from BatchError
 The [EditorialError](editorialerror.md) object derives from the [BatchError](batcherror.md) object, and inherits the following elements. The descriptions below are specific to [EditorialError](editorialerror.md), and might not apply to other objects that inherit the same elements from the [BatchError](batcherror.md) object.  
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="code"></a>Code|A numeric error code that identifies the error.|**int**|
@@ -50,7 +52,7 @@ The [EditorialError](editorialerror.md) object derives from the [BatchError](bat
 |<a name="errorcode"></a>ErrorCode|A symbolic string constant that identifies the error. For example, *UserIsNotAuthorized*.|**string**|
 |<a name="fieldpath"></a>FieldPath|Reserved for future use.|**string**|
 |<a name="forwardcompatibilitymap"></a>ForwardCompatibilityMap|The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.|[KeyValuePairOfstringstring](keyvaluepairofstringstring.md) array|
-|<a name="index"></a>Index|The zero-based index of the item in the batch of items in the request message that failed.	|**int**|
+|<a name="index"></a>Index|The zero-based index of the item in the batch of items in the request message that failed.   |**int**|
 |<a name="message"></a>Message|A message that describes the error.<br/><br/>For more information about troubleshooting and error handling, see [Handling Service Errors and Exceptions](../guides/handle-service-errors-exceptions.md) and [Operation Error Codes](../guides/operation-error-codes.md).|**string**|
 |<a name="type"></a>Type|Reserved for future use.|**string**|
 

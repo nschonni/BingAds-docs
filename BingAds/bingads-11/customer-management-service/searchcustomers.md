@@ -19,6 +19,7 @@ The *SearchCustomersRequest* object defines the [body](#request-body) and [heade
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="applicationscope"></a>ApplicationScope|A value that determines whether to return results for advertising customers or publishing customers. If you do not specify the scope, the list may include both types of customers.|[ApplicationType](applicationtype.md)|
@@ -34,6 +35,7 @@ The *SearchCustomersRequest* object defines the [body](#request-body) and [heade
 The *SearchCustomersResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -137,72 +139,72 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<SearchCustomersResponse> SearchCustomersAsync(
-	ApplicationType applicationScope,
-	IList<Predicate> predicates,
-	DateRange dateRange,
-	IList<OrderBy> ordering,
-	Paging pageInfo)
+    ApplicationType applicationScope,
+    IList<Predicate> predicates,
+    DateRange dateRange,
+    IList<OrderBy> ordering,
+    Paging pageInfo)
 {
-	var request = new SearchCustomersRequest
-	{
-		ApplicationScope = applicationScope,
-		Predicates = predicates,
-		DateRange = dateRange,
-		Ordering = ordering,
-		PageInfo = pageInfo
-	};
+    var request = new SearchCustomersRequest
+    {
+        ApplicationScope = applicationScope,
+        Predicates = predicates,
+        DateRange = dateRange,
+        Ordering = ordering,
+        PageInfo = pageInfo
+    };
 
-	return (await CustomerManagementService.CallAsync((s, r) => s.SearchCustomersAsync(r), request));
+    return (await CustomerManagementService.CallAsync((s, r) => s.SearchCustomersAsync(r), request));
 }
 ```
 ```java
 static SearchCustomersResponse searchCustomers(
-	ApplicationType applicationScope,
-	ArrayOfPredicate predicates,
-	DateRange dateRange,
-	ArrayOfOrderBy ordering,
-	Paging pageInfo) throws RemoteException, Exception
+    ApplicationType applicationScope,
+    ArrayOfPredicate predicates,
+    DateRange dateRange,
+    ArrayOfOrderBy ordering,
+    Paging pageInfo) throws RemoteException, Exception
 {
-	SearchCustomersRequest request = new SearchCustomersRequest();
+    SearchCustomersRequest request = new SearchCustomersRequest();
 
-	request.setApplicationScope(applicationScope);
-	request.setPredicates(predicates);
-	request.setDateRange(dateRange);
-	request.setOrdering(ordering);
-	request.setPageInfo(pageInfo);
+    request.setApplicationScope(applicationScope);
+    request.setPredicates(predicates);
+    request.setDateRange(dateRange);
+    request.setOrdering(ordering);
+    request.setPageInfo(pageInfo);
 
-	return CustomerManagementService.getService().searchCustomers(request);
+    return CustomerManagementService.getService().searchCustomers(request);
 }
 ```
 ```php
 static function SearchCustomers(
-	$applicationScope,
-	$predicates,
-	$dateRange,
-	$ordering,
-	$pageInfo)
+    $applicationScope,
+    $predicates,
+    $dateRange,
+    $ordering,
+    $pageInfo)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
 
-	$request = new SearchCustomersRequest();
+    $request = new SearchCustomersRequest();
 
-	$request->ApplicationScope = $applicationScope;
-	$request->Predicates = $predicates;
-	$request->DateRange = $dateRange;
-	$request->Ordering = $ordering;
-	$request->PageInfo = $pageInfo;
+    $request->ApplicationScope = $applicationScope;
+    $request->Predicates = $predicates;
+    $request->DateRange = $dateRange;
+    $request->Ordering = $ordering;
+    $request->PageInfo = $pageInfo;
 
-	return $GLOBALS['CustomerManagementProxy']->GetService()->SearchCustomers($request);
+    return $GLOBALS['CustomerManagementProxy']->GetService()->SearchCustomers($request);
 }
 ```
 ```python
 response=customermanagement_service.SearchCustomers(
-	ApplicationScope=ApplicationScope,
-	Predicates=Predicates,
-	DateRange=DateRange,
-	Ordering=Ordering,
-	PageInfo=PageInfo)
+    ApplicationScope=ApplicationScope,
+    Predicates=Predicates,
+    DateRange=DateRange,
+    Ordering=Ordering,
+    PageInfo=PageInfo)
 ```
 
 ## Requirements

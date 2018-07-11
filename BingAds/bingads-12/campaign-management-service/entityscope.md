@@ -21,6 +21,7 @@ Defines values that you can use to determine whether the remarketing list can on
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="account"></a>Account|The remarketing list can only be associated with ad groups within one specified account.|

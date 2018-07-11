@@ -12,7 +12,7 @@ ms.author: "scottwhi"
 
 > [!NOTE]
 > This beta release of Hotel Ads is available to select participants only. For information about participating in the beta release program, please contact your account manager.
->
+> 
 > The API and documentation are subject to change.
 
 The Hotel API lets you manage your hotel ad campaigns and bidding.
@@ -25,7 +25,7 @@ When you get access to Hotel Ads, Bing sets up a default subaccount and hotel gr
 A subaccount specifies the campaign's daily budget, maximum bid allowed, and default bid and bid multipliers for ads that don't specify bids or multipliers.
 
 Hotel groups provide another level for you to logically group hotel ads. A hotel group belongs to a single subaccount. The default hotel group that Bing creates for you is named, Ungrouped. It contains all hotels from the initial hotel feed and all new hotels going forward. 
- 
+
 A hotel group specifies the default bid and bid multipliers for ads that don't specify bids or multipliers. If you don't specify bids and multipliers, the group inherits them from the subaccount.
 
 After you have your subaccount and hotel group set up, you can begin importing your hotel feed data. For information, see [Do you have your hotel feed set up?](../hotel-service/get-started.md#feeds)
@@ -43,6 +43,7 @@ You'll need credentials and your hotel feeds set up. For information, see [Getti
 ## How do I manage my resources?
 
 The following sections show how to manage your subaccounts, hotel groups, and hotels. For information about the endpoints, header, query parameters, and resources, see [Hotel API Reference](../hotel-service/reference.md).
+
 
 |Topic|Description
 |-|-

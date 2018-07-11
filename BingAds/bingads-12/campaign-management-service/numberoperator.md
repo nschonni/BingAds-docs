@@ -25,6 +25,7 @@ Defines the operators that can be applied to remarketing list rule item number v
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="equals"></a>Equals|Equals the corresponding number value.|

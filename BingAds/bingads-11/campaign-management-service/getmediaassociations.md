@@ -22,6 +22,7 @@ The *GetMediaAssociationsRequest* object defines the [body](#request-body) and [
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="mediaenabledentities"></a>MediaEnabledEntities|Filters the results to only return media associations with the specified type of media enabled entity.<br /><br />Supported values are ImageAdExtension and ResponsiveAd.|[MediaEnabledEntityFilter](mediaenabledentityfilter.md)|
@@ -34,6 +35,7 @@ The *GetMediaAssociationsRequest* object defines the [body](#request-body) and [
 The *GetMediaAssociationsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -120,51 +122,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetMediaAssociationsResponse> GetMediaAssociationsAsync(
-	MediaEnabledEntityFilter mediaEnabledEntities,
-	IList<long> mediaIds)
+    MediaEnabledEntityFilter mediaEnabledEntities,
+    IList<long> mediaIds)
 {
-	var request = new GetMediaAssociationsRequest
-	{
-		MediaEnabledEntities = mediaEnabledEntities,
-		MediaIds = mediaIds
-	};
+    var request = new GetMediaAssociationsRequest
+    {
+        MediaEnabledEntities = mediaEnabledEntities,
+        MediaIds = mediaIds
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetMediaAssociationsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetMediaAssociationsAsync(r), request));
 }
 ```
 ```java
 static GetMediaAssociationsResponse getMediaAssociations(
-	ArrayList<MediaEnabledEntityFilter> mediaEnabledEntities,
-	ArrayOflong mediaIds) throws RemoteException, Exception
+    ArrayList<MediaEnabledEntityFilter> mediaEnabledEntities,
+    ArrayOflong mediaIds) throws RemoteException, Exception
 {
-	GetMediaAssociationsRequest request = new GetMediaAssociationsRequest();
+    GetMediaAssociationsRequest request = new GetMediaAssociationsRequest();
 
-	request.setMediaEnabledEntities(mediaEnabledEntities);
-	request.setMediaIds(mediaIds);
+    request.setMediaEnabledEntities(mediaEnabledEntities);
+    request.setMediaIds(mediaIds);
 
-	return CampaignManagementService.getService().getMediaAssociations(request);
+    return CampaignManagementService.getService().getMediaAssociations(request);
 }
 ```
 ```php
 static function GetMediaAssociations(
-	$mediaEnabledEntities,
-	$mediaIds)
+    $mediaEnabledEntities,
+    $mediaIds)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetMediaAssociationsRequest();
+    $request = new GetMediaAssociationsRequest();
 
-	$request->MediaEnabledEntities = $mediaEnabledEntities;
-	$request->MediaIds = $mediaIds;
+    $request->MediaEnabledEntities = $mediaEnabledEntities;
+    $request->MediaIds = $mediaIds;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetMediaAssociations($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetMediaAssociations($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetMediaAssociations(
-	MediaEnabledEntities=MediaEnabledEntities,
-	MediaIds=MediaIds)
+    MediaEnabledEntities=MediaEnabledEntities,
+    MediaIds=MediaIds)
 ```
 
 ## Requirements

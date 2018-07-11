@@ -9,6 +9,7 @@ description: Setup ads with the Bing Ads API.
 # Ads
 Bing Ads provides a variety of options for ads. You can extend the ad layout to be more visually appealing and feature rich using ad extensions.
 
+
 |Topic|Description|
 |---------|---------|
 |[Ad Extensions](ad-extensions.md)|With ad extensions, you can decorate ads with additional information that helps customers find relevant information about your products and services. For example, you can include deep links into your website to quickly direct your customers to relevant promotional or technical information that may help increase conversions.|

@@ -12,6 +12,7 @@ Whether you are managing your own Bing Ads account as a direct advertiser, build
 ## <a name="accountmodels"></a>Account Management Models
 Search advertising businesses typically align with one or more of the following account management models. 
 
+
 |Model|Description|
 |---------|---------------|
 |Direct Advertiser|A direct advertiser builds a Bing Ads application for its own advertising campaigns and is billed directly by Microsoft for valid ad clicks. For relevant best practices, see [Management Model for Direct Advertisers](management-model-direct-advertisers.md).|
@@ -24,9 +25,9 @@ The *DeveloperToken* header element must be specified to access Bing Ads service
 
 There are two types of Bing Ads developer tokens. 
 
--   Single-user developer token can be used to authenticate solely with one designated user. For example if you are a direct advertiser with one log in email address, then you will only need a single-user token.   
+- Single-user developer token can be used to authenticate solely with one designated user. For example if you are a direct advertiser with one log in email address, then you will only need a single-user token.   
 
--   Universal developer token (previously known as a multi-user token) can be used to authenticate with any valid user credentials. For example if you are developing an application that will be used by multiple Bing Ads users, then you will likely want to request a universal token instead of getting a single-user token for each user.
+- Universal developer token (previously known as a multi-user token) can be used to authenticate with any valid user credentials. For example if you are developing an application that will be used by multiple Bing Ads users, then you will likely want to request a universal token instead of getting a single-user token for each user.
 
 Regardless of the developer token type, API access is only enabled for the accounts available to each respective user based on their managed access rights. In other words the developer token does not change read or write access to accounts that the user can manage. The same accounts available in the Bing Ads web application are available to the corresponding user programmatically through the API. 
 
@@ -92,6 +93,7 @@ Your application must support one or more users per customer. For information on
 ### <a name="userroles"></a>User Roles and Available Service Operations
 The user role granted by a customer's super admin or the Bing Ads system administrator determines service availability. For example a user with the advertiser campaign manager role may add and update campaigns, but may not create or update users. Unless otherwise noted in the reference content per service operation, the following table describes the service restrictions per user role.
 
+
 |User Role|Available Services|Provisioning|
 |-------------|----------------------|----------------|
 |Advertiser Campaign Manager|This role has permissions to view selected accounts and add, edit, or delete campaigns within the selected accounts. The Advertiser Campaign Manager can view payment methods, but cannot manage any billing and payment tasks.<br /><br />Read operations for all services are available.<br /><br />With the [Customer Management service](../customer-management-service/customer-management-service-operations.md), write operations are not available. The only exception is that the Advertiser Campaign Manager can update the *TrackingUrlTemplate* and *AutoTag* values in the *ForwardCompatibilityMap* element of an [AdvertiserAccount](../customer-management-service/advertiseraccount.md) using the [UpdateAccount](../customer-management-service/updateaccount.md) operation. The *Id*, *Name* and *TimeStamp* properties are read-only and required for the update; however, all other properties of the Account object are read-only and will be ignored.|A user with the advertiser campaign manager role can be created by a customer's super admin or aggregator in the Bing Ads web application. For more information on getting and updating users, see [Managing Users](#managingusers).|
@@ -115,30 +117,31 @@ You might prefer to think of "multi-user" credentials to mean "multiple user rol
 
 Let's consider the following user roles and permissions before multi-user consolidation. Each user must log in separately and has different permissions during each logged in session. Likewise via the API each user's access token (see [Authentication with OAuth](authentication-oauth.md)) represents permissions limited to the corresponding user and role. 
 
-|User|Role|Permissions|
-|-------------|----------------------|----------------|
-|one@contoso.com|Viewer|Customer A - All Accounts|
-|two@contoso.com|Super Admin|Customer B - All Accounts|
-|three@contoso.com|Viewer|Customer C - Account A|
-|four@contoso.com|Standard User|Customer B - All Accounts|
+
+|       User        |     Role      |        Permissions        |
+|-------------------|---------------|---------------------------|
+|  one@contoso.com  |    Viewer     | Customer A - All Accounts |
+|  two@contoso.com  |  Super Admin  | Customer B - All Accounts |
+| three@contoso.com |    Viewer     |  Customer C - Account A   |
+| four@contoso.com  | Standard User | Customer B - All Accounts |
 
 First please note that only one email address per customer can be consolidated, so in this example two@contoso.com and four@contoso.com cannot be consolidated together. Now let's see what happens after the top three users are consolidated under one@contoso.com. 
-  * No changes for user four@contoso.com whether via the Bing Ads web application, Bing Ads Editor, or API. 
-  * The user one@contoso.com can log in via the Bing Ads web application and Bing Ads Editor. The consolidated users i.e., two@contoso.com and three@contoso.com no longer have permissions to sign in via the Bing Ads web application or Bing Ads Editor. While signed in as one@contoso.com, you can switch context to the customer accounts with corresponding user roles that had previously been assigned to two@contoso.com and three@contoso.com. Although you can access multiple customers signed in with one user's credentials (one@contoso.com), you will need to switch from customer to customer to manage the accounts that are linked with unique user roles. Customers and their related accounts remain distinct. For more details see the Bing Ads help topic [Managing your user name to access multiple accounts](https://help.bingads.microsoft.com/#apex/3/en/app54567/1/en-US/#ext:Customers_Management).
-  * With Bing Ads API version 11 there is no change to access before versus after multi-user consolidation. Each of the user's access token (see [Authentication with OAuth](authentication-oauth.md)) represents permissions limited to the corresponding user and role. 
-  * Starting with Bing Ads API version 12, the access token for user one@contoso.com will represent permissions to the consolidated list (superset) of accounts. The user role in effect will depend on the customer and account identifiers specified in the service request. Access tokens for two@contoso.com and three@contoso.com will no longer be accepted i.e., error 120 - UserLoginAccessDenied will be returned. 
-  * The *UserName* returned via [GetUser](../customer-management-service/getuser.md) and [GetUsersInfo](../customer-management-service/getusersinfo.md) will differ between version 11 and 12 for two@contoso.com and three@contoso.com. In version 11 the *UserName* will be two@contoso.com and three@contoso.com, whereas in version 12 the *UserName* for each of the corresponding user identifiers will be one@contoso.com. In other words the operations will always return whatever user name can authenticate using the respective API version. 
+* No changes for user four@contoso.com whether via the Bing Ads web application, Bing Ads Editor, or API. 
+* The user one@contoso.com can log in via the Bing Ads web application and Bing Ads Editor. The consolidated users i.e., two@contoso.com and three@contoso.com no longer have permissions to sign in via the Bing Ads web application or Bing Ads Editor. While signed in as one@contoso.com, you can switch context to the customer accounts with corresponding user roles that had previously been assigned to two@contoso.com and three@contoso.com. Although you can access multiple customers signed in with one user's credentials (one@contoso.com), you will need to switch from customer to customer to manage the accounts that are linked with unique user roles. Customers and their related accounts remain distinct. For more details see the Bing Ads help topic [Managing your user name to access multiple accounts](https://help.bingads.microsoft.com/#apex/3/en/app54567/1/en-US/#ext:Customers_Management).
+* With Bing Ads API version 11 there is no change to access before versus after multi-user consolidation. Each of the user's access token (see [Authentication with OAuth](authentication-oauth.md)) represents permissions limited to the corresponding user and role. 
+* Starting with Bing Ads API version 12, the access token for user one@contoso.com will represent permissions to the consolidated list (superset) of accounts. The user role in effect will depend on the customer and account identifiers specified in the service request. Access tokens for two@contoso.com and three@contoso.com will no longer be accepted i.e., error 120 - UserLoginAccessDenied will be returned. 
+* The *UserName* returned via [GetUser](../customer-management-service/getuser.md) and [GetUsersInfo](../customer-management-service/getusersinfo.md) will differ between version 11 and 12 for two@contoso.com and three@contoso.com. In version 11 the *UserName* will be two@contoso.com and three@contoso.com, whereas in version 12 the *UserName* for each of the corresponding user identifiers will be one@contoso.com. In other words the operations will always return whatever user name can authenticate using the respective API version. 
 
-    > [!NOTE]
-    > If the multi-user credentials were provisioned through the user invitation work flow i.e., there was never an "old user name" for access to a customer, a system generated GUID will be returned in the *UserName* element in version 11. In version 12 the multi-user email address will be returned. 
+  > [!NOTE]
+  > If the multi-user credentials were provisioned through the user invitation work flow i.e., there was never an "old user name" for access to a customer, a system generated GUID will be returned in the *UserName* element in version 11. In version 12 the multi-user email address will be returned. 
 
 #### <a name="multi-user-person"></a>Person and User Object Model
 A person with multi-user credentials is represented by multiple [User](../customer-management-service/user.md) objects and corresponding user identifiers. The [GetUser](../customer-management-service/getuser.md) response can vary depending on who makes the call, even with the same user identifier. Let's say for example, that prior to consolidation the identifiers for one@contoso.com, two@contoso.com, and three@contoso.com were 123, 456, and 789 respectively. Each user identifier effectively maps a person to a specific customer e.g., identifier 123 maps one@contoso.com to the original customer that the person could access. In this example we refer to 123 as the original user identifier. 
 
-  > [!TIP]
-  > To determine which customers and accounts the current user can access, call [GetUser](../customer-management-service/getuser.md) and set the UserId element nil. The [GetUser](../customer-management-service/getuser.md) response includes a list of [CustomerRole](../customer-management-service/customerrole.md) objects named *CustomerRoles*. Each returned role is mapped to a specific customer (and a subset of accounts if applicable). 
-  > 
-  > Other operations such as [FindAccountsOrCustomersInfo ](../customer-management-service/findaccountsorcustomersinfo.md) will return all the accounts that you can access, although please note the customer identifiers of returned objects may differ from the identifiers of customers that you can directly access as defined by each [CustomerRole](../customer-management-service/customerrole.md). This could occur for example, if you have access to an agency customer that linked to an account in a different customer via the client link setup i.e., not via multi-user credentials consolidation. 
+> [!TIP]
+> To determine which customers and accounts the current user can access, call [GetUser](../customer-management-service/getuser.md) and set the UserId element nil. The [GetUser](../customer-management-service/getuser.md) response includes a list of [CustomerRole](../customer-management-service/customerrole.md) objects named *CustomerRoles*. Each returned role is mapped to a specific customer (and a subset of accounts if applicable). 
+> 
+> Other operations such as [FindAccountsOrCustomersInfo ](../customer-management-service/findaccountsorcustomersinfo.md) will return all the accounts that you can access, although please note the customer identifiers of returned objects may differ from the identifiers of customers that you can directly access as defined by each [CustomerRole](../customer-management-service/customerrole.md). This could occur for example, if you have access to an agency customer that linked to an account in a different customer via the client link setup i.e., not via multi-user credentials consolidation. 
 
 - If the access token for one@contoso.com is used to call [GetUser](../customer-management-service/getuser.md), and the UserId is nil or UserId is set to the original user identifier (e.g., 123), the operation will return [CustomerRole](../customer-management-service/customerrole.md) objects for all customers that the user can access.  
 - If the access token for one@contoso.com is used to call [GetUser](../customer-management-service/getuser.md), and the UserId is set to either 456 or 789, the operation will only return one [CustomerRole](../customer-management-service/customerrole.md) object that maps this person to a specific customer. 
@@ -150,6 +153,7 @@ The Name, Lcid, JobTitle, and ContactInfo user settings for the same person will
 
 For example let's say you haven't updated user information for one@contoso.com since prior to consolidation with two@contoso.com and three@contoso.com. After consolidation and until the user settings are updated post-consolidation, you will continue to observe a distinct LastModifiedByUserId and LastModifiedTime within each returned [User](../customer-management-service/user.md) object.
 
+
 |User Id|Contact Info Id|Permissions|LastModifiedByUserId|
 |-------------|----------------------|----------------|----------------|
 |123|234|Customer A - All Accounts|123|
@@ -157,6 +161,7 @@ For example let's say you haven't updated user information for one@contoso.com s
 |789|890|Customer C - Account A|789|
 
 Now let's say that one@contoso.com is acting in the context of Customer B and updates their contact information. The updated contact information as well as the same LastModifiedByUserId and LastModifiedTime are now syncrhonized across all returned [User](../customer-management-service/user.md) objects.
+
 
 |User Id|Contact Info Id|Permissions|LastModifiedByUserId|
 |-------------|----------------------|----------------|----------------|

@@ -15,6 +15,7 @@ ms.topic: "article"
 
 The following table maps the bid strategy names in Bing Ads Scripts to their corresponding strategy name in Bing Ads API.
 
+
 Bing Ads Scripts|Bing Ads
 |-|-
 MANUAL_CPC|ManualCpc

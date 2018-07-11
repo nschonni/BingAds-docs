@@ -25,6 +25,7 @@ Defines an image media representation with height and width.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="height"></a>Height|The height of the image in pixels. For more information, see [Remarks](#remarks) below.|**int**|
@@ -37,6 +38,7 @@ The [ImageMediaRepresentation](imagemediarepresentation.md) object has [Inherite
 ### <a name="inheritedelementsmediarepresentation"></a>Inherited Elements from MediaRepresentation
 The [ImageMediaRepresentation](imagemediarepresentation.md) object derives from the [MediaRepresentation](mediarepresentation.md) object, and inherits the following elements. The descriptions below are specific to [ImageMediaRepresentation](imagemediarepresentation.md), and might not apply to other objects that inherit the same elements from the [MediaRepresentation](mediarepresentation.md) object.  
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="name"></a>Name|The name of the media representation.<br /><br />For [ImageAdExtension](imageadextension.md) media representations, the possible values are *Preview*, *Thumbnail*, and *Original*. For [ResponsiveAd](responsivead.md) media representations, the only possible value is *Original*.|**string**|
@@ -45,6 +47,7 @@ The [ImageMediaRepresentation](imagemediarepresentation.md) object derives from 
 
 ## <a name="remarks"></a>Remarks
 Bing Ads stores three representations for each image media of varying height and width.
+
 
 |Description|Width|Height|
 |---------------|---------|----------|

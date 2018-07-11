@@ -27,6 +27,7 @@ If you do not include the suggested bid search parameter when calling [GetKeywor
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="maximum"></a>Maximum|The maximum suggested bid that you want for keyword ideas.|**double**|

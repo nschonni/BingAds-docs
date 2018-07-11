@@ -19,6 +19,7 @@ The *DeleteCampaignCriterionsRequest* object defines the [body](#request-body) a
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="campaigncriterionids"></a>CampaignCriterionIds|A list of unique system identifiers corresponding to the campaign criterions that you want to delete.<br/><br/>You can include up to 100 campaign criterion identifiers per request.|**long** array|
@@ -32,6 +33,7 @@ The *DeleteCampaignCriterionsRequest* object defines the [body](#request-body) a
 The *DeleteCampaignCriterionsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -111,58 +113,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<DeleteCampaignCriterionsResponse> DeleteCampaignCriterionsAsync(
-	IList<long> campaignCriterionIds,
-	long campaignId,
-	CampaignCriterionType criterionType)
+    IList<long> campaignCriterionIds,
+    long campaignId,
+    CampaignCriterionType criterionType)
 {
-	var request = new DeleteCampaignCriterionsRequest
-	{
-		CampaignCriterionIds = campaignCriterionIds,
-		CampaignId = campaignId,
-		CriterionType = criterionType
-	};
+    var request = new DeleteCampaignCriterionsRequest
+    {
+        CampaignCriterionIds = campaignCriterionIds,
+        CampaignId = campaignId,
+        CriterionType = criterionType
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.DeleteCampaignCriterionsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.DeleteCampaignCriterionsAsync(r), request));
 }
 ```
 ```java
 static DeleteCampaignCriterionsResponse deleteCampaignCriterions(
-	ArrayOflong campaignCriterionIds,
-	java.lang.Long campaignId,
-	ArrayList<CampaignCriterionType> criterionType) throws RemoteException, Exception
+    ArrayOflong campaignCriterionIds,
+    java.lang.Long campaignId,
+    ArrayList<CampaignCriterionType> criterionType) throws RemoteException, Exception
 {
-	DeleteCampaignCriterionsRequest request = new DeleteCampaignCriterionsRequest();
+    DeleteCampaignCriterionsRequest request = new DeleteCampaignCriterionsRequest();
 
-	request.setCampaignCriterionIds(campaignCriterionIds);
-	request.setCampaignId(campaignId);
-	request.setCriterionType(criterionType);
+    request.setCampaignCriterionIds(campaignCriterionIds);
+    request.setCampaignId(campaignId);
+    request.setCriterionType(criterionType);
 
-	return CampaignManagementService.getService().deleteCampaignCriterions(request);
+    return CampaignManagementService.getService().deleteCampaignCriterions(request);
 }
 ```
 ```php
 static function DeleteCampaignCriterions(
-	$campaignCriterionIds,
-	$campaignId,
-	$criterionType)
+    $campaignCriterionIds,
+    $campaignId,
+    $criterionType)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new DeleteCampaignCriterionsRequest();
+    $request = new DeleteCampaignCriterionsRequest();
 
-	$request->CampaignCriterionIds = $campaignCriterionIds;
-	$request->CampaignId = $campaignId;
-	$request->CriterionType = $criterionType;
+    $request->CampaignCriterionIds = $campaignCriterionIds;
+    $request->CampaignId = $campaignId;
+    $request->CriterionType = $criterionType;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteCampaignCriterions($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteCampaignCriterions($request);
 }
 ```
 ```python
 response=campaignmanagement_service.DeleteCampaignCriterions(
-	CampaignCriterionIds=CampaignCriterionIds,
-	CampaignId=CampaignId,
-	CriterionType=CriterionType)
+    CampaignCriterionIds=CampaignCriterionIds,
+    CampaignId=CampaignId,
+    CriterionType=CriterionType)
 ```
 
 ## Requirements

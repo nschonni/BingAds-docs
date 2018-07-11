@@ -19,6 +19,7 @@ The *GetLabelAssociationsByEntityIdsRequest* object defines the [body](#request-
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="entityids"></a>EntityIds|The list of entity identifiers used to request label associations.<br /><br />The maximum size of the list is 100 items per service request.|**long** array|
@@ -31,6 +32,7 @@ The *GetLabelAssociationsByEntityIdsRequest* object defines the [body](#request-
 The *GetLabelAssociationsByEntityIdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -114,51 +116,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetLabelAssociationsByEntityIdsResponse> GetLabelAssociationsByEntityIdsAsync(
-	IList<long> entityIds,
-	EntityType entityType)
+    IList<long> entityIds,
+    EntityType entityType)
 {
-	var request = new GetLabelAssociationsByEntityIdsRequest
-	{
-		EntityIds = entityIds,
-		EntityType = entityType
-	};
+    var request = new GetLabelAssociationsByEntityIdsRequest
+    {
+        EntityIds = entityIds,
+        EntityType = entityType
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetLabelAssociationsByEntityIdsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetLabelAssociationsByEntityIdsAsync(r), request));
 }
 ```
 ```java
 static GetLabelAssociationsByEntityIdsResponse getLabelAssociationsByEntityIds(
-	ArrayOflong entityIds,
-	EntityType entityType) throws RemoteException, Exception
+    ArrayOflong entityIds,
+    EntityType entityType) throws RemoteException, Exception
 {
-	GetLabelAssociationsByEntityIdsRequest request = new GetLabelAssociationsByEntityIdsRequest();
+    GetLabelAssociationsByEntityIdsRequest request = new GetLabelAssociationsByEntityIdsRequest();
 
-	request.setEntityIds(entityIds);
-	request.setEntityType(entityType);
+    request.setEntityIds(entityIds);
+    request.setEntityType(entityType);
 
-	return CampaignManagementService.getService().getLabelAssociationsByEntityIds(request);
+    return CampaignManagementService.getService().getLabelAssociationsByEntityIds(request);
 }
 ```
 ```php
 static function GetLabelAssociationsByEntityIds(
-	$entityIds,
-	$entityType)
+    $entityIds,
+    $entityType)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetLabelAssociationsByEntityIdsRequest();
+    $request = new GetLabelAssociationsByEntityIdsRequest();
 
-	$request->EntityIds = $entityIds;
-	$request->EntityType = $entityType;
+    $request->EntityIds = $entityIds;
+    $request->EntityType = $entityType;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetLabelAssociationsByEntityIds($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetLabelAssociationsByEntityIds($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetLabelAssociationsByEntityIds(
-	EntityIds=EntityIds,
-	EntityType=EntityType)
+    EntityIds=EntityIds,
+    EntityType=EntityType)
 ```
 
 ## Requirements

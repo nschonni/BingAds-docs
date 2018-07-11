@@ -12,7 +12,7 @@ ms.author: "scottwhi"
 
 > [!NOTE]
 > This beta release of Hotel Ads is available to select participants only. For information about participating in the beta release program, please contact your account manager.
->
+> 
 > The API and documentation are subject to change.
 
 Reporting is an asynchronous process where you send a request with report parameters to the reporting service and it puts the request in a queue. You then poll the service for status of the report job. When the status is Completed, you use the URL that the service provides to download the report.
@@ -38,13 +38,13 @@ The following example shows a `ReportJob` request for a performance report.
 
 ```json
 {
-    "ReportType":"Performance", 
-    "StartDate":"2017-11-06", 
-    "EndDate":"2017-11-13", 
-    "Columns":[  
-        "HotelId", 
-        "Clicks" 
-    ] 
+    "ReportType":"Performance", 
+    "StartDate":"2017-11-06", 
+    "EndDate":"2017-11-13", 
+    "Columns":[  
+        "HotelId", 
+        "Clicks" 
+    ] 
 }
 ```
 
@@ -98,14 +98,14 @@ Set `Filter` to an OData [$filter](http://www.odata.org/getting-started/basic-tu
 
 ```json
 {
-    "ReportType":"Performance", 
-    "StartDate":"2017-11-06", 
-    "EndDate":"2017-11-13", 
-    "Columns":[  
-        "HotelId", 
-        "Clicks" 
-    ], 
-    "Filter":"DeviceType eq Enum.DeviceType'Desktop' or DeviceType eq Enum.DeviceType'Tablet'", 
+    "ReportType":"Performance", 
+    "StartDate":"2017-11-06", 
+    "EndDate":"2017-11-13", 
+    "Columns":[  
+        "HotelId", 
+        "Clicks" 
+    ], 
+    "Filter":"DeviceType eq Enum.DeviceType'Desktop' or DeviceType eq Enum.DeviceType'Tablet'", 
 }
 ```
 
@@ -118,10 +118,10 @@ By default, the performance report contains only hotels that have impressions du
 
 ```json
 {
-    "ReportType":"Performance", 
-    "StartDate":"2017-11-06", 
-    "EndDate":"2017-11-13", 
-    "Columns":[  
+    "ReportType":"Performance", 
+    "StartDate":"2017-11-06", 
+    "EndDate":"2017-11-13", 
+    "Columns":[  
         "HotelId",
         "PartnerHotelId",
         "Clicks",
@@ -152,22 +152,24 @@ Reports contain [dimension](#dimension-columns) columns and [measure](#measure-c
 The following is the dimension hierarchy for Performance Report.
 
 1. Date
-1. SubaccountId/Name
-2. HotelGroupId/Name
-3. HotelId/Name, PartnerHotelId
-4. HotelCountry
-5. UserCountry
-6. SlotType
-7. LengthOfStay
-8. DeviceType
+2. SubaccountId/Name
+3. HotelGroupId/Name
+4. HotelId/Name, PartnerHotelId
+5. HotelCountry
+6. UserCountry
+7. SlotType
+8. LengthOfStay
+9. DeviceType
 
 For example, if the request contains SubaccountId and Clicks, the clicks roll up to SubaccountId.
+
 
 |Date|Subaccount|Clicks
 |-|-|-
 |2017-11-16|123|40
 
 And if the request contains SubaccountId, HotelGroupId, and Clicks, the clicks roll up to HotelGroupId. 
+
 
 |Date|Subaccount|Hotel group|Clicks
 |-|-|-|-
@@ -180,6 +182,7 @@ The request must include at least one dimension column and one measure column.
 
 <a name="dimensioncolumns" />
 ### Dimension columns
+
 
 |Column name|Report column name|Description
 |-|-|-
@@ -207,6 +210,7 @@ The request must include at least one dimension column and one measure column.
 
 <a name="measurecolumns" />
 ### Measure columns
+
 
 |Column name|Report column name|Description
 |-|-|-
@@ -255,16 +259,17 @@ The following are the SOV columns:
 > - LengthOfStay  
 > - SlotType  
 > - Usercountry  
->  
+> 
 > If you specify any of these dimension column, the request succeeds but the report's data includes duplicate SOV data. For example, in the following report, the 50% impression share is overall for the hotel and not for each slot type.  
->
+> 
+> 
 > |Date|Hotel ID|Clicks|Impr.|Slot type|Eligible impr.|Impr. share  
 > |-|-|-|-|-|-|-  
 > |5/22/2018|1|10|20|A|100|50  
 > |5/22/2018|1|9|10|A|100|50  
 > |5/22/2018|1|5|10|M|100|50  
-
-
+> 
+> 
 > [!NOTE]
 > SOV data is available beginning May 1, 2018. If you specify a reporting period that includes dates prior to May 1, 2018, the SOV fields will contain a zero (0) value for dates prior to 1 May.
 

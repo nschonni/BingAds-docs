@@ -19,6 +19,7 @@ The *DeleteCampaignsRequest* object defines the [body](#request-body) and [heade
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountid"></a>AccountId|The identifier of the account that contains the campaigns to delete.|**long**|
@@ -31,6 +32,7 @@ The *DeleteCampaignsRequest* object defines the [body](#request-body) and [heade
 The *DeleteCampaignsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -107,51 +109,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<DeleteCampaignsResponse> DeleteCampaignsAsync(
-	long accountId,
-	IList<long> campaignIds)
+    long accountId,
+    IList<long> campaignIds)
 {
-	var request = new DeleteCampaignsRequest
-	{
-		AccountId = accountId,
-		CampaignIds = campaignIds
-	};
+    var request = new DeleteCampaignsRequest
+    {
+        AccountId = accountId,
+        CampaignIds = campaignIds
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.DeleteCampaignsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.DeleteCampaignsAsync(r), request));
 }
 ```
 ```java
 static DeleteCampaignsResponse deleteCampaigns(
-	java.lang.Long accountId,
-	ArrayOflong campaignIds) throws RemoteException, Exception
+    java.lang.Long accountId,
+    ArrayOflong campaignIds) throws RemoteException, Exception
 {
-	DeleteCampaignsRequest request = new DeleteCampaignsRequest();
+    DeleteCampaignsRequest request = new DeleteCampaignsRequest();
 
-	request.setAccountId(accountId);
-	request.setCampaignIds(campaignIds);
+    request.setAccountId(accountId);
+    request.setCampaignIds(campaignIds);
 
-	return CampaignManagementService.getService().deleteCampaigns(request);
+    return CampaignManagementService.getService().deleteCampaigns(request);
 }
 ```
 ```php
 static function DeleteCampaigns(
-	$accountId,
-	$campaignIds)
+    $accountId,
+    $campaignIds)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new DeleteCampaignsRequest();
+    $request = new DeleteCampaignsRequest();
 
-	$request->AccountId = $accountId;
-	$request->CampaignIds = $campaignIds;
+    $request->AccountId = $accountId;
+    $request->CampaignIds = $campaignIds;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteCampaigns($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteCampaigns($request);
 }
 ```
 ```python
 response=campaignmanagement_service.DeleteCampaigns(
-	AccountId=AccountId,
-	CampaignIds=CampaignIds)
+    AccountId=AccountId,
+    CampaignIds=CampaignIds)
 ```
 
 ## Requirements

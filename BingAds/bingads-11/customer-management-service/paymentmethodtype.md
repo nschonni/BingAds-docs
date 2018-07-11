@@ -85,6 +85,7 @@ Defines possible payment methods for a Bing Ads account.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="boleto"></a>Boleto|Boleto is a form of payment used widely in Brazil. Bing Ads allows customers to use Boleto to fund their prepay accounts by giving them the ability to print a payment slip that they can use to make payment at various locations in Brazil (e.g. Post offices and banks). This payment method is only supported in Brazil and activity must be billed in BRL currency.|

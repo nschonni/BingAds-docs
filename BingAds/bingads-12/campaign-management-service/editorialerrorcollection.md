@@ -28,6 +28,7 @@ Defines a nested list of error object that identifies one of potentially many re
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="appealable"></a>Appealable|Reserved for future use.|**boolean**|
@@ -42,6 +43,7 @@ The [EditorialErrorCollection](editorialerrorcollection.md) object has [Inherite
 
 ### <a name="inheritedelementsbatcherrorcollection"></a>Inherited Elements from BatchErrorCollection
 The [EditorialErrorCollection](editorialerrorcollection.md) object derives from the [BatchErrorCollection](batcherrorcollection.md) object, and inherits the following elements. The descriptions below are specific to [EditorialErrorCollection](editorialerrorcollection.md), and might not apply to other objects that inherit the same elements from the [BatchErrorCollection](batcherrorcollection.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

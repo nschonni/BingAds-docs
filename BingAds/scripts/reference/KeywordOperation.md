@@ -16,6 +16,7 @@ The keyword is added to the ad group when you call this object's methods or afte
 
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [getErrors](#geterrors)|string[]|Returns an empty array if the keyword is successfully created; otherwise, a list of errors.
@@ -26,6 +27,7 @@ The keyword is added to the ad group when you call this object's methods or afte
 Returns an empty array if the keyword is successfully created; otherwise, a list of error codes.
 
 ### Returns
+
 |Type|Description|
 |-|-
 string[]|An empty array if the keyword is successfully created; otherwise, a list of symbolic error codes. For example, if you specify an invalid bid amount, the call returns CampaignServiceInvalidSearchBids. For a description of these codes, see [Operation error codes](/bingads/guides/operation-error-codes).
@@ -35,6 +37,7 @@ string[]|An empty array if the keyword is successfully created; otherwise, a lis
 Returns the newly added keyword if the operation succeeded; otherwise, null.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [Keyword](./Keyword.md)|The newly added keyword; otherwise, null.
@@ -43,6 +46,7 @@ Returns the newly added keyword if the operation succeeded; otherwise, null.
 Returns a Boolean value that indicates whether this operation succeeded.
 
 ### Returns
+
 |Type|Description|
 |-|-
 Boolean|Returns **true** if this operation succeeded; otherwise, **false**.

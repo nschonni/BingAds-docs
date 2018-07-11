@@ -47,5 +47,5 @@ The difference between **Preview** and **Run script now** is that Preview gives 
 
 ## Next steps
 
-> [!div class="nextstepaction"]
+> [!div  class="nextstepaction"]
 > [Single account access](./guides/single-account-access.md)

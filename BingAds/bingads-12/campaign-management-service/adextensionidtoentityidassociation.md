@@ -21,6 +21,7 @@ Defines an object that associates an ad extension to a supported entity, for exa
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adextensionid"></a>AdExtensionId|The system-generated identifier of the ad extension.|**long**|

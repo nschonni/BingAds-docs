@@ -33,6 +33,7 @@ Defines the possible formats in which to generate the billing document.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="pdf"></a>Pdf|Use PDF format.|

@@ -28,6 +28,7 @@ Defines the operators that can be applied to remarketing list rule item string v
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="beginswith"></a>BeginsWith|Begin with the corresponding string value.|

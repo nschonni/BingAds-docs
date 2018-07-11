@@ -24,6 +24,7 @@ Example usage:
 ```
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [build](#build)|[KeywordOperation](./KeywordOperation.md)|Returns an operation object that you use to add the keyword to the ad group.
@@ -39,6 +40,7 @@ Example usage:
 Returns an operation object that you use to add the keyword to the ad group.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [KeywordOperation](./KeywordOperation.md)|An operation object that you use to add the keyword.
@@ -54,11 +56,13 @@ For more information about bid amounts, see [Bid](/bingads/campaign-management-s
 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 cpc|double|The CPC bid to apply to the keyword. The account's currency determines the minimum and maximum bid values. For more information, see [Bid and budget currencies](/bingads/guides/currencies#bidandbudget).
 
 ### Returns
+
 |Type|Description|
 |-|-
 [KeywordBuilder](./KeywordBuilder.md)|Keyword builder with the CPC bid applied.
@@ -70,11 +74,13 @@ Sets the keyword's custom parameters.
 [!INCLUDE[custom-parameters](../includes/custom-parameters.md)]
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 customParameters|Object|The custom parameters to apply to the keyword's final URL. These are the query parameters you want to add to the final URL. You can specify a maximum of three custom parameters. Specify the parameters as a map of key-value pairs.<br /><br />For example, `{key1: 'value1', key2: 'value2', key3: 'value3'}`, where key is the custom parameter's name and value is the parameter's value.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [KeywordBuilder](./KeywordBuilder.md)|Keyword builder with the custom parameters applied.
@@ -86,11 +92,13 @@ Sets the keyword's final URL.
 [!INCLUDE[final-url](../includes/final-url.md)]
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 finalUrl|string|The final URL for the keyword.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [KeywordBuilder](./KeywordBuilder.md)|Keyword builder with the final URL applied.
@@ -107,11 +115,13 @@ Final URLs follow the same override rules as destination URLs. For example, a mo
 If you specify a mobile final URL you must also specify FinalUrl.
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 mobileFinalUrl|string|The final URL for mobile devices.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [KeywordBuilder](./KeywordBuilder.md)|Keyword builder with the mobile final URL applied.
@@ -128,11 +138,13 @@ To specify the keyword's match type, use the following syntax:
 
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 text|string|The keyword's text. The text may contain a maximum of 100 characters. Specify the keyword in the locale of the ad group's language value.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [KeywordBuilder](./KeywordBuilder.md)|Keyword builder with the keyword text applied.
@@ -143,11 +155,13 @@ Sets the tracking template to use with the keyword.
 [!INCLUDE[tracking-templates](../includes/tracking-templates.md)]
 
 ### Arguments
+
 |Name|Type|Description|
 |-|-|-
 trackingTemplate|string|The tracking template to use with this keyword.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [KeywordBuilder](./KeywordBuilder.md)|Keyword builder with the tracking template applied.

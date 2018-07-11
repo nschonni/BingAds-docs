@@ -25,6 +25,7 @@ Defines an object that contains traffic estimates based on the campaign, ad grou
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="averagecpc"></a>AverageCpc|The estimated average CPC.<br /><br />The formula used to calculate the average CPC is (total cost / clicks).|**double**|

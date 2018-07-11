@@ -35,6 +35,7 @@ Defines an advertiser account.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="backuppaymentinstrumentid"></a>BackUpPaymentInstrumentId|The identifier of a backup  payment instrument to use to settle the account. This element is not applicable for invoiced accounts.<br/><br/>**Add:** Read-only<br/>**Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.|**long**|
@@ -50,6 +51,7 @@ The [AdvertiserAccount](advertiseraccount.md) object has [Inherited Elements](#i
 
 ### <a name="inheritedelementsaccount"></a>Inherited Elements from Account
 The [AdvertiserAccount](advertiseraccount.md) object derives from the [Account](account.md) object, and inherits the following elements. The descriptions below are specific to [AdvertiserAccount](advertiseraccount.md), and might not apply to other objects that inherit the same elements from the [Account](account.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -78,9 +80,9 @@ The [AdvertiserAccount](advertiseraccount.md) object derives from the [Account](
 ### <a name="forwardcompatibilitymap"></a>ForwardCompatibilityMap
 The following is the list of keys that are available for the *ForwardCompatibilityMap* element of an *Account*.
 
--   [AutoTag](#autotag)
+- [AutoTag](#autotag)
 
--   [TrackingUrlTemplate](#trackingurltemplate)
+- [TrackingUrlTemplate](#trackingurltemplate)
 
 #### <a name="autotag"></a>AutoTag
 Bing Ads can automatically add UTM tags to your destination URL so you can use your website analytics tool, for example Google Analytics, to track how people got to your website. Auto-tags are applied for example to expanded text ads, keywords, Bing Shopping Campaigns, and Sitelink Extensions. For details about auto-tagging, please see the Bing Ads help article [How do I add UTM tags to my landing page URL?](http://help.bingads.microsoft.com/#apex/3/en/56762/-1).
@@ -100,23 +102,24 @@ The tracking template to use as a default for all URLs in your account. The valu
 
 The following validation rules apply to tracking templates.
 
--   Tracking templates defined for lower level entities e.g. keyword override those set for higher level entities e.g. campaign. For more information, see [Entity Hierarchy and Limits](http://go.microsoft.com/fwlink/?LinkID=627130).
+- Tracking templates defined for lower level entities e.g. keyword override those set for higher level entities e.g. campaign. For more information, see [Entity Hierarchy and Limits](http://go.microsoft.com/fwlink/?LinkID=627130).
 
--   The length of the tracking template is limited to 2,048 characters. The HTTP or HTTPS protocol string does count towards the 2,048 character limit.
+- The length of the tracking template is limited to 2,048 characters. The HTTP or HTTPS protocol string does count towards the 2,048 character limit.
 
--   The tracking template must be a well-formed URL beginning with one of the following: *http://*, *https://*, *{lpurl}*, or *{unescapedlpurl}*.
+- The tracking template must be a well-formed URL beginning with one of the following: *http://*, *https://*, *{lpurl}*, or *{unescapedlpurl}*.
 
--   You must include at least one of the following landing page URL parameters: *{lpurl}*, *{lpurl+2}*, *{lpurl+3}*, *{unescapedlpurl}*, *{escapedlpurl}*. Additionally, you can use any dynamic parameter supported by Bing Ads. For a list of supported parameters, see the *Available parameters* sections within the Bing Ads help article [Set up a tracking template](https://help.bingads.microsoft.com/#apex/3/en/56772/-1).
+- You must include at least one of the following landing page URL parameters: *{lpurl}*, *{lpurl+2}*, *{lpurl+3}*, *{unescapedlpurl}*, *{escapedlpurl}*. Additionally, you can use any dynamic parameter supported by Bing Ads. For a list of supported parameters, see the *Available parameters* sections within the Bing Ads help article [Set up a tracking template](https://help.bingads.microsoft.com/#apex/3/en/56772/-1).
 
--   Bing Ads does not validate whether custom parameters exist. If you use custom parameters in your tracking template and they do not exist, then the final URL will include the key and value placeholders of your custom parameters without substitution. For example if your tracking template is  for example *http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}*, and neither {_season} or {_promocode}  are defined at the campaign, ad group, keyword, or ad level, then the final URL will be the same.
+- Bing Ads does not validate whether custom parameters exist. If you use custom parameters in your tracking template and they do not exist, then the final URL will include the key and value placeholders of your custom parameters without substitution. For example if your tracking template is  for example <em>http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}</em>, and neither {_season} or {_promocode}  are defined at the campaign, ad group, keyword, or ad level, then the final URL will be the same.
 
 ### <a name="taxinformation"></a>AdvertiserAccount TaxInformation
 The following is the list of keys that are available for the *TaxInformation* element of an *AdvertiserAccount*.  
 
+
 |TaxInformation Key|Description|Countries|
 |---------|---------|---------|
 |TaxId|The account's tax identifier The tax identifier must be valid in the country that you specified in the BusinessAddress element. Without a tax identifier, taxes might apply based on your business location.<br/><br/>**Add:** Required<br/>**Update:** Read-only|Brazil, Australia, Taiwan|
-|GstInNumber|GSTINNumber	This number starts with two numbers representing the state code in which the business is registered followed by a maximum of 13 number and letters.<br/><br/>**Add:** Optional<br/>**Update:** Read-only|India|
+|GstInNumber|GSTINNumber    This number starts with two numbers representing the state code in which the business is registered followed by a maximum of 13 number and letters.<br/><br/>**Add:** Optional<br/>**Update:** Read-only|India|
 |NZGSTNumber|The NZGSTN Number is an 8 or 9 Digit long TaxID. Without a NZGSTN Number taxes might apply based on your business location.<br/><br/>**Add:** Optional<br/>**Update:** Read-only|New Zealand|
 |PanNumber|The PAN number.<br/><br/>**Add:** Required<br/>**Update:** Read-only|India|
 |TaxType|You can indicate the type of tax. Possible values are Business and Personal.<br/><br/>**Add:** Optional<br/>**Update:** Optional|All|

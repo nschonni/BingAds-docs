@@ -31,6 +31,7 @@ After the [OfflineConversionGoal](offlineconversiongoal.md) is set up, wait two 
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="conversioncurrencycode"></a>ConversionCurrencyCode|The currency code for the offline conversion.<br/><br/>For more information, see [Currencies](../guides/currencies.md).<br/><br/>**Apply:** Optional. If you do not specify an offline conversion currency code, then the *CurrencyCode* element of the goal's [ConversionGoalRevenue](conversiongoalrevenue.md) is used.|**string**|

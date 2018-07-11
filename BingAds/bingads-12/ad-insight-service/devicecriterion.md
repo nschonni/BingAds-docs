@@ -24,6 +24,7 @@ The device criterion that you can include when requesting keyword ideas or traff
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="devicename"></a>DeviceName|The device that you want to target.<br/><br/>Possible case-sensitive values are *All*, *Computers*, *Smartphones*, and *Tablets*.|**string**|

@@ -158,7 +158,7 @@ namespace Catalogs
         }
 
         // Gets catalog data from the store.
-        
+
         private static object GetResource(string uri, WebHeaderCollection headers, Type resourceType)
         {
             object resource = null;
@@ -180,7 +180,7 @@ namespace Catalogs
         }
 
         // Adds a catalog to the store.
-        
+
         private static Catalog AddResource(string uri, WebHeaderCollection headers, Catalog catalog)
         {
             var request = (HttpWebRequest)WebRequest.Create(uri);
@@ -213,7 +213,7 @@ namespace Catalogs
         }
 
         // Updates a catalog's attributes.
-        
+
         private static ulong UpdateResource(string uri, WebHeaderCollection headers, Catalog catalog)
         {
             var request = (HttpWebRequest)WebRequest.Create(uri);
@@ -246,7 +246,7 @@ namespace Catalogs
         }
 
         // Deletes a catalog from the store.
-        
+
         private static ContentError DeleteResource(string uri, WebHeaderCollection headers)
         {
             var request = (HttpWebRequest)WebRequest.Create(uri);
@@ -351,7 +351,7 @@ namespace Catalogs
         }
 
         // Print errors.
-        
+
         private static void PrintErrors(ContentError contentError)
         {
             Console.WriteLine("HTTP status code: " + contentError.Error.Code);
@@ -384,7 +384,7 @@ namespace Catalogs
 
         // Gets the OAuth tokens. If the refresh token doesn't exist, get 
         // the user's consent and a new access and refresh token.
-        
+
         private static CodeGrantOauth GetOauthTokens(string refreshToken)
         {
             CodeGrantOauth auth = null;
@@ -509,15 +509,15 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 class Catalogs {
 
-	// Jackson object used to serialize and deserialize JSON.
+    // Jackson object used to serialize and deserialize JSON.
 
-	private static ObjectMapper jsonMapper = new ObjectMapper();
+    private static ObjectMapper jsonMapper = new ObjectMapper();
 
-	private static String accessToken = "<accesstokengoeshere>"; 
+    private static String accessToken = "<accesstokengoeshere>"; 
     public static String devToken = "<devtokengoeshere>"; 
 
     // URI templates used to get resources.
-    
+
     public static final String BaseUri = "https://content.api.bingads.microsoft.com/shopping/v9.1";
     public static final String BmcUri = BaseUri + "/bmc/%d";
     public static final String CatalogsUri = BmcUri + "/catalogs";
@@ -525,16 +525,16 @@ class Catalogs {
 
 
     // Replace with your store ID.
-    
+
     public static long merchantId = <merchantidgoeshere>; 
 
-	// This example shows how to list, add, update, and delete
+    // This example shows how to list, add, update, and delete
     // catalogs in the store.
-    
-	public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException {
 
-		try {
-			Map<String, String> headers = getCredentialHeaders();
+    public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException {
+
+        try {
+            Map<String, String> headers = getCredentialHeaders();
 
             String url = String.format(CatalogsUri, merchantId);
 
@@ -577,26 +577,26 @@ class Catalogs {
 
             collection = (CatalogCollection) getResource(url, headers, CatalogCollection.class);
             printCatalogs(collection);
-		}
-		catch (CapiException e) {
-			if (e.getErrors() != null){
-	    		printErrors(e.getErrors());
-			}
-			else
-			{
-				System.out.println(e.getMessage());
-			}
-		}
-    	catch (IOException e) {
-    		System.out.println(e.getMessage());
-    	}
-		catch (Exception e) {
-			System.out.println("\n" + e.getMessage());
-		}
+        }
+        catch (CapiException e) {
+            if (e.getErrors() != null){
+                printErrors(e.getErrors());
+            }
+            else
+            {
+                System.out.println(e.getMessage());
+            }
+        }
+        catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        catch (Exception e) {
+            System.out.println("\n" + e.getMessage());
+        }
 
-	}
+    }
 
-	// Get tokens for the authentication headers.
+    // Get tokens for the authentication headers.
 
     private static Map<String, String> getCredentialHeaders()
     {
@@ -608,328 +608,328 @@ class Catalogs {
 
         return headers;
     }
-    
+
 
     // Generic method to get a resource from the specified URL.
-    
+
     private static Object getResource(String uri, Map<String, String> headers, Class\<?> type) throws IOException, CapiException 
     {
-    	Object resource = null;
-    	HttpURLConnection connection = null;
-    	URL url;
-    	InputStream istream = null;
-    	BufferedReader reader = null;
+        Object resource = null;
+        HttpURLConnection connection = null;
+        URL url;
+        InputStream istream = null;
+        BufferedReader reader = null;
 
 
-    	try {
-    		url = new URL(uri);
-    		connection = (HttpURLConnection) url.openConnection();
+        try {
+            url = new URL(uri);
+            connection = (HttpURLConnection) url.openConnection();
 
-    		connection.setRequestMethod("GET");
-    		connection.setRequestProperty("Accept", "application/json");
+            connection.setRequestMethod("GET");
+            connection.setRequestProperty("Accept", "application/json");
 
-    		for (Entry\<String, String> header : headers.entrySet())
-    		{
-    			connection.setRequestProperty(header.getKey(), header.getValue());
-    		}
+            for (Entry\<String, String> header : headers.entrySet())
+            {
+                connection.setRequestProperty(header.getKey(), header.getValue());
+            }
 
-    		connection.setUseCaches(false);
+            connection.setUseCaches(false);
 
-    		int statusCode = connection.getResponseCode();
-    		
-    		if (statusCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
-    			istream = connection.getErrorStream();
-    		}
-    		else {
-    			istream = connection.getInputStream();
-    		}
- 
-    		StringBuffer response = new StringBuffer();
-    		reader = new BufferedReader(new InputStreamReader(istream));
-    		char[] buffer = new char[2048];
-    		int len = 0;
-    		
-    		while ((len = reader.read(buffer)) != -1) {
-    			response.append(new String(buffer, 0, len));
-    		}
+            int statusCode = connection.getResponseCode();
 
-    		System.out.println(response);
-    		
-    		
-    		if (statusCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
-    			if (statusCode == HttpURLConnection.HTTP_BAD_REQUEST) {
-    	    		ContentError errors = jsonMapper.readValue(response.toString(), ContentError.class);
-    				throw new CapiException("Batch request failed.\n", errors.getError().getErrors());
-    			}
-    			else {
-    				throw new CapiException(response.toString());
-    			}
-    		}
+            if (statusCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
+                istream = connection.getErrorStream();
+            }
+            else {
+                istream = connection.getInputStream();
+            }
 
-    		resource = jsonMapper.readValue(response.toString(), type);
-    	}
-    	finally {
-    		if (connection != null) {
-    			connection.disconnect();
-    		}
+            StringBuffer response = new StringBuffer();
+            reader = new BufferedReader(new InputStreamReader(istream));
+            char[] buffer = new char[2048];
+            int len = 0;
 
-    		if (reader != null) {
-    			reader.close();
-    		}
+            while ((len = reader.read(buffer)) != -1) {
+                response.append(new String(buffer, 0, len));
+            }
 
-    		if (istream != null) {
-    			istream.close();
-    		}
-    	}
+            System.out.println(response);
 
-    	return resource;
+
+            if (statusCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
+                if (statusCode == HttpURLConnection.HTTP_BAD_REQUEST) {
+                    ContentError errors = jsonMapper.readValue(response.toString(), ContentError.class);
+                    throw new CapiException("Batch request failed.\n", errors.getError().getErrors());
+                }
+                else {
+                    throw new CapiException(response.toString());
+                }
+            }
+
+            resource = jsonMapper.readValue(response.toString(), type);
+        }
+        finally {
+            if (connection != null) {
+                connection.disconnect();
+            }
+
+            if (reader != null) {
+                reader.close();
+            }
+
+            if (istream != null) {
+                istream.close();
+            }
+        }
+
+        return resource;
     }
 
 
     // Adds a Catalog to the store.
-    
+
     private static Catalog addResource(String uri, Map<String, String> headers, Catalog catalog) throws IOException, CapiException 
     {
-    	HttpURLConnection connection = null;
-    	URL url;
-    	InputStream istream = null;
-    	OutputStreamWriter ostream = null;
-    	BufferedReader reader = null;
-    	Catalog catalogOut = null;
+        HttpURLConnection connection = null;
+        URL url;
+        InputStream istream = null;
+        OutputStreamWriter ostream = null;
+        BufferedReader reader = null;
+        Catalog catalogOut = null;
 
-    	try {
-        	String json = jsonMapper.writeValueAsString(catalog);
+        try {
+            String json = jsonMapper.writeValueAsString(catalog);
 
-    		url = new URL(uri);
-    		connection = (HttpURLConnection) url.openConnection();
+            url = new URL(uri);
+            connection = (HttpURLConnection) url.openConnection();
 
-    		connection.setRequestMethod("POST");
-    		connection.setRequestProperty("Content-Type", "application/json");
-    		connection.setRequestProperty("Content-Length", String.valueOf(json.length()));
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Content-Type", "application/json");
+            connection.setRequestProperty("Content-Length", String.valueOf(json.length()));
 
-    		for (Entry\<String, String> header : headers.entrySet())
-    		{
-    			connection.setRequestProperty(header.getKey(), header.getValue());
-    		}
+            for (Entry\<String, String> header : headers.entrySet())
+            {
+                connection.setRequestProperty(header.getKey(), header.getValue());
+            }
 
-    		connection.setDoInput(true);
-    		connection.setDoOutput(true);
-    		connection.setUseCaches(false);
+            connection.setDoInput(true);
+            connection.setDoOutput(true);
+            connection.setUseCaches(false);
 
-    		ostream = new OutputStreamWriter(connection.getOutputStream());
-    		ostream.write(json);
-    		ostream.close();
+            ostream = new OutputStreamWriter(connection.getOutputStream());
+            ostream.write(json);
+            ostream.close();
 
-    		int statusCode = connection.getResponseCode();
-    		
-    		if (statusCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
-        		istream = connection.getErrorStream();
-    		}
-    		else {
-        		istream = connection.getInputStream();
-    		}
- 
-    		StringBuffer response = new StringBuffer();
-    		reader = new BufferedReader(new InputStreamReader(istream));
-    		char[] buffer = new char[2048];
-    		int len = 0;
-    		
-    		while ((len = reader.read(buffer)) != -1) {
-    			response.append(new String(buffer, 0, len));
-    		}
+            int statusCode = connection.getResponseCode();
 
-    		System.out.println(response);
-    		
-    		if (statusCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
-    			if (statusCode < HttpURLConnection.HTTP_INTERNAL_ERROR) {
-    	    		ContentError errors = jsonMapper.readValue(response.toString(), ContentError.class);
-    				throw new CapiException("Batch request failed.\n", errors.getError().getErrors());
-    			}
-    			else {
-    				throw new CapiException(response.toString());
-    			}
-    		}
+            if (statusCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
+                istream = connection.getErrorStream();
+            }
+            else {
+                istream = connection.getInputStream();
+            }
 
-    		catalogOut = jsonMapper.readValue(response.toString(), Catalog.class);
-    	}
-    	finally {
-    		if (connection != null) {
-    			connection.disconnect();
-    		}
+            StringBuffer response = new StringBuffer();
+            reader = new BufferedReader(new InputStreamReader(istream));
+            char[] buffer = new char[2048];
+            int len = 0;
 
-    		if (reader != null) {
-    			reader.close();
-    		}
+            while ((len = reader.read(buffer)) != -1) {
+                response.append(new String(buffer, 0, len));
+            }
 
-    		if (istream != null) {
-    			istream.close();
-    		}
+            System.out.println(response);
 
-    		if (ostream != null) {
-    			ostream.close();
-    		}
-    	}
+            if (statusCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
+                if (statusCode < HttpURLConnection.HTTP_INTERNAL_ERROR) {
+                    ContentError errors = jsonMapper.readValue(response.toString(), ContentError.class);
+                    throw new CapiException("Batch request failed.\n", errors.getError().getErrors());
+                }
+                else {
+                    throw new CapiException(response.toString());
+                }
+            }
 
-    	return catalogOut;
+            catalogOut = jsonMapper.readValue(response.toString(), Catalog.class);
+        }
+        finally {
+            if (connection != null) {
+                connection.disconnect();
+            }
+
+            if (reader != null) {
+                reader.close();
+            }
+
+            if (istream != null) {
+                istream.close();
+            }
+
+            if (ostream != null) {
+                ostream.close();
+            }
+        }
+
+        return catalogOut;
     }
 
     // Updates a Catalog in the store.
-    
+
     private static Catalog updateResource(String uri, Map<String, String> headers, Catalog catalog) throws IOException, CapiException 
     {
-    	HttpURLConnection connection = null;
-    	URL url;
-    	InputStream istream = null;
-    	OutputStreamWriter ostream = null;
-    	BufferedReader reader = null;
-    	Catalog catalogOut = null;
+        HttpURLConnection connection = null;
+        URL url;
+        InputStream istream = null;
+        OutputStreamWriter ostream = null;
+        BufferedReader reader = null;
+        Catalog catalogOut = null;
 
-    	try {
-        	String json = jsonMapper.writeValueAsString(catalog);
+        try {
+            String json = jsonMapper.writeValueAsString(catalog);
 
-    		url = new URL(uri);
-    		connection = (HttpURLConnection) url.openConnection();
+            url = new URL(uri);
+            connection = (HttpURLConnection) url.openConnection();
 
-    		connection.setRequestMethod("PUT");
-    		connection.setRequestProperty("Content-Type", "application/json");
-    		connection.setRequestProperty("Content-Length", String.valueOf(json.length()));
+            connection.setRequestMethod("PUT");
+            connection.setRequestProperty("Content-Type", "application/json");
+            connection.setRequestProperty("Content-Length", String.valueOf(json.length()));
 
-    		for (Entry\<String, String> header : headers.entrySet())
-    		{
-    			connection.setRequestProperty(header.getKey(), header.getValue());
-    		}
+            for (Entry\<String, String> header : headers.entrySet())
+            {
+                connection.setRequestProperty(header.getKey(), header.getValue());
+            }
 
-    		connection.setDoInput(true);
-    		connection.setDoOutput(true);
-    		connection.setUseCaches(false);
+            connection.setDoInput(true);
+            connection.setDoOutput(true);
+            connection.setUseCaches(false);
 
-    		ostream = new OutputStreamWriter(connection.getOutputStream());
-    		ostream.write(json);
-    		ostream.close();
+            ostream = new OutputStreamWriter(connection.getOutputStream());
+            ostream.write(json);
+            ostream.close();
 
-    		int statusCode = connection.getResponseCode();
-    		
-    		if (statusCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
-        		istream = connection.getErrorStream();
-    		}
-    		else {
-        		istream = connection.getInputStream();
-    		}
- 
-    		StringBuffer response = new StringBuffer();
-    		reader = new BufferedReader(new InputStreamReader(istream));
-    		char[] buffer = new char[2048];
-    		int len = 0;
-    		
-    		while ((len = reader.read(buffer)) != -1) {
-    			response.append(new String(buffer, 0, len));
-    		}
+            int statusCode = connection.getResponseCode();
 
-    		System.out.println(response);
-    		
-    		if (statusCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
-    			if (statusCode < HttpURLConnection.HTTP_INTERNAL_ERROR) {
-    	    		ContentError errors = jsonMapper.readValue(response.toString(), ContentError.class);
-    				throw new CapiException("Batch request failed.\n", errors.getError().getErrors());
-    			}
-    			else {
-    				throw new CapiException(response.toString());
-    			}
-    		}
+            if (statusCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
+                istream = connection.getErrorStream();
+            }
+            else {
+                istream = connection.getInputStream();
+            }
 
-    		catalogOut = jsonMapper.readValue(response.toString(), Catalog.class);
-    	}
-    	finally {
-    		if (connection != null) {
-    			connection.disconnect();
-    		}
+            StringBuffer response = new StringBuffer();
+            reader = new BufferedReader(new InputStreamReader(istream));
+            char[] buffer = new char[2048];
+            int len = 0;
 
-    		if (reader != null) {
-    			reader.close();
-    		}
+            while ((len = reader.read(buffer)) != -1) {
+                response.append(new String(buffer, 0, len));
+            }
 
-    		if (istream != null) {
-    			istream.close();
-    		}
+            System.out.println(response);
 
-    		if (ostream != null) {
-    			ostream.close();
-    		}
-    	}
+            if (statusCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
+                if (statusCode < HttpURLConnection.HTTP_INTERNAL_ERROR) {
+                    ContentError errors = jsonMapper.readValue(response.toString(), ContentError.class);
+                    throw new CapiException("Batch request failed.\n", errors.getError().getErrors());
+                }
+                else {
+                    throw new CapiException(response.toString());
+                }
+            }
 
-    	return catalogOut;
+            catalogOut = jsonMapper.readValue(response.toString(), Catalog.class);
+        }
+        finally {
+            if (connection != null) {
+                connection.disconnect();
+            }
+
+            if (reader != null) {
+                reader.close();
+            }
+
+            if (istream != null) {
+                istream.close();
+            }
+
+            if (ostream != null) {
+                ostream.close();
+            }
+        }
+
+        return catalogOut;
     }
 
     // Deletes a Catalog from the store.
-    
+
     private static void deleteResource(String uri, Map<String, String> headers) throws IOException, CapiException 
     {
-    	HttpURLConnection connection = null;
-    	URL url;
-    	InputStream istream = null;
-    	BufferedReader reader = null;
+        HttpURLConnection connection = null;
+        URL url;
+        InputStream istream = null;
+        BufferedReader reader = null;
 
 
-    	try {
-    		url = new URL(uri);
-    		connection = (HttpURLConnection) url.openConnection();
+        try {
+            url = new URL(uri);
+            connection = (HttpURLConnection) url.openConnection();
 
-    		connection.setRequestMethod("DELETE");
-    		connection.setRequestProperty("Accept", "application/json");
+            connection.setRequestMethod("DELETE");
+            connection.setRequestProperty("Accept", "application/json");
 
-    		for (Entry\<String, String> header : headers.entrySet())
-    		{
-    			connection.setRequestProperty(header.getKey(), header.getValue());
-    		}
+            for (Entry\<String, String> header : headers.entrySet())
+            {
+                connection.setRequestProperty(header.getKey(), header.getValue());
+            }
 
-    		connection.setUseCaches(false);
+            connection.setUseCaches(false);
 
-    		int statusCode = connection.getResponseCode();
-    		
-    		if (statusCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
-    			istream = connection.getErrorStream();
+            int statusCode = connection.getResponseCode();
 
-        		StringBuffer response = new StringBuffer();
-        		reader = new BufferedReader(new InputStreamReader(istream));
-        		char[] buffer = new char[2048];
-        		int len = 0;
-        		
-        		while ((len = reader.read(buffer)) != -1) {
-        			response.append(new String(buffer, 0, len));
-        		}
+            if (statusCode >= HttpURLConnection.HTTP_BAD_REQUEST) {
+                istream = connection.getErrorStream();
 
-        		System.out.println(response);
-        		
-    			if (statusCode < HttpURLConnection.HTTP_INTERNAL_ERROR) {
-    	    		ContentError errors = jsonMapper.readValue(response.toString(), ContentError.class);
-    				throw new CapiException("Batch request failed.\n", errors.getError().getErrors());
-    			}
-    			else {
-    				throw new CapiException(response.toString());
-    			}
-    		}
-    	}
-    	finally {
-    		if (connection != null) {
-    			connection.disconnect();
-    		}
+                StringBuffer response = new StringBuffer();
+                reader = new BufferedReader(new InputStreamReader(istream));
+                char[] buffer = new char[2048];
+                int len = 0;
 
-    		if (reader != null) {
-    			reader.close();
-    		}
+                while ((len = reader.read(buffer)) != -1) {
+                    response.append(new String(buffer, 0, len));
+                }
 
-    		if (istream != null) {
-    			istream.close();
-    		}
-    	}
+                System.out.println(response);
+
+                if (statusCode < HttpURLConnection.HTTP_INTERNAL_ERROR) {
+                    ContentError errors = jsonMapper.readValue(response.toString(), ContentError.class);
+                    throw new CapiException("Batch request failed.\n", errors.getError().getErrors());
+                }
+                else {
+                    throw new CapiException(response.toString());
+                }
+            }
+        }
+        finally {
+            if (connection != null) {
+                connection.disconnect();
+            }
+
+            if (reader != null) {
+                reader.close();
+            }
+
+            if (istream != null) {
+                istream.close();
+            }
+        }
     }
 
     // Creates a couple of catalogs and adds them 
     // to the store.
-    
+
     private static List<Catalog> addCatalogs(String url, Map<String, String> headers) throws IOException, CapiException
     {
-    	List<Catalog> catalogs = new ArrayList<Catalog>();
+        List<Catalog> catalogs = new ArrayList<Catalog>();
 
         System.out.println("*** Adding Catalogs ***\n");
 
@@ -955,7 +955,7 @@ class Catalogs {
     }
 
     // Deletes the specified catalogs from the store.
-    
+
     private static void deleteCatalogs(String uri, Map<String, String> headers, long merchantId, List<Catalog> catalogs) throws Exception
     {
         System.out.println("*** Deleting Catalogs ***\n");
@@ -975,8 +975,8 @@ class Catalogs {
         System.out.println();
     }
 
-    
-    
+
+
     // Prints the list of catalogs
 
     private static void printCatalogs(CatalogCollection collection)
@@ -993,17 +993,17 @@ class Catalogs {
 
     private static void printCatalogDetails(Catalog catalog)
     {
-    	System.out.println("Name: " + catalog.getName());
-    	System.out.println("ID: " + catalog.getId());
-    	System.out.println("Market: " + catalog.getMarket());
-    	System.out.println("IsDefault: " + catalog.getIsDefault());
-    	System.out.println("IsPublishingEnabled: " + catalog.getIsPublishingEnabled());
-    	System.out.println();
+        System.out.println("Name: " + catalog.getName());
+        System.out.println("ID: " + catalog.getId());
+        System.out.println("Market: " + catalog.getMarket());
+        System.out.println("IsDefault: " + catalog.getIsDefault());
+        System.out.println("IsPublishingEnabled: " + catalog.getIsPublishingEnabled());
+        System.out.println();
     }
 
-    
+
     // Print errors.
-    
+
     private static void printErrors(List<Error> errors)
     {
         for (Error error : errors)
@@ -1019,27 +1019,27 @@ class Catalogs {
 @SuppressWarnings("serial")
 class CapiException extends Exception {
 
-	private List<Error> errors = null;
-	
-	public CapiException(String message) {
-		super(message);
-	}
+    private List<Error> errors = null;
 
-	public CapiException(String message, List<Error> errors) {
-		super(message);
-		this.errors = errors;
-	}
+    public CapiException(String message) {
+        super(message);
+    }
 
-	public CapiException(Throwable cause) {
-		super(cause);
-	}
+    public CapiException(String message, List<Error> errors) {
+        super(message);
+        this.errors = errors;
+    }
 
-	public CapiException(String message, Throwable cause) {
-		super(message, cause);
-	}
-	
-	public List<Error> getErrors() { return this.errors; }
-	public void setErrors(List<Error> value) { this.errors = value; }
+    public CapiException(Throwable cause) {
+        super(cause);
+    }
+
+    public CapiException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public List<Error> getErrors() { return this.errors; }
+    public void setErrors(List<Error> value) { this.errors = value; }
 }
 
 // The following define the Catalog classes.
@@ -1047,14 +1047,14 @@ class CapiException extends Exception {
 @JsonInclude(Include.NON_DEFAULT)
 class Catalog
 {
-	private long id;
-	private String name;
-	private String market;
+    private long id;
+    private String name;
+    private String market;
     //@JsonDeserialize(using=StringBooleanDeserializer.class)
-	private Boolean isPublishingEnabled;
+    private Boolean isPublishingEnabled;
     //@JsonDeserialize(using=StringBooleanDeserializer.class)
-	private Boolean isDefault;
-	
+    private Boolean isDefault;
+
     public long getId() { return this.id; }
     public void setId(long value) { this.id = value; }
 
@@ -1073,8 +1073,8 @@ class Catalog
 
 class CatalogCollection
 {
-	private List<Catalog> catalogs;
-	
+    private List<Catalog> catalogs;
+
     public List<Catalog> getCatalogs() { return this.catalogs; }
     public void setCatalogs(List<Catalog> value) { this.catalogs = value; }
 }
@@ -1084,12 +1084,12 @@ class CatalogCollection
 
 class Error
 {
-	private String location;
-	private String locationType;
-	private String domain;
-	private String message;
-	private String reason;
-	
+    private String location;
+    private String locationType;
+    private String domain;
+    private String message;
+    private String reason;
+
  public String getLocation() { return this.location; }
 
  public String getLocationType() { return this.locationType; }
@@ -1103,19 +1103,18 @@ class Error
 
 class ErrorCollection
 {
-	private List<Error> errors;
-	
+    private List<Error> errors;
+
  public List<Error> getErrors() { return this.errors; }
 }
 
 
 class ContentError
 {
-	private ErrorCollection error;
-	
+    private ErrorCollection error;
+
  public ErrorCollection getError() { return this.error; }
 }
-
 ```
 
 ```python
@@ -1205,7 +1204,6 @@ def random_string(length=6):
 # Main execution
 if __name__ == '__main__':
     main()
-
 ```
 
 ```php
@@ -1341,5 +1339,4 @@ function printObject($object){
         echo("$prop: $value\r\n");
     }
 }
-
 ```

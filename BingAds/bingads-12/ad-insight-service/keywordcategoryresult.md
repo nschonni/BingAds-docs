@@ -21,6 +21,7 @@ Defines an object that contains the keyword and a list of keyword categories tha
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="keyword"></a>Keyword|The keyword being categorized.|**string**|

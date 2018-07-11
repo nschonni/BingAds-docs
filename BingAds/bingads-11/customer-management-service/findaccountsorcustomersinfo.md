@@ -19,6 +19,7 @@ The *FindAccountsOrCustomersInfoRequest* object defines the [body](#request-body
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="applicationscope"></a>ApplicationScope|A value that determines whether to return advertiser accounts or publisher accounts. If you do not specify the scope, the list may include both types of accounts.|[ApplicationType](applicationtype.md)|
@@ -32,6 +33,7 @@ The *FindAccountsOrCustomersInfoRequest* object defines the [body](#request-body
 The *FindAccountsOrCustomersInfoResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -93,58 +95,58 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<FindAccountsOrCustomersInfoResponse> FindAccountsOrCustomersInfoAsync(
-	string filter,
-	int topN,
-	ApplicationType? applicationScope)
+    string filter,
+    int topN,
+    ApplicationType? applicationScope)
 {
-	var request = new FindAccountsOrCustomersInfoRequest
-	{
-		Filter = filter,
-		TopN = topN,
-		ApplicationScope = applicationScope
-	};
+    var request = new FindAccountsOrCustomersInfoRequest
+    {
+        Filter = filter,
+        TopN = topN,
+        ApplicationScope = applicationScope
+    };
 
-	return (await CustomerManagementService.CallAsync((s, r) => s.FindAccountsOrCustomersInfoAsync(r), request));
+    return (await CustomerManagementService.CallAsync((s, r) => s.FindAccountsOrCustomersInfoAsync(r), request));
 }
 ```
 ```java
 static FindAccountsOrCustomersInfoResponse findAccountsOrCustomersInfo(
-	java.lang.String filter,
-	int topN,
-	ApplicationType applicationScope) throws RemoteException, Exception
+    java.lang.String filter,
+    int topN,
+    ApplicationType applicationScope) throws RemoteException, Exception
 {
-	FindAccountsOrCustomersInfoRequest request = new FindAccountsOrCustomersInfoRequest();
+    FindAccountsOrCustomersInfoRequest request = new FindAccountsOrCustomersInfoRequest();
 
-	request.setFilter(filter);
-	request.setTopN(topN);
-	request.setApplicationScope(applicationScope);
+    request.setFilter(filter);
+    request.setTopN(topN);
+    request.setApplicationScope(applicationScope);
 
-	return CustomerManagementService.getService().findAccountsOrCustomersInfo(request);
+    return CustomerManagementService.getService().findAccountsOrCustomersInfo(request);
 }
 ```
 ```php
 static function FindAccountsOrCustomersInfo(
-	$filter,
-	$topN,
-	$applicationScope)
+    $filter,
+    $topN,
+    $applicationScope)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
 
-	$request = new FindAccountsOrCustomersInfoRequest();
+    $request = new FindAccountsOrCustomersInfoRequest();
 
-	$request->Filter = $filter;
-	$request->TopN = $topN;
-	$request->ApplicationScope = $applicationScope;
+    $request->Filter = $filter;
+    $request->TopN = $topN;
+    $request->ApplicationScope = $applicationScope;
 
-	return $GLOBALS['CustomerManagementProxy']->GetService()->FindAccountsOrCustomersInfo($request);
+    return $GLOBALS['CustomerManagementProxy']->GetService()->FindAccountsOrCustomersInfo($request);
 }
 ```
 ```python
 response=customermanagement_service.FindAccountsOrCustomersInfo(
-	Filter=Filter,
-	TopN=TopN,
-	ApplicationScope=ApplicationScope)
+    Filter=Filter,
+    TopN=TopN,
+    ApplicationScope=ApplicationScope)
 ```
 
 ## Requirements

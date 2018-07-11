@@ -19,6 +19,7 @@ The *GetKeywordsByAdGroupIdRequest* object defines the [body](#request-body) and
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="adgroupid"></a>AdGroupId|The identifier of the ad group that keywords are returned for.|**long**|
@@ -31,6 +32,7 @@ The *GetKeywordsByAdGroupIdRequest* object defines the [body](#request-body) and
 The *GetKeywordsByAdGroupIdResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -145,51 +147,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetKeywordsByAdGroupIdResponse> GetKeywordsByAdGroupIdAsync(
-	long adGroupId,
-	KeywordAdditionalField? returnAdditionalFields)
+    long adGroupId,
+    KeywordAdditionalField? returnAdditionalFields)
 {
-	var request = new GetKeywordsByAdGroupIdRequest
-	{
-		AdGroupId = adGroupId,
-		ReturnAdditionalFields = returnAdditionalFields
-	};
+    var request = new GetKeywordsByAdGroupIdRequest
+    {
+        AdGroupId = adGroupId,
+        ReturnAdditionalFields = returnAdditionalFields
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetKeywordsByAdGroupIdAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetKeywordsByAdGroupIdAsync(r), request));
 }
 ```
 ```java
 static GetKeywordsByAdGroupIdResponse getKeywordsByAdGroupId(
-	java.lang.Long adGroupId,
-	ArrayList<KeywordAdditionalField> returnAdditionalFields) throws RemoteException, Exception
+    java.lang.Long adGroupId,
+    ArrayList<KeywordAdditionalField> returnAdditionalFields) throws RemoteException, Exception
 {
-	GetKeywordsByAdGroupIdRequest request = new GetKeywordsByAdGroupIdRequest();
+    GetKeywordsByAdGroupIdRequest request = new GetKeywordsByAdGroupIdRequest();
 
-	request.setAdGroupId(adGroupId);
-	request.setReturnAdditionalFields(returnAdditionalFields);
+    request.setAdGroupId(adGroupId);
+    request.setReturnAdditionalFields(returnAdditionalFields);
 
-	return CampaignManagementService.getService().getKeywordsByAdGroupId(request);
+    return CampaignManagementService.getService().getKeywordsByAdGroupId(request);
 }
 ```
 ```php
 static function GetKeywordsByAdGroupId(
-	$adGroupId,
-	$returnAdditionalFields)
+    $adGroupId,
+    $returnAdditionalFields)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetKeywordsByAdGroupIdRequest();
+    $request = new GetKeywordsByAdGroupIdRequest();
 
-	$request->AdGroupId = $adGroupId;
-	$request->ReturnAdditionalFields = $returnAdditionalFields;
+    $request->AdGroupId = $adGroupId;
+    $request->ReturnAdditionalFields = $returnAdditionalFields;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetKeywordsByAdGroupId($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetKeywordsByAdGroupId($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetKeywordsByAdGroupId(
-	AdGroupId=AdGroupId,
-	ReturnAdditionalFields=ReturnAdditionalFields)
+    AdGroupId=AdGroupId,
+    ReturnAdditionalFields=ReturnAdditionalFields)
 ```
 
 ## Requirements

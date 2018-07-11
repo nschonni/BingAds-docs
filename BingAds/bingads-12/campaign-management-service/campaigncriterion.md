@@ -10,8 +10,8 @@ description: Defines a criterion that you want applied to the specified campaign
 Defines a criterion that you want applied to the specified campaign.
 
 Do not try to instantiate a *CampaignCriterion*. You can create one or more following objects that derive from it.
--   [BiddableCampaignCriterion](biddablecampaigncriterion.md)
--   [NegativeCampaignCriterion](negativecampaigncriterion.md)
+- [BiddableCampaignCriterion](biddablecampaigncriterion.md)
+- [NegativeCampaignCriterion](negativecampaigncriterion.md)
 
 ## Syntax
 ```xml
@@ -28,6 +28,7 @@ Do not try to instantiate a *CampaignCriterion*. You can create one or more foll
 ```
 
 ## <a name="elements"></a>Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

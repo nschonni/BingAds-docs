@@ -53,7 +53,7 @@ namespace Content
             {
                 // TODO: Add logic to get the logged on user's refresh token 
                 // from secured storage. 
-                
+
                 _tokens = GetOauthTokens(_storedRefreshToken);
 
 
@@ -102,12 +102,11 @@ namespace Content
         }
     }
 }
-
 ```
 
 ### <a name="secondexample" /> Code grant flow implementation 
 
- 
+
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -367,5 +366,4 @@ namespace Content.OAuth
         public string RefreshToken { get; set; }
     }
 }
-
 ```

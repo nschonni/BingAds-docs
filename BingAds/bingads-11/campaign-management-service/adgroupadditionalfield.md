@@ -26,6 +26,7 @@ Defines a list of optional [AdGroup](adgroup.md) properties that you can request
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="inheritedbidstrategytype"></a>InheritedBidStrategyType|Request that the *InheritedBidStrategyType* element be included within each returned [InheritFromParentBiddingScheme](inheritfromparentbiddingscheme.md) object (nested within the *BiddingScheme* element of an [AdGroup](adgroup.md)).|

@@ -15,6 +15,7 @@ Contains the methods for iterating through a list of substitution parameters. Fo
 
 
 ## Methods
+
 |Method Name|Return Type|Description|
 |-|-|-
 [hasNext](#hasnext)|Boolean|Returns a Boolean value that indicates whether the iterator has more elements.
@@ -25,6 +26,7 @@ Contains the methods for iterating through a list of substitution parameters. Fo
 Returns a Boolean value that indicates whether the iterator has more elements.
 
 ### Returns
+
 |Type|Description|
 |-|-
 Boolean|Returns **true** if the iterator has more elements; otherwise, **false**.
@@ -33,6 +35,7 @@ Boolean|Returns **true** if the iterator has more elements; otherwise, **false**
 Advances the iterator and returns the next substitution parameter.
 
 ### Returns
+
 |Type|Description|
 |-|-
 [AdParam](AdParam.md)|The next substitution parameter in the iterator.
@@ -43,6 +46,7 @@ Returns the number of substitution parameters that matched the selector's select
 [!INCLUDE[reads-limit](../includes/reads-limit.md)]
 
 ### Returns
+
 |Type|Description|
 |-|-
 int|The number of substitution parameters that matched the selector's selection criteria.

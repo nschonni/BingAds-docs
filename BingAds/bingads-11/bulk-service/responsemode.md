@@ -21,6 +21,7 @@ Defines elements to specify whether the bulk service should return upload errors
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="errorsandresults"></a>ErrorsAndResults|Return errors and results in the bulk upload response file.|

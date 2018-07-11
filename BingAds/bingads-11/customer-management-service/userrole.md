@@ -30,6 +30,7 @@ Defines the possible roles of a user.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="advertisercampaignmanager"></a>AdvertiserCampaignManager|This role has permissions to view selected accounts and add, edit, or delete campaigns within the selected accounts. The Advertiser Campaign Manager can view payment methods, but cannot manage any billing and payment tasks.|

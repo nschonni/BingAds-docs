@@ -28,6 +28,7 @@ The *SignupCustomerRequest* object defines the [body](#request-body) and [header
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="account"></a>Account|An [Account](account.md) that specifies the details of the customer's primary account.<br /><br /> Do not instantiate the *Account* data object. Instead, instantiate the [AdvertiserAccount](advertiseraccount.md) that derives from the *Account* data object.|[Account](account.md)|
@@ -42,6 +43,7 @@ The *SignupCustomerRequest* object defines the [body](#request-body) and [header
 The *SignupCustomerResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -187,65 +189,65 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<SignupCustomerResponse> SignupCustomerAsync(
-	Customer customer,
-	Account account,
-	long? parentCustomerId,
-	ApplicationType applicationScope)
+    Customer customer,
+    Account account,
+    long? parentCustomerId,
+    ApplicationType applicationScope)
 {
-	var request = new SignupCustomerRequest
-	{
-		Customer = customer,
-		Account = account,
-		ParentCustomerId = parentCustomerId,
-		ApplicationScope = applicationScope
-	};
+    var request = new SignupCustomerRequest
+    {
+        Customer = customer,
+        Account = account,
+        ParentCustomerId = parentCustomerId,
+        ApplicationScope = applicationScope
+    };
 
-	return (await CustomerManagementService.CallAsync((s, r) => s.SignupCustomerAsync(r), request));
+    return (await CustomerManagementService.CallAsync((s, r) => s.SignupCustomerAsync(r), request));
 }
 ```
 ```java
 static SignupCustomerResponse signupCustomer(
-	Customer customer,
-	Account account,
-	java.lang.Long parentCustomerId,
-	ApplicationType applicationScope) throws RemoteException, Exception
+    Customer customer,
+    Account account,
+    java.lang.Long parentCustomerId,
+    ApplicationType applicationScope) throws RemoteException, Exception
 {
-	SignupCustomerRequest request = new SignupCustomerRequest();
+    SignupCustomerRequest request = new SignupCustomerRequest();
 
-	request.setCustomer(customer);
-	request.setAccount(account);
-	request.setParentCustomerId(parentCustomerId);
-	request.setApplicationScope(applicationScope);
+    request.setCustomer(customer);
+    request.setAccount(account);
+    request.setParentCustomerId(parentCustomerId);
+    request.setApplicationScope(applicationScope);
 
-	return CustomerManagementService.getService().signupCustomer(request);
+    return CustomerManagementService.getService().signupCustomer(request);
 }
 ```
 ```php
 static function SignupCustomer(
-	$customer,
-	$account,
-	$parentCustomerId,
-	$applicationScope)
+    $customer,
+    $account,
+    $parentCustomerId,
+    $applicationScope)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
 
-	$request = new SignupCustomerRequest();
+    $request = new SignupCustomerRequest();
 
-	$request->Customer = $customer;
-	$request->Account = $account;
-	$request->ParentCustomerId = $parentCustomerId;
-	$request->ApplicationScope = $applicationScope;
+    $request->Customer = $customer;
+    $request->Account = $account;
+    $request->ParentCustomerId = $parentCustomerId;
+    $request->ApplicationScope = $applicationScope;
 
-	return $GLOBALS['CustomerManagementProxy']->GetService()->SignupCustomer($request);
+    return $GLOBALS['CustomerManagementProxy']->GetService()->SignupCustomer($request);
 }
 ```
 ```python
 response=customermanagement_service.SignupCustomer(
-	Customer=Customer,
-	Account=Account,
-	ParentCustomerId=ParentCustomerId,
-	ApplicationScope=ApplicationScope)
+    Customer=Customer,
+    Account=Account,
+    ParentCustomerId=ParentCustomerId,
+    ApplicationScope=ApplicationScope)
 ```
 
 ## Requirements

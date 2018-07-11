@@ -22,6 +22,7 @@ The *GetMediaByIdsRequest* object defines the [body](#request-body) and [header]
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountid"></a>AccountId|The identifier of the account that owns the media library.|**long**|
@@ -34,6 +35,7 @@ The *GetMediaByIdsRequest* object defines the [body](#request-body) and [header]
 The *GetMediaByIdsResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -96,51 +98,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetMediaByIdsResponse> GetMediaByIdsAsync(
-	long accountId,
-	IList<long> mediaIds)
+    long accountId,
+    IList<long> mediaIds)
 {
-	var request = new GetMediaByIdsRequest
-	{
-		AccountId = accountId,
-		MediaIds = mediaIds
-	};
+    var request = new GetMediaByIdsRequest
+    {
+        AccountId = accountId,
+        MediaIds = mediaIds
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.GetMediaByIdsAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.GetMediaByIdsAsync(r), request));
 }
 ```
 ```java
 static GetMediaByIdsResponse getMediaByIds(
-	java.lang.Long accountId,
-	ArrayOflong mediaIds) throws RemoteException, Exception
+    java.lang.Long accountId,
+    ArrayOflong mediaIds) throws RemoteException, Exception
 {
-	GetMediaByIdsRequest request = new GetMediaByIdsRequest();
+    GetMediaByIdsRequest request = new GetMediaByIdsRequest();
 
-	request.setAccountId(accountId);
-	request.setMediaIds(mediaIds);
+    request.setAccountId(accountId);
+    request.setMediaIds(mediaIds);
 
-	return CampaignManagementService.getService().getMediaByIds(request);
+    return CampaignManagementService.getService().getMediaByIds(request);
 }
 ```
 ```php
 static function GetMediaByIds(
-	$accountId,
-	$mediaIds)
+    $accountId,
+    $mediaIds)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new GetMediaByIdsRequest();
+    $request = new GetMediaByIdsRequest();
 
-	$request->AccountId = $accountId;
-	$request->MediaIds = $mediaIds;
+    $request->AccountId = $accountId;
+    $request->MediaIds = $mediaIds;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->GetMediaByIds($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->GetMediaByIds($request);
 }
 ```
 ```python
 response=campaignmanagement_service.GetMediaByIds(
-	AccountId=AccountId,
-	MediaIds=MediaIds)
+    AccountId=AccountId,
+    MediaIds=MediaIds)
 ```
 
 ## Requirements

@@ -21,6 +21,7 @@ Defines an object that contains a list of search counts for each device and netw
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="keyword"></a>Keyword|The keyword to which the search count data applies.|**string**|

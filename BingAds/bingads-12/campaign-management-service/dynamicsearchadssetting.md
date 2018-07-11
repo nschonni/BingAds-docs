@@ -30,6 +30,7 @@ Defines the campaign level settings for a Dynamic Search Ads campaign.
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="domainname"></a>DomainName|The domain name of the website that you want to target for dynamic search ads.<br/><br/>The length of the string is limited to 2,048 characters. If the domain name includes *www* it will be trimmed and not used.<br/><br/>**Add:** Required<br/>**Update:** Read-only. You cannot update the domain name.|**string**|
@@ -43,6 +44,7 @@ The [DynamicSearchAdsSetting](dynamicsearchadssetting.md) object has [Inherited 
 
 ### <a name="inheritedelementssetting"></a>Inherited Elements from Setting
 The [DynamicSearchAdsSetting](dynamicsearchadssetting.md) object derives from the [Setting](setting.md) object, and inherits the following elements. The descriptions below are specific to [DynamicSearchAdsSetting](dynamicsearchadssetting.md), and might not apply to other objects that inherit the same elements from the [Setting](setting.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|

@@ -386,6 +386,7 @@ Defines a selection of locale values.
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="arabicalgeria"></a>ArabicAlgeria|The corresponding LCID type.|

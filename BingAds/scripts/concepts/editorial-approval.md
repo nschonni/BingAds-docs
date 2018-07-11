@@ -15,6 +15,7 @@ ms.topic: "article"
 
 The following table maps the editorial approval status values in Bing Ads Scripts to their corresponding status values in Bing Ads API.
 
+
 |Bing Ads Scripts|Bing Ads
 |-|-
 APPROVED|Active

@@ -21,6 +21,7 @@ Defines an object that contains the unique system identifier of an entity such a
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="entityid"></a>EntityId|The system-generated unique identifier of an entity such as ad or keyword.|**long**|

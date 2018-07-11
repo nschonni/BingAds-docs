@@ -23,6 +23,7 @@ You may use the above Base URI or the Tenant URL shown under **Store settings** 
 
 To create the endpoints that you use to manage your catalogs, append the appropriate template to the base URI.
 
+
 |Template|HTTP Verb|Description|Resource
 |--------|---------|-----------|--------
 |`{bmcMerchantId}/catalogs`|POST|Use to add a catalog to the store. To add a catalog, its name must be unique. You may add a maximum of 100 catalogs to a store.<br/><br/>Set `{bmcMerchantId}` to the BMC store ID.|Request: [Catalog](#catalog)<br>Response: [Catalog](#catalog) 
@@ -36,6 +37,7 @@ To create the endpoints that you use to manage your catalogs, append the appropr
 
 The endpoints may include the following query parameters.
 
+
 |Parameter|Description|
 |---------|-----------|
 |<a name="alt"/>alt|Optional. Use to specify the type of content that's used in the request and response. The possible values are ```json``` and ```xml```. The default is ```json```.
@@ -48,7 +50,8 @@ The endpoints may include the following query parameters.
 
 
 The following are the request and response headers.
- 
+
+
 |Header|Description|
 |---------|---------------|
 |<a name="authtoken"/>AuthenticationToken|Request header.<br/><br/>Set this header to an OAuth authentication token. For information about getting a token, see [Authenticating your credentials](../shopping-content/get-started.md#authentication).<br/><br/>This header and the UserName header are mutually exclusive.
@@ -67,18 +70,20 @@ For user authentication, specify either the AuthenticationToken header or the Us
 ## <a name="objects"/> Request and response objects
 
 The following are the request and response objects used by the API.
- 
+
 Each object defines the JSON key name and XML element name that you use depending on the content type that you specify for the request. 
+
 
 |Object|Description
 |------|-----------
 |[Catalog](#catalog)|Defines a catalog.
 |[Catalogs](#catalogs)|Defines the list of catalogs.
 
- 
+
 ### <a name="catalog"/>Catalog
 
 Defines a catalog.
+
 
 |Name|Value|Type|XML element name
 |----|-----|----|--------
@@ -93,6 +98,7 @@ Defines a catalog.
 
 Defines a list of catalogs.
 
+
 |Name|Value|Type|XML element name
 |----|-----|----|--------
 |catalogs|A list of catalogs in the store.|[Catalog](#catalog)[]|\<catalogs\> 
@@ -102,6 +108,7 @@ Defines a list of catalogs.
 ## HTTP status codes
 
 The requests may return the following HTTP status codes.
+
 
 |Status code|Description
 |-----------|-----------

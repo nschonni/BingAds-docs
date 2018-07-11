@@ -22,6 +22,7 @@ The *GetBulkDownloadStatusRequest* object defines the [body](#request-body) and 
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="requestid"></a>RequestId|The identifier of the download request.<br /><br />The [DownloadCampaignsByAccountIds](downloadcampaignsbyaccountids.md) and [DownloadCampaignsByCampaignIds](downloadcampaignsbycampaignids.md) operations return this element as the *DownloadRequestId*.|**string**|
@@ -33,6 +34,7 @@ The *GetBulkDownloadStatusRequest* object defines the [body](#request-body) and 
 The *GetBulkDownloadStatusResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -104,44 +106,44 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<GetBulkDownloadStatusResponse> GetBulkDownloadStatusAsync(
-	string requestId)
+    string requestId)
 {
-	var request = new GetBulkDownloadStatusRequest
-	{
-		RequestId = requestId
-	};
+    var request = new GetBulkDownloadStatusRequest
+    {
+        RequestId = requestId
+    };
 
-	return (await BulkService.CallAsync((s, r) => s.GetBulkDownloadStatusAsync(r), request));
+    return (await BulkService.CallAsync((s, r) => s.GetBulkDownloadStatusAsync(r), request));
 }
 ```
 ```java
 static GetBulkDownloadStatusResponse getBulkDownloadStatus(
-	java.lang.String requestId) throws RemoteException, Exception
+    java.lang.String requestId) throws RemoteException, Exception
 {
-	GetBulkDownloadStatusRequest request = new GetBulkDownloadStatusRequest();
+    GetBulkDownloadStatusRequest request = new GetBulkDownloadStatusRequest();
 
-	request.setRequestId(requestId);
+    request.setRequestId(requestId);
 
-	return BulkService.getService().getBulkDownloadStatus(request);
+    return BulkService.getService().getBulkDownloadStatus(request);
 }
 ```
 ```php
 static function GetBulkDownloadStatus(
-	$requestId)
+    $requestId)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['BulkProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['BulkProxy'];
 
-	$request = new GetBulkDownloadStatusRequest();
+    $request = new GetBulkDownloadStatusRequest();
 
-	$request->RequestId = $requestId;
+    $request->RequestId = $requestId;
 
-	return $GLOBALS['BulkProxy']->GetService()->GetBulkDownloadStatus($request);
+    return $GLOBALS['BulkProxy']->GetService()->GetBulkDownloadStatus($request);
 }
 ```
 ```python
 response=bulk_service.GetBulkDownloadStatus(
-	RequestId=RequestId)
+    RequestId=RequestId)
 ```
 
 ## Requirements

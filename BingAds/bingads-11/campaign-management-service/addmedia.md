@@ -21,6 +21,7 @@ The *AddMediaRequest* object defines the [body](#request-body) and [header](#req
 
 ### <a name="request-body"></a>Request Body Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="accountid"></a>AccountId|The identifier of the account that owns the media library.|**long**|
@@ -33,6 +34,7 @@ The *AddMediaRequest* object defines the [body](#request-body) and [header](#req
 The *AddMediaResponse* object defines the [body](#response-body) and [header](#response-header) elements of the service operation response. The elements are returned in the same order as shown in the [Response SOAP](#response-soap).
 
 ### <a name="response-body"></a>Response Body Elements
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
@@ -95,51 +97,51 @@ The following template shows the order of the [body](#response-body) and [header
 The example syntax can be used with [Bing Ads SDKs](../guides/client-libraries.md). See [Bing Ads Code Examples](../guides/code-examples.md) for more examples.
 ```csharp
 public async Task<AddMediaResponse> AddMediaAsync(
-	long accountId,
-	IList<Media> media)
+    long accountId,
+    IList<Media> media)
 {
-	var request = new AddMediaRequest
-	{
-		AccountId = accountId,
-		Media = media
-	};
+    var request = new AddMediaRequest
+    {
+        AccountId = accountId,
+        Media = media
+    };
 
-	return (await CampaignManagementService.CallAsync((s, r) => s.AddMediaAsync(r), request));
+    return (await CampaignManagementService.CallAsync((s, r) => s.AddMediaAsync(r), request));
 }
 ```
 ```java
 static AddMediaResponse addMedia(
-	java.lang.Long accountId,
-	ArrayOfMedia media) throws RemoteException, Exception
+    java.lang.Long accountId,
+    ArrayOfMedia media) throws RemoteException, Exception
 {
-	AddMediaRequest request = new AddMediaRequest();
+    AddMediaRequest request = new AddMediaRequest();
 
-	request.setAccountId(accountId);
-	request.setMedia(media);
+    request.setAccountId(accountId);
+    request.setMedia(media);
 
-	return CampaignManagementService.getService().addMedia(request);
+    return CampaignManagementService.getService().addMedia(request);
 }
 ```
 ```php
 static function AddMedia(
-	$accountId,
-	$media)
+    $accountId,
+    $media)
 {
 
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+    $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
-	$request = new AddMediaRequest();
+    $request = new AddMediaRequest();
 
-	$request->AccountId = $accountId;
-	$request->Media = $media;
+    $request->AccountId = $accountId;
+    $request->Media = $media;
 
-	return $GLOBALS['CampaignManagementProxy']->GetService()->AddMedia($request);
+    return $GLOBALS['CampaignManagementProxy']->GetService()->AddMedia($request);
 }
 ```
 ```python
 response=campaignmanagement_service.AddMedia(
-	AccountId=AccountId,
-	Media=Media)
+    AccountId=AccountId,
+    Media=Media)
 ```
 
 ## Requirements

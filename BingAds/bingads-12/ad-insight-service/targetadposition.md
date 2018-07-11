@@ -22,6 +22,7 @@ Defines the possible positions where you can target an ad to appear in the searc
 
 ## <a name="values"></a>Values
 
+
 |Value|Description|
 |-----------|---------------|
 |<a name="firstpage"></a>FirstPage|Target any position on the right side of the search results page.|

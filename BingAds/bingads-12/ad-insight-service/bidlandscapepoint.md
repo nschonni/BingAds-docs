@@ -29,6 +29,7 @@ Defines an object that contains estimates of clicks, cost, and impressions  give
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="bid"></a>Bid|The suggested bid value.|**double**|

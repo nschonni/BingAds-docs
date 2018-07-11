@@ -33,6 +33,7 @@ Defines an object that contains estimates of clicks, average cost per click (CPC
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="averagecpc"></a>AverageCPC|The estimated average CPC.<br /><br />The formula used to calculate the average CPC is (maximum total cost / maximum number of clicks).|**double**|

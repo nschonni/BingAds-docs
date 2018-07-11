@@ -11,7 +11,7 @@ Defines a URL conversion goal. Use this type of goal to count every time someone
 
 > [!TIP]
 > For an implementation overview, see the [Universal Event Tracking](../guides/universal-event-tracking.md) technical guide.
-
+> 
 > [!IMPORTANT]
 > Every time you add or update a new [DurationGoal](durationgoal.md), [EventGoal](eventgoal.md), [OfflineConversionGoal](offlineconversiongoal.md), [PagesViewedPerVisitGoal](pagesviewedpervisitgoal.md) or [UrlGoal](urlgoal.md) via either the Bing Ads web application or Campaign Management API, the *MSCLKIDAutoTaggingEnabled* value of the corresponding [AccountProperty](accountproperty.md) is set to *True* automatically. If the Scope of the goal is set to *Customer* level, then the [AccountProperty](accountproperty.md) for all accounts under the Customer will be set. 
 
@@ -31,6 +31,7 @@ Defines a URL conversion goal. Use this type of goal to count every time someone
 
 ## <a name="elements"></a>Elements
 
+
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
 |<a name="urlexpression"></a>UrlExpression|The expression used to determine the page or pages the user has to visit in order to count as a conversion. <br/><br/>**Add:** Required<br />**Update:** Optional|**string**|
@@ -42,6 +43,7 @@ The [UrlGoal](urlgoal.md) object has [Inherited Elements](#inheritedelements).
 
 ### <a name="inheritedelementsconversiongoal"></a>Inherited Elements from ConversionGoal
 The [UrlGoal](urlgoal.md) object derives from the [ConversionGoal](conversiongoal.md) object, and inherits the following elements. The descriptions below are specific to [UrlGoal](urlgoal.md), and might not apply to other objects that inherit the same elements from the [ConversionGoal](conversiongoal.md) object.  
+
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
