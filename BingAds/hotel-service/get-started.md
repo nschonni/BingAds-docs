@@ -12,7 +12,8 @@ ms.author: "scottwhi"
 
 <a name="doyouhavecredentials"/> 
 ## Do you have your Bing Ads credentials?
-To use the Hotel API, you must have a Bing Ads account and a Microsoft account. To get a Bing Ads account, go to <a href="http://bingads.microsoft.com" data-raw-source="[http://bingads.microsoft.com](http://bingads.microsoft.com)">http://bingads.microsoft.com</a>. If you&#39;re not signed in to your Microsoft account, you&#39;ll be redirected to sign in to your Microsoft account or sign up for a Microsoft account. After signing in, you&#39;ll have the option to **Sign up for a new Bing Ads account**. Select the sign-up option and continue with the sign-up process.
+
+To use the Hotel API, you must have a Bing Ads account and a Microsoft account. To get a Bing Ads account, go to <a href="http://bingads.microsoft.com" data-raw-source="[http://bingads.microsoft.com](http://bingads.microsoft.com)">http://bingads.microsoft.com</a>. If you're not signed in to your Microsoft account, you'll be redirected to sign in to your Microsoft account or sign up for a Microsoft account. After signing in, you'll have the option to **Sign up for a new Bing Ads account**. Select the sign-up option and continue with the sign-up process.
 
 Unlike the other Bing Ads APIs, the Hotel API does not use a developer token. The API ignores it if you include it.
 
@@ -63,7 +64,7 @@ For the sandbox environment, the following are the endpoints you must use to get
 <a name="getsicredentials"/> 
 ## Getting sandbox credentials
 
-### Get a sanbox account if you don't already have one
+### Get a sandbox account if you don't already have one
 
 You use the sandbox environment to test your application before putting it in production. Use the following steps to get a sandbox account.
 
@@ -128,6 +129,7 @@ For information about the Authorization header and other headers that the reques
 > The Hotel API uses the standard Authorization header. If you use the Bing Ads SDK to get the OAuth tokens, you'll use the SDK to get the tokens and then set the Authorization header.
 
 <a name="feeds"/>
+
 ## Do you have your hotel feed set up?
 
 Before using the Hotel API, you should have your hotel feeds set up. For details, see:
