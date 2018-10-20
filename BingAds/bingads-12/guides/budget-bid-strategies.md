@@ -161,9 +161,9 @@ If you include the broad match modifier on a keyword that specifies a phrase or 
 
 ### <a name="deliveredmatchtypes"></a>Bid and Delivered Match Types
 You should set the ad group *Search Bid* that will be used as the default bid for *Exact*, *Phrase*, and *Broad* match types. You can then override the default by setting individual keyword level match types. Generally, the more precise you require the match to be, the higher conversion rates tend to be while impressions tend to decrease. Finding the right balance between conversions and impressions can help maximize the return on investment (ROI) of your campaign. If you're not sure which match type to use, we suggest starting with broad match. You can then use keyword performance reports over time to see which keywords lead to ad clicks and optimize your keyword list.
-- If a majority of the keywords in the report are not related to your ad, you might want to use one of the more precise match types.  
-- For keywords that you want to continue leading to clicks, add them to your keyword list with a more specific match type such as Phrase or Exact.  
-- For keywords that you don't want leading to clicks, add them to your keyword list as negative keywords. For more information, see [Negative Keywords](negative-keywords.md).  
+- If a majority of the keywords in the report are not related to your ad, you might want to use one of the more precise match types. 
+- For keywords that you want to continue leading to clicks, add them to your keyword list with a more specific match type such as Phrase or Exact. 
+- For keywords that you don't want leading to clicks, add them to your keyword list as negative keywords. For more information, see [Negative Keywords](negative-keywords.md). 
 
 Exact match is the most restrictive and broad match is the least restrictive match type. If the keyword matches by using the more restrictive match type, it will also match using the less restrictive match types. If the exact match comparison succeeds, the exact-match bid value is used if it exists; otherwise, it gets the bid value from the first less-restrictive match type that has a bid value (set at the keyword or ad group level).
 
@@ -194,9 +194,9 @@ For example, let's say you add *bike-repair* as one of your keywords, and then a
 For a detailed list of normalized characters, see the Bing Ads help topic [About duplicate keywords](http://help.bingads.microsoft.com/#apex/3/en/normalization).
 
 Please also note the following validation rules.
-- Normalization is not case sensitive; *bike repair* and *Bike Repair* are treated as the same phrase. You'll see that if you enter a keyword with a capital letter, the capital letter is simply changed to lower-case.  
-- Normalization does not treat singular and plural forms of words as duplicates. For example, *bike* and *bikes* would be separate keywords. If you want to use both the plural and singular form of a keyword, bid on each separately. Similarly, normalization does not impact spaces within or between words, or apostrophes that are a part of a name. For example, *bikerepair* is not a duplicate of *bike repair*.  
-- As you create your keywords, also be aware of the rules they must follow. Here's some more information: [Bing Ads policies](http://help.bingads.microsoft.com/#apex/3/en/52023/1).  
+- Normalization is not case sensitive; *bike repair* and *Bike Repair* are treated as the same phrase. You'll see that if you enter a keyword with a capital letter, the capital letter is simply changed to lower-case. 
+- Normalization does not treat singular and plural forms of words as duplicates. For example, *bike* and *bikes* would be separate keywords. If you want to use both the plural and singular form of a keyword, bid on each separately. Similarly, normalization does not impact spaces within or between words, or apostrophes that are a part of a name. For example, *bikerepair* is not a duplicate of *bike repair*. 
+- As you create your keywords, also be aware of the rules they must follow. Here's some more information: [Bing Ads policies](http://help.bingads.microsoft.com/#apex/3/en/52023/1). 
 
 ## See Also
 [Bing Ads Web Service Addresses](web-service-addresses.md)

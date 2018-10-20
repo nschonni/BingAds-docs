@@ -10,7 +10,7 @@ description: Get your ads in front of the right people.
 Getting your ad in front of the right people; that's what targeting is all about. With targeting, Bing Ads can help you focus a campaign or ad group on potential customers who meet specific criteria, so you can increase the chance that they see your ads. You may target your ads to display to users of a certain age group, display at a certain day and time of the week, or display to users in a particular geographical location.
 
 > [!NOTE] 
-> Bing Ads supports other criterion types e.g. product partition and webpage. This guide covers criterions that you can use to target your ads by age, day and time, device, gender, location, and profile. Where necessary to distinguish from other criterion types the documentation may refer to these entities as *target criterions*.  
+> Bing Ads supports other criterion types e.g. product partition and webpage. This guide covers criterions that you can use to target your ads by age, day and time, device, gender, location, and profile. Where necessary to distinguish from other criterion types the documentation may refer to these entities as *target criterions*. 
 
 Here are a few tips to keep in mind before you begin:
 *  When you first create a campaign or ad group using the Bing Ads API, it will not have any criterions. Effectively the brand new campaign and ad group target all ages, days, hours, devices, genders, and locations. You should specify your minimum target criterions at the campaign level and then use ad group level criterions to narrow or refine your targeting requirements. As a best practice you should consider at minimum adding a campaign location criterion corresponding to the customer market country. Its worth noting that when creating campaigns via the Bing Ads web application, the recommended [default criterions](#defaultcriterions) are added. 
@@ -131,7 +131,7 @@ The base bid is adjusted by multipliers of the bid adjustment percentage values 
 `1.00` (base bid default) `* 1.20` (day bid adjustment) `* 1.30` (location bid adjustment)`= 1.56` (56 percent adjustment)
 
 > [!NOTE]
-> After calculation, bid adjustments are rounded to two decimals of precision. For example, 1.1749 is rounded to 1.17 (17%), or 1.175 is rounded to 1.18 (18%).  
+> After calculation, bid adjustments are rounded to two decimals of precision. For example, 1.1749 is rounded to 1.17 (17%), or 1.175 is rounded to 1.18 (18%). 
 > 
 > Multiple bid adjustments across location criterions are not combined. If you specify geographically-related combinations of country/region, state/province, metropolitan area, or city criterions, the bid adjustment of the most refined criterion would apply.
 > 
@@ -164,7 +164,7 @@ Campaign Location Intent Criterion,Active,CampaignIdHere,CampaignIdHere,,Campaig
 > The above examples assume that you did not change any other defaults such as demographic or device settings. 
 
 ## <a name="usingcriterions"></a>Using Target Criterions
-Bing Ads supports other criterion types e.g. product partition and webpage. This guide covers criterions that you can use to target your ads by age, day and time, device, gender, location, and profile. Where necessary to distinguish from other criterion types the documentation may refer to these entities as *target criterions*.  
+Bing Ads supports other criterion types e.g. product partition and webpage. This guide covers criterions that you can use to target your ads by age, day and time, device, gender, location, and profile. Where necessary to distinguish from other criterion types the documentation may refer to these entities as *target criterions*. 
 
 ### <a name="synccriterions"></a>Sync Criterions
 Sync the new criterions with campaigns and ad groups. For example you can use the Bulk service to download all criterions in the account and discover the mapping between criterions and campaigns and ad groups. Let's download the target criterions using Bing Ads API version 12, Bulk file format 6.0, and we can see that each criterion has its own identifier e.g. 101, 102, 103, and so on. 

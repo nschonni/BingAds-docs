@@ -13,15 +13,15 @@ The example desktop application sends authentication requests to the Microsoft a
 
 ## <a name="code"></a>Code Walkthrough
 
-1.  Open the Eclipse development environment.
+1. Open the Eclipse development environment.
 
-2.  Create a new project through **File** -&gt; **New** -&gt; **Project** -&gt; **Maven** -&gt; **Maven Project**, and click **Next**.
+2. Create a new project through **File** -&gt; **New** -&gt; **Project** -&gt; **Maven** -&gt; **Maven Project**, and click **Next**.
 
-3.  In the **New Maven Project** dialog, check the option to **Create a simple project (skip archetype selection)** and click **Next**.
+3. In the **New Maven Project** dialog, check the option to **Create a simple project (skip archetype selection)** and click **Next**.
 
-4.  In the **New Maven Project** dialog, specify your project's artifact parameters and then click **Finish**. For example, you can set the **Group Id** to com.microsoft.bingads.examples and **Artifact Id** to BingAdsDesktopApp.
+4. In the **New Maven Project** dialog, specify your project's artifact parameters and then click **Finish**. For example, you can set the **Group Id** to com.microsoft.bingads.examples and **Artifact Id** to BingAdsDesktopApp.
 
-5.  In **Project Explorer**, right-click the pom.xml file and select **Open With** -&gt; **Text Editor**. Add the *com.microsoft.bingads* dependency as shown in the following example and save pom.xml.
+5. In **Project Explorer**, right-click the pom.xml file and select **Open With** -&gt; **Text Editor**. Add the *com.microsoft.bingads* dependency as shown in the following example and save pom.xml.
 
     > [!NOTE]
     > For details about the latest SDK dependency version, please see the [Bing Ads Java SDK GitHub README.md](https://github.com/BingAds/BingAds-Java-SDK).
@@ -36,15 +36,15 @@ The example desktop application sends authentication requests to the Microsoft a
         <dependency>
           <groupId>com.microsoft.bingads</groupId>
           <artifactId>microsoft.bingads</artifactId>
-          <version>11.12.6</version>
+          <version>11.12.7</version>
         </dependency>
       </dependencies>
     </project>
     ```
 
-6.  In **Project Explorer**, right-click the BingAdsDesktopApp project (or the name of your project if you chose a different artifact identifier in the previous step) and select **New** -&gt; **Class**. Choose a package name, for example *com.microsoft.bingads.examples*. Name the class *OAuthDesktopApplication* and then click **Finish**.
+6. In **Project Explorer**, right-click the BingAdsDesktopApp project (or the name of your project if you chose a different artifact identifier in the previous step) and select **New** -&gt; **Class**. Choose a package name, for example *com.microsoft.bingads.examples*. Name the class *OAuthDesktopApplication* and then click **Finish**.
 
-7.  Open the OAuthDesktopApplication.java file and replace its contents with the following code block. You must edit the *ClientId* below with the Application Id that was provisioned when you [registered your application](authentication-oauth.md#registerapplication). If you are targeting the production environment, then you'll also need to edit the example with your production [developer token](get-started.md#get-developer-token).
+7. Open the OAuthDesktopApplication.java file and replace its contents with the following code block. You must edit the *ClientId* below with the Application Id that was provisioned when you [registered your application](authentication-oauth.md#registerapplication). If you are targeting the production environment, then you'll also need to edit the example with your production [developer token](get-started.md#get-developer-token).
 
     > [!NOTE]
     > If you observe any errors related to *javafx* import statements, try removing the *JRE System Library* and adding it back again. In **Project Explorer**, right-click the BingAdsDesktopApp and select **Build Path** -&gt; **Configure Build Path**. In the **Libraries** tab, select JRE System Library and click **Remove**. Remain in the **Libraries** tab and click **Add Library**, select JRE System Library, click **Next**, and then click **Finish**.
@@ -264,7 +264,7 @@ The example desktop application sends authentication requests to the Microsoft a
     }
     ```
 
-8.  Edit the *ClientId* and *DeveloperToken* values to your own credentials. If you are using sandbox, first follow the steps below in [Configuring Sandbox](#sandbox).
+8. Edit the *ClientId* and *DeveloperToken* values to your own credentials. If you are using sandbox, first follow the steps below in [Configuring Sandbox](#sandbox).
 
 9. Right-click OAuthDesktopApplication.java, and click **Run As** -&gt; **Java Application**.
 

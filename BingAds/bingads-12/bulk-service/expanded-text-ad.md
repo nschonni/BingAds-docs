@@ -339,7 +339,7 @@ This bulk field maps to the *Id* field of the [Ad Group](ad-group.md) record.
 ### <a name="path1"></a>Path 1
 The first part of the optional path that will be appended to the domain portion of your display URL. The domain portion of your display URL e.g. *http://www.contoso.com* will be generated from the domain of your Final URL (*Final Url* field).  Then if you have specified a value for *Path 1* it will be appended to the display URL. If you have also specified a value for *Path 2*, then it will also be appended to the display URL after *Path 1*. For example if your *Final Url* contains *http://www.contoso.com*, *Path 1* is set to *subdirectory1*, and *Path 2* is set to *subdirectory2*, then the URL displayed will be *http://www.contoso.com/subdirectory1/subdirectory2*.
 
-The path can contain a countdown function. For more details see [Countdown Functions](../guides/expanded-text-ads.md#countdown). 
+The path can contain a countdown function. Regardless of the total length of all unsubstituted countdown parameters, the final displayed countdown will always use 8 characters out of the total characters available. For more details see [Countdown Functions](../guides/expanded-text-ads.md#countdown). 
 
 The path can contain dynamic parameters such as {MatchType}. For a list of supported parameters, see the Bing Ads help article [What tracking or URL parameters can I use?](https://help.bingads.microsoft.com/#apex/3/en/56799/2).
 
@@ -360,7 +360,7 @@ The second part of the optional path that will be appended to the domain portion
 
 You can only specify *Path 2* if *Path 1* is also set.
 
-The path can contain a countdown function. For more details see [Countdown Functions](../guides/expanded-text-ads.md#countdown). 
+The path can contain a countdown function. Regardless of the total length of all unsubstituted countdown parameters, the final displayed countdown will always use 8 characters out of the total characters available. For more details see [Countdown Functions](../guides/expanded-text-ads.md#countdown). 
 	
 The path can contain dynamic parameters such as {MatchType}. For a list of supported parameters, see the Bing Ads help article [What tracking or URL parameters can I use?](https://help.bingads.microsoft.com/#apex/3/en/56799/2).
 
@@ -399,16 +399,13 @@ The first part of the ad description.
 
 The text must contain at least one word.
 
-The text can contain a countdown function. For more details see [Countdown Functions](../guides/expanded-text-ads.md#countdown). 
+The text can contain a countdown function. Regardless of the total length of all unsubstituted countdown parameters, the final displayed countdown will always use 8 characters out of the total characters available. For more details see [Countdown Functions](../guides/expanded-text-ads.md#countdown). 
 
 The text can contain dynamic text strings such as {keyword}. For more information, see the Bing Ads help article [Automatically customize your ads with dynamic text parameters](http://help.bingads.microsoft.com/#apex/3/en/50811/1).
 
-The maximum input length is 1,000 characters including dynamic text strings, and of those 1,000 no more than 80 final characters are allowed after substitution. The ad will fail to display if the length exceeds 80 characters after dynamic text substitution occurs.
+The maximum input length is 1,000 characters including dynamic text strings, and of those 1,000 no more than 90 final characters are allowed after substitution. The ad will fail to display if the length exceeds 90 characters after dynamic text substitution occurs.
 
-For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 40 final characters are allowed after substitution. The ad will fail to display if the length exceeds 40 characters after dynamic text substitution occurs. The double-width characters are determined by the characters you use instead of the character set of the campaign or ad group language settings. Double-width characters include Korean, Japanese and Chinese languages characters as well as Emojis.
-
-> [!NOTE] 
-> For customers in [pilot 510](../customer-management-service/getcustomerpilotfeatures.md#featurepilotflags), the maximum length is increased from 80 to 90, or from 40 to 45 for double-width characters.
+For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 45 final characters are allowed after substitution. The ad will fail to display if the length exceeds 45 characters after dynamic text substitution occurs. The double-width characters are determined by the characters you use instead of the character set of the campaign or ad group language settings. Double-width characters include Korean, Japanese and Chinese languages characters as well as Emojis.
 
 The text cannot contain the newline (\n) character.
 
@@ -424,7 +421,7 @@ The second part of the ad description.
 
 The text must contain at least one word.
 
-The text can contain a countdown function. For more details see [Countdown Functions](../guides/expanded-text-ads.md#countdown). 
+The text can contain a countdown function. Regardless of the total length of all unsubstituted countdown parameters, the final displayed countdown will always use 8 characters out of the total characters available. For more details see [Countdown Functions](../guides/expanded-text-ads.md#countdown). 
 
 The text can contain dynamic text strings such as {keyword}. For more information, see the Bing Ads help article [Automatically customize your ads with dynamic text parameters](http://help.bingads.microsoft.com/#apex/3/en/50811/1).
 
@@ -441,7 +438,7 @@ The text cannot contain the newline (\n) character.
 ### <a name="titlepart1"></a>Title Part 1
 The first part of the ad title. The three title parts will be automatically separated by a space, vertical bar, and space (" &#124; ") when the ad is shown. Each part of the title must contain at least one word. 
 
-The title can contain a countdown function. For more details see [Countdown Functions](../guides/expanded-text-ads.md#countdown). 
+The title can contain a countdown function. Regardless of the total length of all unsubstituted countdown parameters, the final displayed countdown will always use 8 characters out of the total characters available. For more details see [Countdown Functions](../guides/expanded-text-ads.md#countdown). 
 
 The title can contain dynamic text strings such as {keyword}. For more information, see the Bing Ads help article [Automatically customize your ads with dynamic text parameters](http://help.bingads.microsoft.com/#apex/3/en/50811/1).
 
@@ -458,7 +455,7 @@ The title cannot contain the newline (\n) character.
 ### <a name="titlepart2"></a>Title Part 2
 The second part of the ad title. The three title parts will be automatically separated by a space, vertical bar, and space (" &#124; ") when the ad is shown. Each part of the title must contain at least one word.
 
-The title can contain a countdown function. For more details see [Countdown Functions](../guides/expanded-text-ads.md#countdown). 
+The title can contain a countdown function. Regardless of the total length of all unsubstituted countdown parameters, the final displayed countdown will always use 8 characters out of the total characters available. For more details see [Countdown Functions](../guides/expanded-text-ads.md#countdown). 
 
 The title can contain dynamic text strings such as {keyword}. For more information, see the Bing Ads help article [Automatically customize your ads with dynamic text parameters](http://help.bingads.microsoft.com/#apex/3/en/50811/1).
     
@@ -478,7 +475,7 @@ The third part of the ad title. The three title parts will be automatically sepa
 > [!NOTE]
 > This field is only available for customers in [pilot 511](../customer-management-service/getcustomerpilotfeatures.md#featurepilotflags).
 
-The title can contain a countdown function. For more details see [Countdown Functions](../guides/expanded-text-ads.md#countdown). 
+The title can contain a countdown function. Regardless of the total length of all unsubstituted countdown parameters, the final displayed countdown will always use 8 characters out of the total characters available. For more details see [Countdown Functions](../guides/expanded-text-ads.md#countdown). 
 
 The title can contain dynamic text strings such as {keyword}. For more information, see the Bing Ads help article [Automatically customize your ads with dynamic text parameters](http://help.bingads.microsoft.com/#apex/3/en/50811/1).
     

@@ -36,6 +36,8 @@ The Campaign Management service defines the following data objects.
 |[AppInstallGoal](appinstallgoal.md)|Defines an app install conversion goal.|
 |[ApplicationFault](applicationfault.md)|Defines the base object from which all fault detail objects derive.|
 |[AppUrl](appurl.md)|Defines the operating system platform and URL of the app store download webpage.|
+|[Asset](asset.md)|Reserved.|
+|[AssetLink](assetlink.md)|Reserved.|
 |[Audience](audience.md)|Defines the base object of an audience.|
 |[AudienceCriterion](audiencecriterion.md)|Defines a criterion that can be used to show ads to a specific audience.|
 |[BatchError](batcherror.md)|Defines an error object that identifies the item within the batch of items in the request message that caused the operation to fail, and describes the reason for the failure.|
@@ -127,6 +129,7 @@ The Campaign Management service defines the following data objects.
 |[RemarketingList](remarketinglist.md)|Defines a remarketing list.|
 |[RemarketingRule](remarketingrule.md)|Defines the base object of a remarketing rule.|
 |[ResponsiveAd](responsivead.md)|A responsive ad format for Audience ads in the Microsoft Audience Network.|
+|[ResponsiveSearchAd](responsivesearchad.md)|Reserved.|
 |[ReviewAdExtension](reviewadextension.md)|Defines an object that specifies third-party reviews (exact or paraphrased) about your business, products, or services to include in an expanded text ad.|
 |[RuleItem](ruleitem.md)|Defines the base class of a remarketing list rule item.|
 |[RuleItemGroup](ruleitemgroup.md)|Defines an object that contains a list of remarketing list rule items that apply to the same visited page.|
@@ -145,6 +148,7 @@ The Campaign Management service defines the following data objects.
 |[TargetSetting](targetsetting.md)|The target settings that determines whether the Age, Audience, CompanyName, Gender, Industry, and JobFunction criterion type groups use the "target and bid" option or the "bid only" target option.|
 |[TargetSettingDetail](targetsettingdetail.md)|Determines whether you want to use the "target and bid" option or the "bid only" target option for the criterion type group.|
 |[TextAd](textad.md)|Defines a text ad.|
+|[TextAsset](textasset.md)|Reserved.|
 |[UetTag](uettag.md)|Defines a Universal Event Tracking (UET) tag that you can add to your website to allow Bing Ads to collect actions people take on your website.|
 |[UrlGoal](urlgoal.md)|Defines a URL conversion goal.|
 |[Webpage](webpage.md)|Defines a webpage parameter that contains a list of webpage conditions or criteria that help determine whether you want to show dynamic search ads.|

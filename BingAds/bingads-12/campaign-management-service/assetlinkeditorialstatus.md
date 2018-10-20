@@ -13,6 +13,7 @@ Reserved for future use.
 ```xml
 <xs:simpleType name="AssetLinkEditorialStatus" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:restriction base="xs:string">
+    <xs:enumeration value="Unknown" />
     <xs:enumeration value="Active" />
     <xs:enumeration value="Disapproved" />
     <xs:enumeration value="Inactive" />
@@ -29,8 +30,11 @@ Reserved for future use.
 |<a name="activelimited"></a>ActiveLimited|Reserved.|
 |<a name="disapproved"></a>Disapproved|Reserved.|
 |<a name="inactive"></a>Inactive|Reserved.|
+|<a name="unknown"></a>Unknown|Reserved.|
 
 ## Requirements
 Service: [CampaignManagementService.svc v12](https://campaign.api.bingads.microsoft.com/Api/Advertiser/CampaignManagement/v12/CampaignManagementService.svc)  
 Namespace: https\://bingads.microsoft.com/CampaignManagement/v12  
 
+## Used By
+[AssetLink](assetlink.md)  

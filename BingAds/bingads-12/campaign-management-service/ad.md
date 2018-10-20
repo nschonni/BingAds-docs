@@ -16,6 +16,7 @@ Do not try to instantiate an *Ad*. You can create one or more following objects 
 - [TextAd](textad.md)
 - [ProductAd](productad.md) 
 - [ResponsiveAd](responsivead.md) 
+- [ResponsiveSearchAd](responsivesearchad.md) 
 
 ## Syntax
 ```xml
