@@ -18,12 +18,17 @@ Before your ads can run, you need to set your campaign's budget. You'll also nee
 ## <a name="budgettypes"></a>Budget Types
 Your budget tells Bing Ads how much you want to spend on your campaign. You can set a daily budget for each campaign and when you reach your budget, Bing Ads will stop displaying your ads until the next day or month. Keep your advertising costs under control by keeping track of your budget. 
 
+> [!WARNING]
+> Your budget is a target; your actual spend might be higher or lower. Variations are caused by a number of factors, such as different traffic volumes in different days of the week, or automatic detection and refunding of fraud clicks that can give money back to a campaign within a few hours of the click. Bing Ads anticipates and automatically compensates for the fluctuations, and usually keeps overspend to less than 100% above your daily limit.
+> 
+> Also note that Bing Ads does not require your campaign budget to be higher than the ad group and keyword bids. In other words ad group and keyword bids are validated independently of the campaign budget. 
+
 With shared budgets you can set a single daily budget that can be used by any campaign within the same account. This enables you to efficiently distribute a single daily budget across all campaigns or across a defined group of campaigns within your Bing Ads account. 
 
 > [!IMPORTANT]
-> You might need to code for shared budgets in the Bing Ads platform, even if you do not plan to use shared budgets. For more details and to determine whether the campaign uses a shared budget, check the value of the *BudgetId* element ([Campaign](../campaign-management-service/campaign.md) object) or *Budget Id* field (Bulk ([Campaign](../bulk-service/campaign.md) object) record).
+> You might need to code for shared budgets in the Bing Ads platform, even if you do not use shared budgets. To determine whether the campaign uses a shared budget, check the value of the [BudgetId](../campaign-management-service/campaign.md#budgetid) element (via Campaign Management service) or [Budget Id](../bulk-service/campaign.md#budgetid) field (via Bulk service).
 
-The Bing Ads API supports the *DailyBudgetAccelerated* and *DailyBudgetStandard* values as defined in the [BudgetLimitType](../campaign-management-service/budgetlimittype.md) value set.
+The Bing Ads API supports the *DailyBudgetAccelerated*  and *DailyBudgetStandard* values as defined in the [BudgetLimitType](../campaign-management-service/budgetlimittype.md) value set.
 
 ### <a name="dailyaccelerated"></a>DailyBudgetAccelerated
 Show your ads for every relevant search, spending at an accelerated rate until you run out of budget for the day. When the daily budget limit is reached, your ads will stop displaying until the next calendar day.
@@ -60,7 +65,7 @@ The following bid strategy types are available per campaign type. For more infor
 
 |Bid Strategy Type|Campaign Types|
 |-------------------------|--------------------------|
-|[EnhancedCpc](#enhancedcpc)|DynamicSearchAds<br/>Search<br/>Shopping|
+|[EnhancedCpc](#enhancedcpc)|Audience<br/>DynamicSearchAds<br/>Search<br/>Shopping|
 |[ManualCpc](#manualcpc)|DynamicSearchAds<br/>Search<br/>Shopping|
 |[MaxClicks](#maxclicks)|DynamicSearchAds<br/>Search|
 |[MaxConversions](#maxconversions)|Search|
@@ -75,9 +80,7 @@ The [ManualCpc](#manualcpc) bid strategy is every campaign's default bid strateg
 > - You can continue to set bid adjustments e.g. for age, gender, or location; however, the multiplier will inform rather than directly modify or override the automated bid. For auto bidding the multiplier is used as a weighted percentage to inform Bing Ads about how much you value the criterion relative to other criteria. For example, a -50% bid multiplier for a mobile device criterion with the Max Conversions bid strategy to indicate that you value conversions from mobile traffic half as much as other device types. The same bid multiplier with the Max Clicks bid strategy would indicate that you value clicks on mobile half as much as other device types. The valid range of values that you can use to inform auto bidding is -100.00 through 30.00.
 > - Whether you chose the *DailyBudgetAccelerated* or *DailyBudgetStandard* budget type, Bing Ads will use the *DailyBudgetStandard* budget type. 
 > 
-> Also note that you must have conversion tracking (a UET tag and a conversion goal) set up for the *EnhancedCpc*, *MaxConversions*, and *TargetCpa* bid strategy types to work. See [Universal Event Tracking](universal-event-tracking.md) for more information.
-> 
-> To set the *MaxConversions* or *TargetCpa* bid strategy types, the campaign must have at least 15 conversions in the last 30 days. If you try to add or update a campaign to use one of these strategy types, the requested operation will fail if there is not enough conversion history. If an active campaign uses one of these bid strategy types, and then ceases to meet the minimum conversion history requirement at any time, Bing Ads will stop auto bidding but will continue to use the *DailyBudgetStandard* budget type. For a new campaign we recommend that you start with *EnhancedCpc* and then when the campaign has enough conversion history, you can update it to use either the *MaxConversions* or *TargetCpa* bid strategy.
+> Also note that you must have conversion tracking (a [Universal Event Tracking](universal-event-tracking.md) tag and a conversion goal) set up for the *MaxConversions* and *TargetCpa* bid strategy types to work. See  for more information. To set the *MaxConversions* or *TargetCpa* bid strategy types, the campaign must have at least 15 conversions in the last 30 days. If you try to add or update a campaign to use one of these strategy types, the requested operation will fail if there is not enough conversion history. If an active campaign uses one of these bid strategy types, and then ceases to meet the minimum conversion history requirement at any time, Bing Ads will stop auto bidding but will continue to use the *DailyBudgetStandard* budget type. For a new campaign we recommend that you start with *EnhancedCpc* and then when the campaign has enough conversion history, you can update it to use either the *MaxConversions* or *TargetCpa* bid strategy.
 
 > [!TIP] 
 > You can set your campaign's bid strategy to *EnhancedCpc*, *MaxClicks*, *MaxConversions*, or *TargetCpa* and then, at any time, set an individual ad group's or keyword's bid strategy to *ManualCpc*.

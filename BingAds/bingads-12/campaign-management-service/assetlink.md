@@ -4,10 +4,15 @@ ms.service: bing-ads-campaign-management-service
 ms.topic: article
 author: eric-urban
 ms.author: eur
-description: Reserved.
+description: Defines the relationship of an asset to an ad.
 ---
 # AssetLink Data Object - Campaign Management
-Reserved.
+Defines the relationship of an asset to an ad.
+
+For example, within a [ResponsiveSearchAd](responsivesearchad.md) there is an array of asset links that each contain a [TextAsset](textasset.md). 
+
+> [!NOTE]
+> Not everyone has this feature yet. If you don't, don't worry. It's coming soon. 
 
 ## Syntax
 ```xml

@@ -156,6 +156,9 @@ In-market audiences cannot be deleted in both version 11 and version 12. Custom 
 #### <a name="bulk-audienceadsbidadjustment"></a>Audience Ads Bid Adjustment
 Instead of setting the [Ad Format Preference](../bulk-service/expanded-text-ad.md#adformatpreference) of an expanded text ad to *Native*, you must set it to *Audience Ad*.
 
+#### <a name="bulk-associationentitynames"></a>Campaign and Ad Group Names for Audience and Ad Extension Associations
+The *Campaign* and *Ad Group* names are no longer included when you download audience and ad extension association records. 
+
 ## <a name="campaign"></a>Campaign Management
 
 ### <a name="campaign-breakingchanges"></a>Breaking Changes

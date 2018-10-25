@@ -257,17 +257,20 @@ If you are signed up to pilot one or more of the auto bid strategy types, then y
 ### <a name="budget"></a>Budget
 The campaign's budget amount.
 
-In the context of shared budgets, the budget amount is a read-only property that is always returned regardless of whether or not the campaign uses a shared budget. When a campaign is associated to a shared budget the amount returned is that of the shared budget. To determine whether the campaign uses a shared budget, check the value of the *Budget Id* field.
+> [!WARNING]
+> Your budget is a target; your actual spend might be higher or lower. Variations are caused by a number of factors, such as different traffic volumes in different days of the week, or automatic detection and refunding of fraud clicks that can give money back to a campaign within a few hours of the click. Bing Ads anticipates and automatically compensates for the fluctuations, and usually keeps overspend to less than 100% above your daily limit.
+> 
+> Also note that Bing Ads does not require your campaign budget to be higher than the ad group and keyword bids. In other words ad group and keyword bids are validated independently of the campaign budget. 
 
-*Shared budget:*  
-**Add:** Read-only  
-**Update:** Not allowed. If you try to update the budget amount of a campaign that has a shared budget, the service will return the *CampaignServiceCannotUpdateSharedBudget* error code.    
-**Delete:** Read-only  
+In the context of shared budgets, the budget amount is a read-only property that is always returned regardless of whether or not the campaign uses a shared budget. When a campaign is associated to a shared budget the amount returned is that of the shared budget. To determine whether the campaign uses a shared budget, check the value of the [Budget Id](#budgetid) field.
 
-*Unshared budget:*  
-**Add:** Required  
-**Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.    
-**Delete:** Read-only  
+Business rules differ between shared and unshared budgets, and described in the table below.
+
+|Action|Shared Budget|Unshared Budget|
+|-----|-----|-----|
+|**Add:**|Read-only|Required. You must set the daily budget amount if the [Budget Id](#budgetid) is not set.  
+|**Update:**|Not allowed. If you try to update the budget amount of a campaign that has a shared budget, the service will return the *CampaignServiceCannotUpdateSharedBudget* error code.|Optional. If no value is specified on update, this Bing Ads setting is not changed.    
+**Delete:**|Read-only|Read-only|
 
 ### <a name="budgetid"></a>Budget Id
 The system generated identifier of the [Budget](budget.md) that this campaign shares with other campaigns in the account.

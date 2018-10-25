@@ -9,6 +9,9 @@ description: Reserved.
 # TextAsset Data Object - Campaign Management
 Reserved.
 
+> [!NOTE]
+> Not everyone has this feature yet. If you don't, don't worry. It's coming soon. 
+
 ## Syntax
 ```xml
 <xs:complexType name="TextAsset" xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -39,6 +42,7 @@ The [TextAsset](textasset.md) object derives from the [Asset](asset.md) object, 
 |-----------|---------------|-------------|
 |<a name="id"></a>Id|Reserved.|**long**|
 |<a name="name"></a>Name|Reserved.|**string**|
+|<a name="type"></a>Type|Reserved.|**string**|
 
 ## Requirements
 Service: [CampaignManagementService.svc v12](https://campaign.api.bingads.microsoft.com/Api/Advertiser/CampaignManagement/v12/CampaignManagementService.svc)  

@@ -4,10 +4,15 @@ ms.service: bing-ads-campaign-management-service
 ms.topic: article
 author: eric-urban
 ms.author: eur
-description: Reserved.
+description: A responsive ad format for text ads in the Search network.
 ---
 # ResponsiveSearchAd Data Object - Campaign Management
-Reserved.
+A responsive ad format for text ads in the Search network.
+
+Responsive search ads automatically adjust to accommodate the sizes and shapes of text ad formats. You have the flexibility to provide between 3-15 headlines and 2-4 descriptions. Then, unless you pin one of the text assets to a specific ad component, Bing will optimize the ad layout dynamically. The responsive ads shown to users appear identical to expanded text ads i.e., up to 3 headlines (title parts via expanded text ads) and 2 descriptions (text parts via expanded text ads). 
+
+> [!NOTE]
+> Not everyone has this feature yet. If you don't, don't worry. It's coming soon. 
 
 ## Syntax
 ```xml

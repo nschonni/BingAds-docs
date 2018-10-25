@@ -1038,6 +1038,8 @@
           href: ../campaign-management-service/accountmigrationstatusesinfo.md
         - name: AccountProperty
           href: ../campaign-management-service/accountproperty.md
+        - name: ActionAdExtension
+          href: ../campaign-management-service/actionadextension.md
         - name: Ad
           href: ../campaign-management-service/ad.md
         - name: AdApiError
