@@ -30,10 +30,10 @@ For example, within a [ResponsiveSearchAd](responsivesearchad.md) there is an ar
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
-|<a name="asset"></a>Asset|Reserved.|[Asset](asset.md)|
-|<a name="assetperformancelabel"></a>AssetPerformanceLabel|Reserved.|**string**|
-|<a name="editorialstatus"></a>EditorialStatus|Reserved.|[AssetLinkEditorialStatus](assetlinkeditorialstatus.md)|
-|<a name="pinnedfield"></a>PinnedField|Reserved.|**string**|
+|<a name="asset"></a>Asset|The asset with a unique Bing Ads identifier that can be reused across multiple ads.<br/><br/>For asset links included in a responsive search ad's [Headlines](responsivesearchad.md#headlines) and [Descriptions](responsivesearchad.md#descriptions) lists, the asset must be a [TextAsset](textasset.md).<br/><br/>**Add:** Required<br/>**Update:** Required|[Asset](asset.md)|
+|<a name="assetperformancelabel"></a>AssetPerformanceLabel|Reserved for future use.|**string**|
+|<a name="editorialstatus"></a>EditorialStatus|The editorial review status of the asset link, which indicates whether the asset is pending review, has been approved, or has been disapproved.<br/><br/>**Add:** Read-only<br/>**Update:** Read-only|[AssetLinkEditorialStatus](assetlinkeditorialstatus.md)|
+|<a name="pinnedfield"></a>PinnedField|Determines whether the asset should only be used for a specific ad component, or whether you want Bing AI to optimize the layout for this asset. If you do not pin the asset to a specific ad component, Bing will optimize the ad layout dynamically with the best headlines and descriptions for the user's search query.<br/><br/>If the [Asset](#asset) is a [TextAsset](textasset.md) and included in the responsive search ad's [Descriptions](responsivesearchad.md#descriptions) list, the valid pinned field values are *Description1* and *Description2*.<br/><br/>If the [Asset](#asset) is a [TextAsset](textasset.md) and included in the responsive search ad's [Headlines](responsivesearchad.md#headlines) list, the valid pinned field values are *Headline1*, *Headline2*, and *Headline3*.<br/><br/>If you previously pinned an asset to an ad component and later want to remove the pin, you'll need to update the ad with the existing assets and leave the pinned field element empty for the asset or assets that you want to unpin.<br/><br/>**Add:** Optional<br/>**Update:** Optional|**string**|
 
 ## Requirements
 Service: [CampaignManagementService.svc v12](https://campaign.api.bingads.microsoft.com/Api/Advertiser/CampaignManagement/v12/CampaignManagementService.svc)  

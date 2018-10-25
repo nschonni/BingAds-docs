@@ -4,10 +4,10 @@ ms.service: bing-ads-campaign-management-service
 ms.topic: article
 author: eric-urban
 ms.author: eur
-description: Defines the base object of an asset.
+description: Defines the base object of an asset with a unique Bing Ads identifier that can be reused across multiple ads.
 ---
 # Asset Data Object - Campaign Management
-Defines the base object of an asset.
+Defines the base object of an asset with a unique Bing Ads identifier that can be reused across multiple ads.
 
 Do not try to instantiate an *Asset*. You can create a [TextAsset](textasset.md) that derives from it.
 

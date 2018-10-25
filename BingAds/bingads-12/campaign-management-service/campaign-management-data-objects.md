@@ -13,7 +13,7 @@ The Campaign Management service defines the following data objects.
 |---|---|
 |[AccountMigrationStatusesInfo](accountmigrationstatusesinfo.md)|Defines an object that contains migration status for an account.|
 |[AccountProperty](accountproperty.md)|Maps an account level property name to a string value.|
-|[ActionAdExtension](actionadextension.md)|Reserved.|
+|[ActionAdExtension](actionadextension.md)|Reserved for future use.|
 |[Ad](ad.md)|Defines the base object of an ad.|
 |[AdApiError](adapierror.md)|Defines an error object that contains the details that explain why the service operation failed.|
 |[AdApiFaultDetail](adapifaultdetail.md)|Defines a fault object that operations return when generic errors occur, such as an authentication error.|
@@ -37,7 +37,7 @@ The Campaign Management service defines the following data objects.
 |[AppInstallGoal](appinstallgoal.md)|Defines an app install conversion goal.|
 |[ApplicationFault](applicationfault.md)|Defines the base object from which all fault detail objects derive.|
 |[AppUrl](appurl.md)|Defines the operating system platform and URL of the app store download webpage.|
-|[Asset](asset.md)|Defines the base object of an asset.|
+|[Asset](asset.md)|Defines the base object of an asset with a unique Bing Ads identifier that can be reused across multiple ads.|
 |[AssetLink](assetlink.md)|Defines the relationship of an asset to an ad.|
 |[Audience](audience.md)|Defines the base object of an audience.|
 |[AudienceCriterion](audiencecriterion.md)|Defines a criterion that can be used to show ads to a specific audience.|
@@ -149,7 +149,7 @@ The Campaign Management service defines the following data objects.
 |[TargetSetting](targetsetting.md)|The target settings that determines whether the Age, Audience, CompanyName, Gender, Industry, and JobFunction criterion type groups use the "target and bid" option or the "bid only" target option.|
 |[TargetSettingDetail](targetsettingdetail.md)|Determines whether you want to use the "target and bid" option or the "bid only" target option for the criterion type group.|
 |[TextAd](textad.md)|Defines a text ad.|
-|[TextAsset](textasset.md)|Reserved.|
+|[TextAsset](textasset.md)|A text asset with a unique Bing Ads identifier that can be reused across multiple ads.|
 |[UetTag](uettag.md)|Defines a Universal Event Tracking (UET) tag that you can add to your website to allow Bing Ads to collect actions people take on your website.|
 |[UrlGoal](urlgoal.md)|Defines a URL conversion goal.|
 |[Webpage](webpage.md)|Defines a webpage parameter that contains a list of webpage conditions or criteria that help determine whether you want to show dynamic search ads.|

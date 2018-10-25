@@ -4,10 +4,10 @@ ms.service: bing-ads-campaign-management-service
 ms.topic: article
 author: eric-urban
 ms.author: eur
-description: Reserved.
+description: A text asset with a unique Bing Ads identifier that can be reused across multiple ads.
 ---
 # TextAsset Data Object - Campaign Management
-Reserved.
+A text asset with a unique Bing Ads identifier that can be reused across multiple ads. For example, see responsive search ad [Descriptions](responsivesearchad.md#descriptions) and [Headlines](responsivesearchad.md#headlines).
 
 > [!NOTE]
 > Not everyone has this feature yet. If you don't, don't worry. It's coming soon. 
@@ -29,7 +29,7 @@ Reserved.
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
-|<a name="text"></a>Text|Reserved.|**string**|
+|<a name="text"></a>Text|The meaning and business rules for the text asset vary depending on where it is used. For example, see responsive search ad [Descriptions](responsivesearchad.md#descriptions) and [Headlines](responsivesearchad.md#headlines).<br/><br/>**Add:** Required<br/>**Update:** Required|**string**|
 
 The [TextAsset](textasset.md) object has [Inherited Elements](#inheritedelements).
 
@@ -40,9 +40,9 @@ The [TextAsset](textasset.md) object derives from the [Asset](asset.md) object, 
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
-|<a name="id"></a>Id|Reserved.|**long**|
-|<a name="name"></a>Name|Reserved.|**string**|
-|<a name="type"></a>Type|Reserved.|**string**|
+|<a name="id"></a>Id|The unique Bing Ads identifier for the asset.<br/><br/>**Add:** Read-only<br/>**Update:** Read-only|**long**|
+|<a name="name"></a>Name|The asset name.<br/><br/>The case-sensitive asset name can be between 1 to 80 characters in length, and must be unique across all assets in the account.<br/><br/>**Add:** Optional<br/>**Update:** Optional|**string**|
+|<a name="type"></a>Type|The type of the asset. This value is *TextAsset* when you retrieve a text asset. For more information about asset types, see the [Asset Data Object Remarks](asset.md#remarks).<br/><br/>**Add:** Read-only<br/>**Update:** Read-only|**string**|
 
 ## Requirements
 Service: [CampaignManagementService.svc v12](https://campaign.api.bingads.microsoft.com/Api/Advertiser/CampaignManagement/v12/CampaignManagementService.svc)  

@@ -161,6 +161,8 @@
       href: ./app-install-ads.md
     - name: Audience Ads
       href: ./audience-ads.md
+    - name: Countdown Customizers
+      href: ./countdown-customizers.md
     - name: Dynamic Search Ads
       href: ./dynamic-search-ads.md
     - name: Editorial Review and Appeals
@@ -169,6 +171,8 @@
       href: ./expanded-text-ads.md
     - name: Product Ads
       href: ./product-ads.md
+    - name: Responsive Search Ads
+      href: ./responsive-search-ads.md
   - name: Reports
     href: ./reports.md
     items:

@@ -160,7 +160,7 @@ The following table defines limits for ad group properties.
 |Tracking Url Template|The string can contain a maximum of 2,048 characters.|
 
 ## <a name="ads"></a>Ads
-Each ad group can contain between one and 100 ads combined, whether the type of ad is app install, dynamic search, expanded text, product, or responsive ad. 
+Each ad group can contain between one and 100 ads combined, whether the type of ad is app install, dynamic search, expanded text, product, responsive (audience), or responsive search ad. 
 
 Each account can have up to 4 million ads.
 
@@ -245,6 +245,29 @@ The following table defines limits for responsive ad properties.
 |Headline|The string can contain a maximum of 25 characters.|
 |LongHeadline|The string can contain a maximum of 90 characters.|
 |Text|The string can contain a maximum of 90 characters.|
+
+### <a name="responsivesearchad"></a>Responsive Search Ads
+A responsive ad format for Audience ads in the Microsoft Audience Network. Responsive ads automatically adjust to accommodate the sizes and shapes of native ad formats.
+
+You can manage responsive search ads using the Bulk service or Campaign Management service ([ResponsiveSearchAd](../campaign-management-service/responsivesearchad.md)).
+
+The following table defines limits for responsive search ad properties.
+
+> [!NOTE]
+> The double-width characters are determined by the characters you use instead of the character set of the campaign or ad group language settings. Double-width characters include Korean, Japanese and Chinese languages characters as well as Emojis. 
+
+|Property|Limit|
+|------------|---------|
+|Descriptions|You must set between 2-4 descriptions. The maximum input length of each description is 1,000 characters including dynamic text strings, and of those 1,000 no more than 90 final characters are allowed after substitution. For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 45 final characters are allowed after substitution.|
+|Domain|The domain portion of the URL in combination with the path 1 and path 2 strings cannot exceed 67 characters.|
+|Final Url|The string can contain a maximum of 2,048 characters.|
+|Headlines|You must set between 3-15 headlines. The maximum input length of each headline is 1,000 characters including dynamic text strings, and of those 1,000 no more than 30 final characters are allowed after substitution. For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 15 final characters are allowed after substitution.|
+|Path 1|The maximum input length is 50 characters including dynamic text strings, and of those 50 no more than 15 final characters are allowed after substitution. For languages with double-width characters e.g. Traditional Chinese the maximum input length is 25 characters including dynamic text strings, and of those 25 no more than 7 final characters are allowed after substitution.|
+|Path 2|The maximum input length is 50 characters including dynamic text strings, and of those 50 no more than 15 final characters are allowed after substitution. For languages with double-width characters e.g. Traditional Chinese the maximum input length is 25 characters including dynamic text strings, and of those 25 no more than 7 final characters are allowed after substitution.|
+|Tracking Url Template|The string can contain a maximum of 2,048 characters.|
+
+## <a name="assets"></a>Assets
+Each account can have up to 1 million assets e.g., up to 1 million text assets that can be used for headlines and descriptions of a [responsive search ad](#responsivesearchad).
 
 ## <a name="audiences"></a>Audiences
 The following table defines limits for audience properties.
