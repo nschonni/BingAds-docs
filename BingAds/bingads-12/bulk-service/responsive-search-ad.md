@@ -9,7 +9,14 @@ dev_langs:
   - csharp
 ---
 # Responsive Search Ad Record - Bulk
-Defines a responsive search ad that can be downloaded and uploaded in a bulk file.
+Defines a responsive search ad format for text ads in the Search network that can be downloaded and uploaded in a bulk file.
+
+> [!NOTE]
+> Not everyone has this feature yet. If you don't, don't worry. It's coming soon. 
+
+Responsive search ads allow you to set between 3-15 unique ad headlines (a.k.a. "titles") and 2-4 ad descriptions within a single ad. From there, Bing will select the most relevant headline and description combination for each given query and corresponding search user. By allowing Bing AI to select the most relevant headloine and description for each query, we ensure that the right message lands for each of your potential customers, at the right time, across all possible intent signals. 
+
+The responsive ads shown to users appear identical to expanded text ads i.e., up to 3 headlines (title parts via expanded text ads) and 2 descriptions (text parts via expanded text ads). Two headlines and one description will always be shown in the ad. However, depending on the screen size, your ad may show without the third headline or second description.
 
 This ad format works seamlessly on mobile, tablet and desktop devices so you can focus more on crafting your longer ad copy and optimizing your ad text to better engage your customers before they click your ad. 
 
