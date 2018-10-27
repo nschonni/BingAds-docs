@@ -29,8 +29,8 @@ Do not try to instantiate an *Asset*. You can create a [TextAsset](textasset.md)
 
 |Element|Description|Data Type|
 |-----------|---------------|-------------|
-|<a name="id"></a>Id|The unique Bing Ads identifier for the asset.|**long**|
-|<a name="name"></a>Name|The asset name.<br/><br/>The case-sensitive asset name can be between 1 to 80 characters in length, and must be unique across all assets in the account.|**string**|
+|<a name="id"></a>Id|The unique Bing Ads identifier for the asset in a Bing Ads account.<br/><br/>The same asset can be used by multiple ads. For example if *Seemless Integration* is a text asset, it will have the same asset identifier across all ads in the same Bing Ads account.|**long**|
+|<a name="name"></a>Name|Reserved for future use.|**string**|
 |<a name="type"></a>Type|The type of the asset.<br/><br/>For more information about asset types, see the [Remarks](#remarks).|**string**|
 
 ## <a name="remarks"></a>Remarks

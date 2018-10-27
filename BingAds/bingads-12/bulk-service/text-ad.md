@@ -263,9 +263,7 @@ The landing page URL.
 
 The following validation rules apply to Final URLs and Final Mobile URLs.
 
-- The length of the URL is limited to 2,048 characters.
-
-    **Note:** The HTTP or HTTPS protocol string does count towards the 2,048 character limit.
+- The length of the URL is limited to 2,048 characters. The HTTP or HTTPS protocol string does count towards the 2,048 character limit.
 
 - You may specify up to 10 items for both Final URLs and Final Mobile URLs; however, only the first item in each list is used for delivery. The service allows up to 10 for potential forward compatibility.
 
@@ -298,9 +296,7 @@ The mobile landing page URL.
 
 The following validation rules apply to Final URLs and Final Mobile URLs.
 
-- The length of the URL is limited to 2,048 characters.
-
-    **Note:** The HTTP or HTTPS protocol string does count towards the 2,048 character limit.
+- The length of the URL is limited to 2,048 characters. The HTTP or HTTPS protocol string does count towards the 2,048 character limit.
 
 - You may specify up to 10 items for both Final URLs and Final Mobile URLs; however, only the first item in each list is used for delivery. The service allows up to 10 for potential forward compatibility.
 

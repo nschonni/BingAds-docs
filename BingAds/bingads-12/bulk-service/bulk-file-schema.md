@@ -144,6 +144,8 @@ Record Type  |Supported Campaign Types
 [Remarketing List](remarketing-list.md)|All         
 [Responsive Ad](responsive-ad.md)|Audience         
 [Responsive Ad Label](responsive-ad-label.md)|Audience        
+[Responsive Search Ad](responsive-search-ad.md)|Search         
+[Responsive Search Ad Label](responsive-search-ad-label.md)|Search        
 [Review Ad Extension](review-ad-extension.md)|DynamicSearchAds<br/>Search         
 [Shared Negative Keyword](shared-negative-keyword.md)|All         
 [Similar Remarketing List](similar-remarketing-list.md)|All         

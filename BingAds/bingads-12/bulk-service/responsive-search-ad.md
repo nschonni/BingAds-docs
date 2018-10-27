@@ -1,30 +1,27 @@
 ---
-title: "Expanded Text Ad Record - Bulk"
+title: "Responsive Search Ad Record - Bulk"
 ms.service: bing-ads-bulk-service
 ms.topic: "article"
 author: "eric-urban"
 ms.author: "eur"
-description: Describes the Expanded Text Ad fields in a Bulk file.
+description: Describes the Responsive Search Ad fields in a Bulk file.
 dev_langs:
   - csharp
 ---
-# Expanded Text Ad Record - Bulk
-Defines an expanded text ad that can be downloaded and uploaded in a bulk file.
+# Responsive Search Ad Record - Bulk
+Defines a responsive search ad that can be downloaded and uploaded in a bulk file.
 
-This ad format works seamlessly on mobile, tablet and desktop devices so you can focus more on crafting your longer ad copy and optimizing your ad text to better engage your customers before they click your ad.
-
-> [!NOTE]
-> Before you can use expanded text ads, you must upgrade to Final Urls. For more information, see [URL Tracking with Upgraded URLs](../guides/url-tracking-upgraded-urls.md).
+This ad format works seamlessly on mobile, tablet and desktop devices so you can focus more on crafting your longer ad copy and optimizing your ad text to better engage your customers before they click your ad. 
 
 ## <a name="entitydata"></a>Attribute Fields in the Bulk File
-For an *Expanded Text Ad* record, the following attribute fields are available in the [Bulk File Schema](bulk-file-schema.md). The combination of the Final Urls, Path 1, Path2, Text, Text Part 2, Title Part 1, Title Part 2, and Title Part 3 fields make the expanded text ad unique.
-
+For a *Responsive Search Ad* record, the following attribute fields are available in the [Bulk File Schema](bulk-file-schema.md). The combination of the Description, Headline, Final Url, Path 1, and Path 2 fields make the responsive search ad unique.  
 
 - [Ad Format Preference](#adformatpreference)
 - [Ad Group](#adgroup)
 - [Campaign](#campaign)
 - [Client Id](#clientid)
 - [Custom Parameter](#customparameter)
+- [Description](#description)
 - [Domain](#domain)
 - [Editorial Appeal Status](#editorialappealstatus)
 - [Editorial Location](#editoriallocation)
@@ -32,6 +29,7 @@ For an *Expanded Text Ad* record, the following attribute fields are available i
 - [Editorial Status](#editorialstatus)
 - [Editorial Term](#editorialterm)
 - [Final Url](#finalurl)
+- [Headline](#headline)
 - [Id](#id)
 - [Mobile Final Url](#mobilefinalurl)
 - [Modified Time](#modifiedtime)
@@ -40,31 +38,26 @@ For an *Expanded Text Ad* record, the following attribute fields are available i
 - [Path 2](#path2)
 - [Publisher Countries](#publishercountries)
 - [Status](#status)
-- [Text](#text)
-- [Text Part 2](#textpart2)
-- [Title Part 1](#titlepart1)
-- [Title Part 2](#titlepart2)
-- [Title Part 3](#titlepart3)
 - [Tracking Template](#trackingtemplate)
 
-You can download all fields of the *Expanded Text Ad* record by including the [DownloadEntity](downloadentity.md) value of *ExpandedTextAds* in the [DownloadCampaignsByAccountIds](downloadcampaignsbyaccountids.md) or [DownloadCampaignsByCampaignIds](downloadcampaignsbycampaignids.md) service request. Additionally the download request must include the [DataScope](datascope.md) value of *EntityData*. For more information, see [Bulk Download and Upload](../guides/bulk-download-upload.md).
+You can download all fields of the *Responsive Search Ad* record by including the [DownloadEntity](downloadentity.md) value of *ResponsiveSearchAds* in the [DownloadCampaignsByAccountIds](downloadcampaignsbyaccountids.md) or [DownloadCampaignsByCampaignIds](downloadcampaignsbycampaignids.md) service request. Additionally the download request must include the [DataScope](datascope.md) value of *EntityData*. For more information, see [Bulk Download and Upload](../guides/bulk-download-upload.md).
 
-The following Bulk CSV example would add a new expanded text ad given a valid ad group ID (*Parent Id*). 
+The following Bulk CSV example would add a new responsive search ad given a valid ad group ID (*Parent Id*). 
 
 ```csv
-Type,Status,Id,Parent Id,Campaign,Ad Group,Client Id,Modified Time,Title,Text,Text Part 2,Display Url,Destination Url,Promotion,Device Preference,Ad Format Preference,Name,App Platform,App Id,Final Url,Mobile Final Url,Tracking Template,Custom Parameter,Title Part 1,Title Part 2,Title Part 3,Path 1,Path 2
-Format Version,,,,,,,,,,,,,,,6,,,,,,,,,,,
-Expanded Text Ad,Active,,-1111,ParentCampaignNameGoesHere,AdGroupNameHere,ClientIdGoesHere,,,Find New Customers & Increase Sales!,Start Advertising on Contoso Today.,,,,,False,,,,http://www.contoso.com/womenshoesale,http://mobile.contoso.com/womenshoesale,,{_promoCode}=PROMO1; {_season}=summer,Contoso,Quick & Easy Setup,Seemless Integration,seattle,shoe sale
+Type,Status,Id,Parent Id,Campaign,Ad Group,Client Id,Modified Time,Ad Format Preference,Name,App Platform,App Id,Final Url,Mobile Final Url,Tracking Template,Custom Parameter,Description,Path 1,Path 2,Domain,Headline
+Format Version,,,,,,,,,6,,,,,,,,,,,
+Responsive Search Ad,Active,,-1111,ParentCampaignNameGoesHere,AdGroupNameHere,ClientIdGoesHere,,False,,,,http://www.contoso.com/womenshoesale,http://mobile.contoso.com/womenshoesale,,{_promoCode}=PROMO1; {_season}=summer,"[{""id"":null,""text"":""Find New Customers & Increase Sales!"",""pinnedField"":""Description1"",""editorialStatus"":null},{""id"":null,""text"":""Start Advertising on Contoso Today."",""pinnedField"":""Description2"",""editorialStatus"":null}]",seattle,shoe sale,,"[{""id"":null,""text"":""Contoso"",""pinnedField"":""Headline1"",""editorialStatus"":null},{""id"":null,""text"":""Quick & Easy Setup"",""pinnedField"":null,""editorialStatus"":null},{""id"":null,""text"":""Seemless Integration"",""pinnedField"":null,""editorialStatus"":null}]"
 ```
 
-If you are using the [Bing Ads SDKs](../guides/client-libraries.md) for .NET, Java, or Python, you can save time using the *BulkServiceManager* to upload and download the *BulkExpandedTextAd* class, instead of calling the service operations directly and writing custom code to parse each field in the bulk file. 
+If you are using the [Bing Ads SDKs](../guides/client-libraries.md) for .NET, Java, or Python, you can save time using the *BulkServiceManager* to upload and download the *BulkResponsiveSearchAd* class (coming soon), instead of calling the service operations directly and writing custom code to parse each field in the bulk file. 
 
 
 ```csharp
 var uploadEntities = new List<BulkEntity>();
 
-// Map properties in the Bulk file to the BulkExpandedTextAd
-var bulkExpandedTextAd = new BulkExpandedTextAd
+// Map properties in the Bulk file to the BulkResponsiveSearchAd
+var bulkResponsiveSearchAd = new BulkResponsiveSearchAd
 {
     // 'Parent Id' column header in the Bulk file
     AdGroupId = adGroupIdKey,
@@ -76,11 +69,34 @@ var bulkExpandedTextAd = new BulkExpandedTextAd
     ClientId = "ClientIdGoesHere",
 
     // Map properties in the Bulk file to the 
-    // ExpandedTextAd object of the Campaign Management service.
-    ExpandedTextAd = new ExpandedTextAd
+    // ResponsiveSearchAd object of the Campaign Management service.
+    ResponsiveSearchAd = new ResponsiveSearchAd
     {
         // 'Ad Format Preference' column header in the Bulk file
         AdFormatPreference = "All",
+        // 'Description' column header in the Bulk file
+        Descriptions = new AssetLink[]
+        {
+            // Each AssetLink is represented as a JSON list item in the Bulk file.
+            new AssetLink
+            {
+                Asset = new TextAsset
+                {
+                    Id = null,
+                    Text = "Find New Customers & Increase Sales!"
+                },
+                PinnedField = "Description1"
+            },
+            new AssetLink
+            {
+                Asset = new TextAsset
+                {
+                    Id = null,
+                    Text = "Start Advertising on Contoso Today."
+                },
+                PinnedField = "Description2"
+            },
+        },
         // 'Mobile Final Url' column header in the Bulk file
         FinalMobileUrls = new[] {
             // Each Url is delimited by a semicolon (;) in the Bulk file
@@ -91,24 +107,46 @@ var bulkExpandedTextAd = new BulkExpandedTextAd
             // Each Url is delimited by a semicolon (;) in the Bulk file
             "http://www.contoso.com/womenshoesale"
         },
+        // 'Headline' column header in the Bulk file
+        Headlines = new AssetLink[]
+        {
+            // Each AssetLink is represented as a JSON list item in the Bulk file.
+            new AssetLink
+            {
+                Asset = new TextAsset
+                {
+                    Id = null,
+                    Text = "Contoso"
+                },
+                PinnedField = "Headline1"
+            },
+            new AssetLink
+            {
+                Asset = new TextAsset
+                {
+                    Id = null,
+                    Text = "Quick & Easy Setup"
+                },
+                PinnedField = null
+            },
+            new AssetLink
+            {
+                Asset = new TextAsset
+                {
+                    Id = null,
+                    Text = "Seemless Integration"
+                },
+                PinnedField = null
+            },
+        },
         // 'Id' column header in the Bulk file
-        Id = null,
+        Id = responsiveSearchAdIdKey,
         // 'Path 1' column header in the Bulk file
         Path1 = "seattle",
         // 'Path 2' column header in the Bulk file
         Path2 = "shoe sale",
         // 'Status' column header in the Bulk file
         Status = AdStatus.Active,
-        // 'Text' column header in the Bulk file
-        Text = "Find New Customers & Increase Sales!",
-        // 'Text Part 2' column header in the Bulk file
-        TextPart2 = "Start Advertising on Contoso Today.",
-        // 'Title Part 1' column header in the Bulk file
-        TitlePart1 = "Contoso",
-        // 'Title Part 2' column header in the Bulk file
-        TitlePart2 = "Quick & Easy Setup",
-        // 'Title Part 3' column header in the Bulk file
-        TitlePart3 = "Seemless Integration",
         // 'Tracking Template' column header in the Bulk file
         TrackingUrlTemplate = null,
         // 'Custom Parameter' column header in the Bulk file
@@ -129,7 +167,7 @@ var bulkExpandedTextAd = new BulkExpandedTextAd
     },
 };
 
-uploadEntities.Add(bulkExpandedTextAd);
+uploadEntities.Add(bulkResponsiveSearchAd);
 
 var entityUploadParameters = new EntityUploadParameters
 {
@@ -144,15 +182,15 @@ var uploadResultEntities = (await BulkService.UploadEntitiesAsync(entityUploadPa
 ```
 
 ### <a name="adformatpreference"></a>Ad Format Preference
-The *Ad Format Preference* field is used to indicate whether or not you prefer the ad copy to be shown to users as a search or audience ad. Search ads tend to be written as a call to action, whereas audience ads should be written in more of an informational style. While you have the option to use expanded text ads as audience ads, designating an ad as Audience ads preferred format allows you to optimize its messaging for native delivery. 
+The *Ad Format Preference* field is used to indicate whether or not you prefer the ad copy to be shown to users as a search or audience ad. Search ads tend to be written as a call to action, whereas audience ads should be written in more of an informational style. While you have the option to use responsive search ads as audience ads, designating an ad as Audience ads preferred format allows you to optimize its messaging for native delivery. 
 
 > [!IMPORTANT]
-> You must define at least one expanded text ad per ad group that does not prefer audience ads, otherwise the ad copy of all expanded text ads will be eligible for both search and audience ads. 
+> You must define at least one responsive search ad per ad group that does not prefer audience ads, otherwise the ad copy of all responsive search ads will be eligible for both search and audience ads. 
 
 Possible values are *Audience Ad* and *All*. If set to *All*, the ad will be eligible for both search and audience ad formats. If set to *Audience Ad*, the ad will only be eligible for the audience ad format.
 
-**Add:** Optional. If you do not set this field when creating an expanded text ad, by default the ad format preference will be set to *All*.  
-**Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed. If you set this field to *delete_value* when updating an expanded text ad, the ad format preference will be set to the default value i.e. *All*.    
+**Add:** Optional. If you do not set this field when creating a responsive search ad, by default the ad format preference will be set to *All*.  
+**Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed. If you set this field to *delete_value* when updating a responsive search ad, the ad format preference will be set to the default value i.e. *All*.    
 **Delete:** Read-only  
 
 ### <a name="adgroup"></a>Ad Group
@@ -197,6 +235,64 @@ In a bulk file, the list of custom parameters are formatted as follows.
 
 **Add:** Optional  
 **Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed. To remove all custom parameters, set this field to *delete_value*. The *delete_value* keyword removes the previous setting. To remove a subset of custom parameters, specify the custom parameters that you want to keep and omit any that you do not want to keep. The new set of custom parameters will replace any previous custom parameter set.    
+**Delete:** Read-only  
+
+### <a name="description"></a>Description
+The list of descriptions that Bing can use to optimize the ad layout.
+
+Unless you pin one of the text assets to a specific ad component, Bing will optimize the ad layout dynamically with the best headlines and descriptions for the user's search query. 
+
+You must set between 2-4 descriptions. Each description is represented in the bulk file as a JSON string. Two descriptions are included in the example JSON below, and both are pinned to specific positions. 
+
+```json
+"[{
+	""id"": null,
+	""text"": ""Find New Customers & IncreaseSales!"",
+	""pinnedField"": ""Description1"",
+	""editorialStatus"": null
+},
+{
+	""id"": null,
+	""text"": ""Start Advertising on ContosoToday."",
+	""pinnedField"": ""Description2"",
+	""editorialStatus"": null
+}]"
+```
+
+#### <a name="description-editorialstatus"></a>editorialStatus
+The `editorialStatus` attribute is read-only when you download the responsive search ad. Possible values are described in the table below.  
+
+|Value|Description|
+|-----------|---------------|
+|<a name="active"></a>Active|The asset passed editorial review.|
+|<a name="activelimited"></a>ActiveLimited|The asset passed editorial review in one or more markets, and one or more elements of The asset is undergoing editorial review in another market. For example The asset passed editorial review for Canada and is still pending review in the United States.|
+|<a name="disapproved"></a>Disapproved|The asset failed editorial review.|
+|<a name="inactive"></a>Inactive|One or more elements of The asset is undergoing editorial review.|
+|<a name="unknown"></a>Unknown|Reserved for future use.|
+
+#### <a name="description-id"></a>id
+The `id` attribute is a unique Bing Ads identifier for the asset in a Bing Ads account. 
+
+The same asset can be used by multiple ads. For example if *Seemless Integration* is a text asset, it will have the same asset identifier across all ads in the same Bing Ads account.
+
+#### <a name="description-pinnedfield"></a>pinnedField
+To pin an asset to a specific description position, set the `pinnedField` attribute to either *Description1* or *Description2*. 
+
+#### <a name="description-text"></a>text
+The maximum input length of each description's `text` attribute is 1,000 characters including dynamic text strings, and of those 1,000 no more than 90 final characters are allowed after substitution. For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 45 final characters are allowed after substitution.
+
+The text can contain a countdown function. Regardless of the total length of all unsubstituted countdown parameters, the final displayed countdown will always use 8 characters out of the total characters available. For more details see [Countdown Customizers](../guides/countdown-customizers.md). 
+
+The text can contain dynamic text strings such as {keyword}. For more information, see the Bing Ads help article [Automatically customize your ads with dynamic text parameters](http://help.bingads.microsoft.com/#apex/3/en/50811/1).
+
+The maximum input length is 1,000 characters including dynamic text strings, and of those 1,000 no more than 90 final characters are allowed after substitution. The ad will fail to display if the length exceeds 90 characters after dynamic text substitution occurs.
+
+For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 45 final characters are allowed after substitution. The ad will fail to display if the length exceeds 45 characters after dynamic text substitution occurs. The double-width characters are determined by the characters you use instead of the character set of the campaign or ad group language settings. Double-width characters include Korean, Japanese and Chinese languages characters as well as Emojis.
+
+The text cannot contain the newline (\n) character.
+
+**Add:** Required  
+**Update:** Optional. To retain all of the existing asset links, set or leave this field empty. If you set this field, any descriptions that were previously linked to this ad will be replaced.    
 **Delete:** Read-only  
 
 ### <a name="domain"></a>Domain
@@ -278,6 +374,71 @@ Also note that  if the *Tracking Template* or *Custom Parameter* fields are set,
 **Add:** Optional  
 **Update:** Optional    
 **Delete:** Read-only  
+
+### <a name="headline"></a>Headline
+The list of ad titles that Bing can use to optimize the ad layout.
+
+Unless you pin one of the text assets to a specific ad component, Bing will optimize the ad layout dynamically with the best headlines and descriptions for the user's search query. 
+
+You must set between 3-15 headlines. Each headline is represented in the bulk file as a JSON string. Three headlines are included in the example JSON below, and only the first headline is pinned to specific position. 
+
+```json
+"[{
+	""id"": null,
+	""text"": ""Contoso"",
+	""pinnedField"": ""Headline1"",
+	""editorialStatus"": null
+},
+{
+	""id"": null,
+	""text"": ""Quick & EasySetup"",
+	""pinnedField"": null,
+	""editorialStatus"": null
+},
+{
+	""id"": null,
+	""text"": ""Seemless Integration"",
+	""pinnedField"": null,
+	""editorialStatus"": null
+}]"
+```
+
+#### <a name="headline-editorialstatus"></a>editorialStatus
+The `editorialStatus` attribute is read-only when you download the responsive search ad. Possible values are described in the table below.  
+
+|Value|Description|
+|-----------|---------------|
+|<a name="active"></a>Active|The asset passed editorial review.|
+|<a name="activelimited"></a>ActiveLimited|The asset passed editorial review in one or more markets, and one or more elements of The asset is undergoing editorial review in another market. For example The asset passed editorial review for Canada and is still pending review in the United States.|
+|<a name="disapproved"></a>Disapproved|The asset failed editorial review.|
+|<a name="inactive"></a>Inactive|One or more elements of The asset is undergoing editorial review.|
+|<a name="unknown"></a>Unknown|Reserved for future use.|
+
+#### <a name="headline-id"></a>id
+The `id` attribute is a unique Bing Ads identifier for the asset in a Bing Ads account. 
+
+The same asset can be used by multiple ads. For example if *Seemless Integration* is a text asset, it will have the same asset identifier across all ads in the same Bing Ads account.
+
+#### <a name="headline-pinnedfield"></a>pinnedField
+To pin an asset to a specific headline position, set the `pinnedField` attribute to either *Headline1*, *Headline2*, or *Headline3*.
+
+#### <a name="headline-text"></a>text
+The maximum input length of each description's `text` attribute is 1,000 characters including dynamic text strings, and of those 1,000 no more than 90 final characters are allowed after substitution. For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 45 final characters are allowed after substitution.
+
+The text can contain a countdown function. Regardless of the total length of all unsubstituted countdown parameters, the final displayed countdown will always use 8 characters out of the total characters available. For more details see [Countdown Customizers](../guides/countdown-customizers.md). 
+
+The text can contain dynamic text strings such as {keyword}. For more information, see the Bing Ads help article [Automatically customize your ads with dynamic text parameters](http://help.bingads.microsoft.com/#apex/3/en/50811/1).
+
+The maximum input length is 1,000 characters including dynamic text strings, and of those 1,000 no more than 90 final characters are allowed after substitution. The ad will fail to display if the length exceeds 90 characters after dynamic text substitution occurs.
+
+For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 45 final characters are allowed after substitution. The ad will fail to display if the length exceeds 45 characters after dynamic text substitution occurs. The double-width characters are determined by the characters you use instead of the character set of the campaign or ad group language settings. Double-width characters include Korean, Japanese and Chinese languages characters as well as Emojis.
+
+The text cannot contain the newline (\n) character.
+
+**Add:** Required  
+**Update:** Optional. To retain all of the existing asset links, set or leave this field empty. If you set this field, any descriptions that were previously linked to this ad will be replaced.    
+**Delete:** Read-only  
+
 
 ### <a name="id"></a>Id
 The system generated identifier of the ad.
@@ -389,101 +550,6 @@ Possible values are *Active*, *Paused*, or *Deleted*.
 **Add:** Optional. The default value is *Active*.  
 **Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.    
 **Delete:** Required. The Status must be set to *Deleted*.
-
-### <a name="text"></a>Text
-The first part of the ad description.
-
-The text must contain at least one word.
-
-The text can contain a countdown function. Regardless of the total length of all unsubstituted countdown parameters, the final displayed countdown will always use 8 characters out of the total characters available. For more details see [Countdown Customizers](../guides/countdown-customizers.md). 
-
-The text can contain dynamic text strings such as {keyword}. For more information, see the Bing Ads help article [Automatically customize your ads with dynamic text parameters](http://help.bingads.microsoft.com/#apex/3/en/50811/1).
-
-The maximum input length is 1,000 characters including dynamic text strings, and of those 1,000 no more than 90 final characters are allowed after substitution. The ad will fail to display if the length exceeds 90 characters after dynamic text substitution occurs.
-
-For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 45 final characters are allowed after substitution. The ad will fail to display if the length exceeds 45 characters after dynamic text substitution occurs. The double-width characters are determined by the characters you use instead of the character set of the campaign or ad group language settings. Double-width characters include Korean, Japanese and Chinese languages characters as well as Emojis.
-
-The text cannot contain the newline (\n) character.
-
-**Add:** Required  
-**Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.    
-**Delete:** Read-only  
-
-### <a name="textpart2"></a>Text Part 2
-The second part of the ad description.
-
-> [!NOTE]
-> This field is only available for customers in [pilot 511](../customer-management-service/getcustomerpilotfeatures.md#featurepilotflags).
-
-The text must contain at least one word.
-
-The text can contain a countdown function. Regardless of the total length of all unsubstituted countdown parameters, the final displayed countdown will always use 8 characters out of the total characters available. For more details see [Countdown Customizers](../guides/countdown-customizers.md). 
-
-The text can contain dynamic text strings such as {keyword}. For more information, see the Bing Ads help article [Automatically customize your ads with dynamic text parameters](http://help.bingads.microsoft.com/#apex/3/en/50811/1).
-
-The maximum input length is 1,000 characters including dynamic text strings, and of those 1,000 no more than 90 final characters are allowed after substitution. The ad will fail to display if the length exceeds 90 characters after dynamic text substitution occurs.
-
-For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 45 final characters are allowed after substitution. The ad will fail to display if the length exceeds 45 characters after dynamic text substitution occurs. The double-width characters are determined by the characters you use instead of the character set of the campaign or ad group language settings. Double-width characters include Korean, Japanese and Chinese languages characters as well as Emojis.
-
-The text cannot contain the newline (\n) character.
-
-**Add:** Optional  
-**Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.    
-**Delete:** Read-only  
-
-### <a name="titlepart1"></a>Title Part 1
-The first part of the ad title. The three title parts will be automatically separated by a space, vertical bar, and space (" &#124; ") when the ad is shown. Each part of the title must contain at least one word. 
-
-The title can contain a countdown function. Regardless of the total length of all unsubstituted countdown parameters, the final displayed countdown will always use 8 characters out of the total characters available. For more details see [Countdown Customizers](../guides/countdown-customizers.md). 
-
-The title can contain dynamic text strings such as {keyword}. For more information, see the Bing Ads help article [Automatically customize your ads with dynamic text parameters](http://help.bingads.microsoft.com/#apex/3/en/50811/1).
-
-The maximum input length is 1,000 characters including dynamic text strings, and of those 1,000 no more than 30 final characters are allowed after substitution. The ad will fail to display if the length exceeds 30 characters after dynamic text substitution occurs. 
-
-For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 15 final characters are allowed after substitution. The ad will fail to display if the length exceeds 15 characters after dynamic text substitution occurs. The double-width characters are determined by the characters you use instead of the character set of the campaign or ad group language settings. Double-width characters include Korean, Japanese and Chinese languages characters as well as Emojis.
-
-The title cannot contain the newline (\n) character.
-
-**Add:** Required  
-**Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.    
-**Delete:** Read-only  
-
-### <a name="titlepart2"></a>Title Part 2
-The second part of the ad title. The three title parts will be automatically separated by a space, vertical bar, and space (" &#124; ") when the ad is shown. Each part of the title must contain at least one word.
-
-The title can contain a countdown function. Regardless of the total length of all unsubstituted countdown parameters, the final displayed countdown will always use 8 characters out of the total characters available. For more details see [Countdown Customizers](../guides/countdown-customizers.md). 
-
-The title can contain dynamic text strings such as {keyword}. For more information, see the Bing Ads help article [Automatically customize your ads with dynamic text parameters](http://help.bingads.microsoft.com/#apex/3/en/50811/1).
-    
-The maximum input length is 1,000 characters including dynamic text strings, and of those 1,000 no more than 30 final characters are allowed after substitution. The ad will fail to display if the length exceeds 30 characters after dynamic text substitution occurs. 
-
-For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 15 final characters are allowed after substitution. The ad will fail to display if the length exceeds 15 characters after dynamic text substitution occurs. The double-width characters are determined by the characters you use instead of the character set of the campaign or ad group language settings. Double-width characters include Korean, Japanese and Chinese languages characters as well as Emojis.
-
-The title cannot contain the newline (\n) character.
-
-**Add:** Required  
-**Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.    
-**Delete:** Read-only  
-
-### <a name="titlepart3"></a>Title Part 3
-The third part of the ad title. The three title parts will be automatically separated by a space, vertical bar, and space (" &#124; ") when the ad is shown. Each part of the title must contain at least one word.
-
-> [!NOTE]
-> This field is only available for customers in [pilot 511](../customer-management-service/getcustomerpilotfeatures.md#featurepilotflags).
-
-The title can contain a countdown function. Regardless of the total length of all unsubstituted countdown parameters, the final displayed countdown will always use 8 characters out of the total characters available. For more details see [Countdown Customizers](../guides/countdown-customizers.md). 
-
-The title can contain dynamic text strings such as {keyword}. For more information, see the Bing Ads help article [Automatically customize your ads with dynamic text parameters](http://help.bingads.microsoft.com/#apex/3/en/50811/1).
-    
-The maximum input length is 1,000 characters including dynamic text strings, and of those 1,000 no more than 30 final characters are allowed after substitution. The ad will fail to display if the length exceeds 30 characters after dynamic text substitution occurs. 
-
-For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 15 final characters are allowed after substitution. The ad will fail to display if the length exceeds 15 characters after dynamic text substitution occurs. The double-width characters are determined by the characters you use instead of the character set of the campaign or ad group language settings. Double-width characters include Korean, Japanese and Chinese languages characters as well as Emojis.
-
-The title cannot contain the newline (\n) character.
-
-**Add:** Optional  
-**Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed.    
-**Delete:** Read-only  
 
 ### <a name="trackingtemplate"></a>Tracking Template
 The tracking template to use as a default for the URL specified with FinalUrls.

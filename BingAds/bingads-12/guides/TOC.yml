@@ -814,6 +814,12 @@
         - name: Responsive Ad Label
           href: ../bulk-service/responsive-ad-label.md
           displayName: BulkResponsiveAdLabel
+        - name: Responsive Search Ad
+          href: ../bulk-service/responsive-search-ad.md
+          displayName: BulkResponsiveSearchAd
+        - name: Responsive Search Ad Label
+          href: ../bulk-service/responsive-search-ad-label.md
+          displayName: BulkResponsiveSearchAdLabel
         - name: Review Ad Extension
           href: ../bulk-service/review-ad-extension.md
           displayName: BulkReviewAdExtension
