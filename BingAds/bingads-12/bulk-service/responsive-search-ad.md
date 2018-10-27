@@ -242,33 +242,36 @@ The list of descriptions that Bing can use to optimize the ad layout.
 
 Unless you pin one of the text assets to a specific ad component, Bing will optimize the ad layout dynamically with the best headlines and descriptions for the user's search query. 
 
-You must set between 2-4 descriptions. Each description is represented in the bulk file as a JSON string. Two descriptions are included in the example JSON below, and both are pinned to specific positions. 
+You must set between 2-4 descriptions. Each description is represented in the bulk file as a JSON string. Two descriptions are included in the example JSON below, and both are pinned to specific positions. For more details see [editorialStatus](#description-editorialstatus), [id](#description-id), [pinnedField](#description-pinnedfield), and [text](#description-text) below.
 
 ```json
-"[{
-	""id"": null,
-	""text"": ""Find New Customers & IncreaseSales!"",
-	""pinnedField"": ""Description1"",
-	""editorialStatus"": null
+[{
+	"id": null,
+	"text": "Find New Customers & Increase Sales!",
+	"pinnedField": "Description1",
+	"editorialStatus": null
 },
 {
-	""id"": null,
-	""text"": ""Start Advertising on ContosoToday."",
-	""pinnedField"": ""Description2"",
-	""editorialStatus"": null
-}]"
+	"id": null,
+	"text": "Start Advertising on Contoso Today.",
+	"pinnedField": "Description2",
+	"editorialStatus": null
+}]
 ```
+
+> [!NOTE]
+> In the comma separated bulk file you'll need to surround the list of asset links and each attribute with an extra set of double quotes e.g., the above JSON string would be written as *"[{""id"":null,""text"":""Find New Customers & Increase Sales!"",""pinnedField"":""Description1"",""editorialStatus"":null},{""id"":null,""text"":""Start Advertising on Contoso Today."",""pinnedField"":""Description2"",""editorialStatus"":null}]"*.
 
 #### <a name="description-editorialstatus"></a>editorialStatus
 The `editorialStatus` attribute is read-only when you download the responsive search ad. Possible values are described in the table below.  
 
 |Value|Description|
 |-----------|---------------|
-|<a name="active"></a>Active|The asset passed editorial review.|
-|<a name="activelimited"></a>ActiveLimited|The asset passed editorial review in one or more markets, and one or more elements of The asset is undergoing editorial review in another market. For example The asset passed editorial review for Canada and is still pending review in the United States.|
-|<a name="disapproved"></a>Disapproved|The asset failed editorial review.|
-|<a name="inactive"></a>Inactive|One or more elements of The asset is undergoing editorial review.|
-|<a name="unknown"></a>Unknown|Reserved for future use.|
+|Active|The asset passed editorial review.|
+|ActiveLimited|The asset passed editorial review in one or more markets, and one or more elements of The asset is undergoing editorial review in another market. For example The asset passed editorial review for Canada and is still pending review in the United States.|
+|Disapproved|The asset failed editorial review.|
+|Inactive|One or more elements of The asset is undergoing editorial review.|
+|Unknown|Reserved for future use.|
 
 #### <a name="description-id"></a>id
 The `id` attribute is a unique Bing Ads identifier for the asset in a Bing Ads account. 
@@ -279,7 +282,7 @@ The same asset can be used by multiple ads. For example if *Seemless Integration
 To pin an asset to a specific description position, set the `pinnedField` attribute to either *Description1* or *Description2*. 
 
 #### <a name="description-text"></a>text
-The maximum input length of each description's `text` attribute is 1,000 characters including dynamic text strings, and of those 1,000 no more than 90 final characters are allowed after substitution. For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 45 final characters are allowed after substitution.
+The maximum input length of each `text` attribute is 1,000 characters including dynamic text strings, and of those 1,000 no more than 90 final characters are allowed after substitution. For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 45 final characters are allowed after substitution.
 
 The text can contain a countdown function. Regardless of the total length of all unsubstituted countdown parameters, the final displayed countdown will always use 8 characters out of the total characters available. For more details see [Countdown Customizers](../guides/countdown-customizers.md). 
 
@@ -380,39 +383,42 @@ The list of ad titles that Bing can use to optimize the ad layout.
 
 Unless you pin one of the text assets to a specific ad component, Bing will optimize the ad layout dynamically with the best headlines and descriptions for the user's search query. 
 
-You must set between 3-15 headlines. Each headline is represented in the bulk file as a JSON string. Three headlines are included in the example JSON below, and only the first headline is pinned to specific position. 
+You must set between 3-15 headlines. Each headline is represented in the bulk file as a JSON string. Three headlines are included in the example JSON below, and only the first headline is pinned to specific position. For more details see [editorialStatus](#headline-editorialstatus), [id](#headline-id), [pinnedField](#headline-pinnedfield), and [text](#headline-text) below.
 
 ```json
-"[{
-	""id"": null,
-	""text"": ""Contoso"",
-	""pinnedField"": ""Headline1"",
-	""editorialStatus"": null
+[{
+	"id": null,
+	"text": "Contoso",
+	"pinnedField": "Headline1",
+	"editorialStatus": null
 },
 {
-	""id"": null,
-	""text"": ""Quick & EasySetup"",
-	""pinnedField"": null,
-	""editorialStatus"": null
+	"id": null,
+	"text": "Quick & Easy Setup",
+	"pinnedField": null,
+	"editorialStatus": null
 },
 {
-	""id"": null,
-	""text"": ""Seemless Integration"",
-	""pinnedField"": null,
-	""editorialStatus"": null
-}]"
+	"id": null,
+	"text": "Seemless Integration",
+	"pinnedField": null,
+	"editorialStatus": null
+}]
 ```
+
+> [!NOTE]
+> In the comma separated bulk file you'll need to surround the list of asset links and each attribute with an extra set of double quotes e.g., the above JSON string would be written as *"[{""id"":null,""text"":""Contoso"",""pinnedField"":""Headline1"",""editorialStatus"":null},{""id"":null,""text"":""Quick & Easy Setup"",""pinnedField"":null,""editorialStatus"":null},{""id"":null,""text"":""Seemless Integration"",""pinnedField"":null,""editorialStatus"":null}]"*.
 
 #### <a name="headline-editorialstatus"></a>editorialStatus
 The `editorialStatus` attribute is read-only when you download the responsive search ad. Possible values are described in the table below.  
 
 |Value|Description|
 |-----------|---------------|
-|<a name="active"></a>Active|The asset passed editorial review.|
-|<a name="activelimited"></a>ActiveLimited|The asset passed editorial review in one or more markets, and one or more elements of The asset is undergoing editorial review in another market. For example The asset passed editorial review for Canada and is still pending review in the United States.|
-|<a name="disapproved"></a>Disapproved|The asset failed editorial review.|
-|<a name="inactive"></a>Inactive|One or more elements of The asset is undergoing editorial review.|
-|<a name="unknown"></a>Unknown|Reserved for future use.|
+|Active|The asset passed editorial review.|
+|ActiveLimited|The asset passed editorial review in one or more markets, and one or more elements of The asset is undergoing editorial review in another market. For example The asset passed editorial review for Canada and is still pending review in the United States.|
+|Disapproved|The asset failed editorial review.|
+|Inactive|One or more elements of The asset is undergoing editorial review.|
+|Unknown|Reserved for future use.|
 
 #### <a name="headline-id"></a>id
 The `id` attribute is a unique Bing Ads identifier for the asset in a Bing Ads account. 
@@ -423,7 +429,7 @@ The same asset can be used by multiple ads. For example if *Seemless Integration
 To pin an asset to a specific headline position, set the `pinnedField` attribute to either *Headline1*, *Headline2*, or *Headline3*.
 
 #### <a name="headline-text"></a>text
-The maximum input length of each description's `text` attribute is 1,000 characters including dynamic text strings, and of those 1,000 no more than 90 final characters are allowed after substitution. For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 45 final characters are allowed after substitution.
+The maximum input length of each `text` attribute is 1,000 characters including dynamic text strings, and of those 1,000 no more than 90 final characters are allowed after substitution. For languages with double-width characters e.g. Traditional Chinese the maximum input length is 500 characters including dynamic text strings, and of those 500 no more than 45 final characters are allowed after substitution.
 
 The text can contain a countdown function. Regardless of the total length of all unsubstituted countdown parameters, the final displayed countdown will always use 8 characters out of the total characters available. For more details see [Countdown Customizers](../guides/countdown-customizers.md). 
 
