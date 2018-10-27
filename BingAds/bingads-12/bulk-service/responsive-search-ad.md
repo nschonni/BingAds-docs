@@ -240,9 +240,11 @@ In a bulk file, the list of custom parameters are formatted as follows.
 ### <a name="description"></a>Description
 The list of descriptions that Bing can use to optimize the ad layout.
 
-Unless you pin one of the text assets to a specific ad component, Bing will optimize the ad layout dynamically with the best headlines and descriptions for the user's search query. 
+Unless you pin one of the descriptions to a specific position, Bing will optimize the ad layout dynamically with the best headlines and descriptions for the user's search query. 
 
-You must set between 2-4 descriptions. Each description is represented in the bulk file as a JSON string. Two descriptions are included in the example JSON below, and both are pinned to specific positions. For more details see [editorialStatus](#description-editorialstatus), [id](#description-id), [pinnedField](#description-pinnedfield), and [text](#description-text) below.
+From a data model perspective the descriptions are stored as text assets. The same asset can be used by multiple ads. For example if *Seemless Integration* is a text asset, it will have the same asset identifier across all ads in the same Bing Ads account. 
+
+You must set between 2-4 descriptions. Each description is represented in the bulk file as a JSON string. Two descriptions are included in the example JSON below, and both are pinned to specific positions. The `id` and `text` are properties of the asset, whereas the `editorialStatus` and `pinnedField` are properties of the asset link i.e., the relationship between the asset and the ad. For more details see [editorialStatus](#description-editorialstatus), [id](#description-id), [pinnedField](#description-pinnedfield), and [text](#description-text) below.
 
 ```json
 [{
@@ -276,7 +278,7 @@ The `editorialStatus` attribute is read-only when you download the responsive se
 #### <a name="description-id"></a>id
 The `id` attribute is a unique Bing Ads identifier for the asset in a Bing Ads account. 
 
-The same asset can be used by multiple ads. For example if *Seemless Integration* is a text asset, it will have the same asset identifier across all ads in the same Bing Ads account.
+The same asset can be used by multiple ads. For example if *Seemless Integration* is a text asset, it will have the same asset identifier across all ads in the same Bing Ads account. After you upload a text asset the result file will include the asset identifier, whether the asset is new or already existed in the account's asset library. 
 
 #### <a name="description-pinnedfield"></a>pinnedField
 To pin an asset to a specific description position, set the `pinnedField` attribute to either *Description1* or *Description2*. 
@@ -381,9 +383,11 @@ Also note that  if the *Tracking Template* or *Custom Parameter* fields are set,
 ### <a name="headline"></a>Headline
 The list of ad titles that Bing can use to optimize the ad layout.
 
-Unless you pin one of the text assets to a specific ad component, Bing will optimize the ad layout dynamically with the best headlines and descriptions for the user's search query. 
+Unless you pin one of the headlines to a specific position, Bing will optimize the ad layout dynamically with the best headlines and descriptions for the user's search query. 
 
-You must set between 3-15 headlines. Each headline is represented in the bulk file as a JSON string. Three headlines are included in the example JSON below, and only the first headline is pinned to specific position. For more details see [editorialStatus](#headline-editorialstatus), [id](#headline-id), [pinnedField](#headline-pinnedfield), and [text](#headline-text) below.
+From a data model perspective the headlines are stored as text assets. The same asset can be used by multiple ads. For example if *Seemless Integration* is a text asset, it will have the same asset identifier across all ads in the same Bing Ads account. 
+
+You must set between 3-15 headlines. Each headline is represented in the bulk file as a JSON string. Three headlines are included in the example JSON below, and only the first headline is pinned to specific position. The `id` and `text` are properties of the asset, whereas the `editorialStatus` and `pinnedField` are properties of the asset link i.e., the relationship between the asset and the ad. For more details see [editorialStatus](#headline-editorialstatus), [id](#headline-id), [pinnedField](#headline-pinnedfield), and [text](#headline-text) below.
 
 ```json
 [{
@@ -423,7 +427,7 @@ The `editorialStatus` attribute is read-only when you download the responsive se
 #### <a name="headline-id"></a>id
 The `id` attribute is a unique Bing Ads identifier for the asset in a Bing Ads account. 
 
-The same asset can be used by multiple ads. For example if *Seemless Integration* is a text asset, it will have the same asset identifier across all ads in the same Bing Ads account.
+The same asset can be used by multiple ads. For example if *Seemless Integration* is a text asset, it will have the same asset identifier across all ads in the same Bing Ads account. After you upload a text asset the result file will include the asset identifier, whether the asset is new or already existed in the account's asset library. 
 
 #### <a name="headline-pinnedfield"></a>pinnedField
 To pin an asset to a specific headline position, set the `pinnedField` attribute to either *Headline1*, *Headline2*, or *Headline3*.
