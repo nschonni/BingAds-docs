@@ -151,7 +151,9 @@ The name of the ad group that contains the keyword.
 > For add, update, and delete, you must specify either the *Parent Id* or *Ad Group* field.
 
 ### <a name="bid"></a>Bid
-The bid to use when the user’s search term and the keyword match.
+The highest price that you want to pay each time someone clicks your ad.
+
+In addition to setting a default bid, you can set custom bids for each keyword. If you set a custom bid for a particular keyword, this bid amount will override the default bid you initially set when you created your ad group. We recommend custom bidding for advanced advertisers who want more control of their pay-per-click rates.
 
 **Add:** Optional. If you do not specify a keyword level bid, the [Ad Group](ad-group.md) bid for the corresponding search or content match type will be used. For more information, see [Budget and Bid Strategies](../guides/budget-bid-strategies.md).  
 **Update:** Optional. If no value is specified on update, this Bing Ads setting is not changed. To delete or remove an existing value, set this field to *delete_value*. The *delete_value* keyword removes the previous setting.  

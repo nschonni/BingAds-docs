@@ -158,7 +158,7 @@ Because the search engine can vary its algorithms to expand queries to find broa
 
 To reduce the chance of irrelevant ads being served to users and the quality score of those ads being affected due to low CTR, you can add any irrelevant queries to your list of negative keywords. To determine the irrelevant queries, see the [Report Types](report-types.md).
 
-You can also use the broad match modifier to require that specific terms in your keyword be present in the search term. To implement the broad match modifier, include a plus sign (+) in front of every term in the keyword that must be present in the search term. For example, if you bid on ?Hawaii hotels?, your ad could be served for the search queries, ?Hawaii beach hotels? and ?Hawaii rentals.? However, if you changed the keyword to ?+Hawaii +hotel?, the keyword would match only ?Hawaii beach hotels.?
+You can also use the broad match modifier to require that specific terms in your keyword be present in the search term. To implement the broad match modifier, include a plus sign (+) in front of every term in the keyword that must be present in the search term. For example, if you bid on "Hawaii hotels", your ad could be served for the search queries, "Hawaii beach hotels" and "Hawaii rentals." However, if you changed the keyword to "+Hawaii +hotel", the keyword would match only "Hawaii beach hotels."
 
 If you include the broad match modifier on a keyword that specifies a phrase or exact match-type bid, the plus sign will be treated as part of the keyword and not as a modifier.
 
@@ -172,7 +172,7 @@ Exact match is the most restrictive and broad match is the least restrictive mat
 
 If there is not an exact match, the phrase-match type comparison is used. If there is a match, the phrase-match bid value is used if it exists; otherwise, the broad-match bid value is used (set at the keyword broad match bid or ad group level search bid). If there is not a phrase match, the broad-match type comparison is used. If there is a match, the broad-match bid value is used (set at the keyword broad match bid or ad group level search bid).
 
-The following table shows example keyword bid values for each match type, as well as the bid value that would be used based on the delivered match type if the keyword participated in the auction. The delivered match type (exact, phrase, or broad) identifies the comparison used to match the keyword to the user's query. For example, if the keyword is ?red shoes? and the user's query is ?pretty red shoes,? the delivered match type would be phrase. The delivered match type may differ from the match type you bid, for example if you bid on a broad match and the search term was an exact match.
+The following table shows example keyword bid values for each match type, as well as the bid value that would be used based on the delivered match type if the keyword participated in the auction. The delivered match type (exact, phrase, or broad) identifies the comparison used to match the keyword to the user's query. For example, if the keyword is "red shoes" and the user's query is "pretty red shoes," the delivered match type would be phrase. The delivered match type may differ from the match type you bid, for example if you bid on a broad match and the search term was an exact match.
 
 |Exact Match Bid Value|Phrase Match Bid Value|Broad Match Bid Value|Delivered Match Type|Bid Value Used|
 |-------------------------|--------------------------|-------------------------|------------------------|------------------|

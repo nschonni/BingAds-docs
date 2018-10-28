@@ -43,7 +43,7 @@ The Campaign Management service defines the following data objects.
 |[AudienceCriterion](audiencecriterion.md)|Defines a criterion that can be used to show ads to a specific audience.|
 |[BatchError](batcherror.md)|Defines an error object that identifies the item within the batch of items in the request message that caused the operation to fail, and describes the reason for the failure.|
 |[BatchErrorCollection](batcherrorcollection.md)|Defines an error object that contains batch error details for the top level list index and a list of batch errors corresponding to the  nested list index.|
-|[Bid](bid.md)|Defines a bid.|
+|[Bid](bid.md)|The highest price that you want to pay each time someone clicks your ad.|
 |[BiddableAdGroupCriterion](biddableadgroupcriterion.md)|Defines a biddable criterion that you want applied to the specified ad group.|
 |[BiddableCampaignCriterion](biddablecampaigncriterion.md)|Defines a biddable criterion that you want applied to the specified campaign.|
 |[BiddingScheme](biddingscheme.md)|Defines the base object of a bidding scheme for how you want to manage your bids.|

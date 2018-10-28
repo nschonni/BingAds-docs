@@ -17,7 +17,7 @@ Microsoft Audience Ads is a native advertising solution optimized for search adv
 > This feature is currently available in the United States, Canada, the United Kingdom, and Australia. If you advertise in the United States, Canada, the United Kingdom, or Australia and want to opt in to audience ads, [contact support](http://go.microsoft.com/fwlink?LinkId=398371). 
 
 > [!TIP]
-> You can prepare for the Microsoft Audience Network pilot now by:
+> You can prepare for the Microsoft Audience Network now by:
 > - Add images via Image Extensions. By adding high-quality images, you can gain access to more volume outside of the SERP, and more high-quality clicks and conversions in brand-safe placements. All the while, you get to manage Microsoft Audience Ads in the familiar, easy-to-use Bing Ads platform. 
 > - Optimize Microsoft Audience Ads. You can optimize Microsoft Audience Ads by extending search campaigns and ad groups with audience ads bid adjustments. 
 > - Refine your audience targeting strategy on search. Get up and running with Remarketing, In-Market Audiences (in pilot) and Custom Audiences (in pilot). That way an audience targeting strategy will be ready to go with separate audience campaigns if you choose to run them later. 

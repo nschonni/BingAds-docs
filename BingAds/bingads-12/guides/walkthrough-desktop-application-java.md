@@ -144,7 +144,7 @@ The example desktop application sends authentication requests to the Microsoft a
 
                                 // Search for the accounts that the user can access.
 
-                                ArrayOfAccount accounts = searchAccountsByUserId(user.getId());
+                                ArrayOfAdvertiserAccount accounts = searchAccountsByUserId(user.getId());
 
                                 System.out.println("The user can access the following Bing Ads accounts: \n");
                                 printAccounts(accounts);
@@ -225,7 +225,7 @@ The example desktop application sends authentication requests to the Microsoft a
 
         // Searches by UserId for accounts that the user can manage.
 
-        static ArrayOfAccount searchAccountsByUserId(java.lang.Long userId) throws AdApiFaultDetail_Exception, ApiFault_Exception{       
+        static ArrayOfAdvertiserAccount searchAccountsByUserId(java.lang.Long userId) throws AdApiFaultDetail_Exception, ApiFault_Exception{       
 
             ArrayOfPredicate predicates = new ArrayOfPredicate();
             Predicate predicate = new Predicate();
@@ -242,14 +242,14 @@ The example desktop application sends authentication requests to the Microsoft a
             searchAccountsRequest.setPredicates(predicates);
             searchAccountsRequest.setPageInfo(paging);
 
-            return CustomerService.getService().searchAccounts(searchAccountsRequest).getAccounts();
+            return CustomerService.getService().searchAccounts(searchAccountsRequest).getAdvertiserAccounts();
         }
 
         // Outputs the account and parent customer identifiers for the specified accounts.
 
-        static void printAccounts(ArrayOfAccount accounts) throws RemoteException, Exception
+        static void printAccounts(ArrayOfAdvertiserAccount accounts) throws RemoteException, Exception
         {
-            for (Account account : accounts.getAccounts())
+            for (Account account : accounts.getAdvertiserAccounts())
             {
             	System.out.printf("AccountId: %d\n", account.getId());
             	System.out.printf("CustomerId: %d\n\n", account.getParentCustomerId());
