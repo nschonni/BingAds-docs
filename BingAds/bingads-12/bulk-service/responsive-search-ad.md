@@ -14,6 +14,11 @@ Defines a responsive search ad format for text ads in the Search network that ca
 > [!NOTE]
 > Not everyone has this feature yet. If you don't, don't worry. It's coming soon. 
 
+> [!WARNING]
+> As of November 1st, 2018 responsive search ads are only available via the Bing Ads API. You cannot yet view or manage responsive search ads via the Bing Ads web application. 
+> 
+> When you create responsive search ads the [Description](#description) and [Headline](#headline) lists are stored as text assets that can be shared by any responsive search ad within the account. For example if *Seemless Integration* is a text asset, it will have the same asset identifier across all ads in the same Bing Ads account. Even after you delete all ads that use (are linked to) *Seemless Integration*, the text asset will remain in your account with a unique system identifier. The next time you use *Seemless Integration* in an ad, it will retain the original Bing Ads system identifier. Currently Bing Ads does not support retrieval or deletion of account assets. 
+
 Responsive search ads allow you to set between 3-15 unique ad headlines (a.k.a. "titles") and 2-4 ad descriptions within a single ad. From there, Bing will select the most relevant headline and description combination for each given query and corresponding search user. By allowing Bing AI to select the most relevant headloine and description for each query, we ensure that the right message lands for each of your potential customers, at the right time, across all possible intent signals. 
 
 The responsive ads shown to users appear identical to expanded text ads i.e., up to 3 headlines (title parts via expanded text ads) and 2 descriptions (text parts via expanded text ads). Two headlines and one description will always be shown in the ad. However, depending on the screen size, your ad may show without the third headline or second description.
@@ -285,7 +290,7 @@ The `editorialStatus` attribute is read-only when you download the responsive se
 #### <a name="description-id"></a>id
 The `id` attribute is a unique Bing Ads identifier for the asset in a Bing Ads account. 
 
-The same asset can be used by multiple ads. For example if *Seemless Integration* is a text asset, it will have the same asset identifier across all ads in the same Bing Ads account. After you upload a text asset the result file will include the asset identifier, whether the asset is new or already existed in the account's asset library. 
+The same asset can be used by multiple ads. For example if *Seemless Integration* is a text asset, it will have the same asset identifier across all ads in the same Bing Ads account. After you upload a text asset the result file will include the asset identifier e.g., `""id:""123`, whether the asset is new or already existed in the account's asset library. 
 
 #### <a name="description-pinnedfield"></a>pinnedField
 To pin an asset to a specific description position, set the `pinnedField` attribute to either *Description1* or *Description2*. 
@@ -303,8 +308,8 @@ For languages with double-width characters e.g. Traditional Chinese the maximum 
 
 The text cannot contain the newline (\n) character.
 
-**Add:** Required  
-**Update:** Optional. To retain all of the existing asset links, set or leave this field empty. If you set this field, any descriptions that were previously linked to this ad will be replaced.    
+**Add:** Required. The list of 3-15 descriptions is required. Only the [pinnedField](#description-pinnedfield) and [text](#description-text) are honored. Even if the asset already exists in your account, the [id](#description-id) and [editorialStatus](#description-editorialstatus) will be ignored if you include them. 
+**Update:** Optional. To retain all of the existing asset links, set or leave this field empty. If you set this field, any descriptions that were previously linked to this ad will be replaced. If you specify this field, a list of 3-15 descriptions is required. Only the [pinnedField](#description-pinnedfield) and [text](#description-text) are honored. Even if the asset already exists in your account, the [id](#description-id) and [editorialStatus](#description-editorialstatus) will be ignored if you include them.   
 **Delete:** Read-only  
 
 ### <a name="domain"></a>Domain
@@ -434,7 +439,7 @@ The `editorialStatus` attribute is read-only when you download the responsive se
 #### <a name="headline-id"></a>id
 The `id` attribute is a unique Bing Ads identifier for the asset in a Bing Ads account. 
 
-The same asset can be used by multiple ads. For example if *Seemless Integration* is a text asset, it will have the same asset identifier across all ads in the same Bing Ads account. After you upload a text asset the result file will include the asset identifier, whether the asset is new or already existed in the account's asset library. 
+The same asset can be used by multiple ads. For example if *Seemless Integration* is a text asset, it will have the same asset identifier across all ads in the same Bing Ads account. After you upload a text asset the result file will include the asset identifier e.g., `""id:""123`, whether the asset is new or already existed in the account's asset library. 
 
 #### <a name="headline-pinnedfield"></a>pinnedField
 To pin an asset to a specific headline position, set the `pinnedField` attribute to either *Headline1*, *Headline2*, or *Headline3*.
@@ -452,8 +457,8 @@ For languages with double-width characters e.g. Traditional Chinese the maximum 
 
 The text cannot contain the newline (\n) character.
 
-**Add:** Required  
-**Update:** Optional. To retain all of the existing asset links, set or leave this field empty. If you set this field, any descriptions that were previously linked to this ad will be replaced.    
+**Add:** Required. The list of 2-4 headlines is required. Only the [pinnedField](#headline-pinnedfield) and [text](#headline-text) are honored. Even if the asset already exists in your account, the [id](#headline-id) and [editorialStatus](#headline-editorialstatus) will be ignored if you include them. 
+**Update:** Optional. To retain all of the existing asset links, set or leave this field empty. If you set this field, any descriptions that were previously linked to this ad will be replaced. If you specify this field, a list of 2-4 headlines is required. Only the [pinnedField](#headline-pinnedfield) and [text](#headline-text) are honored. Even if the asset already exists in your account, the [id](#headline-id) and [editorialStatus](#headline-editorialstatus) will be ignored if you include them.   
 **Delete:** Read-only  
 
 
